@@ -37,6 +37,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Build Data
+        run: |
+          cd ./data/
+          bundle install
+          bundle exec middleman build
+          tree
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
