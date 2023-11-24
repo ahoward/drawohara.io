@@ -1,0 +1,19 @@
+#! /bin/bash --login
+
+#
+  set -x
+  set -e
+
+#
+  script_f="${BASH_SOURCE[0]}"
+  script_d="$( cd "$( dirname "${script_f}" )" >/dev/null 2>&1 && pwd )"
+  root_d="$( cd "$( dirname "${script_d}" )" >/dev/null 2>&1 && pwd )"
+
+#
+  cd $root_d
+
+#
+  rbenv install $(cat .ruby-version) || true
+  nvm install $(cat .node-version)
+
+
