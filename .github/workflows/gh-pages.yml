@@ -31,6 +31,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      # REF: https://github.com/actions/checkout/issues/165
+      - name: Create LFS file list
+        run: git lfs ls-files --long | cut -d ' ' -f1 | sort > .lfs-assets-id
+      - name: LFS Cache
+        uses: actions/cache@v3
+          with:
+            path: .git/lfs/objects
+            key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+            restore-keys: |
+              ${{ runner.os }}-lfs-
+      - name: Git LFS Pull
+        run: GIT_TRACE=1 git lfs pull
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Setup Ruby
