@@ -47,12 +47,12 @@ jobs:
       - name: Git LFS Pull
         run: |
           git lfs pull
-      - name: Ro Build 
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Ro Build
       - run: |
-            bundle install
             RO_ROOT=./cms/public/ro RO_BUILD_DIRECTORY=./cms/public/api RO_URL=${{ steps.gh-pages.outputs.base_url }}/api bundle exec ro build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
