@@ -1,7 +1,1 @@
-.senv/.key
-.key
-tmp/*
-log/*
-.bundle
-vendor/bundle
-node_modules
+pkg/
