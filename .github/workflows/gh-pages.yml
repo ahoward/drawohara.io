@@ -52,10 +52,7 @@ jobs:
         with:
           bundler-cache: true
       - run: |
-            echo ${{ steps.gh-pages.outputs.base_url }}/api/index.json
-            cd ./cms/
-            rm -rf ./public/api
-            RO_ROOT=./public/api RO_URL=${{ steps.gh-pages.outputs.base_url }}/api bundle exec ro build
+            RO_ROOT=./cms/public/ro RO_BUILD_DIRECTORY=./cms/public/api RO_URL=${{ steps.gh-pages.outputs.base_url }}/api bundle exec ro build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
