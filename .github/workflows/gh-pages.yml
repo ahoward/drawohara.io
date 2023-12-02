@@ -54,9 +54,8 @@ jobs:
       - run: |
             echo ${{ steps.gh-pages.outputs.base_url }}/api/index.json
             cd ./cms/
-            export RO_URL=${{ steps.gh-pages.outputs.base_url }}/api
-            export RO_ROOT=./public/ro
-            bundle exec ro build
+            rm -rf ./public/api
+            RO_ROOT=./public/api RO_URL=${{ steps.gh-pages.outputs.base_url }}/api bundle exec ro build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
