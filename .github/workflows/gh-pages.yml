@@ -46,7 +46,7 @@ jobs:
         with:
           bundler-cache: true
       - run: |
-            #export RO_URL=${{ steps.gh-pages.outputs.base_url }}/ro
+            export RO_URL=${{ steps.gh-pages.outputs.base_url }}/ro
             #export RO_PAGE_SIZE=2
             #bundle exec ./bin/ro build ./public/ro ./public/api/ro
             #bundle exec ro site public
