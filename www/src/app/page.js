@@ -1,8 +1,10 @@
 import Image from 'next/image'
 
 export default async function Home() {
-  let data = await fetch('https://data.drawohara.io/api/ro/index.json')
-  let __html = data["data"]["posts/first_post"]["body"];
+  let resp = await fetch('https://data.drawohara.io/api/ro/index.json')
+  let json = await resp.json()
+  let data = json["data"]
+  let __html = data["posts/first_post"]["body"]
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

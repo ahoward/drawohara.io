@@ -10,6 +10,8 @@
         "urls": [
 
         ],
+        "created_at": null,
+        "updated_at": null,
         "rel": {
           "curr": "people/ara-t-howard",
           "prev": null,
