@@ -49,7 +49,7 @@ jobs:
             export RO_URL=${{ steps.gh-pages.outputs.base_url }}/ro
             cd ./data/
             bundle
-            bundle binstubs
+            bundle binstubs ro
             bundle exec ./bin/ro build ./public/ro ./public/api/ro
             tree ./public
             echo $RO_URL
