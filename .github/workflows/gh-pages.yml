@@ -50,7 +50,7 @@ jobs:
             export RO_IMG_URL=https://res.cloudinary.com/drawohara/image/upload/ro
             cd ./data/
             bundle
-            bundle binstubs ro
+            bundle binstubs ro --force
             bundle exec ./bin/ro build ./public/ro ./public/api/ro
             tree ./public
             echo $RO_URL
