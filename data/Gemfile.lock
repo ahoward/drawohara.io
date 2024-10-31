@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ahoward/ro
-  revision: 793128977bb7366743541cd0b33865db5ea53f9b
+  revision: 04463423401ef0f60739b528a692eba259c1d348
   specs:
     ro (4.2.1)
       ak47 (~> 0.2)
