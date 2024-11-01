@@ -48,6 +48,7 @@ jobs:
       - run: |
             export RO_URL=${{ steps.gh-pages.outputs.base_url }}/ro
             export RO_IMG_URL=https://res.cloudinary.com/drawohara/image/upload/ro
+            export RO_MD_THEME=bw
             cd ./data/
             bundle
             bundle binstubs ro --force
