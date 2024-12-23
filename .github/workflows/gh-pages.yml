@@ -58,7 +58,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: "./data/public"
+          path: "./public"
       - name: deploy gh-pages
         id: deployment
         uses: actions/deploy-pages@v2
