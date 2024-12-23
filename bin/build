@@ -1,11 +1,29 @@
 #! /usr/bin/env ruby
 
-Dir.chdir(File.dirname(File.dirname(__FILE__)))
+#
+  Dir.chdir(File.dirname(File.dirname(__FILE__)))
+  load './site.rb'
 
-load './site.rb'
+#
+  uuid = SecureRandom.uuid_v7
+  dir = "./tmp/#{ uuid }"
+  _________ = '=' * 42
 
-site = Site.default
+#
+  puts "RSYNC #{ dir }"
+  puts _________
+  system "rsync -avz ./public/ #{ dir }"
+  puts
 
-site.build
+#
+  site = Site.default
+  clean = false
 
-system "rsync -avz --existing --ignore-existing ./public/ ./build/"
+  puts "BUILD #{ dir }"
+  puts _________
+  site.build(dir:, clean:)
+  puts
+
+#
+  Site.clean!("build")
+  File.rename(dir, "build")

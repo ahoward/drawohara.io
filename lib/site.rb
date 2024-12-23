@@ -167,32 +167,32 @@ class Site
     end
 
     def urls(*args, &block)
-      if block.nil? && args.empty?
-        list =
-          if @urls.respond_to?(:call)
-            @urls.call
-          else
-            @urls || []
-          end
+      if args.empty? && block.nil?
+        list = Route.list_of_hashes(@urls)
 
-        accum = []
-
-        list.each do |object|
-          hash =
-            if object.is_a?(Hash)
-              object
-            else
-              {id: object.to_s}
-            end
-
-          url = url_for(hash)
-
-          accum.push(url)
+        list.map do |hash|
+          url_for(hash)
         end
-
-        accum
       else
         @urls = block || args
+      end
+    end
+
+    def Route.list_of_hashes(obj)
+      list = [
+        if obj.respond_to?(:call)
+          obj.call
+        else
+          obj
+        end
+      ].compact.flatten
+
+      list.map do |item|
+        if item.is_a?(Hash)
+          item
+        else
+          {id: item.to_s}
+        end
       end
     end
 
@@ -277,16 +277,21 @@ class Site
 #
   def build(dir: './build', clean: true, parallel: 8, quiet: false)
     site = self
-    tmp = Site.tmpdir
+
+    Site.clean!(dir) if clean
+
+    FileUtils.mkdir_p(dir)
 
     build = proc do |url|
       resp = client.get(url)
       file = "#{ url == '/' ? '/index' : url }.html"
-      path = File.join(tmp, file)
+      path = File.join(dir, file)
 
-      abort "2x url=#{ url }, path=#{ path }" if test(?e, path)
+      abort "url=#{ url }, path=#{ path } exists in #{ dir }" if test(?e, path)
+
       data = resp.body
       Site.binwrite(path, data)
+
       $stderr.puts("#{ url } -> #{ dir }#{ file }") unless quiet
     end
 
@@ -307,6 +312,16 @@ class Site
     b = Time.now.to_f
     e = (b - a).round(2)
 
+    unless quiet
+      $stderr.puts("---")
+      $stderr.puts("#{ n } in #{ e }s")
+      $stderr.puts("")
+    end
+
+    dir
+  end
+
+  def Site.clean!(dir)
     if test(?d, dir)
       trash = Site.tmpdir
       FileUtils.mv(dir, trash)
@@ -316,14 +331,6 @@ class Site
         exit!
       end
     end
-
-    FileUtils.mv(tmp, dir)
-
-    $stderr.puts("---")
-    $stderr.puts("#{ n } in #{ e }s")
-    $stderr.puts("")
-
-    dir
   end
 
   def Site.tmpdir(&block)
