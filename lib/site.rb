@@ -1,5 +1,3 @@
-require_relative 'thread_pool.rb'
-
 require 'securerandom'
 require 'tmpdir'
 require 'fileutils'
