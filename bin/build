@@ -1,0 +1,11 @@
+#! /usr/bin/env ruby
+
+Dir.chdir(File.dirname(File.dirname(__FILE__)))
+
+load './site.rb'
+
+site = Site.default
+
+site.build
+
+system "rsync -avz --existing --ignore-existing ./public/ ./build/"

@@ -12,7 +12,8 @@ gem "roda"
 gem "tilt"
 
 gem "map"
-gem "ro"
+gem "parallel"
+gem "ro", git: 'https://github.com/ahoward/ro'
 
 #gem "rackup"
 #gem "sinatra"

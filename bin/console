@@ -17,11 +17,15 @@ Kernel.module_eval do
   def site
     Site.default
   end
+
+  def ro
+    site.ro
+  end
 end
 
 def IRB.load_modules
   $GIANT_FUCKING_HACK.call
-  prompt = "site[#{ site.name }]"
+  prompt = "#{ site.name }"
 
   IRB.conf[:PROMPT][:SITE] = {
     PROMPT_I: "#{prompt}:%03n:%i> ",

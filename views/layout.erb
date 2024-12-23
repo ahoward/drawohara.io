@@ -1,11 +1,39 @@
 <html>
   <head>
+    <%
+      site        = 'https://drawohara.io'
+      title       = '@drawohara'
+      description = 'i bite'
+      image       = 'https://drawohara.io/media/mick.jpg'
+
+      if @c
+        title = (
+          @c.get(:og, :title) || @c.get(:title) || @c.id.capitalize
+        )
+
+        description = (
+          @c.get(:og, :description) || @c.get(:description) || description
+        )
+
+        image = (
+          @c.get(:og, :image) || @c.get(:image) || image
+        )
+      end
+    %>
+
+    <title><%== title %></title>
+
+    <meta property="og:title"
+      content="<%== title %>" />
+
+    <meta property="og:description"
+      content="<%== description %>" />
+
+    <meta property="og:image"
+      content="<%== image %>" />
   </head>
 
   <body>
-    <hr>
-    <hr>
-    <hr>
     <%= yield %>
   </body>
 </html>

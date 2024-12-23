@@ -1,4 +1,13 @@
+require_relative 'thread_pool.rb'
+
+require 'securerandom'
+require 'tmpdir'
+require 'fileutils'
+
 require 'roda'
+require 'ro'
+require 'rack/test'
+require 'parallel'
 
 class Site
 #
@@ -14,7 +23,7 @@ class Site
         Site.registry[site.name] = site
       end
     else
-      name = args.first || :default
+      name = (args.first || :default)
       Site.registry.fetch(name, &block)
     end
   end
@@ -29,76 +38,67 @@ class Site
 
 #
   attr_reader :name
+  attr_reader :routes
   attr_reader :server
-  attr_reader :pages
+  attr_reader :client
+  attr_reader :ro
 
   def initialize(*args, **kws, &block)
     @name = kws.fetch(:name){ args.shift || :default }
-    @pages = []
 
-    @server = Server.create(@name)
-    configure(&block) if block
-    @server.freeze
+    @routes = []
+
+    block.call(self) if block
+
+    @server = Server.create(name: @name, routes: @routes)
+
+    @client = @server.client
+
+    @ro = Ro::Root.new('./public/ro')
   end
 
   def inspect
     @name.inspect
   end
 
-  def configure(&block)
-    instance_eval(&block)
+#
+  def route(...)
+    Route.new(self, ...).tap do |route|
+      @routes.push(route)
+    end
   end
 
   def urls(&block)
-    accum = []
-
-    @pages.each do |page|
-      page.urls.each do |url|
-        block ? block.call(url) : accum.push(url)
+    if block
+      @routes.each do |route|
+        route.urls.each do |url|
+          block.call(url)
+        end
       end
-    end
-
-    block ? self : accum
-  end
-
-#
-  def page(...)
-    Page.new(self, ...).tap do |page|
-      @pages.push(page)
+    else
+      Parallel.map(@routes, in_threads: 8) do |route|
+        route.urls
+      end.flatten
     end
   end
 
-  class Page
+  class Route
     attr_reader :site
-    attr_reader :route
+    attr_reader :path
     attr_reader :server
     attr_reader :pattern
     attr_reader :render
 
-    def initialize(site, route, *args, **kws, &block)
+    def initialize(site, path, *args, **kws, &block)
       @site = site
-      @route = route.to_s
-      @pattern = Pattern.new(@route)
+      @path = path
+      @pattern = Pattern.new(@path)
       @server = @site.server
 
-      configure(&block) if block
+      block.call(self) if block
 
       if @render.nil?
-        raise ArgumentError.new("no render specified for page #{ @route }")
-      end
-
-      _page = self
-      _site = @site
-      _pattern = @pattern
-      _render = @render
-
-      server.class_eval do
-        route do |r|
-          r.on(*_page.pattern) do |*values|
-            @params = _page.pattern.params_for(values)
-            instance_exec(@params, &_page.render)
-          end
-        end
+        raise ArgumentError.new("no render specified for route #{ @path }")
       end
     end
 
@@ -107,28 +107,31 @@ class Site
     end
 
     class Pattern < ::Array
-      attr_reader :route
+      attr_reader :path
       attr_reader :parts
       attr_reader :keys
+      attr_reader :root
 
-      def initialize(route)
-        @route = route
+      def initialize(path)
+        @path = path
         @keys = []
+        @root = false
 
-        @parts = @route.to_s.strip.scan(%r`[^/]+`)
+        @parts = @path.to_s.strip.scan(%r`[^/]+`)
 
         @parts.each do |part|
           if part.start_with?(':')
             key = part.slice(1..).to_sym
             @keys.push(key)
+            push(String)
           else
             push(part)
-            push(String)
           end
         end
 
-        freeze
-        @keys.freeze
+        if @parts.empty? && @path == "/"
+          @root = true
+        end
       end
 
       def params_for(*values)
@@ -154,11 +157,7 @@ class Site
     end
 
     def inspect
-      @route.inspect
-    end
-
-    def configure(&block)
-      instance_eval(&block)
+      @path.inspect
     end
 
     def render(*args, &block)
@@ -175,7 +174,7 @@ class Site
           if @urls.respond_to?(:call)
             @urls.call
           else
-            @urls
+            @urls || []
           end
 
         accum = []
@@ -206,10 +205,39 @@ class Site
 
 #
   class Server < Roda
-    def Server.create(name, &block)
+    def Server.create(name:, routes:, &block)
       Class.new(Server) do
-        def self.name; name; end
+        const_set(:Name, "Site::Server(#{ name.to_s })")
+
+        def self.name
+          const_get(:Name)
+        end
+
+        const_set(:Client, Rack::Test::Session.new(Rack::MockSession.new(self)))
+
+        def self.client
+          const_get(:Client)
+        end
+
         class_eval(&block) if block
+
+        _routes = routes
+
+        route do |r|
+          _routes.each do |_route|
+            if _route.pattern.root
+              r.root do
+                @params = {}
+                instance_exec(@params, &_route.render)
+              end
+            else
+              r.is(*_route.pattern) do |*values|
+                @params = _route.params_for(values)
+                instance_exec(@params, &_route.render)
+              end
+            end
+          end
+        end
       end
     end
 
@@ -221,17 +249,95 @@ class Site
 
 #
   def get(path)
-    require 'rack/test'
-
-    client = Rack::Test::Session.new(Rack::MockSession.new(@server))
-    body = client.get(path).body
-
-    Body.new(body)
+    data = client.get(path.to_s)
+    raise Response::Error.new(data) unless data.ok?
+    Response.new(data)
   end
 
-  class Body < ::String
+  class Response < ::String
+    attr_reader :data
+
+    def initialize(data)
+      @data = data
+      super(data.body)
+    end
+
     def inspect
       to_s
     end
+
+    class Error < ::StandardError
+      attr_reader :data
+
+      def initialize(data, ...)
+        @data = data
+        super(...)
+      end
+    end
+  end
+
+#
+  def build(dir: './build', clean: true, parallel: 8, quiet: false)
+    site = self
+    tmp = Site.tmpdir
+
+    build = proc do |url|
+      resp = client.get(url)
+      file = "#{ url == '/' ? '/index' : url }.html"
+      path = File.join(tmp, file)
+
+      abort "2x url=#{ url }, path=#{ path }" if test(?e, path)
+      data = resp.body
+      Site.binwrite(path, data)
+      $stderr.puts("#{ url } -> #{ dir }#{ file }") unless quiet
+    end
+
+    a = Time.now.to_f
+    urls = site.urls
+    n = urls.size
+
+    if parallel
+      Parallel.each(urls, in_processes: parallel) do |url|
+        build[url]
+      end
+    else
+      urls.each do |url|
+        build[url]
+      end
+    end
+
+    b = Time.now.to_f
+    e = (b - a).round(2)
+
+    if test(?d, dir)
+      trash = Site.tmpdir
+      FileUtils.mv(dir, trash)
+
+      fork do
+        FileUtils.rm_rf(trash)
+        exit!
+      end
+    end
+
+    FileUtils.mv(tmp, dir)
+
+    $stderr.puts("---")
+    $stderr.puts("#{ n } in #{ e }s")
+    $stderr.puts("")
+
+    dir
+  end
+
+  def Site.tmpdir(&block)
+    uuid = SecureRandom.uuid_v7
+    dir = File.join('./tmp', uuid)
+    FileUtils.mkdir_p(dir)
+    dir
+  end
+
+  def Site.binwrite(path, data)
+    dirname = File.dirname(path)
+    FileUtils.mkdir_p(dirname) unless test(?e, dirname)
+    IO.binwrite(path, data)
   end
 end
