@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+
+puts "ngrok http 9292"
+puts "^^^^^^^^^^^^^^^"
+exec "rerun rackup"
+
+BEGIN {
+  Dir.chdir(File.dirname(File.dirname(__FILE__)))
+}
