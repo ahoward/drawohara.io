@@ -25,6 +25,4 @@ Site.for 'https://drawohara.io' do |site|
       site.ro.pages.map(&:id) - %w[ index ]
     end
   end
-
-#
 end
