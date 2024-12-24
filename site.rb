@@ -5,7 +5,7 @@ Site.for 'https://drawohara.io' do |site|
   site.route "/" do |route|
     route.render do |params|
       @c = site.ro.get("pages/index")
-      view inline: @c.body
+      view 'index'
     end
 
     route.urls do

@@ -4,6 +4,8 @@ source "https://rubygems.org"
 
 gem "ostruct"
 
+gem "tmuxinator"
+
 gem "rerun"
 gem "rackup"
 gem "puma"
@@ -14,6 +16,7 @@ gem "tilt"
 gem "map"
 gem "parallel"
 gem "ro", git: 'https://github.com/ahoward/ro'
+
 
 #gem "rackup"
 #gem "sinatra"

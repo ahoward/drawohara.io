@@ -6,6 +6,7 @@
   - now
   - about
 
+- https://cloudinary.com/documentation/solution_overview#storage
 
 - short-codes // purlsthat share well
 
