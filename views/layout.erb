@@ -1,6 +1,9 @@
 <html>
   <head>
+    <!-- download this locally! -->
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <%
       site        = 'https://drawohara.io'
@@ -35,7 +38,13 @@
       content="<%== image %>" />
   </head>
 
-  <body>
-    <%= yield %>
+  <body hx-boost="true">
+    <header>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+    </footer>
   </body>
 </html>
