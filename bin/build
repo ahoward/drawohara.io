@@ -27,3 +27,5 @@
 #
   Site.clean!("build")
   File.rename(dir, "build")
+
+`git add ./build`
