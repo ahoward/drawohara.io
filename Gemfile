@@ -9,6 +9,7 @@ gem "tmuxinator"
 gem "rerun"
 gem "rackup"
 gem "puma"
+gem "thruster"
 
 gem "roda"
 gem "tilt"

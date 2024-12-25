@@ -222,6 +222,8 @@ class Site
         _routes = routes
 
         route do |r|
+          r.public
+
           _routes.each do |_route|
             if _route.pattern.root
               r.root do

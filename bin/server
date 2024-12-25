@@ -2,7 +2,12 @@
 
 puts "ngrok http 9292"
 puts "^^^^^^^^^^^^^^^"
-exec "rerun rackup"
+
+
+host = ENV.fetch('HOST'){ '0.0.0.0' }
+port = ENV.fetch('PORT'){ '4242' }
+
+exec "rerun -- rackup --host #{ host } --port #{ port }"
 
 BEGIN {
   Dir.chdir(File.dirname(File.dirname(__FILE__)))
