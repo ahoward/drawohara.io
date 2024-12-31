@@ -1,9 +1,27 @@
 now
 ---
+
+- google analytics
+- robots.txt
+- humans.txt
+- ai.txt
+
+- re-org + model layer
+- start gem 'fabula'
+
+- insta page
+
+- named routes...
+  - site.url_for(:page, id: '/about')
+
+- cleaner cmd structure
+
 - fix ruby install / ssl / thrust
+
 - bin/dev
   - raw tmux from mtf
-- analytics
+
+
 - consolidate script/cmd pattern
 - analytics
 - silly reloading in dev

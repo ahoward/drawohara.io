@@ -1,3 +1,5 @@
+require_relative 'path'
+
 class Pattern < ::Array
   attr_reader :path
   attr_reader :parts
@@ -33,6 +35,7 @@ class Pattern < ::Array
 
         when part == '**'
           key = :path_info
+          keys.push(key)
           re.push '/'
           re.push '(.*)'
           parts.push(':%s' % key)
@@ -78,18 +81,26 @@ class Pattern < ::Array
 
   def expand(hash)
     replace = {}
+    ext = hash[:ext]
 
     hash.each do |key, val|
       validate_key!(key)
       replace[":#{ key }"] = "#{ val }"
     end
 
-    '/' << @parts.map do |part|
-      replace.fetch(part){ part }
-    end.join('/')
+    parts = @parts.map{|part| replace.fetch(part){ part }}
+
+    if ext
+      last = parts.pop
+      last = [last, ext].join('.').gsub(%r`[.]+`, '.')
+      parts.push(last)
+    end
+
+    Path.absolute(*parts)
   end
 
   def validate_key!(key)
-    @keys.detect(key.to_s.to_sym) || raise(ArgumentError.new("invalid key #{ key }"))
+    key = key.to_s.to_sym
+    @keys.index(key) || raise(Error.new("invalid key=#{ key.inspect } for path=#{ @path.inspect }"))
   end
 end

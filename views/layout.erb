@@ -1,5 +1,8 @@
 <html color-mode="user" lang="en">
   <head>
+  <!-- ga -->
+    <%= render('views/ga.html') %>
+
   <!-- deps -->
     <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -32,7 +35,6 @@
         image       = @c.get(:og, :image) || @c.get(:image) || image
       end
     %>
-
     <title><%= title %></title>
 
     <meta property="og:title" content="<%= title %>"/>

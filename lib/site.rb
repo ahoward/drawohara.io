@@ -69,8 +69,8 @@ class Site
     @server.routes
   end
 
-  def get(...)
-    @server.get(...).check!
+  def get(path = '/')
+    @server.get(path)
   end
 
   def urls(&block)
@@ -81,9 +81,16 @@ class Site
         end
       end
     else
-      Parallel.map(routes, in_threads: 8) do |route|
-        route.urls
-      end.flatten
+      urls =
+        Parallel.map(routes, in_threads: 8) do |route|
+          route.urls
+        end
+
+      urls.flatten!
+      urls.compact!
+      urls.uniq!
+
+      urls
     end
   end
 
@@ -98,6 +105,10 @@ class Site
     build = proc do |url|
       resp = get(url)
 
+      unless resp.ok?
+        abort "url=#{ url }, status=#{ resp.status }, headers=#{ resp.headers.inspect }, body=#{ resp.body }"
+      end
+
       file = "#{ url == '/' ? '/index' : url }"
 
       ext = file[%r`\..*$`]
@@ -106,11 +117,11 @@ class Site
 
       path = File.join(dir, file)
 
-      abort "url=#{ url }, path=#{ path } already exists in #{ dir }!" if test(?e, path)
+      abort "url=#{ url }, file=#{ file } already exists in #{ dir }!" if test(?e, path)
 
       Site.binwrite(path, resp)
 
-      $stderr.puts("#{ url } -> #{ dir }#{ file }") unless quiet
+      $stderr.puts("#{ url } -> #{ file }") unless quiet
     end
 
     a = Time.now.to_f

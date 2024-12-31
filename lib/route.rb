@@ -4,12 +4,14 @@ require_relative 'context'
 require_relative 'error'
 
 class Route
-  attr_reader :site
   attr_reader :path
+  attr_reader :name
+  attr_reader :site
   attr_reader :pattern
 
-  def initialize(path, site: nil, &block)
+  def initialize(path, name: nil, site: nil, &block)
     @path = "#{ path }"
+    @name = "#{ name }" if name
     @pattern = Pattern.new(@path)
 
     @block = proc{ raise Error.new('did you forget a `route.call(...)`?') }
@@ -80,24 +82,23 @@ class Route
     if block
       @urls = block
     else
-      Route.list_of_hashes(@urls).map{|hash| url_for(hash)}
-    end
-  end
+      urls = (@urls.respond_to?(:call) ? @urls.call : @urls).dup
+      return [] unless urls
 
-  def Route.list_of_hashes(obj)
-    list = [
-      if obj.respond_to?(:call)
-        obj.call
-      else
-        obj
-      end
-    ].compact.flatten
+      urls = [urls] unless urls.is_a?(Array)
 
-    list.map do |item|
-      if item.is_a?(Hash)
-        item
-      else
-        {id: item.to_s}
+      urls.flatten!
+      urls.compact!
+
+      urls.map do |url|
+        case url
+          when Hash
+            url_for(url)
+          when String
+            url
+          else
+            raise Error.new("url=#{ url.inspect }")
+        end
       end
     end
   end
