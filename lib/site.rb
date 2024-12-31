@@ -96,14 +96,19 @@ class Site
     FileUtils.mkdir_p(dir)
 
     build = proc do |url|
-      response = get(url)
+      resp = get(url)
 
-      file = "#{ url == '/' ? '/index' : url }.html"
+      file = "#{ url == '/' ? '/index' : url }"
+
+      ext = file[%r`\..*$`]
+
+      file += '.html' unless ext
+
       path = File.join(dir, file)
 
-      abort "url=#{ url }, path=#{ path } exists in #{ dir }" if test(?e, path)
+      abort "url=#{ url }, path=#{ path } already exists in #{ dir }!" if test(?e, path)
 
-      Site.binwrite(path, response)
+      Site.binwrite(path, resp)
 
       $stderr.puts("#{ url } -> #{ dir }#{ file }") unless quiet
     end
