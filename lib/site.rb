@@ -70,7 +70,7 @@ class Site
   end
 
   def get(...)
-    @server.get(...)
+    @server.get(...).check!
   end
 
   def urls(&block)
@@ -96,14 +96,14 @@ class Site
     FileUtils.mkdir_p(dir)
 
     build = proc do |url|
-      resp = get(url)
+      response = get(url)
+
       file = "#{ url == '/' ? '/index' : url }.html"
       path = File.join(dir, file)
 
       abort "url=#{ url }, path=#{ path } exists in #{ dir }" if test(?e, path)
 
-      data = resp.body
-      Site.binwrite(path, data)
+      Site.binwrite(path, response)
 
       $stderr.puts("#{ url } -> #{ dir }#{ file }") unless quiet
     end

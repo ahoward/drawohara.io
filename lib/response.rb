@@ -13,13 +13,13 @@ class Response < ::String
     super([body].join)
   end
 
-  def ok?
-    (((status.to_i / 100) * 100) == 200)
-  end
-
   def check!
     raise Error.new("#{ path_info } #=> #{ status }", data: {status:, headers:, body:}) unless ok?
     self
+  end
+
+  def ok?
+    (((status.to_i / 100) * 100) == 200)
   end
 
   def inspect
