@@ -2,24 +2,20 @@
 
 source "https://rubygems.org"
 
+#gem "ro", git: 'https://github.com/ahoward/ro'
+gem "webrick", "~> 1.9.1"
+gem "logger"
+gem "ro", path: '~/gh/ahoward/ro'
+
 gem "ostruct"
 
-gem "tmuxinator"
-
 gem "rerun"
+
+gem "rack"
 gem "rackup"
 gem "puma"
 gem "thruster"
 
-gem "roda"
-gem "tilt"
-
 gem "map"
 gem "parallel"
-gem "ro", git: 'https://github.com/ahoward/ro'
-
-
-#gem "rackup"
-#gem "sinatra"
-#gem "puma"
 

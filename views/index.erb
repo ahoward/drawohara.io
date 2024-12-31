@@ -1,5 +1,6 @@
-<% content_for :header do %>
-<% end %>
-<%= @c.body %>
-<% content_for :footer do %>
-<% end %>
+<%
+  exports[:header] = nil
+  exports[:footer] = nil
+%>
+
+<%= data.body.html_safe %>

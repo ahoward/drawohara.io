@@ -1,35 +1,74 @@
-- logo + favicon
-- [] favicon
+now
+---
+- fix ruby install / ssl / thrust
+- bin/dev
+  - raw tmux from mtf
+- analytics
+- consolidate script/cmd pattern
+- analytics
+- silly reloading in dev
+- support for APP_ENV, etc.
+- support env + senv
 
-- basic pages
-  - index
-  - now
-  - about
+- site has domain, not name
+- page globs
+- pages can be nested.... page.page
+- model
 
-- https://cloudinary.com/documentation/solution_overview#storage
+- ./site/views
+- ./site/models
+- support for adding
 
-- short-codes // purlsthat share well
+- content
+  - basic pages
+    - index
+    - now
+    - about
+  - import old dojo4 site
+  - way to import a google-photos album
+    - rclone -> gcs -> cloudinary
 
-```txt
+- cloudinary for images and shares
+  - https://cloudinary.com/documentation/solution_overview#storage
 
-  https://gohugo.io/content-management/urls/#aliases
+- quick share cmd
+  - drawohara
+    - drwhr share ./path/to/file
+    - upload to gcs
+    - pull url through cloudinary
+    - all shares are uuid
+    - add to list?
+    - migrate lazily into site
 
-  <!DOCTYPE html>
-  <html lang="en-us">
-    <head>
-      <title>https://example.org/posts/new-file-name/</title>
-      <link rel="canonical" href="https://example.org/posts/new-file-name/">
-      <meta name="robots" content="noindex">
-      <meta charset="utf-8">
-      <meta http-equiv="refresh" content="0; url=https://example.org/posts/new-file-name/">
-    </head>
-  </html>
+next
+----
+- htmx stuff
+- alpinejs
+- import content from gh-issues
 
-```
+- short-codes // purls that share well
+  ```txt
 
+    https://gohugo.io/content-management/urls/#aliases
+
+    <!DOCTYPE html>
+    <html lang="en-us">
+      <head>
+        <title>https://example.org/posts/new-file-name/</title>
+        <link rel="canonical" href="https://example.org/posts/new-file-name/">
+        <meta name="robots" content="noindex">
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="0; url=https://example.org/posts/new-file-name/">
+      </head>
+    </html>
+
+  ```
 
 - integrate short form content
   - cli
   - gh-issues
   - socials?
 
+
+done
+----

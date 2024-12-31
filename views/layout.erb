@@ -22,45 +22,30 @@
   <!-- meta -->
     <%
       site        = 'https://drawohara.io'
-
-      title       = '@drawohara'
-
+      title       = 'drawohara >> &'
       description = 'i bite'
-
-      image       = [
-        'https://drawohara.io/media/mick.jpg',
-      ].sample
+      image       = ['https://drawohara.io/media/mick.jpg'].sample
 
       if @c
-        title = (
-          @c.get(:og, :title) || @c.get(:title) || @c.id.capitalize
-        )
-
-        description = (
-          @c.get(:og, :description) || @c.get(:description) || description
-        )
-
-        image = (
-          @c.get(:og, :image) || @c.get(:image) || image
-        )
+        title       = @c.get(:og, :title) || @c.get(:title) || @c.id.capitalize
+        description = @c.get(:og, :description) || @c.get(:description) || description
+        image       = @c.get(:og, :image) || @c.get(:image) || image
       end
     %>
 
-    <title><%== title %></title>
+    <title><%= title %></title>
 
-    <meta property="og:title"
-      content="<%== title %>" />
+    <meta property="og:title" content="<%= title %>"/>
+    <meta property="og:description" content="<%= description %>" />
+    <meta property="og:image" content="<%= image %>" />
 
-    <meta property="og:description"
-      content="<%== description %>" />
-
-    <meta property="og:image"
-      content="<%== image %>" />
+    <meta property="site:route" content="<%= route.path.to_json.html_safe %>">
+    <meta property="site:params" content="<%= params.to_json.html_safe %>">
   </head>
 
   <body hx-boost="true">
     <header>
-      <%= content_for(:header) || render("header") %>
+      <%= exports.fetch(:header){ render('views/header.erb') } %>
     </header>
 
     <main>
@@ -68,7 +53,7 @@
     </main>
 
     <footer>
-      <%= content_for(:footer) || render("footer") %>
+      <%= exports.fetch(:footer){ render('views/footer.erb') } %>
     </footer>
   </body>
 </html>

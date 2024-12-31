@@ -1,0 +1,18 @@
+#! /usr/bin/env ruby
+
+mode = ARGV.shift # 'get'
+url = ARGV.shift
+
+
+case
+  when mode == 'get'
+    puts Site.only.get(url)
+
+  else
+    raise '#FIXME'
+end
+
+
+BEGIN {
+  require_relative '../site.rb'
+}

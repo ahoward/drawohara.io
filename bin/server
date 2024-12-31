@@ -1,14 +1,20 @@
 #! /usr/bin/env ruby
+#
+  tls_domain = ENV.fetch('TLS_DOMAIN'){ `hostname`.strip }
 
-puts "ngrok http 9292"
-puts "^^^^^^^^^^^^^^^"
+  if tls_domain =~ /^(false|f|0)$/
+    ENV.delete('TLS_DOMAIN')
+  else
+    ENV['TLS_DOMAIN'] = tls_domain
+  end
 
+#
+  cmd = "./bin/thrust ./bin/serve"
+  puts "#=> #{ cmd }"
+  exec cmd
 
-host = ENV.fetch('HOST'){ '0.0.0.0' }
-port = ENV.fetch('PORT'){ '4242' }
-
-exec "rerun -- rackup --host #{ host } --port #{ port }"
-
-BEGIN {
-  Dir.chdir(File.dirname(File.dirname(__FILE__)))
-}
+#
+  BEGIN {
+    Dir.chdir(File.dirname(File.dirname(__FILE__)))
+    # DEBUG=true TLS_DOMAIN=drawohara.dev thrust bin/server
+  }
