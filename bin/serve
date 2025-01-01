@@ -7,7 +7,6 @@
   cmd = "./bin/rackup --host #{ host } --port #{ port }"
 
   if reload =~ /^(true|t|1)$/i
-    #cmd = "./bin/ak47 -d -- #{ cmd }"
     cmd = "./bin/rerun -- #{ cmd }"
   end
 

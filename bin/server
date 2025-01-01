@@ -9,12 +9,25 @@
   end
 
 #
-  cmd = "./bin/thrust ./bin/serve"
-  puts "#=> #{ cmd }"
-  exec cmd
+  puts "#=> #{ @cmd }"
+
+  begin
+    system @cmd
+  rescue
+    exit 0
+  end
 
 #
   BEGIN {
     Dir.chdir(File.dirname(File.dirname(__FILE__)))
-    # DEBUG=true TLS_DOMAIN=drawohara.dev thrust bin/server
+
+    @thrust = File.expand_path('./bin/thrust')
+    @serve = File.expand_path('./bin/serve')
+    @cmd = "#{ @thrust } #{ @serve }"
+
+    at_exit do
+      %w[ cert.pem key.pem Rakefile storage ].each do |entry|
+        FileUtils.rm_rf(entry)
+      end
+    end
   }

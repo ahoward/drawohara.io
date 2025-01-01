@@ -1,5 +1,3 @@
-require_relative 'path'
-
 class Pattern < ::Array
   attr_reader :path
   attr_reader :parts
@@ -64,6 +62,7 @@ class Pattern < ::Array
       @regex = %r`^/$`i
     else
       Pattern.compile(path) => parts:, keys:, regex:
+
       @root = false
       @parts = parts
       @keys = keys
@@ -98,11 +97,12 @@ class Pattern < ::Array
       parts.push(last)
     end
 
-    Path.absolute(*parts)
+    "/#{ parts.join('/') }".squeeze('/')
   end
 
   def validate_key!(key)
     key = key.to_s.to_sym
+
     @keys.index(key) || raise(Error.new("invalid key=#{ key.inspect } for path=#{ @path.inspect }"))
   end
 end
