@@ -81,97 +81,13 @@ class Site
         end
       end
     else
-      urls =
-        Parallel.map(routes, in_threads: 8) do |route|
-          route.urls
-        end
-
-      urls.flatten!
-      urls.compact!
-      urls.uniq!
-
-      urls
-    end
-  end
-
-#
-  def build(dir: './build', clean: true, parallel: 8, quiet: false)
-    site = self
-
-    Site.clean!(dir) if clean
-
-    FileUtils.mkdir_p(dir)
-
-    build = proc do |url|
-      resp = get(url)
-
-      unless resp.ok?
-        abort "url=#{ url }, status=#{ resp.status }, headers=#{ resp.headers.inspect }, body=#{ resp.body }"
-      end
-
-      file = "#{ url == '/' ? '/index' : url }"
-
-      ext = file[%r`\..*$`]
-
-      file += '.html' unless ext
-
-      path = File.join(dir, file)
-
-      abort "url=#{ url }, file=#{ file } already exists in #{ dir }!" if test(?e, path)
-
-      Site.binwrite(path, resp)
-
-      $stderr.puts("#{ url } -> #{ file }") unless quiet
-    end
-
-    a = Time.now.to_f
-    urls = site.urls.uniq
-    n = urls.size
-
-    if parallel
-      Parallel.each(urls, in_processes: parallel) do |url|
-        build[url]
-      end
-    else
-      urls.each do |url|
-        build[url]
+      Parallel.map(routes, in_threads: 8) do |route|
+        route.urls
+      end.tap do |urls|
+        urls.flatten!
+        urls.compact!
+        urls.uniq!
       end
     end
-
-    b = Time.now.to_f
-    e = (b - a).round(2)
-
-    unless quiet
-      $stderr.puts("---")
-      $stderr.puts("#{ n } in #{ e }s")
-      $stderr.puts("")
-    end
-
-    dir
-  end
-
-  def Site.clean!(dir)
-    if test(?d, dir)
-      trash = Site.tmpdir
-      FileUtils.mv(dir, trash)
-
-      fork do
-        FileUtils.rm_rf(trash)
-        exit!
-      end
-    end
-  end
-
-  def Site.tmpdir(&block)
-    uuid = SecureRandom.uuid_v7
-    dir = File.join('./tmp', uuid)
-    FileUtils.mkdir_p(dir)
-    dir
-  end
-
-  def Site.binwrite(path, data)
-    dirname = File.dirname(path)
-    FileUtils.mkdir_p(dirname) unless test(?e, dirname)
-    IO.binwrite(path, data)
   end
 end

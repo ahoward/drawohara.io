@@ -1,0 +1,14 @@
+TEAM
+----
+  Website: https://drawohara.io
+  Author: Ara T. Howard
+
+THANKS
+------
+  Axel
+  Nova
+  Jess
+  0live
+  Cas$h
+  Ruby
+  Matz

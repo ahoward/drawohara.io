@@ -1,18 +1,191 @@
 #! /usr/bin/env ruby
 
-mode = ARGV.shift # 'get'
-url = ARGV.shift
+script do
+#
+  run :get do
+    setup!
+    url = @argv.shift || '/'
+    puts site.get(url)
+  end
+
+#
+  run :build do
+    setup!
+    build!
+  end
+
+#
+  run :console do
+    setup!
+    console!
+  end
 
 
-case
-  when mode == 'get'
-    puts Site.only.get(url)
+private
+  def setup!
+    @site = Site.default
+  end
 
-  else
-    raise '#FIXME'
+  def site
+    @site
+  end
+
+  def ro
+    site.ro
+  end
+
+  def build!
+  #
+    dir = './build'
+    tmp = tmpdir!
+
+  #
+    puts "=" * 42
+    puts "RSYNC #{ tmp }"
+    puts "-" * 42
+    system "rsync -avz ./public/ #{ tmp }"
+    puts
+
+  #
+    clean = false
+
+    puts "=" * 42
+    puts "BUILD #{ tmp }"
+    puts "-" * 42
+
+    stats =
+      build(dir: tmp) do |url:, file:|
+        puts("#{ url } -> #{ file }")
+      end
+
+    puts '---'
+    p stats
+
+    puts
+
+  #
+    mv!(tmp, dir)
+
+  #
+    `git add ./build`
+  end
+
+  def build(dir:, parallel: 8, &block)
+    build_url = proc do |url|
+      resp = @site.get(url)
+
+      unless resp.ok?
+        abort "url=#{ url }, status=#{ resp.status }, headers=#{ resp.headers.inspect }, body=#{ resp.body }"
+      end
+
+      file = "#{ url == '/' ? '/index' : url }"
+      ext = file[%r`\..*$`]
+      file += '.html' unless ext
+
+      path = File.join(dir, file)
+      abort "url=#{ url }, file=#{ file } already exists in #{ dir }!" if test(?e, path)
+      binwrite!(path, resp)
+
+      block.call(url:, file:) if block
+    end
+
+    a = Time.now.to_f
+    urls = @site.urls.uniq
+    n = urls.size
+
+    if parallel
+      Parallel.each(urls, in_processes: parallel) do |url|
+        build_url[url]
+      end
+    else
+      urls.each do |url|
+        build[url]
+      end
+    end
+
+    b = Time.now.to_f
+    e = (b - a).round(2)
+
+    stats = {n:, e:}
+  end
+
+  def clean!(dir)
+    if test(?d, dir)
+      trash = tmpdir!
+      FileUtils.mv(dir, trash)
+
+      fork do
+        FileUtils.rm_rf(trash)
+        `rm -rf #{ trash }`
+        exit!
+      end
+    end
+  end
+
+  def mkdir!(dir)
+    FileUtils.mkdir_p(dir)
+  end
+
+  def mv!(src, dst)
+    clean!(dst)
+    File.rename(src, dst)
+  end
+
+  def tmpdir!(&block)
+    uuid = SecureRandom.uuid_v7
+    dir = File.join('./tmp', uuid)
+    FileUtils.mkdir_p(dir)
+    dir
+  end
+
+  def binwrite!(path, data)
+    dirname = File.dirname(path)
+    FileUtils.mkdir_p(dirname) unless test(?e, dirname)
+    IO.binwrite(path, data)
+  end
+
+  def console!
+    $A_GIANT_FUCKING_HACK_FOR_IBB = ARGV.clear
+
+    require 'irb'
+
+    $GIANT_FUCKING_HACK = IRB.method(:load_modules)
+
+    Kernel.module_eval do
+      def site
+        Site.only
+      end
+
+      def ro
+        site.ro
+      end
+    end
+
+    def IRB.load_modules
+      $GIANT_FUCKING_HACK.call
+      prompt = "#{ site.name }"
+
+      IRB.conf[:PROMPT][:SITE] = {
+        PROMPT_I: "#{prompt}:%03n:%i> ",
+        PROMPT_N: "#{prompt}:%03n:%i> ",
+        PROMPT_S: "#{prompt}:%03n:%i%l ",
+        PROMPT_C: "#{prompt}:%03n:%i* ",
+        RETURN: "=> %s\n"
+
+      }
+
+      IRB.conf[:PROMPT_MODE] = :SITE
+      IRB.conf[:AUTO_INDENT] = true
+    end
+
+    ::IRB.start
+  end
 end
 
 
 BEGIN {
-  require_relative '../site.rb'
+  Dir.chdir(File.dirname(File.dirname(__FILE__)))
+
+  require_relative '../config/site.rb'
+  require_relative '../lib/script.rb'
 }

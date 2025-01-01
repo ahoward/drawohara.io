@@ -63,8 +63,8 @@ class Pattern < ::Array
       @keys = []
       @regex = %r`^/$`i
     else
-      @root = false
       Pattern.compile(path) => parts:, keys:, regex:
+      @root = false
       @parts = parts
       @keys = keys
       @regex = regex
@@ -79,7 +79,9 @@ class Pattern < ::Array
     @keys.empty?
   end
 
-  def expand(hash)
+  def expand(hash = {})
+    return @path if literal?
+
     replace = {}
     ext = hash[:ext]
 

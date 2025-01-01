@@ -40,7 +40,7 @@ class Route
       @block = block
     else
       params = named_params_for(*args)
-      Context.new(route: self, params:, site:, &@block).call
+      Request.new(route: self, params:, &@block).call
     end
   end
 
@@ -56,18 +56,22 @@ class Route
     params = Map.for(hash)
   end
 
-  class Context
+  class Request
     include Render
 
     attr_reader :route
     attr_reader :params
+    attr_reader :path_info
     attr_reader :site
     attr_reader :exports
 
-    def initialize(route:, params:, site:, &block)
+    def initialize(route:, params:, &block)
       @route = route
       @params = params
-      @site = site
+
+      @path_info = @route.url_for(params)
+      @site = @route.site
+
       @block = block
 
       @exports = {}

@@ -1,14 +1,28 @@
 now
 ---
 
-- google analytics
-- robots.txt
-- humans.txt
-- ai.txt
+- write!
+- /about
+- /contact
 
-- re-org + model layer
+- short-codes ala hugo
+
+- feedback
+  - if pending
+    - tell me why i shoudln't write this
+  - else
+    - tell me why you hate this
+
+- nuke thrust?
+
+
+- re-org + model layer // pages
+
+- bin/dev
+  - raw tmux from mtf
+
+
 - start gem 'fabula'
-
 - insta page
 
 - named routes...
@@ -18,8 +32,6 @@ now
 
 - fix ruby install / ssl / thrust
 
-- bin/dev
-  - raw tmux from mtf
 
 
 - consolidate script/cmd pattern
@@ -90,3 +102,7 @@ next
 
 done
 ----
+- robots.txt
+- humans.txt
+- ai.txt
+- google analytics
