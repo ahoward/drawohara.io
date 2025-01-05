@@ -49,16 +49,16 @@
     <meta property="site:path_info" content="<%= path_info.to_json.html_safe %>">
 
     <style>
-      html { transition: none !important; }
+      /* anti pico */
       a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
-      html {
-        margin: 1em;
-      }
-      img {
-        display: block;
-        text-align: center;
-      }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
     </style>
 
     <script>

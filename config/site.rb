@@ -24,9 +24,7 @@ Site.for 'drawohara.io' do |site|
   site.route '/dojo4' do |route|
     route.call do |request|
       posts = site.ro.dojo4.sort_by{|post| post.published_at}.reverse
-
-      ara = []
-      dojo4 = []
+      ara, dojo4 = [], []
 
       posts.each do |post|
         if post.author == 'ara@dojo4.com'
@@ -39,6 +37,10 @@ Site.for 'drawohara.io' do |site|
       data = {ara:, dojo4:}
 
       request.render 'views/dojo4.erb', layout:, data:
+    end
+
+    route.urls do
+      '/dojo4'
     end
   end
 
