@@ -1,8 +1,7 @@
 #
   Dir.chdir(File.dirname(__FILE__))
 
-  require_relative './lib/site.rb'
-  require_relative './config/site.rb'
+  require_relative './lib/boot.rb'
 
 #
   site = Site.default

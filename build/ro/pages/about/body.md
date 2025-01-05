@@ -7,7 +7,7 @@ i'll start at the beginning:
 * roamed the planet racing bikes and skis
 * started a family in boulder
 * ran [dojo4](/dojo4)
-* COVID
+* COVIDs
 * a ton of [mountains](https://photos.app.goo.gl/FwwxEygH55JnQR8n8)
 * the [southwest for the 42'nd * time](https://photos.app.goo.gl/rnSLBr9MoWMHv1zx6)
 * [LA](https://photos.app.goo.gl/MpSigk5BJwqeouiUA)

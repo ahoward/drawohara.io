@@ -8,4 +8,4 @@ you might have been expecting [more](/home) but this is it.
 
 p.s. i am always looking for ways to delete things.  listen to music.  and pet dogs.
 
-p.s.s. <a href="/ai.txt"> are you a 🤖 ?</a>.
+p.s.s. <a href="/ai"> are you a 🤖 ?</a>.

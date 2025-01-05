@@ -1,0 +1,39 @@
+#! /usr/bin/env ruby
+
+require_relative '../lib/boot.rb'
+
+$A_GIANT_FUCKING_HACK_FOR_IBB = ARGV.clear
+
+require 'irb'
+
+$GIANT_FUCKING_HACK = IRB.method(:load_modules)
+
+Kernel.module_eval do
+  def site
+    Site.only
+  end
+
+  def ro
+    site.ro
+  end
+end
+
+def IRB.load_modules
+  $GIANT_FUCKING_HACK.call
+
+  prompt = "#{ site.name }"
+
+  IRB.conf[:PROMPT][:SITE] = {
+    PROMPT_I: "#{prompt}:%03n:%i> ",
+    PROMPT_N: "#{prompt}:%03n:%i> ",
+    PROMPT_S: "#{prompt}:%03n:%i%l ",
+    PROMPT_C: "#{prompt}:%03n:%i* ",
+    RETURN: "=> %s\n"
+
+  }
+
+  IRB.conf[:PROMPT_MODE] = :SITE
+  IRB.conf[:AUTO_INDENT] = true
+end
+
+::IRB.start

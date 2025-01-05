@@ -53,7 +53,7 @@ class Server
         begin
           result = route.call(*args)
 
-          next if result == :pass
+          next unless result.is_a?(String)
 
           status = 200
           headers = {}
