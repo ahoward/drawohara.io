@@ -19,7 +19,7 @@ class Response < ::String
   end
 
   def ok?
-    (((status.to_i / 100) * 100) == 200)
+    status == 200
   end
 
   def inspect

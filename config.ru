@@ -2,18 +2,10 @@
   Dir.chdir(File.dirname(__FILE__))
 
   require_relative './lib/site.rb'
+  require_relative './config/site.rb'
 
 #
-  config = File.expand_path(File.join(Dir.pwd, './site.rb'))
-
-  if test(?e, config)
-    require_relative(config)
-  else
-    abort "no site in #{ config }"
-  end
-
   site = Site.default
-
 
 #
   ENV['HOST'] ||= '0.0.0.0'

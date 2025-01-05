@@ -1,0 +1,387 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    
+    <title>size matters</title>
+
+    <meta property="og:title" content="size matters"/>
+    <meta property="og:description" content="move along." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"size-matters"}">
+    <meta property="site:path_info" content=""/size-matters"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>multiplexing which images to send to which devices is a sticky problem.</p>
+
+<p>some people use device detection (user-agents) to determine who wants big<br />
+images.  sometimes media queries/screen width is used as a proxy.</p>
+
+<p>both are poor choices.</p>
+
+<p>these days one can easily desire hi-res images to be displayed using a retina<br />
+screened tablet on local wifi.  with ‘normal’ image enhancement approaches<br />
+some devices, with good connections and amazingly pixel density, will receive<br />
+low quality images.</p>
+
+<p>a tablet on a slow connection in landscape orientation might have a screen<br />
+with pushing some arbitrary (768px) threshold and be delivered massive images<br />
+designed for broadband connected desktop machines.</p>
+
+<p>compounding the problem is that device and/or screen width enhancement can<br />
+easily result in sending a small image to a device with a high density display<br />
+that causes real layout issues: a 320px image might take up the full screen on<br />
+some iphones, while on others it will either occupy 1/2 the screen or become<br />
+streched to fill all 640 and look poorly.</p>
+
+<p>what if, instead, we simply always tried to deliver the highest quality images<br />
+to all devices and provied lower quality ones if we determined that this was a<br />
+bad plan at runtime?</p>
+
+<p>the approach of jquery.bires is exactly this.</p>
+
+<p>the content intially comes down with low quality images, making page load time<br />
+as fast as possible and giving the user the full content.  after all low<br />
+quality images are loaded jquery.bires begins replacing low quality images<br />
+with hi quality ones <em>serially</em>, timing the speed of each replacement.  if any<br />
+replacement seems to be taking too long enhancement simply stops.  because<br />
+jquery.bires loades the larger images one at the time the ui remains<br />
+responsive to user clicks and interactions.</p>
+
+<p>the key here is that, with today’s high density mobile displays, it’s actually<br />
+<em>bandwith</em> and <em>not screen size</em> that should determine who gets hi quality<br />
+images.</p>
+
+<p>this approach results in the fancy tablet on local wifi getting the best<br />
+possible experience while, at the same time, keeps pages viewed on a desktop<br />
+tethered through a 3G connect from killing a data plan and loading very<br />
+slowly.</p>
+
+<p>best of all, instead of manging lists of user agents, guessing about various<br />
+breakpoints, etc - the code simply always uses the same strategy of trying<br />
+hard to make pages load fast and become as good as possible later.</p>
+
+<p>refs:</p>
+
+<ul>
+  <li>https://github.com/bjankord/Categorizr</li>
+  <li>http://www.brettjankord.com/2013/01/10/active-development-on-categorizr-has-come-to-an-end/</li>
+  <li>https://gist.github.com/paulirish/268257</li>
+  <li>https://github.com/desandro/imagesloaded</li>
+  <li>http://www.youtube.com/watch?v=Tj0lmwg27EY</li>
+  <li>http://dojo4.com</li>
+</ul>
+
+<p>note:</p>
+
+<ul>
+  <li>jquery.bires <em>depends on</em> https://github.com/desandro/imagesloaded</li>
+</ul>
+
+<p>repo:</p>
+
+<ul>
+  <li>https://github.com/ahoward/jquery.bires</li>
+</ul>
+
+<p><br /><br />
+usage:</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #116329">&lt;li&gt;</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #116329">&lt;a</span>&nbsp;<span style="color: #116329">href=</span><span style="color: #0a3069">"#!scott-jurek"</span>&nbsp;<span style="color: #116329">title=</span><span style="color: #0a3069">"Scott Jurek"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;img</span>&nbsp;<span style="color: #116329">class=</span><span style="color: #0a3069">"bires"</span>&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">data-hires=</span><span style="color: #0a3069">"assets/banner.png"</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"assets/banner.png"</span>&nbsp;<span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #116329">&lt;/a&gt;</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;
+</div><div class='code-line code-line-10'><span style="color: #116329">&lt;/li&gt;</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'><span style="color: #116329">&lt;li&gt;</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #116329">&lt;a</span>&nbsp;<span style="color: #116329">href=</span><span style="color: #0a3069">"#!robert-sinskey-vinyards"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"42"</span>&nbsp;<span style="color: #116329">title=</span><span style="color: #0a3069">"Robert Sinskey Vinyards"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;img</span>&nbsp;<span style="color: #116329">class=</span><span style="color: #0a3069">"bires"</span>&nbsp;
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">data-hires=</span><span style="color: #0a3069">"assets/banner.png"</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"assets/banner.png"</span>&nbsp;<span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #116329">&lt;/a&gt;</span>
+</div><div class='code-line code-line-20'><span style="color: #116329">&lt;/li&gt;</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>
+</div></code></div>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">download</span><span style="color: #24292f;background-color: #f6f8fa">({</span><span style="color: #0a3069">'</span><span style="color: #0a3069">selector</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">img.bires</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-7'>
+</div></code></div>
+
+<p><br /><br />
+source:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">namespace</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781">// the hi-res image downloader object</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">selector</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">img.bires</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">too_damn_slow</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">420</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug_delay</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">420</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #6e7781">// downloader class and factory method</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #953800">Function</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">download</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">slice</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">apply</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">arguments</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-23'>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">initialize</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">apply</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-25'>
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">body</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">imagesLoaded</span><span style="color: #24292f;background-color: #f6f8fa">(</span>
+</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">download</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-31'>
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">return</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-33'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-34'>
+</div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">initialize</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-37'>
+</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">slice</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">apply</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">arguments</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">options</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+</div><div class='code-line code-line-40'>
+</div><div class='code-line code-line-41'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">opts</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">selector</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">too_damn_slow</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">debug</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">debug_delay</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-42'>
+</div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0550ae">1</span>&nbsp;<span style="color: #0550ae">&amp;&amp;</span>&nbsp;<span style="color: #cf222e">typeof</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">])</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">object</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">options</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">else</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-46'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">for</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">opts</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span><span style="color: #0550ae">++</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">options</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">opts</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">i</span><span style="color: #24292f;background-color: #f6f8fa">]]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">i</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-48'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-49'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-50'>
+</div><div class='code-line code-line-51'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">map</span><span style="color: #24292f;background-color: #f6f8fa">(</span>
+</div><div class='code-line code-line-52'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">opts</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-53'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">o</span><span style="color: #24292f;background-color: #f6f8fa">){</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">o</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">options</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">o</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">o</span><span style="color: #24292f;background-color: #f6f8fa">];</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-54'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-55'>
+</div><div class='code-line code-line-56'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">imgs</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">selector</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-57'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">queue</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">map</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">imgs</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">){</span>&nbsp;<span style="color: #cf222e">return</span>&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-58'>
+</div><div class='code-line code-line-59'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">timer</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-60'>
+</div><div class='code-line code-line-61'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloading</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-62'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-63'>
+</div><div class='code-line code-line-64'>&nbsp;&nbsp;<span style="color: #6e7781">// download images serially one at the time, timing each one, bail if things start looking slow</span>
+</div><div class='code-line code-line-65'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-66'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">download</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-67'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-68'>
+</div><div class='code-line code-line-69'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">queue</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">shift</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-70'>
+</div><div class='code-line code-line-71'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">!</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-72'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloading</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-73'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">return</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-74'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">else</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-75'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">!</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloading</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-76'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">imgs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">css</span><span style="color: #24292f;background-color: #f6f8fa">({</span><span style="color: #0a3069">'</span><span style="color: #0a3069">opacity</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">0.42</span><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-77'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloading</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">true</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-78'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-79'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-80'>
+</div><div class='code-line code-line-81'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">data</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">lores</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">attr</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">src</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">));</span>
+</div><div class='code-line code-line-82'>
+</div><div class='code-line code-line-83'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">data</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">hires</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-84'>
+</div><div class='code-line code-line-85'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">start</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-86'>
+</div><div class='code-line code-line-87'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">imagesLoaded</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">success</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>&nbsp;<span style="color: #6e7781">// via: https://github.com/desandro/imagesloaded</span>
+</div><div class='code-line code-line-88'>
+</div><div class='code-line code-line-89'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">log</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">downloading: </span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">src</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-90'>
+</div><div class='code-line code-line-91'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">attr</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">src</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">src</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-92'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-93'>
+</div><div class='code-line code-line-94'>
+</div><div class='code-line code-line-95'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">success</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-96'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-97'>
+</div><div class='code-line code-line-98'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">stop</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-99'>
+</div><div class='code-line code-line-100'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">attr</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">src</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-101'>
+</div><div class='code-line code-line-102'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">log</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">downloaded: </span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">src</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-103'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">log</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">elapsed: </span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">elapsed</span><span style="color: #24292f;background-color: #f6f8fa">());</span>
+</div><div class='code-line code-line-104'>
+</div><div class='code-line code-line-105'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">css</span><span style="color: #24292f;background-color: #f6f8fa">({</span><span style="color: #0a3069">'</span><span style="color: #0a3069">opacity</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">42</span><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-106'>
+</div><div class='code-line code-line-107'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">not_too_damn_slow</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">avg</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">too_damn_slow</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-108'>
+</div><div class='code-line code-line-109'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">more_images_to_load</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">queue</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span>&nbsp;<span style="color: #0550ae">&gt;</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-110'>
+</div><div class='code-line code-line-111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">keep_downloading</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span>&nbsp;<span style="color: #0550ae">||</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">more_images_to_load</span>&nbsp;<span style="color: #0550ae">&amp;&amp;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">not_too_damn_slow</span><span style="color: #24292f;background-color: #f6f8fa">));</span>
+</div><div class='code-line code-line-112'>
+</div><div class='code-line code-line-113'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">keep_downloading</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-114'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-115'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">setTimeout</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">download</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug_delay</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-116'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">else</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-117'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">download</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-118'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-119'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-120'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-121'>
+</div><div class='code-line code-line-122'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">log</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">string</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-123'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-124'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">try</span><span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">console</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">log</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">string</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">catch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">){};</span>
+</div><div class='code-line code-line-125'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-126'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-127'>
+</div><div class='code-line code-line-128'>
+</div><div class='code-line code-line-129'>&nbsp;&nbsp;<span style="color: #6e7781">// simple interval timer class</span>
+</div><div class='code-line code-line-130'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-131'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-132'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">time</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">null</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-133'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">samples</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[];</span>
+</div><div class='code-line code-line-134'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-135'>
+</div><div class='code-line code-line-136'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">start</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-137'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">time</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">new</span>&nbsp;<span style="color: #953800">Date</span><span style="color: #24292f;background-color: #f6f8fa">()).</span><span style="color: #8250df">getTime</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-138'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-139'>
+</div><div class='code-line code-line-140'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">stop</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-141'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">now</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">new</span>&nbsp;<span style="color: #953800">Date</span><span style="color: #24292f;background-color: #f6f8fa">()).</span><span style="color: #8250df">getTime</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-142'>
+</div><div class='code-line code-line-143'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">elapsed</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">now</span>&nbsp;<span style="color: #0550ae">-</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">time</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-144'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">samples</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">push</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">elapsed</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-145'>
+</div><div class='code-line code-line-146'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">time</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">null</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-147'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-148'>
+</div><div class='code-line code-line-149'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">avg</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-150'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">total</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-151'>
+</div><div class='code-line code-line-152'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">for</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">samples</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span><span style="color: #0550ae">++</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-153'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">total</span>&nbsp;<span style="color: #0550ae">+=</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">samples</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">i</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-154'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-155'>
+</div><div class='code-line code-line-156'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">return</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">total</span>&nbsp;<span style="color: #0550ae">/</span>&nbsp;<span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">samples</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-157'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-158'>
+</div><div class='code-line code-line-159'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">timer</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">elapsed</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-160'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">return</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">samples</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #cf222e">this</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">samples</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span>&nbsp;<span style="color: #0550ae">-</span>&nbsp;<span style="color: #0550ae">1</span><span style="color: #24292f;background-color: #f6f8fa">]);</span>
+</div><div class='code-line code-line-161'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-162'>
+</div><div class='code-line code-line-163'>
+</div><div class='code-line code-line-164'>&nbsp;&nbsp;<span style="color: #6e7781">// export bires into the provided namespace</span>
+</div><div class='code-line code-line-165'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-166'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">namespace</span>&nbsp;<span style="color: #0550ae">||</span>&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #24292f;background-color: #f6f8fa">bires</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-167'>
+</div><div class='code-line code-line-168'><span style="color: #24292f;background-color: #f6f8fa">})();</span>
+</div><div class='code-line code-line-169'>
+</div></code></div>
+
+<p><br /><br />
+demo:</p>
+
+<div class="flex-video youtube">
+<iframe width="640" height="480" src="http://www.youtube.com/embed/Tj0lmwg27EY" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="#goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">narcissism<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/size-matters">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/size-matters">i-love-this<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

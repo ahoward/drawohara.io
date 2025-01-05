@@ -1,0 +1,16 @@
+![img](assets/airplane1980bq30x40in195.jpg)
+
+For the past few months, dojo4 has been working feverishly on an very cool new product for our client: [MoviMe Networks](http://www.movime.com) allowing air travelers to quickly rent and download feature films to their iPads from airport gates while waiting to board their flights.  We are excited to announce that the product has gone into live beta testing at Chicago O'Hare International Airport!  
+
+We hope you will fire up your iPad and give it a try the next time you are flying out of or through ORD.  While you are waiting for your movie to download you may like to contemplate all of disparate  components working together to facilitate your movie browsing and fast downloading.  First, a studio ingest automation system retrieves gigantic raw movie files from movie studios and re-encodes them for the perfect iPad viewing experience.  Then a centralized management system creates products in the MoviMe Store for those new movies which you can browse and purchase.  And, movie files are distributed to an in-airport Content Distribution Network (CDN) so they can be downloaded lickedy-split before you need to board your flight.  That's a lot to consider in the brief time it took to download your movie.  Perhaps you should rent another while we cover some more of the interesting technical details...
+
+Video files are large. A feature length HD version of a movie takes around 10GB. The files that people download from iTunes are in a 1-2GB range. The video files that we ended up using for MoviMe are around 1GB in size.
+
+The size of these files introduced a few interesting challenges. Most HTTP libraries are not designed to work with such large files. They do not fit in the memory of an iPad. They take a long time to move. We needed to think differently about handling such files than we normally do about images and other media. Our solution was to upload and download files in fragments. We coded the iPad player to use byte ranges when downloading the movie files, and then reassemble them into ready-to-play files. This also required us to add byte range support to our uploads controller, as well as in [Mongo gridFs driver](https://github.com/ahoward/mongoid-grid_fs), so we could retrieve file portions efficiently. We used multi-part uploads to push files from the servers, which were preparing the movies for the appropriate S3 buckets.
+
+Another advantage of dealing with file fragments was that we could parallelize both uploads and downloads to reduce the amount of time it takes to move the files around. The iPad player can download up to 4 fragments in parallel, reducing the amount of time required to download a whole file. We discovered that we could use up to 5 concurrent multipart uploads to an S3 bucket to reduce the upload time to get the media files to S3.
+
+All this so you can find and download [your favorite movie](http://www.youtube.com/watch?v=ZqtNxNRCcGg) at the airport at lightning speed and watch it on your next flight! Coming to [an airport near you](http://www.movime.com/#!airports/c13f3) soon...
+
+**this blog post by [Fred Jean](http://dojo4.com/team/fred-jean) and [Garett Shulman](http://dojo4.com/team/garett-shulman) and [Corey Kohn](http://dojo4.com/team/corey-kohn)**
+

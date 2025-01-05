@@ -10,8 +10,7 @@
 </script>
 
   <!-- deps -->
-    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
@@ -30,38 +29,57 @@
 
   <!-- meta -->
     
-    <title>nothing to see here.</title>
+    <title>@drawohara</title>
 
-    <meta property="og:title" content="nothing to see here."/>
+    <meta property="og:title" content="@drawohara"/>
     <meta property="og:description" content="move along." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-    <meta property="og:url" content="https://drawohara.io/" />
 
     <meta property="site:route" content=""/"">
-    <meta property="site:params" content="{}">
+    <meta property="site:params" content="{"ext":null}">
     <meta property="site:path_info" content=""/"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
   </head>
 
-  <body hx-boost="true">
+  <body>
     <header>
       
     </header>
 
     <main>
-      <div class='ro markdown'>
-  <p>hi 👋 –</p>
+      <div class="ro markdown">
+  <p>👋 –</p>
 
 <p>this is my website.</p>
 
-<p>you might have been expecting <a href='/more'>more</a> but this is it.</p>
+<p>you might have been expecting <a href="/home">more</a> but this is it.</p>
 
 <p>– a</p>
 
-<p>–&gt; <a href='https://song.link/s/2Cj7WzlHJw316onX21EL4Y'>🎵</a><br/>
-–&gt; <a href='https://photos.app.goo.gl/3ETUbtsDhQrzM2eL9'>📷</a><br/>
-–&gt; <a href='https://photos.app.goo.gl/dvDjSM4hcEre7YY1A'>🎥</a></p>
+<p>p.s. i am always looking for ways to delete things.  listen to music.  and pet dogs.</p>
 
-<p>i’m always looking for ways to delete things.  listen to music.  and pet dogs.</p>
+<p>p.s.s. <a href="/ai.txt"> are you a 🤖 ?</a>.</p>
 
 </div>
     </main>

@@ -90,4 +90,12 @@ class Site
       end
     end
   end
+
+  def url_for(arg, *args, **kws, &block)
+    case arg
+      when Symbol
+        route_url_for(arg, *args, **kws, &block)
+      else
+    end
+  end
 end

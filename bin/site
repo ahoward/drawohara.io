@@ -186,6 +186,7 @@ end
 BEGIN {
   Dir.chdir(File.dirname(File.dirname(__FILE__)))
 
-  require_relative '../config/site.rb'
+  require 'bundler/setup'
   require_relative '../lib/script.rb'
+  require_relative '../config/site.rb'
 }

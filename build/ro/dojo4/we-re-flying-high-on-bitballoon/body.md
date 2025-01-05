@@ -1,0 +1,14 @@
+If you've been keeping up with dojo activities lately, you've noticed [we're big fans of the static web](http://dojo4.com/blog/static-is-the-new-black) and a young static hosting company called [BitBalloon](https://www.bitballoon.com/). BitBalloon is a hosting provider similar to Amazon's S3 where you simply put content on their servers and it's served without any logic to whoever requests it, however where S3 is useful for anything at all (think uploads), BitBalloon is designed specifically for static web sites. Some of the things they do for static sites that we love:
+
+* __Atomic deploys__ Rollback? No problem, each deploy is has a hash and shows up in your admin interface, so switching between entirely different versions is easy. On S3 you have to hope you don't end up with a mixture of old and new files from different deploys.
+* __Automatic asset minification, digest, and CDN__ Before we starting using BitBalloon, we used Middleman's css and js minification and digest tools at build time. Now we don't - BitBalloon does that for us when we deploy. They even put our assets on a CDN for us and replace the links to the assets in our HTML so that our assets are served as quickly as possible.
+* __Form handling__ One thing that a simple site should be able to do without requiring an entire server side application is accept form input. We simply use the `<form>` tag and BitBalloon shows us responses to that form in the admin panel.
+* __Great support__ As I mentioned, BitBalloon is a young company and still figuring things out, but when we've run into questions, every member (including the founding members) of the BitBalloon team has been accessible, friendly, and helpful in addressing our questions.
+* __Cache headers__ BitBalloon knows what headers to send (and how to invalidate them when we re-deploy) to best take advantage of the browser's cache. One less headache for us to worry about.
+* __Speed__ Holy wow is BitBalloon fast. Check out [our site](http://dojo4.com) {oh yea, you're on it ;)}, and you can see how quickly the pages get served.
+
+We've enjoyed using their service. Here are some of the highlights from our usage so far:
+
+* [Ara](https://github.com/BitBalloon/bitballoon-ruby/commits?author=ahoward) and [I](https://github.com/BitBalloon/bitballoon-ruby/commits?author=milesmatthias) contributed to [their Ruby client](https://github.com/BitBalloon/bitballoon-ruby).
+* I open sourced [a Rakefile for uploading to BitBalloon](https://github.com/milesmatthias/bitballoon-rakefile).
+* Ara did [a podcast with the BitBalloon team](https://www.bitballoon.com/blog/2014/03/27/ara-t-howard-on-static-sites-dynamic-content-and-creativity).

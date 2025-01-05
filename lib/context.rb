@@ -32,15 +32,6 @@ class Context
     content_blocks[key.to_sym].map { |b| capture(&b) }.join
   end
 
-  def h(obj)
-    case obj
-      when String
-        ::ERB::Util.html_escape(obj)
-      else
-        ::ERB::Util.html_escape(obj.inspect)
-    end
-  end
-
   def capture(&block)
     @capture = nil
     @_erbout, _buf_was = '', @_erbout
@@ -55,5 +46,14 @@ class Context
 
   def content_blocks
     @content_blocks ||= Hash.new {|h,k| h[k] = [] }
+  end
+
+  def h(obj)
+    case obj
+      when String
+        ::ERB::Util.html_escape(obj)
+      else
+        ::ERB::Util.html_escape(obj.inspect)
+    end
   end
 end

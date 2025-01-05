@@ -1,0 +1,21 @@
+<pre>you linked against the wrong openssl lib
+
+
+you need to run something like this:
+
+(for rvm)
+
+ otool -L ~/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/x86_64-darwin11.2.0/openssl.bundle
+
+
+(for rbenv)
+
+ otool -L ~/.rbenv/versions/1.9.3-p0/lib/ruby/1.9.1/x86_64-darwin11.2.0/openssl.bundle
+
+
+if you have any references to /opt or any non-osx openssl lib (say
+from brew) you are F***** and will need to rebuild ruby.  this is the
+source of the ssh/http/and random seg faults you've been having on
+various projects.
+
+</pre>

@@ -3,8 +3,8 @@ require_relative 'eruby'
 require_relative 'html_safe'
 
 module Render
-  def render(template = nil, data: {}, binding: Kernel.binding, strip: true, context: nil, layout: nil, file: nil, string: nil, &block)
-    template = Render.template_for(template:, file:, string:)
+  def render(template = nil, data: {}, binding: Kernel.binding, context: nil, layout: nil, file: nil, string: nil, &block)
+    template = template_for(template:, file:, string:)
 
     data = Map.for(data)
 
@@ -20,30 +20,33 @@ module Render
         erb.result(ctx)
       end
 
-    string = String(result).force_encoding('utf-8')
-    string.strip! if strip
+    string = String(result).force_encoding('utf-8').strip
 
     content = string.html_safe
 
     if layout
       if layout.is_a?(Hash)
-        render(**layout){ content }
+        kws = layout.merge(data:)
+        render(**kws){ content }
       else
-        render(layout){ content }
+        template = layout
+        render(template, data:){ content }
       end
     else
       content
     end
   end
 
-  def Render.template_for(template: nil, file: nil, string: nil)
+  def template_for(template: nil, file: nil, string: nil)
     case
       when template
-        Template.new(IO.binread(template), file: template)
+        file = template
+        Template.new(IO.binread(file), file:)
       when file
-        Template.new(IO.binread(file), file: file)
+        Template.new(IO.binread(file), file:)
       when string
-        Template.new(string, file: '(string)')
+        file = "(string: #{ string[0..42] }...)"
+        Template.new(string, file:)
       else
         raise ArgumentError.new({template:, file:, string:}.inspect)
     end

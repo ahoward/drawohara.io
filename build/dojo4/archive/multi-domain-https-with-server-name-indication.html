@@ -1,0 +1,146 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    
+    <title>Multi-domain HTTPS with Server Name Indication</title>
+
+    <meta property="og:title" content="Multi-domain HTTPS with Server Name Indication"/>
+    <meta property="og:description" content="move along." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"multi-domain-https-with-server-name-indication"}">
+    <meta property="site:path_info" content=""/multi-domain-https-with-server-name-indication"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>(This this is a condensed version of <a href="http://www.stuff-things.net/2014/11/14/yes-virginia-you-can-use-sni/">Yes, Virginia, You Can Use SNI</a> which originally appeared on Spike’s <a href="http://www.stuff-things.net/">Stuff… And Things… blog</a>)</p>
+
+<p>When you connect to a web server securely using HTTPS the security is negotiated using <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a>. Two things happen, the identity of the server is verified and the connection is encrypted.</p>
+
+<p>The verification is important, it doesn’t matter if the connection is encrypted if you’ve somehow been redirect to an evildoer’s server. However, that verification can be problematic if a web server is serving more than one hostname.</p>
+
+<p>You can read the <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_handshake">gory details</a>, but the simplified version of the process is the server sends a signed <a href="http://en.wikipedia.org/wiki/Public_key_certificate">Public key certificate</a> that has to match the hostname in the URL. If a client browses to dojo4.com then the cert must be for dojo4.com, if it’s not the browser throws up a big scary warning.</p>
+
+<p>Technically, it’s possible to have multiple hostname on a certificate, in fact it’s common to have, say both “dojo4.com” and “www.dojo.com”, for completeness. However, it’s a tremendous pain in the ass to add and remove hostnames from a cert. You have to have the issuer generate a new one and revoke the old. And, if you are working with a Content Delivery Network, they are pretty unlikely to add your hostnames to their certificate.</p>
+
+<p>Originally, TLS supported on one certificate per web server (or more correctly, per IP address attached to the web server) <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Server Name Indication (SNI)</a> was added to TLS to solve this problem. At the start of the TLS negotiation, the client tells the server the name of the host it’s trying to connect to and the server can then select and send a correct certificate file. Problem solved!</p>
+
+<p>Except… Not all browsers support SNI. Everyone <em>knows</em> this, and as a result, tend to skip SNI and go straight to per site dedicated IPs or even multiple servers. This is an expensive option, especially when working with CDNs like CloudFront. When this came up for me, I decided to see what “not all browsers” really meant.</p>
+
+<p>Turns out, SNI is widely supported, with the big issues being IE8 and below and any version of IE running on Windows XP (because the underlying OS library doesn’t support SNI). There are also some old version of Android out there that lack support as well.</p>
+
+<p>So, most visitors won’t have any issues with SNI and the group that do is small enough that we can handle them as a special case.</p>
+
+<p>For those browser without SNI support the workaround is to redirect them to a certificate that will work or a snarky “upgrade your browser” page. If you google, you’ll find a bunch of solutions around building whitelists of good browsers and/or blacklists of bad ones and then using those lists in server side redirect rules. Ugly. The lists have to be maintained and depending on the server breaks caching.</p>
+
+<p>There’s a smarter way. While wading through a sea of sample Apache redirect configurations, I found it in this <a href="https://www.ebower.com/wiki/Detecting_SNI_with_Apache">post</a>. The post’s core idea can be distilled down to this, if a browser that doesn’t support SNI tries to load SNI content, it will get an error. If we test this in the background and differentiate between error and success, then we can redirect the visitor accordingly. And the simplest way to do that is to try an add a one pixel image to the page.</p>
+
+<p>In code it looks like:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #cf222e">function</span>&nbsp;<span style="color: #8250df">secure_redirect</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #0550ae">=</span><span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">createElement</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">img</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>&nbsp;<span style="color: #6e7781">// create an img element.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Set the src to an SNI URL of a one pixel image</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'</span><span style="color: #0a3069">https://www.example.org/pixel.gif</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// This executes if SNI works.</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">onload</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Redirect to the secure page.</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">href</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">https://example.org/</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// This executes if SNI doesn't work.</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">onerror</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Redirect elsewhere</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">href</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">http://example.org/snarky-old-browser-message</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Don't actually display the image</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">style</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">display</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'</span><span style="color: #0a3069">none</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// but append it to the pages so it gets loaded.</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">body</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">appendChild</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div></code></div>
+
+<p>Here I’m leveraging two HTML callbacks on the <em>img</em> tag, ‘OnLoad’ which fires when an image finishes loading, and ‘OnError’ which fires if the image can’t be loaded. If a browser doesn’t support SNI then the image will fail to load because of a certificate error, firing ‘OnError’. However, because we are adding the image to an already loaded page, it won’t raise in error in the browser.</p>
+
+<p>Now we can test for SNI and handle lack of support gracefully. Christmas is saved!</p>
+
+<p>However, what we’re really arrived at is something more clever. Notice that the code isn’t actually testing for SNI, just the ability to securely load the image. If the HTTPS URL in question doesn’t actually require SNI, there’s only one cert or the first cert matches the requested domain, it still works. The problem has been reduced to “Can this visitor’s browser display the secure site or not?” and at the end of the day, that’s all that actually care about.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="#goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">narcissism<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/multi-domain-https-with-server-name-indication">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/multi-domain-https-with-server-name-indication">i-love-this<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

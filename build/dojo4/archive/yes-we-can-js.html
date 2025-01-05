@@ -1,0 +1,123 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    
+    <title>Yes We Can(.js)</title>
+
+    <meta property="og:title" content="Yes We Can(.js)"/>
+    <meta property="og:description" content="move along." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"yes-we-can-js"}">
+    <meta property="site:path_info" content=""/yes-we-can-js"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>We’ve been utilizing <a href="http://canjs.us/">Can.js</a> lately for some mobile work on tablets. It’s a lightweight frontend JS library for building web applications and we’ve been using it in Phonegap to create native feeling interfaces. The effort to learn and apply the framework seems to have been successful so we wanted to share our experience.</p>
+
+<h2 id="pros">Pros</h2>
+
+<p>Can.js has many qualities that developers have come to know and love over the years. To list them:</p>
+
+<ul>
+  <li>Lightweight – The framework doesn’t impose at all. In fact, there seems to be very little convention expressed by the developers.</li>
+  <li>Concise – Using Can objects is a quick and clean affair and they tend to provide nice, declarative interfaces for things like event binding and routing.</li>
+  <li>Fast – Can.js touts itself as being fast. We didn’t run our own benchmarks, but haven’t noticed anything to the contrary.</li>
+  <li>Flexible – Since the framework doesn’t express or imply many conventions, code organization and usage is very much up to us, the developer.</li>
+  <li>Composable – Can comes with a handy base object called <code>Can.Construct</code> that supports things like static as well as prototype properties, constructors, and inheritance. This is useful for defining your own application or domain specific objects in a consistent manner.</li>
+</ul>
+
+<h2 id="annoyances">Annoyances</h2>
+
+<p>I was tempted to call this list a list of “cons”, but it didn’t seem appropriate as they are more so annoyances than cons.</p>
+
+<ul>
+  <li>Documentation – It seems thorough at first glance, but I found the text and examples to be not as helpful as they could be. I think an increase of the diversity of the examples would be an immediate win.</li>
+  <li>No suggested structure – This was also mentioned above as a pro. We invested a significant amount of time coming up with what seemed like boilerplate code to start a rich application. I don’t believe this belongs in the framework itself, but examples of different methodoligies could help.</li>
+  <li>Lack of higher-level abstractions – Most of the Can objects provided are fairly low-level from an application standpoint. A lot of the investment mentioned in the previous bullet point was used to create some useful base objects for different purposes to bind together Can’s in different ways. This included things like an application class to attach to <code>window</code> and represent/contain some stateful concepts. Also, we created a base object to represent page-level controllers as opposed to “widget”-level controllers.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We wholeheartedly recommend giving Can.js a try. It has a lot more going on that isn’t even covered here such as how it helps to prevent memory leaks. Feel free to email ryan@dojo4.com with any questions you have.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="#goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">narcissism<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/yes-we-can-js">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/yes-we-can-js">i-love-this<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

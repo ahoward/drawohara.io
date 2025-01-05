@@ -1,0 +1,34 @@
+---
+public_id: 3f6800ed2db98d3125e022f22d58f1c7
+format: jpg
+version: 1512591027
+resource_type: image
+type: upload
+created_at: '2017-12-06T20:10:27Z'
+bytes: 186989
+width: 400
+height: 468
+url: http://res.cloudinary.com/dojo4/image/upload/v1512591027/3f6800ed2db98d3125e022f22d58f1c7.jpg
+secure_url: https://res.cloudinary.com/dojo4/image/upload/v1512591027/3f6800ed2db98d3125e022f22d58f1c7.jpg
+next_cursor: bd4a042333e535638acb382b59c4dd90
+derived:
+- transformation: e_saturation:-100,q_75/png
+  format: png
+  bytes: 106350
+  id: f60fe8538e796402aefe727370e9d527cf51c8638aeb67579ce4fb18b88f7a0d
+  url: http://res.cloudinary.com/dojo4/image/upload/e_saturation:-100,q_75/v1512591027/3f6800ed2db98d3125e022f22d58f1c7.png
+  secure_url: https://res.cloudinary.com/dojo4/image/upload/e_saturation:-100,q_75/v1512591027/3f6800ed2db98d3125e022f22d58f1c7.png
+  extension: png
+- transformation: e_saturation:-100,q_75
+  format: jpg
+  bytes: 32751
+  id: fa0aeb9c3f445dd31ca9ca91591e3e41
+  url: http://res.cloudinary.com/dojo4/image/upload/e_saturation:-100,q_75/v1512591027/3f6800ed2db98d3125e022f22d58f1c7.jpg
+  secure_url: https://res.cloudinary.com/dojo4/image/upload/e_saturation:-100,q_75/v1512591027/3f6800ed2db98d3125e022f22d58f1c7.jpg
+- transformation: "/"
+  format: jpg
+  bytes: 186989
+  id: 1c8202f836c9701ec159660f228c2729
+  url: http://res.cloudinary.com/dojo4/image/upload/v1512591027/3f6800ed2db98d3125e022f22d58f1c7
+  secure_url: https://res.cloudinary.com/dojo4/image/upload/v1512591027/3f6800ed2db98d3125e022f22d58f1c7
+  extension: ''

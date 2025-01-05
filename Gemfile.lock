@@ -12,11 +12,6 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    ak47 (0.2.5)
-      guard (~> 0.10.0)
-      shell_tools (~> 0.1.0)
-      smart_colored
-    erubi (1.13.1)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-aarch64-linux-musl)
     ffi (1.17.0-arm-linux-gnu)
@@ -25,9 +20,6 @@ GEM
     ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
     ffi (1.17.0-x86_64-linux-musl)
-    guard (0.10.0)
-      ffi (>= 0.5.0)
-      thor (~> 0.14.6)
     image_size (3.4.0)
     kramdown (2.5.1)
       rexml (>= 3.3.9)
@@ -69,18 +61,7 @@ GEM
     rerun (0.14.0)
       listen (~> 3.0)
     rexml (3.4.0)
-    roda (3.87.0)
-      rack
     rouge (4.5.1)
-    shell_tools (0.1.2)
-    smart_colored (1.1.1)
-    thor (0.14.6)
-    thruster (0.1.9)
-    thruster (0.1.9-aarch64-linux)
-    thruster (0.1.9-arm64-darwin)
-    thruster (0.1.9-x86_64-darwin)
-    thruster (0.1.9-x86_64-linux)
-    tilt (2.5.0)
     webrick (1.9.1)
 
 PLATFORMS
@@ -95,8 +76,6 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  ak47
-  erubi
   logger
   map
   ostruct
@@ -106,9 +85,6 @@ DEPENDENCIES
   rackup
   rerun
   ro!
-  roda
-  thruster
-  tilt
   webrick (~> 1.9.1)
 
 BUNDLED WITH

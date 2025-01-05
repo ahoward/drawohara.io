@@ -1,0 +1,141 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    
+    <title>Big Boulder Rolling</title>
+
+    <meta property="og:title" content="Big Boulder Rolling"/>
+    <meta property="og:description" content="move along." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"big-boulder-rolling"}">
+    <meta property="site:path_info" content=""/big-boulder-rolling"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <figure style="float:left" class="mbl mrl"><img src='/ro/dojo4/big-boulder-rolling/assets/bigboulderconf-logo-ideas-2.png' title="Big Boulder Conf Logo Ideas 2" alt="Progression of Big Boulder's logomark" rel="450x450" width="170" height="450" />
+</figure>
+
+<div><p>Today we supported the launch of <a href="http://BigBoulderConf.com" title="http://BigBoulderConf.com">BigBoulderConf.com</a>, a site we designed and built for <a href="http://gnip.com" title="http://gnip.com">GNIP</a>'s <strong>Big Boulder Conference</strong>. We're really pleased with how the project turned out. Here are some of the details:</p>
+<h2>A logo and brand</h2>
+<p>We decided to start with a logo that turns Boulder's famous Flatirons into a single awesome peak (the "Big Boulder", if you will). Our design hero Anthony took basic shapes from the first, second, and third Flatirons and simplified them.</p>
+<p>As we worked with our excellent friends Randy and Bre at GNIP, we explored different type treatments in combination with logo. The progression is evident in the image to the left, which illustrates how the final logomark came to be.</p>
+<h2>A website for all devices</h2>
+<p>We jumped right off the Big Boulder brand into site design. This was a close collaboration between Anthony and our resident HTML samurai, Steve, because we committed at the outset to make this site <strong>highly responsive</strong>. Thanks to Steve's precision bladework, the site looks great on big screens, medium screens and little screens. And, importantly, <strong>the content tapers</strong> to only the most essential items when viewed on the small screen.</p>
+<img src='/ro/dojo4/big-boulder-rolling/assets/bigboulder-mobile.png' title="Bigboulder Mobile" alt="Bigboulder Mobile" rel="225x255" width="136" height="255" style="float:right" class="mll mbl" />
+<p>We've been using responsive grid libraries such as <a href="http://foundation.zurb.com/" title="http://foundation.zurb.com/">Foundation</a> and <a href="http://twitter.github.com/bootstrap/" title="http://twitter.github.com/bootstrap/">Bootstrap</a> in our apps for some time, so we decided to do the same with Big Boulder.</p>
+<p>See for yourself! For instance, compare how the site's header navigation looks on desktops with how it looks on your smartphone.</p>
+
+<h2>A launch</h2>
+<p>Once we had a solid static website built, we mixed in a <a href="http://middlemanapp.com/" title="http://middlemanapp.com/">Middleman</a>. If you build web sites and you've never seen Middleman, check it out. Middleman lets you<strong> templatize your static web site</strong>: Because <strong>it's totally crazy to maintain ten identical copies of a header and a footer</strong>. </p>
+<p>Middleman works with a variety of templating languages. We used ERB because we like it. That allowed us to do things like have dynamic title tags on pages, even though the HTML head is elsewhere:</p>
+
+<p>
+<code>  
+  &lt;title&gt;&lt;%= (content_for?(:title)) ? yield_content(:title) : "Big Boulder Conference" %&gt;&lt;/title&gt;
+</code>
+</p>
+
+<p>Middleman also allows us to do things like minimize CSS and JavaScript, and force browsers to load new versions of CSS and JavaScript files:</p>
+
+<p>
+<code>
+  &lt;link href=&quot;/stylesheets/style.css?1332972306&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+</code>
+</p>
+
+<p>And Middleman lets us put important or repetitive data in a YAML file, making the site far more maintainable than a traditional static site.</p>
+<div class="lightestgrayBg roundMd mll mtm">
+  <pre>  
+  registration:
+    label: Registration Opened
+    description: Register outside of the Xanadu Ballroom at the St Julien Hotel and Spa
+  </pre>
+</div>
+<p>Finally, we built an automated deploy to our staging and production environments (hosted on EC2). Build the site, rsync it to the server.</p>
+<div class="lightestgrayBg roundMd mll mtm">
+  <pre>  
+  middleman build
+  rsync -avz ./ user@server.dojo4.com:/ebs/sites/bigboulderconference2012
+  </pre>
+</div>
+<p>Now ain't that pretty?</p>
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="#goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">narcissism<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/big-boulder-rolling">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/big-boulder-rolling">i-love-this<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

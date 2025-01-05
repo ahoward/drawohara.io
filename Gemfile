@@ -2,7 +2,6 @@
 
 source "https://rubygems.org"
 
-#gem "ro", git: 'https://github.com/ahoward/ro'
 gem "webrick", "~> 1.9.1"
 gem "logger"
 gem "ro", path: '~/gh/ahoward/ro'
@@ -14,7 +13,7 @@ gem "rerun"
 gem "rack"
 gem "rackup"
 gem "puma"
-gem "thruster"
+#gem "thruster"
 
 gem "map"
 gem "parallel"

@@ -1,0 +1,9 @@
+A while back I wrote about [why phonegap sucks](http://dojo4.com/blog/why-phonegap-sucks) and how we chose to incorporate web content into our native apps. The open source code that resulted from building several native apps that included web content was the [Imbed project](https://github.com/Imbed). We released the [iOS version first](http://dojo4.com/blog/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app).
+
+The project aims to be a starting point for what we think is the best way to incorporate web content into a native app - using native code. In iOS that means writing Objective-C to use a UIWebView and in Android that means writing Java to use a WebView. Yes, this requires that you know enough about iOS/Objective-C and Android/Java to write your own native functions when you want to use device features, but that means being able to follow Apple & Google's directions exactly and not depend on a third party to support a new feature and support it without bugs of its own.
+
+Recently I've been diving deeper into Android research and have created the [Android version of Imbed](https://github.com/imbed/android). In addition to providing a nice starting point for including web content, the example html code demonstrates some javascript limitations in the webview and provides built-in support for the all-important back button on Android phones when you click a link that needs opening in Chrome vs in the web content within your app.
+
+Check out the [Android version](https://github.com/imbed/android) and let me know your thoughts on twitter!
+
+As always, pull requests welcome :)

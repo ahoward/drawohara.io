@@ -1,0 +1,378 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    
+    <title>&quot;The Shadow World of CSS Tables&quot;</title>
+
+    <meta property="og:title" content="&quot;The Shadow World of CSS Tables&quot;"/>
+    <meta property="og:description" content="move along." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-shadow-world-of-css-tables"}">
+    <meta property="site:path_info" content=""/the-shadow-world-of-css-tables"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>
+  The future of web layouts is <a href="http://dev.w3.org/csswg/css-flexbox/" target="_blank">promising</a>, especially for the wizened web dev whose deeply nested tables still <a href="http://www.isse.ucar.edu/water_climate/index.html" target="_blank">haunt the internet</a>. But, until flexbox is ready for prime time, CSS floats&mdash;the core layout mechanism for CSS frameworks like Twitter Bootstrap and Zurb Foundation&mdash;will have to suffice.
+</p>
+
+<p>
+  Or will they?
+</p>
+
+<img src='/ro/dojo4/the-shadow-world-of-css-tables/assets/display-table.gif' />
+
+<p>
+  Some of today's brilliant young web cats might not be aware that there was a vacuum created when TABLE-based layouts were dethroned. <a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a>, which showcased the promise of CSS layouts and put a dagger in the heart of TABLE-based ones, didn't necessarily coronate a successor.
+</p>
+
+<p>
+  There was the Holy Grail technique, Faux Absolute Positioning, and many other slices of <a href="http://www.positioniseverything.net/" target="_blank">PIE</a>. It was a time of experimentation, the spirit of which has dimmed a bit in light of all the lovely frameworks out there (though some folks still <a href="https://github.com/necolas/suit-grid-layouts" target="_blank">experiment</a> from time to time).
+</p>
+
+<p>
+  One technique that failed to gain traction was CSS table layouts. A number of things conspired against it:
+</p>
+
+<ol>
+  <li>
+    the title of the book advocating for it, <a href="http://www.amazon.co.uk/dp/0980455227" target="_blank">Everything you know about CSS is wrong</a>, was, let's face it, a little alienating
+  </li>
+  <li>
+    the technique's very name conjured up demons of times past (TABLE layouts!)
+  </li>
+  <li>
+    it was ahead of its time&mdash;before two important browsers of the epoch supported it (IE6/IE7)
+  </li>
+</ol>
+
+<p>
+  But recently, a number of folks have revisited the technique because, in a line or two of code, it enables positioning that other techniques cannot without hacks or JS. Moreover, it offers source-ordering sleights of hand that come in handy in responsive contexts.
+</p>
+
+<h2 id="vertical-centering">
+  Vertical centering
+</h2>
+
+<p>
+  Frontend devs are familiar with the challenge of aligning elements vertically in a row when heights are unknown. Indeed, it's usually the first problem one has to solve in any site's <code>HEADER</code> (logo and navigation).
+</p>
+
+<p>
+  <code>TABLE</code>s made vertical centering easy with the <code>VALIGN</code> attribute. In float-based layouts, things are <a href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/" target="_blank">much murkier</a>, requiring lots of trickery (positioning, padding, or line-heights usually).
+</p>
+
+<p>
+  Enter CSS tables, which make vertical centering trivial with the <code>vertical-align: middle</code> property. To illustrate, take the following markup:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-table"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        foo
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        bar
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        baz
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        foo<span class="nt">&lt;br&gt;</span>bar<span class="nt">&lt;br&gt;</span>baz<span class="nt">&lt;br&gt;</span>qux
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  </pre>
+</div>
+
+<p>
+  Combine it with the following CSS:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nc">.row-table</span> {
+      <span class="nl">display</span>: <span class="m">table</span>;
+      <span class="nl">table-layout</span>: <span class="m">fixed</span>;
+      <span class="nl">width</span>: <span class="m">100%</span>;
+    }
+
+    <span class="nc">.cell</span> {
+      <span class="nl">display</span>: <span class="m">table-cell</span>;
+      <span class="nl">width</span>: <span class="m">25%</span>;
+      <span class="nl">vertical-align</span>: <span class="m">middle</span>;
+    }
+  </pre>
+</div>
+
+<p>
+  And you get the following vertically centered layout, despite the last column's taller content:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+  
+  
+    <div class="cell">
+      foo
+    </div>
+  
+  
+    <div class="cell">
+      bar
+    </div>
+  
+  
+    <div class="cell">
+      baz
+    </div>
+  
+  
+    <div class="cell">
+      foo<br>bar<br>baz<br>qux
+    </div>
+  
+</div>
+
+<p>
+  An added advantage of this method is that most backend devs <em>just get</em> <code>TABLE</code>s (I'm looking at you, <a href="/team/ara-t-howard" target="_blank">Ara</a>). So, if you write styles for other people to use, you can create an OOCSS grid system with intuitive classes and sub-classes (".col", ".col-valign-middle", ".col-valign-top", etc) to make their lives easier.
+</p>
+
+<h2 id="equal-height-columns">
+  Equal height columns
+</h2>
+
+<p>
+  With the same markup as above, it's quite easy to create equal height columns; we'll just add some background colors to demonstrate:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B">
+      foo
+    </div>
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7">
+      bar
+    </div>
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#777777">
+      baz
+    </div>
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA">
+      foo<br>bar<br>baz<br>qux
+    </div>
+  
+</div>
+
+<p>
+  Sure, there are JS libraries that make floated columns do this, but there's all kinds of window-resizing funny business one has to do in a responsive context to prevent the columns' (JS-calculated) heights from trickling down to smaller viewports.
+</p>
+
+<p>
+  Instead, with a simple media query, I can make CSS tables transform into blocks (<code>display: block</code>) or table groups (<code>display: table-header-group</code>) depending on what's appropriate for the given context.
+</p>
+
+<h2 id="source-ordering-tricks">
+  Source ordering tricks
+</h2>
+
+<p>
+  CSS table properties can come in handy when you want to re-shuffle the hand you were dealt by the HTML source order. In float-based layouts, you can push and pull elements in larger viewports, but things will stack up the same as the HTML source order on smaller ones.
+</p>
+
+<p>
+  CSS tables allow you to significantly reorder things, particularly on smaller viewports. Take our previous example, for instance:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B;">
+      0
+    </div>
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7;">
+      1
+    </div>
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#777777;">
+      2
+    </div>
+  
+  
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA;">
+      3
+    </div>
+  
+</div>
+
+<p>
+  By changing the display setting to one of the table group properties (<code>display: table-caption</code>, <code>display: table-header-group</code>, <code>display: table-row-group</code>, or <code>display: table-footer-group</code>), we can stack elements quite differently than they appear in the row layout on larger viewports (than the source order).
+</p>
+
+<p>
+  For instance, if we wanted the columns above to stack in the following order (2,3,1,0), we'd apply the following display properties to the cells (from left to right): <code>display: table-footer-group</code> (0), <code>display: table-row-group</code> (1), <code>display: table-caption</code> (2), <code>display: table-header-group</code> (3). And the cells would then stack like so:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+  
+  
+    <div class="cell" style="width:100%;display:table-footer-group;color:rgba(0,0,0, 0.6);background-color:#F05F3B;">
+      0
+    </div>
+  
+  
+    <div class="cell" style="width:100%;display:table-row-group;color:rgba(0,0,0, 0.6);background-color:#E7E5D7;">
+      1
+    </div>
+  
+  
+    <div class="cell" style="width:100%;display:table-caption;color:rgba(0,0,0, 0.6);background-color:#777777;">
+      2
+    </div>
+  
+  
+    <div class="cell" style="width:100%;display:table-header-group;color:rgba(0,0,0, 0.6);background-color:#55ACAA;">
+      3
+    </div>
+  
+</div>
+
+<p>
+  Note: I had to add a <code>width: 100%</code> rule to the <code>display: table-caption</code> element because otherwise it would not fill up the available space.
+</p>
+
+<p>
+  Why the heck would you want to do that?! Well, you might be doing one of those clever <a href="http://bradfrostweb.com/blog/web/responsive-nav-patterns/#footer-anchor" target="_blank">footer navigation tricks</a> for small viewports and want all the nav that's in your <code>HEADER</code> to snap down to the bottom of the page.
+</p>
+
+<p>
+  Or maybe you just have some column in a row that should be viewed first on small viewports but is displayed in the middle of a row on larger viewports.
+</p>
+
+<p>
+  The possibilities are <strong>NOT</strong> endless or nearly as robust as flexbox's will be, but it's something to tuck away in the back of your toolbox.
+</p>
+
+<h2 id="notes">
+  Notes
+</h2>
+
+<p>
+  CSS tables were supported in Internet Explorer starting with IE8. Otherwise, support is <a href="http://caniuse.com/css-table" target="_blank">quite robust</a>.
+</p>
+
+<p>
+  Although <a href="http://www.amazon.co.uk/dp/0980455227" target="_blank">Everything You Know about CSS Is Wrong</a> might sound like a daunting book title, it's actually a good read&mdash;and some of the comments on Amazon are amusing.
+</p>
+
+<p>
+  If you're entertaining the idea of putting something like a scrollable carousel inside a CSS table cell, study up on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout" target="_blank">table-layout</a> property, in particular the "fixed" value. This prevents the cell from growing to contain its contents and incidentally can decrease rendering times because browsers don't have to calculate all the various widths of all the various contents of your cells.
+</p>
+
+<p>
+  I've run across a peculiar bug in Firefox concerning positioning elements within HTML and CSS table cells. The "path of least markup" solution, discovered by a current Mozilla employee, is to give both the table row and cell <a href="http://davidwalsh.name/table-cell-position-absolute" target="_blank">a height of 100%</a>. Another well-documented workaround is to use an element inside the cell to establish a positioning context.
+</p>
+
+<p>
+  Ian Yates wrote an excellent <a href="http://webdesign.tutsplus.com/tutorials/the-role-of-table-layouts-in-responsive-web-design--webdesign-10294" target="_blank">Tuts+ article</a> about using CSS tables for ad blocks, which tend to represent fixed components in a liquid layout.
+</p>
+
+
+<p>
+  Ben Frain has done some really interesting <a href="http://benfrain.com/css-performance-test-flexbox-v-css-table-fight/" target="_blank">performance tests</a> comparing flexbox to CSS tables. His caveats about sample size and lack of true specs for flexbox should be noted.
+</p>
+
+<p>
+  Roger Johansson <a href="http://www.456bereastreet.com/archive/201110/using_displaytable_has_semantic_effects_in_some_screen_readers/" target="_blank">noted in October, 2011</a> that some screen-readers treat CSS tables as HTML tables, which is a drag. Maybe that's changed in the past two and a half years?
+</p>
+
+<p>
+  Like anyone working on the internet, I make lots of mistakes. Please shout via Twitter if I've made any here or if you have interesting insights or if you have free beer.
+</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="#goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">narcissism<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/the-shadow-world-of-css-tables">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/the-shadow-world-of-css-tables">i-love-this<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

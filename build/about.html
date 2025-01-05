@@ -10,8 +10,7 @@
 </script>
 
   <!-- deps -->
-    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
@@ -35,44 +34,78 @@
     <meta property="og:title" content="nothing to see here."/>
     <meta property="og:description" content="move along." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-    <meta property="og:url" content="https://drawohara.io/" />
 
     <meta property="site:route" content=""/:id"">
-    <meta property="site:params" content="{"id":"about","ext":null}">
+    <meta property="site:params" content="{"ext":null,"id":"about"}">
     <meta property="site:path_info" content=""/about"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
   </head>
 
-  <body hx-boost="true">
+  <body>
     <header>
-      <a href="/">@drawohara</a>
+      <a href="/home">@drawohara</a>
+<hr>
     </header>
 
     <main>
-      <div class='ro markdown'>
-  <p>about it all…</p>
+      <div class="ro markdown">
+  <p>this is the part i hate.  writing about myself.</p>
+
+<p>i’ll start at the beginning:</p>
+
+<ul>
+  <li>grew up in alaska</li>
+  <li>roamed the planet racing bikes and skis</li>
+  <li>started a family in boulder</li>
+  <li>ran <a href="dojo4">/dojo4</a></li>
+  <li>COVID</li>
+  <li>a ton of <a href="mountains">https://photos.app.goo.gl/FwwxEygH55JnQR8n8</a></li>
+  <li>LA</li>
+</ul>
+
+<p>reminder: <em>this is a work in progress…</em></p>
 
 </div>
     </main>
 
     <footer>
       <hr>
+<a href="#goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
-    <a href="/music">music<a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/about">i-hate-this<a>
   </li>
   <li>
-    <a href="/projects">projects<a>
-  </li>
-  <li>
-    <a href="/i-hate-this">i-hate-this<a>
-  </li>
-  <li>
-    <a href="/i-love-this">i-love-this<a>
+    <a href="mailto:i-love-this@drawohara.io?subject=/about">i-love-this<a>
   </li>
 </ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>

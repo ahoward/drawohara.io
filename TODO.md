@@ -1,55 +1,59 @@
-now
----
+todo
+----
 
-- write!
+
 - /about
-- /contact
-
-- short-codes ala hugo
-
-- feedback
-  - if pending
-    - tell me why i shoudln't write this
-  - else
-    - tell me why you hate this
-
-- nuke thrust?
 
 
-- re-org + model layer // pages
+
+
+
+next
+----
+
+- ontology
+
+  /home
+  /more
+  /nerd
+  /dojo4
+  /projects
+  /drivel
+  /essays
+  /now
+  /music
+
+  /pbr
+    ... indexes slowly
+
+  /io/1
+    - short-codes ala hugo
+
+- paginattion?  na
+
+  /drivel/
+  /drivel/:id
+
 
 - bin/dev
   - raw tmux from mtf
+  - server
+  - tunnel
+  - editor
 
-
-- start gem 'fabula'
-- insta page
+- extra gem 'fabula'
 
 - named routes...
   - site.url_for(:page, id: '/about')
 
 - cleaner cmd structure
+  - consolidate script/cmd pattern
 
-- fix ruby install / ssl / thrust
+- silly stupid reloading in dev
+  - support for APP_ENV, etc.
+  - support env + senv
 
-
-
-- consolidate script/cmd pattern
-- analytics
-- silly reloading in dev
-- support for APP_ENV, etc.
-- support env + senv
-
-- site has domain, not name
-- page globs
-- pages can be nested.... page.page
-- model
-
-- ./site/views
-- ./site/models
-- support for adding
-
-- content
+- photos / galleries
   - basic pages
     - index
     - now
@@ -70,8 +74,6 @@ now
     - add to list?
     - migrate lazily into site
 
-next
-----
 - htmx stuff
 - alpinejs
 - import content from gh-issues
@@ -102,7 +104,17 @@ next
 
 done
 ----
+- a model layer
+  - Page.home
+  - Page.toplevel
+  - Page.other
 - robots.txt
 - humans.txt
 - ai.txt
 - google analytics
+- ssl-proxy w/caddy
+- feedback
+  - if pending
+    - tell me why i shoudln't write this
+  - else
+    - tell me why you hate this

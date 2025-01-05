@@ -1,0 +1,10 @@
+<p>Today I'm cross-browser testing a new site prior to launching it. As usual, this involves some styling gymnastics in order to make the site look better-than-terrible in Internet Explorer. But today, I came across an issue in Firefox that I couldn't explain.</p>
+<p>The site I'm building advertises a cycling event. It has a few blocks like this:</p>
+
+<p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>
+
+<p>They contain information about the sponsors of the event. Remarkably, even though these blocks show up in <a href="http://en.wikipedia.org/wiki/Internet_Explorer_6" title="http://en.wikipedia.org/wiki/Internet_Explorer_6">everyone's favorite ten-year-old browser</a>, they don't appear in any version of Firefox on my drive.</p>
+<p>Seriously? Yes.</p>
+<p>These blocks are <em>invisible</em> in Firefox. The browser modifies them to give them a <code>display:none;</code> attribute.</p>
+<p>But the best part is, if I change the section's class to anything other than "sponsor", the blocks show up just fine. In fact, once you know the cause, that's the only solution: Don't give items on your page a CSS class of "sponsor".</p>
+<p>Think you know what caused it? <a href="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845" title="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845">Check it out</a>.</p>

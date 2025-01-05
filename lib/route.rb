@@ -39,21 +39,9 @@ class Route
     if block
       @block = block
     else
-      params = named_params_for(*args)
+      params = @pattern.params_for(*args)
       Request.new(route: self, params:, &@block).call
     end
-  end
-
-  def named_params_for(*values)
-    keys = @pattern.keys
-    values = values.flatten
-
-    if values.size != keys.size
-      raise Error.new("arity mismatch: path=#{ @path.inspect }, values=#{ values.inspect }, keys=#{ keys.inspect }")
-    end
-
-    hash = Hash[keys.zip(values)]
-    params = Map.for(hash)
   end
 
   class Request

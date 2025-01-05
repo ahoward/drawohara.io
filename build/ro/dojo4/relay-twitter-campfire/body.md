@@ -1,0 +1,1 @@
+<script src="https://gist.github.com/2126871.js?file=twitter2campfire.rb"></script>

@@ -1,0 +1,13 @@
+If you've been following along with any of the [recent news](http://dojo4.com/blog/what-s-up-with-moshi-moshi-co) around our forays into product, you may have noticed a certain logo on our page for [Moshi Moshi Co](http://gomoshimoshi.com/). Over on the right, there under the "Experiments" banner, lies your newest email technology friend named [Emailadore](http://emailadore.com/).
+
+[![Emailadore Logo](http://emailadore.com/images/ea-logo.png)](http://emailadore.com/)
+
+This idea was a part of our normal venture selection process that we used to select [Wallspace Finder](http://wallspacefinder.com/) and received some serious consideration, but we felt that it could use a different approach. During a weekend in February, [Ara](http://dojo4.com/team/ara-t-howard) hunkered down and accelerated the process from 0 to launch. When we arrived on that Monday, we had a functional Emailadore in our laps to try out.
+
+To get started with (read: sign up) for Emailadore, simply send/forward any email to [email@emailadore.com](mailto:email@emailadore.com). Immediately, you will be returned a link to a spartan webpage we've created with your email content & attachments as well as a separate email to activate your account. At this time, logging into the website with your account simply affords you a list of all the emails you've sent us. Anytime you send us something we'll respond with a new link to a webpage that is instantly shareable, private with a non-guessable URL, and not indexable by search engines.
+
+So, what were we thinking? Well, as an agency, part of our core responsibility is multitasking. We're in email all day, have multiple project management systems open, are active on chat and IM, and occasionally touch CRM and customer support systems. We don't message or communicate effectively in those systems though. The experience is too stuttered and segmented. Instead, we use [Emailadore](http://emailadore.com/) to communicate where it feels natural and then easily save a record of it when we're ready.
+
+For now, it's free to use and we're putting some miles on it. Go ahead and [send it something](mailto:email@emailadore.com) and let us know what you think about the result. You can contact me at [ryan@dojo4.com](mailto:ryan@dojo4.com) or get at all of us on Twitter [@dojo4](https://twitter.com/dojo4).
+
+<iframe width="640" height="360" src="//www.youtube-nocookie.com/embed/W1tzURKYFNs" frameborder="0" allowfullscreen></iframe>

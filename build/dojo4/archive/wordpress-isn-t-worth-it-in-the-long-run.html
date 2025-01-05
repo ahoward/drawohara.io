@@ -1,0 +1,111 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    
+    <title>WordPress Isn&#39;t Worth It in the Long Run</title>
+
+    <meta property="og:title" content="WordPress Isn&#39;t Worth It in the Long Run"/>
+    <meta property="og:description" content="move along." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"wordpress-isn-t-worth-it-in-the-long-run"}">
+    <meta property="site:path_info" content=""/wordpress-isn-t-worth-it-in-the-long-run"">
+
+    <style>
+      html { transition: none !important; }
+      a {text-decoration: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html {
+        margin: 1em;
+      }
+      img {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>One of our favorite clients, <a href="http://gnip.com">Gnip</a> (recently <a href="https://blog.gnip.com/gnip-twitter-join-forces/">acquired by Twitter</a>), leans on us for all of their marketing design and websites, including <a href="http://gnip.com">gnip.com</a>, <a href="https://blog.gnip.com">blog.gnip.com</a>, and <a href="https://engineering.gnip.com">engineering.gnip.com</a>.</p>
+
+<p>Their two blogs are WordPress instances (remnants of a pre-dojo4 legacy) that never seemed to be worth the effort to migrate out of WordPress at the time.</p>
+
+<p><a href="http://gnip.com">Gnip.com</a> however is a fully static website built with Middleman and hosted on S3 and CloudFront. We made this recommendation after building and hosting a full-fledged Rails application for their site and noticing that their site would be a perfect candidate for a simple static site. The factors that tipped us off to this are the same for any other static site: no user accounts, speed and uptime are the highest priority, and so few updates that an admin interface is overkill (although with our static site, dojo4.com, we built <a href="http://dojo4.com/blog/static-is-the-new-black">a webhook to listen for blog post publishes</a>).</p>
+
+<p>We had one interesting question though - since we’re training the marketing team how to use this website, not developers, what kind of reactions would they have in experiencing both the admin-heavy side of WordPress (for their blogs) versus updating code in the middleman site (for gnip.com) and deploying via the command line?</p>
+
+<p>Turns out they love the middleman setup and wish we would have switched their blogs over to middleman instead of WordPress years ago.</p>
+
+<p>WordPress has one feature - an interface to draft and publish content that people are familiar with. Ignoring the <a href="http://dojo4.com/blog/irish-dance-and-wordpress-the-soul-destroyer">emotional turmoil</a> of WordPress for a second, the maintenance cost and effort for a WordPress site are astounding for a medium to large company.</p>
+
+<p>Plugins seem like a good shortcut to add functionality to your site until you have to modify or update one because it hasn’t been updated in 2 years. When Gnip was acquired by Twitter, the security team at Twitter wanted the blogs to ensure all content was over HTTPS. It’s a simple request, but when you have 25 WordPress plugins that are including their own resources, many of which don’t even support HTTPS, it’s a monster headache. Whereas with our static, Middleman approach, we do a quick search and replace in the code (and from the beginning, only using local resources or ones from reputable sources that do support HTTPS, like Google), deploy, and we’re done.</p>
+
+<p>When you take the time to help people learn simple skills like HTML, CSS, and Javascript (which are nearly required skills to learn if you’re involved in tech at all - regardless of your job title), the drawbacks of WordPress become way more than is acceptable when there’s such a simple and powerful option in static web content and hosting.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="#goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">narcissism<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/wordpress-isn-t-worth-it-in-the-long-run">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/wordpress-isn-t-worth-it-in-the-long-run">i-love-this<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
