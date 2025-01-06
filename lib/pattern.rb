@@ -120,7 +120,7 @@ class Pattern < ::Array
   end
 
   def literal?
-    @keys.empty?
+    (@keys - [:ext]).empty?
   end
 
   def expand(hash = {})
