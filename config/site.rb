@@ -64,9 +64,15 @@ Site.for 'drawohara.io' do |site|
       data = {ara:, dojo4:}
       request.render 'views/dojo4.erb', layout:, data:
     end
+  end
 
-    route.urls do
-      '/dojo4'
+# big fat list of everything
+#
+  site.route '/goto' do |route|
+    route.call do |request|
+      urls = site.urls.sort_by{|url| Path.for(url).parts}
+      data = {urls:}
+      request.render 'views/goto.erb', layout:, data:
     end
   end
 
@@ -83,5 +89,4 @@ Site.for 'drawohara.io' do |site|
       end
     end
   end
-
 end

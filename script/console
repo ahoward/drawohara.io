@@ -13,8 +13,8 @@ Kernel.module_eval do
     Site.only
   end
 
-  def ro
-    site.ro
+  def ro(...)
+    site.ro(...)
   end
 end
 
