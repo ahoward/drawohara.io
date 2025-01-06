@@ -1,6 +1,5 @@
 this is the part i hate.  writing about myself.
 
-
 i'll start at the beginning:
 
 * grew up in alaska, 4th generational irish people
@@ -18,11 +17,11 @@ i'll start at the beginning:
 * [almost died in an ice cave](https://photos.app.goo.gl/F2Tsji1aHHzKRnVF8)
 * been cranking on a [new company](https://syntheticecho.com) and [riding * bikes with a broken leg](https://photos.app.goo.gl/ikwjrYWBXEvFbwbx7) ever since
 
-reminder: _this is a work in progress..._, so check back soon or just <a href="contact">contact</a> me if you are a-wondering _wtf_ is up?
+_this is absolutely a work in progress..._, so check back soon or just <a href="contact">contact</a> me if you are a-wondering _wtf_ is up?
 
 > bored: 🐼 ?
 
-iff you are so inclined (hi to my journalist/write friends that is NOT a typo so [look it up](https://letmegooglethat.com/?q=what+does+%27iff%27+%3F)) follow along here -> <a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward/drawohara.io</a>
+iff you are so inclined (hi to my journalist/write friends that is NOT a typo so [look it up](https://letmegooglethat.com/?q=what+does+iff+mean)) follow along here -> <a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward/drawohara.io</a>
 
 or here -> <a href="https://www.instagram.com/drawohara">https://www.instagram.com/drawohara</a>
 
@@ -35,13 +34,21 @@ well, i get that question often from mean people that can't spell (this from me,
 > E.M.F.D.Y.S.I !?!?!
 ![english mother fucker do you speak it!?](./assets/speak-english-pulp-fiction.gif)
 
-here's an example.  more soon.
+here's a teeny example of what we're doing.  more soon!
 
-<a href="https://gist.github.com/ahoward/41b06d15d7afeed9fd82726057ad2646">https://gist.github.com/ahoward/41b06d15d7afeed9fd82726057ad2646</a>
+<a href="https://gist.github.com/ahoward/41b06d15d7afeed9fd82726057ad2646">an ai analysis of public sentiment towards the fortune 500 in america</a>
 
-> i am still dumb, and in imminent danger of giving democracy away on facebook, along with my entire existance and that of the human race...,what _is_ that?
+> i still dont' get it, and seem to be in imminent danger of giving democracy
+> away on facebook, along with my entire existance and that of the human race.
+> please explain.
 
-it is a threat index, informed by over a million social media converstaions, regarding the fortune 500 in america, built by contextualizing those voices in a custom llm (that's ai speak for 'better than openai because it utilizes people's real voices instead of models trained on piles of seo ladden advertisements designed to make you a 🐑)
+^that result, was informed by an analysis of over *one million* relevant and highly regraded social media converstaions.  those conversations were analyzed for thematic trends around feelings towards the fortune 500, in general.  you will note that, unlike openai, google's gemini, anthropic, or *ai flavour of the day*, these results are informed by _real_ conversations and, those conversations are included as citations.
+
+at present, i am working to develop and individual threat index for each individual company, also informed by millions of relevant and specific conversations.  reach out iff this is intriguing.
+
+a side note to consider and understand, and i will be writing much, much more about this in the coming weeks, but this analysis is _not_ informed by big tech, seo ladden websites that provide the fodder that foundational models plan to use in order to turn you, my dear reader, into a 🐑, that does not know reality from double-speak, leading you to the 🐺's.  the goal of this work is to bring _what people think_, vs. _what seo experts publish_ , to bear on the questions we ask these fancy new robots.
+
+in the coming week i'll have a public demo and api available (developers, please reach out).
 
 > what is wrong with you!?
 
