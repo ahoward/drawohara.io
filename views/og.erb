@@ -12,16 +12,39 @@
 
   absolutify = proc{|url| url.index('://') ? url : "#{ site }#{ ('/' + url).squeeze('/') }"}
 
-  image = absolutify[image]
+  img = absolutify[image]
 
   width = data.get(:og, :image, :width) rescue nil
+  type = data.get(:og, :image, :type) rescue nil
+
+  unless type
+    ext = img.split('.', 2).last
+
+    case ext
+      when /jpg|jpeg/
+        type = 'image/jpeg'
+      when /png/
+        type = 'image/png'
+      when /gif/
+        type = 'image/gif'
+    end
+  end
+
+  image =
+    Map.new(
+      url: img,
+      width: width,
+      type: type
+    )
 %>
 <title><%= title %></title>
 
 <meta property="og:title" content="<%= title %>"/>
 <meta property="og:description" content="<%= description %>" />
-<meta property="og:image" content="<%= image %>" />
-
-<% if width %>
-  <meta property="og:image:width" content="<%= width %>" />
+<meta property="og:image" content="<%= image.url %>" />
+<% if image.width %>
+  <meta property="og:image:width" content="<%= image.width %>" />
+<% end %>
+<% if image.type %>
+  <meta property="og:image:type" content="<%= image.type %>" />
 <% end %>
