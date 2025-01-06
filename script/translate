@@ -1,0 +1,175 @@
+#! /usr/bin/env ruby
+
+script do
+  tldr <<~____
+
+    ./script/build
+
+  ____
+
+  run do
+    setup!
+
+    build!
+  end
+
+  def setup!
+    @site = Site.default
+  end
+
+  def site
+    @site
+  end
+
+  def ro
+    site.ro
+  end
+
+  def build!
+  #
+    dir = './build'
+    tmp = tmpdir!
+
+  #
+    puts "=" * 42
+    puts "BUILD #{ tmp }"
+    puts "-" * 42
+
+    stats =
+      site_build!(dir: tmp) do |url:, file:|
+        puts("#{ url } -> #{ file }")
+      end
+
+    puts '---'
+    p(stats:)
+    puts
+
+  #
+    puts "=" * 42
+    puts "TRANSLATE #{ tmp }"
+    puts "-" * 42
+
+    site_translate!(dir: tmp) do |src:, dst:|
+      puts("#{ src } -> #{ dst }")
+    end
+
+    puts '---'
+    puts
+
+  #
+    puts "=" * 42
+    puts "RSYNC ./public/ -> #{ tmp }"
+    puts "-" * 42
+    system "rsync --archive --ignore-existing ./public/ #{ tmp }"
+    puts
+
+  #
+    puts "=" * 42
+    puts "MV .#{ tmp } -> #{ dir }"
+    puts "-" * 42
+    mv!(tmp, dir)
+    puts
+  end
+
+#
+  def site_build!(dir:, parallel: 8, &block)
+    err = proc do |details|
+      $stderr.puts(JSON.pretty_generate(details))
+      exit(1)
+    end
+
+    build_url = proc do |url|
+      resp = @site.get(url)
+
+      unless resp.ok?
+        details = {url:, status: resp.status, headers: resp.headers, body: JSON.parse(resp.body.join)}
+        err[details]
+      end
+
+      file = "#{ url == '/' ? '/index' : url }"
+      ext = file[%r`\..*$`]
+      file += '.html' unless ext
+
+      path = File.join(dir, file)
+
+      if test(?e, path)
+        details = {url:, file:, path:, exists: true}
+        err[details]
+      end
+
+      binwrite!(path, resp)
+
+      block.call(url:, file:) if block
+    end
+
+    a = Time.now.to_f
+    urls = @site.urls.uniq
+    n = urls.size
+
+    if parallel
+      begin
+        Parallel.each(urls, in_processes: parallel) do |url|
+          build_url[url]
+        end
+      rescue Parallel::DeadWorker
+        exit(1)
+      end
+    else
+      urls.each do |url|
+        build[url]
+      end
+    end
+
+    b = Time.now.to_f
+    e = (b - a).round(2)
+
+    stats = {n:, e:}
+  end
+
+  def clean!(dir)
+    if test(?d, dir)
+      trash = tmpdir!
+      FileUtils.mv(dir, trash)
+
+      fork do
+        FileUtils.rm_rf(trash)
+        `rm -rf #{ trash }`
+        exit!
+      end
+    end
+  end
+
+  def mkdir!(dir)
+    FileUtils.mkdir_p(dir)
+  end
+
+  def mv!(src, dst)
+    clean!(dst)
+    File.rename(src, dst)
+  end
+
+  def tmpdir!(&block)
+    uuid = SecureRandom.uuid_v7
+    dir = File.join('./tmp', uuid)
+    FileUtils.mkdir_p(dir)
+    dir
+  end
+
+  def binwrite!(path, data)
+    dirname = File.dirname(path)
+    FileUtils.mkdir_p(dirname) unless test(?e, dirname)
+    IO.binwrite(path, data)
+  end
+
+#
+  def site_translate!
+  end
+end
+
+
+BEGIN {
+  Dir.chdir(File.dirname(File.dirname(__FILE__)))
+
+  require './lib/script.rb'
+  require './lib/boot.rb'
+}

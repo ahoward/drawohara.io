@@ -20,6 +20,8 @@ i'll start at the beginning:
 
 this site is _absolutely_ a work in progress..., so check back soon or just <a href="contact">contact</a> me if you are a-wondering _wtf_ is up?
 
+the latest tidbit i have been making additions to, is the _[nerd blog!](/nerd)_
+
 > bored: 🐼 ?
 
 [iff](https://letmegooglethat.com/?q=what+does+iff+mean) you are so inclined, you can follow along here ->
@@ -38,7 +40,7 @@ well, i get that question often from mean people spell better than i can (dislex
 
 here's a teeny example of what we're doing.  more soon!
 
-<a href="https://gist.github.com/ahoward/41b06d15d7afeed9fd82726057ad2646">an ai analysis of public sentiment towards the fortune 500 in america</a>
+<a href="/purl/public-sentiment-towards-the-fortune-500-in-america">/purl/public-sentiment-towards-the-fortune-500-in-america</a>
 
 > i still dont' get it, and seem to be in imminent danger of giving democracy
 > away on facebook, along with my entire existance and that of the human race.

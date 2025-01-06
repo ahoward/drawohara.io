@@ -76,6 +76,23 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
+# purls
+#
+  site.route '/purl/:id' do |route|
+    route.call do |request|
+      id = request.params.fetch(:id)
+      purl = site.ro.get("purl/#{ id }")
+
+      if purl
+        request.render 'views/purl.erb', data: purl
+      end
+    end
+
+    route.urls do
+      site.ro.purl.map{|purl| "/purl/#{ purl.id }"}
+    end
+  end
+
 # random deeply nested pages...
 #
   site.route '**/**' do |route|
