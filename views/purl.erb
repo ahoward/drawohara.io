@@ -8,7 +8,9 @@
     <meta name="robots" content="noindex">
 
     <script>
-      window.location = '<%= h(url).html_safe %>';
+      setTimeout(function(){
+        window.location = '<%= h(url).html_safe %>';
+      }, 0.420);
     </script>
   </head>
 </html>
