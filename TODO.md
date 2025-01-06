@@ -1,6 +1,6 @@
 todo
 ----
-
+- the nerd blog
 - auto-translation!
 
 next

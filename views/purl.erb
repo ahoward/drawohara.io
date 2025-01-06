@@ -1,13 +1,14 @@
 <%
   url = data.fetch(:url)
 %>
-<!DOCTYPE html>
 <html>
   <head>
-    <title><%= url %></title>
-    <link rel="canonical" href="<%= url %>">
+    <%= render('views/og.erb', data:) %>
+
     <meta name="robots" content="noindex">
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=<%= url %>">
+
+    <script>
+      window.location = '<%= h(url).html_safe %>';
+    </script>
   </head>
 </html>

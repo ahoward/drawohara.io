@@ -40,11 +40,11 @@ class Route
       @block = block
     else
       params = @pattern.params_for(*args)
-      Request.new(route: self, params:, &@block).call
+      Context.new(route: self, params:, &@block).call
     end
   end
 
-  class Request
+  class Context
     include Render
 
     attr_reader :route
@@ -52,6 +52,7 @@ class Route
     attr_reader :path_info
     attr_reader :site
     attr_reader :exports
+    attr_reader :h
 
     def initialize(route:, params:, &block)
       @route = route
@@ -67,6 +68,10 @@ class Route
 
     def call(&block)
       @block.call(self)
+    end
+
+    def h(...)
+      ::ERB::Util.html_escape(...)
     end
   end
 

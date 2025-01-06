@@ -1,0 +1,48 @@
+#! /usr/bin/env ruby
+#  encoding: utf-8
+
+script do
+  tldr <<~____
+    ~> site console
+    ~> site build
+    ~> site get /about
+    ~> site translate uk
+  ____
+
+  run :console do
+    exec './script/console'
+  end
+
+  run :build do
+    exec './script/build'
+  end
+
+  run :get do
+    argv.each do |url|
+      resp = site.get(url)
+
+      if resp.ok?
+        puts resp
+        exit 0
+      else
+        puts resp.inspect
+        exit resp.status
+      end
+    end
+  end
+
+  run :translate do
+    exec './script/translate'
+  end
+end
+
+BEGIN {
+  require_relative '../lib/script.rb'
+  require_relative '../lib/boot.rb'
+
+  def site
+    Site.only
+  end
+
+  Dir.chdir(File.dirname(__dir__))
+}

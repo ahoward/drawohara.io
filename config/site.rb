@@ -81,10 +81,31 @@ Site.for 'drawohara.io' do |site|
   site.route '/purl/:id' do |route|
     route.call do |request|
       id = request.params.fetch(:id)
-      purl = site.ro.get("purl/#{ id }")
 
-      if purl
-        request.render 'views/purl.erb', data: purl
+      unless id =~ /^[0-9]$/
+        purl = site.ro.get("purl/#{ id }")
+
+        if purl
+          request.render 'views/purl.erb', data: purl
+        end
+      end
+    end
+
+    route.urls do
+      site.ro.purl.map{|purl| "/purl/#{ purl.id }"}
+    end
+  end
+
+  site.route '/:id' do |route|
+    route.call do |request|
+      id = request.params.fetch(:id)
+
+      if id =~ /^[0-9]$/
+        purl = site.ro.get("purl/#{ id }")
+
+        if purl
+          request.render 'views/purl.erb', data: purl
+        end
       end
     end
 

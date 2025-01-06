@@ -22,7 +22,23 @@ class Response < ::String
     status == 200
   end
 
+  def details
+    _body =
+      if headers['content-type'] =~ /json/
+        JSON.parse(body.join)
+      else
+        body.join
+      end
+
+    {
+      path_info:,
+      status:,
+      headers:,
+      body: _body,
+    }
+  end
+
   def inspect
-    to_s
+    JSON.pretty_generate(details)
   end
 end

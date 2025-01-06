@@ -22,27 +22,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <%
-      site        = 'https://drawohara.io'
-      title       = '@drawohara'
-      description = 'my insides are made out of outside. i bite.'
-      image       = 'https://drawohara.io/media/mick.jpg'
-
-      if data
-        title       = data.get(:og, :title) || data.get(:title) || 'nothing to see here.'
-        description = data.get(:og, :description) || data.get(:description) || 'move along.'
-        image       = data.get(:og, :image) || data.get(:image) || image
-      end
-
-      absolutify = proc{|url| url.index('://') ? url : "#{ site }#{ ('/' + url).squeeze('/') }"}
-
-      image = absolutify[image]
-    %>
-    <title><%= title %></title>
-
-    <meta property="og:title" content="<%= title %>"/>
-    <meta property="og:description" content="<%= description %>" />
-    <meta property="og:image" content="<%= image %>" />
+    <%= exports.fetch(:og){ render('views/og.erb', data:) } %>
 
     <meta property="site:route" content="<%= route.path.to_json.html_safe %>">
     <meta property="site:params" content="<%= params.to_json.html_safe %>">
