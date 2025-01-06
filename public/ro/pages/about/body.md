@@ -6,17 +6,17 @@ i'll start at the beginning:
 * roamed the planet racing bikes and skis.  this before phones, gps, or digital cameras.
 * started a family in boulder
 * researched [life on earth from space](https://independent.academia.edu/arahoward) for about a decade
-* wrote a [ton of software](htts://github.com/ahoward), some that [i am even proud of](https://www.linuxjournal.com/article/7922)
+* wrote a [ton of software](https://github.com/ahoward), some that [i am even proud of](https://www.linuxjournal.com/article/7922)
 * founded, built, and ran [dojo4](/dojo4) for almost exactly a decade
 * ranted about the dangerous of big tech, and responbility of software developers, in [kyiv 2015](https://www.youtube.com/watch?v=sKNENzPpSrA)
 * mentored dozens of startups, worked with and for over a hundred
 * 2020 // COVID // massive life changes.  like everyone else.
-* subsequently, a ton of [mountains](https://photos.app.goo.gl/FwwxEygH55JnQR8n8)
+* subsequently, a ton of [mountains](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9)
 * somehow managed to get lost in the [southwest for the 42'nd time in my life](https://photos.app.goo.gl/rnSLBr9MoWMHv1zx6)
 * started [riding my bike to alaska](https://photos.app.goo.gl/wMDwwuFamRWWgZiu6)
 * met a girl in [LA](https://photos.app.goo.gl/MpSigk5BJwqeouiUA)
 * [almost died in an ice cave](https://photos.app.goo.gl/F2Tsji1aHHzKRnVF8)
-* been cranking on a [new company](https://syntheticecho.com) and [riding * bikes with a broken leg](https://photos.app.goo.gl/ikwjrYWBXEvFbwbx7) ever since
+* been cranking on a [new company](https://syntheticecho.com) and [riding bikes with a broken leg](https://photos.app.goo.gl/ikwjrYWBXEvFbwbx7) ever since
 
 this site is _absolutely_ a work in progress..., so check back soon or just <a href="contact">contact</a> me if you are a-wondering _wtf_ is up?
 
@@ -31,7 +31,7 @@ this site is _absolutely_ a work in progress..., so check back soon or just <a h
 
 > wut even is _that ^_ ? and, *"why are you so weird"*
 
-well, i get that question often from mean people that can't spell (this from me, a dislexic) but i will answer anyhow...   i've been working on a secret ai based project for close to a year, with some good friends from boulder.  we bring the social context - the voice of the people - to ai.
+well, i get that question often from mean people spell better than i can (dislexic: esp. when tired) but i will answer anyhow...   i've been working on a secret ai based project for close to a year, with some good friends from boulder.  we bring the social context - the voice of the people - to ai.
 
 > E.M.F.D.Y.S.I !?!?!
 ![english mother fucker do you speak it!?](./assets/speak-english-pulp-fiction.gif)
