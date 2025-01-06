@@ -81,12 +81,25 @@ class Site
         end
       end
     else
-      Parallel.map(routes, in_threads: 8) do |route|
-        route.urls
-      end.tap do |urls|
-        urls.flatten!
-        urls.compact!
-        urls.uniq!
+      urls =
+        Parallel.map(routes, in_threads: 8) do |route|
+          route.urls
+        end.tap do |list|
+          list.flatten!
+          list.compact!
+          list.uniq!
+        end
+
+      urls.sort do |a, b|
+        x = Path.for(a).parts
+        y = Path.for(b).parts
+
+        case
+          when x.size == y.size
+            a <=> b
+          else
+            x.size <=> y.size
+        end
       end
     end
   end

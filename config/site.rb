@@ -70,7 +70,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |request|
-      urls = site.urls.sort_by{|url| Path.for(url).parts}
+      urls = site.urls
       data = {urls:}
       request.render 'views/goto.erb', layout:, data:
     end
