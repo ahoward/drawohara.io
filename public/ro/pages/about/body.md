@@ -8,26 +8,28 @@ i'll start at the beginning:
 * researched [life on earth from space](https://independent.academia.edu/arahoward) for about a decade
 * wrote a [ton of software](htts://github.com/ahoward), some that [i am even proud of](https://www.linuxjournal.com/article/7922)
 * founded, built, and ran [dojo4](/dojo4) for almost exactly a decade
+* ranted about the dangerous of big tech, and responbility of software developers, in [kyiv 2015](https://www.youtube.com/watch?v=sKNENzPpSrA)
 * mentored dozens of startups, worked with and for over a hundred
-* 2020 // COVID // massive life changes...
+* 2020 // COVID // massive life changes.  like everyone else.
 * subsequently, a ton of [mountains](https://photos.app.goo.gl/FwwxEygH55JnQR8n8)
 * somehow managed to get lost in the [southwest for the 42'nd time in my life](https://photos.app.goo.gl/rnSLBr9MoWMHv1zx6)
-* started [riding my bike to * alaska](https://photos.app.goo.gl/wMDwwuFamRWWgZiu6)
+* started [riding my bike to alaska](https://photos.app.goo.gl/wMDwwuFamRWWgZiu6)
 * met a girl in [LA](https://photos.app.goo.gl/MpSigk5BJwqeouiUA)
 * [almost died in an ice cave](https://photos.app.goo.gl/F2Tsji1aHHzKRnVF8)
 * been cranking on a [new company](https://syntheticecho.com) and [riding * bikes with a broken leg](https://photos.app.goo.gl/ikwjrYWBXEvFbwbx7) ever since
 
-_this is absolutely a work in progress..._, so check back soon or just <a href="contact">contact</a> me if you are a-wondering _wtf_ is up?
+this site is _absolutely_ a work in progress..., so check back soon or just <a href="contact">contact</a> me if you are a-wondering _wtf_ is up?
 
 > bored: 🐼 ?
 
-iff you are so inclined (hi to my journalist/write friends that is NOT a typo so [look it up](https://letmegooglethat.com/?q=what+does+iff+mean)) follow along here -> <a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward/drawohara.io</a>
+[iff](https://letmegooglethat.com/?q=what+does+iff+mean) you are so inclined, you can follow along here ->
 
-or here -> <a href="https://www.instagram.com/drawohara">https://www.instagram.com/drawohara</a>
+- <a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward/drawohara.io</a>
+- here <a href="https://bsky.app/profile/drawohara.io">https://bsky.app/profile/drawohara.io</a>
+- or here -> <a href="https://www.instagram.com/drawohara">https://www.instagram.com/drawohara</a>
+- or even here (ssssshhhhhhh) -> <a href="https://syntheticecho.com">https://syntheticecho.com</a>
 
-or even here (ssssshhhhhhh) -> <a href="https://syntheticecho.com">https://syntheticecho.com</a>
-
-> wut even is that ^ ? and, "why are you so weird"
+> wut even is _that ^_ ? and, *"why are you so weird"*
 
 well, i get that question often from mean people that can't spell (this from me, a dislexic) but i will answer anyhow...   i've been working on a secret ai based project for close to a year, with some good friends from boulder.  we bring the social context - the voice of the people - to ai.
 

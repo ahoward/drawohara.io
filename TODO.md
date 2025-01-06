@@ -1,10 +1,7 @@
 todo
 ----
 
-
-
-
-
+- auto-translation!
 
 next
 ----
