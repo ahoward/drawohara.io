@@ -1,0 +1,170 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Найкращі практики Resque.</title>
+
+<meta property="og:title" content="Найкращі практики Resque."/>
+<meta property="og:description" content="продовжуй." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"resque-best-practices"}">
+    <meta property="site:path_info" content=""/resque-best-practices"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+
+<h2 id="introduction">Вступ</h2>
+
+<p>Resque ( https://github.com/defunkt/resque ) - це дуже якісний, міцний,<br />
+інструмент високої якості для фонових завдань для rails. Однак, він залишає багато<br />
+роздумів для розробника щодо найкращих практик для моделювання ваших завдань, управління<br />
+розгортаннями та управління процесами робочих процесів. Наступний набір найкращих<br />
+практик для використання resque/redis як вашої системи фонових завдань.</p>
+
+<h2 id="managing-the-background-processes">Управління фоновими процесами</h2>
+
+<p>Resque має деякі можливості для управління фоновими процесами, але вони<br />
+громіздкі та помилкові. Ми використовуємо цей простий скрипт-обертку для управління єдиним<br />
+екземпляром фонового демона завдань:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123756.js?file=jobs.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="modeling-your-jobs">Моделювання ваших завдань</h2>
+
+<p>Одним з перших дій, які потрібно зробити, є визначення того, як моделювати ваші завдання. Resque<br />
+робить це досить просто, щоб надсилати довільні методи на модулях, але ми віддаємо перевагу<br />
+робити щось трохи більш гігієнічне. Зокрема, ми любимо, щоб у завдань були ідентифікатори, можливість легко<br />
+запитувати їх і робити їх надзвичайно міцними в умовах системних або процесних збоїв. Завдяки простому об'єднанню<br />
+усієї логіки завдань в одну модель, яка тіньово відстежує завдання resque, це можливо. Ось наш базовий клас завдань.</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123839.js?file=job.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<p>Як ви, мабуть, бачите, цей клас (який можна легко портувати до ActiveRecord) дозволяє подавати довільні завдання,<br />
+поштові чи інші, і кожне завдання залишає слід у головній базі даних, який пов'язує<br />
+його з записом resque/redis. Це робить роботу з об'єктами завдань надзвичайно природною - наприклад, мати опитувальний цикл для перевірки статусу певного завдання за ідентифікатором або отримати швидкий підрахунок кількості завдань, які завершилися успішно за останній тиждень. Він також підтримує нашу установку resque супер ванільної - ми не використовуємо жодних плагінів - і робить можливим введення іншої системи обробки фонових завдань протягом декількох хвилин.<br />
+Окрім періодичного завдання очищення колекції/таблиці завдань, вона не потребує жодних змін. Ми використовуємо whenever( https://github.com/javan/whenever/ ) плюс rake<br />
+завдання, щоб досягти цього:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=jobs.rake"></script>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=schedule.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="deployment">Розгортання</h2>
+
+<p>Нарешті, ваше розгортання повинно підтримувати роботу:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=Capfile.rb"></script>
+
+<p><br /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/resque-best-practices">я-ненавижу-це<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/resque-best-practices">я-люблю-це<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
+```

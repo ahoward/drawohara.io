@@ -3,18 +3,105 @@
 
 script do
   tldr <<~____
-    ~> translate uk
+    ~> translate uk es fr sv
   ____
 
-  run do
-    lang = argv.shift
+  param :build, value: :required
 
+  run do
+    setup!
+
+    jobs =
+      []
+
+    langs.each do |lang, name|
+      Dir.glob('**/**.html') do |src|
+        dir = src[%r`[^/]+`]
+        is_translation = langdirs.include?(dir)
+        next if is_translation
+
+        dst = File.join(lang, src)
+        jobs.push(lang:, name:, src:, dst:)
+      end
+    end
+
+    parallel =
+      AI::Mistral::RPS - 1
+
+    Parallel.each(jobs, in_threads: parallel) do |job|
+      translate!(**job)
+    end
+  end
+
+private
+  def translate!(lang:, name:, src:, dst:)
+    p(lang:, name:, src:, dst:)
+
+    html = IO.binread(src)
+
+    prompt = [].tap do |l|
+      l.push "<INSTRUCTIONS>"
+      l.push "translate the following html file to '#{ name }', ISO-639-1 code '#{ lang }'."
+      l.push 'respond with the translated document and ONLY the translated document.'
+      l.push 'be sure to translate the content of any links as well.'
+      l.push "</INSTRUCTIONS>"
+      l.push
+
+      l.push html
+    end.
+      join("\n\n").
+      force_encoding('utf-8')
+
+    a = Time.now.to_f
+
+    translated = ai.completion_for(prompt)
+
+    b = Time.now.to_f
+    elapsed = (b - a).round(2)
+
+    FileUtils.mkdir_p(File.dirname(dst))
+    IO.binwrite(dst, translated)
+
+    p(lang:, name:, src:, dst:, elapsed:)
+  end
+
+  def ai
+    AI
+  end
+
+  def default_langs
+    %w[ uk ]
+  end
+
+  def langs
+    @langs ||= (
+      keys = argv + default_langs
+      values = keys.map{|key| iso_639_1.fetch(key)}
+
+      Hash[keys.zip(values)]
+    )
+  end
+
+  def langdirs
+    langs.keys
+  end
+
+  def setup!
+    @iso_639_1 = JSON.parse(IO.binread('./config/iso-639-1.json'))
+    @build = params.fetch(:build){ './build' }
+
+    Dir.chdir(@build)
+  end
+
+  def iso_639_1
+    @iso_639_1
   end
 end
 
 BEGIN {
   require_relative '../lib/script.rb'
   require_relative '../lib/boot.rb'
+  require_relative '../lib/ai.rb'
 
   def site
     Site.only

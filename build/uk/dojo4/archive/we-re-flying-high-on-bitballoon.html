@@ -1,0 +1,107 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Ми літаємо високо на BitBalloon</title>
+    <meta property="og:title" content="Ми літаємо високо на BitBalloon"/>
+    <meta property="og:description" content="рухайтеся далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content="/dojo4/archive/:id"/>
+    <meta property="site:params" content="{"ext":null,"id":"we-re-flying-high-on-bitballoon"}">
+    <meta property="site:path_info" content="/we-re-flying-high-on-bitballoon"/>
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Якщо ви слідкували за діяльністю dojo останнім часом, ви помітили, що <a href="http://dojo4.com/blog/static-is-the-new-black">ми є великими шанувальниками статичного вебу</a> та молодої компанії з хостингу статичного контенту під назвою <a href="https://www.bitballoon.com/">BitBalloon</a>. BitBalloon - це хостинг-провайдер, схожий на Amazon S3, де ви просто розміщуєте контент на їхніх серверах, і він обслуговується без будь-якої логіки кожному, хто його запитує. Однак, якщо S3 корисний для будь-чого (наприклад, завантажень), BitBalloon спеціально створений для статичних веб-сайтів. Ось деякі речі, які вони роблять для статичних сайтів, які нам подобаються:</p>
+
+<ul>
+  <li><strong>Атомарні деплої</strong> Відкат? Немає проблем, кожен деплой має хеш і відображається в адмінському інтерфейсі, тому перемикання між абсолютно різними версіями є легким. На S3 ви повинні сподіватися, що не закінчитеся з сумішшю старих і нових файлів з різних деплоїв.</li>
+  <li><strong>Автоматичне мініфікування асетів, диджест і CDN</strong> Перш ніж ми почали використовувати BitBalloon, ми використовували інструменти мініфікації та диджесту css і js Middleman під час збирання. Тепер ми цього не робимо - BitBalloon робить це для нас під час деплою. Вони навіть розміщують наші асети на CDN для нас і замінюють посилання на асети в нашому HTML, щоб наші асети обслуговувалися якнайшвидше.</li>
+  <li><strong>Обробка форм</strong> Одне, що простий сайт повинен робити без необхідності використання повного серверного додатку, - це приймати введення форми. Ми просто використовуємо тег <code>&lt;form&gt;</code>, і BitBalloon показує нам відповіді на цю форму в адмін-панелі.</li>
+  <li><strong>Відмінна підтримка</strong> Як я згадував, BitBalloon - молода компанія і все ще розбирається в речах, але коли ми зіткнулися з питаннями, кожен член (включаючи засновників) команди BitBalloon був доступний, дружній і допоміг вирішити наші питання.</li>
+  <li><strong>Заголовки кешу</strong> BitBalloon знає, які заголовки надсилати (і як їх скасовувати під час повторного деплою), щоб найкраще використовувати кеш браузера. Одне менше головного болю, про яке нам потрібно турбуватися.</li>
+  <li><strong>Швидкість</strong> Боже мій, BitBalloon дуже швидкий. Перегляньте <a href="http://dojo4.com">наш сайт</a> {о, так, ви на ньому ;)}, і ви побачите, як швидко завантажуються сторінки.</li>
+</ul>
+
+<p>Нам сподобалося користуватися їхньою послугою. Ось деякі моменти нашого використання:</p>
+
+<ul>
+  <li><a href="https://github.com/BitBalloon/bitballoon-ruby/commits?author=ahoward">Ара</a> та <a href="https://github.com/BitBalloon/bitballoon-ruby/commits?author=milesmatthias">я</a> внесли вклад у <a href="https://github.com/BitBalloon/bitballoon-ruby">їхній Ruby-клієнт</a>.</li>
+  <li>Я відкрив <a href="https://github.com/milesmatthias/bitballoon-rakefile">Rakefile для завантаження на BitBalloon</a>.</li>
+  <li>Ара зробив <a href="https://www.bitballoon.com/blog/2014/03/27/ara-t-howard-on-static-sites-dynamic-content-and-creativity">підкаст з командою BitBalloon</a>.</li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li><a href="/about">про нас<a></li>
+          <li><a href="mailto:i-hate-this@drawohara.io?subject=/we-re-flying-high-on-bitballoon">я-ненавижу-це<a></li>
+          <li><a href="mailto:i-love-this@drawohara.io?subject=/we-re-flying-high-on-bitballoon">я-люблю-це<a></li>
+          <li><a href="/contact">контакти<a></li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
+```

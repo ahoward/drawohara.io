@@ -1,0 +1,148 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Від простого стартап-стеку до відповідності PCI на AWS</title>
+
+<meta property="og:title" content="Від простого стартап-стеку до відповідності PCI на AWS"/>
+<meta property="og:description" content="переходимо далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"from-a-streamlined-startup-stack-to-pci-compliance-on-aws"}">
+    <meta property="site:path_info" content=""/from-a-streamlined-startup-stack-to-pci-compliance-on-aws"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h2 id="intro">Вступ</h2>
+
+<p>Робота над проєктами в <a href="http://dojo4.com">Dojo4</a> я часто дивлюсь, як нікчемні, на перший погляд, збільшення технічної складності <a href="http://uk.wikipedia.org/wiki/Комбінаторний_вибух">перетворюються</a> на значні витрати уваги та ресурсів. Відповідно, коли проєкти тільки починаються, ми схиляємося до спрощеного стеку хостингу та застосунків, який має багато спільних рис із поширеними послугами віртуального хостингу. Це включає такі рішення, як хостинг додатку та бази даних разом, використання одного користувача для розгортання на хостинговій системі та просту <a href="http://uptimerobot.com">моніторинг доступності</a>.</p>
+
+<p>Нещодавно наш давній клієнт, <a href="http://www.inspirecommerce.com/">Inspire Commerce</a>, розробив новий бізнес-план, який вимагає, щоб його додаток відповідав суворим вимогам безпеки рівня 1 <a href="https://www.pcisecuritystandards.org/">Індустрії платіжних карт</a> (PCI) для обробки, передачі та зберігання інформації про кредитні картки. Багато вимог безпеки, викладених у стандарті безпеки даних PCI <a href="https://www.pcisecuritystandards.org/security_standards/">(DSS)</a>, спонукають до значної зміни мислення від згаданого вище спрощеного фокусованого стеку. Ця стаття коротко перерахує деякі з цих деталей та обговорить наші рішення.</p>
+
+<p>PCI DSS поділений на 12 розділів, які охоплюють все від конфігурації брандмауерів до політик безпеки персоналу. Я перерахую кілька розділів, які стосуються стеку хостингу.</p>
+
+<h2 id="1-install-and-maintain-a-firewall-configuration-to-protect-cardholder-data">1. Встановіть і підтримуйте конфігурацію брандмауеру для захисту даних власників карток</h2>
+
+<p>Це досить детальний розділ DSS, який передбачає встановлення та налаштування послуг <a href="http://uk.wikipedia.org/wiki/Брандмауер">брандмауеру</a> на всіх мережевих пристроях, від робочих станцій до маршрутизаторів та серверів. Використовуючи <a href="http://aws.amazon.com/">Amazon Web Services</a> (AWS) <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud</a> (EC2) як основу нашого стеку хостингу, багато цих мережевих пристроїв або абстраговані з нашого поля зору, або контролю. Зручно, що <a href="http://aws.amazon.com/security/#certifications">AWS сам по собі відповідає PCI рівня 1</a>, залишаючи багато цих деталей інженерам Amazon.</p>
+
+<p>Однак брандмауери для вузлів EC2 потребують деяких роздумів. Вузли EC2 захищені брандмауером, реалізованим на рівні <a href="www.xen.org/products/xenhyp.html">гіпервізора</a> та налаштованим групами безпеки AWS. Наша базова група безпеки забороняє всі порти, крім 22, 80 та 443, які приймають від усіх джерел. Ми використовуємо <a href="www.ubuntu.com/">Ubuntu Linux</a> на наших вузлах, і з коробки у нас налаштований брандмауер <a href="www.netfilter.org/projects/iptables/">IP Tables</a> з відкритою політикою.</p>
+
+<p>PCI DSS зосереджується на використанні брандмауерів для створення безпечних приватних мереж або <a href="http://uk.wikipedia.org/wiki/Демілітаризована_зона">демілітаризованих зон</a> (DMZ) для систем, які хостують додатки, що обробляють дані платіжних карток. Групи безпеки AWS надають корисний механізм для створення безпечних приватних мереж між різними компонентами стеку додатків. Наприклад, створюючи WEB-групу безпеки та DB-групу безпеки та відкриваючи порт бази даних у DB-групі безпеки лише для джерел WEB-групи безпеки, брандмауер гіпервізора EC2, що працює на сервері бази даних, дозволить доступ до бази даних лише з веб-серверів, які підключаються до внутрішнього приватного мережевого інтерфейсу.</p>
+
+<p>Для забезпечення відмовності ми відображаємо конфігурацію групи безпеки AWS для гіпервізора брандмауера EC2 з послугою <a href="http://www.cloudpassage.com/">CloudPassage</a>, яка може керувати брандмауером IP Tables на рівні операційної системи систем, які хостують компоненти додатків для обробки карток. CloudPassage організовує політики брандмауерів у <a href="http://www.cloudpassage.com/features/halo-firewall.html">Server Groups</a>, які дещо аналогічні групам безпеки AWS. Ще одна чудовою функцією CloudPassage є послуга <a href="http://www.cloudpassage.com/features/multifactor-authentication.html">GhostPorts</a>. Ми налаштовуємо політику порту ssh у CloudPassage для приймання з'єднань з джерел GhostPort. Щоб клієнтська машина стала джерелом GhostPort, користувач на цій машині повинен авторизуватися в порталі CloudPassage, бути уповноваженим відкривати GhostPorts для групи серверів та авторизуватися за допомогою зареєстрованого Yubikey-ключа або відповісти на SMS-виклик зареєстрованим мобільним телефоном. Після успішної автентифікації та авторизації CloudPassage налаштовує IP Tables для приймання з'єднань від IP-адреси джерела клієнтської машини. Це зручний, безпечний, тимчасовий і перевірюваний спосіб керування доступом до чутливих хостів.</p>
+
+<h2 id="2-do-not-use-vendor-supplied-defaults-for-system-passwords-and-other-security-parameters">2. Не використовуйте стандартні налаштування постачальника для системних паролів та інших параметрів безпеки</h2>
+
+<p>Ця секція, здається, досить очевидна. Хорошим прикладом важливості зміни стандартних паролів постачальника є стандартний пароль changeme <a href="http://www.splunk.com/">Splunk</a> <a href="http://docs.splunk.com/Documentation/Splunk/latest/Deploy/Introducingtheuniversalforwarder">Universal Forwarder</a>.</p>
+
+<p>Однак у цій секції прихована важлива вимога до хостингу, яка мало пов'язана з назвою секції. «2.2.1 Реалізуйте лише одну основну функцію на сервері, щоб запобігти співіснуванню функцій, які вимагають різних рівнів безпеки, на одному сервері. (Наприклад, веб-сервери, сервери баз даних та DNS повинні бути реалізовані на окремих серверах)».</p>
+
+<p>Як згадувалося вище, групи безпеки AWS роблять завдання безпечного розділення послуг, таких як веб- і базові сервери, на окремі хости звичайною справою.</p>
+
+<h2 id="5-use-and-regularly-update-anti-virus-software-or-programs">5. Використовуйте та регулярно оновлюйте антивірусне програмне забезпечення</h2>
+
+<p><a href="http://clamav.com">ClamAV</a> швидко справляється з цією вимогою на Ubuntu Linux.</p>
+
+<h2 id="8-assign-a-unique-id-to-each-person-with-computer-access">8. Присвойте унікальний ідентифікатор кожній особі з доступом до комп'ютера</h2>
+
+<p>Мета цієї секції — забезпечити можливість аудиту та відповідальності, видаливши спільні користувацькі облікові записи. Оскільки ми використовуємо <a href="http://uk.wikipedia.org/wiki/Ssh-keygen">механізм аутентифікації на основі ключів</a> для <a href="http://uk.wikipedia.org/wiki/Secure_Shell">безпечного shell</a>, існує три основні проблеми з тим, хто що зробив. Спочатку потрібно запобігти можливості користувачів перемикатися на інший користувацький обліковий запис із <a href="http://uk.wikipedia.org/wiki/Su_%28Unix%29">командою su</a>. Це легко зробити, видаливши <a href="http://uk.wikipedia.org/wiki/Filesystem_permissions#Traditional_Unix_permissions">права на виконання</a> на су-бінарнику та змінивши <a href="http://aplawrence.com/Basics/understandingpam.html">/etc/pam.d</a> запобігти всім авторизаціям su. По-друге, переконайтеся, що файли <a href="http://www.eng.cam.ac.uk/help/jpmg/ssh/authorized_keys_howto.html">authorized_keys</a> для всіх користувацьких облікових записів містять лише один запис. Нарешті, переконайтеся, що всі ключі, які використовуються для безпечного shell-доступу, захищені паролем, і що існує політика, яка забороняє обмін ключами між користувачами.</p>
+
+<p>Тепер <a href="http://www.cyberciti.biz/tips/linux-audit-files-to-see-who-made-changes-to-a-file.html">Linux Audit Daemon</a> (AuditD) можна використовувати для відстеження системної діяльності конкретних користувачів.</p>
+
+<h2 id="9-restrict-physical-access-to-cardholder-data">9. Обмежте фізичний доступ до даних власників карток</h2>
+
+<p>Назва цієї секції досить самоописна. Основно, ця секція охоплює теми обмеження фізичного доступу до даних центрів до уповноваженого персоналу. Подібно до обговорення налаштування брандмауерів мережевих пристроїв вище, це покривається сертифікацією AWS PCI рівня 1, і деталі можна залишити Amazon.</p>
+
+<h2 id="10-track-and-monitor-all-access-to-network-resources-and-cardholder-data">10. Відстежуйте та контролюйте весь доступ до мережевих ресурсів та даних власників карток</h2>
+
+<p>Мотивація цієї секції — «запобігання, виявлення або мінімізація впливу компрометації даних». Це включає теми, такі як ведення журналів, управління цілісності файлів та виявлення вторгнень. Наша стратегія починається з використання служби ведення журналів для підтримки збору журналів, зберігання журналів, а також пошуку записів журналів. Ми використовуємо додаток <a href="http://splunk.com">Splunk</a> для цієї функціональності. Ми налаштували екземпляр EC2 для сервера ведення журналів та встановили Splunk. Ми налаштували групи безпеки AWS та CloudPassage ServerGroups для нового сервера, який має порт прослуховувача Splunk, який приймає з'єднання від джерел веб-серверів та серверів баз даних на приватному мережевому інтерфейсі. Потім ми налаштували Splunk Universal Forwarder на веб- і базових серверах і налаштували форвардери для моніторингу додатків, apache, mongodb, sys, audit та auth журналів.</p>
+
+<p>Для моніторингу цілісності файлів та виявлення вторгнень ми встановили додаток <a href="http://www.ossec.net/?page_id=165">OSSEC</a> на всіх наших серверах і додали всі журнали, які пише OSSEC, до форвардерів Splunk.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">контакт<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
+```

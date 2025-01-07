@@ -25,4 +25,5 @@ gem "puma"
 gem "ak47"
 gem "map"
 gem "parallel"
+gem "mistral-ai"
 

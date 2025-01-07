@@ -1,0 +1,142 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Чому Phonegap поганий.</title>
+
+<meta property="og:title" content="Чому Phonegap поганий."/>
+<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"why-phonegap-sucks"}">
+    <meta property="site:path_info" content=""/why-phonegap-sucks"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Як і всяка інша компанія з розробки програмного забезпечення, до нас часто звертаються люди, які хочуть створити додаток для iOS та Android. Вони хочуть знайти спосіб заощадити час і гроші, не дублюючи роботу для кожної операційної системи. Тому ми завжди обговорюємо з потенційними клієнтами архітектурні варіанти за допомогою HTML-контенту та вебпереглядачів. (Наш останній клієнт хотів поділитися функціоналом між додатком для iOS та вебсайтом, тому ми особливо зосередилися на використанні HTML у мобільному додатку.) На цьому шляху завжди виникає думка про використання Phonegap. Ми пройшли цей шлях декілька разів, і ось наші висновки.</p>
+
+<p>Phonegap поганий. Ось чому:</p>
+
+<ul>
+  <li>
+    <p>Вивчення нового фреймворку, коли треба вивчати Obj-C або Java.</p>
+  </li>
+  <li>
+    <p>Залежність від підтримки функцій ОС (спайте пальці, щоб вони існували та працювали! спайте пальці, щоб вони швидко підтримували нові речі!)</p>
+  </li>
+  <li>
+    <p>Безлад у організації – Phonegap? Cordova? Що це таке?!?!?! (Просто використовуйте Phonegap, і все буде добре – Ладно… ой, чекайте, мені доведеться використовувати CLI Cordova для додавання плагінів?!)</p>
+  </li>
+  <li>
+    <p>Застаріла, неправильна та плутана документація (частково через попередній пункт)</p>
+  </li>
+  <li>
+    <p>Спільнота навколо нього більше зацікавлена у підтримці кожного пристрою на планеті, аніж у допомозі розробнику опублікувати HTML-контент легко в одній з двох головних ОС. (Ну, для цього є Phonegap Cloud – спробував використовувати його три рази, він зламаний.)</p>
+  </li>
+</ul>
+
+<p>Коротко кажучи, Phonegap зосереджений на тому, щоб забезпечити вас 10% задоволення на 100% пристроїв у світі. За нашим досвідом, клієнти турбуються про те, щоб бути 100% задоволеними лише на двох пристроях у світі – iOS та Android.</p>
+
+<p>То що ми пропонуємо? Використовуйте Obj-C та Java! HTML-контент у додатку – це чудовий спосіб для простих додатків мати єдиний код на кількох платформах, але вам потрібен тонкий контроль над усім додатком, і вам потрібно дотримуватися інструкцій Apple та Google щодо використання функцій їх ОС. Тому у нас є фреймворки (iOS майже готові для відкритого коду та Android все ще на ранніх етапах розробки), які містять один вебпереглядач, а потім використовують невеликі бібліотеки з відкритим кодом для створення мосту між цим вебпереглядачем та нативним додатком. Це дозволяє нам писати власний Javascript API для виклику будь-якого нативного коду, який ми пишемо. (Для iOS ми використовуємо чудовий WebViewJavascriptBridge від Маркуса Вестіна)</p>
+
+<p>Наприклад, коли у нас є HTML-контент, який хоче поділитися посиланням у Facebook або Twitter, ми написали власний Javascript API, щоб сказати:</p>
+
+<p>bridge.callHandler('facebookShare', 'http://ducksarethebest.com');<br />
+і потім у Objective-C ми написали обробник для взяття цього URL та використання офіційного Facebook iOS SDK для спільного використання цього посилання:</p>
+
+<p>[_bridge registerHandler:@"facebook_share" handler:^(id data, WVJBResponseCallback responseCallback) {<br />
+FBAppCall *appCall = [FBDialogs presentShareDialogWithLink:[NSURL URLWithString:data] handler:fbHandler];<br />
+}];<br />
+Це набагато кращий досвід, ніж дозволяти вебпереглядачу ділитися цим посиланням, оскільки якщо користувач вже має додаток Facebook та увійшов до нього, то Facebook SDK не попросить їх знову увійти, тоді як метод поділу вебпереглядачем це зробить.</p>
+
+<p>Це навіть краще для рішень, де немає вебальтернативи, наприклад, внутрішні покупки. І особливо щось таке життєво важливе для успіху вашого додатку – користувачі платять вам гроші – ви хочете переконатися, що це зроблено правильно найсучаснішим та рекомендованим способом. Єдиний спосіб зробити це – дотримуватися вказівок Apple або Google у їх офіційних SDK.</p>
+
+<p>Цей підхід надає нам гнучкість писати будь-який JS API, який найкраще працює для нас, негайність використання будь-якої функції, доступної в SDK для iOS або Android, і він поліпшує наші навички розробки в мові та SDK, які дійсно важливі для нашої довготривалої кар’єри. Найголовніше, клієнт задоволений тим, що ми маємо повний контроль над додатком, ми не покладаємося на якусь сторонню групу для підтримки функцій, які Apple або Google випустили місяці тому, і додаток може бути настільки нативним або веб-орієнтованим, наскільки це потрібно для створення найкращого користувацького досвіду.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/why-phonegap-sucks">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/why-phonegap-sucks">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; відмовитись</a>
+    </footer>
+  </body>
+</html>
+```

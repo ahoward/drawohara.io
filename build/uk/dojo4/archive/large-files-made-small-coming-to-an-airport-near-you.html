@@ -1,0 +1,117 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>! "Великі файли зроблені маленькими... Скоро в аеропорту поблизу вас!"</title>
+
+<meta property="og:title" content="! "Великі файли зроблені маленькими... Скоро в аеропорту поблизу вас!""/>
+<meta property="og:description" content="переходимо." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"large-files-made-small-coming-to-an-airport-near-you"}">
+    <meta property="site:path_info" content=""/large-files-made-small-coming-to-an-airport-near-you"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><img src="assets/airplane1980bq30x40in195.jpg" alt="img" /></p>
+
+<p>Останні кілька місяців dojo4 працювала з надзвичайним завзяттям над дуже крутим новим продуктом для нашого клієнта: <a href="http://www.movime.com">MoviMe Networks</a>, що дозволяє авіапасажирам швидко орендувати та завантажувати повнометражні фільми на свої iPad з воріт аеропорту, очікуючи на посадку на свій рейс. Ми з радістю повідомляємо, що продукт запущено в живу бета-версію в міжнародному аеропорту Чикаго О'Хара!</p>
+
+<p>Ми сподіваємося, що ви запустите свій iPad і спробуєте це під час наступного польоту з або через ORD. Поки ви чекаєте на завантаження фільму, ви, можливо, захочете розмірковувати про всі розрізнені компоненти, які працюють разом, щоб полегшити ваше переглядання фільмів та швидке завантаження. Спочатку система автоматизації захоплення студії отримує гігантські сирі файли фільмів від кіностудій і перекодує їх для ідеального перегляду на iPad. Потім централізована система управління створює продукти в MoviMe Store для цих нових фільмів, які ви можете переглядати та купувати. Також файли фільмів розподіляються до мережі доставки контенту (CDN) в аеропорту, щоб їх можна було завантажувати швидко, перш ніж вам доведеться сісти на свій рейс. Це багато на що подивитися за короткий час, який знадобився на завантаження вашого фільму. Можливо, вам слід орендувати ще один, поки ми розповідаємо про деякі інші цікаві технічні деталі...</p>
+
+<p>Відеофайли великі. Повнометражна HD-версія фільму займає близько 10 ГБ. Файли, які люди завантажують з iTunes, мають розмір 1-2 ГБ. Відеофайли, які ми використовували для MoviMe, мають розмір близько 1 ГБ.</p>
+
+<p>Розмір цих файлів створив кілька цікавих викликів. Більшість HTTP-бібліотек не призначені для роботи з такими великими файлами. Вони не вміщаються в пам'ять iPad. Їх важко переміщати. Ми повинні були інакше думати про обробку таких файлів, ніж ми зазвичай думаємо про зображення та інші медіа. Наше рішення полягало в завантаженні та завантаженні файлів фрагментами. Ми написали код для iPad-плеєра, щоб використовувати діапазони байтів при завантаженні файлів фільмів, а потім збирати їх у готові до відтворення файли. Це також вимагало від нас додавання підтримки діапазонів байтів до нашого контролера завантажень, а також до <a href="https://github.com/ahoward/mongoid-grid_fs">Mongo gridFs драйвера</a>, щоб ми могли ефективно отримувати частини файлів. Ми використовували багаточастинні завантаження для надсилання файлів з серверів, які готували фільми для відповідних бакетів S3.</p>
+
+<p>Ще одна перевага роботи з фрагментами файлів полягала в тому, що ми могли паралелізувати як завантаження, так і завантаження, щоб зменшити час, необхідний для переміщення файлів. iPad-плеєр може завантажувати до 4 фрагментів паралельно, зменшуючи час, необхідний для завантаження цілого файлу. Ми виявили, що можемо використовувати до 5 одночасних багаточастинних завантажень у бакет S3, щоб зменшити час завантаження для переміщення медіафайлів до S3.</p>
+
+<p>Все це для того, щоб ви могли знайти та завантажити <a href="http://www.youtube.com/watch?v=ZqtNxNRCcGg">ваш улюблений фільм</a> в аеропорту з блискавичною швидкістю та переглянути його під час наступного польоту! Скоро в <a href="http://www.movime.com/#!airports/c13f3">аеропорту поблизу вас</a>...</p>
+
+<p><strong>цей блог-пост від <a href="http://dojo4.com/team/fred-jean">Фреда Жана</a> та <a href="http://dojo4.com/team/garett-shulman">Гаретта Шульмана</a> та <a href="http://dojo4.com/team/corey-kohn">Корі Кона</a></strong></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">я-ненавижу-це<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">я-люблю-це<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
+```

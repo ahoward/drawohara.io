@@ -1,0 +1,221 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Погані розробники бояться Mongo та поклоняються RDBMS</title>
+
+<meta property="og:title" content="Погані розробники бояться Mongo та поклоняються RDBMS"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"crap-developers-fear-mongo-and-worship-the-rdbms"}">
+    <meta property="site:path_info" content=""/crap-developers-fear-mongo-and-worship-the-rdbms"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h3 id="tl-dr">TL; DR;</h3>
+
+<blockquote>
+  <p>99.9% світу розробників веб-додатків вважають, що правильне використання RDBMS разом з транзакціями запобігає появі неправильних даних та серйозних помилок якості даних у їхніх застосунках. Вони <em>АБСОЛЮТНО НЕПРАВІ</em>.</p>
+</blockquote>
+
+<p>З великим інтересом я прочитав <a href="https://github.com/aphyr">статтю Кайла Кінгсбері</a> про модель консистенції Mongo на https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads</p>
+
+<p>Очевидно, що цей хлопець дуже розумний і знає свою справу. Він виконує роботу, і все в цій статті інформативно та добре структуровано.</p>
+
+<p>Особливо мене вразили коментарі та те, що вони говорять про середнього професійного розробника:</p>
+
+<blockquote>
+  <p>Розробники вважають, що використання RDBMS робить їхні дані безпечними, і вони <em>абсолютно помиляються</em></p>
+</blockquote>
+
+<p>Я не можу сказати, скільки разів я сварився з "професійними" розробниками та особливо дурними сисадмінами, які справді вірять, що, просто кажучи слово RDBMS, крутячи курячі голови навколо своєї голови 3 рази та підключаючись до магічного єдинорога баз даних, їхні дані будуть безпечні та цілі, як, знаєте, ... (щось-щось про) ... банківські транзакції і вся та (нісенітниця) балакання про транзакції та fsync. І купа інших речей, яких жоден розробник, з яким я зустрічався, насправді не розуміє або не розглядав у контексті HTTP (підказка: без стану) додатка.</p>
+
+<p>Перш ніж продовжити, я викину виклик:</p>
+
+<ul>
+  <li>Надішліть мені своє ім'я користувача GitHub</li>
+  <li>Дозвольте мені вибрати додаток, що працює на MySQL або PostgreSQL, який ви написали (щоб ви не могли його підготувати)</li>
+  <li>І я знайду шляхи коду, які забезпечують як read-uncommitted, так і dirty-reads у вашому додатку протягом 1 дня</li>
+  <li>Якщо їх немає, я заплачу вам <em>$1000 баксів</em></li>
+  <li>Якщо є хоча б один, я зможу розмістити будь-яке фото, яке оберу, як додаток до цієї статті. Фотошоп <em>дозволений</em>.</li>
+</ul>
+
+<p>Знайдіть мене за адресою <a href="/contact">/contact</a> або <a href="/team/ara-t-howard">/team/ara-t-howard</a>. Тепер продовжую...</p>
+
+<p>Розгадайте мені це, розробник: що не так з цим шляхом коду:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-10'>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'>
+</div></code></div>
+
+<p>Дозвольте мені розповісти вам щось жахливе:</p>
+
+<p><strong>ЦЕЙ КОД АБСОЛЮТНО ЗЛАМАНИЙ НА ВСІХ ОСНОВНИХ <em>RDBMS</em>, ТА ПРАКТИЧНО ВСІХ<br />
+ДОДАТКАХ У СВІТІ</strong></p>
+
+<p>Я запевняю вас, що лист піде <em>двічі</em>.</p>
+
+<p>Пояснення транзакцій виходить за межі цієї статті, але дозвольте мені представити вам "phantom reads"</p>
+
+<p>http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Phantom_reads</p>
+
+<p>У вищезазначеному коді друга, паралельна транзакція може викликати наступне:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># тим часом, друга транзакція створила дублювального користувача...</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># наступне буде успішним у обох транзакціях</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># обидві транзакції відправлять лист</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #6e7781"># одна з транзакцій не зможе закомітитися та вибухне, але до того часу</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #6e7781"># буде занадто пізно: лист вже буде відправлено двічі, а помилка вже буде зроблена</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>
+</div></code></div>
+
+<p>Я знаю, ви не можете у це повірити. Але це тому, що ви ніколи не дбали про RTFM, коли йде мова про те, що означає "транзакція". Почніть звідси:</p>
+
+<p>http://www.postgresql.org/docs/9.1/static/transaction-iso.html</p>
+
+<p>Зверніть увагу на маленьку таблицю. Дозвольте мені перекласти її для вас:</p>
+
+<ul>
+  <li>
+    <p>Тому що <em>ви</em> не маєте кожну <em>кожну</em> послідовність <em>читань та записів</em>, обгорнуту в транзакцію, і іноді просто закидаєте код проти ваших ORM об'єктів безпосередньо, ви страждаєте від "страшної" реальності "read-uncommitted", згаданої в статті</p>
+  </li>
+  <li>
+    <p>Тому що <em>ви</em> покладаєтесь на рівень ізоляції за замовчуванням, ви страждаєте як від non-repeatable-reads, так і від phantom reads. (Ви навіть знаєте, що таке ізоляція за замовчуванням для вашої бази даних та що це означає????)</p>
+  </li>
+  <li>
+    <p>Тому що <em>ви</em> не встановили свій рівень транзакцій на "serializable", ви хибно вважаєте, що ваша база даних швидка та безпечна. Ви помилково покладалися на базу даних для забезпечення цілісності даних як на абстракцію, яка не вимагає критичного мислення та програмного коду принаймні в 10 разів кращого за ваш. У вас є всі жахливі функції зі статті Кайла в додатках, що працюють на RDBMS - і, не лише ви <em>не знаєте про це</em>, ви <em>впевнені, що ваші дані "безпечні"</em></p>
+  </li>
+</ul>
+
+<p>І тому я запитую вас, яке рішення гірше з інженерних міркувань:</p>
+
+<ul>
+  <li>
+    <p>Вибрати інструмент на основі стандартів, у якого всі <em>дуже</em> впевнені, що вони розуміють його та знають, як безпечно використовувати, але в його звичайному використанні він практично ніколи не гарантує того, що, як ви вважаєте, він обіцяє, і, крім того, широко <a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Default_isolation_level">критикується за неоднозначні та неточні семантики</a> ?</p>
+  </li>
+  <li>
+    <p>Чи прийняти те, що завжди було правдою: що бази даних самі по собі не можуть забезпечити абстракції, які означають, що не надто розумні розробники не можуть легко все зіпсувати. І що цілісність даних - це специфічна для домену концепція, яка повинна бути реалізована на рівні додатка, а лише невелика частина цієї цілісності покращується вибором бази даних.</p>
+  </li>
+</ul>
+
+<p>ps. Я працював над великими фінансовими, реальночасовими та високодоступними системами, які використовують як Mongo, так і PostgreSQL. Це надзвичайно важко в будь-якому випадку.</p>
+
+<p>pss. Я намагався прокоментувати ваш блог, Кайл, але коментарі вибухали ;-)</p>
+
+<p><img src="https://s3.amazonaws.com/ss.dojo4.com/JKeSPdp46a4R3paZkp6oo7X1b7QNhI6hQN4kp1QPx3ZYqn3exRzqht0.png" style="max-width:200px;" /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/crap-developers-fear-mongo-and-worship-the-rdbms">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/crap-developers-fear-mongo-and-worship-the-rdbms">i-love-this</a>
+  </li>
+  <li>
+    <a href="/contact">контакт</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
+```

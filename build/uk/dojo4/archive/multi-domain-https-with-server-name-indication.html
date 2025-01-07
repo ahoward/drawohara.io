@@ -1,0 +1,153 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Мультидоменний HTTPS з Індикацією Імені Сервера</title>
+
+<meta property="og:title" content="Мультидоменний HTTPS з Індикацією Імені Сервера"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"multi-domain-https-with-server-name-indication"}">
+    <meta property="site:path_info" content=""/multi-domain-https-with-server-name-indication"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>(Це скорочена версія <a href="http://www.stuff-things.net/2014/11/14/yes-virginia-you-can-use-sni/">Так, Вірджинія, Ви Можете Використовувати SNI</a>, яка спочатку з’явилася у блозі Спайка <a href="http://www.stuff-things.net/">Речі… І Інші Речі…</a>)</p>
+
+<p>Коли ви підключаєтесь до веб-сервера за допомогою HTTPS, безпека забезпечується за допомогою <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a>. Дві речі відбуваються: перевіряється ідентичність сервера та здійснюється шифрування з'єднання.</p>
+
+<p>Перевірка важлива, бо не має значення, чи здійснюється шифрування з'єднання, якщо ви якимсь чином були перенаправлені на сервер зловмисника. Однак ця перевірка може бути проблематичною, якщо веб-сервер обслуговує більше одного доменного імені.</p>
+
+<p>Ви можете прочитати <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_handshake">подробиці</a>, але спрощена версія процесу полягає в тому, що сервер надсилає підписаний <a href="http://en.wikipedia.org/wiki/Public_key_certificate">Публічний ключ сертифіката</a>, який повинен відповідати доменному імені в URL. Якщо клієнт переходить на dojo4.com, то сертифікат повинен бути для dojo4.com, якщо це не так, браузер відображає велике лякаюче попередження.</p>
+
+<p>Технічно можливо мати кілька доменних імен на одному сертификаті, насправді це звичайна практика мати, наприклад, і "dojo4.com", і "www.dojo.com" для повноти. Однак додавання та видалення доменних імен з сертифіката — це надзвичайно складний процес. Вам доведеться, щоб видавець згенерував новий сертифікат і скасував старий. І якщо ви працюєте з Mережею Доставки Контенту, вони малоймовірно додадуть ваші доменні імена до свого сертифіката.</p>
+
+<p>Спочатку TLS підтримував один сертифікат на веб-сервер (або точніше, на IP-адресу, прикріплену до веб-сервера) <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Індикація Імені Сервера (SNI)</a> була додана до TLS для вирішення цієї проблеми. На початку переговорів TLS клієнт повідомляє серверу ім'я хоста, до якого він намагається підключитися, і сервер може вибрати та надіслати правильний файл сертифіката. Проблема вирішена!</p>
+
+<p>Окрім... Не всі браузери підтримують SNI. Всі <em>знають</em> це, і в результаті вони схильні пропускати SNI та переходити безпосередньо до окремих IP-адрес для кожного сайту або навіть до декількох серверів. Це дорогий варіант, особливо при роботі з CDN, такими як CloudFront. Коли це сталося зі мною, я вирішив дізнатися, що насправді означає "не всі браузери".</p>
+
+<p>Виявляється, SNI широко підтримується, з основними проблемами в IE8 і нижче, а також у будь-якій версії IE, яка працює на Windows XP (тому що базова бібліотека ОС не підтримує SNI). Також існують деякі старі версії Android, які не підтримують цю функцію.</p>
+
+<p>Таким чином, більшість відвідувачів не матимуть проблем з SNI, а та група, яка має проблеми, досить мала, щоб ми могли впоратися з нею як зі спеціальним випадком.</p>
+
+<p>Для браузерів без підтримки SNI обхідний шлях полягає в перенаправленні їх на сертифікат, який працюватиме, або на грубу сторінку "оновіть свій браузер". Якщо ви шукаєте в Google, ви знайдете безліч рішень щодо створення білих списків хороших браузерів і/або чорних списків поганих, а потім використання цих списків у правилах перенаправлення на стороні сервера. Неприємно. Списки потрібно підтримувати, а в залежності від сервера вони порушують кешування.</p>
+
+<p>Є розумніший спосіб. Переглядаючи море прикладів конфігурацій перенаправлення Apache, я знайшов це в <a href="https://www.ebower.com/wiki/Detecting_SNI_with_Apache">пості</a>. Основна ідея посту може бути узагальнена до цього: якщо браузер, який не підтримує SNI, намагається завантажити вміст SNI, він отримає помилку. Якщо ми тестуємо це на тлі та диференціюємо між помилкою та успіхом, ми можемо перенаправити відвідувача відповідно. А найпростіший спосіб зробити це — спробувати додати до сторінки зображення розміром один піксель.</p>
+
+<p>У коді це виглядає так:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #cf222e">function</span>&nbsp;<span style="color: #8250df">secure_redirect</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #0550ae">=</span><span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">createElement</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">img</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>&nbsp;<span style="color: #6e7781">// створіть елемент img.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Встановіть src на URL SNI зображення розміром один піксель</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'</span><span style="color: #0a3069">https://www.example.org/pixel.gif</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Це виконується, якщо SNI працює.</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">onload</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Перенаправте на безпечну сторінку.</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">href</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">https://example.org/</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Це виконується, якщо SNI не працює.</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">onerror</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Перенаправте в інше місце</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">href</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">http://example.org/snarky-old-browser-message</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Не відображайте зображення</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">style</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">display</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'</span><span style="color: #0a3069">none</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// але додайте його до сторінок, щоб він завантажився.</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">body</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">appendChild</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div></code></div>
+
+<p>Тут я використовую два HTML-колбека на тезі <em>img</em>, ‘OnLoad’, який спрацьовує, коли зображення закінчує завантаження, і ‘OnError’, який спрацьовує, якщо зображення не вдається завантажити. Якщо браузер не підтримує SNI, то зображення не вдасться завантажити через помилку сертифіката, спрацює ‘OnError’. Однак, оскільки ми додаємо зображення до вже завантаженої сторінки, воно не викличе помилки в браузері.</p>
+
+<p>Тепер ми можемо тестувати на SNI та обробляти відсутність підтримки елегантно. Різдво врятоване!</p>
+
+<p>Однак, до чого ми дійсно дійшли, це щось більш розумне. Помітте, що код насправді не тестує на SNI, а лише на здатність безпечно завантажити зображення. Якщо URL HTTPS не вимагає SNI, є лише один сертифікат або перший сертифікат відповідає запитуваному домену, це все одно працює. Проблема зводиться до "Чи може браузер цього відвідувача відображати безпечний сайт чи ні?", і в підсумку це все, що насправді хвилює.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/multi-domain-https-with-server-name-indication">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/multi-domain-https-with-server-name-indication">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
+```

@@ -1,0 +1,221 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Поради щодо міграцій MongoDB у Rails</title>
+
+<meta property="og:title" content="Поради щодо міграцій MongoDB у Rails"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"tips-for-mongodb-migrations-in-rails"}">
+    <meta property="site:path_info" content=""/tips-for-mongodb-migrations-in-rails"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Я хочу поділитися швидким і легким методом тестування міграцій Rails при використанні бази даних MongoDB. Гнучкість mongo та ruby роблять це досить простим. У цьому прикладі ми перейменуємо поле в нашій прикладі колекції "books" з "isbn" на "book_number". Це досить поширений тип міграції, і як тільки ви звикнете до цього простого випадку, більш складні міграції слідують за тим же шаблоном. Спочатку давайте створимо наш шаблон скрипта міграції з міткою часу.</p>
+<pre><code>rails generate migration rename_isbn_to_book_number
+</code>
+</pre>
+<p>Потім ми відредагуємо файл, створений під <code>db/migrate</code>. Ми розділимо наш код на декілька розділів наступним чином.</p>
+<ol>
+<li>Деякі константи класу, спільні для всіх методів</li>
+<li>Метод <code>self.up</code>, який виконує пряму міграцію</li>
+<li>Допоміжний метод для створення тестових даних для перевірки прямої міграції</li>
+<li>Метод <code>self.down</code>, який виконує відкат</li>
+<li>Допоміжний метод для створення тестових даних (якщо потрібно) для перевірки відкату</li>
+</ol>
+<p>Спочатку визначте деякі константи, які буде використовувати наш метод. Ми зберігаємо хеш-опції оновлення mongo <code>MultiUpdate</code> для зручності, оскільки більшість операцій оновлення міграції хочуть upsert false (не створювати жодних нових документів), multi true (оновлювати всі відповідні документи) і safe true.</p>
+<p>Потім ми також визначаємо константу для імені колекції. Для справжньої міграції колекція - "books", але для тестування ми створимо нову колекцію під назвою "test_books_migration" під час розробки нашого коду.</p>
+<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Фінальний продакшн-код
+  Collection = db.collection("test_books_migration") #Лише для тестування в консолі
+  def up
+  end
+
+  def down
+  end
+end
+</code>
+</pre>
+<p>ОК, це наш початковий шаблон. Наступним кроком є створення резервної копії нашої бази даних розробки, якщо там є дані, які ми не хочемо випадково зіпсувати. Потім ми починаємо писати невеликий допоміжний метод для заповнення нашої тестової колекції фіктивними документами, схожими на те, що ми очікуємо побачити у виробництві, але зосереджуючись лише на полях, які відповідають міграції. Додайте цей метод до свого класу міграції.</p>
+<pre><code>def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+end
+
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+</code>
+</pre>
+<p>Це створить 3 фейкові документи, які ми можемо використовувати для тестування. Ми розміщуємо цей код у методі, щоб його було легко перезапустити під час налаштування та тестування нашого коду міграції. Для складних міграцій може знадобитися багато раундів налаштування, щоб врахувати всі крайні випадки.</p>
+<p>Тепер ми можемо запустити консоль Rails і запустити цей код, скопіювавши та вставивши 2 константи класу та метод mock_data_for_testing_up у консоль і запустивши mock_data_for_testing_up</p>
+<pre><code>$ bundle exec rails console
+Завантаження середовища розробки (Rails 3.1.1)
+irb(main):001:0&gt; #Вставте наступне в консоль
+MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+Collection = db.collection("test_books_migration") #Лише для тестування в консолі
+def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  Collection.find({}).each {|_| puts _}
+end
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+irb(main):008:0&gt; mock_data_for_testing_up
+mock_data_for_testing_up
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"0", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000001')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"1", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000002')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"2", :_id=&gt;BSON::ObjectId('4ef5f3812a4397a5d7000003')}])
+irb(main):009:0&gt; show_collection
+MONGODB app_development['test_books_migration'].find({})
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000001'), "isbn"=&gt;"0"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000002'), "isbn"=&gt;"1"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000003'), "isbn"=&gt;"2"}
+=&gt; nil
+</code>
+</pre>
+<p>Тепер у нас є окрема, добре зрозуміла тестова колекція, готова для тестування нашої простої міграції. Давайте напишемо наш метод <code>up</code>. Щоб виконати нашу міграцію.</p>
+<pre><code>def up
+  #Ми хочемо перейменувати поле book.isbn на book.book_number
+  Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+    update_op = {
+      "$unset" =&gt; {"isbn" =&gt; 1},
+      "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+    }
+  Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+end
+</code>
+</pre>
+<p>Ми можемо скинути це в консоль і запустити, щоб протестувати нашу міграцію. Ми можемо перевірити результати за допомогою <code>show_colletion</code>. Якщо ми хочемо протестувати інші записи для відкату, ми можемо створити метод <code>mock_data_for_testing_down</code>.</p>
+<p>Це дасть вам дуже швидкий спосіб експериментувати та змусити ваш код міграції працювати. Mongo має деякі потужні можливості запитів і модифікацій, які можуть робити дивовижні речі, і легкий спосіб попрактикуватися у помилках і помилках корисний. Якщо ви все зіпсуєте свої тестові дані, ви можете використати <code>Collection.drop</code>, щоб почати з чистого аркуша. Ось фінальний код міграції для довідки. <strong>Не забудьте</strong> видалити тестову константу колекції та видалити тестову колекцію з вашої бази даних, коли ви будете готові почати запускати свій код для реального використання з <code>rake db:migrate</code>.</p>
+<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Фінальний продакшн-код
+
+  def up
+    #Ми хочемо перейменувати поле book.isbn на book.book_number
+    Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"isbn" =&gt; 1},
+        "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  def down
+    #Ми хочемо перейменувати поле book.book_number на book.isbn
+    Collection.find({"book_number" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"book_number" =&gt; 1},
+        "$set" =&gt; {"isbn" =&gt; book["book_number"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  #Ці методи не викликаються міграцією. Лише для ручного тестування
+  #шляхом копіювання/вставлення в консоль
+  #Щоб протестувати (шляхом копіювання/вставлення звідси до консолі)
+  #1. Встановіть константу MultiUpdate. Налаштуйте "Collection", щоб це була тестова колекція
+  #2. Скопіюйте/вставте 2 методи нижче
+  #2. Запустіть mock_data_for_testing_up
+  #3. Запустіть тіло self.up
+  #3b. За бажанням ще раз запустіть тіло self.up, щоб переконатися, що воно ідемпотентне
+  def mock_data_for_testing_up
+    3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  end
+
+  def show_collection
+    Collection.find({}).each {|_| puts _}
+  end
+end
+</code>
+</pre>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; перейти</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про мене</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/tips-for-mongodb-migrations-in-rails">я-ненавижу-це</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/tips-for-mongodb-migrations-in-rails">я-люблю-це</a>
+  </li>
+  <li>
+    <a href="/contact">контакт</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>
+```

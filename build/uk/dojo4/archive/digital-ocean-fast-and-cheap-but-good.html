@@ -1,0 +1,155 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>! «ЦИФРОВИЙ ОКЕАН: ШВИДКИЙ ТА ДЕШЕВИЙ. АЛЕ ДОБРИЙ?»</title>
+
+<meta property="og:title" content="! «ЦИФРОВИЙ ОКЕАН: ШВИДКИЙ ТА ДЕШЕВИЙ. АЛЕ ДОБРИЙ?»"/>
+<meta property="og:description" content="Рухайтесь далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"digital-ocean-fast-and-cheap-but-good"}">
+    <meta property="site:path_info" content=""/digital-ocean-fast-and-cheap-but-good"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Як технічний директор технологічного агентства, я постійно оцінюю нові інструменти, процеси та послуги.</p>
+
+<p>Нещодавно я розглядав платформу DigitalOcean як частину стратегії надвисокої доступності, яку ми розробляємо на випадок, коли AWS/S3 недостатньо: коли ви хочете витримати масову аварію цілого хмарного провайдера.</p>
+
+<p>Усі розгортання Dojo4 починаються з AWS з очевидної причини: це стандарт, за яким оцінюються всі інші хмарні сервіси. Він має додаткову перевагу для агентства в тому, що ми можемо вказувати на нього як на "розумну за замовчуванням" для програмного забезпечення, яке ми поставляємо клієнтам; як 800-фунтова горила, його використання є виправданим. Однак деякі рідкісні клієнти висловлювали занепокоєння щодо аварій AWS, які впливають на їхні сайти та додатки, зокрема моніторингові додатки, які повинні повідомляти про такі аварії: рекурсивна проблема. Для цих випадків ми розглядали статичні розгортання, збалансовані між хмарними провайдерами з DNS, а DigitalOcean був у короткому списку претендентів на створення та розгортання простих статичних сайтів, розміщених на Apache з цією метою як засобу захисту для наших звичайних сайтів, розміщених на AWS.</p>
+
+<p>Нещодавно у DigitalOcean (DO) виникла невелика проблема, пов'язана з їхніми практиками безпеки: https://github.com/fog/fog/issues/2525.</p>
+
+<p>Цю проблему можна описати так: коли ви запускаєте новий хмарний сервер, на ньому може залишитися чутлива інформація попереднього користувача, а коли ви вимикаєте свій власний хмарний сервер, ви можете виставити свої чутливі дані напоказ випадковій третій особі. Їхня послуга надає спосіб видалити все, але це <em>не за замовчуванням</em> - за замовчуванням залишається <em>все, що було на диску</em> для наступного користувача.</p>
+
+<p><em>Це дуже погана стратегія за замовчуванням.</em></p>
+
+<p>У Twitter я зазначив, що не здивований такою недбалою стратегією, але був розчарований тим, як DO поводили себе під час розкриття. Під час короткого обміну думками в Twitter мене попросили узагальнити джерело мого незворушення:</p>
+
+<blockquote class="twitter-tweet" lang="uk"><p><a href="https://twitter.com/drawohara">@drawohara</a> Якщо ви захочете витратити час, щоб пояснити це в електронному листі, я прочитаю та поділюся ним з усією командою, і це буде дуже цінно. :)</p>&mdash; Джон Едгар (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">30 грудня 2013 р.</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Тож тут, з 20/20 заднім числом і спробою бути корисною, я виконую свою обіцянку та пояснюю, чому я відкладаю перенесення будь-яких наших речей на платформу DigitalOcean. (Будь ласка, зверніть увагу, що цей список містить лише почуття та враження, але вони були частково підтверджені та посилені недавніми проблемами зі стиранням дисків):</p>
+
+<ul>
+  <li>При відвідуванні домашньої сторінки DO вас зустрічає гучна маркетингова повідомлення, яке кричить «дешево і швидко»</li>
+</ul>
+
+<p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
+
+<p>враховуючи, що платформа «створена для розробників», особисто я вважаю дивним, що команда, здається, не передбачила, що розробники зрозуміють чітке повідомлення «добре, швидко та дешево», коли вибирають <em>два останніх</em> варіанти з DO.</p>
+
+<ul>
+  <li>Далі ви отримуєте приємне повідомлення про підтвердження, що DO, як стартап, мотивований продемонструвати дуже, дуже швидке зростання</li>
+</ul>
+
+<p><img src="http://cl.ly/T8pL/Screen%20Shot%202013-12-30%20at%201.05.20%20PM.png" alt="" /></p>
+
+<p>це має викликати почуття нудоти у будь-якого інженера з експлуатації.</p>
+
+<ul>
+  <li>Оглядаючи сайт, ви постійно бачите повідомлення «швидко і дешево», наприклад, у програмі рефералів</li>
+</ul>
+
+<p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
+
+<p>що підкреслює це повідомлення та пропонує розробникам продавати своїм друзям швидкість і дешевизну без навіть маленького шматочка інформації про міцність, послідовність чи безпеку.</p>
+
+<ul>
+  <li>Читаючи блог, стало зрозуміло, що DO дотримується плинного, керованого користувачами, циклу розробки:</li>
+</ul>
+
+<p>https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</p>
+
+<p>і хоча я захоплююся, схвалюю та рекомендую такий підхід до програмного забезпечення в цілому, побудова безпеки та міцності за ітераціями, здається, не ідеально підходить для такого бізнесу - незважаючи на те, як круто венчурні капіталісти (які ніколи не боролися з порушенням безпеки в реальному світі) можуть вважати це. Деякі речі вимагають великого досвіду та планування зверху вниз: стек, який дозволяє своїм користувачам зберігати дані та виконувати код, будь то браузер чи хмара, відноситься до категорії «я хочу, щоб хтось витягував реальний код із реальних систем із історією атак» і не «Ми слухаємо користувачів та швидко ітеративно вчимося в процесі».</p>
+
+<p>Тож не помиліться, я все ще оцінюю DigitalOcean як гарний програмований стек для розгортання простих статичних сайтів, і я безперечно хочу бачити їх успішними, але у мене є занепокоєння щодо їхньої культури та чи це та культура, яка практикує захисні замість реактивних практик безпеки, і чи вони зможуть підтримувати свій ріст, цінову політику та, зрештою, фінансування, коли і якщо вони наздоженуть інших гравців хмари в цьому відношенні. Читання їхніх статей та переконань у контексті недавнього фіаско (https://github.com/fog/fog/issues/2525) дає мені деякі підстави сумніватися.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
+```

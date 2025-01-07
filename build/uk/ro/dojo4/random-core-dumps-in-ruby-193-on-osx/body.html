@@ -1,0 +1,21 @@
+<pre>ви викликали неправильну бібліотеку openssl
+
+
+вам потрібно запустити щось таке:
+
+(для rvm)
+
+ otool -L ~/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/x86_64-darwin11.2.0/openssl.bundle
+
+
+(для rbenv)
+
+ otool -L ~/.rbenv/versions/1.9.3-p0/lib/ruby/1.9.1/x86_64-darwin11.2.0/openssl.bundle
+
+
+якщо у вас є посилання на /opt або будь-яку не-osx бібліотеку openssl (скажімо,
+з brew), ви потрапили в біді і вам знадобиться перезбирати ruby. це є
+джерелом помилок ssh/http/та випадкових seg faults, з якими ви стикалися в
+різних проектах.
+
+</pre>

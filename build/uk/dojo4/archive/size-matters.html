@@ -1,0 +1,199 @@
+```html
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>розмір має значення</title>
+
+<meta property="og:title" content="розмір має значення"/>
+<meta property="og:description" content="йди далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"size-matters"}">
+    <meta property="site:path_info" content=""/size-matters"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Мультиплексинг, який визначає, які зображення надсилати на які пристрої, є складною проблемою.</p>
+
+<p>Деякі люди використовують виявлення пристроїв (користувацькі агенти), щоб визначити, хто хоче отримати великі<br />
+зображення. Іноді використовуються медіа-запити/ширина екрану як проксі.</p>
+
+<p>Обидва варіанти погані.</p>
+
+<p>Сьогодні легко можна побажати, щоб зображення високої роздільності відображалися на планшеті з екраном Retina, підключеному до локальної Wi-Fi. З "нормальними" підходами до покращення зображень<br />
+деякі пристрої з хорошим з'єднанням та неймовірною щільністю пікселів отримуватимуть зображення низької якості.</p>
+
+<p>Планшет на повільному з'єднанні в горизонтальній орієнтації може мати екран<br />
+з довільним порогом (768px) і отримувати величезні зображення, призначені для настільних машин, підключених через широкосмугове з'єднання.</p>
+
+<p>Посилення пристроїв і/або ширини екрану легко може призвести до відправки маленького зображення на пристрій з екраном високої щільності<br />
+що спричиняє реальні проблеми з макетом: 320px зображення може зайняти весь екран на деяких iPhone, тоді як на інших воно або займе 1/2 екрану, або розтягнеться, щоб заповнити усе 640 і виглядати погано.</p>
+
+<p>Що, якщо ми просто завжди намагалися доставляти зображення найвищої якості<br />
+всім пристроям і надавали зображення нижчої якості, якщо ми визначили, що це погана ідея під час виконання?</p>
+
+<p>Саме так діє підхід jquery.bires.</p>
+
+<p>Спочатку контент надходить з зображеннями низької якості, роблячи час завантаження сторінки<br />
+якнайшвидшим і надаючи користувачу повний контент. Після завантаження всіх зображень низької якості jquery.bires починає замінювати зображення низької якості на зображення високої якості <em>послідовно</em>, вимірюючи швидкість кожної заміни. Якщо яка-небудь заміна здається занадто довгою, покращення просто зупиняється. Оскільки<br />
+jquery.bires завантажує великі зображення одне за раз, інтерфейс користувача залишається<br />
+відгукним на кліки та взаємодії користувача.</p>
+
+<p>Ключовим тут є те, що, з огляду на сучасні мобільні дисплеї високої щільності, це саме<br />
+<em>пропускна здатність</em> і <em>не розмір екрану</em>, який повинен визначати, хто отримує зображення високої якості.</p>
+
+<p>Цей підхід призводить до того, що престижний планшет з локальною Wi-Fi отримує найкращий<br />
+можливий досвід, одночасно зберігаючи сторінки, які переглядаються на настільному ПК, підключеному через 3G, від перевищення ліміту даних і дуже<br />
+повільного завантаження.</p>
+
+<p>Ще краще, замість керування списками користувацьких агентів, здогадування про різні<br />
+точки зламу тощо - код завжди використовує ту саму стратегію, намагаючись зробити сторінки, що завантажуються швидко і стають найкращими можливими пізніше.</p>
+
+<p>посилання:</p>
+
+<ul>
+  <li>https://github.com/bjankord/Categorizr</li>
+  <li>http://www.brettjankord.com/2013/01/10/active-development-on-categorizr-has-come-to-an-end/</li>
+  <li>https://gist.github.com/paulirish/268257</li>
+  <li>https://github.com/desandro/imagesloaded</li>
+  <li>http://www.youtube.com/watch?v=Tj0lmwg27EY</li>
+  <li>http://dojo4.com</li>
+</ul>
+
+<p>примітка:</p>
+
+<ul>
+  <li>jquery.bires <em>залежить від</em> https://github.com/desandro/imagesloaded</li>
+</ul>
+
+<p>репозиторій:</p>
+
+<ul>
+  <li>https://github.com/ahoward/jquery.bires</li>
+</ul>
+
+<p><br /><br />
+використання:</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #116329">&lt;li&gt;</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #116329">&lt;a</span>&nbsp;<span style="color: #116329">href=</span><span style="color: #0a3069">"#!scott-jurek"</span>&nbsp;<span style="color: #116329">title=</span><span style="color: #0a3069">"Scott Jurek"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;img</span>&nbsp;<span style="color: #116329">class=</span><span style="color: #0a3069">"bires"</span>&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">data-hires=</span><span style="color: #0a3069">"assets/banner.png"</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"assets/banner.png"</span>&nbsp;<span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #116329">&lt;/a&gt;</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;
+</div><div class='code-line code-line-10'><span style="color: #116329">&lt;/li&gt;</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'><span style="color: #116329">&lt;li&gt;</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #116329">&lt;a</span>&nbsp;<span style="color: #116329">href=</span><span style="color: #0a3069">"#!robert-sinskey-vinyards"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"42"</span>&nbsp;<span style="color: #116329">title=</span><span style="color: #0a3069">"Robert Sinskey Vinyards"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;img</span>&nbsp;<span style="color: #116329">class=</span><span style="color: #0a3069">"bires"</span>&nbsp;
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">data-hires=</span><span style="color: #0a3069">"assets/banner.png"</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"assets/banner.png"</span>&nbsp;<span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #116329">&lt;/a&gt;</span>
+</div><div class='code-line code-line-20'><span style="color: #116329">&lt;/li&gt;</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>
+</div></code></div>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">download</span><span style="color: #24292f;background-color: #f6f8fa">({</span><span style="color: #0a3069">'</span><span style="color: #0a3069">selector</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">img.bires</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-7'>
+</div></code></div>
+
+<p><br /><br />
+джерело:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">namespace</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781">// the hi-res image downloader object</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">selector</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">img.bires</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">too_damn_slow</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">420</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug_delay</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">420</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #6e7781">// downloader class and factory method</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #953800">Function</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">download</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">slice</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">apply</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">arguments</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-23'>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">initialize</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">apply</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">downloader</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f
