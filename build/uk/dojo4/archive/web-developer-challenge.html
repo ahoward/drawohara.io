@@ -1,42 +1,41 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
+    <!-- meta -->
     <title>Виклик для веб-розробника!</title>
 
-<meta property="og:title" content="Виклик для веб-розробника!"/>
-<meta property="og:description" content="переходь далі." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Виклик для веб-розробника!"/>
+    <meta property="og:description" content="продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-
-  <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"web-developer-challenge"}">
@@ -68,43 +67,42 @@
   <body>
     <header>
       <a href="/home">@drawohara</a>
-<hr>
+      <hr>
     </header>
 
     <main>
-      <p>Сьогодні я провожу кросс-браузерне тестування нового сайту перед його запуском. Як завжди, це включає деякі гімнастичні вправи зі стилем, щоб сайт виглядав краще, ніж жахливо в Internet Explorer. Але сьогодні я зіткнувся з проблемою в Firefox, яку не міг пояснити.</p>
-<p>Сайт, який я створюю, рекламує велосипедний захід. Він містить кілька блоків такого виду:</p>
+      <p>Сьогодні я тестую новий сайт у різних браузерах перед його запуском. Як завжди, це включає деякі стилістичні вправи, щоб сайт виглядав краще, ніж жахливо в Internet Explorer. Але сьогодні я зіткнувся з проблемою в Firefox, яку не міг пояснити.</p>
+      <p>Сайт, який я будую, рекламує велосипедну подію. Він містить кілька таких блоків:</p>
 
-<p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>
+      <p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>
 
-<p>Вони містять інформацію про спонсорів заходу. Дивовижно, що хоча ці блоки відображаються у <a href="https://uk.wikipedia.org/wiki/Internet_Explorer_6" title="https://uk.wikipedia.org/wiki/Internet_Explorer_6">улюбленому десятирічному браузері всіх</a>, вони не з'являються в жодній версії Firefox на моєму диску.</p>
-<p>Серйозно? Так.</p>
-<p>Ці блоки <em>невидимі</em> в Firefox. Браузер змінює їх, щоб надати їм атрибут <code>display:none;</code>.</p>
-<p>Але найкраще те, що якщо я зміню клас розділу на щось інше, крім "sponsor", блоки відображаються чудово. Насправді, коли ви знаєте причину, це єдиний вихід: не надавайте елементам на вашій сторінці CSS-клас "sponsor".</p>
-<p>Ви думаєте, що знаєте, що спричинило це? <a href="https://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845" title="https://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845">Перевірте це</a>.</p>
+      <p>Вони містять інформацію про спонсорів події. Дивовижним чином, хоча ці блоки відображаються в <a href="http://uk.wikipedia.org/wiki/Internet_Explorer_6" title="http://uk.wikipedia.org/wiki/Internet_Explorer_6">улюбленому десятирічному браузері всіх</a>, вони не з'являються в жодній версії Firefox на моєму диску.</p>
+      <p>Серйозно? Так.</p>
+      <p>Ці блоки <em>невидимі</em> у Firefox. Браузер змінює їх, щоб дати їм атрибут <code>display:none;</code>.</p>
+      <p>Але найкраща частина полягає в тому, що якщо я зміню клас секції на щось інше, крім "sponsor", блоки відображаються чудово. Насправді, коли ви знаєте причину, це єдине рішення: не давайте елементам на вашій сторінці CSS клас "sponsor".</p>
+      <p>Ви думаєте, що знаєте, що це викликало? <a href="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845" title="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845">Перевірте це</a>.</p>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас<a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/web-developer-challenge">i-hate-this<a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/web-developer-challenge">i-love-this<a>
-  </li>
-  <li>
-    <a href="/contact">контакти<a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">щодо нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/web-developer-challenge">я-ненавижу-це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/web-developer-challenge">я-люблю-це</a>
+          </li>
+          <li>
+            <a href="/contact">контакт</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

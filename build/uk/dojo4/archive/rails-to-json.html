@@ -1,7 +1,7 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,36 +10,36 @@
       gtag('config', 'G-DQVD9T27V4');
     </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>rails to_json</title>
+    <!-- meta -->
+    <title>rails до json</title>
 
-    <meta property="og:title" content="rails to_json"/>
-    <meta property="og:description" content="Продовжуйте." />
+    <meta property="og:title" content="rails до json"/>
+    <meta property="og:description" content="рухай далі." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
     <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"rails-to-json"}">
-    <meta property="site:path_info" content=""/rails-to-json"">
+    <meta property="site:params" content="{"ext":null,"id":"rails-do-json"}">
+    <meta property="site:path_info" content=""/rails-do-json"">
 
     <style>
       /* anti pico */
@@ -72,23 +72,23 @@
 
     <main>
       <div class="ro markdown">
-        <p>Rails, включаючи rails3, має цей чудовий шматок коду, пов'язаний із наданням методу “to_json” на вбудованих об'єктах:</p>
+        <p>rails, включно з rails3, має цей чудовий шматок коду, який стосується надання методу “to_json” вбудованим об'єктам:</p>
 
         <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
-        </div><div class='code-line code-line-2'><span style="color: #6e7781"># Хак для завантаження gem json першим, щоб ми могли перевизначити його to_json.</span>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781"># Хак для завантаження гему json першим, щоб ми могли перевизначити його to_json.</span>
         </div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
         </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
         </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
         </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
         </div><div class='code-line code-line-7'>
-        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># Gem JSON додає декілька модулів до базових класів Ruby, які містять визначення :to_json, перевизначаючи</span>
-        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># їх стандартну поведінку. Тому нам потрібно визначити базовий метод to_json у всіх них,</span>
-        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># інакше вони завжди будуть використовувати реалізацію gem to_json, яка є несумісною з</span>
-        </div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># декількома випадками (наприклад, реалізація JSON для Hash не працює) та спадковістю,</span>
-        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># наслідком чого класи, такі як ActiveSupport::OrderedHash, не можуть бути серіалізовані в json.</span>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># Гем JSON додає кілька модулів до базових класів Ruby, які містять визначення :to_json, перевизначаючи</span>
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># їх поведінку за замовчуванням. Тобто, нам потрібно визначити базовий метод to_json для всіх з них,</span>
+        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># інакше вони завжди будуть використовувати реалізацію гему to_json, що є несумісним у</span>
+        </div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># декількох випадках (наприклад, реалізація JSON для Hash не працює) з успадкуванням</span>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># і, наслідком, класи, такі як ActiveSupport::OrderedHash, не можуть бути серіалізовані до json.</span>
         </div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
         </div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">RUBY</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__LINE__</span>
-        </div><div class='code-line code-line-15'><span style="color: #0a3069"># Серіалізує об'єкт у JSON (JavaScript Object Notation). Див. www.json.org для отримання додаткової інформації.</span>
+        </div><div class='code-line code-line-15'><span style="color: #0a3069"># Скидає об'єкт у JSON (JavaScript Object Notation). Див. www.json.org для більшої інформації.</span>
         </div><div class='code-line code-line-16'><span style="color: #0a3069">def to_json(options = nil)</span>
         </div><div class='code-line code-line-17'><span style="color: #0a3069">ActiveSupport::JSON.encode(self, options)</span>
         </div><div class='code-line code-line-18'><span style="color: #0a3069">end</span>
@@ -97,7 +97,7 @@
         </div><div class='code-line code-line-21'>
         </div></code></div>
 
-        <p>Що це ефективно робить - це замінює метод “to_json”, який надається gem json, на той, який active_support вважає кращим. Коментарі про те, що json зламаний, застарілі, і це було хаком з самого початку. У моєму випадку мені дуже подобається такий підхід у моєму /api контролері:</p>
+        <p>те, що це ефективно робить, - затирає метод “to_json”, який надає гем json, своїм, який, на думку active_support, кращий. Коментар про те, що json зламаний, застарів, і це був хак з самого початку. У моєму випадку мені дійсно подобається такий підхід у моєму /api контролері:</p>
 
         <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
         </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">to_json</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">object</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
@@ -110,9 +110,9 @@
         </div><div class='code-line code-line-9'>
         </div></code></div>
 
-        <p>оскільки це робить налагодження набагато простішим. ось як я це зробив у додатку rails3 -</p>
+        <p>оскільки це робить налагодження набагато легшим. ось як я це зробив у застосунку rails3 -</p>
 
-        <p>перший крок полягав у тому, щоб rails3 підтримував концепцію “преініціалізації”, яку використовували старі версії rails:</p>
+        <p>перший крок полягав у тому, щоб zroбити так, щоб rails3 підтримував концепцію “преініціалізатора”, яку використовували старі rails:</p>
 
         <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
         </div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">### file: config/preinitializer.rb</span>
@@ -159,10 +159,4 @@
         </div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
         </div><div class='code-line code-line-8'>
         </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
-        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
-        </div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
-        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-        </div><div class='code-line code-line-13'>
-        </div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
-        </div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #cf222e">do</span>
-        </div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">alias_method</span><span style="color: #2429
+        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #

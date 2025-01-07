@@ -1,46 +1,44 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
+    <!-- meta -->
     <title>Кращі Помилки</title>
 
-<meta property="og:title" content="Кращі Помилки"/>
-<meta property="og:description" content="продовжуйте рух." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Кращі Помилки"/>
+    <meta property="og:description" content="рухайтеся далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
-
-  <meta property="og:image:type" content="image/jpeg" />
-
-    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:route" content="/dojo4/archive/:id">
     <meta property="site:params" content="{"ext":null,"id":"better-errors"}">
-    <meta property="site:path_info" content=""/better-errors"">
+    <meta property="site:path_info" content="/better-errors">
 
     <style>
       /* anti pico */
@@ -68,46 +66,44 @@
   <body>
     <header>
       <a href="/home">@drawohara</a>
-<hr>
+      <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>Одним із гемів Rails, які ми використовуємо в наших нових додатках, є <a href="https://github.com/charliesome/better_errors">Better Errors</a>, який дозволяє вам потрапити в REPL, схожий на pry, і кращу сторінку помилок, коли Rails викликає виняток під час процесу запиту браузера.</p>
+        <p>Одним з гем Rails, які ми використовуємо в нових додатках, є <a href="https://github.com/charliesome/better_errors">Better Errors</a>, який дозволяє ви запустити REPL схожий на pry і отримати кращу сторінку помилок, коли Rails викидає виключення під час обробки запиту браузера.</p>
 
-<p><img src='/ro/dojo4/better-errors/assets/b.png' alt="" /> <br />
-<em>(<a href="https://github.com/charliesome/better_errors">Джерело зображення</a>)</em></p>
+        <p><img src='/ro/dojo4/better-errors/assets/b.png' alt="" /> <br />
+        <em>(<a href="https://github.com/charliesome/better_errors">Джерело зображення</a>)</em></p>
 
-<p>Це корисно для наших розробників, тому що замість того, щоб отримувати статичну сторінку помилки, шукати в коді, куди поставити <code>binding.pry</code>, і повторно запускати код, схильний до помилок, Better Errors завантажує сторінку, де ми можемо взаємодіяти з кодом тут і зараз, що дозволяє нам швидше знаходити проблему, швидше писати виправлення та швидше ітеративно працювати.</p>
+        <p>Це допомагає нашим розробникам, тому що замість того, щоб отримати статичну сторінку помилки, шукати в коді, куди поставити <code>binding.pry</code>, і запускати схильний до помилок код знову, Better Errors завантажує сторінку, де ми можемо взаємодіяти з кодом прямо тут і зараз, що дозволяє нам швидше знайти проблему, написати виправлення швидше та швидше ітерацій.</p>
 
-<p>Однією з недавніх функцій, які ми щойно відкрили, є можливість бачити останню помилку rpc. У нас є шаблон ajax-запиту до методу rpc у нашому додатку Rails, коли ми просто повинні отримати деяку інформацію або відправити простий об'єкт, наприклад, додати користувача до обраного або щось подібне. Код, який працює на нашому сервері Rails і обробляє цей ajax-запит, не викличе помилку на всьому сервері та автоматично не викличе Better Errors, тому обхідний шлях полягає в переході за спеціальним URL-адресою, яку Better Errors надає для відображення останньої помилки, що виникла в нашому коді Rails: http://localhost:3000/__better_errors.</p>
+        <p>Однією з останніх функцій, які ми щойно відкрили, є можливість бачити останню помилку rpc. Ми маємо шаблон ajax, який викликає метод rpc у нашому додатку Rails, коли потрібно отримати деяку інформацію або відправити простий об'єкт, наприклад, додати користувача в обране. Код, який працює на нашому сервері Rails, який обробляє цей запит ajax, не зламає весь сервер і автоматично не викличе Better Errors, тому обхідний шлях — перейти за спеціальним url, який Better Errors надає для показу останньої помилки, яка виникла в нашому коді Rails: http://localhost:3000/__better_errors.</p>
 
-<p>Чи використовував хтось ще цей інструмент? Що вам подобається/не подобається в ньому? Завжди раді чути відгуки через Twitter (натисніть нижче).</p>
-
-</div>
+        <p>Чи хтось ще використовував цей інструмент? Які речі вам подобаються/не подобаються в ньому? Завжди раді почути відгуки через Twitter (натисніть нижче).</p>
+      </div>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас<a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/better-errors">я-ненавижу-це<a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/better-errors">я-люблю-це<a>
-  </li>
-  <li>
-    <a href="/contact">контакти<a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/better-errors">я-ненавижу-це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/better-errors">я-люблю-це</a>
+          </li>
+          <li>
+            <a href="/contact">контакт</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

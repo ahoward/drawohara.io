@@ -1,4 +1,3 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
   <!-- ga -->
@@ -11,7 +10,7 @@
 </script>
 
   <!-- deps -->
-    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
@@ -23,24 +22,24 @@
     <meta name="color-scheme" content="light dark" />
 
   <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
 
   <!-- meta -->
-    <title>Оголошення Imbed - найкращий спосіб використання веб-контенту в додатку для iOS</title>
+    <title>Оголошення Imbed - найкращий спосіб використовувати веб-контент в iOS-додатку</title>
 
-<meta property="og:title" content="Оголошення Imbed - найкращий спосіб використання веб-контенту в додатку для iOS"/>
-<meta property="og:description" content="продовжуй." />
+<meta property="og:title" content="Оголошення Imbed - найкращий спосіб використовувати веб-контент в iOS-додатку"/>
+<meta property="og:description" content="переходьте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
   <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"}">
-    <meta property="site:path_info" content=""/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"">
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app'}">
+    <meta property="site:path_info" content="/uk/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">
 
     <style>
       /* anti pico */
@@ -63,38 +62,39 @@
         }
       });
     </script>
+  <base href='/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/uk/home">@drawohara</a>
 <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>Часто має сенс зробити деякий розвиток в HTML, JS і CSS, а потім використовувати цей контент у нативному додатку. Phonegap стверджує, що є найкращим рішенням для цього випадку, але з <a href="http://dojo4.com/blog/why-phonegap-sucks">мого досвіду</a> це одне з найгірших.</p>
+  <p>Часто має сенс розробляти щось на HTML, JS і CSS, а потім використовувати цей контент у нативному додатку. Phonegap стверджує, що є найкращим рішенням для цього випадку, але за <a href="http://dojo4.com/uk/blog/why-phonegap-sucks">моїм досвідом</a> це одне з найгірших.</p>
 
-<p>У відповідь на Phonegap я відкрив наш стартовий репозиторій компанії для додатків iOS, які потребують використання веб-контенту в UIWebView, назвавши його <a href="https://github.com/dojo4/imbed">Imbed</a>.</p>
+<p>У відповідь на Phonegap, я відкрив вихідний код стартового репозиторію нашої компанії для iOS-додатків, які потребують використовувати веб-контент у UIWebView, назвавши його <a href="https://github.com/dojo4/imbed">Imbed</a>.</p>
 
 <p>Особливості:</p>
 
 <ul>
   <li>
-    <p><strong>Малий та відкритий код.</strong> Один UIViewController, один HTML-файл і супермалий, один клас, відкритий проект <a href="https://github.com/marcuswestin/WebViewJavascriptBridge">WebViewJavascriptBridge</a>.</p>
+    <p><strong>Малий та відкритий код.</strong> Один UIViewController, один HTML-файл і супер малий, 1 клас, проект з відкритим кодом <a href="https://github.com/marcuswestin/WebViewJavascriptBridge">WebViewJavascriptBridge</a>.</p>
   </li>
   <li>
-    <p><strong>Підтримка будь-якої функції iOS відразу.</strong> Нічого не чекаючи, поки якийсь сторонній розробник створить плагін. Ви пишете нативний код Objective-C самостійно. Отже, як тільки Apple його випустить, ви зможете його підтримувати.</p>
+    <p><strong>Підтримка будь-якої функції iOS відразу.</strong> Не чекайте, поки якийсь сторонній розробник створить плагін. Ви самі пишете нативний код Objective-C. Otto ж, як Apple його випустить, ви можете його підтримувати.</p>
   </li>
   <li>
-    <p><strong>Слідуйте порадам Apple, а не когось іншого.</strong> Apple чудово документує, як використовувати функції iOS. Більшість сторонніх розробників цього не роблять. Кого б ви хотіли слухати?</p>
+    <p><strong>Слідуйте порадам Apple, а не когось іншого.</strong> Apple чудово документує, як використовувати функції iOS. Більшість сторонніх розробників цього не роблять. Кого ви б хотіли слухати?</p>
   </li>
   <li>
-    <p><strong>Автоматизуйте все з Rake.</strong> Зосередьтесь на написанні коду, тестуванні його в браузері, а потім автоматизуйте все інше в чіткому, відкритому Rakefile. Чорт із тим, навіть архівуйте, надсилайте до Testflight і повідомляйте Campfire.</p>
+    <p><strong>Автоматизуйте все з допомогою Rake.</strong> Зосередьтеся на написанні вашого коду, тестуванні його в браузері, а потім автоматизуйте все інше в чіткому, відкритому Rakefile. Навіть архівуйте, відправляйте на Testflight і повідомляйте в Campfire.</p>
   </li>
 </ul>
 
-<p>Це ваш додаток. Не покладайтеся на якийсь сторонній інструмент для підтримки функцій, які вже пропонує iOS. Візьміть свій код за роги.</p>
+<p>Це ваш додаток. Не покладайтеся на якийсь сторонній інструмент для підтримки функцій, які вже пропонує iOS. Бериться за свій код.</p>
 
 <p><a href="https://github.com/dojo4/imbed/archive/master.zip">Завантажте Imbed</a> зараз.</p>
 
@@ -103,25 +103,24 @@
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
 <blockquote>
 <ul>
   <li>
-    <a href="/about">про нас<a>
+    <a href="/uk/about">про нас</a>
   </li>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">i-hate-this<a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">i-hate-this</a>
   </li>
   <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">i-love-this<a>
+    <a href="mailto:i-love-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">i-love-this</a>
   </li>
   <li>
-    <a href="/contact">контакти<a>
+    <a href="/uk/contact">контакти</a>
   </li>
 </ul>
 </blockquote>
-<a href="/">&lt;&mdash; eject</a>
+<a href="/uk/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

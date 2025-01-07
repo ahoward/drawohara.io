@@ -1,45 +1,45 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>Screen -- налаштуйте термінальне середовище вашого проекту один раз і назавжди.</title>
+    <!-- meta -->
+    <title>Screen -- налаштуйте середовище терміналу вашого проекту один раз і назавжди.</title>
 
-<meta property="og:title" content="Screen -- налаштуйте термінальне середовище вашого проекту один раз і назавжди."/>
-<meta property="og:description" content="продовжуйте." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Screen -- налаштуйте середовище терміналу вашого проекту один раз і назавжди."/>
+    <meta property="og:description" content="продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"screen-set-up-your-project-s-terminal-environment-once-and-only-once"}">
-    <meta property="site:path_info" content=""/screen-set-up-your-project-s-terminal-environment-once-and-only-once"">
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{&quot;ext&quot;:null,&quot;id&quot;:&quot;screen-set-up-your-project-s-terminal-environment-once-and-only-once&quot;}">
+    <meta property="site:path_info" content="/screen-set-up-your-project-s-terminal-environment-once-and-only-once">
 
     <style>
       /* anti pico */
@@ -67,27 +67,27 @@
   <body>
     <header>
       <a href="/home">@drawohara</a>
-<hr>
+      <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>З будь-яким проектом я запускаю кілька програм одночасно під час розробки. Зазвичай це призводить до кількох вкладок у додатку Terminal - одна для локального сервера, одна для бази даних, одна для клієнтського застосунку та одна для git. (Наразі я використовую графічний редактор (ST2), але, можливо, скоро повернусь до vim...) Ця конфігурація з кількома вкладками відбувається для кожного проекту, над яким я працюю, і зазвичай я перемикаюся між кількома проектами кілька разів на день.</p>
+        <p>З будь-яким проектом я одночасно запускаю кілька програм під час процесу розробки. Це зазвичай призводить до кількох вкладок у програмі Terminal - одна для локального сервера, одна для бази даних, одна для клієнтського додатку та одна для git. (Наразі я використовую графічний редактор (ST2), але, можливо, скоро повернуся до vim...) Ця багатовіконна конфігурація відбувається для кожного проекту, над яким я працюю, і я зазвичай перемикаюся між кількома проектами кілька разів на день.</p>
 
-<p>З цією конфігурацією з кількома вкладками, коли мені потрібно переключитися на інший проект, я повинен або відкрити нове вікно Terminal з власними вкладками для цього проекту та мати зіткнення з більш ніж необхідною кількістю відкритих вікон (що не є варіантом для мінімаліста, як я), або закрити всі вкладки, які я маю відкритими, щоб знову відкрити їх всі, коли я повернуся до цього проекту.</p>
+        <p>З цією багатовіконною конфігурацією, коли мені потрібно змінити проект, над яким я працюю, мені потрібно або відкрити нове вікно Terminal з його власними вкладками для цього проекту та мати справу з більш ніж необхідною кількістю відкритих вікон (не варіант для мінімаліста, як я) або закрити всі вкладки, які я маю відкритими, щоб лише відкрити їх знову, коли я перемикаюся назад на цей проект.</p>
 
-<p>Ну, як і в більшості днів, я дізнався інтелектуальне рішення цієї проблеми від мудрого та всемогутнього лідера dojo4, <a href="http://dojo4.com/team/ara-t-howard">Ара</a>. Він використовує програму GNU <a href="https://www.gnu.org/software/screen/">Screen</a>. У рамках однієї вкладки терміналу Screen дозволяє відкривати кілька "вікон" (також відомих як вкладки) всередині тієї самої вкладки терміналу. Ось як цім користуватися:</p>
+        <p>Ну, як і в більшості днів, я дізнався геніальне рішення цієї проблеми від мудрого та всемогутнього лідера dojo4, <a href="http://dojo4.com/team/ara-t-howard">Ари</a>. Він використовує програму GNU <a href="https://www.gnu.org/software/screen/">Screen</a>. У рамках однієї вкладки Terminal Screen дозволяє відкривати кілька "вікон" (також відомих як вкладки) у тій самій вкладці Terminal. Ось як ним користуватися:</p>
 
-<pre><code class="language-text"># створення та повторне підключення до сеансу
-screen -S [name] = створити названий екран
-screen -D -R [name] = повторно підключитися до названого екран та відключити інших, якщо потрібно
-screen -list = список екранів
+        <pre><code class="language-text"># створення та повторне підключення до сеансу
+screen -S [name] = створити іменований екран
+screen -D -R [name] = повторно підключитися до іменованого екрану та відключити інших користувачів, якщо потрібно
+screen -list = перелік екранів
 
-# (вихід зі всіх вікон у сеансі екрану призведе до виходу з цього сеансу. Однак сеанс екрану - це запущений процес, тож ви можете вручну завершити його.)
+# (вихід зі всіх вікон у сеансі екрану вийде з цього сеансу. Але сеанс екрану є запущеним процесом, тому ви можете вручну завершити його.)
 
-# всередині сеансу екрану:
+# у сеансі екрану:
 ctrl-A + ? = допомога
-ctrl-A + " = список вікон
+ctrl-A + " = перелік вікон
 ctrl-A + c = створити нове вікно
 ctrl-A + n = наступне вікно
 ctrl-A + p = попереднє вікно
@@ -99,43 +99,41 @@ alias sdr='screen -d -r '
 alias s='screen -D -R '
 alias ss='screen -S'
 
-sdr [name] = повторно підключитися до названого екран та відключити інших, якщо потрібно
-ss [name] = створити названий екран
-sl = список екранів
+sdr [name] = повторно підключитися до іменованого екрану та відключити інших користувачів, якщо потрібно
+ss [name] = створити іменований екран
+sl = перелік екранів
 </code></pre>
 
-<p>Ще одна дуже крута функція екрану полягає в тому, що коли ви відключаєтеся від сеансу екрану, всі ваші вікна залишаються запущеними, і коли ви знову підключаєтеся до сеансу екрану, у вас знову всі ваші вікна в наявності.</p>
+        <p>Ще одна дуже крута функція Screen полягає в тому, що коли ви відключаєтеся від сеансу Screen, всі ваші вікна залишаються запущеними, і коли ви повторно підключаєтеся до сеансу Screen, у вас знову є всі ваші вікна.</p>
 
-<p>Коли ми обговорювали це в нашому офісі, <a href="http://dojo4.com/team/ryan-cook">Раян Кук</a> створив <a href="https://gist.github.com/cookrn/2711966">гарний маленький допоміжник Ruby</a> для створення сеансів екрану, які названі за вашою поточною директорією.</p>
+        <p>Коли ми обговорювали це в нашому офісі, <a href="http://dojo4.com/team/ryan-cook">Раян Кук</a> створив <a href="https://gist.github.com/cookrn/2711966">гарний маленький допоміжник Ruby</a> для створення сеансів Screen, які мають назву вашої поточної директорії.</p>
 
-<p>Таким чином, мій робочий процес змінився від наявності кількох вкладок відкритими в терміналі до однієї вкладки в терміналі, де я повторно підключаюся до сеансу екрану для кожного проекту, над яким працюю. Це дозволяє мені дуже швидко переключатися між проектами та припинити втрачати час на повторне налаштування та завершення всіх вкладок терміналу, які я використовую для проекту.</p>
+        <p>Таким чином, мій робочий процес змінився від використання кількох вкладок у Terminal до використання однієї вкладки у Terminal, де я повторно підключаюся до сеансу Screen для кожного проекту, над яким працюю. Це дозволяє мені дуже швидко перемикатися між проектами та припинити втрачати час на повторне налаштування та закриття всіх вкладок Terminal, які я використовую для проекту.</p>
 
-<p>Тепер мені просто потрібно перевести більше речей у використання терміналу (наприклад, мій редактор), щоб дійсно отримати максимальну користь від екрану...</p>
-
-</div>
+        <p>Тепер мені просто потрібно перевести більше речей на використання терміналу (наприклад, мого редактора), щоб дійсно максимально скористатися Screen...</p>
+      </div>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас<a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">i-hate-this<a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">i-love-this<a>
-  </li>
-  <li>
-    <a href="/contact">контакти<a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
+      <a href="/goto" name="goto">&mdash;&gt; перейти</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">я-не-люблю це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">я-люблю це</a>
+          </li>
+          <li>
+            <a href="/contact">контакт</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; вихід</a>
     </footer>
   </body>
 </html>
-```

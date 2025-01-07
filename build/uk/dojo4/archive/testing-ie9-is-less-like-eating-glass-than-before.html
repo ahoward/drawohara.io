@@ -1,45 +1,45 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>Тестування IE9 менш схоже на те, щоб їсти скло, ніж раніше</title>
+    <!-- meta -->
+    <title>Тестування IE9 менш подібне до їжі склом, ніж раніше</title>
 
-<meta property="og:title" content="Тестування IE9 менш схоже на те, щоб їсти скло, ніж раніше"/>
-<meta property="og:description" content="рухайся далі." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Тестування IE9 менш подібне до їжі склом, ніж раніше"/>
+    <meta property="og:description" content="продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"testing-ie9-is-less-like-eating-glass-than-before"}">
-    <meta property="site:path_info" content=""/testing-ie9-is-less-like-eating-glass-than-before"">
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content='{"ext":null,"id":"testing-ie9-is-less-like-eating-glass-than-before"}'>
+    <meta property="site:path_info" content="/testing-ie9-is-less-like-eating-glass-than-before">
 
     <style>
       /* anti pico */
@@ -67,71 +67,70 @@
   <body>
     <header>
       <a href="/home">@drawohara</a>
-<hr>
+      <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>Цієї вихідної я вирішував деякі помилки у двох проєктах (http://dojo4.com сам по собі та http://my.windowfarms.com). Я відкладав це на довгий час, тому що тестування в IE9, традиційно, це як їсти скло або вдаряти свої відповідні частини тіла в двері автомобіля.</p>
+        <p>Ці вихідні я розбирався з деякими помилками в двох проектах (http://dojo4.com сам по собі та http://my.windowfarms.com). Я відкладав це на тривалий час, тому що тестування в IE9 традиційно схоже на їжу склом або захлопування дверей автомобіля.</p>
 
-<p>Часу минуло з того часу, як я досліджував варіанти для "не потрібно запускати справжню вікновську машину", і був приємно здивований, коли знайшов два радикально крутих варіанти:</p>
+        <p>Минуло деякий час з тих пір, як я досліджував варіанти "не потрібно завантажувати справжню машину з Windows", і був приємно здивований, знайшовши дві радикально чудові альтернативи:</p>
 
-<hr />
+        <hr />
 
-<p>Перший це http://saucelabs.com/ - вони дозволяють вам запустити будь-який браузер у веб-браузері</p>
+        <p>Перше - це http://saucelabs.com/ - вони практично дозволяють запустити будь-який браузер у веб-браузері</p>
 
-<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.03.18_PM.png' alt="img" /></p>
+        <p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.03.18_PM.png' alt="img" /></p>
 
-<p>Це я запускаю екземпляр IE9. Коли ви закінчите, це виглядає так:</p>
+        <p>Це я запускаю екземпляр IE9. Після завершення це виглядає так:</p>
 
-<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.06.14_PM.png' alt="img" /></p>
+        <p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.06.14_PM.png' alt="img" /></p>
 
-<p>Вони записують і дозволяють вам ділитися всіма сесіями:</p>
+        <p>Вони записують і дозволяють ділитися всіма сесіями:</p>
 
-<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.07.19_PM.png' alt="img" /></p>
+        <p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.07.19_PM.png' alt="img" /></p>
 
-<p>ПС. це платна послуга, але вони надають вам безкоштовний обліковий запис, якщо ви сертифіковані OSS. З понад 150 rubygems я скористався цією можливістю для перегляду, але планую вкладати платні облікові записи в http://dojo4.com, тому що це швидко, круто, і також надзвичайно швидко та круто тестувати дурний баг IE в поспіху, використовуючи їх платформу.</p>
+        <p>PS. це платна послуга, але вони надають вам безкоштовний обліковий запис, якщо ви маєте сертифікат OSS. З понад 150 rubygems я скористався цією можливістю для перегляду, але планую включити платні облікові записи до http://dojo4.com, тому що це швидко, класно, і також надзвичайно швидко та класно тестувати дурний баг IE в поспіху, використовуючи їх платформу.</p>
 
-<p>Це майже все. Ви запускаєте його, ви використовуєте його. Це трохи повільно.</p>
+        <p>Це практично все. Ви завантажуєте його, використовуєте. Це трохи повільно.</p>
 
-<p>До речі - екрани завантаження є <em>найкращими</em>:</p>
+        <p>До речі - екрани завантаження найкращі:</p>
 
-<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.05.27_PM.png' alt="img" /></p>
+        <p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.05.27_PM.png' alt="img" /></p>
 
-<hr />
+        <hr />
 
-<p>Наступний інструмент є менш витонченим і надзвичайно повільним для встановлення, але він надає вам справжні живі екземпляри IE всередині https://www.virtualbox.org/ інстанції в поспіху. Знімки екрана виглядають точно як кров'яні вікна: але перейдіть до</p>
+        <p>Наступний інструмент менш вишуканий та надзвичайно повільний у встановленні, але він дає вам справжні живі екземпляри IE всередині https://www.virtualbox.org/ екземпляра в поспіху. Знімки екрана виглядають просто як кров'яні вікна: але перейдіть за посиланням</p>
 
-<p>https://github.com/xdissent/ievms</p>
+        <p>https://github.com/xdissent/ievms</p>
 
-<p>та слідуйте інструкціям. Через 4-8 годин у вас буде легко запустити повноцінні IE VM на вашій OSX/linux коробці.</p>
+        <p>та слідуйте інструкціям. Через 4-8 годин у вас будуть легкі для запуску повноцінні віртуальні машини IE на вашій OSX/Linux коробці.</p>
 
-<p><em>ВЕЛИЧЕЗНА</em> подяка https://twitter.com/janeqpublic // https://github.com/xdissent за чудову роботу.</p>
+        <p><em>ВЕЛИЧЕЗНА</em> подяка https://twitter.com/janeqpublic // https://github.com/xdissent за чудову роботу.</p>
 
-</div>
+      </div>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас</a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/testing-ie9-is-less-like-eating-glass-than-before">я-ненавижу-це</a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/testing-ie9-is-less-like-eating-glass-than-before">я-люблю-це</a>
-  </li>
-  <li>
-    <a href="/contact">контакти</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; еджект</a>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/testing-ie9-is-less-like-eating-glass-than-before">не-подобається</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/testing-ie9-is-less-like-eating-glass-than-before">подобається</a>
+          </li>
+          <li>
+            <a href="/contact">контакт</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

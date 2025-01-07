@@ -1,41 +1,41 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>Неопубліковані API або, Як я навчився не хвилюватися та полюбив бомбу.</title>
+    <!-- meta -->
+    <title>Неопубліковані API або, Як я навчився не хвилюватися і любити бомбу.</title>
 
-<meta property="og:title" content="Неопубліковані API або, Як я навчився не хвилюватися та полюбив бомбу."/>
-<meta property="og:description" content="продовжуйте йти." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Неопубліковані API або, Як я навчився не хвилюватися і любити бомбу."/>
+    <meta property="og:description" content="продовжуй рух." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-
-  <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb"}">
@@ -67,20 +67,20 @@
   <body>
     <header>
       <a href="/home">@drawohara</a>
-<hr>
+      <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>Іноді у вас є деяке нудне повторюване онлайн-завдання або вам потрібно автоматизувати деякі або всі дії в робочому процесі на веб-сайті. Скриптування цих взаємодій може запобігти тому, щоб ми не витрачали тонни людських годин на нудне натискання тих самих сторінок на сайті.</p>
+        <p>Іноді ви маєте деякі нудні повторювані онлайн-завдання або вам потрібно автоматизувати частину або весь робочий процес на веб-сайті. Скриптування цих взаємодій може запобігти нам витрачати тонни людино-годин на нудне натискання тих самих сторінок на сайті.</p>
 
-<p>Багато з нас відразу ж сягатимуть за <a href="http://mechanize.rubyforge.org/">Mechanize</a>. Потім ви знаходите, що інтерфейс сайту, який ви намагаєтеся автоматизувати, містить багато JavaScript або AJAX. Що тепер використовувати?</p>
+        <p>Багато з нас одразу ж сягають за <a href="http://mechanize.rubyforge.org/">Mechanize</a>. Потім ви знаходите, що інтерфейс сайту, який ви намагаєтеся автоматизувати, важкий на JavaScript або AJAX. Що тепер робити?</p>
 
-<p><a href="http://http://phantomjs.org/">Phantomjs</a> на допомогу. Phantomjs — це швидкий, легко скриптований, безголовий браузер WebKit. Коли робота завершується з якихось причин, ви можете зробити знімок екрана для перегляду. Для нас це означало надсилання його адміністратору, оскільки роботи виконуються на серверах, а не локально. Ми також використовуємо <a href="https://github.com/westoque/phantomjs.rb">Phantomjs.rb</a>, щоб обробляти шлях і вихідні дані від Phantomjs.</p>
+        <p><a href="http://http://phantomjs.org/">Phantomjs</a> на допомогу. Phantomjs - це швидкий, легко скриптовий, безголовий веб-браузер WebKit. Коли робота не вдається з будь-якої причини, ви можете зробити знімок екрана для перегляду. Для нас це означало відправку його адміністратору по електронній пошті, оскільки роботи виконуються на серверах, а не локально. Ми також використовуємо <a href="https://github.com/westoque/phantomjs.rb">Phantomjs.rb</a>, щоб обробляти шлях і вихід з Phantomjs.</p>
 
-<p>Ось деякий код із того, що ми робимо.</p>
+        <p>Ось трохи коду, що ми робимо.</p>
 
-<pre><code>class InvitationAcceptor
+        <pre><code>class InvitationAcceptor
   attr_accessor :invitation, :tmpdir
 
   def initialize(invitation)
@@ -137,13 +137,13 @@
           loadInProgress = false,
           tries = 0;
 
-        // це важливо для нашого додатку, тому що сайт, який ми автоматизуємо, намагається заблокувати автоматизацію.
+        // це важливо для нашого додатка, оскільки сайт, який ми автоматизуємо, намагається заблокувати автоматизацію.
         page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36'
 
         var fail = function() {
-          // відправити повідомлення про невдачу та шлях до зображення Ruby-скрипту
+          // відправити повідомлення про невдачу та шлях зображення до Ruby-скрипту
           console.log("FAIL:#{fail_image}");
-          // зберегти знімок екрана до файлової системи, щоб його можна було відправити електронною поштою
+          // зберегти знімок екрана в файловій системі, щоб його можна було відправити по електронній пошті
           page.render("#{fail_image}");
           phantom.exit()
         }
@@ -169,7 +169,7 @@
             page.open("#{invitation.invitation_received.subject}")
           },
           function() {
-            console.log("Verify the invitation is still valid");
+            console.log("Перевірте, чи ще дійсне запрошення");
 
             success = page.evaluate(function() {
               if (null == document.getElementById('hasSomeElement')) {
@@ -185,7 +185,7 @@
 
           },
           function() {
-            console.log("Enter Credentials");
+            console.log("Введіть облікові дані");
 
             page.evaluate(function() {
               document.getElementById('hasSomeElement').checked;
@@ -196,14 +196,14 @@
             });
           },
           function() {
-            console.log("Accepting the terms");
+            console.log("Прийняття умов");
 
             page.evaluate(function() {
               document.getElementById('accept').click()
             });
           },
           function() {
-            console.log("Waiting for the JS craziness to complete");
+            console.log("Очікування завершення JS божевілля");
 
             waitFor(function() {
               return page.evaluate(function() {
@@ -229,31 +229,31 @@
 end
 </code></pre>
 
-<p>Ви також можете вставляти скрипти на сторінку за допомогою <a href="http://phantomjs.org/api/webpage/method/inject-js.html">injectJs</a> або <a href="http://phantomjs.org/api/webpage/method/include-js.html">includeJs</a>, але я волію дотримуватися того, що вже є, або просто використовувати базові функції, щоб уникнути будь-яких конфліктів з тим, що може бути на сторінці.</p>
+        <p>Ви також можете ін'єктувати скрипти на сторінку за допомогою <a href="http://phantomjs.org/api/webpage/method/inject-js.html">injectJs</a> або <a href="http://phantomjs.org/api/webpage/method/include-js.html">includeJs</a>, але я віддаю перевагу використовувати те, що вже є, або просто використовувати базові речі, щоб уникнути будь-яких конфліктів з тим, що може бути на сторінці.</p>
 
-</div>
+      </div>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про</a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">i-hate-this<a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">i-love-this<a>
-  </li>
-  <li>
-    <a href="/contact">контакти</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакт</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>

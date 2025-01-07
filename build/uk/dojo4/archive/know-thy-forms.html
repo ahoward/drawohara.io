@@ -1,4 +1,3 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
   <!-- ga -->
@@ -11,7 +10,7 @@
 </script>
 
   <!-- deps -->
-    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
@@ -23,24 +22,26 @@
     <meta name="color-scheme" content="light dark" />
 
   <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+  <base href='/uk' />
 
   <!-- meta -->
     <title>Знай свої форми</title>
 
 <meta property="og:title" content="Знай свої форми"/>
-<meta property="og:description" content="продовжуй рух." />
+<meta property="og:description" content="продовжуй." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
   <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:route" content=""/uk/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"know-thy-forms"}">
-    <meta property="site:path_info" content=""/know-thy-forms"">
+    <meta property="site:path_info" content=""/uk/know-thy-forms"">
 
     <style>
       /* anti pico */
@@ -67,22 +68,22 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/uk/home">@drawohara</a>
 <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>сьогодні я створив невеликий тест щодо форм html.</p>
+  <p>сьогодні я створив невеликий тест про HTML форми.</p>
 
 <p>посилання: https://gist.github.com/ahoward/98591ebc9113bea1cf02</p>
 
 <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781">&lt;!--</span>
 </div><div class='code-line code-line-3'>
-</div><div class='code-line code-line-4'><span style="color: #6e7781">    fork this. до не використовуйте інтернет. знайдіть щонайменше 10</span>
-</div><div class='code-line code-line-5'><span style="color: #6e7781">    різних помилок в цій формі за менше ніж 10 хвилин. відправте вашу відповідь у поле коментарів</span>
-</div><div class='code-line code-line-6'><span style="color: #6e7781">    вашого форку та відправте мені (ara[at]dojo4.com) url.</span>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">    fork this. do not use the internet. take &lt; 10 minutes to find at least 10</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781">    distinct errors on this form. submit your answer in the comments field of</span>
+</div><div class='code-line code-line-6'><span style="color: #6e7781">    your fork and email me (ara[at]dojo4.com) the url.</span>
 </div><div class='code-line code-line-7'>
 </div><div class='code-line code-line-8'><span style="color: #6e7781">  --&gt;</span>
 </div><div class='code-line code-line-9'>
@@ -90,7 +91,7 @@
 </div><div class='code-line code-line-11'>
 </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;
 </div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
-</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>&nbsp;теги&nbsp;<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>&nbsp;tags&nbsp;<span style="color: #116329">&lt;/legend&gt;</span>
 </div><div class='code-line code-line-15'>
 </div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">/&gt;</span>
 </div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'bar'</span><span style="color: #116329">/&gt;</span>
@@ -112,16 +113,16 @@
 </div><div class='code-line code-line-33'>
 </div><div class='code-line code-line-34'>
 </div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
-</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Стать<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Sex<span style="color: #116329">&lt;/legend&gt;</span>
 </div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"radio"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"sex"</span><span style="color: #116329">&gt;</span>
-</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'male'</span><span style="color: #116329">&gt;</span>Чоловік<span style="color: #116329">&lt;/option&gt;</span>
+</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'male'</span><span style="color: #116329">&gt;</span>Male<span style="color: #116329">&lt;/option&gt;</span>
 </div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'female'</span><span style="color: #116329">/&gt;</span>
 </div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/input&gt;</span>
 </div><div class='code-line code-line-41'>
 </div><div class='code-line code-line-42'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
-</div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Транспорт<span style="color: #116329">&lt;/legend&gt;</span>
-</div><div class='code-line code-line-44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Bike"</span><span style="color: #116329">&gt;</span>У мене є велосипед<span style="color: #116329">&lt;br&gt;</span>
-</div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Car"</span><span style="color: #116329">&gt;</span>У мене є машина&nbsp;
+</div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Transportation<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Bike"</span><span style="color: #116329">&gt;</span>I&nbsp;have&nbsp;a&nbsp;bike<span style="color: #116329">&lt;br&gt;</span>
+</div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Car"</span><span style="color: #116329">&gt;</span>I&nbsp;have&nbsp;a&nbsp;car&nbsp;
 </div><div class='code-line code-line-46'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
 </div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
 </div><div class='code-line code-line-48'>
@@ -141,36 +142,36 @@
 </div><div class='code-line code-line-62'>
 </div></code></div>
 
-<p>метою цього було побачити людське мислення щодо основи html інтерфейсів</p>
+<p>мета теста була подивитися яким чином люди мислять при написанні коду: фундамент HTML інтерфейсів</p>
 
-<p>далі йдуть деякі зразкові відповіді, сгруповані за категоріями, та коментарі до кожної з них</p>
+<p>далі наведені деякі зразок відповідей, угруповані приблизно по категоріях, та коментарі до кожної з них</p>
 
 <hr />
 <h3 id="fubar-doctype">fubar doctype</h3>
 <hr />
 
 <ul>
-  <li>Відсутній doctype. Це ускладнює визначення версії HTML, що може призвести до цікавих відповідей…</li>
-  <li>Містяться теги у стилі xhtml разом з HTML тегами.</li>
+  <li>Відсутній doctype. Це ускладнює визначення версії HTML, що може призвести до цікавих відповідей...</li>
+  <li>Поєднує порожні теги у стилі xhtml із тегами HTML.</li>
 </ul>
 
-<p>напевно більшість пропустили те, що багато помилок залежать від оголошення doctype.<br />
-який стиль тегів можна використовувати повністю залежить від doctype.</p>
+<p>безперечно, багато хто пропустив те, що багато помилок залежать від доктіпу<br />
+декларація.  якого стилю теги ви можете використовувати повністю залежить від доктіпу.</p>
 
 <hr />
 <h3 id="methoddelete">method=delete</h3>
 <hr />
 
 <ul>
-  <li>рядок 1: DELETE не підтримується в HTML формах:</li>
-  <li>method=delete не підтримується безпосередньо в більшості/у всіх? браузерах.</li>
+  <li>рядок 1: DELETE - це не підтримувана дія в HTML формах:</li>
+  <li>method=delete не підтримується безпосередньо в більшості/усіх? браузерах.o</li>
   <li>форми не підтримують delete у старих браузерах</li>
   <li>Метод delete</li>
-  <li>form method='DELETE' – це не дозволено</li>
+  <li>form method='DELETE' - це не дозволено</li>
 </ul>
 
-<p>хоча ми думаємо про http дієслова з клієнтськими api, включаючи javascript.<br />
-для більшості браузерів ви отримуєте GET та POST. це важливо, якщо ви<br />
+<p>хоча ми думаємо про http дієслова з клієнтських api, включаючи javascript.<br />
+для більшості браузерів ви отримуєте GET і POST.   це важливо, якщо ви<br />
 розглядали api на основі xhtml.</p>
 
 <hr />
@@ -179,34 +180,33 @@
 
 <ul>
   <li>enctype="multipart/form-data" а не enctype="multipart/file-upload"</li>
-  <li>enc-type="multipart/file-upload не має сенсу, якщо наш намір – це DELETE</li>
+  <li>enc-type="multipart/file-upload не має сенсу, якщо наша мета - DELETE</li>
 </ul>
 
-<p>помилки enctype завжди псують день. помилиться і ви втратите день<br />
-відправляючи назву файлу як рядок, замість фактичного закодованого вмісту файлу.<br />
-також важливо зазначити, що enctype лише визначає, як кодується форма, і повністю ортогональний до http дієслова, яке використовується.</p>
+<p>помилки enctype завжди псують день.  зробіть помилку, і ви затратите день<br />
+відправляючи назву вашого файлу як рядок, замість фактичного закодованого вмісту файлу<br />
+також важливо відзначити, що enctype просто диктує, як кодується форма, і повністю ортогональна до http дієслова, яке використовується.</p>
 
 <hr />
-<h3 id="inputfoo--inputfoo">input=foo &amp;&amp; input=foo</h3>
+<h3 id="inputfoo--inputfoo">input=foo && input=foo</h3>
 <hr />
 
 <ul>
-  <li>текстові вхідні теги у першому fieldset мають однакове ім'я</li>
-  <li>дублювання тегів "". Або два теги з однаковим ім'ям знову</li>
-  <li>2 текстових полів з ім'ям "tags" використовується лише останнє.</li>
-  <li>Два входи з однаковим ім'ям 'tags'. Другий перезапише значення першого.</li>
-  <li>Два входи з ім'ям 'foo' (не самозакриті)</li>
-  <li>текстові входи з однаковим ім'ям перезапишуть щодо входів з ім'ям tags</li>
-  <li>подвійні призначення input name='tags'</li>
-  <li>подвійні призначення input name='vehicle'</li>
+  <li>текстові вхідні теги в першому fieldset мають ім'я</li>
+  <li>дубльовані теги "". Або два теги з однаковим ім'ям знову</li>
+  <li>2 текстові поля з ім'ям "tags" використовуватиметься лише останнє.</li>
+  <li>Два входи з однаковим ім'ям 'foo' (не самозакриті)</li>
+  <li>текстові входи з однаковим ім'ям перевизначатьо re: входи з ім'ям tags</li>
+  <li>дубльовані призначення до input name='tags'</li>
+  <li>дубльовані призначення до input name='vehicle'</li>
 </ul>
 
-<p>багато непорозумінь щодо цього. це <em>повністю легітимно</em> надсилати один і той самий<br />
-параметр > 1 разів у формі. специфікація підтримує це навіть давні cgi<br />
-підтримують ідею надсилання багатьох значень під одним і тим самим ключем. це лише<br />
-конвенція, що багато контролерів скидають ці значення в хеш, де "останній виграє"</p>
+<p>багато хибних уявлень щодо цього.  це <em>повністю легально</em> надсилати один і той же<br />
+параметр > 1 разів у формі.  специфікація підтримує це, навіть стародавній cgi<br />
+підтримують поняття надсилання кількох значень під одним і тим же ключем.  це<br />
+лише звичай, що багато контролерів скидають ці значення в хеш де "останній виграє"</p>
 
-<p>ви можете легко переконатися в цьому самі. відправте це формою</p>
+<p>ви можете легко переконатися в цьому самі.  відправте це з форми</p>
 
 <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'answer'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'40'</span><span style="color: #116329">&gt;</span>
@@ -256,60 +256,4 @@ style ='max-height:420px;' src='http://cl.ly/image/3I2Q2v0D1B1G/Screen%20Shot%20
 </div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">[]=</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">value</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
 </div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[]).</span><span style="color: #8250df">push</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">value</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
-</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</div><div class='code-line code-line-34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">key?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
-</div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@params</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">key?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
-</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">to_params_hash</span><span style="color: #24292f;background-color: #f6f8fa">()</span>
-</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">self</span>
-</div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-41'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-42'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-43'>
-</div><div class='code-line code-line-44'>
-</div></code></div>
-
-<p>тоді ви отримаєте відповідь, яка виглядає так</p>
-
-<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
-</div><div class='code-line code-line-2'>
-</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">"</span><span style="color: #0a3069">params</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">:{</span><span style="color: #0a3069">"</span><span style="color: #0a3069">answer</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">:[</span><span style="color: #0a3069">"</span><span style="color: #0a3069">40</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">"</span><span style="color: #0a3069">2</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">]}}</span>
-</div><div class='code-line code-line-4'>
-</div><div class='code-line code-line-5'>
-</div><div class='code-line code-line-6'>
-</div></code></div>
-
-<h4 id="tldr">TL:DR;</h4>
-
-<p>ваш веб-стек може скинути багато значень на підлогу, відкриваючи хеш,<br />
-але ruby's cgi.rb бібліотека та http загалом не роблять <em>не</em>. це стосується<br />
-входів, checkboxen, тощо - що завгодно з ім'ям може передавати багато значень.</p>
-
-<p>зокрема ruby's cgi.rb <em>не</em> обмежує відправку багатьох значень під ключем</p>
-
-<p>тоді як rails <em>робить</em></p>
-
-<hr />
-<h3 id="labels-are-blargh">labels are blargh</h3>
-<hr />
-
-<ul>
-  <li>Немає для на мітці 'Bar:'.</li>
-  <li>незв'язана мітка: <label>Bar:…</label> (мітка для чого?)</li>
-</ul>
-
-<p>мітки без для є <em>повністю легітимними</em>. коли ви обгортаєте вхід міткою, для мається на увазі, що це містить вхід. ці два рівні</p>
-
-<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
-</div><div class='code-line code-line-2'><span style="color: #116329">&lt;label</span>&nbsp;<span style="color: #116329">for=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>Foo<span style="color: #116329">&lt;/label&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>
-</div><div class='code-line code-line-3'>
-</div><div class='code-line code-line-4'><span style="color: #116329">&lt;label</span>&nbsp;<span style="color: #116329">for=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>Foo&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;&lt;/label&gt;</span>
-</div><div class='code-line code-line-5'>
-</div><div class='code-line code-line-6'>
-</div></code></div>
-
-<p>з першим є <em>набагато</em> простіше працювати в js ( $label.find('input') )</p>
-
-<div class="language-javascript
+</div><div

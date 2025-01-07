@@ -1,4 +1,3 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
   <!-- ga -->
@@ -11,7 +10,7 @@
 </script>
 
   <!-- deps -->
-    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
@@ -23,23 +22,23 @@
     <meta name="color-scheme" content="light dark" />
 
   <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
 
   <!-- meta -->
     <title>Spine.JS -- досвід; огляд.</title>
 
 <meta property="og:title" content="Spine.JS -- досвід; огляд."/>
-<meta property="og:description" content="переходь далі." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:description" content="рухайтесь далі." />
+<meta property="og:image" content="https://drawohara.io/uk/media/mick.jpg" />
 
 <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
     <meta property="site:params" content="{"ext":null,"id":"spine-js-an-experience-a-review"}">
-    <meta property="site:path_info" content=""/spine-js-an-experience-a-review"">
+    <meta property="site:path_info" content="/uk/spine-js-an-experience-a-review">
 
     <style>
       /* anti pico */
@@ -62,62 +61,63 @@
         }
       });
     </script>
+
+    <base href='/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/uk/home">@drawohara</a>
 <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>Тож нам подобається спробувати випадкові фронтенд-фреймворки тут, у dojo4, на проєктах, і останнім, який ми спробували, є <a href="http://spinejs.com/">SpineJS</a>. Ось мій огляд після використання його в кількох проєктах:</p>
+  <p>Тож ми любимо пробувати випадкові фронтенд-фреймворки в dojo4 для проектів, і останнім, який ми спробували, є <a href="http://spinejs.com/">SpineJS</a>. Ось мої думки після його використання в декількох проектах:</p>
 
 <p><em>Переваги:</em></p>
 
-<p><strong>1. Короткий, відкритий вихідний код.</strong> Коли у мене виникали питання щодо того, як фреймворк інтерпретує мій код, було надзвичайно просто відкрити вихідні файли та прочитати код самостійно.</p>
+<p><strong>1. Короткий, відкритий вихідний код.</strong> Кожного разу, коли у мене виникало питання щодо інтерпретації мого коду фреймворком, було надзвичайно просто відкрити вихідні файли та прочитати код самостійно.</p>
 
-<p><strong>2. Солідний веб-серверний інструмент Hem.</strong> Все, що вам потрібно для запуску фронтенд-додатку, надається вам разом із Hem і SpineJS. Тести автоматично налаштовані та легко змінюються. Hem також має гарний прапорець <code>-d</code>, який не мініфікує ваш додаток, щоб його було легше налагоджувати під час розробки.</p>
+<p><strong>2. Надійний інструмент для веб-серверів Hem</strong> Все, що вам потрібно для запуску фронтенд-додатку, надано вам завдяки Hem і SpineJS. Тести вже налаштовані та легко модифікуються. Hem також має гарний прапор <code>-d</code>, який не мініфікує ваш додаток, щоб полегшити налагодження в процесі розробки.</p>
 
-<p><strong>3. Вбудований шар персистентності даних.</strong> SpineJS постачається з Ajax та LocalStorage адаптерами для ваших моделей, які дуже легко використовувати та підкласити. Також легко написати власні, оскільки ви маєте вихідний код для Ajax та LocalStorage адаптерів, і вони досить короткі.</p>
+<p><strong>3. Вбудований шар персистентності даних</strong> SpineJS постачається з Ajax і LocalStorage адаптерами для ваших моделей, які дуже легко використовувати та підкладати. Також легко написати власні, оскільки у вас є вихідний код для Ajax і LocalStorage адаптерів, і вони досить короткі.</p>
 
-<p><strong>4. Активна група Google та спільнота GitHub.</strong> Коли у мене виникали питання під час роботи, завжди був хтось у спільноті, хто міг запропонувати ідею. У них є <a href="https://groups.google.com/forum/#!forum/spinejs">Група Google</a> та активна <a href="https://github.com/spine">організація GitHub</a>.</p>
+<p><strong>4. Активна спільнота Google Group та github</strong> Кожного разу, коли у мене виникали питання, завжди хтось із спільноти міг надати ідею. У них є <a href="https://groups.google.com/forum/#!forum/spinejs">Google Group</a> та активна <a href="https://github.com/spine">github організація</a>.</p>
 
-<p><strong>5. Coffeescript - чудово.</strong> Цей пункт менше стосується SpineJS, але SpineJS був моїм першим використанням Coffeescript, і він класний. Мені слід написати блог про Coffeescript, адже він класний за своєю легкістю читання без усіх цих зайвих дужок та крапок з комою, обмеження функцій за допомогою жирної стрілки та питання, щоб уникнути великої кількості екзистенціальних умов. А ще — класи.</p>
+<p><strong>4. Coffeescript - чудовий.</strong> Ця думка менше стосується SpineJS, але SpineJS був моїм першим досвідом використання Coffeescript, і він класний. Я повинен написати блог-пост про Coffeescript, але він чудовий завдяки легкості читання без усіх цих зайвих дужок і крапок з комою, обмеженню функцій товстим стрілочкою, і знаку питання, щоб не доводилося робити тонну екзистенціальних умов. І, ось так, класи.</p>
 
 <p><em>Недоліки:</em></p>
 
-<p><strong>Документація не повністю завершена.</strong> Цей пункт, можливо, не зовсім справедливий, оскільки їхня документація більше схожа на збірку пояснених прикладів, а не на справжню документацію API, але все ж таки, <a href="https://github.com/spine/spine.site/issues/52">існують функції</a> у фреймворку, які не розглянуті в документації. Однак, згідно з пунктом №1 вище, дуже легко прочитати вихідний код самостійно.</p>
+<p><strong>Документація не повністю завершена.</strong> Звісно, це не зовсім справедливо, бо їхня документація більше схожа на колекцію пояснених прикладів, а не справжню API документацію, але факт залишається, що <a href="https://github.com/spine/spine.site/issues/52">існують функції</a> у фреймворку, які не описані в документації. Однак, з першим пунктом вище, дуже легко прочитати вихідний код самостійно.</p>
 
 <p><em>Загалом:</em></p>
 
-<p>Загалом я рекомендую цей фреймворк і з великою ймовірністю буду використовувати його знову. Між простотою та легкістю використання Coffeescript та SpineJS, вони здаються ідеальною парою, створеною в інтернет-раю.</p>
+<p>Загалом я рекомендую цей фреймворк і з великою ймовірністю використаю його знову. Між простотою та легкістю використання Coffeescript і SpineJS, вони здаються ідеальною парою для веб-розробки.</p>
 
 </div>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; перейти</a>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
 <blockquote>
 <ul>
   <li>
-    <a href="/about">про нас</a>
+    <a href="/uk/about">про нас</a>
   </li>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/spine-js-an-experience-a-review">i-hate-this</a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/uk/spine-js-an-experience-a-review">i-hate-this</a>
   </li>
   <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/spine-js-an-experience-a-review">i-love-this</a>
+    <a href="mailto:i-love-this@drawohara.io?subject=/uk/spine-js-an-experience-a-review">i-love-this</a>
   </li>
   <li>
-    <a href="/contact">контакти</a>
+    <a href="/uk/contact">контакти</a>
   </li>
 </ul>
 </blockquote>
-<a href="/">&lt;&mdash; вийти</a>
+<a href="/uk/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

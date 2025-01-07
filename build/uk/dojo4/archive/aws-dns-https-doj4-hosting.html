@@ -1,6 +1,6 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
+  <base href='/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
@@ -35,8 +35,7 @@
 <meta property="og:description" content="продовжуйте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-
-  <meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"aws-dns-https-doj4-hosting"}">
@@ -73,31 +72,31 @@
 
     <main>
       <div class="ro markdown">
-  <p>Хостинг, DNS та HTTPS часто вимагають взаємодії більше ніж декількох провайдерів. Часто це стає незручним, якщо не керувати цим ефективно.</p>
+  <p>Хостинг, DNS та HTTPS часто вимагають взаємодії більше ніж кількох провайдерів. Часто стають некерованими, якщо не керувати ними ефективно.</p>
 
-<p>DNS вимагає як управління записами, так і реєстрації доменів. Для обох Dojo4 використовував <a href="http://dyn.com/dns">DyDNS</a> протягом багатьох років.</p>
+<p>DNS вимагає як управління записами, так і реєстрації доменів. Для обох Dojo4 використовує <a href="http://dyn.com/dns">DyDNS</a> протягом багатьох років.</p>
 
-<p>Dojo4 зазвичай використовує <a href="http://aws.amazon.com/ec2">Amazon AWS EC2 хмарні комп'ютери</a> для хостингу і, отже, схильний використовувати <a href="http://aws.amazon.com/elasticloadbalancing">AWS ELB балансувальники навантаження</a> перед цими веб-хостами. На жаль, Amazon не надає вам постійних IP-адрес для інстансів ELB, і тому єдиний спосіб створити записи другого рівня доменів, що вказують на інстанси ELB, - це використовувати <a href="http://aws.amazon.com/route53">Amazon AWS Route53</a> для управління записами, яка має спеціальний псевдонім запису для цієї мети. Тому ми схильні використовувати Route53 для управління записами DNS.</p>
+<p>Dojo4 зазвичай використовує <a href="http://aws.amazon.com/ec2">облачні комп’ютери Amazon AWS EC2</a> для хостингу та таким чином тяжіє до використання <a href="http://aws.amazon.com/elasticloadbalancing">балансувальників навантаження AWS ELB</a> перед цими веб-хостами. На жаль, Amazon не надає вам постійних IP-адрес для інстансів ELB, і отже єдиний спосіб створити записи доменів другого рівня, що вказують на інстанси ELB, — це використовувати <a href="http://aws.amazon.com/route53">Amazon AWS Route53</a> для управління записами, який має спеціальний запис alias для цієї мети. Тому ми тяжіємо до використання Route53 для управління записами DNS.</p>
 
-<p>Через спосіб, яким проводиться TLS-узгодження linux/apache, кількість сертифікатів SSL, які можуть бути надані, обмежена кількістю IP-адрес на хості. З EC2 це фактично один сертифікат, якщо ви не використовуєте <a href="http://aws.amazon.com/vpc">VPC</a>. Dojo4 часто використовує ELB для надання SSL як засіб вирішення цієї проблеми.</p>
+<p>Через спосіб, яким проводиться переговорний процес TLS-рукостискування лінуксом/апачем, ви обмежені кількістю сертифікатів SSL, які можуть обслуговуватися до кількості IP-адрес на хості. З EC2 це фактично один сертифікат, якщо ви не використовуєте <a href="http://aws.amazon.com/vpc">VPC</a>. Dojo4 часто використовує ELB для надання SSL як спосіб обійти це.</p>
 
-<p>DNS та HTTPS тісно пов'язані, оскільки домени та піддомени, які потрібно захистити, повинні бути перераховані до надання сертифіката. Часто найзручнішою та гнучкою стратегією є отримання сертифіката зі зірочкою. Зауважте, однак, що не всі видавці сертифікатів зі зірочкою включають базовий домен у сертифікат (тобто ви можете використовувати сертифікат лише для захисту *.somedomain.com, а не somedomain.com). $100/рік сертифікат зі зірочкою від <a href="dnsimple.com">dnsimple.com</a>, виданий <a href="http://comodo.com">Comodo</a>, включаючи базовий домен, є хорошою цінністю, навіть з $96 ($8/місяць * 12 місяців) вартістю хостингу dnsimple dns.</p>
+<p>DNS та HTTPS тісно пов’язані, оскільки домени та піддомени, які потрібно захистити, повинні бути перераховані перед наданням сертифікату. Часто найзручнішою та гнучкою стратегією є отримання сертифікату з підстановочним знаком. Зверніть увагу, що не всі видавці сертифікатів з підстановочним знаком включають базовий домен у сертифікат (тобто ви можете використовувати сертифікат лише для захисту *.somedomain.com, а не somedomain.com). Річний сертифіkat з підстановочним знаком за $100 від <a href="dnsimple.com">dnsimple.com</a>, виданий <a href="http://comodo.com">Comodo</a> та включаючи базовий домен, є хорошою вартістю навіть з вартістю хостингу dnsimple dns у $96 ($8/місяць * 12 місяців).</p>
 
-<p>dnsimple має декілька інших зручних функцій, таких як можливість делегувати управління наборами записів іншим користувачам dnsimple. Оскільки ми перенесли управління наборами записів з DynDNS на Route53 та маємо обліковий запис у dnsimple для надання SSL, ми перенесли реєстрацію доменів з DynDNS на dnsimple, щоб об'єднати послуги.</p>
+<p>dnsimple має деякі інші зручні функції, такі як можливість делегувати управління наборами записів іншим обліковим записам користувачів dnsimple. Оскільки ми перенесли управління наборами записів з DynDNS на Route53 та маємо обліковий запис на dnsimple для надання SSL, ми перенесли реєстрацію доменів з DynDNS на dnsimple, щоб об’єднати послуги.</p>
 
-<p>Деякі корисні команди рядка:</p>
+<p>Деякі корисні команди командного рядка:</p>
 
 <p>Знайти Start Of Authority для запису DNS</p>
 <blockquote>
   <p>dig SOA dojo4.com</p>
 </blockquote>
 
-<p>Переглянути сертифікат, який надає хост</p>
+<p>Переглянути сертифікат, який обслуговує хост</p>
 <blockquote>
   <p>openssl s_client -showcerts -connect dojo4.com:443 &lt; /dev/null</p>
 </blockquote>
 
-<p>Доступ до веб-сервера за IP-адресою, ігноруючи перевірку SSL</p>
+<p>Доступ до веб-сервера за IP, ігноруючи перевірку SSL</p>
 <blockquote>
   <p>curl -k https://184.72.61.241 -H “Host: projects.dojo4.com”</p>
 </blockquote>
@@ -111,21 +110,20 @@
 <blockquote>
 <ul>
   <li>
-    <a href="/about">про нас<a>
+    <a href="/about">про нас</a>
   </li>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">я-ненавижу-це<a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">i-hate-this</a>
   </li>
   <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">я-люблю-це<a>
+    <a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">i-love-this</a>
   </li>
   <li>
-    <a href="/contact">контакти<a>
+    <a href="/contact">контакти</a>
   </li>
 </ul>
 </blockquote>
-<a href="/">&lt;&mdash; вийти</a>
+<a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

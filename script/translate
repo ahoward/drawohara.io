@@ -42,8 +42,10 @@ private
     prompt = [].tap do |l|
       l.push "<INSTRUCTIONS>"
       l.push "translate the following html file to '#{ name }', ISO-639-1 code '#{ lang }'."
-      l.push 'respond with the translated document and ONLY the translated document.'
-      l.push 'be sure to translate the content of any links as well.'
+      l.push "respond with the translated document and ONLY the translated document."
+      l.push "be sure to translate the content of any links as well."
+      l.push "finally, add an html <base> tag to the output to constrain usees to the given lang,"
+      l.push "for example, if translating to '#{ lang }' you should add `<base href='/#{ lang }' />` to the <head> section of the translated document."
       l.push "</INSTRUCTIONS>"
       l.push
 
@@ -56,6 +58,8 @@ private
 
     translated = ai.completion_for(prompt)
 
+    string_bash!(translated)
+
     b = Time.now.to_f
     elapsed = (b - a).round(2)
 
@@ -63,6 +67,11 @@ private
     IO.binwrite(dst, translated)
 
     p(lang:, name:, src:, dst:, elapsed:)
+  end
+
+  def string_bash!(translated)
+    translated.gsub!(/^\s*```html\s*/, '')
+    translated.gsub!(/\s*```\s*$/, '')
   end
 
   def ai

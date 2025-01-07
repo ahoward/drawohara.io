@@ -1,42 +1,41 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
+    <!-- meta -->
     <title>Керування залежностями фронтенду з Bower та RoR</title>
 
-<meta property="og:title" content="Керування залежностями фронтенду з Bower та RoR"/>
-<meta property="og:description" content="Продовжуй." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Керування залежностями фронтенду з Bower та RoR"/>
+    <meta property="og:description" content="рухайся далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-
-  <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"front-end-dependency-management-with-bower-ro-r"}">
@@ -68,44 +67,43 @@
   <body>
     <header>
       <a href="/home">@drawohara</a>
-<hr>
+      <hr>
     </header>
 
     <main>
       <div class="ro markdown">
 
-<p>Керування залежностями може бути складним. Коли кілька тижнів тому я приєднався до dojo4, було чудово клонувати репозиторій проекту на ruby on rails, виконати <code>bundle install</code> та запустити додаток за допомогою <code>rails s</code>. Для тих, хто не знайомий з керуванням залежностями в ruby on rails, геми, необхідні для запуску додатка, перелічені у файлі <code>Gemfile</code>. Бандл-застосунок читає цей gemfile та завантажує й встановлює будь-які геми, які ще не встановлені на вашому комп'ютері. Це не тільки робить легким швидке та легке налаштування додатка, але й спрощує оновлення цих залежних гемів, коли виходить нова версія. Виконання <code>bundle update</code> або оновлення gemfile та повторне виконання <code>bundle install</code> роблять цей процес легким, гарантуючи, що кожен інший користувач додатка також використовуватиме нову версію (при умові, що ми поділимося змінами через систему контролю версій). Це чудовий робочий процес для серверної частини, але що з клієнтською?</p>
+        <p>Керування залежностями може бути складним. Коли я прийшов працювати в dojo4 кілька тижнів тому, було чудово клонувати репозиторій проекту ruby on rails, виконати <code>bundle install</code> і потім запустити додаток за допомогою <code>rails s</code>. Для тих, хто незнайомий з керуванням залежностями в ruby on rails, геми, необхідні для запуску додатка, перераховані в файлі під назвою <code>Gemfile</code>. Програма bundle читає цей gemfile та завантажує та встановлює будь-які геми, яких ще немає на вашому комп'ютері. Не лише це робить легким запуск додатка правильно, швидко та без значних зусиль для налаштування, але й спрощує оновлення цих залежних гемів при виході нової версії. Виконання <code>bundle update</code> або оновлення gemfile та повторне виконання <code>bundle install</code> робить цей процес легким, який гарантує, що кожен інший користувач додатка також використовуватиме нову версію (при умові, що ми поділимося змінами через систему контролю версій). Це чудовий робочий процес для серверної сторони, але що з клієнтською стороною?</p>
 
-<p>По мерезі ускладнення клієнтських додатків, нам часто потрібна допомога бібліотек та фреймворків на клієнті. У dojo4 ми зараз завантажуємо потрібні файли та вручну додаємо їх до системи контролю версій і фіксуємо. Файли знаходяться під контролем версій, тому принаймні всі отримають ці файли, і ми можемо відкотити оновлення версії, але це трохи брудно. Щоб оновити файли бібліотек, нам доведеться повторити ручний процес. На серверній стороні також дуже зручно, що завдання керування залежностями менш тісно пов'язані з кодом додатка, що спрощує оновлення та відкот версій. На жаль, не було гарного способу керувати залежностями для фронтенду. Донедавна.</p>
+        <p>З розвитком клієнтських додатків ми все частіше потребуємо допомоги бібліотек та фреймворків на клієнті. У dojo4 ми зараз завантажуємо необхідні файли та вручну додаємо їх до системи контролю версій і комітимо. Файли перебувають під системою контролю версій, тому принаймні всі отримають ці файли, і ми можемо відкотити оновлення версії, але це трохи заплутано. Щоб оновити бібліотечні файли, нам доведеться повторити ручний процес. З боку сервера також дуже зручно, що завдання керування залежностями менш тісно пов'язані з кодом застосунку, тому оновлення та відкот версій стає легшим. На жаль, до недавнього часу не було хорошого способу керувати залежностями для фронтенду. До останнього часу.</p>
 
-<p>У вересні минулого року Twitter випустив <a href="http://bower.io">Bower</a>, який пропонує "загальне, неопініонне рішення проблеми керування пакетами фронтенду". Bower надає ті самі можливості для фронтенд-додатка, що й бандл для бекенду: централізований список залежностей у одному файлі, легкі команди встановлення та оновлення та деяке відокремлення від коду додатка та фіксацій. Досліджуючи, як ми можемо скористатися цим у нашому стандартному додатку ruby on rails, мене порадили творцям Bower гем <a href="https://github.com/42dev/bower-rails/">bower-rails</a>, який інтегрує bower у структуру директорій ruby on rails та додає деякі команди <code>rake</code> для виконання команд bower. Тепер замість того, щоб вручну фіксувати файли бібліотек у репозиторії додатка, розробник може виконати <code>rake bower:install [package name]</code>, і остання версія цього пакета буде встановлена в конвеєр ресурсів та додана до списку необхідних пакетів. Новий розробник може завантажити код додатка, а після виконання <code>bundle install</code> може виконати <code>rake bower:install</code>, і всі залежності фронтенду будуть встановлені в відповідну директорію в конвеєрі ресурсів ruby on rails для негайного використання.</p>
+        <p>У вересні минулого року Twitter випустив <a href="http://bower.io">Bower</a>, який пропонує "універсальне, нейтральне рішення проблеми керування пакетами фронтенду". Bower надає ті самі можливості для фронтенд-застосунку, що й bundle для бекенду: централізований список залежностей в одному файлі, легкі команди встановлення та оновлення, а також деяке розділення від коду застосунку та комітів. Під час дослідження того, як ми могли б скористатися цим у нашому стандартному застосунку ruby on rails, мене порадили творці Bower використовувати гем <a href="https://github.com/42dev/bower-rails/">bower-rails</a>, який інтегрує bower у структуру директорій ruby on rails та додає деякі команди <code>rake</code> для запуску команд bower. Зараз замість ручного комітування файлів бібліотек до репозиторію додатка розробник може виконати <code>rake bower:install [назва пакета]</code>, і остання версія цього пакета буде встановлена в конвеєр активів та додана до списку необхідних пакетів. Новий розробник може завантажити код застосунку, а після виконання <code>bundle install</code> може виконати <code>rake bower:install</code>, і всі залежності фронтенду будуть встановлені в відповідну директорію в конвеєрі активів ruby on rails для негайного використання.</p>
 
-<p>Особисто мені дуже подобається цей підхід, і я сподіваюсь, що ми зможемо перевести бібліотеки фронтенду, які додаються вручну, на підхід bower. Ми все ще обговорюємо переваги та недоліки всередині та скоро приймемо рішення. Що ви думаєте? Як ви обробляєте залежності фронтенду в розподіленій команді?</p>
+        <p>Особисто мені дуже подобається цей підхід, і я сподіваюся, що ми зможемо перейти на підхід bower для фронтенд-бібліотек, які додаються вручну. Ми все ще обговорюємо переваги та недоліки всередині та скоро приймемо рішення. Що ви думаєте? Як ви керуєте залежностями фронтенду в розподіленій команді?</p>
 
-</div>
+      </div>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас</a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-hate-this</a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-love-this</a>
-  </li>
-  <li>
-    <a href="/contact">contact</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

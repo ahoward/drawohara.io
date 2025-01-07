@@ -1,6 +1,6 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
+  <base href='/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
@@ -32,15 +32,15 @@
     <title>Написання гігієнічних міксінів у Ruby</title>
 
 <meta property="og:title" content="Написання гігієнічних міксінів у Ruby"/>
-<meta property="og:description" content="іди далі." />
+<meta property="og:description" content="рухайтеся далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
   <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
     <meta property="site:params" content="{"ext":null,"id":"writing-hygienic-mixins-in-ruby"}">
-    <meta property="site:path_info" content=""/writing-hygienic-mixins-in-ruby"">
+    <meta property="site:path_info" content="/uk/writing-hygienic-mixins-in-ruby">
 
     <style>
       /* anti pico */
@@ -67,7 +67,7 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/uk/home">@drawohara</a>
 <hr>
     </header>
 
@@ -77,7 +77,7 @@
 </div><div class='code-line code-line-2'>
 </div><div class='code-line code-line-3'><span style="color: #6e7781">=begin</span>
 </div><div class='code-line code-line-4'>
-</div><div class='code-line code-line-5'><span style="color: #6e7781">  це досить поширена практика в Ruby, коли модулі надають функціональність через міксіни.</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781">  це досить поширена практика в Ruby, коли модулі надають функціональність через міксини.</span>
 </div><div class='code-line code-line-6'>
 </div><div class='code-line code-line-7'>
 </div><div class='code-line code-line-8'><span style="color: #6e7781">  наприклад:</span>
@@ -99,8 +99,8 @@
 </div><div class='code-line code-line-24'>
 </div><div class='code-line code-line-25'><span style="color: #6e7781">=begin</span>
 </div><div class='code-line code-line-26'>
-</div><div class='code-line code-line-27'><span style="color: #6e7781">  хоча це зручно, внутрішні частини міксіну, особливо модулів, можуть випадково потрапити</span>
-</div><div class='code-line code-line-28'><span style="color: #6e7781">  до цільового об'єкта.</span>
+</div><div class='code-line code-line-27'><span style="color: #6e7781">  хоча це зручно, вміст міксинів, особливо модулів, може легко витікати</span>
+</div><div class='code-line code-line-28'><span style="color: #6e7781">  у цільовий об'єкт ненавмисно.</span>
 </div><div class='code-line code-line-29'><span style="color: #6e7781">  </span>
 </div><div class='code-line code-line-30'><span style="color: #6e7781">  тут модуль 'Util' потрапляє між Mixin та C:</span>
 </div><div class='code-line code-line-31'>
@@ -135,14 +135,14 @@
 </div><div class='code-line code-line-60'>
 </div><div class='code-line code-line-61'><span style="color: #6e7781">=begin</span>
 </div><div class='code-line code-line-62'>
-</div><div class='code-line code-line-63'><span style="color: #6e7781">  це створює виклик для авторів міксінів: як утримувати код</span>
-</div><div class='code-line code-line-64'><span style="color: #6e7781">  організованим *та* надавати модуль, який безпечно можна міксувати з будь-якою ціллю.</span>
+</div><div class='code-line code-line-63'><span style="color: #6e7781">  це створює виклик для авторів міксинів: як утримувати код</span>
+</div><div class='code-line code-line-64'><span style="color: #6e7781">  організованим *і* надавати модуль, який безпечно міксувати з будь-якою ціллю.</span>
 </div><div class='code-line code-line-65'>
 </div><div class='code-line code-line-66'>
-</div><div class='code-line code-line-67'><span style="color: #6e7781">  існують два основні підходи:</span>
+</div><div class='code-line code-line-67'><span style="color: #6e7781">  існує два основних підходи:</span>
 </div><div class='code-line code-line-68'>
 </div><div class='code-line code-line-69'>
-</div><div class='code-line code-line-70'><span style="color: #6e7781">  1) виділяти міксін окремо від простору імен верхнього рівня</span>
+</div><div class='code-line code-line-70'><span style="color: #6e7781">  1) виділити міксин окремо від простору імен верхнього рівня</span>
 </div><div class='code-line code-line-71'>
 </div><div class='code-line code-line-72'><span style="color: #6e7781">=end</span>
 </div><div class='code-line code-line-73'>
@@ -171,7 +171,7 @@
 </div><div class='code-line code-line-96'>
 </div><div class='code-line code-line-97'><span style="color: #6e7781">  або</span>
 </div><div class='code-line code-line-98'>
-</div><div class='code-line code-line-99'><span style="color: #6e7781">  2) використовувати const_missing, щоб дозволити прості константні псевдоніми в приватному просторі імен</span>
+</div><div class='code-line code-line-99'><span style="color: #6e7781">  2) використовувати const_missing для дозволу простих констант аліасів у приватному просторі імен</span>
 </div><div class='code-line code-line-100'>
 </div><div class='code-line code-line-101'>
 </div><div class='code-line code-line-102'><span style="color: #6e7781">=end</span>
@@ -196,71 +196,4 @@
 </div><div class='code-line code-line-121'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
 </div><div class='code-line code-line-122'>
 </div><div class='code-line code-line-123'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">foo</span>
-</div><div class='code-line code-line-124'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Util</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">foo</span>
-</div><div class='code-line code-line-125'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-126'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-127'>
-</div><div class='code-line code-line-128'>&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">C</span>
-</div><div class='code-line code-line-129'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">include</span>&nbsp;<span style="color: #953800">M</span><span style="color: #0550ae">::</span><span style="color: #953800">Mixin</span>
-</div><div class='code-line code-line-130'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-131'>
-</div><div class='code-line code-line-132'>&nbsp;&nbsp;<span style="color: #953800">p</span>&nbsp;<span style="color: #953800">C</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">foo</span>&nbsp;<span style="color: #6e7781">#=&gt; 42</span>
-</div><div class='code-line code-line-133'>&nbsp;&nbsp;<span style="color: #953800">p</span>&nbsp;<span style="color: #953800">C</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">const_defined?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:Util</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #6e7781">#=&gt; false </span>
-</div><div class='code-line code-line-134'>
-</div><div class='code-line code-line-135'>
-</div><div class='code-line code-line-136'>
-</div><div class='code-line code-line-137'><span style="color: #6e7781">=begin</span>
-</div><div class='code-line code-line-138'>
-</div><div class='code-line code-line-139'>
-</div><div class='code-line code-line-140'><span style="color: #6e7781">  ось і все: будь ласка, уважно подумайте про використання загальних назв</span>
-</div><div class='code-line code-line-141'><span style="color: #6e7781">  всередині ваших міксінів, оскільки вони абсолютно вивергають свої внутрішні частини до</span>
-</div><div class='code-line code-line-142'><span style="color: #6e7781">  цільового об'єкта.</span>
-</div><div class='code-line code-line-143'>
-</div><div class='code-line code-line-144'>
-</div><div class='code-line code-line-145'><span style="color: #6e7781">=end</span>
-</div><div class='code-line code-line-146'>
-</div><div class='code-line code-line-147'>
-</div><div class='code-line code-line-148'>
-</div><div class='code-line code-line-149'>
-</div><div class='code-line code-line-150'>
-</div><div class='code-line code-line-151'>
-</div><div class='code-line code-line-152'>
-</div><div class='code-line code-line-153'>
-</div><div class='code-line code-line-154'>
-</div><div class='code-line code-line-155'><span style="color: #cf222e">BEGIN</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
-</div><div class='code-line code-line-156'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">reset!</span>
-</div><div class='code-line code-line-157'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">self</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">send</span>&nbsp;<span style="color: #0a3069">:remove_const</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:Mixin</span>&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #cf222e">false</span>
-</div><div class='code-line code-line-158'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">self</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">send</span>&nbsp;<span style="color: #0a3069">:remove_const</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:C</span>&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #cf222e">false</span>
-</div><div class='code-line code-line-159'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
-</div><div class='code-line code-line-160'><span style="color: #24292f;background-color: #f6f8fa">}</span>
-</div><div class='code-line code-line-161'>
-</div><div class='code-line code-line-162'>
-</div></code></div>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про мене</a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/writing-hygienic-mixins-in-ruby">я-ненавижу-це</a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/writing-hygienic-mixins-in-ruby">я-люблю-це</a>
-  </li>
-  <li>
-    <a href="/contact">контакти</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
-```
+</div><div class='code-line code-line-124'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Util</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span sty

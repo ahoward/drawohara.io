@@ -1,6 +1,6 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
+  <base href='/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
@@ -29,18 +29,18 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>! &#39;Війни Монгоїд: Видалення індексів виробництва&#39;</title>
+    <title>! 'Війни Монгоїдів: Видалення індексів виробництва'</title>
 
-<meta property="og:title" content="! &#39;Війни Монгоїд: Видалення індексів виробництва&#39;"/>
-<meta property="og:description" content="йдіть далі." />
+<meta property="og:title" content="! 'Війни Монгоїдів: Видалення індексів виробництва'"/>
+<meta property="og:description" content="Продовжуй рухатися." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
   <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"the-mongoid-wars-removing-production-indexes"}">
-    <meta property="site:path_info" content=""/the-mongoid-wars-removing-production-indexes"">
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'the-mongoid-wars-removing-production-indexes'}">
+    <meta property="site:path_info" content="/the-mongoid-wars-removing-production-indexes">
 
     <style>
       /* anti pico */
@@ -73,25 +73,25 @@
 
     <main>
       <div class="ro markdown">
-  <p>Учора <a href="https://twitter.com/cookrn">Раян Кук</a> і я зіткнулися з однією з тих жахливих проблем, які виникають лише у виробництві, з якими стикаються досвідчені розробники на нещодавно запущеному продукті <a href="http://gomoshimoshi.com/">Moshi Moshi Co</a> <a href="http://wallspacefinder.com/">Wall Space Finder</a>.</p>
+  <p>Вчора <a href="https://twitter.com/cookrn">Раян Кук</a> і я зіткнулися з однією з тих жахливих проблем виробництва, які знають і ненавидять досвідчені розробники, на запущеному продукті <a href="http://gomoshimoshi.com/">Moshi Moshi Co</a> <a href="http://wallspacefinder.com/">Wall Space Finder</a>.</p>
 
-<p>Ця проблема була складною, моделі не зберігалися на тестуванні, але зберігалися локально та у виробництві. Очевидно, що це було пов'язано з <em>RAILS_ENV</em>, або так я думав...</p>
+<p>Це була гідна проблема, моделі не вдавалося зберегти лише в середовищі тестування, а не локально чи у виробництві. Звичайно ж, це було пов'язано з <em>RAILS_ENV</em>, або так я думав...</p>
 
-<p>Спочатку ми зробили очевидне, перевірили код локально в режимі розробки. Нічого, це працювало ідеально. Жодних проблем.</p>
+<p>Спочатку ми зробили очевидне, перевірили код локально в режимі розробки. Нічого, все працювало відмінно. Проблем не було.</p>
 
 <p>Потім ми використали чудовий</p>
 
 <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>
 </div><div class='code-line code-line-3'>&nbsp;&nbsp;~&gt;&nbsp;cap&nbsp;staging&nbsp;db:suck&nbsp;
-</div><div class='code-line code-line-4'>&nbsp;&nbsp;
-</div><div class='code-line code-line-5'>&nbsp;&nbsp;
-</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781">### зворотна операція, як ви вже здогадалися, db:blow, оскільки розробка повинна бути більш веселою...</span>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781">### зворотній процес, як ви вже здогадалися, db:blow, тому що розробка повинна бути ще веселішою...</span>
 </div><div class='code-line code-line-7'>
 </div><div class='code-line code-line-8'>
 </div></code></div>
 
-<p>щоб завантажити віддалену тестову базу даних в локальну базу даних, тим самим реплікуючи код,<br />
+<p>щоб скопіювати віддалену базу даних тестування в місцеву базу даних, таким чином реплікуючи код,<br />
 дані та <em>RAILS_ENV</em> через</p>
 
 <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
@@ -99,19 +99,19 @@
 </div><div class='code-line code-line-3'>
 </div></code></div>
 
-<p>Щодо цього: Dojo4 запускає всі тестові деплої в <em>RAILS_ENV=production</em> і розрізняє тестування та виробництво за допомогою іншої змінної середовища (<em>RAILS_STAGE</em>) саме через те, що ми хочемо тестувати будь-які і всі виробничі поведінки на тестуванні/qa, де це можливо - селективно захищаючи лише <em>божевільні</em> поведінки, такі як здійснення платежів за допомогою <em>RAILS_STAGE</em>.</p>
+<p>Щодо цього: Dojo4 запускає всі розгортання тестування в <em>RAILS_ENV=production</em> та розрізняє тестування та виробництво за допомогою іншої змінної середовища (<em>RAILS_STAGE</em>) саме тому, що ми хочемо навчати будь-яку поведінку виробництва в тестуванні/qa, де це можливо - селективно захищаючи лише <em>божевільні</em> поведінки, такі як зняття коштів з кредитних карт через <em>RAILS_STAGE</em>.</p>
 
-<p>Тож будьте впевнені, що проблема <em>не</em> була через те, що ми мали налаштовано <em>./config/environments/staging.rb</em> інакше, ніж <em>./config/environments/production.rb</em>!</p>
+<p>Отже, будьте впевнені, що проблема <em>не</em> була через те, що ми мали <em>./config/environments/staging.rb</em> налаштований інакше, ніж <em>./config/environments/production.rb</em>!</p>
 
-<p>Але все ж, ми не могли відтворити проблему. <em>#ЩОЦЕБУДЕ?!</em></p>
+<p>Але все одно, ми не могли відтворити. <em>#ЩОТАКЕ</em>!?</p>
 
-<p>Нарешті, я інструментував тестовий деплой для використання <a href="https://twitter.com/search?f=realtime&amp;q=%23die%C3%BCberawesomesauce&amp;src=typd">#dieüberawesomesauce</a> <a href="https://github.com/Mon-Ouie/pry-remote">pry-remote</a> і потрапив прямо в <em>BOOMing</em> код на тестовому вузлі.</p>
+<p>Нарешті, я інструментував розгортання тестування, щоб використовувати <a href="https://twitter.com/search?f=realtime&amp;q=%23die%C3%BCberawesomesauce&amp;src=typd">#dieüberawesomesauce</a> <a href="https://github.com/Mon-Ouie/pry-remote">pry-remote</a> та відразу потрапив у <em>BOOMing</em> код на вузлі тестування.</p>
 
-<p>І ось воно: порушено унікальне обмеження в базі даних. Але жодних<br />
-унікальних індексів не було визначено в моделі або де-небудь ще. Хмммм...</p>
+<p>І ось воно: унікальне обмеження порушувалося в базі даних. Однак жодних<br />
+унікальних індексів не було визначено в моделі або деінде. Хммм...</p>
 
-<p>Переглянувши історію git, я виявив, що раніше унікальний індекс <em>був</em><br />
-визначений у порушуваній моделі. Проблема вирішена, думав я, швидка</p>
+<p>Переглядаючи історію git, я виявив, що раніше унікальний індекс <em>був</em> визначений<br />
+на порушуваній моделі. Проблема вирішена, думав я, швидке</p>
 
 <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;~&gt;&nbsp;rake&nbsp;db:mongoid:remove_indexes
@@ -120,13 +120,13 @@
 
 <p>і. <em>Проблема залишилася.</em></p>
 
-<p>Ок. Час читати код. Через 3 хвилини проблема була виявлена. У Mongoid 4 завдання <em>remove_indexes</em> використовує цей код</p>
+<p>Добре. Час читання коду. Через 3 хвилини проблема була виявлена. У Mongoid 4 завдання <em>remove_indexes</em> використовує цей код</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>
-</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># Повертає список індексів за моделлю, які існують у базі даних, але не визначені в моделях.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># Повернути список індексів за моделлю, які існують у базі даних, але не визначені в моделях.</span>
 </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">#</span>
-</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># @example Повертає список невикористаних індексів.</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># @example Повернути список невикористаних індексів.</span>
 </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">#   Mongoid::Tasks::Database.undefined_indexes</span>
 </div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">#</span>
 </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># @return Hash{Class =&gt; Array(Hash)} Список невизначених індексів за моделлю.</span>
@@ -135,26 +135,26 @@
 </div><div class='code-line code-line-11'>
 </div></code></div>
 
-<p>див. https://github.com/mongoid/mongoid/blob/master/lib/mongoid/tasks/database.rb#L40</p>
+<p>ref: https://github.com/mongoid/mongoid/blob/master/lib/mongoid/tasks/database.rb#L40</p>
 
-<p>але в Mongoid 3.x, який ми використовуємо, така логіка відсутня.</p>
+<p>але в Mongoid 3.x, який ми використовуємо, такої логіки немає.</p>
 
-<p>див. https://github.com/mongoid/mongoid/blob/3.1.0-stable/lib/rails/mongoid.rb</p>
+<p>ref: https://github.com/mongoid/mongoid/blob/3.1.0-stable/lib/rails/mongoid.rb</p>
 
-<p>Отож, отже, Mongoid 4 гарантує, що всі індекси, навіть ті, які більше не визначені в коді/репозиторії, будуть видалені, коли індекси будуть скинуті, тоді як Mongoid 3 залишить ці індекси в базі даних!</p>
+<p>Отож ось як це: Mongoid 4 забезпечує, щоб усі індекси, навіть ті, які більше не визначені в коді/репозиторії, видалялися, коли індекси видаляються, тоді як Mongoid 3 залишатиме ці індекси в базі даних!</p>
 
 <p>Я вирішив написати про цей досвід, тому що:</p>
 
 <ul>
-  <li>З погляду 20/20 я сам стикався з цим раніше. /cc <a href="https://twitter.com/spikex">@spikex</a></li>
-  <li>Це підкреслює, як розробка та dev-ops повинні збігатися для налагодження реальних проблем: не все безстанове і живе в репозиторії, і не весь стан можна реплікувати. Іноді треба робити це наживо.</li>
-  <li>Хтось безперечно стикнеться з такою ж проблемою і, сподіваюся, знайде цей пост завдяки магії гуглу.</li>
-  <li><a href="https://twitter.com/modetojoy">@modetojoy</a> може розглянути мої поточні думки, які полягають у тому, що ми повинні портувати кращу поведінку Mongoid 4 в 3.1.0.</li>
+  <li>З погляду 20/20 я вже стикався з цим раніше. /cc <a href="https://twitter.com/spikex">@spikex</a></li>
+  <li>Це підкреслює, як розробка та dev-ops повинні збігатися для налагодження реальних проблем: не все безстанове, і не весь стан можна реплікувати. Іноді це потрібно робити вживу.</li>
+  <li>Хтось без сумніву зіткнеться з тією ж проблемою, і, я сподіваюся, знайде цей пост завдяки магії тех google.</li>
+  <li><a href="https://twitter.com/modetojoy">@modetojoy</a> може розглянути мої поточні думки, що ми повинні повернути кращу поведінку Mongoid 4 у 3.1.0.</li>
 </ul>
 
-<p>І люди дивуються, чому інженери не можуть оцінити час і зусилля для виправлення простого багу.</p>
+<p>І люди дивуються, чому ми, інженери, не можемо оцінити час і зусилля для виправлення простого багу.</p>
 
-<p>P.S. Деякі з вас, читачі, можуть запитати, як я вирішив цю проблему. Я просто знову визначив індекс в консолі, щоб Mongoid знав про нього, а потім використав методи рівня моделі, щоб видалити його</p>
+<p>P.S. Деякі з вас, читачів, можуть дивуватися, як я це виправив. Я просто знову визначив індекс в консолі, щоб Mongoid знав про нього, а потім використав методи моделі для видалення його</p>
 
 <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #0550ae">[</span>48]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; model.save</span>
@@ -175,39 +175,4 @@
 </div><div class='code-line code-line-17'><span style="color: #0550ae">[</span>49]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; ArtSpace.index({:slug =&gt; 1}, {:unique =&gt; true})</span>
 </div><div class='code-line code-line-18'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0550ae">{</span>:unique<span style="color: #0550ae">=&gt;</span><span style="color: #953800">true</span><span style="color: #0550ae">}</span>
 </div><div class='code-line code-line-19'>
-</div><div class='code-line code-line-20'><span style="color: #0550ae">[</span>50]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; ArtSpace.remove_indexes</span>
-</div><div class='code-line code-line-21'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #953800">true</span>
-</div><div class='code-line code-line-22'>
-</div><div class='code-line code-line-23'><span style="color: #0550ae">[</span>51]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; model.save</span>
-</div><div class='code-line code-line-24'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #953800">true</span>
-</div><div class='code-line code-line-25'>
-</div><div class='code-line code-line-26'>
-</div></code></div>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас<a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/the-mongoid-wars-removing-production-indexes">i-hate-this<a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/the-mongoid-wars-removing-production-indexes">i-love-this<a>
-  </li>
-  <li>
-    <a href="/contact">контакти<a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
-```
+</div><div class='code-line code-line-20'><span style="color: #0550ae">[</span>50]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6

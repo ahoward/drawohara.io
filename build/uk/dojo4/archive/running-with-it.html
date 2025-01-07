@@ -1,46 +1,42 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
 
-  <!-- deps -->
-    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
 
-  <!-- meta -->
-    <title>біг із цим</title>
-
-<meta property="og:title" content="біг із цим"/>
-<meta property="og:description" content="рухайся далі." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-
-
-  <meta property="og:image:type" content="image/jpeg" />
-
-    <meta property="site:route" content="/dojo4/archive/:id">
-    <meta property="site:params" content="{"ext":null,"id":"running-with-it"}">
-    <meta property="site:path_info" content="/running-with-it">
+    <!-- meta -->
+    <title>біг з нею</title>
+    <meta property="og:title" content="біг з нею"/>
+    <meta property="og:description" content="рухайтеся далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'running-with-it'}">
+    <meta property="site:path_info" content="/uk/running-with-it">
 
     <style>
       /* anti pico */
@@ -67,45 +63,44 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
-<hr>
+      <a href="/uk/home">@drawohara</a>
+      <hr>
     </header>
 
     <main>
-      <p><a title="http://scottjurek.com" href="http://scottjurek.com"><img rel="450x450" alt="Знімок екрана 2012 06 06 о 18.44.50" title="Знімок екрана 2012 06 06 о 18.44.50" src='/ro/dojo4/running-with-it/assets/screen-shot-2012-06-06-at-6.44.50PM.png' height="353" width="450" /></a>
-</p>
-<p>Скотт Юрек — один із найвідоміших і домінуючих ультрамарафонців у світі. Він регулярно перемагає у забігах на витривалість понад 100 миль. Його називають одним із найкращих бігунів усіх часів. Його називають божевільним. Ми називаємо його приємним у роботі!</p>
-<p>Скотт звернувся до нас, щоб перебудувати <a target="_blank" title="http://scottjurek.com" href="http://scottjurek.com">його сайт</a> і полірувати його бренд до виходу його нової книги «Їж і біжи<a title="http://scottjurek.com/eatandrun/" href="http://scottjurek.com/eatandrun/"></a>». Його приємність, терпіння та увага до деталей допомогли нам впровадити ключові деталі дизайну та створити сайт, яким ми гордимося за перший день після запуску, коли було 4969 відвідувань.</p>
-<p>Пристрасть Скотта до естетики та функціональності дала нам необхідні виклики для створення справді чудового сайту. У плані дизайну ми досліджували субтильну логотипну мітку та обробку шрифту. Ми обрали Open Sans і Open Sans Condensed як шрифт сайту, що виявилося дуже універсальним. Ми з радістю досліджували потертий текстурний папір для фону та коричневі колірні тони, щоб передати відчуття подорожнього щоденника сайту.</p>
-<p>Дизайн було перекладено в код з багатьма шарами та текстурами в макетах, що робило семантичний код та адаптивний дизайн досить важким і задоволенням для виконання. Ми раді, що зробили адаптивний дизайн просто частиною того, що ми робимо тут у dojo4, навіть якщо клієнти не просять про це спочатку. Близько 25-30% перших відвідувачів Скотта використовували планшети або мобільні пристрої. Не потрібно було повертатися та модернізувати, ми значно заощадили час і бюджет.</p>
-<p>Ми також були надзвичайно задоволені Middleman App, генератором статичних сайтів на основі Sinatra (http://middlemanapp.com/). Він дозволяє нам "шаблонізувати" веб-сайти (використовуючи ERB та SASS) та використовувати дані структури з циклами для виконання повторюваних завдань, як це роблять WordPress, Drupal тощо. Перевага Middleman, однак, полягає в тому, що він може вивести статичний сайт, роблячи кінцевий продукт швидшим і невразливим (вибачте, погані хлопці).</p>
-<p>Оскільки ми хотіли, щоб Скотт міг регулярно оновлювати контент, Джастін написав чудовий плагін jQuery, який "вводить" пости Tumblr у кількох місцях на сайті (<a title="https://github.com/Hoosteeno/inject_tumblr" href="https://github.com/Hoosteeno/inject_tumblr">https://github.com/Hoosteeno/inject_tumblr</a>). Отже, незважаючи на статичний веб-сайт, у Скотта все ще є свіжий, актуальний контент.</p>
-<p>Ми раді, що мали можливість співпрацювати зі Скоттом і підтримати вихід його <a target="_blank" title="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653" href="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653">нової книги</a>. Скотт зараз у турі, щоб просувати свою книгу з <a title="http://scottjurek.com/calendar/" href="http://scottjurek.com/calendar/">багатьма біговими заходами</a> по всій країні - якщо ви маєте можливість, варто завітати та познайомитися зі Скоттом, коли він буде у вашому місті...</p>
-<p><em>пост від Ентоні, Корі та Стіва</em>
-</p>
+      <p><a title="http://scottjurek.com" href="http://scottjurek.com"><img rel="450x450" alt="Знімок екрана 2012 06 06 О 6.44.50 Вечора" title="Знімок екрана 2012 06 06 О 6.44.50 Вечора" src='/uk/ro/dojo4/running-with-it/assets/screen-shot-2012-06-06-at-6.44.50PM.png' height="353" width="450" /></a>
+      </p>
+      <p>Скотт Джурек — один із найвідоміших та найсильніших ультрамарафонців світу. Він регулярно перемагає у забігах на дистанції понад 100 миль. Його називали одним із найкращих бігунів усіх часів. Його називали божевільним. Ми називаємо його задоволенням працювати!</p>
+      <p>Скотт звернувся до нас, щоб перебудувати <a target="_blank" title="http://scottjurek.com" href="http://scottjurek.com">його сайт</a> і вдосконалити його бренд до виходу його нової книги, <em>Їж і біжи<a title="http://scottjurek.com/eatandrun/" href="http://scottjurek.com/eatandrun/"></a>
+      </em>. Його привітність, терпіння та увага до деталей допомогли нам впровадити ключові дизайнерські деталі та створити сайт, яким ми пишалися, маючи 4,969 переглядів у перший день після запуску.</p>
+      <p>Пристрасть Скотта до естетики та функціональності дала нам необхідні виклики для створення справді чудового сайту. У плані дизайну ми досліджували тонкий логотип та типове оформлення. Ми обрали Open Sans та Open Sans Condensed як шрифт сайту, що виявилося дуже універсальним. І нам було весело досліджувати потерті текстуровані паперові фони та коричневі колірні тони, щоб виразити подорожній щоденник сайту.</p>
+      <p>Дизайн був перекладений у код із багатьма шарами та текстурами в макетах, що робило семантичний код та адаптивний дизайн досить складним та приємним для виконання. Ми раді, що зробили адаптивний дизайн просто частиною нашої роботи в dojo4, навіть якщо клієнти не просять про це спочатку. Близько 25-30% перших відвідувачів Скотта користувалися планшетами або мобільними пристроями. Не потрібно було повертатися та переробляти, ми зекономили значний час і бюджет.</p>
+      <p>Ми також дуже задоволені Middleman App, статичним генератором сайтів на основі Sinatra (http://middlemanapp.com/). Він дозволяє нам «шаблонізувати» вебсайти (використовуючи ERB та SASS) та використовувати структури даних із циклами для виконання повторюваних завдань так само, як WordPress, Drupal тощо. Перевага Middleman, однак, полягає в його здатності видавати статичний сайт, що робить кінцевий продукт швидшим і незламним (вибачте, лиходії).</p>
+      <p>Оскільки ми хотіли, щоб Скотт міг регулярно оновлювати контент, Джастін написав чудовий плагін jQuery, який «вставляє» пости Tumblr у кількох місцях на сайті (<a title="https://github.com/Hoosteeno/inject_tumblr" href="https://github.com/Hoosteeno/inject_tumblr">https://github.com/Hoosteeno/inject_tumblr</a>). Тож, незважаючи на наявність статичного вебсайту, у Скотта все ще є свіжий, актуальний контент.</p>
+      <p>Ми раді, що мали можливість співпрацювати зі Скоттом та підтримати вихід його <a target="_blank" title="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653" href="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653">нової книги</a>. Скотт тепер у турі, щоб просувати свою книгу з <a title="http://scottjurek.com/calendar/" href="http://scottjurek.com/calendar/">багатьма біговими подіями</a> по всій країні — якщо у вас буде така можливість, варто завітати та познайомитися зі Скоттом, коли він буде у вашому місті...</p>
+      <p><em>пост від Ентоні, Корі та Стіва</em></p>
     </main>
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас<a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/running-with-it">я-ненавижу-це<a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/running-with-it">я-люблю-це<a>
-  </li>
-  <li>
-    <a href="/contact">контакти<a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
+      <a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/uk/about">про нас<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/running-with-it">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/running-with-it">i-love-this<a>
+          </li>
+          <li>
+            <a href="/uk/contact">контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/uk">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

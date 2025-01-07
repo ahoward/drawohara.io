@@ -1,6 +1,6 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
+  <base href='/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
@@ -32,11 +32,10 @@
     <title>! &#39;## Moment Timezone не має даних для Центрального часу (США та Канада)....&#39;</title>
 
 <meta property="og:title" content="! &#39;## Moment Timezone не має даних для Центрального часу (США та Канада)....&#39;"/>
-<meta property="og:description" content="Продовжуйте." />
+<meta property="og:description" content="тримайтесь подалі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-
-  <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"number-number-moment-timezone-has-no-data-for-central-time-us-and-canada"}">
@@ -74,18 +73,18 @@
     <main>
       <div class="ro markdown">
   <p><img src='/ro/dojo4/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada/assets/b.png' alt="moment_js_error.png" /> <br />
-Це повідомлення про помилку в консолі з'явилося, коли <code>Центральний час (США та Канада)</code> було передано безпосередньо як значення для <code>time_zone</code> у виклику <a href="http://momentjs.com/timezone/docs/#/using-timezones/parsing-in-zone/"><code>moment.tz(date, time_zone)</code></a>.</p>
+Це повідомлення про помилку в консолі з'явилося через безпосереднє передавання <code>Центральний час (США та Канада)</code> як значення для <code>time_zone</code> у виклику <a href="http://momentjs.com/timezone/docs/#/using-timezones/parsing-in-zone/"><code>moment.tz(date, time_zone)</code></a>.</p>
 
-<p>Замість <code>Центральний час (США та Канада)</code>, правильним значенням, яке тут слід передавати, є <code>America/Chicago</code> - що відповідає властивості <a href="http://momentjs.com/timezone/docs/#/zone-object/name/">імені об'єкта зони</a>, яку використовує momentjs для унікальної ідентифікації часового поясу.</p>
+<p>Замість <code>Центральний час (США та Канада)</code>, правильне значення, яке тут потрібно передати, це <code>America/Chicago</code> - що відповідає властивості <a href="http://momentjs.com/timezone/docs/#/zone-object/name/">імені об'єкта зони</a>, яку використовує momentjs для унікальної ідентифікації часового поясу.</p>
 
-<p><code>Центральний час (США та Канада)</code> є <a href="http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html"><strong>більш зрозумілим</strong> іменем часового поясу</a>, яке використовується в <code>rails</code>.</p>
+<p><code>Центральний час (США та Канада)</code> - це <a href="http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html"><strong>більш зрозуміле</strong> ім'я часового поясу</a>, яке використовує <code>rails</code>.</p>
 
-<p>Вирішив проблему, передавши <code>time_zone.tzinfo.identifier</code> замість <code>time_zone</code>.</p>
+<p>Вирішив проблему, передавши <code>time_zone.tzinfo.identifier</code> замість просто <code>time_zone</code>.</p>
 
 <p><code>ruby</code></p>
 <blockquote>
   <p>time_zone<br />
- =&gt; (UTC-06:00) Центральний час (США та Канада)</p>
+ =&gt; (GMT-06:00) Центральний час (США та Канада)</p>
 </blockquote>
 
 <blockquote>
@@ -98,20 +97,20 @@
 
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; перейти</a>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
 <blockquote>
 <ul>
   <li>
-    <a href="/about">про нас<a>
+    <a href="/about">про проект</a>
   </li>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada">я-не-люблю-це<a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada">i-hate-this</a>
   </li>
   <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada">я-люблю-це<a>
+    <a href="mailto:i-love-this@drawohara.io?subject=/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada">i-love-this</a>
   </li>
   <li>
-    <a href="/contact">контакт<a>
+    <a href="/contact">контакти</a>
   </li>
 </ul>
 </blockquote>
@@ -119,4 +118,3 @@
     </footer>
   </body>
 </html>
-```

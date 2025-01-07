@@ -1,59 +1,43 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/uk' />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
-
-  <!-- deps -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
-
-  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
-
-  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-
-  <!-- meta -->
     <title>Imbed для Android</title>
-
-<meta property="og:title" content="Imbed для Android"/>
-<meta property="og:description" content="продовжуй." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-
-<meta property="og:image:type" content="image/jpeg" />
-
-    <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"imbed-for-android"}">
-    <meta property="site:path_info" content=""/imbed-for-android"">
-
+    <meta property="og:title" content="Imbed для Android"/>
+    <meta property="og:description" content="пересувайтеся далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'imbed-for-android'}">
+    <meta property="site:path_info" content="/imbed-for-android">
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
-
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
-
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
     </style>
-
     <script>
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
@@ -63,49 +47,40 @@
       });
     </script>
   </head>
-
   <body>
     <header>
       <a href="/home">@drawohara</a>
-<hr>
+      <hr>
     </header>
-
     <main>
       <div class="ro markdown">
-  <p>Ще деякий час тому я писав, <a href="http://dojo4.com/blog/why-phonegap-sucks">чому phonegap поганий</a> та як ми вирішили включити веб-контент до наших нативних додатків. Відкритий код, який з'явився після створення кількох нативних додатків, що включали веб-контент, став <a href="https://github.com/Imbed">проєктом Imbed</a>. Ми спочатку випустили <a href="http://dojo4.com/blog/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">iOS версію</a>.</p>
-
-<p>Проєкт має на меті стати відправною точкою для того, що ми вважаємо найкращим способом включення веб-контенту до нативного додатку - за допомогою нативного коду. У iOS це означає написання Objective-C для використання UIWebView, а в Android - написання Java для використання WebView. Так, це вимагає, щоб ви знали досить про iOS/Objective-C та Android/Java, щоб писати власні нативні функції, коли хочете використовувати функції пристрою, але це означає можливість точно слідувати вказівкам Apple та Google та не залежати від сторонньої сторони для підтримки нової функції та підтримки її без власних помилок.</p>
-
-<p>Нещодавно я глибше досліджував Android та створив <a href="https://github.com/imbed/android">версію Imbed для Android</a>. Крім надання хорошої відправної точки для включення веб-контенту, прикладний HTML-код демонструє деякі обмеження JavaScript у webview та забезпечує вбудовану підтримку дуже важливої кнопки "назад" на телефонах Android, коли ви натискаєте посилання, яке потрібно відкрити в Chrome, а не у веб-контенті у вашому додатку.</p>
-
-<p>Перегляньте <a href="https://github.com/imbed/android">версію для Android</a> та напишіть мені свої думки у Twitter!</p>
-
-<p>Як завжди, pull requests вітаються :)</p>
-
-</div>
+        <p>Деякий час тому я писав, чому <a href="http://dojo4.com/blog/why-phonegap-sucks">phonegap це непогано</a> та як ми вирішили інтегрувати веб-контент у наші нативні додатки. Відкритий код, який з'явився в результаті створення кількох нативних додатків, що включали веб-контент, це <a href="https://github.com/Imbed">проект Imbed</a>. Ми випустили <a href="http://dojo4.com/blog/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">версію для iOS першою</a>.</p>
+        <p>Проект має на меті бути стартовою точкою для того, що ми вважаємо найкращим способом інтеграції веб-контенту в нативний додаток - за допомогою нативного коду. У iOS це означає написання Objective-C для використання UIWebView, а в Android - написання Java для використання WebView. Так, це вимагає, щоб ви достатньо розумілися на iOS/Objective-C та Android/Java, щоб писати власні нативні функції, коли хочете використовувати функції пристрою, але це означає можливість точно слідувати інструкціям Apple та Google та не покладатися на сторонню підтримку нової функції та підтримувати її без власних помилок.</p>
+        <p>Нещодавно я поглибився в дослідження Android і створив <a href="https://github.com/imbed/android">версію Imbed для Android</a>. Крім надання гарного стартового пункту для включення веб-контенту, прикладний html-код демонструє деякі обмеження JavaScript у вебпереглядачі та забезпечує вбудовану підтримку надзвичайно важливої кнопки "назад" на телефонах Android, коли ви натискаєте посилання, яке потрібно відкрити в Chrome, а не у веб-контенті вашого додатку.</p>
+        <p>Перегляньте <a href="https://github.com/imbed/android">версію для Android</a> та дайте мені знати свої думки у Twitter!</p>
+        <p>Як завжди, ласкаво просимо pull requests :)</p>
+      </div>
     </main>
-
     <footer>
       <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="/about">про нас<a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/imbed-for-android">я-ненавижу-це<a>
-  </li>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/imbed-for-android">я-люблю-це<a>
-  </li>
-  <li>
-    <a href="/contact">контакти<a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/imbed-for-android">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/imbed-for-android">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>
-```

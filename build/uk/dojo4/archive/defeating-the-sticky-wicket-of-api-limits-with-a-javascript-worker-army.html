@@ -1,4 +1,3 @@
-```html
 <html color-mode="user" lang="uk">
   <head>
   <!-- ga -->
@@ -9,6 +8,8 @@
   gtag('js', new Date());
   gtag('config', 'G-DQVD9T27V4');
 </script>
+
+  <base href='/uk' />
 
   <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
@@ -29,12 +30,11 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>подолання пастки обмеження api за допомогою армії js-робітників</title>
+    <title>Подолання проблеми обмеження API за допомогою армії робітників JavaScript</title>
 
-<meta property="og:title" content="подолання пастки обмеження api за допомогою армії js-робітників"/>
-<meta property="og:description" content="продовжуйте." />
+<meta property="og:title" content="Подолання проблеми обмеження API за допомогою армії робітників JavaScript"/>
+<meta property="og:description" content="Продовжуйте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-
 
   <meta property="og:image:type" content="image/jpeg" />
 
@@ -75,24 +75,24 @@
       <div class="ro markdown">
   <h2 id="tldr">TL;DR</h2>
 
-<p>коли у вас <em>дуже</em> багато роботи на сервері з огляду на обмеження api</p>
+<p>коли у вас <em>занадто</em> багато роботи на сервері з обмеженнями API</p>
 
-<p>передайте частину роботи клієнтським браузерам для виконання - відправте результати назад до вашої бази даних</p>
+<p>перекладіть деяку роботу своїм клієнтам у браузери для виконання - і відправте результати назад у вашу базу даних</p>
 
 <h2 id="the-problem">проблема</h2>
-<p>минулого тижня я мав справу з (g-provider) обмеженнями api та надто великою кількістю геолокаційних запитів, що надходили з сервер(ів). я трохи попрацював над цим, виконуючи завдання в фоновому режимі, з періодичними повторними спробами - ви знаєте: стандартні речі...</p>
+<p>Мій тиждень минув у боротьбі з (g-provider) обмеженнями API і занадто великою кількістю запитів щодо геолокації, що надходили з серверів. Я трохи попрацював над цим, виконуючи завдання на задньому плані з періодичними повторними спробами - ви знаєте: стандартні речі...</p>
 
-<p>api, про яке йде мова, обмежується за ip, а документація рекомендує скористатися цим, виконуючи більшість api-запитів на стороні клієнта - на js.</p>
+<p>API, про який йдеться, обмежений за IP, і в документації рекомендується скористатися цим, виконуючи більшість запитів API на стороні клієнта - в JS.</p>
 
-<p>тепер, у цьому конкретному випадку мені абсолютно <em>потрібно</em> було, щоб результати api-запитів знаходилися на сервері, тому я знайшов цей компромісний (у більш ніж одному сенсі) рішення</p>
+<p>У даному випадку мені абсолютно <em>потрібні</em> результати запитів API на стороні сервера, тому я вирішив це компромісне (в більш ніж одному сенсі) рішення</p>
 
 <h2 id="the-solution">рішення</h2>
-<p>припустімо, що деякі клієнти готові витратити свій cpu для заповнення даних, якими їм цікаво працювати. іншими словами, змусіть деяких ваших клієнтів виконувати завдання з js-черги завдань, щоб підготувати те, чим їм цікаво користуватися.</p>
+<p>припустімо, що деякі клієнти готові витратити свій CPU на заповнення даними, які їм цікаво обробляти. Простіше кажучи, змусіть деяких своїх клієнтів виконувати роботи з черги JavaScript для того, щоб запустити помпу, якою їм цікаво користуватися.</p>
 
-<p>у моєму випадку деякі вибрані інтерфейси (ті, що цікавляться результатом цих завдань) запускають маленький iframe</p>
+<p>У моєму випадку деякі вибрані інтерфейси (ті, які цікавляться результатами цих завдань) запускають невеликий iframe</p>
 
 <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
-</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- додайте запускач черги завдань на деякі сторінки/види/макети --&gt;</span>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- вставте виконавця черги завдань на певні сторінки/перегляди/макети --&gt;</span>
 </div><div class='code-line code-line-3'>
 </div><div class='code-line code-line-4'><span style="color: #116329">&lt;iframe</span>&nbsp;<span style="color: #116329">height=</span><span style="color: #0a3069">"0"</span>&nbsp;<span style="color: #116329">width=</span><span style="color: #0a3069">"0"</span>&nbsp;<span style="color: #116329">style=</span><span style="color: #0a3069">"display:none;"</span>&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"/javascript_jobs/runner"</span><span style="color: #116329">&gt;&lt;/iframe&gt;</span>
 </div><div class='code-line code-line-5'>
@@ -100,7 +100,7 @@
 </div></code></div>
 
 <div class="language-erb highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
-</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- запускач завдань --&gt;</span>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- виконавець завдань --&gt;</span>
 </div><div class='code-line code-line-3'>
 </div><div class='code-line code-line-4'><span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">javascript_include_tag</span>&nbsp;<span style="color: #0a3069">:jquery</span>&nbsp;<span style="color: #6e7781">%&gt;</span>
 </div><div class='code-line code-line-5'><span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">javascript_include_tag</span>&nbsp;<span style="color: #0a3069">:jobs</span>&nbsp;<span style="color: #6e7781">%&gt;</span>
@@ -119,9 +119,9 @@
 </div><div class='code-line code-line-18'>
 </div></code></div>
 
-<p>потрібний js для взаємодії з чергою завдань короткий і простий</p>
+<p>JS, необхідний для інтерфейсу з чергою завдань, короткий та простий</p>
 
-<p>все, що він робить, - це отримує завдання, виконує його та відправляє назад на сервер - дотримуючись як пропускної здатності, так і максимальної кількості завдань для виконання.</p>
+<p>Все, що він робить, це отримує завдання, виконує його та відправляє результати назад на сервер - дотримуючись як пропускної здатності, так і максимальної кількості виконаних завдань.</p>
 
 <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">!</span><span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
@@ -143,4 +143,10 @@
 </div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">run</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
 </div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">count</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">max</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
 </div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">setTimeout</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">get_next_job</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">throttle</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
-</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-25'>
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">ajax</span><span style="color: #24292f;background-color: #f6f8fa">({</span>
+</div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">url</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">/api/jobs/next
