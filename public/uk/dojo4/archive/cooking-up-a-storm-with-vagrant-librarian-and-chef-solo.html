@@ -1,0 +1,182 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Готуємо шторм з Vagrant, Librarian та Chef-Solo</title>
+
+<meta property="og:title" content="Готуємо шторм з Vagrant, Librarian та Chef-Solo"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"cooking-up-a-storm-with-vagrant-librarian-and-chef-solo"}">
+    <meta property="site:path_info" content=""/cooking-up-a-storm-with-vagrant-librarian-and-chef-solo"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Налаштування Apache на одній системі - це досить просто. Якщо у конфігурації є кілька віртуальних хостів, це стає трохи складніше. А якщо конфігурація включає проксі, перенаправлення URL і деяку заміну тексту, це стає ще цікавіше. Але все це не складає труднощів для досвідченого системного адміністратора.</p>
+
+<p>Аж доки вам не доведеться робити це знову.</p>
+
+<p>Тут на допомогу приходять інструменти, такі як <a href="http://www.opscode.com">Chef</a> і <a href="http://puppetlabs.com">Puppet</a>. Обидва інструменти дозволяють вам оголошувати та визначати, як повинні виглядати системи та як вони повинні бути налаштовані. Обидва потужні, і обидва активно використовуються для налаштування від <a href="https://github.com/boxen/boxen">робочих станцій</a> <a href="https://github.com/atmos/cinderella">розробників</a> до <a href="http://www.opscode.com/press-releases/facebook-likes-opscode-and-private-chef/">великих розгортань сотень тисяч машин</a>.</p>
+
+<p>Як і програмне забезпечення, вам все одно потрібно будувати та тестувати конфігурацію, яку ви створюєте. Ваші можливості варіюються від дуже дорогого (купувати один або кілька серверів), до помірно дорогого (запускати кілька інстансів на EC2) аж до дуже-дуже дешевого. Найбільш дешевим варіантом буде будувати та тестувати ваші рецепти на віртуальній машині(ах), що працюють на вашій системі. Тут на допомогу приходить <a href="http://www.vagrantup.com/">Vagrant</a>.</p>
+
+<p>Vagrant - це обгортка навколо <a href="https://www.virtualbox.org/">VirtualBox</a> - настільної платформи віртуалізації від Oracle. Конфігурація Vagrant обертається навколо кількох простих концепцій. У вас є конфігураційний файл <code>Vagrantfile</code> у корені проєкту. Цей файл містить базову конфігурацію, таку як базовий бокс для проєкту та які порти потрібно відкрити для гостьової системи. І так само важливо, він може описувати, як провізіювати віртуальну машину, щоб вона відповідала вимогам вашого проєкту. Хоча Vagrant підтримує і Puppet, і Chef, я вибрав Chef-Solo для провізіонування цього проєкту.</p>
+
+<p>Почати роботу з Vagrant просто. Перший крок - це встановити гем <code>vagrant</code>. Як і будь-який інший Ruby-проєкт, я вирішив встановити <code>vagrant</code> та кілька інших гемів через Bundler. Ось результат <code>Gemfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">source</span>&nbsp;<span style="color: #0a3069">'https://rubygems.org'</span>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'vagrant'</span>
+</div><div class='code-line code-line-4'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'librarian'</span>
+</div></code></div>
+
+<p>Виконання <code>bundle install</code> встановило потрібні геми у каталозі проєкту. Швидке <code>rbenv rehash</code> зробило виконуваний файл vagrant доступним у моїй оболонці.</p>
+
+<p>Наступний крок - налаштувати найпростішу конфігурацію Vagrant. Я виконав <code>vagrant init</code> і потім відредагував створений Vagrantfile, щоб він виглядав так:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">Vagrant</span><span style="color: #0550ae">::</span><span style="color: #953800">Config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">run</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781"># Every Vagrant virtual environment requires a box to build off of.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"ubuntu-precise-64"</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781"># The url from where the 'config.vm.box' box will be fetched if it</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781"># doesn't already exist on the user's system.</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box_url</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"http://files.vagrantup.com/precise64.box"</span>
+</div><div class='code-line code-line-8'><span style="color: #cf222e">end</span>
+</div></code></div>
+
+<p>Це досягає двох речей. По-перше, це оголошує назву боксу, на якому ми будемо будувати, та де знайти цей бокс. Швидке <code>vagrant up</code> спочатку завантажить базовий бокс, імпортує його в проєкт та запустить VM. Завантаження боксу займає деякий час, але він кешується на вашій системі, тому вам не потрібно завантажувати його знову. Ви також можете повторно використовувати той самий базовий бокс, якщо вирішите зробити це в інших проєктах. Виконання <code>vagrant halt</code> зупиняє VM, а виконання <code>vagrant destroy</code> знищує саму VM.</p>
+
+<p>Все ще не зробили багато для провізіювання нашої VM. Наступний крок - сказати Vagrant, як це зробити.</p>
+
+<p><a href="https://github.com/applicationsonline/librarian">Librarian</a> - це ще один чудовий гем у стилі Bundler та CocoaPods, який дозволяє вам оголошувати, які рецепти Chef ви використовуєте. У нашому випадку скорочена копія <code>Cheffile</code> проєкту виглядає так:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">#!/usr/bin/env ruby</span>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">#^syntax detection</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #24292f;background-color: #f6f8fa">site</span>&nbsp;<span style="color: #0a3069">'http://community.opscode.com/api/v1'</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'apt'</span>
+</div><div class='code-line code-line-7'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'apache2'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'&gt;= 1.0.0'</span>
+</div><div class='code-line code-line-8'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'rbenv'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:git</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'git://github.com/fnichol/chef-rbenv.git'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:ref</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'v0.7.2'</span>
+</div><div class='code-line code-line-9'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'ruby_build'</span>
+</div><div class='code-line code-line-10'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'openssh'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:git</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'git://github.com/fnichol/chef-openssh.git'</span>
+</div><div class='code-line code-line-11'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'git'</span>
+</div><div class='code-line code-line-12'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'build-essential'</span>
+</div><div class='code-line code-line-13'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'vim'</span>
+</div><div class='code-line code-line-14'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'user'</span>
+</div><div class='code-line code-line-15'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'sudo'</span>
+</div></code></div>
+
+<p>Найбільша перевага полягає в тому, що вам не потрібно вендорити кукбуки у ваші проєкти. Виконання <code>librarian-chef install</code> завантажить кукбуки та встановить їх у каталозі <code>cookbooks</code>. Це також створює <code>Cheffile.lock</code>, щоб задокументувати, які версії кукбуків були встановлені.</p>
+
+<p>Тоді я досягнув точки, де я міг сказати Vagrant використовувати Chef-Solo для провізіонування боксу, оновивши <code>Vagrantfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">Vagrant</span><span style="color: #0550ae">::</span><span style="color: #953800">Config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">run</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781"># Every Vagrant virtual environment requires a box to build off of.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"ubuntu-precise-64"</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781"># The url from where the 'config.vm.box' box will be fetched if it</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781"># doesn't already exist on the user's system.</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box_url</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"http://files.vagrantup.com/precise64.box"</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;<span style="color: #6e7781"># Enable provisioning with chef solo, specifying a cookbooks path, roles</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;<span style="color: #6e7781"># path, and data_bags path (all relative to this Vagrantfile), and adding </span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #6e7781"># some recipes and/or roles.</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">provision</span>&nbsp;<span style="color: #0a3069">:chef_solo</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">cookbooks_path</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">"cookbooks"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"site-cookbooks"</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"apt"</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"build-essential"</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"ruby_build"</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"rbenv::system"</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"rbenv::vagrant"</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"git"</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"user"</span>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"vim"</span>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"sudo"</span>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"openssh"</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">add_recipe</span>&nbsp;<span style="color: #0a3069">"apache2"</span>
+</div><div class='code-line code-line-25'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">json</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">authorization: </span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">sudo: </span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">passwordless: </span><span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">groups: </span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">"admin"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"sudo"</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">openssh: </span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">permit_root_login: </span><span style="color: #0a3069">"no"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">password_authentication: </span><span style="color: #0a3069">"yes"</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">rbenv: </span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">rubies: </span><span style="color: #24292f;background-color: #f6f8fa">[</span>&nbsp;<span style="color: #0a3069">"1.9.3-p327"</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">],</span>
+</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">upgrade: </span><span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">global: </span><span style="color: #0a3069">"1.9.3-p327"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-41'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">gems: </span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-42'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">"1.9.3-p327"</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span>
+</div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #0a3069">name: </span><span style="color: #0a3069">"bundler"</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #0a3069">name: </span><span style="color: #0a3069">"main"</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #0a3069">name: </span><span style="color: #0a3069">"map"</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-46'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #0a3069">name: </span><span style="color: #0a3069">"open4"</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #0a3069">name: </span><span style="color: #0a3069">"multi_json"</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-48'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #0a3069">name: </span><span style="color: #0a3069">"

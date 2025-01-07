@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <base href='/uk' />
+    <title>Переклад</title>
+</head>
+<body>
+<p>Сьогодні я тестую новий сайт у різних браузерах перед його запуском. Як завжди, це включає деякі стилістичні вправи, щоб сайт виглядав краще, ніж погано, в Internet Explorer. Але сьогодні я зіткнувся з проблемою в Firefox, яку не міг пояснити.</p>
+<p>Сайт, який я будую, рекламує велосипедну подію. Він містить кілька блоків такого виду:</p>
+
+<p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>
+
+<p>Вони містять інформацію про спонсорів події. Дивовижно, хоча ці блоки відображаються у <a href="http://uk.wikipedia.org/wiki/Internet_Explorer_6" title="http://uk.wikipedia.org/wiki/Internet_Explorer_6">улюбленому десятирічному браузері всіх</a>, вони не з'являються в жодній версії Firefox на моєму диску.</p>
+<p>Серйозно? Так.</p>
+<p>Ці блоки <em>невидимі</em> у Firefox. Браузер змінює їх, щоб надати їм атрибут <code>display:none;</code>.</p>
+<p>Але найкраща частина полягає в тому, що якщо я зміню клас секції на будь-що, крім "sponsor", блоки відображаються нормально. Насправді, як тільки ви знаєте причину, це єдиний вихід: не надавайте елементам на вашій сторінці CSS-клас "sponsor".</p>
+<p>Думаєте, ви знаєте, що це спричинило? <a href="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845" title="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845">Перевірте це</a>.</p>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Це в логах, дурни...</title>
+
+<meta property="og:title" content="Це в логах, дурни..."/>
+<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"it-s-in-the-logs-stupid"}">
+    <meta property="site:path_info" content=""/it-s-in-the-logs-stupid"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>(Цей пост спочатку з'явився в блозі Spike’s <a href="http://www.stuff-things.net/">Речі… та інші речі…</a>)</p>
+
+<p>Учора я брав участь у налагоджуванні нового сайту на Rails у дуже стислі терміни. Сайт працював добре в режимі розробки/тестування, але індексна сторінка в робочому середовищі відновлювалася більше 10 секунд.</p>
+
+<p>Оскільки це працювало поза робочим середовищем, ми прийшли до висновку, що це пов'язано з інфраструктурою хостингу. Ми перевірили Apache, Passenger, навантаження на сервер, мережеві налаштування тощо. Нічого.</p>
+
+<p>Нарешті, я вирішив перевірити <code>log/production.log</code>, і ось що я побачив:</p>
+
+<pre><code>Processing by BlahController#index as */*
+  Rendered blah/_carousel.html.erb (5795.2ms)
+  Rendered blah/index.html.erb within layouts/site (5801.5ms)
+</code></pre>
+
+<p>Ми швидко виявили, що це пов'язано з обробкою зображень, яка не кешувалася. Це не проявлялося поза робочим середовищем, тому що ресурси зображень були різними. Я не буду нудити вас подробицями.</p>
+
+<p>Однак, я <del>надокучу</del> розповім вам про свій висновок. Під час налагоджування проблеми починайте з простих речей. Логи Rails не дуже детальні, але вони надають достатньо інформації, щоб швидко виявити проблеми в вашому коді.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/it-s-in-the-logs-stupid">я-ненавижу-це<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/it-s-in-the-logs-stupid">я-люблю-це<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

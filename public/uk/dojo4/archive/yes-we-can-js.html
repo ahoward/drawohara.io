@@ -1,0 +1,128 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Ми можемо(.js)</title>
+
+    <meta property="og:title" content="Ми можемо(.js)"/>
+    <meta property="og:description" content="переходьте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"yes-we-can-js"}">
+    <meta property="site:path_info" content=""/yes-we-can-js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Ми використовували <a href="http://canjs.us/">Can.js</a> для роботи з мобільними пристроями на планшетах. Це легковагова фронтенд JS бібліотека для створення веб-застосунків, і ми використовували її в Phonegap для створення нативних інтерфейсів. Зусилля для вивчення та застосування фреймворку виявилися успішними, тому ми хотіли б поділитися нашим досвідом.</p>
+
+        <h2 id="pros">Переваги</h2>
+
+        <p>Can.js має багато якостей, які розробники полюбили протягом років. Ось деякі з них:</p>
+
+        <ul>
+          <li>Легковаговий – Фреймворк не нав’язує жодних обмежень. Здається, що розробники виразили дуже мало конвенцій.</li>
+          <li>Короткий – Використання об’єктів Can є швидким та чистим процесом, і вони зазвичай забезпечують гарні, декларативні інтерфейси для таких речей, як зв’язування подій та маршрутизація.</li>
+          <li>Швидкий – Can.js рекламується як швидкий. Ми не проводили власних тестів продуктивності, але нічого не помітили, що суперечить цьому.</li>
+          <li>Гнучкий – Оскільки фреймворк не виражає або не нав’язує багато конвенцій, організація та використання коду значною мірою залежить від нас, розробників.</li>
+          <li>Компонувальний – Can містить корисний базовий об’єкт під назвою <code>Can.Construct</code>, який підтримує такі речі, як статичні та прототипні властивості, конструктори та успадкування. Це корисно для визначення власних об’єктів застосунків або домену в послідовний спосіб.</li>
+        </ul>
+
+        <h2 id="annoyances">Незручності</h2>
+
+        <p>Мені хотілося назвати цей список списком «недоліків», але це не здалося б правильним, оскільки це скоріше незручності, ніж недоліки.</p>
+
+        <ul>
+          <li>Документація – Спочатку здається глибокою, але я вважаю текст і приклади менш корисними, ніж могли б бути. Я вважаю, що збільшення різноманітності прикладів могло б відразу підвищити їхню корисність.</li>
+          <li>Відсутність запропонованої структури – Це також згадувалося вище як перевага. Ми інвестували значний час у створення того, що здавалося шаблонним кодом для початку роботи з багатим застосунком. Я не вважаю, що це має бути включено до самого фреймворку, але приклади різних методологій могли б допомогти.</li>
+          <li>Відсутність високорівневих абстракцій – Більшість об’єктів Can, які надано, є досить низькорівневими з точки зору застосунку. Багато згаданих вище інвестицій було використано для створення корисних базових об’єктів для різних цілей, щоб зв’язати Can різними способами. Це включало такі речі, як клас застосунку для приєднання до <code>window</code> та представлення/містити деякі станові концепції. Також ми створили базовий об’єкт для представлення контролерів рівня сторінки на відміну від контролерів рівня «віджетів».</li>
+        </ul>
+
+        <h2 id="conclusion">Висновки</h2>
+
+        <p>Ми щиро радимо спробувати Can.js. Він має багато інших можливостей, які навіть не охоплені тут, такі як те, як він допомагає запобігти витокам пам’яті. Будь ласка, надішліть листа ryan@dojo4.com з будь-якими вашими питаннями.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/yes-we-can-js">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/yes-we-can-js">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

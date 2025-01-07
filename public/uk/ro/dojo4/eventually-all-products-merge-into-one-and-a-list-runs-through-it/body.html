@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <base href='/uk' />
+    <title>Переклад сторінки</title>
+</head>
+<body>
+    <p>Нещодавно, допомагаючи клієнту розмітити тему для <a href="http://shopify.com" target="_blank">Shopify</a>, я зіткнувся з складною проблемою: як об'єднати вихід одного циклу з виходом іншого безперервним чином. Дозвольте мені пояснити.</p>
+    <p>
+      Більшість тем Shopify містять "шаблон колекції", де продукти перелічуються за допомогою циклу <a href="http://wiki.shopify.com/UsingLiquid" target="_blank">Liquid</a>. <a href="#figure1">Рисунок 1</a> показує, як такі списки зазвичай виглядають.
+    </p>
+    <figure id="figure1" class="pal lightestgrayBg mvl" style="text-align: center;"><img src="assets/mockup.png" title="Макет" alt="Макет" /><figcaption class="mtm fontItalic">
+        <strong><em>Рисунок 1</em></strong>: Типовий список продуктів Shopify
+      </figcaption>
+    </figure>
+    <p>
+      Якщо ви не проти використання <code>TABLEs</code> для таких макетів, Liquid вас забезпечить своїм <code>TABLEROW</code> тегом (<a href="http://wiki.shopify.com/UsingLiquid#Tables">посилання</a>). Якщо ви віддаєте перевагу сітковим системам, вам доведеться застосувати якийсь <a href="http://stackoverflow.com/questions/2245972/modulus-or-lack-thereof-in-rubys-liquid-templating-engine/8439160#8439160" target="_blank">хак з обгортанням рядків</a>, оскільки Liquid не має енумератора <code>each_slice()</code> або оператора <code>modulus</code>.
+    </p>
+    <p>
+      Але якщо ви, як і я, вважаєте, що семантично відповідна розмітка для списку продуктів - це невпорядкований список (<code>UL</code>), ви змушені працювати з потоком <code>LIs</code>.
+    </p>
+    <p>
+      Як я вже згадував вище, цей дизайн вимагав, щоб список колекцій продуктів з'являвся в рядку зі списком продуктів, але не будь-де. Він повинен був бути третім елементом у першому рядку, як показано на <a href="#figure2">Рисунку 2</a>.
+    </p>
+    <figure id="figure2" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src="assets/desired-layout.png" title="Бажаний макет" alt="Бажаний макет" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 2</em></strong>: Цикл списку продуктів, який нібито переривається навігаційним списком
+      </figcaption>
+    </figure>
+    <p>
+      Я не хотів починати один цикл, зупиняти його, починати інший, зупиняти його, а потім знову починати перший з відповідним зсувом. Це здавалося занадто ручним. Знову ж таки, я хотів, щоб вихід був потоком <code>LIs</code>, як тут:
+    </p>
+      <script src="https://gist.github.com/icegulch/8373741.js"></script>
+    <p>
+      Отже, у мене залишилося два варіанти розміщення цього потоку <code>LIs</code>: використовувати плаваючі елементи та очищати їх або розміщувати їх як inline-block.
+    </p>
+    <p>
+      Досить легко уявити, як можна досягти бажаного макету за допомогою плаваючих елементів, плаваючи кожен <code>LI</code> ліворуч, за винятком першого, який був би сплавований праворуч. Але варіант з плаваючими елементами вимагає ретельного очищення - і <code>UL</code>, і кожен третій <code>LI</code> (починаючи з першого) повинні бути очищені, щоб уникнути проблеми, показаної на <a href="#figure3">Рисунку 3</a>.
+    </p>
+    <figure id="figure3" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src="assets/float-issue.png" title="Проблема з плаваючими елементами" alt="Проблема з плаваючими елементами" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 3</em></strong>: Коли перший LI в кожному "рядку" не очищений...
+      </figcaption>
+    </figure>
+    <p>
+      Тег <code>CYCLE</code> від Liquid (<a href="http://wiki.shopify.com/UsingLiquid#Cycle">посилання</a>) - це зручний спосіб робити це, як і позиційні псевдоселектори CSS3 (<a href="http://reference.sitepoint.com/css/pseudoclass-nthchild" target="_blank">посилання</a>). Але коли потрібна підтримка IE7/IE8, циклізація - кращий вибір.
+    </p>
+    <p>
+      Все одно, цей дім очищувальних карт здавався мені крихким, тому я намагався застосувати згадану вище техніку розміщення inline-block.
+    </p>
+    <script src="https://gist.github.com/icegulch/8373784.js"></script>
+    <p>
+      Що допомогло мені майже досягти мети, як демонструє <strong>Рисунок 4</strong>.
+    </p>
+    <figure id="figure4" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src="assets/initial-inline-block.png" title="Початковий Inline Block" alt="Початковий Inline Block" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 4</em></strong>: Перша спроба розміщення inline-block
+      </figcaption>
+    </figure>
+    <p>
+      Хоча техніка inline-block звільнила мене від проблем з очищенням, мені все одно довелося зіткнутися з викликом позиціонування дизайну: список навігації по продуктах повинен був бути вирівняний праворуч у першому рядку. Плаваюче його праворуч також не було рішенням, оскільки це піддавало б наш макет тому ж ризику, що показано на <a href="#figure3">Рисунку 3</a>.
+    </p>
+    <p>
+      Саме тоді у мене з'явилася божевільна ідея: а що якщо я зміню напрямок мови <code>UL</code>, щоб список відображався справа наліво? Натхненний <a href="http://css-tricks.com/star-ratings/" target="_blank">недавньою статтею Кріса Койєра</a>, я вирішив спробувати. Ось що у мене в підсумку вийшло:
+    </p>
+<script src="https://gist.github.com/icegulch/8373820.js"></script>
+<p>
+      Як ви бачите, мені довелося змінити напрямок мови на контейнері <code>UL</code>, а потім скинути його на елементах всередині його <code>LIs</code> (з якоїсь причини скидання напрямку мови на самих <code>LIs</code> не працювало в Opera). Мені також довелося встановити розмір шрифту на <code>UL</code> на нуль, щоб <a href="http://css-tricks.com/fighting-the-space-between-inline-block-elements/" target="_blank">уникнути цього</a>.
+    </p>
+    <p>
+      Оскільки перелік продуктів у цьому магазині не вимагав специфічного порядку (алфавітного, за ціною тощо), було нормально, щоб вихід йшов справа наліво, як показано на <a href="#figure5">Рисунку 5</a>.
+    </p>
+    <figure id="figure5" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src="assets/inline-block-final.png" title="Кінцевий Inline Block" alt="Кінцевий Inline Block" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 5</em></strong>: перемикання напрямку мови в дії
+      </figcaption>
+    </figure>
+    <p>
+      Хоча є плюси і мінуси як у плаваючих, так і в inline-block макетах, мені здалося, що останній був трохи елегантнішим в цій ситуації. Чи натикалися хто-небудь з вас на це? Чи вас <a href="http://youtu.be/ATKQLgi5Z2Y" target="_blank">переслідують</a> списки?
+    </p>
+</body>
+</html>

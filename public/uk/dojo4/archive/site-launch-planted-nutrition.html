@@ -1,0 +1,113 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk/' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! 'Запуск сайту: Planted Nutrition'</title>
+
+    <meta property="og:title" content="! 'Запуск сайту: Planted Nutrition'" />
+    <meta property="og:description" content="рухайтесь далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id" />
+    <meta property="site:params" content="{'ext':null,'id':'site-launch-planted-nutrition'}" />
+    <meta property="site:path_info" content="/site-launch-planted-nutrition" />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/домашня">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <figure style="float:right;">
+        <a href="http://plantednutrition.com">
+          <img alt="Новий сайт Planted Nutrition" title="Новий сайт Planted Nutrition" src='/ro/dojo4/site-launch-planted-nutrition/assets/screen-shot-2012-06-18-at-1.28.12PM.png' height="753" width="450" />
+        </a>
+      </figure>
+
+      <div>
+        <p>Ми щойно запустили маркетинговий веб-сайт для <a title="http://plantednutrition.com" href="http://plantednutrition.com">Planted Nutrition</a>, нової практики харчування в Боулдері, якою керує Еллен Тейг. </p>
+        <p>Planted Nutrition - це свіжий бізнес, який тільки починає готувати, і Еллен хотіла яскравого, професійного веб-сайту, щоб допомогти клієнтам дізнатися більше про її послуги та підхід. Бюджет і потреби Еллен були невеликими, тому ми вирішили створити швидкий односторінковий сайт, який демонструє весь її контент.</p>
+        <p>Джерелами натхнення для дизайну Еллен були кілька кулінарних блогів з великими, красивими зображеннями їжі. Ентоні Дімітре приніс цей сміливий вигляд на сторінку з парою дуже гарних моркви.</p>
+        <p>Ентоні також створив гарний логотип, який прикрасить всі інші матеріали Planted Nutrition - візитні картки, пакети для клієнтів та інше.</p>
+        <p>За лаштунками, Planted Nutrition - це статичний веб-сайт, побудований з допомогою <a title="http://middlemanapp.com/" href="http://middlemanapp.com/">Middleman</a>. Ми не можемо сказати достатньо про цей інструмент. Генерація статичних сайтів не є новою, і Middleman не є першим генератором статичних сайтів, але це <em>дуже хороший</em> інструмент.</p>
+        <p>У dojo4 ми використовуємо Middleman як альтернативу поширеним системам управління контентом LAMP. Існує кілька хороших інструментів LAMP CMS, але вони не є універсальними, і всі вони вимагають деяких компромісів. У цьому випадку навіть така проста CMS, як Wordpress, була б занадто складною та вимагала б занадто багато обслуговування для поточних потреб Planted Nutrition.</p>
+        <p>Колись Planted Nutrition може захотіти чогось більшого, ніж статичний сайт. Але поки що цей смачний сайт є достатнім.</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/про-нас">про нас<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/site-launch-planted-nutrition">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/site-launch-planted-nutrition">i-love-this<a>
+          </li>
+          <li>
+            <a href="/контакти">контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

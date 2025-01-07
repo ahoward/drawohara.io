@@ -1,0 +1,157 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Лихо</title>
+
+<meta property="og:title" content="Лихо"/>
+<meta property="og:description" content="рухайте далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"disaster"}">
+    <meta property="site:path_info" content="/disaster">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/домашня">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Сьогодні я запустив машину.</p>
+
+<p>Працював майже до 2 години ночі, машина гуділа тепло, і підвівся до повільного невідповідаючого блоку.</p>
+
+<p>Диск розбився на шматки.</p>
+
+<p>http://dojo4.com перебуває під наглядом на багатьох проєктах цього місяця, тому, звичайно, має сенс, що деякі машини вирішили кинути привид сьогодні…. #фек.</p>
+
+<p>Кожного разу, коли я відновлюю зламану машину, це стає легше, і сьогодні не було винятком:</p>
+
+<p>З моменту останнього збою я працював над тим, щоб перемістити більшість моїх даних до хмари.</p>
+
+<p>Тому я був радий, що мені не про що турбуватися після того, як зрозумів, що Apple Store займе повні 72 години для замовлення диска для мого застарілого 17". Замість цього я просто витратив 4к на надшвидкий новий 15" MBP і почав відновлювати…</p>
+
+<p>Ось короткий опис моєї поточної стратегії резервного копіювання, змішаної з деякими думками про те, як керування даними швидко змінюється:</p>
+
+<ul>
+  <li>
+    <p>додатки керують вашими даними більше, ніж коли-небудь. використовуйте це на свою користь.</p>
+  </li>
+  <li>
+    <p>повні резервні копії глупі. вам потрібно бути селективним, щоб швидко відновити. це потрібно мозку. що швидше відновити після збою чи перевстановити? що простіше перевстановити чи переконфігурувати? підказка: дані, а не код і конфігурація.</p>
+  </li>
+  <li>
+    <p>операційні системи розвиваються швидше за ваше програмне забезпечення для резервного копіювання: ви повинні робити резервне копіювання лише даних, а не конфігурації або, що ще гірше, бінарної інформації. файли точок є винятком, звичайно!</p>
+  </li>
+  <li>
+    <p>google є королем для електронної пошти, контактів і календаря. киньте всі інші рішення.</p>
+  </li>
+  <li>
+    <p>використовуйте git для вашого коду. не робіть його резервну копію. рухайтесь далі.</p>
+  </li>
+  <li>
+    <p>використовуйте things.app або щось на основі хмари для вашої продуктивності. списки справ, що не синхронізуються, мертві.</p>
+  </li>
+  <li>
+    <p>володіння музикою - застаріла ідея. використовуйте rdio, spotify або в крайньому випадку iCloud. але обов'язково переконайтеся, що у вас немає причин робити резервне копіювання вашої музики.</p>
+  </li>
+  <li>
+    <p>фотографії - це біда. це RFP для пропозицій.</p>
+  </li>
+  <li>
+    <p>фільми. фільми не повинні бути на комп’ютері розробника. ось, я це сказав.</p>
+  </li>
+  <li>
+    <p>dropbox. використовуйте це для всього іншого і уникайте дурних вбудованих механізмів вашої операційної системи.</p>
+  </li>
+</ul>
+
+<p>Резюме:</p>
+
+<p>1) використовуйте хмарні додатки</p>
+
+<p>2) володіння музикою та фільмами - дурна концепція. киньте це.</p>
+
+<p>3) помістіть все інше в dropbox</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/про_нас">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/disaster">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/disaster">i-love-this<a>
+  </li>
+  <li>
+    <a href="/контакти">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

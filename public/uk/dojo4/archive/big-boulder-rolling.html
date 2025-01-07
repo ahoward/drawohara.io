@@ -1,0 +1,146 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Великий Боулдер Котиться</title>
+
+    <meta property="og:title" content="Великий Боулдер Котиться"/>
+    <meta property="og:description" content="рухайтесь далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content='{"ext":null,"id":"big-boulder-rolling"}'>
+    <meta property="site:path_info" content="/big-boulder-rolling">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <figure style="float:left" class="mbl mrl"><img src='/ro/dojo4/big-boulder-rolling/assets/bigboulderconf-logo-ideas-2.png' title="Ідеї логотипу Big Boulder Conf 2" alt="Прогрес логотипу Big Boulder" rel="450x450" width="170" height="450" />
+      </figure>
+
+      <div><p>Сьогодні ми підтримували запуск <a href="http://BigBoulderConf.com" title="http://BigBoulderConf.com">BigBoulderConf.com</a>, сайту, який ми розробили та створили для <a href="http://gnip.com" title="http://gnip.com">GNIP</a> для їхньої <strong>Конференції Великий Боулдер</strong>. Ми дуже задоволені тим, як вийшов проект. Ось деякі деталі:</p>
+      <h2>Логотип та бренд</h2>
+      <p>Ми вирішили почати з логотипу, який перетворює знамениті Флетріони Боулдера в одну грандіозну вершину (якщо хочете, "Великий Боулдер"). Наш дизайнер-герой Ентоні взяв базові форми першої, другої та третьої Флетріонів та спростив їх.</p>
+      <p>Коли ми працювали з нашими чудовими друзями Ренді та Бре з GNIP, ми досліджували різні типові обробки в поєднанні з логотипом. Прогрес очевидний на зображенні ліворуч, яке ілюструє, як з'явився остаточний логотип.</p>
+      <h2>Веб-сайт для всіх пристроїв</h2>
+      <p>Ми відразу ж перейшли від бренду Великий Боулдер до дизайну сайту. Це була тісна співпраця між Ентоні та нашим місцевим самураєм HTML, Стівом, оскільки ми з самого початку пообіцяли зробити цей сайт <strong>високочутливим</strong>. Завдяки точній роботі Стіва, сайт виглядає чудово на великих екранах, середніх екранах та маленьких екранах. І, що важливо, <strong>вміст звужується</strong> лише до найнеобхідніших елементів при перегляді на маленькому екрані.</p>
+      <img src='/ro/dojo4/big-boulder-rolling/assets/bigboulder-mobile.png' title="Bigboulder Mobile" alt="Bigboulder Mobile" rel="225x255" width="136" height="255" style="float:right" class="mll mbl" />
+      <p>Ми тривалий час використовуємо відповідальні сіткові бібліотеки, такі як <a href="http://foundation.zurb.com/" title="http://foundation.zurb.com/">Foundation</a> та <a href="http://twitter.github.com/bootstrap/" title="http://twitter.github.com/bootstrap/">Bootstrap</a> у наших додатках, тому вирішили вчинити так само і з Великим Боулдером.</p>
+      <p>Переконайтеся самі! Наприклад, порівняйте, як виглядає навігація заголовка сайту на настільних комп'ютерах з тим, як вона виглядає на вашому смартфоні.</p>
+
+      <h2>Запуск</h2>
+      <p>Одразу, як у нас був надійний статичний веб-сайт, ми додали <a href="http://middlemanapp.com/" title="http://middlemanapp.com/">Middleman</a>. Якщо ви створюєте веб-сайти та ніколи не чули про Middleman, дізнайтеся про нього. Middleman дозволяє вам <strong>шаблонізувати ваш статичний веб-сайт</strong>: бо <strong>це повністю божевільно підтримувати десять однакових копій заголовка та підвалини</strong>. </p>
+      <p>Middleman працює з різними мовами шаблонів. Ми використовували ERB, оскільки він нам подобається. Це дозволило нам робити такі речі, як мати динамічні теги заголовків на сторінках, навіть якщо голова HTML знаходиться деінде:</p>
+
+      <p>
+      <code>
+        &lt;title&gt;&lt;%= (content_for?(:title)) ? yield_content(:title) : "Big Boulder Conference" %&gt;&lt;/title&gt;
+      </code>
+      </p>
+
+      <p>Middleman також дозволяє нам робити такі речі, як мінімізація CSS та JavaScript, і змушує браузери завантажувати нові версії файлів CSS та JavaScript:</p>
+
+      <p>
+      <code>
+        &lt;link href=&quot;/stylesheets/style.css?1332972306&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+      </code>
+      </p>
+
+      <p>І Middleman дозволяє нам розміщувати важливі або повторювані дані в файлі YAML, роблячи сайт набагато простішим у підтримці, ніж традиційний статичний сайт.</p>
+      <div class="lightestgrayBg roundMd mll mtm">
+        <pre>
+        registration:
+          label: Реєстрація відкрита
+          description: Зареєструйтесь поза межами бальної зали Xanadu в готелі та спа St Julien
+        </pre>
+      </div>
+      <p>Нарешті, ми створили автоматизоване розгортання в наших стейджингових та продакшн середовищах (хостинг на EC2). Побудувати сайт, rsync його на сервер.</p>
+      <div class="lightestgrayBg roundMd mll mtm">
+        <pre>
+        middleman build
+        rsync -avz ./ user@server.dojo4.com:/ebs/sites/bigboulderconference2012
+        </pre>
+      </div>
+      <p>Не є це гарним?</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+      <ul>
+        <li>
+          <a href="/about">about</a>
+        </li>
+        <li>
+          <a href="mailto:i-hate-this@drawohara.io?subject=/big-boulder-rolling">i-hate-this</a>
+        </li>
+        <li>
+          <a href="mailto:i-love-this@drawohara.io?subject=/big-boulder-rolling">i-love-this</a>
+        </li>
+        <li>
+          <a href="/contact">contact</a>
+        </li>
+      </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

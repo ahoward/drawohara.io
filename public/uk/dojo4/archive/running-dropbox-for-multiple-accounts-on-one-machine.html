@@ -1,0 +1,142 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Запуск Dropbox для декількох облікових записів на одному комп'ютері</title>
+
+    <meta property="og:title" content="Запуск Dropbox для декількох облікових записів на одному комп'ютері"/>
+    <meta property="og:description" content="переходимо." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"running-dropbox-for-multiple-accounts-on-one-machine"}">
+    <meta property="site:path_info" content=""/running-dropbox-for-multiple-accounts-on-one-machine"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Цього тижня я налаштував новий комп'ютер і мені дійсно потрібно було запустити два екземпляри Dropbox: один для особистих речей і один для мого облікового запису на http://dojo4.com.</p>
+
+        <p>Існує кілька способів виконати це, але наступний спосіб є, безперечно, найпростішим і найнадійнішим.</p>
+
+        <p>Він також підтримує > 2 екземпляри, що працюють на одному комп'ютері.</p>
+
+        <p>Перший крок - створити скрипт оболонки за допомогою вашого улюбленого текстового редактора (vim) і помістити його будь-де. Він повинен виглядати так:</p>
+
+        <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781">#!/usr/bin/env bash</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'><span style="color: #6e7781"># цей файл збережено за адресою: /Users/$USER/bin/dojo4.dropbox</span>
+        </div><div class='code-line code-line-5'>
+        </div><div class='code-line code-line-6'><span style="color: #0550ae">HOME</span><span style="color: #0550ae">=</span>/Users/<span style="color: #0550ae">$USER</span>/dojo4&nbsp;/Applications/Dropbox.app/Contents/MacOS/Dropbox
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'>
+        </div></code></div>
+
+        <p>Замініть 'dojo4' вище на те, що ви хочете назвати вашим альтернативним екземпляром. Пряме виконання цього запустить Dropbox з його звичайною директорією 'Dropbox', вкладеною в папку 'dojo4'.</p>
+
+        <p><img src='/uk/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.29.09_AM.png' alt="img" /></p>
+
+        <p>Однак ви не будете запускати це безпосередньо. Ви завантажите Platypus (http://sveinbjorn.org/platypus).</p>
+
+        <p>Ви майже закінчили. Завантажте та встановіть його. Через налаштування безпеки вам, можливо, доведеться дозволити встановлення не з AppStore на вашому комп'ютері:</p>
+
+        <p><img src='/uk/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.14.31_AM.png' alt="img" /></p>
+
+        <p>Далі запустіть Platypus і створіть новий скрипт оболонки додатку</p>
+
+        <p><img src='/uk/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.17.42_AM.png' alt="img" /></p>
+
+        <p>у моєму випадку я назвав це 'Dojo4Dropbox', і цей новий обгорнутий додаток Dropbox збережено як '/Applications/Dojo4Dropbox.app'.</p>
+
+        <p>Це все. Ви можете запускати цей новий додаток так само, як і '/Applications/Dropbox.app', і його директорія зберігання буде вкладена. І ви можете керувати ним як елементом автозапуску, як будь-який інший додаток:</p>
+
+        <p><img src='/uk/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.20.36_AM.png' alt="img" /></p>
+
+        <p>Для остаточного доторку налаштуйте другий екземпляр, щоб використовувати чорно-білу іконку, щоб ви могли їх розрізнити:</p>
+
+        <p><img src='/uk/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.27.08_AM.png' alt="img" /></p>
+
+        <p>Повторюйте, щоб запускати більше двох додатків Dropbox. ;-)</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+      <ul>
+        <li>
+          <a href="/uk/about">про це<a>
+        </li>
+        <li>
+          <a href="mailto:i-hate-this@drawohara.io?subject=/running-dropbox-for-multiple-accounts-on-one-machine">не-подобається<a>
+        </li>
+        <li>
+          <a href="mailto:i-love-this@drawohara.io?subject=/running-dropbox-for-multiple-accounts-on-one-machine">подобається<a>
+        </li>
+        <li>
+          <a href="/uk/contact">контакти<a>
+        </li>
+      </ul>
+      </blockquote>
+      <a href="/uk/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

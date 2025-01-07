@@ -1,0 +1,150 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+    <!-- meta -->
+    <title>Emailadore на ProductHunt</title>
+
+    <meta property="og:title" content="Emailadore на ProductHunt"/>
+    <meta property="og:description" content="Продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"emailadore-on-producthunt"}">
+    <meta property="site:path_info" content="/uk/emailadore-on-producthunt"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Emailadore: Це миле, <em>і</em> корисне.</p>
+
+        <p>Нещодавно ми опублікували один із наших внутрішніх інструментів, <a href="http://emailadore.com">Emailadore</a>, на <a href="http://www.producthunt.com/posts/emailadore">ProductHunt</a>. Він отримав кілька голосів і ~500 відвідувачів протягом 2 днів. Чудово!</p>
+
+        <p>Одним із коментарів було те, що ландінг-сторінка не надавала багато інформації про те, чому це корисно. Так, саме так виглядає внутрішній інструмент! Ми оновимо ландінг-сторінку коли-небудь з кращим поясненням, але наразі ось короткий опис, чому ми вважаємо його корисним і деякі випадки використання.</p>
+
+        <p>Системи квитанцій дуже корисні для того, щоб у всій організації був один місце, де можна побачити минулі, поточні та майбутні дії щодо проектів. Якщо це не записано у квитанції, цього не було.</p>
+
+        <p>Однак не всі почуваються комфортно, використовуючи систему квитанцій для спілкування, або вони просто забувають. Клієнти можуть написати нам напряму замість використання системи квитанцій, і ми захочемо записати цю розмову у квитанції. Або ми пишемо потенційному клієнту до того, як у нього є будь-які квитанції в нашій системі, і коли ми почнемо створювати квитанції для них, ми захочемо мати історію нашого листування по електронній пошті у квитанції. Більшість систем квитанцій дозволяють переслати ланцюжок електронних листів до системи квитанцій для створення нової квитанції, але що якщо ви хочете додати розмову по електронній пошті до існуючої квитанції?</p>
+
+        <p>Ми колись натискали "Друк" на ланцюжку електронних листів і замість вибору принтера ми вибирали "Зберегти як PDF", що завантажувало представлення PDF-розмови по електронній пошті, яке ми потім могли прикріпити до квитанції. Це було незручним рішенням, тому ми спробували придумати кращий спосіб.</p>
+
+        <p>Так ми створили <a href="http://emailadore.com">Emailadore</a>. Замість того, щоб друкувати розмову по електронній пошті в PDF, а потім завантажувати файл у додатку, ми просто пересилаємо електронний лист на email [at] emailadore [dot] com, а emailadore повертає електронним листом пряме посилання на отриманий ним електронний лист.</p>
+
+        <p>Тепер замість завантаження PDF-файлів електронних листів у квитанції ми просто вставляємо URL-адресу електронного листа в квитанці. Ось знімок екрана квитанції, де замість завантаження файлу розмови по електронній пошті ми просто вставили посилання для посилання на ланцюжок електронних листів:</p>
+
+        <p><img src='/uk/ro/dojo4/emailadore-on-producthunt/assets/b.png' alt="L85BF.png" /></p>
+
+        <p>Часті запитання:</p>
+
+        <ul>
+          <li>Чому просто не скопіювати когось в електронному листі, щоб показати ланцюжок електронних листів?</li>
+        </ul>
+
+        <p>У наша команда не має доступу до вашої скриньки - ми всі ділимося нашою системою квитанцій як централізованим місцем записів. Плюс, електронна пошта використовується як місце для зберігання речей, але це насправді не для цього призначено. Коли-небудь пробували шукати конкретний електронний лист серед сотень тисяч електронних листів у вашій скриньці? Так, це погано.</p>
+
+        <ul>
+          <li>А як на рахунок додатків?</li>
+        </ul>
+
+        <p>Вони теж будуть там!</p>
+
+        <ul>
+          <li>Чи потрібно зареєструватися?</li>
+        </ul>
+
+        <p>Тільки якщо ви хочете. Електронний лист, який ви отримаєте від Emailadore, не тільки надає URL-адресу вашого електронного листа, але й інструкції щодо створення облікового запису користувача. Ви захочете це зробити, якщо хочете перерахувати всі електронні листи, які ви коли-небудь пересилали до emailadore для посилання.</p>
+
+        <ul>
+          <li>Чи будуть видалені мої електронні листи?</li>
+        </ul>
+
+        <p>Ні - вони безпечно зберігаються на одному з наших виробничих серверів. Якщо ми коли-небудь вирішимо припинити роботу сервісу, ми обов'язково дамо всім достатньо часу, разом із стратегією міграції.</p>
+
+        <ul>
+          <li>Чи це безкоштовно?</li>
+        </ul>
+
+        <p>Так! У нас немає планів на монетизацію Emailadore наразі, але ми дамо вам достатньо часу, якщо ми це зробимо в майбутньому. Зараз ми просто вважаємо, що це крутий внутрішній інструмент, який ми часто використовуємо, тому, можливо, кожен інший теж захоче його використовувати!</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/uk/about">про нас<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/uk/emailadore-on-producthunt">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/uk/emailadore-on-producthunt">i-love-this<a>
+          </li>
+          <li>
+            <a href="/uk/contact">контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/uk/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

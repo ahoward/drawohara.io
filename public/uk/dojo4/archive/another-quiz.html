@@ -1,0 +1,244 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Ще один квіз</title>
+
+    <meta property="og:title" content="Ще один квіз"/>
+    <meta property="og:description" content="продовжуйте рух." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"another-quiz"}">
+    <meta property="site:path_info" content=""/another-quiz"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>сьогодні я створив невеликий квіз про HTML-форми.</p>
+
+        <p>посилання: https://gist.github.com/ahoward/98591ebc9113bea1cf02</p>
+
+        <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781">&lt;!--</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'><span style="color: #6e7781">    fork цей. не використовуйте інтернет. витратьте &lt; 10 хвилин, щоб знайти принаймні 10</span>
+        </div><div class='code-line code-line-5'><span style="color: #6e7781">    різних помилок у цій формі. надішліть свою відповідь у полі коментарів</span>
+        </div><div class='code-line code-line-6'><span style="color: #6e7781">    вашого форку та надішліть мені (ara[at]dojo4.com) URL.</span>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'><span style="color: #6e7781">  --&gt;</span>
+        </div><div class='code-line code-line-9'>
+        </div><div class='code-line code-line-10'>&nbsp;&nbsp;<span style="color: #116329">&lt;form</span>&nbsp;<span style="color: #116329">method=</span><span style="color: #0a3069">'DELETE'</span>&nbsp;<span style="color: #116329">ACTION=</span><span style="color: #0a3069">'./'</span>&nbsp;<span style="color: #116329">enctype=</span><span style="color: #0a3069">"multipart/file-upload"</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-11'>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;
+        </div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+        </div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>&nbsp;tags&nbsp;<span style="color: #116329">&lt;/legend&gt;</span>
+        </div><div class='code-line code-line-15'>
+        </div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">/&gt;</span>
+        </div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'bar'</span><span style="color: #116329">/&gt;</span>
+        </div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+        </div><div class='code-line code-line-19'>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;label</span>&nbsp;<span style="color: #116329">for=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>Foo:&nbsp;<span style="color: #116329">&lt;/label&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-21'>
+        </div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;label&gt;</span>
+        </div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bar:&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'bar'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/label&gt;</span>
+        </div><div class='code-line code-line-25'>
+        </div><div class='code-line code-line-26'>
+        </div><div class='code-line code-line-27'>
+        </div><div class='code-line code-line-28'>
+        </div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'email'</span>&nbsp;<span style="color: #116329">readonly</span><span style="color: #116329">/&gt;</span>
+        </div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'password'</span>&nbsp;<span style="color: #116329">disabled=</span><span style="color: #0a3069">disabled/</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-31'>
+        </div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'.bashrc'</span><span style="color: #116329">/&gt;</span>
+        </div><div class='code-line code-line-33'>
+        </div><div class='code-line code-line-34'>
+        </div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+        </div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Sex<span style="color: #116329">&lt;/legend&gt;</span>
+        </div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"radio"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"sex"</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'male'</span><span style="color: #116329">&gt;</span>Male<span style="color: #116329">&lt;/option&gt;</span>
+        </div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'female'</span><span style="color: #116329">/&gt;</span>
+        </div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/input&gt;</span>
+        </div><div class='code-line code-line-41'>
+        </div><div class='code-line code-line-42'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+        </div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Транспорт<span style="color: #116329">&lt;/legend&gt;</span>
+        </div><div class='code-line code-line-44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Bike"</span><span style="color: #116329">&gt;</span>У мене є велосипед<span style="color: #116329">&lt;br&gt;</span>
+        </div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Car"</span><span style="color: #116329">&gt;</span>У мене є машина&nbsp;
+        </div><div class='code-line code-line-46'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+        </div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+        </div><div class='code-line code-line-48'>
+        </div><div class='code-line code-line-49'>
+        </div><div class='code-line code-line-50'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;select</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'web-develop-skilz'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-51'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'A'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-52'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'B'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-53'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'C'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-54'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'D'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-55'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'F'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-56'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/select&gt;</span>
+        </div><div class='code-line code-line-57'>&nbsp;&nbsp;&nbsp;&nbsp;
+        </div><div class='code-line code-line-58'>
+        </div><div class='code-line code-line-59'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;hr&gt;</span>
+        </div><div class='code-line code-line-60'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;button</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'submit'</span><span style="color: #116329">&gt;</span>
+        </div><div class='code-line code-line-61'>&nbsp;&nbsp;<span style="color: #116329">&lt;/form&gt;</span>
+        </div><div class='code-line code-line-62'>
+        </div></code></div>
+
+        <p>метою було побачити, як люди мислять про це: основою HTML-інтерфейсів</p>
+
+        <p>далі наведені деякі зразкові відповіді, у групах за категоріями, та відгуки до них</p>
+
+        <h2 id="fubar-doctype">fubar doctype</h2>
+
+        <p>зразкові відповіді</p>
+
+        <ul>
+          <li>Відсутній doctype. Це ускладнює визначення версії HTML, що може призвести до цікавих відповідей…</li>
+          <li>
+            <p>Мішанина xhtml-стильних порожніх тегів із HTML-тегами.</p>
+          </li>
+          <li>
+            <p>Непослідовне використання лапок. Обидва варіанти працюють, виберіть якийсь один...</p>
+          </li>
+          <li>рядок 1: DELETE не підтримується в HTML-формах:</li>
+          <li>method=delete не підтримується безпосередньо в більшості/всіх? браузерах.</li>
+          <li>форми не підтримують delete у старих браузерах</li>
+          <li>Method delete</li>
+          <li>
+            <p>form method=’DELETE’ – це недопустимо</p>
+          </li>
+          <li>enctype=”multipart/form-data” а не enctype=”multipart/file-upload”</li>
+          <li>
+            <p>enc-type=”multipart/file-upload не має сенсу, якщо наша мета – DELETE</p>
+          </li>
+          <li>текстові введення в першому fieldset мають однакове ім'я</li>
+          <li>дублювання тегів “”. Або два теги з однаковим ім’ям знову</li>
+          <li>2 текстових поля з ім'ям “tags” буде використано лише останнє.</li>
+          <li>Два введення з однаковим ім'ям ‘tags’. Другий перезапише значення першого.</li>
+          <li>Два введення з ім'ям ‘foo’ (не закриті)</li>
+          <li>текстові введення з однаковим ім'ям перезапишуть ре: введення з ім'ям tags</li>
+          <li>подвійні призначення імені input name=’tags’</li>
+          <li>
+            <p>подвійні призначення імені input name=’vehicle’</p>
+          </li>
+          <li>Немає for у мітці ‘Bar:’.</li>
+          <li>
+            <p>незв'язана мітка: <label>Bar:…</label> (мітка для чого?)</p>
+          </li>
+          <li>
+            <p>readonly введення без значення безглузде</p>
+          </li>
+          <li>action=”./” здається поганою практикою</li>
+          <li>
+            <p>дія форми недійсна як дескриптор файлу unix – щоб відправити до поточного url видаліть дію повністю, оскільки це за замовчуванням</p>
+          </li>
+          <li>завантаження файлу не може мати атрибута значення (погана безпека)</li>
+          <li>Вкладення fieldset</li>
+          <li>введення файлу не приймають значення за замовчуванням – користувач повинен вибрати</li>
+          <li>
+            <p>автоматично вибирає ваш ~/.bashrc файл для завантаження</p>
+          </li>
+          <li>disabled повинен бути в лапках (також погана суміш одинарних і подвійних лапок)</li>
+          <li>Незакриті опції для випадаючого списку select та без тексту</li>
+          <li>
+            <p>відсутні лапки навколо атрибута disabled у неправильній декларації введення пароля</p>
+          </li>
+          <li>Немає типу в полі пароля (також немає в полі електронної пошти, але це менш важливо)</li>
+          <li>введення пароля повинно бути типу password</li>
+          <li>
+            <p>має бути &lt;input type=’email’ name=’email’ …&gt;</p>
+          </li>
+          <li>
+            <p>disabled=disabled має бути disabled</p>
+          </li>
+          <li>Немає тексту для жіночої опції, також радіокнопка для радіокнопок ‘Sex’, радіокнопки не налаштовані правильно для відправки значення / перемикання в групі. Все це погано в цій області.</li>
+          <li>fieldset “sex” радіокнопки не побудовані правильно. має бути Чоловік – теги використовуються зі списками вибору, а не радіокнопками. Всі радіокнопки в групі повинні мати однакове ім'я атрибута</li>
+          <li>
+            <p>радіокнопки не приймають опції, але замість цього повинні мати однакове ім'я з різними значеннями</p>
+          </li>
+          <li>кнопки повинні бути відкриті та закриті – відправка повинна бути введенням</li>
+          <li>чекбокси з однаковим ім'ям перезапишуть ре: чекбокси з ім'ям vehicle</li>
+        </ul>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/another-quiz">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/another-quiz">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

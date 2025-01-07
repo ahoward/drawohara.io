@@ -1,0 +1,109 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Планшет для майбутнього</title>
+
+<meta property="og:title" content="Планшет для майбутнього"/>
+<meta property="og:description" content="Продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"a-tablet-for-the-future"}">
+    <meta property="site:path_info" content=""/a-tablet-for-the-future"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Минулого тижня наші друзі з Amplify представили свій амбітний продукт планшетів на <a href="http://sxswedu.com/">SXSWedu</a>. Ви можете переглянути його <a href="http://amplify.com/tablet/">тут</a>. Обов'язково перегляньте відео, щоб зрозуміти весь масштаб їхнього завдання. Невже це не чудово?! Миттєва зворотна відгуку від учнів і вчителів. Контент там, де учні проводять свій час: на пристроях і в інтернеті. Більш персоналізований освітній досвід.</p>
+
+<p>dojo4 не може бути щасливішим, докладаючи зусиль до цієї мети, створюючи два контентні додатки для студентів. Перший — це додаток Encyclopædia Britannica, а другий — додаток з відео Khan Academy. Обидва виявилися позитивними викликами в плані удосконалення фокусу на учнів, офлайн-медіа та розробки для Android. Ми сподіваємося, що вони отримають хороше використання!</p>
+
+<p>Щодо розробки додатку EB для Android, однією з моїх улюблених частин реалізації був пошук. Добрий додаток енциклопедії має мати хороший пошук, правда? Ми закінчили використовувати SQLite, оскільки в Android він постачається з розширенням <a href="http://sqlite.org/fts3.html">FTS4</a>, скомпільованим і ввімкненим. Якщо ви ще не використовували віртуальні таблиці FTS4, вони надають чудові можливості індексації повнотекстового пошуку та оператор SQL <code>MATCH</code>. Документація трохи технічна, але загалом дуже корисна, як тільки ви в неї заглибнете.</p>
+
+<p>Ви можете дізнатися більше від генерального директора Amplify <a href="http://amplify.com/article/technology-thats-truly-designed-education">тут</a>.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/a-tablet-for-the-future">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/a-tablet-for-the-future">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

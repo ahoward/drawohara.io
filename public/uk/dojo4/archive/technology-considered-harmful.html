@@ -1,0 +1,116 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Технології, які можуть бути шкідливими</title>
+
+    <meta property="og:title" content="Технології, які можуть бути шкідливими"/>
+    <meta property="og:description" content="Продовжуйте рух." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"technology-considered-harmful"}">
+    <meta property="site:path_info" content=""/technology-considered-harmful"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Мої батьки приїхали з Аляски до Боулдера на декілька тижнів. Я не часто бачу їх.</p>
+
+        <p>Цього ранку я допоміг їм знайти чудовий маршрут для пішої прогулянки в районі Ранчо Холл (http://www.singletracks.com/bike-trails/hall-ranch.html), який знаходиться за 20 миль у містечку Лайонс. Мої батьки там ніколи не були, тому моя мама попросила в мене вказівок. Мій батько має iPhone і показав, наскільки круто можна зробити пошук у картах і отримати вказівки просто так - технології на допомогу!</p>
+
+        <p>По дорозі на роботу у мене з'явилося погане передчуття: чи дійсно я допоміг своїй мамі? Замість того, щоб показати їй, як користуватися якоюсь крутою технологією, я міг би просто витратити 30 секунд, щоб дати їй вказівки. Чому я цього не зробив?</p>
+
+        <p>Технології існують, щоб допомагати нам. Це інструмент, який робить наше життя легшим і щасливішим. Вірно?</p>
+
+        <p>Ні. Технології - це просто інструмент, як і будь-який інший - це саме відношення до користувача робить його корисним чи шкідливим. Якщо ми припустимо на хвилину, що те, що робить людей щасливими, - це їхні стосунки з іншими людьми (безпечне припущення - http://www.pbs.org/thisemotionallife/topic/connecting/connection-happiness), то будь-який додаток, який фактично зменшує людське спілкування, може бути <em>некорисним</em> в довгостроковій перспективі.</p>
+
+        <p>Це правда, можливість отримати карту, коли ви самі і заблукали, дійсно корисна. Але <em>справжня розмова</em> зі своїм сином або навіть з незнайомцем замість використання "додатку", коли вам потрібні вказівки, безперечно, є більш глибоким досвідом для обох людей.</p>
+
+        <p>Чи ваша технологія сприяє самодостатності та меншій людській взаємодії?</p>
+
+        <p>Якщо так, вона ризикує бути фактично шкідливою для людей - незалежно від того, наскільки вона може допомогти окремій особі в цей момент.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/technology-considered-harmful">я-ненавижу-це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/technology-considered-harmful">я-люблю-це</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

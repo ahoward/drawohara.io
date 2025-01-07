@@ -1,0 +1,122 @@
+<base href='/uk' />
+<p>Я хотів би поділитися швидким і легким методом для тестування міграцій Rails при використанні бази даних MongoDB. Гнучкість mongo і ruby роблять це досить простим. В цьому прикладі ми будемо перейменовувати поле в нашій прикладній колекції "books" з "isbn" на "book_number". Це досить поширений тип міграції, і як тільки ви зрозумієте цей простий випадок, більш складні міграції слідуватимуть тому ж патерну. Спочатку, створімо наш шаблон скрипту міграції з відміткою часу.</p>
+<pre><code>rails generate migration rename_isbn_to_book_number
+</code>
+</pre>
+<p>Потім відредагуємо згенерований файл під <code>db/migrate</code>. Ми розділимо наш код на декілька секцій, як показано нижче.</p>
+<ol>
+<li>Кілька констант класу, спільних для всіх методів</li>
+<li>Метод <code>self.up</code>, який виконує пряму міграцію</li>
+<li>Допоміжний метод для створення прикладних даних для тестування прямої міграції</li>
+<li>Метод <code>self.down</code>, який виконує відкат</li>
+<li>Допоміжний метод для створення прикладних даних (якщо потрібно) для тестування відкату</li>
+</ol>
+<p>Спочатку визначимо кілька констант, які використовуватимуть наші методи. Ми зберігаємо хеш опцій оновлення mongo <code>MultiUpdate</code> для зручності, оскільки більшість операцій оновлення міграції хочуть upsert false (не створювати нові документи), multi true (оновлювати всі відповідні документи) і safe true.</p>
+<p>Також визначимо константу для назви колекції. Для реальної міграції колекція - "books", але для тестування ми створимо нову колекцію під назвою "test_books_migration", поки розробляємо наш код.</p>
+<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Кінцевий продакшн код
+  Collection = db.collection("test_books_migration") #Тільки для тестування в консолі
+  def up
+  end
+
+  def down
+  end
+end
+</code>
+</pre>
+<p>Гаразд, це наш початковий шаблон. Наступним кроком є створення резервної копії нашої бази даних розробки, якщо там є дані, які ми не хочемо випадково зіпсувати. Потім почнемо писати невеликий допоміжний метод для заповнення нашої тестової колекції фейковими документами, схожими на те, що ми очікуємо побачити у продакшені, але зосереджуючись лише на полях, які мають відношення до міграції. Додайте цей метод до вашого класу міграції.</p>
+<pre><code>def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+end
+
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+</code>
+</pre>
+<p>Це створить 3 фіктивні документи, які ми можемо використовувати для тестування. Ми розміщуємо цей код у методі, щоб його було легко перезапустити, коли ми будемо коригувати та тестувати наш міграційний код. Для складних міграцій може знадобитися багато раундів коригувань, щоб врахувати всі граничні випадки.</p>
+<p>Тепер ми можемо запустити консоль rails і виконати цей код, скопіювавши та вставивши 2 константи класу та метод mock_data_for_testing_up у консоль, а потім запустивши mock_data_for_testing_up</p>
+<pre><code>$ bundle exec rails console
+Завантаження середовища розробки (Rails 3.1.1)
+irb(main):001:0&gt; #Вставте наступне в консоль
+MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+Collection = db.collection("test_books_migration") #Тільки для тестування в консолі
+def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  Collection.find({}).each {|_| puts _}
+end
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+irb(main):008:0&gt; mock_data_for_testing_up
+mock_data_for_testing_up
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"0", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000001')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"1", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000002')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"2", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000003')}])
+irb(main):009:0&gt; show_collection
+MONGODB app_development['test_books_migration'].find({})
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000001'), "isbn"=&gt;"0"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000002'), "isbn"=&gt;"1"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000003'), "isbn"=&gt;"2"}
+=&gt; nil
+</code>
+</pre>
+<p>Отже, тепер у нас є окрема, добре зрозуміла тестова колекція, готова для тестування нашої простої міграції. Давайте напишемо наш метод <code>up</code>, щоб виконати міграцію.</p>
+<pre><code>def up
+  #Ми хочемо перейменувати поле book.isbn на book.book_number
+  Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+    update_op = {
+      "$unset" =&gt; {"isbn" =&gt; 1},
+      "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+    }
+  Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+end
+</code>
+</pre>
+<p>Ми можемо вставити це в консоль і запустити, щоб протестувати нашу міграцію. Ми можемо перевірити результати за допомогою <code>show_colletion</code>. Якщо ми хочемо протестувати інші записи для відкату, ми можемо створити метод <code>mock_data_for_testing_down</code>.</p>
+<p>Це має дати вам дуже швидкий спосіб експериментувати та довести ваш міграційний код до робочого стану. Mongo має деякі потужні можливості запитів та модифікацій, які можуть робити дивовижні речі, і легкий спосіб провести кілька спроб і помилок буде корисним. Якщо ви заплутаєтесь у тестових даних, ви можете використати <code>Collection.drop</code>, щоб отримати чистий стан. Ось фінальний міграційний код для довідки. <strong>Не забудьте</strong> видалити тестову константу колекції та видалити тестову колекцію з вашої бази даних, коли будете готові почати запускати свій код для реального використання з <code>rake db:migrate</code>.</p>
+<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Кінцевий продакшн код
+
+  def up
+    #Ми хочемо перейменувати поле book.isbn на book.book_number
+    Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"isbn" =&gt; 1},
+        "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  def down
+    #Ми хочемо перейменувати поле book.book_number на book.isbn
+    Collection.find({"book_number" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"book_number" =&gt; 1},
+        "$set" =&gt; {"isbn" =&gt; book["book_number"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  #Ці методи не викликаються міграцією. Лише для ручного тестування
+  #шляхом копіювання/вставки в консоль
+  #Для тестування (шляхом копіювання/вставки звідси в консоль)
+  #1. Встановіть константу MultiUpdate. Скоригуйте "Collection", щоб це була тестова колекція
+  #2. Скопіюйте/вставте 2 методи нижче
+  #2. Запустіть mock_data_for_testing_up
+  #3. Запустіть тіло self.up
+  #3b. Опціонально запустіть тіло self.up знову, щоб переконатися, що воно ідемпотентне
+  def mock_data_for_testing_up
+    3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  end
+
+  def show_collection
+    Collection.find({}).each {|_| puts _}
+  end
+end
+</code>
+</pre>

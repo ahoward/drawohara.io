@@ -1,0 +1,144 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! 'Що нового в Dojo4.2: нотатки про версію'</title>
+
+    <meta property="og:title" content="! 'Що нового в Dojo4.2: нотатки про версію'"/>
+    <meta property="og:description" content="продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'whats-new-in-dojo4--2-version-notes'}">
+    <meta property="site:path_info" content="/whats-new-in-dojo4--2-version-notes">
+
+    <style>
+      /* проти pico */
+      a {text-decoration: none !important; }
+
+      /* проти turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* проти progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/ro/dojo4/whats-new-in-dojo4--2-version-notes/assets/b.jpeg' alt="IMG_3766.JPG" /> Корі Кohn, співвласник dojo4, і я довго сьогодні розмовляли про новий напрямок dojo4. Ось що я дізнався:</p>
+
+        <p>dojo4 реорганізовується як магазин розробки та дизайну технологій з метою, але чому?</p>
+
+        <p>Він успішно займався бізнесом на користь підприємницьких зусиль протягом останніх 4-5 років. Він вдосконалював свої легкі методи управління та розробив методи для вправного видалення шарів складності, притаманних будь-якому технологічному проблемі/рішенню. Його інженери, під керівництвом CTO Ари Говарда, ефективно використовують фінансові та людські ресурси, виявляючи основний інтерес за будь-якою підприємницькою метою та швидко та елегантно виконуючи легкі рішення.</p>
+
+        <p>Нещодавно низка подій спричинила доброзичливу можливість для основних зацікавлених сторін dojo4 відступити від щоденної рутини та замислитися над деякими більш глибокими питаннями. Вони розмірковували про роль, яку dojo4 відіграє у світі, і:</p>
+        <ul>
+          <li>внесок, який вона робить для полегшення людських страждань.</li>
+          <li>як вона допомагає вирішувати найбільші виклики людства, такі як голод, війна, здоров'я планети тощо?</li>
+          <li>як члени спільноти dojo4 ростуть як люди через роботу, яку вони виконують щодня?</li>
+          <li>як ми можемо глибше узгодитися з візіями та місіями підприємців та інвесторів, з якими працює dojo4?</li>
+        </ul>
+
+        <p>Розмірковуючи над цими питаннями, зацікавлені сторони dojo4 усвідомили, що їм потрібно щось більше від щоденної роботи з виробництва одного чудового технологічного рішення за іншим.</p>
+
+        <p>Тож ми вирішили знести багато архітектурних особливостей традиційного бізнесу та відбудувати знизу. Ось що ми вирішили побудувати в наступній версії dojo4…</p>
+
+        <h1 id="dojo42">dojo4.2:</h1>
+
+        <p><strong>3 видатні функції в новій версії</strong></p>
+
+        <ol>
+          <li>dojo4 реструктурує відносини всередині команд і з клієнтами<br />
+            - <strong>всередині</strong>, dojo4 прагне ще більше розвивати багаті людські відносини всередині спільноти dojo4 та всередині проектних команд. Одним з виявів і практик цього є те, що <strong><a href="http://orgdev.com/uk">Org Dev</a></strong> переїхав до офісу dojo4 і завжди готовий допомогти в організаційному розвитку dojo4 та інших.
+            <ul>
+              <li><strong>зовні</strong>, dojo4 прагне будувати партнерства з підприємцями та інвесторами, а не мати клієнтів, за кількома причинами. Основною серед них є розчарування щодо стимулів, що діють у типових відносинах клієнт/постачальник. dojo4 виявило, що типові бізнес-структури проектів не сприяють глибоким і значущим людським відносинам. dojo4 вважає, що працюватиме краще в здорових і винагороджуючих людських відносинах. Узгодження цінностей і взаємні інвестиції, як у фінансовому, так і в людському капіталі, є деякими будівельними блоками цих партнерств.</li>
+            </ul>
+          </li>
+          <li>dojo4 готовий працювати над проектами впливу з правильним партнером у правильному проекті.</li>
+          <li>dojo4 бачить можливу цінність для суспільства, сприяючи функціональній інтеграції між:
+            <ul>
+              <li>спільнотою <a href="http://www.meetup.com/BoulderBCorps/uk">соціального підприємництва</a></li>
+              <li>спільнотою <a href="http://www.kirschfoundation.org/why/venture.html">інвесторів впливу</a></li>
+              <li>сильною технічною/стартап-спільнотою тут, у Боулдері.<a href="http://www.inc.com/welcome.html?destination=http://www.inc.com/magazine/201312/boulder-colorado-fast-growing-business.html"></li>
+            </ul>
+          </li>
+        </ol>
+
+        <h1 id="my-take-on-all-this">Моє бачення всього цього</h1>
+        <p>Головне питання, з яким я залишив інтерв'ю, полягало в тому, як dojo4 пропонує модель партнерства з тими, кого раніше називали "клієнтами". Партнерство передбачає взаємні інвестиції та відчуття спільного ризику та винагороди в підприємстві. Мені хотілося б побачити чіткий спосіб, як dojo4 планує вступати в спільні ризикові відносини з підприємцями, орієнтованими на мету. У рамках нового напрямку dojo4 є багато питань щодо деталей того, як все це буде реалізовуватися. Мені цікаво, як виглядатиме типове або навіть ідеальне "партнерство" з підприємцем для dojo4. Яка інвестиційна можливість для соціально орієнтованого венчурного капіталу? Що має dojo4 для інвестування в проект, орієнтований на мету?</p>
+
+        <p>Я вірю в те, що робить dojo4, і хочу допомогти йому досягти успіху, як і багато інших, хто нещодавно проявили інтерес до цього нового напрямку. Я навіть хочу внести/інвестувати свій час, щоб допомогти втілити це в життя, але як деталі складуться в інноваційний і розвинутий технічний магазин, поки що є роботою над твором. Слідкуйте за блогом, коли розвивається ця історія. Ми обов'язково триматимемо людей в курсі, коли нові структури почнуть набирати обертів.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/whats-new-in-dojo4--2-version-notes">я-ненавижу-це<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/whats-new-in-dojo4--2-version-notes">я-люблю-це<a>
+          </li>
+          <li>
+            <a href="/contact">контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

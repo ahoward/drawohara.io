@@ -1,7 +1,14 @@
-<html color-mode="user" lang="en">
+<html color-mode="user" lang="uk">
   <head>
+  <base href='/uk' />
   <!-- ga -->
-    <%= render('views/ga.html') %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
 
   <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
@@ -9,13 +16,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
-
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="/uk" />
 
   <!-- defaults -->
     <meta charset="utf-8">
@@ -29,11 +29,18 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <%= exports.fetch(:og){ render('views/og.erb', data:) } %>
+    <title>@drawohara</title>
 
-    <meta property="site:route" content="<%= route.path.to_json.html_safe %>">
-    <meta property="site:params" content="<%= params.to_json.html_safe %>">
-    <meta property="site:path_info" content="<%= path_info.to_json.html_safe %>">
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="рухайтесь далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/"">
+    <meta property="site:params" content="{"ext":null}">
+    <meta property="site:path_info" content=""/"">
 
     <style>
       /* anti pico */
@@ -60,15 +67,28 @@
 
   <body>
     <header>
-      <%= exports.fetch(:header){ render('views/header.erb') } %>
+
     </header>
 
     <main>
-      <%= yield %>
+      <div class="ro markdown">
+  <p>👋 –</p>
+
+<p>це мій вебсайт.</p>
+
+<p>ви могли очікувати <a href="/uk/home">більше</a>, але це все.</p>
+
+<p>– а</p>
+
+<p>до речі. я завжди шукаю способи видалити речі. слухати музику. та гладити собак.</p>
+
+<p>до речі. до речі. <a href="/uk/ai"> чи ви є 🤖 ?</a>.</p>
+
+</div>
     </main>
 
     <footer>
-      <%= exports.fetch(:footer){ render('views/footer.erb') } %>
+
     </footer>
   </body>
 </html>

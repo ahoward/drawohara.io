@@ -1,0 +1,125 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Наш досвід роботи віддалено</title>
+
+    <meta property="og:title" content="Наш досвід роботи віддалено"/>
+    <meta property="og:description" content="Продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'our-remote-working-setup'}">
+    <meta property="site:path_info" content="/our-remote-working-setup">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Тут у dojo4 ми намагаємося бути гнучкішими щодо віддаленої роботи. Ми любимо цю концепцію та поступово впроваджуємо її у наш звичайний робочий процес за допомогою різних експериментів. Наш останній експеримент полягав у тому, щоб відправити Стіва в жахливе та безлюдне місце під назвою «Нью-Гемпшир». Після трьох місяців роботи повністю віддалено (тоді як решта з нас поєднувала віддалену та очну роботу), ми не ненавидимо Стіва, і Стів не ненавидить нас. Тож перемога! Він скоро опублікує власний блог про свій досвід, але наразі я хотів би поділитися інструментами, які ми використовуємо для віддаленої співпраці, та дати кілька порад щодо кожного з них.</p>
+
+        <ul>
+          <li>
+            <p><strong><a href="https://campfirenow.com/">campfire</a></strong> Це головний інструмент, який сприяє нашій здатності працювати віддалено. На перший погляд campfire — це просто сервіс групових повідомлень, який не має багатьох справжніх функцій обміну повідомленнями (наприклад, особистих повідомлень), але справжня сила цього інструменту виявляється, коли ви підключаєте інші сервіси, які сповіщають campfire про активність на цих сервісах. Ми налаштували наші облікові записи github і redmine повідомляти campfire кожного разу, коли хтось редагує код або виправлення. Ми також використовуємо дуже корисний гем <a href="https://github.com/collectiveidea/tinder">tinder</a>, щоб повідомляти campfire, коли хтось розгортає додаток. Поєднавши це з наступним інструментом, fbomb, та тим фактом, що ми можемо отримувати додатки на наш телефон, дуже легко утримувати палець на пульсі щоденної діяльності компанії та взаємодіяти з колегами, незалежно від того, наскільки далеко ми знаходимося від офісу.</p>
+          </li>
+          <li>
+            <p><strong><a href="https://github.com/ahoward/fbomb">fbomb</a></strong> fbomb — це бот для campfire, який реагує на команди. Ми назвали його «містер робото» та маємо власну приватну, налаштовану версію fbomb, яку ми використовуємо. Це весело робити такі речі, як <code>/lolcat</code>, але найкращі команди, які ми маємо в «містері робото», це <code>/directory</code> (виводить імена, електронні адреси та номери мобільних телефонів усіх у нашій команді), <code>/txt [ім'я людини] [повідомлення]</code> (надсилає людині, яку ви назвали, ваше повідомлення та ваш номер мобільного телефону), та <code>/need [ім'я людини] [повідомлення]</code> (надсилає людині ваше повідомлення та великий терміновий текст «МАЙЛЗУ ПОТРІБНА ДОПОМОГА»). Ці команди вирішили проблему, коли люди перебувають у campfire, але не сидять за комп’ютером, коли ми в них потребуємо. Якщо ми дійсно потребуємо когось і вони не відповідають на згадку їх імені в campfire, то ми можемо привернути їх увагу повідомленням та електронним листом.</p>
+          </li>
+          <li>
+            <p><strong><a href="http://github.com">github</a></strong> ми очевидно любимо цей інструмент. Дві речі, які ми любимо в ньому найбільше: сервісні хуки в campfire та необмежені приватні репозиторії, які ми узгодили за певну ціну (вони — одні з наших найкращих друзів).</p>
+          </li>
+          <li>
+            <p><strong><a href="http://www.redmine.org/">redmine</a></strong> ми маємо власну налаштовану версію відкритого трекера завдань redmine, яка працює на одному з наших серверів. Ми любимо отримувати електронні листи кожного разу, коли хтось редагує завдання, за яким ми спостерігаємо, або додає нове завдання в проект, за яким ми спостерігаємо. Ми також любимо його інтеграцію з campfire та той факт, що він є відкритим вихідним кодом, тож ми можемо налаштовувати його під свої потреби.</p>
+          </li>
+          <li>
+            <p><strong><a href="http://www.google.com/+/learnmore/hangouts/">google hangouts</a></strong> Я впевнений, що ви бачили це в списках інструментів для віддаленої роботи інших людей, бо це чудово. Ми маємо щоденну стоячу зустріч, де ми використовуємо hangout, щоб переконатися, що всі беруть участь у перевірці. Мій один <strong>надзвичайно важливий порада</strong>, який чудово спрацював для нас: створіть подію в календарі Google, натисніть «Додати Hangout» та запросіть усіх на подію. Тоді всі, хто запрошені на подію, зможуть натиснути на той самий посилання hangout, що й усі інші, запобігаючи тому, щоб ви щодня надсилали новий посилання hangout електронною поштою/повідомленням. Наш щоденний hangout колись мав додаткові 10 хвилин налаштування для hangout, тепер ми просто натискаємо кнопку в нашій події календаря, і всі вже там. Дуже зручно.</p>
+          </li>
+          <li>
+            <p><strong>списки електронної пошти</strong> Ми маємо спеціальні електронні облікові записи (в які може написати лише хтось з dojo4), щоб ділитися нашими щоденними планами та успіхами з минулого дня, а також просто надсилати щось усім у команді. Перший обліковий запис дозволяє нам дізнатися, чим займається будь-хто інший в команді сьогодні, що просто утримує нас у курсі планів один одного. Другий обліковий запис дозволяє створити середовище «біля кулера», де ми можемо надсилати один одному статті та фотографії та спілкуватися. Ми часто маємо «сесії біля кулера» випадково в campfire протягом дня, але мати електронну пошту як другорядне місце для цього — це гарна опція, щоб відокремити наше жартування від нашого потоку робочих дій.</p>
+          </li>
+        </ul>
+
+        <p>Ось наш огляд інструментів, які ми використовуємо та любимо кожного дня. Напишіть нам твіт з вашими; ми з радістю про це почуємо.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/our-remote-working-setup">я-ненавижу-це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/our-remote-working-setup">я-люблю-це</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

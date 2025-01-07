@@ -1,0 +1,108 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>dojo4 має відповіді</title>
+
+    <meta property="og:title" content="dojo4 має відповіді"/>
+    <meta property="og:description" content="переходьте далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'dojo4-s-got-answers'}">
+    <meta property="site:path_info" content="/dojo4-s-got-answers">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/uk/dojo4/dojo4-s-got-answers/assets/b.jpeg' alt="Answers.jpg" /></p>
+        <p><img src='/uk/dojo4/dojo4-s-got-answers/assets/c.jpeg' alt="answersCU.jpg" /></p>
+        <p>У вас є питання, у нас є відповіді! Але вони коштуватимуть вам. 25 центів, щоб бути точним.</p>
+        <p>У співпраці з непідробним <a href="http://youtu.be/cT0pGKaPdLc">Спайком Ілаккою</a>, dojo4 зараз пропонує просвітлюючі відповіді будь-кому, хто потребує, за ціну жувальної гумки.</p>
+        <p>Наразі відповіді видаються лише під час робочих годин, але незабаром чекайте 24-годинний доступ до відповідей. І після того, як цей набір корисних і застосовних відповідей буде розданий, ми будемо постачати нашу гідну спільноту міні-мистецтвом за ту ж саму низьку ціну. <em>(Будь ласка, зауважте: ми зараз приймаємо міні-мистецтво для диспенсера міні-мистецтва та відповідей. Тож, якщо ви міні-художник і хочете внести свій вклад, надішліть приклад своєї роботи на tinyart@dojo4.com якомога швидше. Слава та подяка чекають на вас.)</em></p>
+        <p>Наші відповіді користуються надзвичайною популярністю. Завітайте на 2030 17th St., Boulder, CO і отримайте свою якомога швидше. Доступно, поки є запаси.</p>
+        <p><img src='/uk/dojo4/dojo4-s-got-answers/assets/d.jpeg' alt="WindyAnswers.jpeg" /></p>
+        <p><img src='/uk/dojo4/dojo4-s-got-answers/assets/e.jpeg' alt="answeruser1.jpg" /></p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-s-got-answers">я-не-люблю-це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-s-got-answers">я-люблю-це</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

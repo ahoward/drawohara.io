@@ -1,0 +1,233 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+  <!-- meta -->
+    <title>! &#39;[ОГОЛОШЕННЯ] sekrets.rb - легко керовані зашифровані дані в ваших додатках rails&#39;</title>
+
+<meta property="og:title" content="! &#39;[ОГОЛОШЕННЯ] sekrets.rb - легко керовані зашифровані дані в ваших додатках rails&#39;"/>
+<meta property="og:description" content="продовжуй рух." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"}">
+    <meta property="site:path_info" content="/uk/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>ref: https://github.com/ahoward/sekrets</p>
+
+<pre>
+
+НАЗВА
+  sekrets.rb
+
+СИНОПСИС
+  sekrets - це інструмент командного рядка та бібліотека, яка використовується для безпечного керування зашифрованими
+  файлами та налаштуваннями в ваших додатках rails та репозиторіях git.
+
+ІНСТАЛЯЦІЯ
+  gem install sekrets
+  gem 'sekrets'
+
+ОПИС
+  TL;DR
+    # створити зашифрований конфігураційний файл
+
+      ruby -r yaml -e'puts({:api_key =&gt; 1234}.to_yaml)' | sekrets write config/settings.yml.enc --key 42
+
+    # показати його
+
+      sekrets read config/settings.yml.enc --key 42
+
+    # відредагувати його
+
+      sekrets edit config/settings.yml.enc --key 42
+
+    # переконатися, що він зашифрований
+
+      cat config/settings.yml.enc
+
+    # закомітити його
+
+      git add config/settings.yml.enc
+
+    # помістити ключ дешифрування у файл
+
+      echo 42 &gt; .sekrets.key
+
+    # ігнорувати цей файл в git
+
+      echo .sekrets.key &gt;&gt; .gitignore
+
+    # тепер вам більше не потрібно вказувати аргумент --key для команд
+
+      sekrets read config/settings.yml.enc
+
+      sekrets edit config/settings.yml.enc
+
+    # переконатися, що цей файл розгортається на вашому сервері
+
+      echo " require 'sekrets/capistrano' " &gt;&gt; Capfile
+
+    # закомітити та розгорнути
+
+      git add config/settings.yml.enc
+      git commit -am'зашифровані налаштування йо'
+      git pull &amp;&amp; git push &amp;&amp; cap staging deploy
+
+    # отримати доступ до цих налаштувань у коді вашого додатку
+
+      settings = Sekrets.settings_for('./config/settings.yml.enc')
+
+  ОПИС
+    sekrets надає інструменти командного рядка та бібліотеку для керування та доступу
+    до зашифрованих файлів у вашій кодовій базі.
+
+    він дозволяє зберігати зашифровану інформацію в репозиторій та керувати нею разом із рештою кодової бази. він виключає
+    необхідність зберігати незашифровану інформацію, ключі або іншу чутливу інформацію.
+
+    sekrets надає як загальний механізм для керування довільними зашифрованими
+    файлами, так і специфічний механізм для керування зашифрованими конфігураційними файлами.
+
+  ПОШУК КЛЮЧА
+    для *всіх* операцій, з командного рядка або іншим чином, sekrets використовує
+    наступний алгоритм для пошуку ключа дешифрування:
+
+    - будь-який ключ, переданий безпосередньо як параметр виклику бібліотеки, буде переважати
+
+    - інакше код шукає супровідний файл ключа. наприклад, для файлу 'config/sekrets.yml.enc' sekrets шукатиме ключ у
+
+        config/.sekrets.yml.enc.key
+
+      якщо якийсь із цих файлів виявляється непустим, його вміст буде використано як ключ дешифрування для цього файлу. ви ніколи не повинні комітити
+      ці файли ключів і також додавати їх до вашого .gitignore - або подібного.
+
+    - далі шукається файл ключа проекту. шлях до цього файлу
+
+        ./.sekrets.key
+
+      зазвичай, і в додатку rails
+
+        RAILS_ROOT/.sekrets.key
+
+    - якщо це не знайдено, sekrets шукає ключ у середовищі під змінною середовища
+
+        SEKRETS_KEY
+
+      використовувана змінна середовища конфігурується в бібліотеці
+
+    - далі шукається глобальний файл ключа, шлях до цього файлу
+
+        ~/.sekrets.key
+
+    - нарешті, якщо ключ ще не вказано або не знайдено, користувача просять ввести ключ. запит відбувається лише тоді, коли користувач
+      прикріплений до тти. отже, наприклад, жоден запит не зависне і додаток не буде запущений на задньому плані, як додаток rails,
+      який керується passenger.
+
+    див. Sekrets.key_for для додаткових подробиць
+
+  РОЗПОДІЛ КЛЮЧА
+    sekrets *не* намагається вирішити для вас проблему розподілу ключів,
+    за одним винятком:
+
+    якщо ви використовуєте capistrano для виконання "vanilla" ssh-базованого розгортання, надається простий рецепт, який виявить
+    локальний файл ключа та скопіює його на віддалений сервер(и) під час розгортання.
+
+    sekrets припускає, що локальний файл ключа, якщо він існує, є правильним.
+
+    простою англійською мовою рецепт capistrano виконує:
+
+      scp ./sekrets.key deploy@remote.host.com:/rails_root/current/sekrets.key
+
+    зрозуміло, що локальний файл ключа ніколи не повинен бути закоміченим
+    і також повинен бути в .gitignore
+
+    розподіл цього ключа серед розробників виходить за межі бібліотеки. ймовірно, незашифрована електронна пошта - найкращий механізм для розподілу
+    ;-/
+
+</pre>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/uk/about">про</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/uk/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">я-ненавижу-це</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/uk/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">я-люблю-це</a>
+  </li>
+  <li>
+    <a href="/uk/contact">контакти</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/uk/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>
