@@ -1,0 +1,182 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>PROGRAMMEZ COMME SI VOUS VOUS EN SOUCIEZ</title>
+
+<meta property="og:title" content="PROGRAMMEZ COMME SI VOUS VOUS EN SOUCIEZ"/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'program-like-you-give-a-damn'}">
+    <meta property="site:path_info" content="/program-like-you-give-a-damn">
+
+    <base href='/fr' />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><em>*<a href="https://www.youtube.com/embed/21Jj2ObZI9M">Cette conférence a été présentée à la Ruby Conference 2015 à Kiev, Ukraine</a>.</em></p>
+
+<p><strong>Introduction</strong></p>
+
+<p><em>Les technologues détiennent les clés de la force la plus puissante du monde moderne, mais récemment, ils ont oublié non seulement comment l'utiliser, mais aussi qu'ils la possèdent. Il n'y a pas si longtemps, la technologie représentait l'espoir ; elle représentait le pouvoir ; et, surtout, elle représentait le changement. Notre culture de hackers s'est installée, et elle accepte désormais des objectifs sans signification, des récompenses sans signification et des vies sans signification.</em></p>
+
+<p><em>Nous vivons à l'instant précis où, pour la première fois de l'histoire, la planète est connectée à un niveau pratique et personnel via un réseau de logiciels hyper-intelligents et de matériel hyper-intelligent. Nous vivons notre vie à l'instant précis où les individus possèdent le plus grand pouvoir de provoquer des changements qu'ils aient jamais eu dans l'histoire de l'humanité.</em></p>
+
+<p><em>Un point de basculement a peut-être déjà été atteint. Comme l'imprimerie, la radio et la télévision avant elle, les créateurs d'Internet ont peut-être déjà transmis les connaissances profondes à ceux qui ne cherchent qu'à consolider la richesse et le contrôle.</em></p>
+
+<p><em>Mais il n'est peut-être pas trop tard. La prolifération massive des connaissances et l'aplanissement de la compréhension présentent une opportunité unique pour ceux d'entre nous qui pilotent actuellement les vaisseaux spatiaux : nous pouvons choisir de continuer à patrouiller la planète et à maintenir le statu quo, ou nous pouvons choisir de regarder par-dessus notre épaule - à gauche - cette lumière scintillante au loin, et tracer un nouveau cap.</em></p>
+
+<p><strong>CECI EST LE MOMENT OÙ VOUS DEVRIEZ PRENDRE DE LA CAFFEINE ET LIRE LA TRANSCRIPTION (MODIFIÉE) CI-DESSOUS.</strong></p>
+
+<hr />
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/b.jpeg' alt="Capture d'écran 2015-09-23 à 17h13.jpg" /></p>
+
+<p>Je m'appelle Ara T. Howard. Je dirige une petite agence de logiciels sur mesure. Nous construisons toutes sortes d'applications qui touchent à Internet - mobile, web, big data - en soutien aux entreprises à impact. Notre définition de l'impact est celle des entreprises qui travaillent à créer un monde où personne n'est limité par les circonstances. Cela ne signifie pas nécessairement que tout est pour le bien social, ou que cela ne fait pas d'argent, mais cela essaie de niveler le terrain pour toutes les personnes sur la planète - une définition très large.</p>
+
+<p>Je suis dans la communauté Ruby depuis très longtemps - depuis avant Ruby 1.4 - bien avant Rails - et j'ai vu Ruby traverser des changements profonds. L'un de ces changements est la façon dont la communauté de développement dans son ensemble, et Ruby en particulier, est devenue un peu plus étroite d'esprit qu'au départ.</p>
+
+<p>Je vais vous encourager à envisager que beaucoup des choses dont nous parlons, auxquelles nous pensons, auxquelles nous pensons peuvent en réalité être les <em>mauvaises</em> choses, et vraiment à essayer de rappeler aux gens que la programmation est quelque chose de super puissant et que chacun dans cette salle a une grande responsabilité de faire quelque chose avec ce pouvoir.</p>
+
+<p>Je vais commencer par demander - un show de mains - combien de personnes pensent que l'économie mondiale ne s'effondrerait pas en trois jours si tous les développeurs de logiciels dans le monde cessaient d'aller travailler ? Pas de mains. Donc, c'est de cela que je parle et pourtant, la plupart d'entre nous ne travaillent pas à changer le monde pour le mieux.</p>
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/c.jpeg' alt="Capture d'écran 2015-09-23 à 16h50.jpg" /></p>
+
+<p>Donc, je vais illustrer cela avec une histoire. Je suis le gars du milieu - toujours le gars Linux. Je vais commencer par Ruby Conf. 2006, qui s'est tenue à Denver. À cette conférence Ruby, j'étais toujours sur un ordinateur portable Linux et ce que j'ai vu était, rétrospectivement, un peu le début de la fin. À l'époque, je n'avais jamais eu de machine Windows. Je viens de la communauté de hackers Linux où il y avait vraiment une croyance profonde à l'époque que par l'open source et par le logiciel nous pouvions vraiment changer le monde. D'accord ? Le code avait du pouvoir. Il y avait cette croyance révolutionnaire profonde dans ce que nous faisions.</p>
+
+<p>Et ceci, je pense, était le moment où cela a commencé à changer dans l'esprit de la majorité des développeurs. Je pense que ce gars à gauche est le problème. J'en ai un comme ça maintenant. Mais je me souviens être assis là à Ruby Conf. et ce gars avait un Mac. C'était le premier Macbook. DHH parlait à cette Ruby Conf., et je me souviens que c'était la première fois où la programmation Ruby avait cette aura de cool. Ce n'était pas seulement pour faire des programmes informatiques, ce n'était pas seulement pour essayer de changer le monde par l'open source, ou être gentil, ou l'une de ces choses. C'était aussi cool pour la première fois. Et je me souviens avoir pensé à moi-même, "Mec, je veux vraiment l'un de ces ordinateurs."</p>
+
+<p>À l'époque, je travaillais pour un corps professoral de recherche à The Cooperative Institute for Research in the Earth Sciences. J'aidais à construire ce qui était à l'époque les plus grands superordinateurs du monde (pendant cinq jours ou quelque chose jusqu'à ce qu'ils soient éclipsés). Après cela, je faisais un travail vraiment cool en Ruby - également du travail en supercalcul et en big data - vraiment big data, comme dans des pétaoctets de données - visualisations et analyses avec Ruby, ce qui était assez novateur à l'époque.</p>
+
+<p>Les données provenaient d'un ensemble de satellites en orbite polaire, qui produisent le seul ensemble de données télédétectées qui mesurent l'homme. Ces satellites DMSP collectent en continu des données dans le monde entier et elles sont utilisées pour les décisions aériennes tactiques en temps réel par l'US Air Force. Ils ont la propriété cool, cependant, que du côté arrière du monde - le côté sombre - ils jettent simplement ces données.</p>
+
+<p>Mon groupe était l'archive officielle pour ces données, donc nous avons obtenu beaucoup d'argent pour faire certaines choses dont je ne me sens toujours pas très bien. Mais ce que nous avons fait à côté était un peu un jeu de Robin des Bois, où nous prenions les informations rejetées et nous faisions des choses comme pouvoir mesurer l'étendue des tempêtes après l'ouragan Katrina pour la Maison Blanche. Nous faisions des choses comme mesurer l'emplacement des camps de réfugiés dans le désert du Sahara afin que les largages de nourriture puissent y entrer mais sans révéler l'emplacement de ces camps de réfugiés à la partie adverse afin qu'ils puissent être bombardés. Ou nous mesurions la quantité totale de CO2 émise dans l'atmosphère par les torchères de gaz, qui, soit dit en passant, est en fait équivalente à toute l'essence brûlée dans les voitures par jour. Donc, nous nous sentions plutôt bien à ce sujet et j'avais l'impression de faire une contribution positive - voler Pierre pour payer Paul, mais c'était un moment amusant.</p>
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/d.jpeg' alt="Capture d'écran 2015-09-24 à 15h16.jpg" /></p>
+
+<p>Mais il y avait ce foutu ordinateur portable Mac. Je pense qu'au moment où Ruby Conf. 2007 est arrivé, il s'agissait vraiment de ces deux gars, non ? Steve Jobs &amp; Bill Gates et plus personne ne pensait vraiment à Linux dans la communauté Ruby, ou vraiment à cet esprit.</p>
+
+<p>À cette époque, j'ai été contacté par ce qui est maintenant connu comme une startup qui a été acquise par Oracle pour compiler la bibliothèque scientifique Gnu afin qu'elle fonctionne dans l'installateur Ruby en un clic. Et c'est là que j'ai mordu à l'hameçon, en gros. J'ai quitté mon travail et j'ai commencé à faire du contrat. C'était vraiment cool. En regardant en arrière maintenant, je réalise que j'aidais à construire beaucoup des startups qui ont été acquises à Boulder depuis. J'étais partie prenante de la machine.</p>
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/e.jpeg' alt="Capture d'écran 2015-09-23 à 16h51.jpg" /></p>
+
+<p>Donc, oui, je buvais le Kool-aid. J'étais complètement accro et engagé à faire quelque chose que je remets maintenant en question avec un certain soupçon. J'ai gagné beaucoup d'argent, rencontré beaucoup de gens, super amusant. J'ai pu lancer une entreprise - DOJO4. Nous vivons dans un endroit fantastique. Boulder est génial. Nous avons des gens super cool. Nous aimons ce que nous faisons. C'est plutôt du gâteau, non ? Donc, il semble que tout devrait être bien…</p>
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/f.jpeg' alt="Capture d'écran 2015-09-24 à 15h55.jpg" /></p>
+
+<p>Mais j'ai commencé à ressentir cette sensation tenace que je n'étais pas vraiment motivé par le travail que je faisais. J'ai commencé la nuit à me coucher en pensant, "Mec, dois-je vraiment construire ce même système utilisateur encore, ce même système de vote ou cette même fonctionnalité que chaque startup a ?" Tout a commencé à sembler très similaire. Cela a commencé à sembler très incestueux et sans but.</p>
+
+<p>Donc, nous avons commencé à avoir ces discussions en interne dans l'entreprise, début de l'année dernière. Tout est super mais pourquoi faisons-nous cela ? Cela en vaut-il la peine ? Devrions-nous faire autre chose ? Et le logiciel est difficile, donc ce sont des questions importantes à poser. Ce n'est pas comme si c'était un travail facile ou sans stress. Nous avons vraiment commencé à vouloir plus.</p>
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/g.jpeg' alt="Capture d'écran 2015-09-23 à 16h51.jpg" /></p>
+
+<p>Donc, ce gars était aussi dans mon esprit à l'époque. Combien de personnes savent qui c'est ? [Les mains se lèvent] C'est fantastique. J'ai donné cette conférence dans une salle de 300 personnes il y a deux semaines à Denver et j'ai posé la même question et zéro personne a levé la main. C'était choquant pour moi.</p>
+
+<p>C'est Richard Stallman, et quand j'étais un hacker Linux, il a écrit beaucoup de manifestes. C'est un putain de fou, pour tous les effets. À l'époque, il semblait vraiment fou - il parlait de choses comme pourquoi le logiciel open source est important pour des choses comme la confidentialité et pourquoi il pourrait être une force pour lutter contre la surveillance gouvernementale de vos communications, juste pour donner un exemple. Tout le monde pensait qu'il était fou.</p>
+
+<p>Donc, ce sens araignée sonnait dans mon oreille. Si vous retournez et lisez certaines des choses qu'il disait, ce que vous allez découvrir, c'est qu'il avait raison sur tout. Chaque putain de chose avait raison. Il n'était peut-être pas le meilleur messager - ce n'était pas enrobé de sucre, peut-être que ce n'était pas assez sexy, ce n'était pas emballé avec une petite icône Apple, ce n'était pas en aluminium et il n'y avait pas d'options sur actions. Cependant, tout ce qu'il a dit était vrai, et je pense que les gens l'ont oublié. Personne ne parle plus de liberté dans le logiciel.</p>
+
+<p>En fait, nous savons maintenant que de simples décisions comme celles que prennent les personnes dans cette salle, telles que contribuer au logiciel open source afin que nous ayons des bibliothèques de cryptographie qui ne sont pas contrôlées par les gouvernements ou les entreprises sont assez importantes - <em>incroyablement</em> importantes, en fait, et affectent des millions de vies.</p>
+
+<p>Donc, ces choses roulent dans ma tête - Stallman, que diable faisons-nous ? Que faisons-nous ? La même chose encore et encore. Ensuite, j'ai été invité à une conférence organisée par <a href="http://unreasonableinstitute.org/">The Unreasonable Institute</a>. Maintenant, ils n'ont rien à voir avec le logiciel. Ils sont un accélérateur, un incubateur. Ce sont ceux dont la définition de l'impact, j'ai coopté : Un monde où personne n'est limité par ses circonstances. Leur mission est de faciliter cette révolution, et leur croyance est que les gouvernements ne peuvent pas le faire, les ONG ne peuvent pas le faire - seules les entreprises peuvent le faire.</p>
+
+<p>Donc, ce n'est pas à propos de charité, ce n'est pas à propos de législation. L'idée est que les entreprises peuvent résoudre les problèmes du monde. Je pense que beaucoup de fois dans le logiciel, nous pensons à un concept très bifurqué entre donner notre temps à l'open source, travailler gratuitement pour des organismes de bienfaisance, avoir des hackfests pour aider nos villes ; et puis nous travaillons pour gagner de l'argent en faisant des conneries dont beaucoup d'entre nous ne se soucient peut-être pas tant que ça. Donc, utiliser les entreprises comme une force pour le bien est une idée vraiment nouvelle et il m'a fallu beaucoup de temps pour l'accepter réellement.</p>
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/h.jpeg' alt="Capture d'écran 2015-09-25 à 09h39.jpg" /></p>
+
+<p>Donc, j'étais mentor technique à cet <a href="http://dojo4.com/blog/girl-effect-accelerator-braindump">accélérateur Girl Effect</a>. Nous avons travaillé dix-sept heures par jour. C'était fou. Nous travaillions avec 10 entreprises qui ont été sélectionnées parce que leur produit avait un impact positif direct sur les femmes adolescentes. Je ne vais pas entrer dans les détails de pourquoi c'était, mais je vais vous dire que aucune des entreprises ne faisait ce que vous pourriez penser qu'elles faisaient.</p>
+
+<p>Par exemple, l'un d'eux est <a href="http://dojo4.com/work/Paga">une application bancaire</a> - banque mobile. Quel est le rapport avec les femmes adolescentes ? Eh bien, si vous construisez cette application dans un pays où 85 % de la population n'a pas accès à la banque, et que le principal moyen de transférer de l'argent est de donner l'argent à un enfant et de le faire monter dans un bus - c'est en fait un travail assez dangereux. Alors vous avez un impact sur les femmes.</p>
+
+<p>Ou, vous <a href="http://dojo4.com/work/off-grid-electric">fabriquez des lampes solaires</a>. Comment cela impacte-t-il les femmes adolescentes ? Parce que dans les pays où cette entreprise opère, les femmes ont moins d'opportunités de faire leurs devoirs, elles sont censées faire le ménage et la cuisine, et au moment où elles auraient une opportunité de faire leurs devoirs, il fait noir. Elles n'ont pas d'électricité, donc elles ne peuvent pas faire leurs devoirs.</p>
+
+<p>J'ai pensé, hé, c'est sympa ; c'est génial qu'ils fassent ça. Mais ensuite, d'autres choses ont commencé à s'immiscer. Comme, en deux semaines de travail avec dix startups, personne n'a dit le mot "sortie" une seule fois. Toutes les entreprises avec lesquelles nous travaillions - et ce sont des entreprises qui opèrent dans un endroit où le consommateur moyen gagne moins de 2 $ par jour. Pays pauvres. Toutes ces entreprises ont des revenus de profit de 2,5 millions ou plus, donc respectivement elles assurent grave.</p>
+
+<p>Toutes les entreprises étaient autofinancées et avaient une courbe de revenus régulière. Personne n'était comme, "Nous allons prendre beaucoup d'argent, nous allons inventer un problème, nous allons le résoudre et ensuite dès que nous pourrons trouver le modèle économique à faire avec ces milliards de dollars de logiciels et de données, nous allons être riches !" Ces gens n'ont pas pris l'argent. Ils vendaient leur produit dès le départ. Énormes, énormes innovations techniques, non ?</p>
+
+<p>Et les barrières que ces entreprises rencontrent sont des choses comme : je vends une lumière mais personne n'a assez d'argent et aucun moyen de me payer. Donc, en plus de fabriquer une lumière, je dois concevoir une entreprise de microfinance, je dois construire une application qui fonctionne sur des téléphones basiques (vous vous souvenez des petits écrans LCD avant les smartphones ?) <em>et</em> les smartphones, afin que les gens puissent me payer en petits morceaux. Oh merde, la monnaie locale ne fonctionne pas, donc en fait je dois trouver comment faire avec le bitcoin et d'autres moyens d'arbitrage pour qu'il puisse traverser les pays. Donc, chaque entreprise avait des problèmes significatifs que nous n'avons pas - comme je peux payer n'importe qui ici avec un téléphone ou de l'argent, je peux communiquer avec vous, vous avez de la lumière - et <em>ils résolvaient beaucoup de ces problèmes grâce à la technologie.</em></p>
+
+<p>Cela est possible parce que, tout simplement, ces dernières années, vous avez essentiellement un continent entier - et cela est vrai ailleurs, l'Afrique n'est qu'un exemple de cela - où vous avez un tas de problèmes, et tout le monde a maintenant Internet dans sa poche. D'accord ? Et un moteur Javascript.</p>
+
+<p>Donc, c'est un moment profondément important où si vous écrivez un morceau de logiciel, vous avez la capacité d'impacter le monde entier sur ceci [montre un téléphone]. Cela n'existait pas avant maintenant. Le point de basculement est ici, aujourd'hui, non ? Avec la possession de téléphones portables, l'opportunité est immense.</p>
+
+<p><img src='/ro/dojo4/program-like-you-give-a-damn/assets/i.jpeg' alt="Capture d'écran 2015-09-25 à 09h49.jpg" /></p>
+
+<p>Donc, ce que j'ai réalisé après avoir digéré tout cela et travaillé avec toutes ces entreprises, c'était : waouh, cela fonctionne vraiment. Ils gagnent de l'argent. Ils font quelque chose qui ne craint pas. Ils font une technologie incroyablement cool. L'équipe d'ingénieurs s'amuse. Je veux dire, ce sont de vrais défis, non ?</p>
+
+<p>Donc, problème super intéressant et capacité à avoir un impact. Et puis j'ai finalement compris et développé une nouvelle définition du mot impact : si vous avez un putain de problème et que je le résous, vous l'achetez chez moi. Vous n'avez pas besoin de marketing pour cela. Certaines personnes appellent cela de bonnes affaires.</p>
+
+<p>Donc, je pense que ce qui ne va pas avec une grande partie de la communauté des startups - et la communauté de développement par effet secondaire – c'est que les gens ont oublié que le critère fondamental pour avoir une entreprise prospère et concevoir une solution est d'avoir un vrai problème. D'accord ? Vous avez vraiment besoin d'un problème à résoudre afin d'écrire du code qui a un impact. Et tout le but de cette conférence, encore une fois, est simplement d'encourager les gens sur le terrain - vous, les troupes - que cela est possible.</p>
+
+<p><a href="http://unreasonable.is/hacking-human-suffering-real-growth-industry/">Il y a plein de vrais problèmes</a>. Nous n'avons pas besoin de résoudre des non-problèmes avec l'un des outils les plus puissants de la planète - le code. Alors, pourquoi résolvons-nous des non-problèmes avec ? Pour gagner plus d'argent aux gens ? Bien sûr, nous voulons gagner <em>assez</em> d'argent, mais nous ne sommes pas assez intelligents pour faire un autre choix ou avoir un impact positif grâce à notre travail de toute une vie ?</p>
+
+<p>Donc, ce que mon entreprise a fait quand je suis revenu de cela, c'est que nous en avons parlé pendant assez longtemps, puis nous avons licencié tout le monde. Absolument tout le monde. Ce n'était pas aussi dur que cela semble. En fait, je parle avec tous nos ingénieurs, tous nos designers et tous nos sous-traitants et j'ai dit : "Nous en avons marre de construire des conneries stupides." Le sentiment quand j'ai commencé à parler avec tout le monde était que nous voulons tous faire quelque chose de significatif. Chaque personne a dit une sorte de permutation de, "Cela semble génial, car je suis fatigué de construire des conneries stupides, aussi."</p>
+
+<p>Donc, nous avons apporté quelques changements fondamentaux à notre modèle économique. Presque toutes les personnes que nous avons licenciées sont de retour dans différentes capacités. Nous avons une organisation différente maintenant, mais nous avons sauté à pieds joints.</p>
+
+<p>Nous sommes également <a href="http://dojo4.com/blog/5-benefits-to-becoming-a-b-corp">devenus une B Corp</a>, ce qui est fondamentalement l'équivalent du café équitable ou de la certification biologique pour les aliments. Il y a 1300 B Corporations dans le monde qui sont essentiellement engagées dans la transparence des affaires, ayant un impact social. Il s'agit de gagner de l'argent, mais c'est aussi un engagement à avoir un impact positif sur le monde - socialement, écologiquement, etc. Donc, nous sommes toujours une agence de logiciels, et maintenant nous avons des entreprises qui nous appellent de nulle part en disant : "Vous êtes une B Corp, nous sommes une B Corp, nous essayons de résoudre ce problème ensemble."</p>
+
+<p>Il y a beaucoup d'inconnus, nous ne savons pas où cela va aller à long terme, mais nous dormons beaucoup mieux. Nous nous sentons mieux dans le travail que nous faisons - toujours du logiciel, nous déboguons toujours du javascript dans IE. Je veux dire, c'est le même travail mais quelque chose est fondamentalement différent, et c'est vraiment agréable.</p>
+
+<p>Donc, ce que j'essaie d'inciter les gens à penser, c'est de venir avec moi dans ce voyage. Pensez à ce que vous faites et à la manière dont vous pouvez faire quelque chose de légèrement meilleur avec le pouvoir que vous avez.</p>
+
+<p>Donc, cela peut sembler un peu élevé, non

@@ -1,3 +1,5 @@
+require 'map'
+
 require_relative 'render'
 require_relative 'pattern'
 require_relative 'context'

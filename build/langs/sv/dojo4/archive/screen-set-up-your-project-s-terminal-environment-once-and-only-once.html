@@ -1,0 +1,140 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Screen -- ställ in din projektterminalmiljö en gång och bara en gång.</title>
+
+<meta property="og:title" content="Screen -- ställ in din projektterminalmiljö en gång och bara en gång."/>
+<meta property="og:description" content="flytta på." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/arkiv/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"screen-set-up-your-project-s-terminal-environment-once-and-only-once"}">
+    <meta property="site:path_info" content=""/screen-set-up-your-project-s-terminal-environment-once-and-only-once"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Med varje projekt kör jag flera program samtidigt under utvecklingsprocessen. Detta resulterar vanligtvis i flera flikar i Terminal-appen - en för min lokala server, en för min databas, en för min klientapplikation och en för git. (Just nu använder jag en GUI-editor (ST2), men jag kanske återgår till vim snart…) Denna flikuppställning återuppstår för varje projekt jag arbetar med, och jag byter vanligtvis mellan flera projekt flera gånger om dagen.</p>
+
+<p>Med den här flikuppställningen, när jag måste byta det projekt jag arbetar på, måste jag antingen öppna ett nytt Terminalfönster med sina egna flikar för det projektet och hantera att ha ett mer än nödvändigt antal fönster öppna (inte ett alternativ för en minimalist som jag) eller stänga alla flikar jag har öppna, bara för att öppna dem alla igen när jag byter tillbaka till det projektet.</p>
+
+<p>Nu, som de flesta dagar, lärde jag mig en klurig lösning på det här problemet från dojo4:s vise och allmäktige ledare, <a href="http://dojo4.com/team/ara-t-howard">Ara</a>. Han använder GNU <a href="https://www.gnu.org/software/screen/">Screen</a>-programmet. Inom en enda Terminal-flik låter Screen dig öppna flera "fönster" (aka flikar) inom samma Terminal-flik. Så här använder du det:</p>
+
+<pre><code class="language-text"># skapa och koppla till en session
+screen -S [namn] = skapa en namngiven skärm
+screen -D -R [namn] = koppla till en namngiven skärm och koppla från andra personer om nödvändigt
+screen -list = lista skärmar
+
+# (avsluta alla fönster i en skärmsession kommer att avsluta den sessionen. Men en skärmsession är en körande process, så du kan avsluta den manuellt.)
+
+# inom en skärmsession:
+ctrl-A + ? = hjälp
+ctrl-A + " = lista fönster
+ctrl-A + c = skapa nytt fönster
+ctrl-A + n = nästa fönster
+ctrl-A + p = föregående fönster
+ctrl-A + A = byt namn på ett fönster
+
+# alias vi använder
+alias sl='screen -list '
+alias sdr='screen -d -r '
+alias s='screen -D -R '
+alias ss='screen -S'
+
+sdr [namn] = koppla till en namngiven skärm och koppla från andra personer om nödvändigt
+ss [namn] = skapa en namngiven skärm
+sl = lista skärmar
+</code></pre>
+
+<p>En annan riktigt snygg funktion med screen är att när du kopplar från en skärmsession, så fortsätter alla dina fönster att köra, och när du kopplar tillbaka till skärmsessionen, så har du alla dina fönster tillgängliga igen.</p>
+
+<p>När vi diskuterade det här på vårt kontor, skapade <a href="http://dojo4.com/team/ryan-cook">Ryan Cook</a> en <a href="https://gist.github.com/cookrn/2711966"> fin liten Ruby-hjälpare</a> för att skapa skärmsessioner som är namngivna efter din nuvarande katalog.</p>
+
+<p>Så mitt arbetsflöde har ändrats från att ha flera flikar öppna i Terminal till en enda flik i Terminal där jag återansluter till en skärmsession för varje projekt jag arbetar med. Det låter mig byta projekt extremt snabbt och sluta slösa tid med att ställa in och riva ner alla Terminal-flikar jag använder för ett projekt.</p>
+
+<p>Nu måste jag bara konvertera fler saker till terminalanvändning (som min editor) för att verkligen dra nytta av screen…</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/gå-till" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/om">om</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">i-love-this</a>
+  </li>
+  <li>
+    <a href="/kontakt">kontakt</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

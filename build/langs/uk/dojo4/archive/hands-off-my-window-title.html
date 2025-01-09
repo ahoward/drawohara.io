@@ -1,0 +1,114 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Не чіпайте мій заголовок вікна!</title>
+
+    <meta property="og:title" content="Не чіпайте мій заголовок вікна!"/>
+    <meta property="og:description" content="продовжуйте рухатись." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'hands-off-my-window-title'}">
+    <meta property="site:path_info" content="/hands-off-my-window-title">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Нещодавно я підключився через ssh до нового сервера Ubuntu 11.10 на EC2 і помітив кілька нових речей. По-перше, Ubuntu, здається, увімкнула конфігурацію термінального мультиплексора <a href="https://help.ubuntu.com/11.10/serverguide/C/byobu.html">byobu</a> за замовчуванням. Це виглядає потенційно корисно, але, як і у випадку з <a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh</a>, я не відчуваю мотивації розбиратися з цим зараз. Вимкнути byobu можна за допомогою простої команди <code>byobu-disable</code>, що, досить несподівано, повністю завершить вашу сесію, вийде з системи та закриє ваше ssh-з'єднання. Але наступного разу ви отримаєте звичайний shell замість сесії byobu/screen.</p>
+
+      <p>А тепер про одну річ, яку я помітив і врешті-решт вирішив "дослідити" (а це означає, що я запитав більш розумних людей у Twitter) і виправити: коли я підключався через ssh, заголовок вікна моєї вкладки iTerm2 динамічно змінювався з того, що я ретельно встановив ("asset pipeline"), на надзвичайно некорисне "ubuntu@ip-10-11-12-13". У деяких нехмарних ситуаціях, коли сервер має змістовну назву хоста, це може бути корисно, але розрізняти десятки серверів за їх внутрішніми IP-адресами EC2 мені не подобається. Початкове дослідження вказувало на мої змінні середовища <code>PROMPT</code> або <code>PROMPT_COMMAND</code>, але жодна з них не була встановлена. Я прочитав <a href="http://www.ibm.com/developerworks/linux/library/l-tip-prompt/">цю статтю DeveloperWorks</a> і знайшов відповідальний код у файлі <code>~/.bashrc</code>. Ось відповідний уривок.</p>
+
+      <pre><code># Якщо це xterm, встановіть заголовок як user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+</code>
+</pre>
+
+      <p>Тож ви можете закоментувати цей рядок, який змінює <code>PS1</code>, якщо віддаєте перевагу власноруч встановленому заголовку вікна.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/hands-off-my-window-title">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакт</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

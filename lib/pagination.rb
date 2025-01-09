@@ -1,6 +1,6 @@
 module Pagination
   def paginate(*args)
-    options = Map.options_for!(args)
+    options = Map.for(args.last.is_a?(Hash) ? args.pop : {})
 
     page = Integer(args.shift || options[:page] || 1)
     per = Integer(args.shift || options[:per] || options[:size] || 10)

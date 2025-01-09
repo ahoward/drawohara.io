@@ -1,0 +1,108 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href("/site.webmanifest">
+
+    <!-- meta -->
+    <title>Fare Un Buon Lavoro</title>
+
+    <meta property="og:title" content="Fare Un Buon Lavoro"/>
+    <meta property="og:description" content="continua." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"doing-a-good-job"}">
+    <meta property="site:path_info" content=""/doing-a-good-job"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>A volte divento completamente miope riguardo alle liste di cose da fare. Specialmente quelle al lavoro, dove voglio fare un buon lavoro ed essere un giocatore di squadra (il mio team fa un lavoro davvero, davvero buono).</p>
+
+        <p>Devo ricordare a me stesso di tanto in tanto che non puoi fare un buon lavoro se il tuo lavoro è tutto ciò che fai, quindi recentemente ho messo da parte tutte le responsabilità e ho visitato alcuni dei miei posti preferiti - Moab, San Francisco, Carbondale.</p>
+
+        <p>Ora sono di ritorno, grato per il buon lavoro da fare e la lista di cose da fare è di nuovo al centro dell'attenzione. Buon lunedì, gente!</p>
+
+        <p><img src='/ro/dojo4/doing-a-good-job/assets/b.jpeg' alt="Schermata 2015-11-30 alle 9.56.22 AM.jpg" /></p>
+        <p><img src='/ro/dojo4/doing-a-good-job/assets/c.jpeg' alt="Schermata 2015-11-30 alle 9.56.12 AM.jpg" /></p>
+        <p><img src='/ro/dojo4/doing-a-good-job/assets/d.jpeg' alt="Schermata 2015-11-30 alle 10.07.47 AM.jpg" /></p>
+        <p><img src='/ro/dojo4/doing-a-good-job/assets/e.jpeg' alt="Schermata 2015-11-30 alle 9.55.11 AM.jpg" /></p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/doing-a-good-job">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/doing-a-good-job">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

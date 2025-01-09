@@ -1,0 +1,219 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>rasurado de yak en época de impuestos</title>
+
+    <meta property="og:title" content="rasurado de yak en época de impuestos"/>
+    <meta property="og:description" content="siga adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"yak-shaving-at-tax-time"}">
+    <meta property="site:path_info" content=""/yak-shaving-at-tax-time"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>escribí este script mientras hacía mis impuestos porque, como todos los buenos programadores, prefiero escribir una herramienta que usar un maldito programa de hoja de cálculo</p>
+
+        <p>me salva de</p>
+
+        <ul>
+          <li>tener que usar una hoja de cálculo para categorizar mis impuestos</li>
+        </ul>
+
+        <p>y, adicionalmente me salva de tener que usar una hoja de cálculo para categorizar mis impuestos</p>
+
+        <p>sin más preámbulos (eso es para ti @steve)</p>
+
+        <p><br /><br />
+        <br /></p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">#! /usr/bin/env ruby</span>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'csv'</span>
+</div><div class='code-line code-line-4'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'pp'</span>
+</div><div class='code-line code-line-5'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'readline'</span>
+</div><div class='code-line code-line-6'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'fileutils'</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'main'</span>
+</div><div class='code-line code-line-11'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'coerce'</span>
+</div><div class='code-line code-line-12'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'arrayfields'</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'><span style="color: #953800">Main</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">synopsis</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">__</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'><span style="color: #0a3069">    ruby categorize.rb transactions.csv</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'><span style="color: #0a3069">    ruby categorize.rb transactions.csv --continue # donde lo dejé...</span>
+</div><div class='code-line code-line-20'>
+</div><div class='code-line code-line-21'><span style="color: #953800">  __</span>
+</div><div class='code-line code-line-22'>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">description</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">__</span>
+</div><div class='code-line code-line-24'>
+</div><div class='code-line code-line-25'><span style="color: #0a3069">    categorize es un maldito script de categorización de transacciones que escribí mientras hacía mis malditos impuestos</span>
+</div><div class='code-line code-line-26'>
+</div><div class='code-line code-line-27'><span style="color: #0a3069">    funciona en un csv que se ve como</span>
+</div><div class='code-line code-line-28'>
+</div><div class='code-line code-line-29'><span style="color: #0a3069">      Transaction Number,Date,Description,Memo,Amount Debit,Amount Credit ,Balance,Check Number,Fees  </span>
+</div><div class='code-line code-line-30'><span style="color: #0a3069">      "20121231000000[-7:MST]*-9.99*42**Withdrawal",12/31/2012,"Withdrawal","Amazon Video On Demand 866-216-1072 WA Date 12/29/12 000031828826 5735",-9.99, ,"492.93",,</span>
+</div><div class='code-line code-line-31'><span style="color: #0a3069">      "20121231000000[-7:MST]*-4000.00*12**Withdrawal Home Banking",12/31/2012,"Withdrawal Home Banking","Transfer To HOWARD,ARA T 0000133543 Share 0008 Online Banking Transfer Dec. 31, 2012 09:37 Ref: 325989",-4000.00, ,"502.92",,</span>
+</div><div class='code-line code-line-32'><span style="color: #0a3069">      "20121231000000[-7:MST]*4393.89*501**Deposit DOJO4 LLC",12/31/2012,"Deposit DOJO4 LLC","TYPE: QUICKBOOKS ID: 1722616653 CO: DOJO4 LLC",,4393.89 ,"4502.92",,</span>
+</div><div class='code-line code-line-33'><span style="color: #0a3069">      "20121227000000[-7:MST]*-17.99*42**Withdrawal",12/27/2012,"Withdrawal","WWW.RDIOCHARGE.COM 877-7346843 CA Date 12/26/12 900017146258 8699",-17.99, ,"122.02",,</span>
+</div><div class='code-line code-line-34'><span style="color: #0a3069">      ...</span>
+</div><div class='code-line code-line-35'>
+</div><div class='code-line code-line-36'><span style="color: #0a3069">    muchos bancos pueden exportar estos</span>
+</div><div class='code-line code-line-37'>
+</div><div class='code-line code-line-38'><span style="color: #0a3069">    después de usarlo el archivo se verá algo así</span>
+</div><div class='code-line code-line-39'>
+</div><div class='code-line code-line-40'><span style="color: #0a3069">      TRANSACTION_NUMBER,DATE,DESCRIPTION,MEMO,AMOUNT_DEBIT,AMOUNT_CREDIT,BALANCE,CHECK_NUMBER,FEES,CATEGORY</span>
+</div><div class='code-line code-line-41'><span style="color: #0a3069">      20121015000000[-7:MST]*-3.00*21**Transfer fee,10/15/2012,Transfer fee,"",-3.00,"",9.99,,,fee</span>
+</div><div class='code-line code-line-42'><span style="color: #0a3069">      ...</span>
+</div><div class='code-line code-line-43'>
+</div><div class='code-line code-line-44'><span style="color: #0a3069">    es decir, tendrá una columna CATEGORY y todas las filas categorizadas</span>
+</div><div class='code-line code-line-45'>
+</div><div class='code-line code-line-46'><span style="color: #0a3069">    realmente no le importan mucho los datos, necesitando solo un campo para</span>
+</div><div class='code-line code-line-47'><span style="color: #0a3069">    ordenar. por defecto, este es el campo 'Memo', pero el script realmente no</span>
+</div><div class='code-line code-line-48'><span style="color: #0a3069">    le importa si falta. además, puedes especificar el campo de orden con</span>
+</div><div class='code-line code-line-49'><span style="color: #0a3069">    '--sort' y probablemente querrás hacerlo porque el modo predeterminado recuerda</span>
+</div><div class='code-line code-line-50'><span style="color: #0a3069">    tu última selección y la proporciona como predeterminada mientras editas</span>
+</div><div class='code-line code-line-51'><span style="color: #0a3069">    categorías.</span>
+</div><div class='code-line code-line-52'>
+</div><div class='code-line code-line-53'><span style="color: #0a3069">    ten en cuenta que el script sobrescribe en el archivo de entrada de manera destructiva, así que haz una copia de seguridad si realmente te importa. bueno, lo hace, pero aun así, saber que sobrescribe para permitir continuar una sesión de edición.</span>
+</div><div class='code-line code-line-54'><span style="color: #0a3069">    para permitir continuar una sesión de edición.</span>
+</div><div class='code-line code-line-55'>
+</div><div class='code-line code-line-56'><span style="color: #953800">  __</span>
+</div><div class='code-line code-line-57'>
+</div><div class='code-line code-line-58'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">argument</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:transactions</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-59'>
+</div><div class='code-line code-line-60'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">option</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:continue</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:c</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-61'>
+</div><div class='code-line code-line-62'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">option</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:sort</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:s</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-63'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">default</span>&nbsp;<span style="color: #0a3069">'MEMO'</span>
+</div><div class='code-line code-line-64'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-65'>
+</div><div class='code-line code-line-66'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">option</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:categories</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-67'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">default</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">__</span>
+</div><div class='code-line code-line-68'>
+</div><div class='code-line code-line-69'><span style="color: #0a3069">      expense/client</span>
+</div><div class='code-line code-line-70'><span style="color: #0a3069">      expense/client/meals</span>
+</div><div class='code-line code-line-71'><span style="color: #0a3069">      expense/client/entertainment</span>
+</div><div class='code-line code-line-72'>
+</div><div class='code-line code-line-73'><span style="color: #0a3069">      expense/office</span>
+</div><div class='code-line code-line-74'><span style="color: #0a3069">      expense/office/internet</span>
+</div><div class='code-line code-line-75'><span style="color: #0a3069">      expense/office/phone</span>
+</div><div class='code-line code-line-76'><span style="color: #0a3069">      expense/office/supplies</span>
+</div><div class='code-line code-line-77'><span style="color: #0a3069">      expense/office/maintenance</span>
+</div><div class='code-line code-line-78'>
+</div><div class='code-line code-line-79'><span style="color: #0a3069">      expense/software</span>
+</div><div class='code-line code-line-80'><span style="color: #0a3069">      expense/software/service</span>
+</div><div class='code-line code-line-81'><span style="color: #0a3069">      expense/software/license</span>
+</div><div class='code-line code-line-82'>
+</div><div class='code-line code-line-83'><span style="color: #0a3069">      expense/hardware</span>
+</div><div class='code-line code-line-84'>
+</div><div class='code-line code-line-85'><span style="color: #0a3069">      income</span>
+</div><div class='code-line code-line-86'><span style="color: #0a3069">      payroll</span>
+</div><div class='code-line code-line-87'><span style="color: #0a3069">      transfer</span>
+</div><div class='code-line code-line-88'><span style="color: #0a3069">      loan</span>
+</div><div class='code-line code-line-89'><span style="color: #0a3069">      fee</span>
+</div><div class='code-line code-line-90'>
+</div><div class='code-line code-line-91'><span style="color: #0a3069">      beer</span>
+</div><div class='code-line code-line-92'>
+</div><div class='code-line code-line-93'><span style="color: #0a3069">      uncategorized</span>
+</div><div class='code-line code-line-94'><span style="color: #953800">    __</span>
+</div><div class='code-line code-line-95'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-96'>
+</div><div class='code-line code-line-97'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">run</span>
+</div><div class='code-line code-line-98'>&nbsp;&nbsp;<span style="color: #6e7781"># setup</span>
+</div><div class='code-line code-line-99'>&nbsp;&nbsp;<span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-100'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@categories</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Coerce</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">list_of_strings</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:categories</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">values</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-101'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@transactions</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:transactions</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">value</span>
+</div><div class='code-line code-line-102'>
+</div><div class='code-line code-line-103'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@fields</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[]</span>&nbsp;
+</div><div class='code-line code-line-104'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@rows</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[]</span>
+</div><div class='code-line code-line-105'>
+</div><div class='code-line code-line-106'>&nbsp;&nbsp;<span style="color: #6e7781"># parse the data and massage it a little</span>
+</div><div class='code-line code-line-107'>&nbsp;&nbsp;<span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-108'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">CSV</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">parse</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">IO</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">read</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@transactions</span><span style="color: #24292f;background-color: #f6f8fa">))</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-109'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">map</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cell</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">?</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">strip</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-110'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">next</span>&nbsp;<span style="color: #cf222e">unless</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">detect</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">value</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">value</span><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-111'>
+</div><div class='code-line code-line-112'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #0550ae">@fields</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">empty?</span>
+</div><div class='code-line code-line-113'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@fields</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">map</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">strip</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">upcase</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">gsub</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #116329">/\s+/</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'_'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-114'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@fields</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">push</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'CATEGORY'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">unless</span>&nbsp;<span style="color: #0550ae">@fields</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">include?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'CATEGORY'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-115'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">else</span>
+</div><div class='code-line code-line-116'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">map</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cell</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">?</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">strip</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cell</span><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-117'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">fields</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">@fields</span>
+</div><div class='code-line code-line-118'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@rows</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">push</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-119'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-120'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-121'>
+</div><div class='code-line code-line-122'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">sort_key</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:sort</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">value</span>
+</div><div class='code-line code-line-123'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@rows</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">sort!</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">a</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">b</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">a</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">sort_key</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">&lt;=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">b</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">sort_key</span><span style="color: #24292f;background-color: #f6f8fa">]}</span>
+</div><div class='code-line code-line-124'>
+</div><div class='code-line code-line-125'>&nbsp;&nbsp;<span style="color: #6e7781"># auto-save on exit magic-ness-ish</span>
+</div><div class='code-line code-line-126'>&nbsp;&nbsp;<span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-127'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">save</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">proc</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-128'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-129'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">buf</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">CSV</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">generate</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">csv</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">csv</span>&nbsp;<span style="color: #0550ae">&lt;&lt;</span>&nbsp;<span style="color: #0550ae">@fields</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #0550ae">@rows</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">each</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">csv</span>&nbsp;<span style="color: #0550ae">&lt;&lt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">row</span><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-130'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">open</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">"</span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #0550ae">@transactions</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069">.tmp"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"wb+"</span><span style="color: #24292f;background-color: #f6f8fa">){</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">fd</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">fd</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">write</span><span style="color: #

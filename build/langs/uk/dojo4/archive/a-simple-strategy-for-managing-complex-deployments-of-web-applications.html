@@ -1,0 +1,112 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Проста стратегія для управління складними розгортаннями веб-застосунків</title>
+
+    <meta property="og:title" content="Проста стратегія для управління складними розгортаннями веб-застосунків"/>
+    <meta property="og:description" content="Продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"a-simple-strategy-for-managing-complex-deployments-of-web-applications"}">
+    <meta property="site:path_info" content=""/a-simple-strategy-for-managing-complex-deployments-of-web-applications"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Розгортання веб-застосунків складні з самого початку. Часто починається принаймні зі стадії тестування та виробництва. Додайте до цього багатокористувацьку роботу, налаштування для інтеграції сторонніх сервісів, таких як автентифікація через Facebook або Salesforce, налаштування для хмарного сховища та мереж розподілу контенту, середовища безперервної інтеграції, багатоклієнтське темування, налаштування SSL, налаштування віртуальних хостів, налаштування процесів збірки для фронтендів на js, налаштування фонових завдань, налаштування обробки завантажень, список можна продовжувати… комбінаторна експлозія.</p>
+
+        <p>У dojo4 у нас є веб-стек на основі Rails, і ми використовуємо Capistrano Multistage для розгортання на вузлах AWS EC2. Ми знайшли просту стратегію для управління великою різноманітністю конфігураційних та розгортальних вимог, з якими ми стикаємося у наших клієнтів. Стратегія передбачає використання rake-завдання, яке використовує змінну середовища RAILS_STAGE на основі етапу Capistrano Multistage. Ми налаштовуємо структуру файлів для специфічних конфігурацій розгортання у repo_root/config/deploy/files/RAILS_STAGE, яка структурована ідентично до файлової системи вихідного репозиторію. Під час cap deploy, перед поточним символічним посиланням або процесами збірки, rake-завдання рекурсивно копіює repo_root/config/deploy/files/RAILS_STAGE у repo_root.</p>
+
+        <p>Ми виявили, що ця стратегія дуже ефективно допомагає утримувати складні конфігурації розгортання в чистому порядку, який легко зрозуміти і не додає багато додаткової складності до вже складної архітектури.</p>
+
+        <p>Gist нижче демонструє цю ідею. Спочатку це завдання використовувало різні бібліотеки Rails. Однак мені вдалося виділити залежності Rails, зберігши функціональність завдання, щоб ви могли використовувати його з будь-яким стеком застосунків.</p>
+
+        <p><br /></p>
+
+        <script src="https://gist.github.com/3286971.js?file=jobs.rb"></script>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; перейти</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

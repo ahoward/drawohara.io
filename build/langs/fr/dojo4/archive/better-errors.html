@@ -1,0 +1,107 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Meilleures erreurs</title>
+
+    <meta property="og:title" content="Meilleures erreurs"/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"better-errors"}">
+    <meta property="site:path_info" content="/better-errors">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>L'un des gems rails que nous avons utilisé dans nos nouvelles applications est <a href="https://github.com/charliesome/better_errors">Better Errors</a>, qui permet d'être déposé dans un REPL de type pry et une page d'erreur plus agréable lorsque rails lève une exception pendant le processus de requête du navigateur.</p>
+
+        <p><img src='/ro/dojo4/better-errors/assets/b.png' alt="" /> <br />
+        <em>(<a href="https://github.com/charliesome/better_errors">Source de l'image</a>)</em></p>
+
+        <p>Cela est utile pour nos développeurs car au lieu d'obtenir une page d'erreur statique, d'aller chercher dans le code où placer un <code>binding.pry</code>, et de réexécuter le code sujet aux erreurs, Better Errors charge une page où nous pouvons interagir avec le code immédiatement, nous permettant de trouver le problème plus rapidement, d'écrire une correction plus rapidement, et d'itérer plus rapidement.</p>
+
+        <p>L'une des fonctionnalités récentes que nous venons de découvrir est la possibilité de voir la dernière erreur rpc. Nous avons un schéma d'appel ajax d'une méthode rpc dans notre application rails lorsque nous devons simplement obtenir des informations ou poster un objet simple comme favoriser un utilisateur ou autre chose. Le code qui s'exécute sur notre serveur rails et qui gère cette requête ajax ne fera pas exploser tout le serveur et n'invoquera pas automatiquement Better Errors, donc la solution consiste à aller à une URL spéciale que better errors expose pour afficher la dernière erreur lancée dans notre code rails : http://localhost:3000/__better_errors.</p>
+
+        <p>Quelqu'un d'autre a-t-il utilisé cet outil ? Quelles sont les choses que vous aimez/n'aimez pas à ce sujet ? J'adore toujours entendre des retours via Twitter (cliquez ci-dessous).</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/better-errors">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/better-errors">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

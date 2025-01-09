@@ -1,0 +1,134 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <base href='/fr' />
+
+  <!-- meta -->
+    <title>Le Moment de Zen d'Aujourd'hui</title>
+
+<meta property="og:title" content="Le Moment de Zen d'Aujourd'hui"/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"today-s-moment-of-zen"}">
+    <meta property="site:path_info" content=""/today-s-moment-of-zen"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h1 id="todays-moment-of-zen">Le Moment de Zen d'Aujourd'hui</h1>
+
+<p>D'une manière ou d'une autre, tous les articles de <a href="http://research.microsoft.com/fr-fr/people/mickens/">James Mickens</a> se retrouvent dans <a href="https://twitter.com/copiousfreetime">mon flux Twitter</a>. C'est un moment très agréable quand cela arrive.</p>
+
+<p>Cette édition, <a href="https://www.usenix.org/system/files/1403_02-08_mickens.pdf">To Wash It All Away</a>, ne déçoit pas.</p>
+
+<p>La perle que j'ai apprise aujourd'hui sur JavaScript de la part de James.</p>
+
+<blockquote>
+  <p>“\r\n\t” == false</p>
+</blockquote>
+
+<p>WTF? J'ai dû essayer.</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;node
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&gt;</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">\r\n\t</span><span style="color: #0a3069">"</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #953800">false</span>
+</div><div class='code-line code-line-4'><span style="color: #953800">    true</span>
+</div><div class='code-line code-line-5'>
+</div></code></div>
+
+<p>Et bien sûr, l'explication de James:</p>
+
+<blockquote>
+  <p>Voici pourquoi : le navigateur détecte que les deux opérandes ont des types différents, il convertit donc false en 0 et retente la comparaison. Les opérandes ont toujours des types différents (chaîne de caractères et nombre), donc le navigateur force “\r\n\t” à devenir le nombre 0, car d'une manière ou d'une autre, un nombre non nul de caractères est égal à 0. Voilà—0 égale 0! GÉNIAL. Cette explication était comme l'intrigue d'Inception, mais l'idée implantée était « la justesse de votre programme a été forcée à false ».</p>
+</blockquote>
+
+<p>Vraiment, je devais juste partager.</p>
+
+<p>P.S. <a href="https://www.destroyallsoftware.com/talks/wat">WAT</a></p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">à propos<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/today-s-moment-of-zen">je-déteste-cela<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/today-s-moment-of-zen">j-adore-cela<a>
+  </li>
+  <li>
+    <a href="/contact">contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Stringiti!</title>
+
+    <meta property="og:title" content="Stringiti!"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'stringiti'}">
+    <meta property="site:path_info" content="/stringiti">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Brrr! Ieri sera il vento è scivolato giù dalle Flatirons come una valanga e si è schiantato nelle case ranch di Boulder, che hanno problemi di isolamento. Addio, estate indiana; benvenuto, inverno gelido.</p>
+      <a href="http://www.flickr.com/photos/michaelbuck/310303516/" title="CU Neve di Michael Buck, su Flickr"><img src="http://farm1.static.flickr.com/114/310303516_460245c202.jpg" width="500" height="375" alt="CU Neve" /></a>
+      <p>Non è facile tenere fuori il freddo da queste vecchie case. Tutto il silicone del mondo non aiuterà se il solaio non ha abbastanza isolamento. E poi ci sono le nuove finestre, una nuova caldaia e termostato, l'isolamento delle tubature, l'isolamento dello scaldabagno, l'isolamento delle pareti, l'isolamento del pavimento, l'isolamento dell'isolamento e così via.</p>
+      <p>Le persone di <a href="http://snugghome.com" title="http://snugghome.com">Snugg Home</a> (anche profilate nei nostri <a href="http://dojo4.com/clients/snugg-home" title="http://dojo4.com/clients/snugg-home">studi di caso</a>) stanno rendendo tutto più facile, però. I miglioramenti domestici che riducono il consumo di energia sono spesso soggetti a incentivi a livello locale, statale e federale. Ma è <em>difficile</em> capirlo nel cuore dell'inverno quando si fatica a usare la tastiera perché le dita sono blu per il freddo.</p>
+      <p>Snugg Home ha collaborato con diversi governi locali per sbrogliare la matassa di rimborsi, incentivi, vendite e così via che aiutano le persone a fare miglioramenti di efficienza alle loro case. Con il loro aiuto, i proprietari di case in tutto il paese stanno scoprendo nuovi modi per aiutare le loro famiglie e ridurre la loro impronta di carbonio con aggiornamenti intelligenti.</p>
+      <p>Il valore di questa utilità è riflesso nel successo di Snugg Home. Hanno trasformato la loro idea in una startup molto robusta con entrate impressionanti e prospettive entusiasmanti. In questo momento stanno cercando un piccolo gruppo di partner che vogliono unirsi a loro nella prossima fase della loro evoluzione. Puoi saperne di più dal video qui sotto, o <a href="http://www.snugghome.com/contact-us/" title="http://www.snugghome.com/contact-us/">contattando Adam a Snugg Home</a>.</p>
+      <figure>
+        <div class="flex-video vimeo">
+          <iframe src="http://player.vimeo.com/video/31414422?title=0&byline=0&portrait=0" width="400" height="350" frameborder="0"></iframe>
+        </div>
+        <figcaption><a href="http://vimeo.com/31414422">Panoramica di Snugg Home</a> di <a href="http://vimeo.com/user3824926">Snugg Home</a> su <a href="http://vimeo.com">Vimeo</a>.</figcaption>
+      </figure>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/stringiti">odio-questo<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/stringiti">amo-questo<a>
+          </li>
+          <li>
+            <a href="/contact">contatti<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

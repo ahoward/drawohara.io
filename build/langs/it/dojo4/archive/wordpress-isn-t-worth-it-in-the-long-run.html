@@ -1,0 +1,116 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>WordPress Non Vale la Pena a Lungo Termine</title>
+
+    <meta property="og:title" content="WordPress Non Vale la Pena a Lungo Termine"/>
+    <meta property="og:description" content="proseguire." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"wordpress-isn-t-worth-it-in-the-long-run"}">
+    <meta property="site:path_info" content=""/wordpress-isn-t-worth-it-in-the-long-run"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Uno dei nostri clienti preferiti, <a href="http://gnip.com">Gnip</a> (recentemente <a href="https://blog.gnip.com/gnip-twitter-join-forces/">acquisito da Twitter</a>), si affida a noi per tutto il loro marketing e design di siti web, inclusi <a href="http://gnip.com">gnip.com</a>, <a href="https://blog.gnip.com">blog.gnip.com</a>, e <a href="https://engineering.gnip.com">engineering.gnip.com</a>.</p>
+
+        <p>I loro due blog sono istanze di WordPress (resti di un'eredità pre-dojo4) che non sembravano mai valere lo sforzo di migrare fuori da WordPress in quel momento.</p>
+
+        <p><a href="http://gnip.com">Gnip.com</a>, tuttavia, è un sito web completamente statico costruito con Middleman e ospitato su S3 e CloudFront. Abbiamo fatto questa raccomandazione dopo aver costruito e ospitato un'applicazione Rails completa per il loro sito e aver notato che il loro sito sarebbe stato un candidato perfetto per un semplice sito statico. I fattori che ci hanno fatto capire ciò sono gli stessi di qualsiasi altro sito statico: nessun account utente, velocità e tempi di attività sono la massima priorità, e così pochi aggiornamenti che un'interfaccia di amministrazione è eccessiva (anche se con il nostro sito statico, dojo4.com, abbiamo costruito <a href="http://dojo4.com/blog/static-is-the-new-black">un webhook per ascoltare la pubblicazione di post del blog</a>).</p>
+
+        <p>Avevamo una domanda interessante però - dal momento che stiamo addestrando il team di marketing su come usare questo sito web, non sviluppatori, che tipo di reazioni avrebbero avuto nell'esperienza sia del lato amministrativo pesante di WordPress (per i loro blog) rispetto all'aggiornamento del codice nel sito Middleman (per gnip.com) e al deployment tramite riga di comando?</p>
+
+        <p>Si scopre che amano la configurazione di Middleman e avrebbero voluto che avessimo spostato i loro blog su Middleman invece di WordPress anni fa.</p>
+
+        <p>WordPress ha una funzione - un'interfaccia per redigere e pubblicare contenuti che le persone conoscono. Ignorando il <a href="http://dojo4.com/blog/irish-dance-and-wordpress-the-soul-destroyer">turbolento emotivo</a> di WordPress per un secondo, il costo e lo sforzo di manutenzione per un sito WordPress sono sorprendenti per un'azienda di medie o grandi dimensioni.</p>
+
+        <p>I plugin sembrano una buona scorciatoia per aggiungere funzionalità al tuo sito fino a quando non devi modificarne o aggiornarne uno perché non è stato aggiornato in 2 anni. Quando Gnip è stato acquisito da Twitter, il team di sicurezza di Twitter voleva che i blog garantissero che tutto il contenuto fosse su HTTPS. È una richiesta semplice, ma quando hai 25 plugin WordPress che includono le proprie risorse, molte delle quali non supportano nemmeno HTTPS, è un mal di testa mostruoso. Mentre con il nostro approccio statico, Middleman, facciamo una rapida ricerca e sostituzione nel codice (e fin dall'inizio, utilizzando solo risorse locali o quelle di fonti affidabili che supportano HTTPS, come Google), deploy, e abbiamo finito.</p>
+
+        <p>Quando ti prendi il tempo di aiutare le persone a imparare semplici abilità come HTML, CSS e Javascript (che sono competenze quasi obbligatorie da imparare se sei coinvolto nella tecnologia in qualsiasi modo - indipendentemente dal tuo titolo di lavoro), gli svantaggi di WordPress diventano molto più di quanto sia accettabile quando c'è un'opzione così semplice e potente nei contenuti web statici e nell'hosting.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/wordpress-isn-t-worth-it-in-the-long-run">non-mi-piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/wordpress-isn-t-worth-it-in-the-long-run">mi-piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

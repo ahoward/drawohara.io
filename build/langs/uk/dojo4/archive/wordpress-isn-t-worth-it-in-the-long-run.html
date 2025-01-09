@@ -1,0 +1,117 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+  <!-- meta -->
+    <title>WordPress Не Вартий У Довгостроковій Перспективі</title>
+
+<meta property="og:title" content="WordPress Не Вартий У Довгостроковій Перспективі"/>
+<meta property="og:description" content="переходьте далі." />
+<meta property="og:image" content="https://drawohara.io/uk/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'wordpress-isn-t-worth-it-in-the-long-run'}">
+    <meta property="site:path_info" content="/uk/wordpress-isn-t-worth-it-in-the-long-run">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/uk' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Один з наших улюблених клієнтів, <a href="http://gnip.com">Gnip</a> (щойно <a href="https://blog.gnip.com/gnip-twitter-join-forces/">придбаний Twitter</a>), покладається на нас для всього їх маркетингового дизайну та веб-сайтів, включаючи <a href="http://gnip.com">gnip.com</a>, <a href="https://blog.gnip.com">blog.gnip.com</a> та <a href="https://engineering.gnip.com">engineering.gnip.com</a>.</p>
+
+<p>Їхні два блоги є інстансами WordPress (залишки до-dojo4 спадщини), які ніколи не здавалися вартими зусиль для міграції з WordPress на той час.</p>
+
+<p><a href="http://gnip.com">Gnip.com</a> однак є повністю статичним веб-сайтом, побудованим за допомогою Middleman та розміщеним на S3 та CloudFront. Ми зробили цю рекомендацію після побудови та хостингу повноцінного додатку Rails для їхнього сайту та помітивши, що їхній сайт був би ідеальним кандидатом для простого статичного сайту. Чинунки, які підказали нам це, такі самі, як і для будь-якого іншого статичного сайту: немає облікових записів користувачів, швидкість та час роботи мають найвищий пріоритет, і так мало оновлень, що адміністративний інтерфейс є надмірним (хоча з нашим статичним сайтом dojo4.com ми побудували <a href="http://dojo4.com/blog/static-is-the-new-black">веб-хів для прослуховування публікацій блогу</a>).</p>
+
+<p>У нас була одна цікава запитання - оскільки ми навчаємо маркетингову команду, як користуватися цим веб-сайтом, а не розробники, яке відчуття вони матимуть, коли порівняють адміністративно-інтенсивний бік WordPress (для їхніх блогів) з оновленням коду на сайті Middleman (для gnip.com) та розгортанням через командний рядок?</p>
+
+<p>Виявляється, вони люблять налаштування Middleman і бажають, щоб ми перевели їхні блоги на Middleman замість WordPress роками тому.</p>
+
+<p>WordPress має одну функцію - інтерфейс для створення та публікації контенту, з яким люди знайомі. Ігноруючи <a href="http://dojo4.com/blog/irish-dance-and-wordpress-the-soul-destroyer">емоційний хаос</a> WordPress на мить, вартість обслуговування та зусиль для сайту WordPress є вражаючими для компанії середнього або великого розміру.</p>
+
+<p>Плагіни здаються хорошим шляхом додавання функціональності до вашого сайту, поки вам не потрібно модифікувати або оновити один, тому що його не оновлювали два роки. Коли Gnip був придбаний Twitter, команда безпеки Twitter хотіла, щоб блоги забезпечували, що весь вміст був через HTTPS. Це просте запитання, але коли у вас є 25 плагінів WordPress, які включають власні ресурси, багато з яких навіть не підтримують HTTPS, це справжній кошмар. Тоді як з нашим статичним підходом Middleman, ми виконуємо швидкий пошук та заміну в коді (і з самого початку використовуємо лише локальні ресурси або ті, що з надійних джерел, які підтримують HTTPS, як Google), розгортаємо та закінчуємо.</p>
+
+<p>Коли ви витрачаєте час, щоб допомогти людям навчитися простим навичкам, таким як HTML, CSS та Javascript (які є майже обов'язковими навичками, якщо ви залучені до технологій взагалі, незалежно від вашої посади), недоліки WordPress стають набагато більшими, ніж прийнятно, коли існує така проста та потужна опція, як статичний веб-вміст та хостинг.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/uk/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/uk/wordpress-isn-t-worth-it-in-the-long-run">не-подобається<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/uk/wordpress-isn-t-worth-it-in-the-long-run">подобається<a>
+  </li>
+  <li>
+    <a href="/uk/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/uk">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

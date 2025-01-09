@@ -1,0 +1,114 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Håll er borta från mitt fönstertitel!</title>
+
+<meta property="og:title" content="Håll er borta från mitt fönstertitel!"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"hands-off-my-window-title"}">
+    <meta property="site:path_info" content=""/hands-off-my-window-title"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Så jag ssh'ade nyligen in på en ny glänsande Ubuntu 11.10-server på EC2 och märkte några nya saker. För det första verkar Ubuntu ha aktiverat konfigurationen av terminalmultiplexern <a href="https://help.ubuntu.com/11.10/serverguide/C/byobu.html">byobu</a> som standard. Det här verkar potentiellt användbart, men precis som <a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh</a> känner jag mig inte motiverad att fumla med det just nu. Det är lätt att inaktivera byobu med ett snabbt <code>byobu-disable</code>, vilket, något överraskande, fullständigt avslutar ditt skal, loggar ut dig och stänger ditt ssh-session. Men nästa gång får du ett normalt skal i stället för en byobu/screen-session.</p>
+
+<p>Nu är något jag märkte och slutligen blev motiverad att "forska" (och med det menar jag fråga smartare personer på twitter) och åtgärda var att när jag anslöt via ssh, ändrades fönstertiteln i min iTerm2-flik dynamiskt från vad jag noga hade ställt in den till ("tillgångspipeline") till den oerhört oanvändbara "ubuntu@ip-10-11-12-13". I vissa icke-molnsituationer där servern har ett meningsfullt värdnamn, skulle detta kunna vara användbart, men att skilja åtskilliga servrar efter deras interna EC2-IP är inte attraherande för mig. Den inledande forskningen pekade på mina <code>PROMPT</code> eller <code>PROMPT_COMMAND</code> miljövariabler, men ingen av dem var inställda. Jag läste igenom <a href="http://www.ibm.com/developerworks/linux/library/l-tip-prompt/">den här DeveloperWorks-artikeln</a> och hittade den ansvariga koden i <code>~/.bashrc</code>-filen. Här är det gärningsmannaufddraget.</p>
+
+<pre><code># Om detta är en xterm ställ in titeln till user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+</code>
+</pre>
+
+<p>Så du kan kommentera bort den raden som ändrar <code>PS1</code> om du föredrar din egen manuellt inställda fönstertitel.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/hands-off-my-window-title">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

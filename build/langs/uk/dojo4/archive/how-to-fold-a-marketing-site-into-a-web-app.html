@@ -1,0 +1,123 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Як інтегрувати маркетинговий сайт у веб-додаток</title>
+
+    <meta property="og:title" content="Як інтегрувати маркетинговий сайт у веб-додаток"/>
+    <meta property="og:description" content="переміщайся." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"how-to-fold-a-marketing-site-into-a-web-app"}">
+    <meta property="site:path_info" content=""/how-to-fold-a-marketing-site-into-a-web-app"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="cf">
+
+        <figure class="pal lightestgrayBg mbl mrl">
+          <img src='/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-before-after.png' style="max-width: 100%;" title="Inspirepay Before After" alt="Inspirepay Before After" />
+          <figcaption class="mtm fontItalic" style="text-align:center;">Головна сторінка InspirePay до та після перевтілення</figcaption>
+        </figure>
+
+        <p>Невдовзі після випуску нової версії <a href="https://inspirepay.com" title="https://inspirepay.com">InspirePay</a>, генеральний директор Марк Фішер вирішив, що настав час інтегрувати свій маркетинговий сайт з новим веб-додатком та оновити зовнішній вигляд і вміст маркетингового сайту.</p>
+        <p>Марк залучив допомогу Джоанни Віб з <a href="http://Copyhackers.com" title="http://Copyhackers.com">Copyhackers.com</a>, щоб розповісти історію InspirePay, та попросив dojo4 спроєктувати та створити новий сайт.</p>
+
+        <p>З точки зору вмісту, об'єднання означало, що одна головна сторінка повинна була виконувати подвійну роботу: <em>знайомити клієнтів з продуктом</em> та <em>знайомити користувачів з додатком</em>. Джоанна та Марк спочатку працювали над тим, щоб зробити вміст маркетингового сайту частиною головної сторінки веб-додатку, використовуючи макети, щоб розмістити вміст у окремі блоки. Їхній чіткий текст пояснює, як легко людям використовувати InspirePay для початку прийому платежів.</p>
+
+        <p>Далі,&#160;<a href="/#anthony" target="_blank">Ентоні Дімітре</a>, резидент-дизайнер у dojo4, перетворив карту вмісту в елегантну, добре спроєктовану веб-сторінку:</p>
+
+        <figure class="pal lightestgrayBg mvl mrl">
+          <img src='/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-new-design.png' title="Inspirepay New Design" alt="Inspirepay New Design" style="max-width: 100%;" />
+          <figcaption class="mtm fontItalic" style="text-align:center;">Перероблена сторінка описує продукт та інструктує користувача</figcaption>
+        </figure>
+
+        <p>З макетами сторінок в руках ми перейшли до реалізації. В цьому випадку це означало заміну ізольованого екземпляра WordPress статичними сторінками в самому додатку. Обслуговування маркетингового вмісту з того ж контейнера, що і додаток для обробки платежів InspirePay, вимагало від dojo4 забезпечити безпечну передачу всіх ресурсів та сторонніх вбудовувань через https. Ми також інтегрували аутентифікацію додатка у статичну сторінку.</p>
+        <p>Тепер з однієї головної сторінки відвідувачі можуть дізнатися про продукт, зрозуміти, як він працює, і зареєструватися для його використання. Одне місце для всіх потреб!</p>
+
+        <p>Переконайтеся самі: <a href="https://inspirepay.com" target="_blank">https://inspirepay.com</a>.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/how-to-fold-a-marketing-site-into-a-web-app">не подобається<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/how-to-fold-a-marketing-site-into-a-web-app">подобається<a>
+          </li>
+          <li>
+            <a href="/contact">контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

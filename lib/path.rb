@@ -51,7 +51,7 @@ class Path < ::String
     'exist?'     => 'exist?',
     'file?'      => 'file?',
     'directory?' => 'directory?',
-    'absolute?'  => 'directory?',
+    'absolute?'  => 'absolute?',
     'relative?'  => 'relative?',
     'expand'     => 'expand_path',
     'clean'      => 'cleanpath'
@@ -231,5 +231,30 @@ class Path < ::String
 
   def stat
     File.stat(self)
+  end
+
+  def slashed?
+    index('/')
+  end
+
+  def root
+    root = Path.new(parts[0])
+
+    if slashed?
+      absolute? ? root.absolute : root
+    else
+      root
+    end
+  end
+  alias top root
+
+  def branch
+    parts.size > 1 ? Path.for(parts[1..-1]) : self
+  end
+  alias bottom branch
+
+  def delete!(force: false, recursive: false)
+    strategy = recursive ? 'rm_rf' : force ? 'rm_f' : 'rm'
+    FileUtils.send(strategy, self)
   end
 end

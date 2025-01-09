@@ -1,0 +1,104 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>CSS3 Horisontella Linjer</title>
+
+<meta property="og:title" content="CSS3 Horisontella Linjer"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/sv/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"css3-horizontal-rules"}">
+    <meta property="site:path_info" content=""/css3-horizontal-rules"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Nyligen hittade jag mig själv designa stilar för "korta berättelser"-inlägg på min personliga webbplats, som jag bestämde mig för att omstrukturera, från WordPress till Octopress och GitHub—inlägg om den upplevelsen kommer snart!</p>
+<p>I alla fall tenderar korta berättelser att bli långa (som blogginlägg gör), så jag ville ge författarna ett enkelt sätt att inkludera betonade, semantiska avsnittsbrytningar. Den enkla horisontella linjen <code>&lt;hr&gt;</code> verkade vara den rätta lösningen, särskilt eftersom <a href="http://daringfireball.net/projects/markdown/syntax" class="darkTxt" target="_blank">Markdown</a> gör dem så enkla att inkludera&mdash;bara lägg till <code>***</code> på en ny rad.</p>
+<p>De flesta webbläsare återger <code>&lt;hr&gt;</code>-taggen som en insatt kant&mdash;i princip en mörk linje staplad ovanpå en ljusare linje. Men det är lika spännande som en av <a href="/#Ara" class="darkTxt" target="_blank">Aras</a> två timmar långa föreläsningar om historien och fördelarna med wind-briefs i landsbygden i Alaska.</p>
+<p>Så, jag letade på nätet efter sexigare lösningar och kom över en alltför bekant webbplats: <a href="http://css-tricks.com/simple-styles-for-horizontal-rules/" class="darkTxt" target="_blank">Chris Coyiers CSS Tricks</a>.</p>
+<p>En varning: eftersom dessa stilar använder <code>:after</code> och <code>:before</code> pseudo-element selektorer, gör IE7 och tidigare versioner inte ett bra jobb med att rendera dem. Därför kanske du måste tillbringa lite tid med att fumla med IE-specifika stilar. Eller så kan du välja att göra något mer värdefullt med din tid.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/css3-horizontal-rules">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/css3-horizontal-rules">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakta<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Errori Migliori</title>
+
+    <meta property="og:title" content="Errori Migliori"/>
+    <meta property="og:description" content="proseguire." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'errori-migliori'}">
+    <meta property="site:path_info" content="/errori-migliori">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Uno dei gem di rails che abbiamo utilizzato nelle nostre nuove app è <a href="https://github.com/charliesome/better_errors">Better Errors</a>, che permette di essere inseriti in una REPL simile a pry e in una pagina di errore più gradevole quando rails solleva un'eccezione durante il processo di richiesta del browser.</p>
+
+        <p><img src='/ro/dojo4/better-errors/assets/b.png' alt="" /> <br />
+        <em>(<a href="https://github.com/charliesome/better_errors">Fonte dell'immagine</a>)</em></p>
+
+        <p>Questo è utile per i nostri sviluppatori perché, invece di ottenere una pagina di errore statica, cercare nel codice dove inserire un <code>binding.pry</code> e ri-eseguire il codice soggetto a errori, Better Errors carica una pagina in cui possiamo interagire con il codice direttamente, permettendoci di trovare il problema più velocemente, scrivere una correzione più velocemente e iterare più velocemente.</p>
+
+        <p>Una delle ultime funzionalità che abbiamo scoperto è la possibilità di visualizzare l'ultimo errore rpc. Abbiamo uno schema di chiamata ajax a un metodo rpc nella nostra app rails quando abbiamo solo bisogno di ottenere alcune informazioni o inviare un oggetto semplice come mettere mi piace a un utente o qualcosa del genere. Il codice che viene eseguito sul nostro server rails che gestisce quella richiesta ajax non farà esplodere l'intero server e non attiverà automaticamente Better Errors, quindi la soluzione è andare a un URL speciale che better errors espone per mostrare l'ultimo errore lanciato nel nostro codice rails: http://localhost:3000/__better_errors.</p>
+
+        <p>Qualcun altro ha usato questo strumento? Cosa ne pensate? Ci piace sempre ricevere feedback via twitter (cliccate sotto).</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/errori-migliori">non-mi-piace<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/errori-migliori">mi-piace<a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

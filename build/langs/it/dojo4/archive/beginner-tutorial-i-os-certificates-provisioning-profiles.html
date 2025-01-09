@@ -1,0 +1,145 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! 'Tutorial per Principianti: Certificati iOS & Profili di Provisioning'</title>
+
+    <meta property="og:title" content="! 'Tutorial per Principianti: Certificati iOS & Profili di Provisioning'" />
+    <meta property="og:description" content="prosegui." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"beginner-tutorial-i-os-certificates-provisioning-profiles"}">
+    <meta property="site:path_info" content=""/beginner-tutorial-i-os-certificates-provisioning-profiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Per un nuovo sviluppatore iOS, possono essere davvero confusi. Hai un'app che vuoi semplicemente che altre persone possano testare sul loro dispositivo, e vieni indirizzato al portale degli sviluppatori Apple con certificati, dispositivi e profili di provisioning. Prima che il tuo corpo vada in shock, leggi il resto di questo post per una semplice spiegazione di tutto.</p>
+
+        <p><img src="https://draftin.com:443/images/2623?token=JlOjG8C7kRhUxTp9Bba_TPBP4jRCn0dL-2ugH03kEATD52BLmxZYEnY4Vynx55mzHS9ub3I5QR29W1MVWjkBA0k" alt="" /></p>
+
+        <p>La combinazione di certificati, dispositivi e profili di provisioning è la risposta di Apple a alcune domande difficili:</p>
+
+        <p>D: Come puoi garantire che l'app che stai scaricando non sia stata modificata da qualche hacker e che provenga effettivamente dallo sviluppatore/azienda che dice di provenire?</p>
+
+        <p>R: <strong>Certificati.</strong> Hai mai imparato qualcosa sull'email crittografata PGP? Quel business in cui c'è una chiave pubblica e una chiave privata? È quello che succede qui, tranne che sei astratto dal doverti preoccupare di questo grazie all'app Mac "Accesso Portachiavi". Quando aggiungi un nuovo certificato nel portale e segui le istruzioni per utilizzare "Accesso Portachiavi" per caricare una richiesta di certificato, "Accesso Portachiavi" utilizza la tua chiave privata per creare una chiave pubblica, che viene poi incorporata nella richiesta di certificato che viene inviata ad Apple. Apple ti restituisce un certificato che poi metti nel tuo portachiavi (ora puoi scaricarlo e aggiungerlo automaticamente tramite Xcode).</p>
+
+        <p><em>(Aggiornamento: sembra che tu possa far gestire i tuoi certificati/ "Identità di firma" a Xcode anche nelle preferenze.)</em></p>
+
+        <p><img src="https://draftin.com:443/images/2624?token=w3b1zrNeBBqC2WRMbEvt7BKrWA0U5A_FhTLXE9Uvex6mYA5pxwSfYG5M1GGWhYd0TkzxxiD8UUIyN7GA34d8NHQ" alt="" /></p>
+
+        <p>Nota che ci sono anche certificati diversi per diversi scenari. I certificati di sviluppo vengono utilizzati quando stai semplicemente cercando di far funzionare un'app qualsiasi (app id: *) e stai sviluppando localmente e sul tuo dispositivo di sviluppo collegato al tuo computer. Un certificato AdHoc viene utilizzato quando desideri consentire a pochi tester di installare la tua app sul loro dispositivo prima del rilascio pubblico sull'AppStore. I certificati AppStore e AdHoc sono collegati a un'app specifica (app id), e di solito utilizzano il certificato di un'organizzazione, poiché il certificato è il modo in cui Apple sa cosa mostrare nella riga "Sviluppato da" nell'elenco dell'App Store.</p>
+
+        <p>D: Come possiamo consentire a un gruppo di tester di installare l'app sul loro telefono e provarla prima di rilasciarla al mondo intero tramite l'App Store?</p>
+
+        <p>R: <strong>Dispositivi e profili di provisioning.</strong> Apple consente ai suoi utenti di installare app solo tramite l'App Store. Ma quando sei uno sviluppatore e vuoi che alcune persone la provino prima che vada sull'App Store, devi utilizzare profili di provisioning e dispositivi.</p>
+
+        <p>Innanzitutto, fai in modo che qualcuno ti dia il suo UUID del dispositivo (identificatore univoco universale), che di solito viene fatto tramite un servizio come <a href="http://www.testflight.com">Testflight</a> o <a href="http://hockeyapp.net/">HockeyApp</a> dove una persona può iscriversi per essere uno dei tuoi tester e il servizio ti invierà automaticamente via email il loro UUID. Per impedirti di aggirare l'App Store, Apple ti limita ad aggiungere solo 100 dispositivi in un anno al tuo account di sviluppatore iOS.</p>
+
+        <p><img src="https://draftin.com:443/images/2625?token=vjMPdsPjLmPKBD1DOANNeAD_QkMIQO7y8jE7HvP0sZCej5dwCQjQYVwVdReo7bJE6iZX53ZFBOeVrd5jtElccdU" alt="" /></p>
+
+        <p>Poi crei un profilo di provisioning. Ogni profilo di provisioning incorpora un certificato per firmare l'app in modo sicuro da parte di una persona/organizzazione specifica. I profili di provisioning dichiarano anche chi è in grado di installare la build dell'app. Nel caso di un profilo di provisioning dell'App Store, sta dicendo che quella build dell'app può essere installata da chiunque purché venga scaricata tramite l'App Store.</p>
+
+        <p><img src="https://draftin.com:443/images/2626?token=9C_AJjhMWZQw2pe-0cdxMSUfRssZ-8gogKWU21qGyDaXl7G41hC7-eD8eCQ6rjq6oUtrZqdN_Yo-LvXyI13txqg" alt="" /></p>
+
+        <p>Quando stai coinvolgendo alcuni tester, vorrai utilizzare un profilo di provisioning Ad Hoc (e certificato). Nella schermata "Modifica" del profilo di provisioning, sarai in grado di selezionare uno qualsiasi dei dispositivi elencati in "Dispositivi" nel tuo portale degli sviluppatori. Spunta la casella accanto a quelli che desideri includere (Nota: puoi sempre spuntare o deselezionare di più o di meno in seguito).</p>
+
+        <p>Genera questo profilo, scaricalo manualmente o tramite le preferenze di Xcode, selezionalo quando archivi la tua app, e poi potrai caricare quel file .ipa su un servizio come Testflight per consentire ai tuoi tester di installarlo.</p>
+
+        <p>Alcune immagini guida aggiuntive:</p>
+
+        <ul>
+          <li>Far scaricare automaticamente a Xcode i profili di provisioning e i certificati per te:</li>
+        </ul>
+
+        <p><img src="https://draftin.com:443/images/2627?token=0uiybrTmNZrs-1G5S3pUkV_02FcnA2PPVTNOPkIa7ugiQP8QMHhfk6swlm_kFIBOIUyv8GpmP3bATsCZylUkf20" alt="" /></p>
+
+        <ul>
+          <li>Aggiornamento del certificato ("Identità di firma") selezionato nelle impostazioni di build del progetto in Xcode:</li>
+        </ul>
+
+        <p><img src="https://draftin.com:443/images/2628?token=_yRFxLYAdihsFQWVEXwJVQi1JRH16YWIS-BHD0_NmLxyPzqnFg2HwgZknb_DDSBh93Bk1mHAOaOm3ZS5ug4r5bM" alt="" /></p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">about<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

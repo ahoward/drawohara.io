@@ -1,0 +1,100 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>les hackerspaces c'est nous</title>
+
+    <meta property="og:title" content="les hackerspaces c'est nous"/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"hackerspaces-r-us"}">
+    <meta property="site:path_info" content=""/hackerspaces-r-us"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p><img src='/ro/dojo4/hackerspaces-r-us/assets/dojo41.JPG' title="Dojo41" alt="Dojo41" rel="225x255" width="225" height="168" /></p>
+      <p>Il y a une histoire récente de KQED sur les hackerspaces, "<a href="http://hackerspaces.org/wiki/" title="http://hackerspaces.org/wiki/">des lieux physiques gérés par la communauté, où les gens peuvent se rencontrer et travailler sur leurs projets</a>," généralement des entreprises liées à la technologie ou aux médias. En lisant l'histoire, j'ai pensé, "oh cool, nous devrions faire ça !" Puis j'ai pensé, "oh cool, nous faisons ça !" Bien que nous soyons une entreprise qui soutient notre subsistance en construisant des projets pour des clients, nous sommes également un espace physique orienté vers la communauté, où les gens se rencontrent pour travailler sur leurs projets. La principale différence est que les projets sur lesquels les gens viennent travailler dans notre espace sont plus souvent des projets liés à l'emploi ou au travail, plutôt que de purs travaux d'amour, de créativité et d'imagination obsessionnelle. Et si nous mettions de côté un temps solide chaque mois pour un hackerspace dojo4 plus pur et voyions ce que nous construisons ensemble (ou individuellement). Nous en parlons depuis un moment. Est-il temps de le faire ?</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/hackerspaces-r-us">je-déteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/hackerspaces-r-us">j'adore-ça</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

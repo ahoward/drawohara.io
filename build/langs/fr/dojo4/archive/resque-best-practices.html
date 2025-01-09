@@ -1,0 +1,170 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Meilleures pratiques Resque.</title>
+
+<meta property="og:title" content="Meilleures pratiques Resque."/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/fr/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"resque-best-practices"}">
+    <meta property="site:path_info" content="/fr/resque-best-practices">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Resque ( https://github.com/defunkt/resque ) est un outil vraiment sympa, robuste,<br />
+de qualité production pour la gestion des tâches en arrière-plan pour Rails. Cependant, il laisse beaucoup<br />
+de réflexion au développeur concernant les meilleures pratiques pour modéliser vos tâches, gérer<br />
+les déploiements et gérer les processus des travailleurs. Voici un ensemble de meilleures<br />
+pratiques pour utiliser resque/redis comme système de gestion des tâches en arrière-plan.</p>
+
+<h2 id="gestion-des-processus-en-arrière-plan">Gestion des processus en arrière-plan</h2>
+
+<p>Resque dispose de certaines fonctionnalités pour gérer les processus en arrière-plan, mais elles sont<br />
+rudes et boguées. Nous utilisons ce simple script d'enveloppement pour gérer une seule<br />
+instance du démon de tâches en arrière-plan:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123756.js?file=jobs.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="modélisation-de-vos-tâches">Modélisation de vos tâches</h2>
+
+<p>L'une des premières choses à faire est de déterminer comment modéliser vos tâches. Resque<br />
+rend cela assez simple pour soumettre des méthodes arbitraires sur des modules, mais nous préférons<br />
+faire quelque chose d'un peu plus sain. En particulier, nous aimons avoir des identifiants sur<br />
+les tâches, pouvoir les interroger facilement et les rendre ultra-durables face aux<br />
+échecs du système ou des processus. En consolidant simplement toute la logique des tâches<br />
+dans un seul modèle qui fait de l'ombre à la tâche resque, cela est tout à fait possible. Voici<br />
+notre classe de tâche de base.</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123839.js?file=job.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<p>Comme vous pouvez probablement le voir, cette classe (qui pourrait facilement être portée sur ActiveRecord) permet la soumission de tâches arbitraires,<br />
+mailer ou autre, et chaque tâche laisse une trace dans la base de données principale qui la lie<br />
+à l'entrée resque/redis. Cela rend le travail avec les objets de tâches extrêmement naturel - par exemple, avoir une boucle de sondage vérifiant l'état d'une tâche particulière par identifiant, ou obtenant un compte rapide du nombre de tâches ayant réussi au cours de la semaine dernière. Cela maintient également notre installation resque super vanille - nous n'utilisons aucun plugin - et rend possible de remplacer un autre système de traitement en arrière-plan en quelques minutes.<br />
+La seule gestion dont il a besoin est une tâche périodique pour nettoyer la collection/table de tâches. Nous utilisons whenever( https://github.com/javan/whenever/ ) plus une tâche rake pour accomplir cela:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=jobs.rake"></script>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=schedule.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="déploiement">Déploiement</h2>
+
+<p>Enfin, votre déploiement doit maintenir les choses en marche:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=Capfile.rb"></script>
+
+<p><br /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/fr/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/fr/about">à propos<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/fr/resque-best-practices">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/fr/resque-best-practices">i-love-this<a>
+  </li>
+  <li>
+    <a href="/fr/contact">contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/fr">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

@@ -3,6 +3,7 @@ Site.for 'drawohara.io' do |site|
 #
   layout = 'views/layout.erb'
 
+
 # home
 #
   site.route '/' do |route|
@@ -21,22 +22,13 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
-# top-level pages
+# translations // langs
 #
-  site.route '/:id' do |route|
+  site.route '/langs' do |route|
     route.call do |request|
-      id = request.params.fetch(:id)
-      page = site.ro.get("pages/#{ id }")
-
-      if page
-        request.render string: page.body.html_safe, layout:, data: page
-      end
-    end
-
-    route.urls do
-      Page.top_level.map do |page|
-        "/#{ page.id }"
-      end
+      langs = site.dato.fetch(:langs)
+      data = {langs:}
+      request.render 'views/langs.erb', layout:, data:
     end
   end
 
@@ -78,12 +70,40 @@ Site.for 'drawohara.io' do |site|
 
 # purls
 #
-  site.route '/purl/:id' do |route|
+  site.route '/purls/:id' do |route|
     route.call do |request|
       id = request.params.fetch(:id)
 
       unless id =~ /^[0-9]$/
-        purl = site.ro.get("purl/#{ id }")
+        purl = site.ro.purls.get(id)
+
+        if purl
+          request.render 'views/purl.erb', layout:, data: purl
+        end
+      end
+    end
+
+    route.urls do
+      site.ro.purls.map{|purl| "/purls/#{ purl.id }"}
+    end
+  end
+
+  site.route '/purls' do |route|
+    route.call do |request|
+      purls = site.ro.purls
+      data = {purls:}
+      request.render 'views/purls.erb', layout:, data:
+    end
+  end
+
+# top-level purls
+#
+  site.route '/:id' do |route|
+    route.call do |request|
+      id = request.params[:id]
+
+      if id =~ /^[0-9]$/
+        purl = site.ro.purls.get(id)
 
         if purl
           request.render 'views/purl.erb', data: purl
@@ -92,29 +112,30 @@ Site.for 'drawohara.io' do |site|
     end
 
     route.urls do
-      site.ro.purl.map{|purl| "/purl/#{ purl.id }"}
+      site.ro.purls.map{|purl| "/purls/#{ purl.id }"}
     end
   end
 
+# top-level pages
+#
   site.route '/:id' do |route|
     route.call do |request|
       id = request.params.fetch(:id)
+      page = site.ro.get("pages/#{ id }")
 
-      if id =~ /^[0-9]$/
-        purl = site.ro.get("purl/#{ id }")
-
-        if purl
-          request.render 'views/purl.erb', data: purl
-        end
+      if page
+        request.render string: page.body.html_safe, layout:, data: page
       end
     end
 
     route.urls do
-      site.ro.purl.map{|purl| "/purl/#{ purl.id }"}
+      Page.top_level.map do |page|
+        "/#{ page.id }"
+      end
     end
   end
 
-# random deeply nested pages...
+# nested pages
 #
   site.route '**/**' do |route|
     route.call do |request|

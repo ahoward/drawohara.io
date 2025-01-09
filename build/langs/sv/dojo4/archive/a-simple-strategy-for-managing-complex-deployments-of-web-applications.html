@@ -1,0 +1,114 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>En Enkel Strategi för att Hantera Komplexa Distributioner av Webbapplikationer</title>
+
+<meta property="og:title" content="En Enkel Strategi för att Hantera Komplexa Distributioner av Webbapplikationer"/>
+<meta property="og:description" content="förflytta dig." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/arkiv/:id">
+    <meta property="site:params" content="{'ext':null,'id':'en-enkel-strategi-for-att-hantera-komplexa-distributioner-av-webbapplikationer'}">
+    <meta property="site:path_info" content="/en-enkel-strategi-for-att-hantera-komplexa-distributioner-av-webbapplikationer">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Distributioner av webbapplikationer är komplexa från början. Man börjar ofta med minst en test- och en produktionsdistribution. Lägg till multi-tenancy, konfigurationer för tredjepartsintegrationer som Facebook-autentisering eller Salesforce, konfigurationer för molnlagring och innehållsleveransnätverk, miljöer för kontinuerlig integration, multi-klientteman, SSL-konfigurationer, vhost-konfigurationer, byggprocesskonfigurationer för JS-framenden, konfigurationer för bakgrundsuppgifter, konfigurationer för uppladdningsbearbetning, listan fortsätter... kombinatorisk explosion.</p>
+
+<p>På dojo4 har vi en railsbaserad webbapp-stack och vi använder Multistage Capistrano för distribution till AWS EC2-noder. Vi har hittat en enkel strategi för att hantera den stora variationen av konfigurations- och distributionskrav som våra kunder har presenterat för oss. Strategin innebär en rake-uppgift som använder en RAILS_STAGE miljövariabel baserad på Capistrano Multistage-steget. Vi ställer in en filstruktur för distributionsspecifika konfigurationer i repo_root/config/deploy/files/RAILS_STAGE som är strukturerad identiskt med källrepos filsystem. Under cap-distribution, innan den aktuella symboliska länken eller byggprocesserna, kopierar rake-uppgiften rekursivt repo_root/config/deploy/files/RAILS_STAGE till repo_root.</p>
+
+<p>Vi har funnit denna strategi att mycket effektivt hålla komplexa distributionskonfigurationer rent organiserade på ett sätt som är lätt att resonera om och inte lägger till mycket extra komplexitet till en redan komplex arkitektur.</p>
+
+<p>Gisten nedan demonstrerar denna idé. Ursprungligen utnyttjade denna uppgift olika rails-bibliotek. Dock kunde jag fakta ut rails-beroenden samtidigt som jag behöll uppgiftens funktionalitet så att du kan använda den med vilken applikationsstack som helst.</p>
+
+<p><br /></p>
+
+<script src="https://gist.github.com/3286971.js?file=jobs.rb"></script>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/om">om</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/en-enkel-strategi-for-att-hantera-komplexa-distributioner-av-webbapplikationer">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/en-enkel-strategi-for-att-hantera-komplexa-distributioner-av-webbapplikationer">i-love-this</a>
+  </li>
+  <li>
+    <a href="/kontakt">kontakt</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

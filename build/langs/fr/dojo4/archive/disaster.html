@@ -1,0 +1,157 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Catastrophe</title>
+
+<meta property="og:title" content="Catastrophe"/>
+<meta property="og:description" content="circuler." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"catastrophe"}">
+    <meta property="site:path_info" content=""/catastrophe"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>J'ai lancé une machine aujourd'hui.</p>
+
+<p>J'ai travaillé jusqu'à près de 2h du matin, la machine ronronnant chaudement, et je me suis levé pour trouver une boîte lente et non réactive.</p>
+
+<p>Le disque s'est brisé en morceaux.</p>
+
+<p>http://dojo4.com est sous pression sur <em>plusieurs</em> projets ce mois-ci, donc, bien sûr, il est logique que certaines machines décident de quitter le fantôme <em>aujourd'hui</em>…. #feck.</p>
+
+<p>Chaque fois que je récupère une machine en panne, cela devient plus facile, et aujourd'hui n'a pas fait exception :</p>
+
+<p>Depuis la dernière panne de boîtes, j'ai travaillé dur pour mettre la plupart de mes données dans le cloud.</p>
+
+<p>J'étais donc heureux de n'avoir presque rien à m'inquiéter après avoir réalisé que l'Apple Store allait prendre <strong>72 heures complètes pour commander un disque</strong> pour mon 17" en fin de vie. Plutôt, j'ai juste dépensé 4k pour un nouveau 15" MBP rapide comme l'éclair et je me suis lancé dans la récupération…</p>
+
+<p>Voici un bref aperçu de ma stratégie de sauvegarde actuelle, mélangée à quelques réflexions sur la façon dont la gestion des données change rapidement :</p>
+
+<ul>
+  <li>
+    <p>les applications gèrent vos données plus que jamais. utilisez cela à votre avantage.</p>
+  </li>
+  <li>
+    <p>les sauvegardes complètes sont stupides. vous devez être sélectif pour restaurer rapidement. cela demande de la réflexion. qu'est-ce qui est plus rapide à restaurer après un crash vs réinstaller ? qu'est-ce qui est plus simple à réinstaller vs reconfigurer ? indice : les données, pas le code et la configuration.</p>
+  </li>
+  <li>
+    <p>les systèmes d'exploitation évoluent plus vite que votre logiciel de sauvegarde : vous ne devriez sauvegarder que les données et non la configuration ou, pire, les informations binaires. les fichiers point sont bien sûr une exception !</p>
+  </li>
+  <li>
+    <p>google est le roi pour les e-mails, les contacts et le calendrier. abandonnez toutes les autres solutions.</p>
+  </li>
+  <li>
+    <p>utilisez git pour votre code. ne le sauvegardez pas. passez à autre chose.</p>
+  </li>
+  <li>
+    <p>utilisez things.app ou quelque chose basé sur le cloud pour votre productivité. les listes de tâches non synchronisées sont mortes.</p>
+  </li>
+  <li>
+    <p>posséder de la musique est une idée démodée. utilisez rdio, sspotify, ou en dernier recours iCloud. mais assurez-vous définitivement de ne pas avoir de raison de sauvegarder votre musique.</p>
+  </li>
+  <li>
+    <p>les photos sont un casse-tête. ceci est un appel d'offres pour des suggestions.</p>
+  </li>
+  <li>
+    <p>les films. les films ne devraient pas être sur la machine d'un développeur. voilà, je l'ai dit.</p>
+  </li>
+  <li>
+    <p>dropbox. utilisez ceci pour tout le reste et évitez les mécanismes intégrés stupides de votre système d'exploitation.</p>
+  </li>
+</ul>
+
+<p>Résumé :</p>
+
+<p>1) utilisez des applications basées sur le cloud</p>
+
+<p>2) posséder de la musique et des films est un concept stupide. laissez tomber.</p>
+
+<p>3) mettez tout le reste dans dropbox</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/aller" name="aller">&mdash;&gt; aller</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/a-propos">a-propos<a>
+  </li>
+  <li>
+    <a href="mailto:je-déteste-ça@drawohara.io?subject=/catastrophe">je-déteste-ça<a>
+  </li>
+  <li>
+    <a href="mailto:j-adore-ça@drawohara.io?subject=/catastrophe">j-adore-ça<a>
+  </li>
+  <li>
+    <a href="/contact">contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

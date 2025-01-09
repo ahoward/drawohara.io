@@ -1,0 +1,107 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Будь зміною (сертифікованою)</title>
+
+    <meta property="og:title" content="Будь зміною (сертифікованою)"/>
+    <meta property="og:description" content="рухайся далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"b-the-certifiable-change}">
+    <meta property="site:path_info" content="/b-the-certifiable-change">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/ro/dojo4/b-the-certifiable-change/assets/b.jpeg' alt="b-the-change.jpg" /></p>
+
+        <p>Вчора друга половина dojo4 відвідала <em>B Bold: How Tech Companies are Focusing on Impact and Winning in the Marketplace</em>. Було натхненно бути серед інших технологів, які справді вірять, що бізнес може та має бути силою для добра в світі, і вони підтверджують свої слова, <a href="https://www.bcorporation.net/what-are-b-corps">стаючи сертифікованими B-Corps</a>.</p>
+
+        <p>Як частина великого повороту dojo4 до <a href="http://dojo4.com/blog/the-big-pivot">цілеспрямованого</a> агенства, ми близькі до отримання сертифікації та будемо на <a href="https://www.eventbrite.com/e/b-impact-assessment-hackathon-tickets-15037279909">B-Labs Hackathon</a> наступного тижня, щоб завершити нашу B-Impact Assessment. Якщо ви в Боулдері та розглядаєте можливість сертифікації B-Corps, приєднуйтесь до нас!</p>
+
+        <p><img src='/ro/dojo4/b-the-certifiable-change/assets/c.jpeg' alt="FullSizeRender.jpg" /></p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/b-the-certifiable-change">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/b-the-certifiable-change">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

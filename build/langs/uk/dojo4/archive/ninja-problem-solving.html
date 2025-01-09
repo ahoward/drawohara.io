@@ -1,0 +1,126 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+  <base href='/uk' />
+
+  <!-- meta -->
+    <title>Розв'язання проблем Ніндзя</title>
+
+<meta property="og:title" content="Розв'язання проблем Ніндзя"/>
+<meta property="og:description" content="рухайтесь далі." />
+<meta property="og:image" content="https://drawohara.io/uk/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"ninja-problem-solving"}">
+    <meta property="site:path_info" content="/uk/ninja-problem-solving">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Нещодавно цей лист був відправлений нашій технічній команді. Я вирішив поділитися ним без редагування.</p>
+
+<pre>розв'язання проблем є основною послугою, яку ми надаємо. протягом багатьох років
+я розвинув деякі ідеї високого рівня про це, які, як я виявив,
+постійно призводять до хороших рішень, яких завжди є багато. ви можете або не можете
+знайти ці ідеї корисними, але я хотів поділитися ними незалежно:
+
+
+- зрозумійте проблему повністю. якщо є навіть маленька невизначеність, задавайте питання та копайте глибше. насправді, всі рішення проблем виникають з безжального застосування лише цього одного принципу. те маленьке слово, про яке згадував клієнт або інструкція, яке вам було соромно запитувати - запитайте про це. те маленьке рядок у коді, якого ви не зовсім зрозуміли, ймовірно, є джерелом вашої проблеми, не ігноруйте його.
+
+- говоріть про проблему *вголос* з кимось іншим. дивовижно, як часто формулювання проблеми англійською мовою, поза ментальними конструкціями, автоматично підкаже рішення.
+
+- ніколи не налагоджуйте самі. купіть комусь каву або пиво. зателефонуйте члену команди. майже завжди марно витрачати час на налагодження самому. доповнення: зупиніть все, що робите, і допоможіть, якщо здається, що хтось інший застряг на проблемі.
+
+- коли є проблема, перевіряйте ці речі, в порядку, *кожен раз*: читайте код, читайте інструкцію, гугліть це. це протилежне тому, що роблять більшість людей. іншими словами "перевіряйте спочатку високоякісні джерела", оскільки низькоякісні джерела призводять до подальшої плутанини. я не можу досить сильно підкреслити важливість стати пристрасним читачем коду.
+
+- ніколи не йдіть шляхом найменшого опору. якщо ви думаєте "це хак, але..." зупиніться і запитайте допомоги.
+
+- не борись з майбутнім. рішення не обов'язково має бути повним, але воно повинно хоча б зробити один крок до повноти. відстежуйте часткові рішення з #FIXME, #TODO, карткою в redmine або розмовою з колегою.
+
+- залишайте сліди. якщо ваша робота не створює артефактів, які люди можуть або повторно використовувати, або редагувати, це, ймовірно, тимчасове рішення, а не рішення. створення коду, який можна редагувати, набагато простіше, ніж створення повторно використовуваного коду. уникайте рішень, які не є ні тим, ні іншим, як чуми.
+
+- не сердіться. ваш розум відключається, якщо ви розлючуєтеся на проблему. нічого з того, що ми робимо, не залежить від життів, тому розслабтеся. ви пошкодили дані. посміхніться і поверніться до їх відновлення.
+
+- уникайте раннього впровадження, будучи раннім приймачем. спосіб розуміти золоту середину між кровоточивістю краю і круфті стабільністю, іронічно, полягає в безжальному дослідженні та розумінні нових рішень. ви повинні бути раннім приймачем, щоб зрозуміти, коли його слід уникати. FUD (страх, невизначеність і сумнів) ніколи не повинен бути мотиватором уникнення нового і блискучого, але глибоке розуміння технічних вад *повинно бути*.
+</pre>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/uk/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/uk/ninja-problem-solving">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/uk/ninja-problem-solving">i-love-this<a>
+  </li>
+  <li>
+    <a href="/uk/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/uk/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Código y Café @ DOJO4</title>
+
+    <meta property="og:title" content="Código y Café @ DOJO4"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/es/dojo4/archive/:id">
+    <meta property="site:params" content="{&quot;ext&quot;:null,&quot;id&quot;:&quot;code-and-coffee-at-dojo4&quot;}">
+    <meta property="site:path_info" content="/es/code-and-coffee-at-dojo4">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><em>“No lo llames un regreso, he estado aquí por años.”</em></p>
+
+        <pre><code>- LL Cool J
+        </code></pre>
+
+        <p>DOJO4 es más que solo una empresa de software boutique increíble. También somos un espacio comunitario. Antes de que existiera <a href="http://dojo4.com/blog/hubbishness">El Hub</a>, estaba el dojo.</p>
+
+        <p>Nos gusta reunir a la gente para varios <a href="http://www.meetup.com/Denver-Boulder-Freelance-Web-Developers/">Meetups</a> y <a href="https://www.facebook.com/dojo4codeanddesign/events?ref=page_internal">happy hours</a> de manera regular; y a partir de la próxima semana traeremos de vuelta a <a href="https://twitter.com/codencoffee">Código y Café</a> a casa. Esta es una reunión semanal, informal y amigable con el gluten de desarrolladores - muchos de la persuasión Ruby, pero todos son bienvenidos.</p>
+
+        <p><strong>QUIÉN:</strong> Tú, tu portátil.<br />
+        <strong>QUÉ:</strong> <a href="https://twitter.com/codencoffee">Código y Café</a> (&amp;&amp; Bagels &amp;&amp; Té)<br />
+        <strong>CUÁNDO:</strong> Miércoles, 9AM - 12PM<br />
+        <strong>DÓNDE:</strong> 2030 17th St. Boulder, CO 80302</p>
+
+        <p>Será exactamente así:</p>
+
+        <p><img src='/es/ro/dojo4/code-and-and-coffee-at-dojo4/assets/b.jpeg' alt="coffee.jpeg" /></p>
+
+        <p>Con un poco de esto añadido para completar:</p>
+
+        <p><img src='/es/ro/dojo4/code-and-and-coffee-at-dojo4/assets/c.jpeg' alt="bagels.jpg" /></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/code-and-and-coffee-at-dojo4">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/code-and-and-coffee-at-dojo4">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

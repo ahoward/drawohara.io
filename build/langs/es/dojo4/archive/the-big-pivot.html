@@ -1,0 +1,137 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>El Gran Pivote</title>
+
+    <meta property="og:title" content="El Gran Pivote"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archivo/:id">
+    <meta property="site:params" content="{"ext":null,"id":"el-gran-pivote"}">
+    <meta property="site:path_info" content="/el-gran-pivote">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/inicio">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>'Pivotar' rara vez es algo bueno en software, independientemente de cómo las personas intenten<br />
+        presentarlo a sus inversores. Generalmente consta de una parte de 'la cagamos' y una parte de 'intenta algo rápido antes de que lo dejemos!'</p>
+
+        <p><img src='/ro/dojo4/el-gran-pivote/assets/pivot.gif' alt="" /></p>
+
+        <p>Afortunadamente, somos nuestros propios inversores en DOJO4, así que no necesitamos presentar<br />
+        nada. Solo necesitábamos <em>pivotar</em>.</p>
+
+        <p>No me gusta contar historias en orden, y tienes cosas que hacer, así que déjame<br />
+        ir directo al grano:</p>
+
+        <ul>
+          <li>DOJO4 está pivotando lejos de ser solo una agencia de software.</li>
+          <li>DOJO4 está enfocando toda su energía en entregar tecnología a empresas con propósito.</li>
+          <li>DOJO4 ha hecho alianzas que le permiten aportar potencia de desarrollo y<br />
+          potencia financiera a las mencionadas empresas con propósito seleccionadas.</li>
+        </ul>
+
+        <p>A nuestros clientes actuales, a quienes valoramos tanto, por favor sepan que, estamos<br />
+        continuando apoyando a nuestros actuales y excelentes clientes de DOJO4<br />
+        indefinidamente; tomamos nuestros compromisos en serio, especialmente aquellos que hemos<br />
+        hecho con ustedes, que nos han apoyado durante los <a href="/blog/ity">últimos 5 años</a>. Si deseas involucrarte o discutir esto con nosotros, por favor <a href="/contacto">avísanos</a> y podemos discutirlo más a fondo.</p>
+
+        <p>Para aquellos de ustedes que desean ser parte de nuestra próxima cosecha de aventuras técnicamente elegantes, que salvan el mundo y generan ganancias, den un paso adelante, asóciense con nosotros en cambiar el mundo 42 millones de bytes a la vez.</p>
+
+        <p><a href="/equipo/jesse-seavers">Jesse</a> ya ha comenzado las discusiones con algunas de las<br />
+        empresas con propósito más emocionantes e inversores impactantes en Colorado,<br />
+        pero nos pondremos en contacto con más de ustedes internacionalmente durante los próximos tres<br />
+        meses en una campaña diseñada para producir un solo resultado: traer a los<br />
+        mejores tecnólogos, junto con los mejores inversores, al servicio de los<br />
+        apasionados emprendedores sociales que ya están dedicando sus vidas a<br />
+        resolver los muchos problemas endémicos del mundo.</p>
+
+        <p>Para aquellos de ustedes que desean saber más, por favor, echen un vistazo a <a href="/">nuestra página de inicio</a>, <a href="/manifiesto">misión</a> y <a href="/acerca-de">página sobre nosotros</a>. Nos <a href="javascript:void(&quot;feedback&quot;)" class="feedback">encantaría saber qué piensas!</a></p>
+
+        <p>Y si deseas comenzar a hablar con nosotros sobre esto, por favor <a href="/contacto">pásate o ponte en contacto en cualquier momento</a>.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/ir-a" name="ir-a">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/acerca-de">acerca de</a>
+          </li>
+          <li>
+            <a href="mailto:no-me-gusta-esto@drawohara.io?subject=/el-gran-pivote">no-me-gusta-esto</a>
+          </li>
+          <li>
+            <a href="mailto:me-gusta-esto@drawohara.io?subject=/el-gran-pivote">me-gusta-esto</a>
+          </li>
+          <li>
+            <a href="/contacto">contacto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eyectar</a>
+    </footer>
+  </body>
+</html>

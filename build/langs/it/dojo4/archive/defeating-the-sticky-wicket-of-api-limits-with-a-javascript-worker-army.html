@@ -1,0 +1,154 @@
+<html color-mode="user" lang="it">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+<base href='/it' />
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Sconfiggere i limiti dell'API con un esercito di worker JavaScript</title>
+
+<meta property="og:title" content="Sconfiggere i limiti dell'API con un esercito di worker JavaScript"/>
+<meta property="og:description" content="passare oltre." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'sconfiggere-i-limiti-dell-api-con-un-esercito-di-worker-javascript'}">
+    <meta property="site:path_info" content="/sconfiggere-i-limiti-dell-api-con-un-esercito-di-worker-javascript">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/casa">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h2 id="tldr">TL;DR</h2>
+
+<p>quando hai <em>molto</em> troppo lavoro da fare sul server rispetto ai limiti dell'API</p>
+
+<p>affida parte del lavoro ai browser dei tuoi clienti - inviando i risultati indietro al tuo database</p>
+
+<h2 id="il-problema">il problema</h2>
+<p>la settimana scorsa stavo gestendo (g-provider) i limiti dell'API e troppe richieste di geolocalizzazione provenienti da un server(s). ho lavorato un po' su questo, eseguendo attività in background, con nuovi tentativi periodici - sai: le cose standard...</p>
+
+<p>l'API in questione è limitata per IP e la documentazione consiglia di sfruttare questa caratteristica eseguendo la maggior parte delle chiamate API lato client - in js.</p>
+
+<p>ora, in questo caso particolare avevo assolutamente <em>bisogno</em> che i risultati delle chiamate API risiedessero sul server, quindi ho adottato questa soluzione compromissoria (in più di un modo)</p>
+
+<h2 id="la-soluzione">la soluzione</h2>
+<p>supponiamo che alcuni client siano disposti a consumare la loro CPU per popolare i dati di loro interesse. in parole povere, fai eseguire ad alcuni dei tuoi client lavori da una coda di lavoro JavaScript per preparare la pompa di cui sono interessati a bere.</p>
+
+<p>nel mio caso ho alcune interfacce selezionate (quelle interessate all'output di questi lavori) che eseguono un piccolo iframe</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- inserisci un esecutore di coda di lavoro su alcune pagine/viste/layout --&gt;</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #116329">&lt;iframe</span>&nbsp;<span style="color: #116329">height=</span><span style="color: #0a3069">"0"</span>&nbsp;<span style="color: #116329">width=</span><span style="color: #0a3069">"0"</span>&nbsp;<span style="color: #116329">style=</span><span style="color: #0a3069">"display:none;"</span>&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"/javascript_jobs/runner"</span><span style="color: #116329">&gt;&lt;/iframe&gt;</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>
+</div></code></div>
+
+<div class="language-erb highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- l'esecutore di lavoro --&gt;</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">javascript_include_tag</span>&nbsp;<span style="color: #0a3069">:jquery</span>&nbsp;<span style="color: #6e7781">%&gt;</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">javascript_include_tag</span>&nbsp;<span style="color: #0a3069">:jobs</span>&nbsp;<span style="color: #6e7781">%&gt;</span>
+</div><div class='code-line code-line-6'>
+</div><div class='code-line code-line-7'><span style="color: #116329">&lt;script&gt;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">complete</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">write</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">lavoro completato </span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">id</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">write</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">&lt;br&gt;</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">setTimeout</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">start</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>&nbsp;<span style="color: #0550ae">1000</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-16'><span style="color: #116329">&lt;/script&gt;</span>
+</div><div class='code-line code-line-17'>
+</div><div class='code-line code-line-18'>
+</div></code></div>
+
+<p>il js necessario per interfacciarsi con la coda di lavoro è breve e semplice</p>
+
+<p>tutto ciò che fa è ottenere un lavoro, eseguirlo e inviarlo indietro al server, rispettando sia la velocità di esecuzione che il numero massimo di lavori da eseguire.</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">!</span><span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-3'><span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">count</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">max</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">256</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">throttle</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">1000</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">complete</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){};</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'><span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">get_next_job</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">success</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">response</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">response</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">data</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">][</span><span style="color: #0a3069">'</span><span style="color: #0a3069">job</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">count</span><span style="color: #0550ae">++</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-17'>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">run</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">count</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">max</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">setTimeout</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">get_next_job</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">throttle</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-25'>
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">ajax</span><span style="color: #24292f;background-color: #f6f8fa">({</span>
+</div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">url</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">/api/jobs/next</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0

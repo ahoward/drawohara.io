@@ -1,17 +1,20 @@
 <%
   url = data.fetch(:url)
+  seconds = 4.2.to_s
 %>
-<html>
-  <head>
-    <%= render('views/ga.html') %>
-    <%= render('views/og.erb', data:) %>
 
-    <meta name="robots" content="noindex">
+hiya! -- you are being redirected to by a giant 🤖
 
-    <script>
-      setTimeout(function(){
-        window.location = '<%= h(url).html_safe %>';
-      }, 0.420);
-    </script>
-  </head>
-</html>
+<blockquote>
+  <a href="<%= url %>"><%= url %></a>
+</blockquote>
+
+in <%= seconds %> seconds...
+
+<br>
+<br>
+thanks for playing!
+
+<script>
+  setTimeout(function(){window.location = '<%= h(url).html_safe %>'}, <%= seconds %> * 1000);
+</script>

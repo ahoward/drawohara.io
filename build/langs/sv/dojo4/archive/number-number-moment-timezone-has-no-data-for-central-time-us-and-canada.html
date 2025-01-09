@@ -1,0 +1,120 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>! &#39;## Moment Timezone har inga data för Centraltid (USA och Kanada)....&#39;</title>
+
+<meta property="og:title" content="! &#39;## Moment Timezone har inga data för Centraltid (USA och Kanada)....&#39;"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/arkiv/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"nummer-nummer-moment-timezone-har-inga-data-for-centraltid-usa-och-kanada"}">
+    <meta property="site:path_info" content=""/nummer-nummer-moment-timezone-har-inga-data-for-centraltid-usa-och-kanada"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><img src='/ro/dojo4/nummer-nummer-moment-timezone-har-inga-data-for-centraltid-usa-och-kanada/assets/b.png' alt="moment_js_error.png" /> <br />
+Det här felmeddelandet i konsolen uppstod när <code>Centraltid (USA och Kanada)</code> passerades direkt som värdet för <code>time_zone</code> i ett anrop till <a href="http://momentjs.com/timezone/docs/#/using-timezones/parsing-in-zone/"><code>moment.tz(date, time_zone)</code>.</a>.</p>
+
+<p>Istället för <code>Centraltid (USA och Kanada)</code> ska det korrekta värdet som ska passeras här vara <code>America/Chicago</code> - vilket stämmer överens med <a href="http://momentjs.com/timezone/docs/#/zone-object/name/">zonobjektets namneigenskap</a> som momentjs använder för att unikt identifiera tidszonen.</p>
+
+<p><code>Centraltid (USA och Kanada)</code> är det <a href="http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html"><strong>vänligare</strong> namnet för tidszon</a> som används av <code>rails</code>.</p>
+
+<p>Jag kringgick problemet genom att passera <code>time_zone.tzinfo.identifier</code> i stället för bara <code>time_zone</code>.</p>
+
+<p><code>ruby</code></p>
+<blockquote>
+  <p>time_zone<br />
+ =&gt; (GMT-06:00) Centraltid (USA och Kanada)</p>
+</blockquote>
+
+<blockquote>
+  <p>time_zone.tzinfo.identifier<br />
+ =&gt; “America/Chicago”</p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/nummer-nummer-moment-timezone-har-inga-data-for-centraltid-usa-och-kanada">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/nummer-nummer-moment-timezone-har-inga-data-for-centraltid-usa-och-kanada">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

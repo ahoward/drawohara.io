@@ -1,0 +1,110 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Управління залежностями фронтенду з Bower та RoR</title>
+
+<meta property="og:title" content="Управління залежностями фронтенду з Bower та RoR"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"front-end-dependency-management-with-bower-ro-r"}">
+    <meta property="site:path_info" content=""/front-end-dependency-management-with-bower-ro-r"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+
+<p>Управління залежностями може бути складним. Коли я приєднався до dojo4 кілька тижнів тому, було чудово клонувати репозиторій проекту ruby on rails, виконати <code>bundle install</code> і потім запустити додаток за допомогою <code>rails s</code>. Для тих, хто не знайомий з управлінням залежностями ruby on rails, гемми, необхідні для запуску додатка, перераховані у файлі, названому <code>Gemfile</code>. Додаток bundle читає цей gemfile та завантажує та встановлює будь-які гемми, яких ще немає на вашому комп’ютері. Це не лише робить легким запуск додатка без особливих зусиль, але й спрощує оновлення цих залежних гемм, коли випускається нова версія. Виконання <code>bundle update</code> або оновлення gemfile та повторне виконання <code>bundle install</code> робить цей процес легким і гарантує, що кожен інший користувач додатка буде використовувати нову версію (при умові, що ми поділимося змінами через контроль версій). Це чудовий робочий процес для серверної частини, але що з клієнтською?</p>
+
+<p>По мерезі того, як клієнтські додатки стають складнішими, нам часто потрібна допомога бібліотек і фреймворків на клієнті тож. У dojo4 ми зараз завантажуємо необхідні файли та вручну додаємо їх у систему контролю версій і фіксуємо. Файли знаходяться під контролем версій, тож хоча б усі отримають ці файли, і ми можемо відновити версію оновлення, але це трохи брудно. Щоб оновити бібліотечні файли, нам доведеться повторити ручний процес. На серверній стороні також дуже приємно, що завдання управління залежностями менш тісно інтегровані з кодом додатка, що робить оновлення та відкат версій легшими. На жаль, досі не було хорошого способу керувати залежностями для фронтенду. До недавнього часу.</p>
+
+<p>У вересні минулого року Twitter випустив <a href="http://bower.io">Bower</a>, який запропонував "загальне, неопініонне рішення проблеми управління пакетами фронтенду". Bower надає ті самі можливості для фронтенд-додатка, що й bundle для бекенду: централізований список залежностей у одному файлі, легкі команди встановлення та оновлення та деяке відокремлення від коду додатка та комітів. Досліджуючи, як ми можемо скористатися цим у нашому стандартному додатку ruby on rails, мене відправили до гемми <a href="https://github.com/42dev/bower-rails/">bower-rails</a>, яка інтегрує bower у структуру директорій ruby on rails та додає деякі <code>rake</code> команди для виконання команд bower. Тепер замість ручного комітування бібліотечних файлів у репозиторій додатка розробник може виконати <code>rake bower:install [назва пакету]</code> і остання версія цього пакету буде встановлена в asset pipeline і додана до списку необхідних пакетів. Новий розробник може завантажити код додатка, і після виконання <code>bundle install</code> може виконати <code>rake bower:install</code>, і всі залежності фронтенду будуть встановлені в правильну директорію в asset pipeline ruby on rails для негайного використання.</p>
+
+<p>Особисто мені дуже подобається цей підхід, і я сподіваюся, що ми зможемо перейти з ручного додавання бібліотек фронтенду до підходу bower. Ми все ще обговорюємо переваги та недоліки всередині та скоро приймемо рішення. Що ви думаєте? Як ви керуєте залежностями фронтенду в розподіленій команді?</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

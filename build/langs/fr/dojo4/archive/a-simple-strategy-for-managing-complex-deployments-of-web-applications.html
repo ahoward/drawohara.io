@@ -1,0 +1,112 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Une Stratégie Simple pour Gérer les Déploiements Complexes d'Applications Web</title>
+
+<meta property="og:title" content="Une Stratégie Simple pour Gérer les Déploiements Complexes d'Applications Web"/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"une-strategie-simple-pour-gerer-les-deploiements-complexes-dapplications-web"}">
+    <meta property="site:path_info" content=""/une-strategie-simple-pour-gerer-les-deploiements-complexes-dapplications-web"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Les déploiements d'applications web sont complexes dès le départ. On commence souvent avec au moins un déploiement de mise en scène et un déploiement de production. Ajoutez à cela le multitenancy, les configurations pour les intégrations tierces comme l'authentification Facebook ou Salesforce, les configurations pour le stockage cloud et les réseaux de distribution de contenu, les environnements d'intégration continue, le thème multi-client, les configurations SSL, les configurations de vhost, les configurations de processus de construction pour les frontends js, la configuration des tâches en arrière-plan, la configuration du traitement des téléchargements, la liste continue… explosion combinatoire.</p>
+
+<p>Chez dojo4, nous avons une pile d'applications web basée sur rails et nous utilisons Multistage Capistrano pour le déploiement sur les nœuds AWS EC2. Nous avons trouvé une stratégie simple pour gérer la grande variété de configurations et d'exigences de déploiement que nos clients nous ont présentées. La stratégie implique une tâche rake qui utilise une variable d'environnement RAILS_STAGE basée sur l'étape Multistage Capistrano. Nous configurons une structure de fichiers pour les configurations spécifiques au déploiement dans repo_root/config/deploy/files/RAILS_STAGE qui est structurée de manière identique au système de fichiers du référentiel source. Pendant le déploiement cap, avant le lien symbolique actuel ou les processus de construction, la tâche rake copie de manière récursive repo_root/config/deploy/files/RAILS_STAGE dans repo_root.</p>
+
+<p>Nous avons trouvé que cette stratégie permet de maintenir les configurations de déploiement complexes de manière propre et organisée, de manière à ce qu'il soit facile de raisonner et n'ajoute pas beaucoup de complexité supplémentaire à une architecture déjà complexe.</p>
+
+<p>Le gist ci-dessous démontre cette idée. À l'origine, cette tâche utilisait diverses bibliothèques rails. Cependant, j'ai pu extraire les dépendances rails tout en maintenant la fonctionnalité des tâches afin que vous puissiez l'utiliser avec n'importe quelle pile d'applications.</p>
+
+<p><br /></p>
+
+<script src="https://gist.github.com/3286971.js?file=jobs.rb"></script>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/une-strategie-simple-pour-gerer-les-deploiements-complexes-dapplications-web">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/une-strategie-simple-pour-gerer-les-deploiements-complexes-dapplications-web">i-love-this</a>
+  </li>
+  <li>
+    <a href="/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

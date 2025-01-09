@@ -1,0 +1,155 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Contrôler l'audio HTML5 sur les appareils mobiles</title>
+
+    <meta property="og:title" content="Contrôler l'audio HTML5 sur les appareils mobiles"/>
+    <meta property="og:description" content="passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"controlling-html5-audio-on-mobile-devices"}">
+    <meta property="site:path_info" content=""/controlling-html5-audio-on-mobile-devices"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>(Cela est apparu à l'origine sur le blog <a href="http://stuff-things.net/">Stuff… And Things…</a> de Spike)</p>
+
+        <p>Les balises HTML5 <code>&lt;audio&gt;</code> sont assez simples. Étant donné :</p>
+
+        <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;audio</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"player"</span><span style="color: #116329">&gt;&lt;/audio&gt;</span>
+        </div></code></div>
+
+        <p>ce bout de Javascript :</p>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">some-audio-file-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">()</span>
+        </div></code></div>
+
+        <p>commencera à jouer ce que le src pointe. (Astuce : Si vous utilisez jQuery, vous devez obtenir l'élément HTML réel avec <code>player = $('#player')[0]</code> ou <code>player = $('#player').get(0)</code>)</p>
+
+        <p>Cependant, si l'utilisateur est sur un appareil mobile iOS ou Android, ce qui précède ne jouera en fait rien. Aucun de ces systèmes d'exploitation ne permet à l'audio web (ou vidéo) de commencer à diffuser sans interaction de l'utilisateur. La raison est que la diffusion de données sur le réseau cellulaire peut coûter de l'argent et ne devrait pas se produire sans que l'utilisateur appuie réellement sur un bouton.</p>
+
+        <p>Tout va bien, mais que faire si vous voulez jouer un son en réponse à un événement, par exemple faire biper le navigateur une fois par minute :</p>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">beep-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">beeper</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">setInterval</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0550ae">1000</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #0550ae">60</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div></code></div>
+
+        <p>Cela fonctionnera bien dans les navigateurs de bureau, mais sur mobile, l'appel à <code>play()</code> ne fera rien.</p>
+
+        <p>Heureusement, il y a trois choses qui rendent la solution de contournement simple :</p>
+
+        <ol>
+          <li>L'utilisateur n'a qu'à appuyer sur play une fois par élément audio.</li>
+          <li>"Appuyer sur play" peut aussi signifier déclencher <code>play()</code> via un événement de clic.</li>
+          <li>Jouer un élément audio sans source est une opération légale sans effet.</li>
+        </ol>
+
+        <p>En bref, tout ce dont nous avons besoin, c'est que l'utilisateur clique sur un bouton qui joue un élément audio vide pour en prendre le contrôle :</p>
+
+        <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;audio</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"player"</span><span style="color: #116329">&gt;&lt;/audio&gt;</span>
+        </div><div class='code-line code-line-2'><span style="color: #116329">&lt;button</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"ok"</span><span style="color: #116329">&gt;</span>OK&nbsp;pour&nbsp;bipper<span style="color: #116329">&lt;/button&gt;</span>
+        </div></code></div>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">// Présume jQuery</span>
+        </div><div class='code-line code-line-2'><span style="color: #8250df">$</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">"</span><span style="color: #0a3069">#ok</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">click</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-3'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-4'>&nbsp;<span style="color: #8250df">$</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #cf222e">this</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">slideUp</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+        </div><div class='code-line code-line-5'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #6e7781">// Jouer l'élément vide pour en prendre le contrôle</span>
+        </div><div class='code-line code-line-6'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">beep-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #6e7781">// Définir la véritable source audio</span>
+        </div><div class='code-line code-line-7'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">beeper</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">setInterval</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0550ae">1000</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #0550ae">60</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-8'><span style="color: #24292f;background-color: #f6f8fa">});</span>
+        </div></code></div>
+
+        <p>Le clic peut être n'importe quoi, une version plus subtile consisterait à l'attacher au bouton <em>fermer</em> d'un modal d'instruction au début d'un jeu.</p>
+
+        <p>Cette technique brouille probablement un peu la limite entre l'esprit et la lettre de la loi, mais elle permet de faire le travail et de créer une expérience cohérente pour les utilisateurs de bureau et mobiles.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/controlling-html5-audio-on-mobile-devices">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/controlling-html5-audio-on-mobile-devices">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

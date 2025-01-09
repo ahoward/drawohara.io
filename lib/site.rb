@@ -6,6 +6,7 @@ require 'ro'
 require 'parallel'
 
 require_relative 'server.rb'
+require_relative 'dato.rb'
 
 class Site
 #
@@ -40,20 +41,30 @@ class Site
 
 #
   attr_reader :name
+  attr_reader :root
   attr_reader :domain
   attr_reader :server
   attr_reader :ro
+  attr_reader :dato
 
   def initialize(*args, **kws, &block)
     @name = kws.fetch(:name){ args.shift || :default }
 
-    @domain = kws.fetch(:domain){ args.shift || @name }.to_s
+    @domain = kws.fetch(:domain){ @name }.to_s
+
+    @root = Path.for(kws.fetch(:root){ '.' })
 
     @server = Server.new
 
     block.call(self) if block
 
-    @ro = Ro::Root.new('./public/ro')
+    @ro = Ro::Root.new(path_for('./public/ro'))
+
+    @dato = Dato.load(path_for('./dato'))
+  end
+
+  def path_for(...)
+    @root.join(...)
   end
 
   def inspect

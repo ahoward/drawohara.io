@@ -1,0 +1,110 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! “тренди: спільні дані стають легшими”</title>
+
+    <meta property="og:title" content="! “тренди: спільні дані стають легшими”"/>
+    <meta property="og:description" content="продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'trends-community-data-made-easy'}">
+    <meta property="site:path_info" content="/trends-community-data-made-easy">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/ro/dojo4/trends-community-data-made-easy/assets/b.png' alt="Screen Shot 2016-10-12 at 11.44.54 AM.png" /></p>
+
+        <p>Щорічний звіт <a href="http://www.commfound.org/">Фонду Спільноти Боулдер</a> <a href="http://trends.commfound.org/"><em>Тренди</em></a> надає “загальний набір вимірюваних даних для поліпшення якості життя в спільноті.” Нещодавно <a href="http://dojo4.com/work/code-for-america">Code for America</a> співпрацював з Фондом, щоб зробити ці спільні дані більш доступними. Партнерство під назвою <a href="https://github.com/CodeForBoulder/trends-online">Code for Boulder</a> запросило до участі dojo4. Після спільного сеансу генерації ідей, який визначив потенційні методи для представлення цінної інформації зі звіту <a href="http://trends.commfound.org/"><em>Тренди</em></a>, dojo4 співпрацював з партнерством для створення повністю адаптивного, автономного мікросайту, який Фонд Спільноти міг би легко підтримувати. Основний сайт Фонду Спільноти перероблявся <a href="https://www.vermilion.com/">Vermillion Design</a>, тож dojo4 витягнув дизайнерські шаблони з їхніх настільних макетів.</p>
+
+        <p>Ми почали свою роботу з створення статичного “заповнювального” сайту, щоб визначити, які частини контенту потребують регулярного оновлення, а які більш постійні. Зрештою це зробило інтеграцію адміністративної панелі сайту значно швидшою.</p>
+
+        <p>Спочатку ми не були впевнені, як буде оновлюватися сайт: 1) за допомогою нашого улюбленого генератора статичних сайтів <a href="https://middlemanapp.com/">Middleman</a> або 2) за допомогою нашої власної CMS на базі Rails. Але оскільки однією з умов проекту було те, що сайт має бути легко оновлюваним волонтерами Code for Boulder, ми вибрали варіант, який пріоризував зручність підтримки постійним, короткочасним штатом з різними технічними здібностями. Ми вибрали новий інструмент CMS під назвою <a href="https://www.datocms.com/">DatoCMS</a>, “повністю налаштовувана адміністративна area для статичних веб-сайтів”. Дійсно, <a href="https://github.com/stefanoverna">Стефано Верна</a>, засновник Dato, зв'язався з нами та пояснив, як легко інтегрувати DatoCMS і, що ще важливіше, як легко ним керувати нетехнічним користувачам. Це був ідеальний час, і всі тепер можуть ефективніше взаємодіяти з веб-ресурсом, який повідомляє про ключові показники якості життя в спільноті Боулдера.</p>
+
+        <p><em>Написано разом з <a href="http://dojo4.com/team/steve-bailey">Стівом Бейлі</a>, який виконав більшу частину роботи над цим проектом.</em></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/trends-community-data-made-easy">не-подобається<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/trends-community-data-made-easy">подобається<a>
+          </li>
+          <li>
+            <a href="/contact">контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

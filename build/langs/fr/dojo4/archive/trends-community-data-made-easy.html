@@ -1,0 +1,110 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! « tendances : données communautaires simplifiées »</title>
+
+    <meta property="og:title" content="! « tendances : données communautaires simplifiées »"/>
+    <meta property="og:description" content="passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/fr/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"trends-community-data-made-easy"}">
+    <meta property="site:path_info" content=""/trends-community-data-made-easy"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/fr/ro/dojo4/trends-community-data-made-easy/assets/b.png' alt="Capture d'écran 2016-10-12 à 11.44.54.png" /></p>
+
+        <p>Le rapport annuel <a href="http://www.commfound.org/">Fondation Communautaire du Comté de Boulder</a>’s <a href="http://trends.commfound.org/"><em>Tendances</em></a> fournit « un ensemble commun de données mesurables pour aider à améliorer la qualité de vie dans la communauté. » Et <a href="http://dojo4.com/work/code-for-america">Code for America</a> a récemment fait équipe avec la Fondation pour rendre ces données communautaires plus accessibles. Le partenariat, appelé <a href="https://github.com/CodeForBoulder/trends-online">Code for Boulder</a>, a invité dojo4 à s'impliquer. Après une session d'idéation communautaire utilisée pour découvrir les méthodes potentielles qui pourraient être utilisées pour exposer le contenu précieux des données dans le rapport <a href="http://trends.commfound.org/"><em>Tendances</em></a>, dojo4 a travaillé avec le partenariat pour mettre en œuvre un microsite autonome et entièrement réactif que la Fondation Communautaire pourrait facilement maintenir. Le site principal de la Fondation Communautaire était en cours de révision par <a href="https://www.vermilion.com/">Vermillion Design</a>, donc dojo4 a distillé les modèles de conception de leurs maquettes de bureau.</p>
+
+        <p>Nous avons commencé notre travail en construisant un site statique "placeholder" pour déterminer quelles parties du contenu devraient être mises à jour régulièrement et quelles parties étaient plus permanentes. En fin de compte, cela a rendu le travail d'intégration de l'administration du site beaucoup plus rapide.</p>
+
+        <p>Au départ, nous n'étions pas sûrs de la manière dont le site serait mis à jour : 1) en utilisant notre générateur de site statique préféré <a href="https://middlemanapp.com/">Middleman</a> ou 2) en utilisant notre CMS basé sur rails fait maison. Mais puisqu'il était stipulé que le site devait être facilement mis à jour par les bénévoles de Code for Boulder, nous avons choisi une option qui priorisait la maintenabilité par un personnel rotatif, à court terme, de diverses capacités techniques. Nous avons choisi un nouvel outil CMS appelé <a href="https://www.datocms.com/">DatoCMS</a>, « une zone administrative entièrement personnalisable pour les sites web statiques ». En effet, <a href="https://github.com/stefanoverna">Stefano Verna</a>, le fondateur de Dato, nous a contactés et a expliqué à quel point il était simple d'intégrer DatoCMS, et plus important encore, à quel point il était facile pour les utilisateurs non techniques de le gérer. C'était le moment idéal et tout le monde peut s'engager plus efficacement dans la ressource web qui rapporte les indicateurs clés de la qualité de vie dans la communauté de Boulder.</p>
+
+        <p><em>Écrit avec <a href="http://dojo4.com/team/steve-bailey">Steve Bailey</a>, qui a fait la majeure partie du travail sur ce projet.</em></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/fr/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/fr/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/trends-community-data-made-easy">je-déteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/trends-community-data-made-easy">j'aime-ça</a>
+          </li>
+          <li>
+            <a href="/fr/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/fr">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

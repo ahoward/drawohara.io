@@ -53,6 +53,13 @@ script do
 
   #
     puts "=" * 42
+    puts "RSYNC ./langs/ -> #{ tmp }/langs"
+    puts "-" * 42
+    system "rsync --archive --ignore-existing ./langs/ #{ tmp }/langs"
+    puts
+
+  #
+    puts "=" * 42
     puts "MV .#{ tmp } -> #{ dir }"
     puts "-" * 42
     mv!(tmp, dir)

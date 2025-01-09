@@ -1,0 +1,108 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>NCWIT sta facendo accadere</title>
+
+    <meta property="og:title" content="NCWIT sta facendo accadere"/>
+    <meta property="og:description" content="proseguire." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"ncwit-is-making-it-happen"}">
+    <meta property="site:path_info" content=""/ncwit-is-making-it-happen"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src="http://www.ncwit.org/sites/all/themes/ncwit/logo.png" alt="Icona più piccola" /></p>
+
+        <p>Ho appena avuto un grande incontro con <a href="http://www.ncwit.org/profile/terry-morreale">Terry Morreale</a>, Direttore Associato del <a href="http://www.ncwit.org/">National Center for Women and Information Technology</a>. Il NCWIT è ospitato proprio qui all'Università del Colorado ma è ovviamente un'organizzazione nazionale che funge da condotto e sostenitore per "più di 300 importanti aziende, istituzioni accademiche, agenzie governative e organizzazioni non profit che lavorano per aumentare la partecipazione delle donne nella tecnologia e nell'informatica." Il loro mandato è quello di essere un'entità non necessaria meno di 12 anni da ora, perché se fanno il loro lavoro, entro allora le donne saranno pienamente coinvolte nell'ingegneria e nella creazione della tecnologia dell'informazione che innova il nostro mondo. Nel frattempo, NCWIT continuerà ad aiutare le organizzazioni a reclutare, trattenere e far avanzare donne di tutte le età "attraverso carriere industriali e imprenditoriali fornendo comunità, prove ed azione."</p>
+
+        <p>Ci sono molti modi per effettuare un cambiamento positivo reale e duraturo, ma vedo sempre più donne che codificano come uno dei modi più potenti per permettere all'innovazione tecnologica di guidare il cambiamento sociale. <a href="http://www.un.org/apps/news/story.asp?NewsID=24698&amp;Cr=women&amp;Cr1">Studi in tutti i tipi di settori</a> mostrano che quando le donne sono istruite ed emancipate, l'innovazione in quel settore schizza alle stelle. NCWIT lavora con le organizzazioni per farlo accadere nell'IT.</p>
+
+        <p>Quindi siamo diventati membri della loro Entrepreneurial Alliance. Ma posso già vedere che le risorse che offrono saranno di supporto a noi come azienda tecnologica tanto quanto, se non di più, di quanto possiamo essere noi come membri di supporto. È facile (e gratuito) diventare membri e il ritorno è enorme. Fallo.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">informazioni</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/ncwit-is-making-it-happen">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/ncwit-is-making-it-happen">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contatto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

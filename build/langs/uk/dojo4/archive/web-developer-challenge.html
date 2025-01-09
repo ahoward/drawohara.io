@@ -1,0 +1,108 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+  <!-- meta -->
+    <title>Виклик веб-розробнику!</title>
+
+<meta property="og:title" content="Виклик веб-розробнику!"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/uk/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"web-developer-challenge"}">
+    <meta property="site:path_info" content="/uk/web-developer-challenge">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/uk' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Сьогодні я тестую новий сайт у різних браузерах перед його запуском. Як завжди, це включає деякі стилістичні вправи, щоб сайт виглядав краще, ніж погано, в Internet Explorer. Але сьогодні я зіткнувся з проблемою в Firefox, яку не міг пояснити.</p>
+<p>Сайт, який я будую, рекламує велосипедний захід. Він містить кілька блоків такого виду:</p>
+
+<p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>
+
+<p>Вони містять інформацію про спонсорів заходу. Дивовижно, але хоча ці блоки відображаються в <a href="http://uk.wikipedia.org/wiki/Internet_Explorer_6" title="http://uk.wikipedia.org/wiki/Internet_Explorer_6">улюбленому десятирічному браузері всіх</a>, вони не з'являються в жодній версії Firefox на моєму диску.</p>
+<p>Серйозно? Так.</p>
+<p>Ці блоки <em>невидимі</em> у Firefox. Браузер змінює їх, щоб вони мали атрибут <code>display:none;</code>.</p>
+<p>Але найкраще те, що якщо я зміню клас секції на щось інше, крім "sponsor", блоки відображаються ідеально. Насправді, коли ви знаєте причину, це єдиний вихід: не давайте елементам на вашій сторінці CSS-клас "sponsor".</p>
+<p>Думаєте, що ви знаєте, що це спричинило? <a href="http://uk.stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845" title="http://uk.stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845">Перевірте це</a>.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/uk/about">про нас</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/uk/web-developer-challenge">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/uk/web-developer-challenge">i-love-this</a>
+  </li>
+  <li>
+    <a href="/uk/contact">контакт</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/uk">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

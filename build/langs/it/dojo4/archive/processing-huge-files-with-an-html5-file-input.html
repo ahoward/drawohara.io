@@ -1,0 +1,135 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Elaborazione di file ENORMI con un input file html5</title>
+
+    <meta property="og:title" content="Elaborazione di file ENORMI con un input file html5"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"processing-huge-files-with-an-html5-file-input"}">
+    <meta property="site:path_info" content=""/processing-huge-files-with-an-html5-file-input"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Stavo giocando con del codice che richiedeva l'elaborazione di un file enorme (&gt; 600 mb) con un input file di tipo html5. Ci è voluto un po' di tempo prima di scoprire come elaborare un file enorme senza far crashare il browser. Ecco il succo:</p>
+
+        <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781">&lt;!--</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'><span style="color: #6e7781">  eseguire un caricamento a blocchi di grandi dimensioni di contenuti utilizzando la funzione di input file di html5 è complicato.</span>
+        </div><div class='code-line code-line-5'><span style="color: #6e7781">  </span>
+        </div><div class='code-line code-line-6'><span style="color: #6e7781">  questo semplice esempio dovrebbe aiutarti.</span>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'><span style="color: #6e7781">--&gt;</span>
+        </div><div class='code-line code-line-9'>
+        </div><div class='code-line code-line-10'><span style="color: #116329">&lt;br&gt;</span>
+        </div><div class='code-line code-line-11'><span style="color: #116329">&lt;br&gt;</span>
+        </div><div class='code-line code-line-12'><span style="color: #116329">&lt;br&gt;</span>
+        </div><div class='code-line code-line-13'><span style="color: #116329">&lt;hr&gt;</span>
+        </div><div class='code-line code-line-14'>
+        </div><div class='code-line code-line-15'><span style="color: #116329">&lt;center&gt;</span>
+        </div><div class='code-line code-line-16'>&nbsp;&nbsp;<span style="color: #116329">&lt;blink&gt;</span>
+        </div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">/&gt;</span>
+        </div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;br&gt;</span>
+        </div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;div</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">'progress'</span>&nbsp;<span style="color: #116329">/&gt;</span>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #116329">&lt;/blink&gt;</span>
+        </div><div class='code-line code-line-21'><span style="color: #116329">&lt;/center&gt;</span>
+        </div><div class='code-line code-line-22'>
+        </div><div class='code-line code-line-23'><span style="color: #116329">&lt;script&gt;</span>
+        </div><div class='code-line code-line-24'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">#file</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">change</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+        </div><div class='code-line code-line-25'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">file</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">file</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #24292f;background-color: #f6f8fa">files</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+        </div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">progress</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">#progress</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-27'>
+        </div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">file</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+        </div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">reader</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #953800">FileReader</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+        </div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">size</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">file</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">size</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunk_size</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Math</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">pow</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">2</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">13</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunks</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[];</span>
+        </div><div class='code-line code-line-33'>
+        </div><div class='code-line code-line-34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">offset</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bytes</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-36'>
+        </div><div class='code-line code-line-37'>
+        </div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">reader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">onloadend</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+        </div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if </span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">target</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">readyState</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">FileReader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">DONE</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+        </div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunk</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">target</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">result</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-41'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bytes</span>&nbsp;<span style="color: #0550ae">+=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunk</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-42'>
+        </div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunks</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">push</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">chunk</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-44'>
+        </div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">progress</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">html</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">chunks</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069"> chunk // </span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bytes</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069"> byte...</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-46'>
+        </div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">((</span><span style="color: #24292f;background-color: #f6f8fa">offset</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">size</span><span style="color: #24292f;background-color: #f6f8fa">)){</span>
+        </div><div class='code-line code-line-48'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">offset</span>&nbsp;<span style="color: #0550ae">+=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunk_size</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-49'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">blob</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">file</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">slice</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">offset</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">offset</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunk_size</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-50'>
+        </div><div class='code-line code-line-51'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">reader</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">readAsText</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">blob</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-52'>
+        </div><div class='code-line code-line-53'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">else</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-54'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">progress</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">html</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">"</span><span style="color: #0a3069">elaborazione del contenuto...</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-55'>
+        </div><div class='code-line code-line-56'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">content</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chunks</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">""</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-57'>
+        </div><div class='code-line code-line-58'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">alert</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">"</span><span style="color: #0a3069">il contenuto è pronto!</span><span style="color: #0a3069">"</span><span style="color: #

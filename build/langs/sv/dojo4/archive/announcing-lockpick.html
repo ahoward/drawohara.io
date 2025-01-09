@@ -1,0 +1,121 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  <base href='/sv' />
+
+  <!-- meta -->
+    <title>Meddelande om Lockpick</title>
+
+<meta property="og:title" content="Meddelande om Lockpick"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"announcing-lockpick"}">
+    <meta property="site:path_info" content=""/announcing-lockpick"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><img src='/ro/dojo4/announcing-lockpick/assets/lockpick.jpg' alt="img" /></p>
+
+<p>Likt många andra företag, hanterar vi många mindre problem. Problemen som varifrån vi ska få vårt kaffe från (<a href="http://boxcarcoffeeroasters.com/">Boxcar</a>), vart vi ska gå och äta lunch, vilken editor vi ska använda (Vim).</p>
+
+<p>Vi hade även problem med hur vi skulle hantera vem som har tillgång till våra utvecklings-, test- och produktionsservrar. Vi gick igenom några iterationer för att lösa detta problem. Vi kom då fram till två insikter:</p>
+
+<ul>
+  <li>Alla som utvecklar och distribuerar kod är i ett enda team på GitHub</li>
+  <li>GitHub tillhandahåller tillgång till <a href="http://developer.github.com/v3/users/keys/">användarens offentliga SSH-nyckel via deras API</a></li>
+</ul>
+
+<p>Det visade sig att SSH <em>offentliga</em> nycklar verkligen är <strong>offentliga</strong>. Den förestående ankomsten av <a href="http://dojo4.com/blog/miles-smiles">Miles Matthias</a> gav motivationen att agera på denna insikt. <a href="https://github.com/fredjean/lockpick">lockpick</a> kom ur den insikten.</p>
+
+<p>Vi har nu <code>lockpick</code>-skriptet på ett cron-jobb. Varje medlem av dojo4 och betrodda underteam har nu tillgång till våra servrar.</p>
+
+<p><a href="https://github.com/fredjean/lockpick">lockpick</a> är öppen källkodsprogramvara och licensieras under MIT-licensen.</p>
+
+<p>–</p>
+
+<p>Bild från <a href="http://www.flickr.com/photos/ranh/">Ran Yaniv Hartstein</a>, hittad på <a href="http://flickr.com">Flickr</a> på http://www.flickr.com/photos/71052670@N00/106709219/in/photolist-aqUW8-2NYNRp-3afgoE-56hKYh-6tsdur-6twmtW-7bBkEv-acmuGx</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-lockpick">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/announcing-lockpick">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

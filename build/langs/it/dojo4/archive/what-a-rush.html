@@ -1,0 +1,104 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Che emozione!</title>
+
+    <meta property="og:title" content="Che emozione!"/>
+    <meta property="og:description" content="continua a muoverti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"what-a-rush"}">
+    <meta property="site:path_info" content="/what-a-rush">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Oggi abbiamo lanciato in beta la prima startup che è passata completamente attraverso il nostro laboratorio.</p>
+      <p>BlipSnips rende i video online più potenti. Permette agli utenti del sito di contrassegnare momenti specifici nei video e di inviare i loro amici direttamente lì. Uno dei grandi benefici di questo strumento è l'annotazione che le persone generano per i video. All'improvviso, possiamo scoprire il momento esatto che attrae le persone a un video online; e possiamo anche cercare di capire perché sono attratti da esso, poiché gli utenti descrivono i loro tag con parole loro. Potente? Sì. Offre qualcosa di utile agli utenti e agli inserzionisti? Sì.</p>
+      <p>Nella consegna di BlipSnips, abbiamo scritto Ruby, JavaScript, HTML/CSS e testi di marketing. Il nostro team di sviluppo ha incontrato sfide tecniche a non finire, che ho principalmente evitato affermando di essere uno sviluppatore PHP; ma quella difesa non ha retto quando è arrivato il momento di scrivere i testi.</p>
+      <p>Lungo il percorso abbiamo anche sviluppato i nostri processi dojo4 e la visione collettiva in modo molto più dettagliato.</p>
+      <p>Naturalmente, tutto ciò è stato reso possibile dalla determinazione e dalla visione del team di gestione di BlipSnips, John Bliss e Greg Keller. Averli al dojo è stato fantastico—hanno fatto parte della squadra, si sono uniti a noi per il caffè, hanno osservato la nostra infinita evoluzione dell'arredamento.</p>
+      <p>Spero che possiamo farlo molte altre volte. Ma BlipSnips rimarrà sempre la prima volta che dojo4 ha costruito e lanciato un prodotto insieme. Devo ringraziare il team di BlipSips, John e Greg, e l'equipaggio di dojo4, Ara, Jeff, Dave e Corey, per una corsa esaltante fino alla fine. Che emozione!</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+      <ul>
+        <li>
+          <a href="/about">chi siamo</a>
+        </li>
+        <li>
+          <a href="mailto:i-hate-this@drawohara.io?subject=/what-a-rush">non mi piace</a>
+        </li>
+        <li>
+          <a href="mailto:i-love-this@drawohara.io?subject=/what-a-rush">mi piace</a>
+        </li>
+        <li>
+          <a href="/contact">contatti</a>
+        </li>
+      </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

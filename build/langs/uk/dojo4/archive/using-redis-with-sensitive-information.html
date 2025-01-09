@@ -1,0 +1,127 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+  <!-- meta -->
+    <title>Використання redis з конфіденційною інформацією</title>
+
+<meta property="og:title" content="Використання redis з конфіденційною інформацією"/>
+<meta property="og:description" content="іди далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/uk/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"using-redis-with-sensitive-information"}">
+    <meta property="site:path_info" content=""/uk/using-redis-with-sensitive-information"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/uk' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><strong>Оновлення:</strong> Творець Redis <a href="https://github.com/antirez">Сальваторе Санфіліппо</a> відповів на мою заявку на документацію цього методу вимкнення <code>bgsave</code> з <a href="https://github.com/antirez/redis/pull/1683#issuecomment-41163718">цим коментарем</a>. Оскільки він погоджується, що має бути спільний дизайн-процес щодо підтримки вимкнення персистентності в redis, я додав <a href="https://github.com/antirez/redis/issues/1704">нову проблему</a>, щоб дозволити обговорити це питання. Сподіваюся побачити дизайн-процес і бути його частиною.</p>
+
+<p><strong>Оновлення:</strong> Початкова робота з офіційної підтримки конфігурації ‘вимкнення персистентності’ розпочата <a href="https://twitter.com/mattsta">Меттом Станкліффом</a>. Дивіться роботу Мета <a href="https://github.com/antirez/redis/issues/1704#issuecomment-42575432">тут</a>. Це чудово бачити. Дякую, Метт!</p>
+
+<p>Я провів години, досліджуючи та розробляючи, як запобігти запису <a href="redis.io">redis</a> будь-яких значень бази даних на диск, оскільки екземпляр redis буде обробляти конфіденційну інформацію. (У нашому випадку ми зберігаємо cvv протягом 60 хвилин і через відповідність PCI щодо використання кредитних карток, абсолютно не можемо записувати ці значення на диск - ніколи.)</p>
+
+<p>Прочитайте документацію, файл конфігурації, погугліте, протестуйте та навіть спробуйте сказати йому записувати в <code>/dev/null</code>.</p>
+
+<p>Нарешті відповідь прийшла від ‘TheRealBill_here’ на каналі irc <code>#redis</code>:</p>
+
+<pre><code>dbfilename ""
+</code></pre>
+
+<p>у файлі конфігурації.</p>
+
+<p>Ось <a href="http://irclogger.com/.redis/2014-04-14#1397514047">посилання на нашу цілу розмову</a>, якщо вас це цікавить.</p>
+
+<p>Я також подав <a href="https://github.com/antirez/redis/pull/1683">заявку на злиття</a>, щоб додати примітку в файл конфігурації для redis.</p>
+
+<p>Ця відповідь прийшла до мене після того, як я вже прийняв кілька інших рішень щодо конфігурації redis для зберігання інформації про кредитні картки:</p>
+
+<ul>
+  <li><code>loglevel</code> має значення за замовчуванням info, яке не друкує кожен читання/запис, тому ми в порядку. Хоча для нашого випадку використання ми, ймовірно, почувалимо себе комфортно, просто повністю вимкнувши ведення журналів.</li>
+  <li><code>save</code> директива встановлена на <code>save ""</code>, щоб гарантовано вимкнути створення знімків.</li>
+  <li><code>replication</code> не в грі. Під час використання реплікації майстер ініціалізує раба, записуючи свій власний вміст бази даних на диск, надсилаючи рабу цей файл, а раб завантажує дамп бази даних у свою базу даних. Очевидно, ми не можемо цього зробити. (Також зверніть увагу, що якщо ми додамо раба в якийсь момент, він не зможе синхронізуватися з нашою поточною конфігурацією <code>dbfilename ""</code>. Дивіться журнал помилки, коли ви викликаєте <code>bgsave</code> з <code>redis-cli</code> самі.)</li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/uk/about">про нас</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/uk/using-redis-with-sensitive-information">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/uk/using-redis-with-sensitive-information">i-love-this</a>
+  </li>
+  <li>
+    <a href="/uk/contact">контакти</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/uk/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Utilizzo di redis con informazioni sensibili</title>
+
+    <meta property="og:title" content="Utilizzo di redis con informazioni sensibili"/>
+    <meta property="og:description" content="prosegui." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"using-redis-with-sensitive-information"}">
+    <meta property="site:path_info" content=""/using-redis-with-sensitive-information"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><strong>Aggiornamento:</strong> Il creatore di Redis <a href="https://github.com/antirez">Salvatore Sanfilippo</a> ha risposto alla mia pull request documentando questo metodo di disabilitazione di <code>bgsave</code> con <a href="https://github.com/antirez/redis/pull/1683#issuecomment-41163718">questo commento</a>. Poiché concorda che dovrebbe esserci un processo di progettazione comunitaria per supportare la disabilitazione della persistenza in redis, ho aggiunto una <a href="https://github.com/antirez/redis/issues/1704">nuova issue</a> per consentire questa discussione. Non vedo l'ora di vedere il processo di progettazione e di farne parte.</p>
+
+        <p><strong>Aggiornamento:</strong> Il lavoro iniziale per supportare ufficialmente una configurazione 'disabilita persistenza' è iniziato da <a href="https://twitter.com/mattsta">Matt Stancliff</a>. Vedi il lavoro di Matt <a href="https://github.com/antirez/redis/issues/1704#issuecomment-42575432">qui</a>. È fantastico vederlo. Grazie Matt!</p>
+
+        <p>Ho trascorso ore a fare ricerche e a progettare come impedire a <a href="redis.io">redis</a> di scrivere alcun valore di database su disco, poiché l'istanza di redis gestirà informazioni sensibili. (Nel nostro caso stiamo memorizzando cvv per 60 minuti e a causa della conformità PCI riguardo all'uso delle carte di credito, non possiamo assolutamente scrivere questi valori su disco - mai.)</p>
+
+        <p>Ho letto la documentazione, il file di configurazione, ho cercato su Google, testato e ho anche provato a dirgli di scrivere su <code>/dev/null</code>.</p>
+
+        <p>Alla fine la risposta è arrivata da 'TheRealBill_here' sul canale irc <code>#redis</code>:</p>
+
+        <pre><code>dbfilename ""
+        </code></pre>
+
+        <p>nel file di configurazione.</p>
+
+        <p>Ecco <a href="http://irclogger.com/.redis/2014-04-14#1397514047">un link alla nostra intera conversazione</a> se sei interessato.</p>
+
+        <p>Ho anche inviato <a href="https://github.com/antirez/redis/pull/1683">una pull request</a> per aggiungere una nota nel file di configurazione di redis.</p>
+
+        <p>Questa risposta mi è arrivata dopo aver già preso alcune altre decisioni sulla configurazione di redis per memorizzare informazioni sulla carta di credito:</p>
+
+        <ul>
+          <li><code>loglevel</code> ha un valore predefinito di info, che non stamperà ogni lettura/scrittura, quindi siamo a posto lì. Anche se per il nostro caso d'uso ci sentiremmo probabilmente a nostro agio disabilitando completamente il logging.</li>
+          <li><code>save</code> la direttiva è impostata su <code>save ""</code> in modo che lo snapshotting sia sicuramente disabilitato.</li>
+          <li><code>replication</code> non in gioco. Quando si utilizza la replicazione, il master inizializza uno slave scrivendo il proprio contenuto del database su disco, inviando allo slave quel file e lo slave caricando il dump del database nel suo database. Ovviamente, non possiamo farlo. (Nota anche che se aggiungessimo uno slave in un secondo momento, non sarebbe in grado di sincronizzarsi con la nostra configurazione attuale di <code>dbfilename ""</code>. Vedi il log per l'errore quando chiami <code>bgsave</code> da <code>redis-cli</code> tu stesso.)</li>
+        </ul>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+      <ul>
+        <li>
+          <a href="/about">informazioni</a>
+        </li>
+        <li>
+          <a href="mailto:i-hate-this@drawohara.io?subject=/using-redis-with-sensitive-information">i-hate-this</a>
+        </li>
+        <li>
+          <a href="mailto:i-love-this@drawohara.io?subject=/using-redis-with-sensitive-information">i-love-this</a>
+        </li>
+        <li>
+          <a href="/contact">contatti</a>
+        </li>
+      </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

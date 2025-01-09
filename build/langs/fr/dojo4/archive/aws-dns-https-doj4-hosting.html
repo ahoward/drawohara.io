@@ -1,0 +1,129 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>AWS, DNS & HTTPS @ Hébergement Doj4</title>
+
+<meta property="og:title" content="AWS, DNS & HTTPS @ Hébergement Doj4"/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aws-dns-https-doj4-hosting"}">
+    <meta property="site:path_info" content=""/aws-dns-https-doj4-hosting"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>L'hébergement, le DNS et le HTTPS nécessitent souvent l'interaction de plusieurs fournisseurs. Cela peut devenir difficile à gérer si ce n'est pas fait efficacement.</p>
+
+<p>Le DNS nécessite à la fois la gestion des enregistrements et l'enregistrement de domaine. Pour les deux, Dojo4 a utilisé <a href="http://dyn.com/dns">DyDNS</a> pendant de nombreuses années.</p>
+
+<p>Dojo4 utilise généralement des <a href="http://aws.amazon.com/ec2">ordinateurs cloud Amazon AWS EC2</a> pour l'hébergement et, par conséquent, tend à utiliser des <a href="http://aws.amazon.com/elasticloadbalancing">équilibreurs de charge AWS ELB</a> devant ces hôtes web. Malheureusement, Amazon ne fournit pas d'adresses IP cohérentes pour les instances ELB et, par conséquent, la seule façon de créer des enregistrements de domaine de second niveau pointant vers des instances ELB est d'utiliser <a href="http://aws.amazon.com/route53">Amazon AWS Route53</a> pour la gestion des enregistrements, qui dispose d'un enregistrement alias spécial à cet effet. Nous avons donc tendance à utiliser Route53 pour la gestion des enregistrements DNS.</p>
+
+<p>En raison de la manière dont les négociations de handshake TLS sont effectuées par linux/apache, vous êtes limité au nombre de certificats SSL qui peuvent être servis au nombre d'IP sur l'hôte. Avec EC2, cela se résume essentiellement à un seul certificat si vous n'utilisez pas de <a href="http://aws.amazon.com/vpc">VPC</a>. Dojo4 utilise souvent des ELB pour fournir SSL comme moyen de contourner cela.</p>
+
+<p>Le DNS et le HTTPS sont étroitement liés car les domaines et sous-domaines à sécuriser doivent être énumérés avant la fourniture de certificats. Souvent, la stratégie la plus pratique et flexible consiste à obtenir un certificat générique. Notez toutefois que tous les émetteurs de certificats génériques n'incluent pas le domaine de base dans le certificat (vous ne pouvez donc utiliser le certificat que pour protéger *.somedomain.com, et non somedomain.com). Le certificat générique à 100 $/an de <a href="dnsimple.com">dnsimple.com</a> émis par <a href="http://comodo.com">Comodo</a> et incluant le domaine de base est une bonne affaire même avec le coût de l'hébergement DNS dnsimple de 96 $ (8 $/mois * 12 mois).</p>
+
+<p>Dnsimple a d'autres fonctionnalités pratiques, comme la possibilité de déléguer la gestion des ensembles d'enregistrements à d'autres comptes utilisateurs dnsimple. Comme nous avons déplacé la gestion des ensembles d'enregistrements de DynDNS à Route53 et que nous avons un compte chez dnsimple pour la fourniture de SSL, nous avons déplacé l'enregistrement de domaine de DynDNS à dnsimple pour centraliser les services.</p>
+
+<p>Quelques commandes en ligne pratiques :</p>
+
+<p>Trouver le Start Of Authority pour un enregistrement DNS</p>
+<blockquote>
+  <p>dig SOA dojo4.com</p>
+</blockquote>
+
+<p>Afficher le certificat qu'un hôte sert</p>
+<blockquote>
+  <p>openssl s_client -showcerts -connect dojo4.com:443 &lt; /dev/null</p>
+</blockquote>
+
+<p>Accéder à un serveur web par IP en ignorant la vérification SSL</p>
+<blockquote>
+  <p>curl -k https://184.72.61.241 -H “Host: projects.dojo4.com”</p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">je-déteste-cela</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">j-aime-cela</a>
+  </li>
+  <li>
+    <a href="/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

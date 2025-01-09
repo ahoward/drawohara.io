@@ -1,0 +1,163 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Correction entre dépôts Git</title>
+
+<meta property="og:title" content="Correction entre dépôts Git"/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"patching-between-git-repos"}">
+    <meta property="site:path_info" content=""/patching-between-git-repos"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>(Ce billet apparaît à l'origine sur le blog Stuff… And Things… de Spike’s <a href="http://stuff-things.net/">Stuff… And Things… blog</a>)</p>
+
+<p>Bien que la célébrité et les voitures gratuites soient agréables, la raison pour laquelle je blogue est d'apprendre, ou, comme dans ce cas, de m'aider à me souvenir des choses.</p>
+
+<p>Je travaille sur un certain nombre de projets Rails distincts qui partagent une ascendance commune. Souvent, une correction de bug ou une nouvelle fonctionnalité dans l'un doit être portée vers (certains) des autres.</p>
+
+<p>Comme les projets vivent tous dans leurs propres dépôts, les modifications ne peuvent pas être fusionnées en utilisant Git. Non, c'est un travail pour les patchs. Et quand il s'agit de corriger avec Git, il y a deux articles sur le processus dont je ne peux pas me passer.</p>
+
+<p>Lors de la correction, trois commandes Git entrent en jeu, <a href="http://git-scm.com/docs/git-format-patch">git format-patch</a>, <a href="http://git-scm.com/docs/git-apply]">git apply</a>, et le quelque peu obscur <a href="http://git-scm.com/docs/git-am">git am</a>.</p>
+
+<p><code>git patch</code> est assez simple, donnez une liste de commits, il génère une diff au <a href="http://en.wikipedia.org/wiki/Patch_%28Unix%29">format patch</a> qui peut ensuite être appliquée par Git ou par la commande patch. La chose que j'ai toujours besoin de rechercher est le raccourci pour obtenir un patch à partir du dernier commit.</p>
+
+<p>Le moyen non-raccourci est d'obtenir le SHA du deuxième dernier commit et de le passer à format-patch. Pourquoi le deuxième dernier ? Le SHA représente l'état du dépôt après que le commit soit fait, donc le SHA final est là où nous sommes maintenant, et le deuxième dernier est là où nous étions avant nos changements.</p>
+
+<p>Nous générons le patch ainsi :</p>
+
+<pre><code>git log --oneline
+975d4dc CHANGELOG.md généré automatiquement
+ca1216d Augmentation pour la correction de validation
+git format-patch ca1216d
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p>(Vous pouvez également créer plusieurs patchs en utilisant un SHA plus ancien dans l'historique.)</p>
+
+<p>Cependant, il existe un raccourci pour obtenir le deuxième dernier commit que j'ai trouvé il y a longtemps dans ce billet :</p>
+
+<p><a href="http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit">http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit</a> et est:</p>
+
+<pre><code>git format-patch HEAD^
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p><code>HEAD^</code> est le raccourci pour <code>HEAD^1</code>, le <em>^1</em> signifie le premier parent du commit, dans ce cas le commit avant <em>HEAD</em>, qui est, bien sûr, le deuxième dernier commit.</p>
+
+<p>Maintenant que vous avez votre patch, vous devez l'appliquer. Pour cela, je me réfère aux conseils trouvés dans <a href="https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/">https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/</a></p>
+
+<p>D'abord, vous pouvez utiliser :</p>
+
+<pre><code>git apply --stat patch-file
+</code></pre>
+
+<p>pour voir quels changements sont réellement dans le patch. Ensuite, vous pouvez utiliser</p>
+
+<pre><code>git apply --check patch-file
+</code></pre>
+
+<p>pour voir s'il fonctionnera réellement.</p>
+
+<p>Cependant, selon l'article d'Ariejan, je n'utilise pas réellement <code>git apply</code> pour appliquer le patch. Pourquoi pas ? Attribution.</p>
+
+<p>L'alternative à <em>apply</em> est <code>git am</code>, qui est conçu pour appliquer des patchs à partir d'email(s). Ce qui le rend différent, c'est que le committeur sur le commit est pris à partir de l'adresse <em>From</em> dans le patch. Pour les patchs créés par <code>git format-patch</code>, il s'agit du committeur du code original. Avec <code>git apply</code>, vous êtes le committeur. Ainsi, si vous utilisez <code>git am</code>, vous obtenez un enregistrement de qui a écrit le code et avec <code>git apply</code> un enregistrement de qui a appliqué le patch.</p>
+
+<p>Ce qui nous amène à l'option <code>--signoff</code>. Passée à <code>git am</code>, elle ajoute <em>Signed-off-by</em> contenant le nom de la personne appliquant le patch au <code>git log</code>.</p>
+
+<pre><code>git am --signoff &lt; patch file
+</code></pre>
+
+<p>Avec cela, nous obtenons les deux, un commit qui montre qui a écrit le code et qui l'a appliqué à ce dépôt.</p>
+
+<p>Et maintenant, peut-être que je pourrai m'en souvenir !</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/patching-between-git-repos">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/patching-between-git-repos">i-love-this</a>
+  </li>
+  <li>
+    <a href="/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

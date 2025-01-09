@@ -1,0 +1,122 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Ce que dojo4 a fait pendant le week-end</title>
+
+    <meta property="og:title" content="Ce que dojo4 a fait pendant le week-end"/>
+    <meta property="og:description" content="passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/fr/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'what-dojo4-did-over-the-weekend'}">
+    <meta property="site:path_info" content="/fr/what-dojo4-did-over-the-weekend">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>dojo4 a passé un week-end plutôt génial, et nous voulions partager le plaisir avec vous tous. Nous avons fait de la randonnée à Airplane Gully sur Navajo Peak, l'un des célèbres sommets de 4000 mètres du Colorado. Nous sommes allés à Chicago et avons profité des vues. Nous avons fait un road trip en solo dans le sud du Colorado juste pour prendre des photos et nous détendre dans des sources chaudes. Nous avons gravi Pillow Mountain dans le salon. Nous avons exploré Caribou, une destination voisine pour observer les fleurs sauvages et marcher dans la neige d'été. Nous sommes allés à une réunion de famille dans le Midwest.</p>
+
+        <p>Et maintenant nous sommes de retour au travail, à nous remémorer et à nous plonger dans le travail. Bon lundi les gens !</p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/b.jpeg' alt="Corey-road-trip.jpg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/c.jpeg' alt="Corey-road-trip2.jpg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/d.jpeg' alt="Pillow Mountain.jpg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/e.jpeg' alt="Jeremy-chitown2.jpeg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/f.jpeg' alt="caribou-nova2.jpeg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/g.jpeg' alt="caribou-columbines.jpg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/h.jpeg' alt="Miles-reunion2.jpeg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/i.jpeg' alt="Luke-Navajo-Peak.jpeg" /></p>
+
+        <p><img src='/fr/ro/dojo4/what-dojo4-did-over-the-weekend/assets/j.jpeg' alt="Luke-navajo-2.jpeg" /></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/fr/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/fr/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/what-dojo4-did-over-the-weekend">je-déteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/what-dojo4-did-over-the-weekend">j-adore-ça</a>
+          </li>
+          <li>
+            <a href="/fr/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/fr/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

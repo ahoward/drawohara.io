@@ -3,10 +3,13 @@
 
 script do
   tldr <<~____
-    ~> translate uk es fr sv
+    ~> translate uk sv fr es it
   ____
 
-  param :build, value: :required
+  param :noop
+
+  param :build_dir, value: :required
+  param :lang_dir, value: :required
 
   run do
     setup!
@@ -15,25 +18,44 @@ script do
       []
 
     langs.each do |lang, name|
-      Dir.glob('**/**.html') do |src|
-        dir = src[%r`[^/]+`]
-        is_translation = langdirs.include?(dir)
-        next if is_translation
+      @build_dir.glob '**/**.html' do |src|
+        rel = src.relative_to(@build_dir)
+        parts = rel.parts
+        root = parts.first
+        next if %w[ ro langs ].include?(root)
 
-        dst = File.join(lang, src)
-        jobs.push(lang:, name:, src:, dst:)
+        dst = @lang_dir.join(lang, *parts)
+        job = {lang:, name:, src:, dst:}
+        jobs.push(job)
       end
+    end
+
+    if noop?
+      jobs.each{|job| p(job)}
+      abort
     end
 
     parallel =
       AI::Mistral::RPS - 1
 
     Parallel.each(jobs, in_threads: parallel) do |job|
+      lang = job.fetch(:lang)
+
+      @lang_dir.delete!(recursive: true)
+
       translate!(**job)
     end
   end
 
 private
+  def setup!
+    @iso_639_1 = JSON.parse(IO.binread('./config/iso-639-1.json'))
+    @noop = params.has_key?(:noop)
+
+    @build_dir = Path.for(params.fetch(:build_dir){ './build' })
+    @lang_dir = Path.for(params.fetch(:lang_dir){ './lang' })
+  end
+
   def translate!(lang:, name:, src:, dst:)
     p(lang:, name:, src:, dst:)
 
@@ -79,7 +101,7 @@ private
   end
 
   def default_langs
-    %w[ uk ]
+    %w[ ]
   end
 
   def langs
@@ -95,11 +117,8 @@ private
     langs.keys
   end
 
-  def setup!
-    @iso_639_1 = JSON.parse(IO.binread('./config/iso-639-1.json'))
-    @build = params.fetch(:build){ './build' }
-
-    Dir.chdir(@build)
+  def noop?
+    @noop
   end
 
   def iso_639_1
@@ -109,7 +128,7 @@ end
 
 BEGIN {
   require_relative '../lib/script.rb'
-  require_relative '../lib/boot.rb'
+  require_relative '../config/boot.rb'
   require_relative '../lib/ai.rb'
 
   def site

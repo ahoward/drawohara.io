@@ -28,6 +28,8 @@ class Pattern < ::Array
     @wants = []
 
     @path.parts.each do |part|
+      part.delete!('/')
+
       case
         when part.start_with?(":")
           key = part.slice(1..).to_sym

@@ -1,0 +1,253 @@
+<html color-mode="user" lang="es">
+  <head>
+  <base href='/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Las Notificaciones de su Aplicación Pitando BEEP</title>
+
+<meta property="og:title" content="Las Notificaciones de su Aplicación Pitando BEEP"/>
+<meta property="og:description" content="siga adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"las-notificaciones-de-su-aplicacion-pitando-beep"}">
+    <meta property="site:path_info" content=""/las-notificaciones-de-su-aplicacion-pitando-beep"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>“Cualquier cosa con sonido debería tener un volumen. Deberían enseñar esto a los ingenieros mecánicos.” – Gary Snyder</p>
+
+<p>Nada me molesta más que las cosas que pitan o hacen sonidos para llamar la atención. Desde lavavajillas, relojes, relojes de pulsera, detectores de humo, autos, hasta teléfonos. ¡Todo eso!</p>
+
+<p>No tengo ninguno de los siguientes en mi casa:</p>
+
+<ul>
+  <li>TV</li>
+  <li>radio</li>
+  <li>reloj despertador</li>
+  <li>timbre</li>
+</ul>
+
+<p>Todo lo electrónico en mi Suburban 90 está roto (me gusta así)<br />
+El tono de llamada de mi teléfono es de 5 segundos de silencio. Tengo una muestra de 'People Under the Stairs' que suena cuando mi esposa llama, aunque - un <a href="http://s3.amazonaws.com/drawohara.com.mp3/18_acid_raindrops.mp3">clip de flauta realmente agradable</a>.</p>
+<ul>
+  <li>Los sonidos de mi computadora están todos apagados (excepto uno o dos malditos que no puedo encontrar – ¡grrrr!)</li>
+  <li>Nunca usé el pitido en mis relojes o monitores de frecuencia cardíaca cuando los usaba</li>
+  <li>Nuestra casa ni siquiera tiene una alarma de incendio (lo sé, lo sé…)</li>
+</ul>
+
+<p>A mi esposa le gusta usar el temporizador de la estufa para - cronometrar cosas en la estufa - lo cual probablemente tenga sentido para la gente normal, pero para mí, el pequeño beeeeeep cuando se acaba el tiempo es como una lanza en mi cabeza cada vez que suena.</p>
+
+<p>Estoy realmente extraño considerando que, si pudiera, escucharía música 24x7 - incluso mientras duermo.</p>
+
+<p>Recuerdo que mi padre arrancó el 'dinger de puerta abierta' de una nueva camioneta que acabábamos de comprar <em>en el lote del concesionario</em> antes de subirse a ella para conducir a casa, así que - tal vez sea una disposición genética.<br />
+En cualquier caso, estoy seguro de que no soy el único que piensa que el 'pitido' es la peor característica de diseño de interfaz humana <em>jamás</em>?</p>
+
+<p>Algunos de ustedes probablemente estén conmigo hasta ahora, pero - aquí está la cosa - el diseño moderno de aplicaciones está lleno de pitidos que suenan terribles!</p>
+
+<ul>
+  <li>notificaciones del tablero</li>
+  <li>gruñir</li>
+  <li>pequeños contadores en las pestañas web</li>
+  <li>santas notificaciones del iphone</li>
+  <li>mensajería de facebook (cómo <em>se</em> apaga esa)</li>
+  <li>notificaciones push</li>
+  <li>un <em>billón</em> de correos electrónicos recordándonos que nos recuerden volver y ver qué está pasando con el pitido</li>
+</ul>
+
+<p>En todas partes hay pequeños números de pitidos que se acumulan en nuestras interfaces de usuario que, de alguna manera, los diseñadores y desarrolladores consideran menos ofensivos que todas esas cosas que <em>realmente</em> pitan cada dos segundos en los oídos de la gente.</p>
+
+<p>Me pregunto cuántos ingenieros y diseñadores han examinado los sistemas de notificación de los primeros Unices? (Y sí, eso <em>es</em> plural para Unix)</p>
+
+<p>En aquel entonces, los programas Unix simples tenían tres opciones para las notificaciones: campana audible, campana visual o sin campana. Historia real, compruébalo</p>
+
+<p>http://www.gnu.org/software/bash/manual/bashref.html#index-bell_002dstyle</p>
+
+<p>Entonces, resuélveme esto chica ux: ¿por qué es eso?</p>
+
+<p>Resulta que la campana audible puede ser una herramienta muy útil cuando alguien está haciendo muchas cosas importantes. Por ejemplo, al iniciar sesión en varios sistemas remotos, hacer algún trabajo, no mirar algo y necesitar saber cuándo algo que no estás mirando necesita atención. Es un hecho conocido que solo las personas con una deficiencia nutricional que destruye la capacidad de pensar racionalmente, prefieren este tipo de notificación y, por esta razón, los diseñadores de Unix lo incluyeron como una opción para la notificación global.</p>
+
+<p>Otra opción, la campana visual, solo hace que la aplicación en la que te encuentras parpadee un poco cuando necesita tu atención, algo así como alguien que enciende y apaga las luces. También es un poco irritante, pero para la mayoría de los desarrolladores, es preferible a un pitido fuerte.</p>
+
+<p>Sin campana, mi favorita. Dejaría de explicar esto excepto que sé que algunas personas que prefieren los pitidos están leyendo este artículo y, para ellos, merece una explicación. Sin campana, una aplicación que necesita notificar a alguien</p>
+
+<ul>
+  <li>no hace ningún sonido</li>
+  <li>es silenciosa</li>
+  <li>básicamente no pasa nada. ¡es un botón de silencio!</li>
+</ul>
+
+<p>Ahora, estas tres opciones simples pueden no parecer tan poderosas, pero como la mayoría de las cosas en Unix, hay poder en la ortogonalidad que los meros hackers no pueden deducir:</p>
+
+<ul>
+  <li>
+    <p>Herencia: La configuración de qué estilo de notificación deseas es una configuración global, pero se puede establecer fácilmente por aplicación al lanzarla. Es decir, todas las aplicaciones heredan el mecanismo predeterminado, preferido por el usuario, y lo mantienen durante su vida útil, y las aplicaciones que generan otras aplicaciones (piensa en las pestañas del navegador) heredan la configuración de su aplicación principal.</p>
+  </li>
+  <li>
+    <p>Global: Hay un estilo, audible, que no requiere <em>ver</em> una aplicación en particular y que actúa globalmente en todas las aplicaciones, simplemente avisándote que 'algo' necesita atención. Esto es útil si necesitas poner un montón de cosas en segundo plano (minimizarlas) o simplemente no puedes ver (es decir, eres ciego). También es útil para las personas locas mencionadas anteriormente que simplemente les gusta.</p>
+  </li>
+  <li>
+    <p>Individual: Hay un estilo, visual, que te permite notar silenciosamente las notificaciones de la aplicación en particular en la que estás prestando atención activamente y, sin embargo, ignorar fácilmente todas las demás que no están activamente en tu pantalla. La forma en que se implementa es a través de un pequeño 'destello' de brillo en la aplicación actual. Este estilo también es útil si no puedes oír.</p>
+  </li>
+</ul>
+
+<p>Con estos tres conceptos ortogonales, los usuarios han podido, durante décadas, ajustar finamente cómo se recibían las notificaciones y por qué aplicaciones en constelaciones bastante complicadas.</p>
+
+<p>Ahora, todos sabemos que el usuario moderno de computadoras necesita un sistema de notificación con invariantes mucho más complejos, como puedes ver en mi escritorio:</p>
+
+<p><img src='/ro/dojo4/las-notificaciones-de-su-aplicacion-pitando-beep/assets/desktop.png' alt="escritorio" /></p>
+
+<p>Está bien, mi escritorio es un mal ejemplo ;-)</p>
+
+<p>Por cierto, si la idea de definir invariantes ortogonales para diseñar una herramienta poderosa es nueva para ti - no pases GO - procede inmediatamente a leer sobre el diseño contextual vs. composable. Confía en mí, aunque practicas el diseño contextual y, con las notificaciones, ¡ese es el problema!</p>
+
+<p>Referencias:</p>
+
+<ul>
+  <li>http://en.wikipedia.org/wiki/Contextual_design</li>
+  <li>http://en.wikipedia.org/wiki/Unix_philosophy</li>
+</ul>
+
+<p>¿Leíste eso? Bien. ¿Todavía crees que el diseño centrado en el usuario es una panacea? ¿O que lo composable es lo mejor?</p>
+
+<p>Examen sorpresa entonces: ¿QUIÉN ES EL MAGO MÁS PODEROSO - tu aplicación o Internet?</p>
+
+<p>…</p>
+
+<p>Por supuesto, la respuesta es ninguno. Internet no sería útil para las personas sin <em>aplicaciones</em> para usarlo y ningún proceso de diseño centrado en el usuario habría construido Internet. Traducción: algunas cosas requieren un diseño composable y modular, como Internet y las notificaciones entre aplicaciones, mientras que otras, como tu editor de texto favorito, requieren uno centrado en el usuario.</p>
+
+<p>Y aquí llegamos al meollo del asunto: un enfoque que no quiera golpear tu cosita en la puerta del auto para las notificaciones <em>no se puede resolver ni implementar en la capa de la aplicación</em>, debe resolverse a nivel global para cualquier usuario que use más de una aplicación simultánea (es decir - todos ellos).</p>
+
+<p>Escucho a la gente de mac espumando, pero saben que no todo el mundo está en mac. Además, los sistemas de notificación unificados en iOS y escritorios van a desaparecer de todos modos porque solo 1 de cada 100 aplicaciones se molesta en integrarse con ellos y el resto reinventa la rueda.</p>
+
+<p>Gente de Windows - mira un iPhone para imaginar cómo serían las notificaciones unificadas.</p>
+
+<p>Gente de Linux - … sí, entienden estas cosas, me callaré ahora.</p>
+
+<p>Entonces - ¿cuál es la respuesta?</p>
+
+<p>Correo electrónico.</p>
+
+<p>(/me espera a que las risas de la multitud se calmen…)</p>
+
+<p>No, en serio. Mira esto:</p>
+
+<ul>
+  <li>el correo electrónico es ultra confiable</li>
+  <li>el correo electrónico es ultra barato</li>
+  <li>el correo electrónico se sincroniza con todos los dispositivos de un usuario como magia, ¡incluso cuando están desconectados!</li>
+  <li>el correo electrónico es súper fácil de integrar en cualquier lenguaje</li>
+</ul>
+
+<p>Ahora, no estoy hablando de correo electrónico ordinario, estoy hablando de correos electrónicos simples y analizables por máquinas con mensajes legibles por humanos en el cuerpo y datos estructurados proporcionados en archivos adjuntos. Los correos electrónicos como este podrían ser fácilmente gestionados por un programa centralizado en tu dispositivo que podría recopilarlos y distribuirlos según un conjunto de reglas: piensa en filtros de correo electrónico con algunas reglas especiales para alertarte de diversas maneras definidas por el usuario. Tu cliente de correo electrónico ya hace el 95% de esto, con la excepción de gestionar cualquier dato estructurado o realizar acciones personalizadas definidas por el usuario pitando o haciendo que Siri te lea un mensaje de que acabas de recibir un seguidor en Twitter.</p>
+
+<p>Con este enfoque ganarías:</p>
+
+<ul>
+  <li>unificación</li>
+  <li>simplicidad</li>
+  <li>archivo</li>
+  <li>búsqueda</li>
+  <li>personalización</li>
+  <li>y mucho más</li>
+</ul>
+
+<p>Entonces, ¿por qué no empezar a hacer esto ahora? Es una locura, ¿verdad?</p>
+
+<p>Locura, excepto que Google ya lo está haciendo.</p>
+
+<p>¿Has visto esto?</p>
+
+<p><img src='/ro/dojo4/las-notificaciones-de-su-aplicacion-pitando-beep/assets/gmail.png' alt="gmail.png" /></p>
+
+<p>Ahí está Google en mi bandeja de entrada, particionando automáticamente mi correo electrónico en 'Principal', 'Social' y 'Promociones'. De un solo golpe han avanzado más en el problema de 'demasiadas notificaciones en demasiados lugares' que todos los desarrolladores trabajando en sus propios sistemas únicos combinados. Y no tengo que gestionar nada que no esté haciendo ya.</p>
+
+<p>Creo que ahora es el momento de que los desarrolladores y diseñadores comiencen a darse cuenta de que sus sistemas de notificación caseros son una pérdida de energía, molestos y están rotos por diseño. Ahora es el momento de comenzar a hablar de un sistema composable y modular que sea fácil de integrar, pensar y con el que los usuarios puedan interactuar.</p>
+
+<p>Mientras tanto, al menos no hagamos daño: no inventes un sistema de notificación para tu aplicación, comienza a aprovechar el correo electrónico para las notificaciones ahora y abraza el poder que la ubicuidad y las restricciones combinan para producir.</p>
+
+<p>BEEEEEEEP – esta diatriba ha terminado.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">sobre<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/las-notificaciones-de-su-aplicacion-pitando-beep">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/las-notificaciones-de-su-aplicacion-pitando-beep">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

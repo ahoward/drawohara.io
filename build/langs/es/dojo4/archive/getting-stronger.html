@@ -1,0 +1,182 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>volverse más fuerte</title>
+
+    <meta property="og:title" content="volverse más fuerte"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'volverse-mas-fuerte'}">
+    <meta property="site:path_info" content="/volverse-mas-fuerte">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>creo que muchos desarrolladores consideran el trabajo de desarrollo como la creación de software.</p>
+
+        <p>¡por supuesto que se trata de eso!</p>
+
+        <p>sin embargo, también se trata de desarrollar al desarrollador.</p>
+
+        <p><em>volverse más fuerte.</em></p>
+
+        <p>aquí tienes un simple algoritmo que uno puede usar para convertirse en un desarrollador más fuerte:</p>
+
+        <ul>
+          <li>
+            <p>entender el problema completamente</p>
+          </li>
+          <li>
+            <p>diseñar una abstracción</p>
+          </li>
+          <li>
+            <p>implementar la abstracción</p>
+          </li>
+          <li>
+            <p>liberar la abstracción</p>
+          </li>
+          <li>
+            <p>solicitar retroalimentación</p>
+          </li>
+          <li>
+            <p>usar la retroalimentación para construir comprensión</p>
+          </li>
+        </ul>
+
+        <p>eso es bastante abstracto para que algunas personas lo entiendan, así que permíteme dar un ejemplo concreto contrastando a este desarrollador</p>
+
+        <p><img src='/ro/dojo4/getting-stronger/assets/weak.jpg' alt="img" /></p>
+
+        <p>con este otro</p>
+
+        <p><img src='/ro/dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg' alt="img" /></p>
+
+        <p>en el desarrollo de una aplicación que necesita crear triángulos isósceles y rectángulos.</p>
+
+        <p>el desarrollador uno usa el siguiente proceso:</p>
+
+        <ul>
+          <li>
+            <p>saca la tarjeta ‘isósceles’ del tablero. no se molesta en leer la tarjeta ‘triángulo rectángulo’.</p>
+          </li>
+          <li>
+            <p>obtiene muestras de triángulos isósceles. escribe código que pueda producir de manera confiable solo esos tipos de triángulos isósceles que el código espera. dado que hacer más es YAGNI, lo revisa, se asegura de que CI esté en verde y se va a casa.</p>
+          </li>
+        </ul>
+
+        <p>el desarrollador dos hace en cambio:</p>
+
+        <ul>
+          <li>
+            <p>revisa el tablero. lee los últimos commits. entiende el mapa de ruta a 10,000 pies. el desarrollador fusiona las tarjetas ‘isósceles’ y ‘rectángulo’ en una nueva tarjeta llamada ‘construir un modelo de dominio de triángulo’ (entender el problema)</p>
+          </li>
+          <li>
+            <p>el desarrollador trabaja en papel, finalmente llegando a (la abstracción)</p>
+          </li>
+        </ul>
+
+        <p><img src='/ro/dojo4/getting-stronger/assets/pythagorean.png' alt="img" /></p>
+
+        <ul>
+          <li>
+            <p>el desarrollador implementa código que modela triángulos genéricos usando el teorema y especializaciones para cada uno de los tipos específicos ‘isósceles’ y ‘rectángulo’ (implementar la abstracción)</p>
+          </li>
+          <li>
+            <p>el desarrollador aísla el código de dominio del código no de dominio y empuja una biblioteca a github. (publicar la abstracción y solicitar retroalimentación)</p>
+          </li>
+          <li>
+            <p>el desarrollador fusiona la solicitud de extracción para el error ‘dividir-por-cero’ varios días después (usar la retroalimentación para profundizar la comprensión)</p>
+          </li>
+        </ul>
+
+        <p>al final, el desarrollador uno marca una casilla y fortalece el proceso de su equipo. el desarrollador dos fortalece el código, el equipo y, sobre todo, a sí mismo.</p>
+
+        <p>al repetir el proceso una y otra vez, el desarrollador uno puede transformarse en el desarrollador dos trabajando repetidamente para fortalecer los músculos técnicos y de dominio. por el contrario, el desarrollador dos puede dejar de entrenar y volverse blando como el desarrollador uno.</p>
+
+        <p>la habilidad del desarrollador es como un músculo: tienes que usarlo o lo perderás.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/volverse-mas-fuerte">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/volverse-mas-fuerte">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contacto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

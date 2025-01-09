@@ -7,7 +7,7 @@
   cmd = "./bin/rackup --host #{ host } --port #{ port }"
 
   if reload =~ /^(true|t|1)$/i
-    cmd = "./bin/ak47 --dont-interrupt -- #{ cmd }"
+    cmd = "rego --killer -- #{ cmd }"
   end
 
 #

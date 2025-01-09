@@ -10,20 +10,29 @@ gem "webrick", "~> 1.9.1"
 gem "logger"
 gem "ostruct"
 
-# prefer local ro dep
-if test(?e, File.expand_path('~/gh/ahoward/ro'))
-  gem "ro", path: '~/gh/ahoward/ro'
-else
-  gem "ro", git: 'https://github.com/ahoward/ro'
+%w[
+  ro
+  map
+  rego
+].each do |lib|
+# prefer local dep, iff available...
+#
+  if test(?e, File.expand_path("~/gh/ahoward/#{ lib }"))
+    gem "#{ lib }", path: "~/gh/ahoward/#{ lib }"
+  else
+    gem "#{ lib }", git: "https://github.com/ahoward/#{ lib }"
+  end
+
 end
+
+
+gem "dotenv"
 
 gem "rack"
 gem "rackup"
 gem "puma"
 #gem "thruster"
 
-gem "ak47"
-gem "map"
 gem "parallel"
 gem "mistral-ai"
 

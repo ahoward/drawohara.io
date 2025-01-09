@@ -1,30 +1,34 @@
 todo
 ----
-- the nerd blog
+- purl model
+  - purl as shortcode?
+  - /[0-9]+ -> shortcode === purl
+
+- nerd blog
+
+- /langs + Site.url_for
+
 - auto-translation!
+  - centralize lang config via site.data.langs, or similar
+
+- cv
+
+- custom reloader for ./bin/serve
+
+- Site.root (ro, dato)... etc.
+- re-org site lib
+- site uses map.rb througout?
+
+
+
+
 
 next
 ----
+- better reloader, pure listen
+- reorg lib
 
-- ontology
-
-  /home
-  /more
-  /nerd
-  /dojo4
-  /projects
-  /drivel
-  /essays
-  /now
-  /music
-
-  /pbr
-    ... indexes slowly
-
-  /io/1
-    - short-codes ala hugo
-
-- paginattion?  na
+- paginattion?
 
   /drivel/
   /drivel/:id

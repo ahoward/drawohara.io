@@ -1,0 +1,109 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Une Tablette pour l'Avenir</title>
+
+<meta property="og:title" content="Une Tablette pour l'Avenir"/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"une-tablette-pour-l-avenir"}">
+    <meta property="site:path_info" content="/une-tablette-pour-l-avenir">
+
+    <base href='/fr' />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>La semaine dernière, nos amis d'Amplify ont lancé leur ambitieux produit tablette à <a href="http://sxswedu.com/">SXSWedu</a>. Vous pouvez le découvrir <a href="http://amplify.com/tablette/">ici</a>. N'oubliez pas de regarder la vidéo et de saisir l'ensemble du projet qu'ils entreprennent. N'est-ce pas génial ?! Feedback instantané des élèves et des enseignants. Contenu là où les élèves passent leur temps : sur les appareils et sur le web. Une expérience éducative plus personnalisée.</p>
+
+<p>dojo4 ne pourrait être plus heureux de contribuer à cet effort en développant deux applications de contenu pour les élèves. La première est une application Encyclopædia Britannica et la deuxième est une application vidéo Khan Academy. Les deux se sont avérées être des défis positifs en termes d'utilisabilité et de conception centrées sur les élèves, de médias hors ligne et de développement Android. Nous espérons qu'elles seront bien utilisées !</p>
+
+<p>En ce qui concerne le développement de l'application EB pour Android, l'une de mes parties préférées de la mise en œuvre concernait la recherche. Une bonne application d'encyclopédie doit avoir une bonne recherche, non ? Nous avons fini par utiliser SQLite puisqu'avec Android, elle est livrée avec l'extension <a href="http://sqlite.org/fts3.html">FTS4</a> compilée et activée. Si vous n'avez jamais utilisé les tables virtuelles FTS4 auparavant, elles offrent de grandes capacités d'indexation de recherche en texte intégral et l'opérateur SQL <code>MATCH</code>. La documentation est un peu technique, mais très utile globalement une fois que vous l'avez comprise.</p>
+
+<p>Vous pouvez en lire plus du PDG d'Amplify <a href="http://amplify.com/article/technologie-reellement-concu-education">ici</a>.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/aller-a" name="aller-a">&mdash;&gt; aller-a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/a-propos">a-propos<a>
+  </li>
+  <li>
+    <a href="mailto:je-deteste-ca@drawohara.io?subject=/une-tablette-pour-l-avenir">je-deteste-ca<a>
+  </li>
+  <li>
+    <a href="mailto:j-aime-ca@drawohara.io?subject=/une-tablette-pour-l-avenir">j-aime-ca<a>
+  </li>
+  <li>
+    <a href="/contact">contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

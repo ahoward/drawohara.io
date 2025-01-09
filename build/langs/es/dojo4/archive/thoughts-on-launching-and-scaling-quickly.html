@@ -1,0 +1,116 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Pensamientos sobre el lanzamiento y la escala rápida</title>
+
+    <meta property="og:title" content="Pensamientos sobre el lanzamiento y la escala rápida"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/es/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'pensamientos-sobre-el-lanzamiento-y-la-escala-rapida'}">
+    <meta property="site:path_info" content="/es/pensamientos-sobre-el-lanzamiento-y-la-escala-rapida">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/es/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Discutimos <a href="http://www.jperla.com/blog/post/cómo-lanzar-en-un-mes-escalar-a-un-millón-de-usuarios">esta interesante publicación de blog de Joseph Perla y la construcción y escala rápida</a> internamente esta semana, y quería compartir algunos breves pensamientos sobre algunos de sus puntos. A continuación se presentan algunos temas de su publicación con mis pensamientos y reacciones:</p>
+      <p><em>Manténlo simple</em></p>
+      <p>No hay discusión aquí. Esto a menudo es más fácil de decir que de hacer, sin embargo. Hay mucho arte y corazón en esto. Muchos gerentes de producto equiparan alta simplicidad con bajo valor.</p>
+      <p><em>Hazlo bien (ten pruebas).</em></p>
+      <p>Las buenas prácticas y cultura de prueba son clave, y esto es bastante conocido en la industria en este punto.</p>
+      <p><em>No ocultes el poder</em></p>
+      <p>Escribieron una biblioteca llamada <a href="http://www.jperla.com/blog/post/escribe-javascript-sin-errores-con-pebbles">Pebbles</a> que da una forma HTML para expresar algunos patrones de interacción ajax comunes. Definitivamente hay personas inteligentes en el campo de crear un lenguaje específico de dominio (DSL) para cada proyecto. Él está haciendo eso aquí al menos en su sistema AJAX de pebbles y su código de análisis de twitter en python.</p>
+      <p><a href="http://pixtress.tumblr.com/post/4102228454/losas-elegantes-de-acero-y-vidrio-los-rascacielos">
+        <img src='/es/dojo4/pensamientos-sobre-el-lanzamiento-y-la-escala-rapida/assets/skyscraper-corey-kohn.jpg' style="max-width:100%;display:block;" /></a></p>
+      <p><em>Déjalo al cliente</em></p>
+      <p>Este es el punto más dudoso del artículo en mi opinión. Esta estrategia funciona bien si solo tienes una interfaz, pero ¿qué tan realista es eso? La mayoría de los proyectos tendrán alguna forma de interfaz web de escritorio y alguna variante móvil de la misma. Otros proyectos pueden tener una API disponible, enlaces de idioma, herramientas de línea de comando, clientes gruesos, etc. Tan pronto como tengas una segunda interfaz, toda esa lógica que escribiste en el código del cliente debe duplicarse, y por definición si se duplica en otro marco o idioma, habrá diferencias de comportamiento. Mi regla general es que cualquier cálculo/manipulación que desees que funcione de manera consistente en múltiples interfaces pertenece al backend y debe exponerse a través de una API. En cualquier caso, el compromiso aquí es una decisión de estrategia comercial que no debe tomarse de manera aislada por el equipo técnico sin explicar claramente el compromiso (más difícil/más lento de construir otra interfaz de usuario) a los interesados ​​comerciales y gerentes de producto.</p>
+      <p><em>Continuidad</em></p>
+      <p>No está claro exactamente a qué se refiere, pero vaya, si está diciendo que a lo largo de un mes estaba manteniendo varias versiones de API, eso parece innecesario. Apoya múltiples versiones de API cuando debas absolutamente por razones comerciales, no como regla general.</p>
+      <p><em>Maneja los casos normales y los peores por separado como regla</em></p>
+      <p>Suena bastante razonable para mí.</p>
+      <p><em>Conclusiones</em></p>
+      <p>La publicación recopila de manera agradable un montón de enfoques comunes para la escalabilidad. Mucho de esto se reduce a "no hagas cosas que no escalen" con una buena dosis de pragmatismo. Lo que siempre me cuesta es saber cuándo construir para la escala desde el principio será más difícil que no preocuparse por la escala al principio y hacer compromisos que favorezcan el aprendizaje validado antes incluso si eso significa recodificar más tarde. <a href="/es/#Ara" title="Inicio">Ara</a> me mencionó algo la semana pasada sobre construir cosas rápidamente en Rails y luego, si tiene mucho éxito, tener suficiente efectivo (y tiempo/conocimiento/estabilidad del producto) para reconstruirlo en Scala (básicamente la historia de Twitter). Incluso he visto a Matz en video argumentar que si desarrollas rápidamente en Ruby, obtienes tracción en el mercado y tienes tanto tráfico que no puedes manejarlo en Ruby, tienes un buen problema. Puedes escalar tu sistema Ruby mientras optimizas/reescribes partes clave de él en otros idiomas. Pero esto es mejor que perder el mercado ante un competidor más rápido. Tanto Facebook como Twitter han realizado este movimiento con éxito con cosas como <a href="https://developers.facebook.com/blog/post/358/">HipHop para PHP</a> y <a href="http://www.readwriteweb.com/cloud/2011/04/twitter-drops-ruby-for-java.php">convertir código Rails a Java</a>. Lo que podemos decir con certeza es que muchos proyectos que estaban muy preocupados por manejar una gran escala desde el principio nunca llegaron a lanzarse, o lanzaron algo que nadie quería, o lanzaron 6 meses después de un competidor que capturó la cuota de mercado, etc. Definitivamente me inclino hacia el extremo ágil/lean/<a href="http://es.wikipedia.org/wiki/No_lo_necesitar%C3%A1s">YAGNI</a> del espectro.</p>
+      <p>Un comentario general sobre el estado de la industria ahora frente a la primera burbuja .com es que parece que somos mucho mejores para descubrir lo que quiere el mercado y también nuestra pila de tecnología nos permite construir aplicaciones web que sirven a cientos de miles de usuarios con un equipo pequeño utilizando herramientas fácilmente disponibles.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/es/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/es/about">sobre</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/es/pensamientos-sobre-el-lanzamiento-y-la-escala-rapida">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/es/pensamientos-sobre-el-lanzamiento-y-la-escala-rapida">i-love-this</a>
+          </li>
+          <li>
+            <a href="/es/contact">contacto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/es/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>
