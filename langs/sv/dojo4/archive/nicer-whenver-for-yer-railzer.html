@@ -1,0 +1,122 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>bättre närhelst för din railzer</title>
+
+<meta property="og:title" content="bättre närhelst för din railzer"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/sv/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"nicer-whenver-for-yer-railzer"}">
+    <meta property="site:path_info" content="/sv/nicer-whenver-for-yer-railzer">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/sv/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>whenever.rb är ett fint DSL för att konfigurera cron-uppgifter i ruby ( https://github.com/javan/whenever )</p>
+
+<p>Dock har det ett stort problem: alla uppgifter som det kör under cron använder samma unix-prioritet, och med ‘prioritet’ menar vi den som tar ner din dator</p>
+
+<p>Till lycka är det lätt att fixa</p>
+
+<p>steg ett, ersätt // konfigurera jobbmallarna i din ./config/schedule.rb-fil så att de ser ut så här</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781"># Läs mer: http://github.com/javan/whenever</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #24292f;background-color: #f6f8fa">job_type</span>&nbsp;<span style="color: #0a3069">:rake</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"cd :path &amp;&amp; RAILS_ENV=:environment :environment_variable=:environment nice -n 19 bundle exec rake :task --silent :output"</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'><span style="color: #24292f;background-color: #f6f8fa">job_type</span>&nbsp;<span style="color: #0a3069">:runner</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"cd :path &amp;&amp; nice -n 19 ./bin/rails runner -e :environment ':task' :output"</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>
+</div></code></div>
+
+<p>steg två: profit</p>
+
+<p>För de av er som inte vet vad unix ‘nice’ är kan det vara bra att läsa http://en.wikipedia.org/wiki/Nice_(Unix). Sammanfattning: det gör så att dina bakgrundsprocesser inte använder alla CPU-resurser.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/sv/goto" name="goto">&mdash;&gt; gå</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/sv/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/sv/nicer-whenver-for-yer-railzer">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/sv/nicer-whenver-for-yer-railzer">i-love-this<a>
+  </li>
+  <li>
+    <a href="/sv/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/sv">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

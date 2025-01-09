@@ -1,0 +1,129 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Ми Можемо(.js)</title>
+
+<meta property="og:title" content="Ми Можемо(.js)"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"yes-we-can-js"}">
+    <meta property="site:path_info" content="/uk/yes-we-can-js">
+
+    <base href='/uk' />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Ми використовували <a href="http://canjs.us/uk">Can.js</a> для деякої мобільної роботи на планшетах. Це легка фронтенд JS бібліотека для створення веб-додатків, і ми використовували її в Phonegap для створення інтерфейсів з відчуттям нативності. Зусилля вивчити та застосувати фреймворк, здається, були успішними, тому ми хотіли б поділитися своїм досвідом.</p>
+
+<h2 id="pros">Переваги</h2>
+
+<p>Can.js має багато якостей, які розробники полюбили протягом багатьох років. Ось деякі з них:</p>
+
+<ul>
+  <li>Легка – Фреймворк нічого не нав'язує. Насправді, здається, що розробники виразили дуже мало конвенцій.</li>
+  <li>Лаконічна – Використання об'єктів Can є швидкою та чистою справою, і вони зазвичай надають гарні декларативні інтерфейси для таких речей, як зв'язування подій та маршрутизація.</li>
+  <li>Швидка – Can.js рекламується як швидка. Ми не проводили власні тести продуктивності, але нічого не помітили протилежного.</li>
+  <li>Гнучка – Оскільки фреймворк не виражає або не нав'язує багато конвенцій, організація коду та його використання дуже залежать від нас, розробників.</li>
+  <li>Складова – Can постачається з корисною базовою об'єктом під назвою <code>Can.Construct</code>, який підтримує такі речі, як статичні та прототипні властивості, конструктори та успадкування. Це корисно для визначення власних об'єктів додатків або специфічних для домену в послідовний спосіб.</li>
+</ul>
+
+<h2 id="annoyances">Незручності</h2>
+
+<p>Мене спокушало назвати цей список списком «недоліків», але це не здавалося доречним, оскільки вони більше дратують, ніж є недоліками.</p>
+
+<ul>
+  <li>Документація – Здається, що вона є повною при першому погляді, але я знайшов текст та приклади не такими корисними, як могли б бути. Я вважаю, що збільшення різноманітності прикладів було б негайною перемогою.</li>
+  <li>Відсутність запропонованої структури – Це також згадувалося вище як перевага. Ми вклали значну кількість часу на розробку того, що здавалося базовим кодом для початку багатого додатку. Я не вважаю, що це повинно бути в самому фреймворку, але приклади різних методологій могли б допомогти.</li>
+  <li>Відсутність високорівневих абстракцій – Більшість об'єктів Can, що надаються, є досить низькорівневими з точки зору додатку. Багато зусиль, згаданих у попередньому пункті, були використані для створення деяких корисних базових об'єктів для різних цілей, щоб зв'язувати Can в різні способи. Це включало такі речі, як клас додатку для приєднання до <code>window</code> і представлення/містення деяких станоподібних концепцій. Також ми створили базовий об'єкт для представлення контролерів рівня сторінки замість контролерів рівня «віджетів».</li>
+</ul>
+
+<h2 id="conclusion">Висновки</h2>
+
+<p>Ми щиро рекомендуємо спробувати Can.js. Він має набагато більше можливостей, ніж навіть охоплено тут, наприклад, як він допомагає запобігати витокам пам'яті. Не сороміться надсилати електронні листи на ryan@dojo4.com з будь-якими питаннями.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/uk/about">про нас</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/uk/yes-we-can-js">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/uk/yes-we-can-js">i-love-this</a>
+  </li>
+  <li>
+    <a href="/uk/contact">контакти</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/uk/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"crap-developers-fear-mongo-and-worship-the-rdbms"}">
@@ -89,9 +91,9 @@
   <p>99.9% of the web developer world believes that the correct usage of an RDBMS, along with transactions, prevents their applications from seeing bad data and introducing serious data quality errors.  They are <em>DEAD</em> <em>WRONG</em>.</p>
 </blockquote>
 
-<p>I read with great interest <a href="https://github.com/aphyr">Kyle Kingsbury’s</a> excellent article about Mongo’s consistency model at https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads</p>
+<p>I read with great interest <a href="https://github.com/aphyr">Kyle Kingsburys</a> excellent article about Mongos consistency model at https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads</p>
 
-<p>Obviously this guy is super switched on and knows his stuff.  He’s doing the work and everything about this article is insightful and well put together.</p>
+<p>Obviously this guy is super switched on and knows his stuff.  Hes doing the work and everything about this article is insightful and well put together.</p>
 
 <p>What I found astonishing, however, were the comments and what they reveal about the average professional developer:</p>
 
@@ -99,21 +101,21 @@
   <p>Developers think using and RDBMS makes their data safe and they are <em>absolutely wrong</em></p>
 </blockquote>
 
-<p>I cannot tell you how many times I’ve gotten into arguments with ‘professional’ developers and especially silly sysadmins that actually believe that, by simply saying the word RDBMS, spinning a chicken around their head 3 times, and connecting to the magical unicorn of DBs their data will be safe and sound like, you know, … (something something about) …. banking transaction and all that (nonsense) dither about transactions and fsync.  And a bunch of other stuff no developer I’ve ever met actually understands or has considered in the context of an HTTP (hint: stateless) application.</p>
+<p>I cannot tell you how many times Ive gotten into arguments with professional developers and especially silly sysadmins that actually believe that, by simply saying the word RDBMS, spinning a chicken around their head 3 times, and connecting to the magical unicorn of DBs their data will be safe and sound like, you know,  (something something about) . banking transaction and all that (nonsense) dither about transactions and fsync.  And a bunch of other stuff no developer Ive ever met actually understands or has considered in the context of an HTTP (hint: stateless) application.</p>
 
-<p>Before I proceed I’m going to issue a challenge:</p>
+<p>Before I proceed Im going to issue a challenge:</p>
 
 <ul>
   <li>Send me your github handle</li>
-  <li>Let me pick a MySQL or PostgreSQL backed application you’ve written (so you can’t prep it)</li>
+  <li>Let me pick a MySQL or PostgreSQL backed application youve written (so you cant prep it)</li>
   <li>And I will find code paths that supply both read-uncommitted and dirty-reads in your app within 1 day</li>
   <li>If there are none I will pay you <em>$1000 bucks</em></li>
   <li>If there are any I get to post any picture I choose of you as an addendum to this article.  Photoshop <em>is</em> allowed.</li>
 </ul>
 
-<p>Find me @ <a href="/contact">/contact</a> or <a href="/team/ara-t-howard">/team/ara-t-howard</a>.  Now on with it…</p>
+<p>Find me @ <a href="/contact">/contact</a> or <a href="/team/ara-t-howard">/team/ara-t-howard</a>.  Now on with it</p>
 
-<p>Riddle me this developer: what’s wrong with this code path:</p>
+<p>Riddle me this developer: whats wrong with this code path:</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
@@ -137,7 +139,7 @@ APPLICATION, IN THE WORLD</strong></p>
 
 <p>I assure you that the email will go out <em>twice</em>.</p>
 
-<p>Explaining transactions is beyond the scope of this article, but let me introduce you to ‘phantom reads’</p>
+<p>Explaining transactions is beyond the scope of this article, but let me introduce you to phantom reads</p>
 
 <p>http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Phantom_reads</p>
 
@@ -167,7 +169,7 @@ APPLICATION, IN THE WORLD</strong></p>
 </div><div class='code-line code-line-22'>
 </div></code></div>
 
-<p>I know I know, you can’t believe it.  But that’s just because you never bothered to RTFM when it comes to what ‘transaction’ means.  Start here:</p>
+<p>I know I know, you cant believe it.  But thats just because you never bothered to RTFM when it comes to what transaction means.  Start here:</p>
 
 <p>http://www.postgresql.org/docs/9.1/static/transaction-iso.html</p>
 
@@ -175,13 +177,13 @@ APPLICATION, IN THE WORLD</strong></p>
 
 <ul>
   <li>
-    <p>Because <em>you</em> don’t have every <em>single</em> sequence of <em>read&amp;write</em> wrapped in a transaction, and sometimes just sling code against your ORM objects directly, you suffer from the ‘scary’ reality of ‘read-uncommitted’ mentioned in the article</p>
+    <p>Because <em>you</em> dont have every <em>single</em> sequence of <em>read&amp;write</em> wrapped in a transaction, and sometimes just sling code against your ORM objects directly, you suffer from the scary reality of read-uncommitted mentioned in the article</p>
   </li>
   <li>
     <p>Because <em>you</em> rely on the default isolation level you suffer from both non-repeatable-reads and phantom reads. (Do you even know what the default isolation is for your db and what that means????)</p>
   </li>
   <li>
-    <p>Because <em>you</em> didn’t set your transaction level to ‘serializable’ you falsely believe your database is fast and safe.  You’ve wrongly relied on the database to provide data integrity as an abstraction that does not require critical thinking and application code at least 10 times better than yours.  You have all the scary features of Kyle’s article in your RDBMS backed apps - and, not only do you <em>not know this</em> you are <em>pretty sure your data is ‘safe’</em></p>
+    <p>Because <em>you</em> didnt set your transaction level to serializable you falsely believe your database is fast and safe.  Youve wrongly relied on the database to provide data integrity as an abstraction that does not require critical thinking and application code at least 10 times better than yours.  You have all the scary features of Kyles article in your RDBMS backed apps - and, not only do you <em>not know this</em> you are <em>pretty sure your data is safe</em></p>
   </li>
 </ul>
 
@@ -189,14 +191,14 @@ APPLICATION, IN THE WORLD</strong></p>
 
 <ul>
   <li>
-    <p>Pick a standards based tool that everyone is <em>very</em> confident they understand and know how to use safely but, in it’s common usage, virtually never guarantees that which believe it promises and, furthermore, has been widely <a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Default_isolation_level">critized as having ambiguous and inaccurate semantics</a> ?</p>
+    <p>Pick a standards based tool that everyone is <em>very</em> confident they understand and know how to use safely but, in its common usage, virtually never guarantees that which believe it promises and, furthermore, has been widely <a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Default_isolation_level">critized as having ambiguous and inaccurate semantics</a> ?</p>
   </li>
   <li>
-    <p>Or to accept what has always been true: that by themselves, databases cannot provide abstractions that mean non-extremely-clever developers can’t trivally screw things up. And that data integrity is a domain specific concept that must be implemented at the application layer, with only a small part of that integrity being aided by the choice of database.</p>
+    <p>Or to accept what has always been true: that by themselves, databases cannot provide abstractions that mean non-extremely-clever developers cant trivally screw things up. And that data integrity is a domain specific concept that must be implemented at the application layer, with only a small part of that integrity being aided by the choice of database.</p>
   </li>
 </ul>
 
-<p>ps.  I’ve worked on large scale financial, realtime, and HA systems that use both Mongo and PostgreSQL.  It’s damn hard either way.</p>
+<p>ps.  Ive worked on large scale financial, realtime, and HA systems that use both Mongo and PostgreSQL.  Its damn hard either way.</p>
 
 <p>pss.  I tried to comment on your blog Kyle, but comments were blowing up ;-)</p>
 

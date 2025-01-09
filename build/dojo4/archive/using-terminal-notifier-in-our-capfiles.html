@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"using-terminal-notifier-in-our-capfiles"}">
@@ -83,7 +85,7 @@
 
     <main>
       <div class="ro markdown">
-  <p>We use <a href="http://www.capistranorb.com/">capistrano</a> for our deployments and recently I came across the sweet <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a> gem that uses the user notifications in OS X 10.8 and above to show a nice notification from the command line. Whenever I deploy I’m always manually checking if the deploy has finished yet, and this is a nice solution to avoid that. One problem that I ran into though when adding it to one of our projects is that some people on our team are using a version of Mac OS X <em>before</em> 10.8 (I know!), so the <code>terminal-notifier</code> command would fail and their deployment would have errors in it. So here’s the code I use now to ensure errors don’t show up if you can’t use the cool user notifications in newer os x’s:</p>
+  <p>We use <a href="http://www.capistranorb.com/">capistrano</a> for our deployments and recently I came across the sweet <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a> gem that uses the user notifications in OS X 10.8 and above to show a nice notification from the command line. Whenever I deploy Im always manually checking if the deploy has finished yet, and this is a nice solution to avoid that. One problem that I ran into though when adding it to one of our projects is that some people on our team are using a version of Mac OS X <em>before</em> 10.8 (I know!), so the <code>terminal-notifier</code> command would fail and their deployment would have errors in it. So heres the code I use now to ensure errors dont show up if you cant use the cool user notifications in newer os xs:</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">desc</span>&nbsp;<span style="color: #0a3069">'use terminal notifier if in &gt; osx 10.8 to use a user alert'</span>
 </div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">task</span>&nbsp;<span style="color: #0a3069">:terminal</span>&nbsp;<span style="color: #cf222e">do</span>
@@ -98,7 +100,7 @@
 </div><div class='code-line code-line-11'><span style="color: #cf222e">end</span>
 </div></code></div>
 
-<p>Obviously we also include <code>gem terminal-notifier</code> in our Gemfile. See <a href="http://stackoverflow.com/questions/20885606/dangers-of-putting-a-gem-into-a-gemfile-is-someone-trying-to-install-it-doesnt">my SO question</a> about including this gem in your gemfile for an explanation of why I’m using the simple gem include statement.</p>
+<p>Obviously we also include <code>gem terminal-notifier</code> in our Gemfile. See <a href="http://stackoverflow.com/questions/20885606/dangers-of-putting-a-gem-into-a-gemfile-is-someone-trying-to-install-it-doesnt">my SO question</a> about including this gem in your gemfile for an explanation of why Im using the simple gem include statement.</p>
 
 </div>
     </main>

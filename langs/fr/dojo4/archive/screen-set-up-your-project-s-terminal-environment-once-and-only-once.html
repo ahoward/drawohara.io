@@ -1,0 +1,140 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Screen -- configurez l'environnement terminal de votre projet une fois et une seule fois.</title>
+
+    <meta property="og:title" content="Screen -- configurez l'environnement terminal de votre projet une fois et une seule fois."/>
+    <meta property="og:description" content="passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/fr/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'screen-configurez-l-environnement-terminal-de-votre-projet-une-fois-et-une-seule-fois'}">
+    <meta property="site:path_info" content="/fr/screen-configurez-l-environnement-terminal-de-votre-projet-une-fois-et-une-seule-fois">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Avec n'importe quel projet, j'exécute plusieurs programmes simultanément pendant le processus de développement. Cela entraîne généralement plusieurs onglets dans l'application Terminal - un pour mon serveur local, un pour ma base de données, un pour mon application client, et un pour git. (Pour l'instant, j'utilise un éditeur GUI (ST2), mais je pourrais bientôt revenir à vim...) Cette configuration à plusieurs onglets se reproduit pour chaque projet sur lequel je travaille, et je passe généralement d'un projet à l'autre plusieurs fois par jour.</p>
+
+        <p>Avec cette configuration à plusieurs onglets, lorsque je dois changer de projet, je dois soit ouvrir une nouvelle fenêtre Terminal avec ses propres onglets pour ce projet et gérer un nombre de fenêtres supérieur à celui nécessaire (pas une option pour un minimaliste comme moi), soit fermer tous les onglets que j'ai ouverts, pour les réouvrir tous lorsque je reviens à ce projet.</p>
+
+        <p>Eh bien, comme la plupart des jours, j'ai appris une solution astucieuse à ce problème de la part du leader sage et tout-puissant de dojo4, <a href="http://dojo4.com/team/ara-t-howard">Ara</a>. Il utilise le programme GNU <a href="https://www.gnu.org/software/screen/">Screen</a>. Au sein d'un seul onglet Terminal, Screen vous permet d'ouvrir plusieurs "fenêtres" (alias onglets) dans le même onglet Terminal. Voici comment l'utiliser :</p>
+
+        <pre><code class="language-text"># créer et se reconnecter à une session
+screen -S [nom] = créer un écran nommé
+screen -D -R [nom] = se reconnecter à un écran nommé et déconnecter les autres personnes si nécessaire
+screen -list = lister les écrans
+
+# (quitter toutes les fenêtres dans une session screen quittera cette session. Cependant, une session screen est un processus en cours d'exécution, vous pouvez donc la tuer manuellement.)
+
+# dans une session screen :
+ctrl-A + ? = aide
+ctrl-A + " = lister les fenêtres
+ctrl-A + c = créer une nouvelle fenêtre
+ctrl-A + n = fenêtre suivante
+ctrl-A + p = fenêtre précédente
+ctrl-A + A = renommer une fenêtre
+
+# alias que nous utilisons
+alias sl='screen -list '
+alias sdr='screen -d -r '
+alias s='screen -D -R '
+alias ss='screen -S'
+
+sdr [nom] = se reconnecter à un écran nommé et déconnecter les autres personnes si nécessaire
+ss [nom] = créer un écran nommé
+sl = lister les écrans
+</code></pre>
+
+        <p>Une autre fonctionnalité vraiment cool de screen est que lorsque vous vous déconnectez d'une session screen, toutes vos fenêtres restent en cours d'exécution, et lorsque vous vous reconnectez à la session screen, vous avez toutes vos fenêtres à votre disposition.</p>
+
+        <p>Lorsque nous en avons discuté dans notre bureau, <a href="http://dojo4.com/team/ryan-cook">Ryan Cook</a> a créé un <a href="https://gist.github.com/cookrn/2711966">petit assistant Ruby sympa</a> pour créer des sessions screen nommées d'après votre répertoire actuel.</p>
+
+        <p>Mon flux de travail est donc passé de l'ouverture de plusieurs onglets dans Terminal à un seul onglet dans Terminal où je me reconnecte à une session screen pour chaque projet sur lequel je travaille. Cela me permet de changer de projet extrêmement rapidement et d'arrêter de perdre du temps à réinitialiser et à réorganiser tous les onglets Terminal que j'utilise pour un projet.</p>
+
+        <p>Maintenant, je dois convertir plus de choses en utilisation du terminal (comme mon éditeur) afin de vraiment tirer le meilleur parti de screen...</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/fr/goto" name="goto">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/fr/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/fr/screen-configurez-l-environnement-terminal-de-votre-projet-une-fois-et-une-seule-fois">je-déteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/fr/screen-configurez-l-environnement-terminal-de-votre-projet-une-fois-et-une-seule-fois">j-adore-ça</a>
+          </li>
+          <li>
+            <a href="/fr/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/fr">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

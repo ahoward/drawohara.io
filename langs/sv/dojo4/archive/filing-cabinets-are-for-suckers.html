@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Filarkiv är för sugares</title>
+
+    <meta property="og:title" content="Filarkiv är för sugares"/>
+    <meta property="og:description" content="Fortsätt gå." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'filing-cabinets-are-for-suckers'}">
+    <meta property="site:path_info" content="/filing-cabinets-are-for-suckers">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Sedan den natten jag satt på hans grannes veranda och drack vin och såg <a href="http://dojo4.com/team/ara-t-howard">Ara</a> komma hem från jobbet långt efter midnatt <a href="http://dojo4.com/blog/hello-goodbye-dojo4">från företaget han just hade medgrundat</a> och anställde mig för att "hjälpa till att organisera saker", har det varit en strikt order att hålla alla dojo4-operationer i molnet.</p>
+
+        <p>Vi har funnit att allt i tryckt form tenderar att bli nästan omedelbart värdelöst i sin oförmåga att spåras, delas och ohanterligt användande av fysisk yta i vårt lilla kontor. Vi har fortfarande några äldre kontrakt och sådana saker som förvaras i en enda låda i garderoben, men bara för att jag inte tagit tid att <a href="https://itunes.apple.com/us/app/turboscan-quickly-scan-multipage/id342548956?mt=8">skanna</a> dem med min telefon och få dem in i <a href="https://www.dropbox.com">Dropbox</a>.</p>
+
+        <p>Här är en lista över appar och plattformar vi använder för att hålla oss organiserade och papperslösa:</p>
+
+        <ul>
+          <li><a href="http://www.google.com/intl/en/enterprise/apps/business/?utm_expid=65468332-15&amp;utm_referrer=http%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D1%26sqi%3D2%26ved%3D0CC8QFjAA%26url%3Dhttp%253A%252F%252Fwww.google.com%252Fintl%252Fen%252Fenterprise%252Fapps%252Fbusiness%252F%26ei%3DBJFLUaj1PPD8yAG2x4HADg%26usg%3DAFQjCNExNT10soxbdrjVYvP9XzZaCIAORg%26bvm%3Dbv.44158598%2Cd.aWM">Google Apps</a> för e-post, grupper, delade dokument och kalendrar - Google Apps är fortfarande det bästa integrerade systemet. Vi använder det som tokiga, internt och med kunder.</li>
+          <li><a href="http://www.freshbooks.com/">Freshbooks</a> för tidrapportering och fakturering - Det finns andra bra faktureringsservicer som <a href="http://www.getharvest.com/">Harvest</a>, men vi hittar att Freshbooks gör jobbet bra, och deras kundservice är super snabb, otroligt glädjefull och <a href="http://www.freshbooks.com/blog/2013/03/05/gold-customer-service/">prisbelönt</a>.</li>
+          <li><a href="https://contractual.ly/">Contractual.ly</a> för avtal och kontrakt - Vi träffade contractual.ly-grundaren Martin Ertl precis när han startade företaget, och bestämde oss för att hantera alla våra avtal online. Som jag nämner i en <a href="http://blog.contractual.ly/creative-agency-goes-paperless-with-contractually/">senaste contractual.ly-post</a>, trodde jag att våra kunder skulle gilla att förhandla och skriva under kontrakt online, men de flesta av dem älskar det, för samma skäl som vi gör: det är mycket enklare att hantera versionskontroll och få de tråkiga sakerna signerade på ett ögonblick. Och för de gamla juridiska avdelningarna som fortfarande vill ha saker i Word (?!), spelar vi bara med, och lagrar sedan dem i contractual.ly när de har skrivits under. Det enda vi fortfarande väntar på från den här fantastiska tjänsten, är bättre filorganisering. Martin och hans team erbjuder också exemplariskt och snabbt kundservice.</li>
+          <li><a href="https://www.boxcryptor.com/">BoxCryptor</a> för inloggningar, lösenord och andra hemligheter - Vi använde <a href="https://www.passpack.com">Passpack</a> men hittade det ohanterligt, så vi bestämde oss för att hantera våra lösenord i en enkel .txt-fil, krypterad och delad via BoxCryptor. Hittills så bra.</li>
+          <li><a href="https://www.dropbox.com">Dropbox</a> för filförvaring - God gamla Dropbox. Vi har ett teamkonto, vilket är dyrt men lagring och lätt åtkomst har gjort det värt hittills. Dela behörigheter och filhierarki kan vara lite konstigt. Vi använde bara S3 och har tänkt på <a href="https://evernote.com/">Evernote</a> för vissa typer av filförvaring. Men just nu gör Dropbox jobbet, särskilt för designerna och deras designfiler.</li>
+          <li><a href="http://www.redmine.org/">Redmine</a> för projektledning - Det är öppet källkod, gott att anpassa och enkelt att använda, inte bara för oss, utan även för våra kunder. Det har massor av funktionalitet men är tillräckligt enkelt för att faktiskt vara funktionellt.</li>
+          <li><a href="https://github.com/">Github</a> för att släppa kod, etc. - Github är uppenbarligen oumbärligt. Vi använder det för allt från att hantera repository till <a href="https://github.com/dojo4/policy">att öppet källkoda driftdokument</a>.</li>
+          <li><a href="http://dribbble.com/dojo4">Dribbble</a> för att släppa bilder och design - Vi skapar ständigt designartefakter och behöver ett ställe för att släppa och lagra dem. Dribbble är perfekt för det.</li>
+          <li><a href="http://www.rdio.com/">Rdio</a> för att kuratera och dela musik - Mycket av musiken som kommer från våra högtalare på dojo4 hämtas och delas via Rdio.</li>
+        </ul>
+
+        <p>Vad annat är bra som vi borde använda?</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">om<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/filing-cabinets-are-for-suckers">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/filing-cabinets-are-for-suckers">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Lär dig skriva DSL&#39;s på rätt sätt</title>
+
+    <meta property="og:title" content="Lär dig skriva DSL&#39;s på rätt sätt"/>
+    <meta property="og:description" content="flytta på." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"learn-to-write-dsls-the-right-way"}">
+    <meta property="site:path_info" content=""/learn-to-write-dsls-the-right-way"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Jag arbetade med ett viss populärt Ruby-testbibliotek idag för att förbereda en pull request och stötte på ett problem som jag stött på många gånger: test som går igenom eller misslyckas på grund av testramverket självt som förorenar globala namnutrymmen. Tror du inte det? Kolla på detta:</p>
+
+        <p><br /><br />
+          <script src="https://gist.github.com/4039805.js?file=polluted.rb.txt"></script><br />
+        <br /></p>
+
+        <p>Resultaten producerades med hjälp av det här skriptet:</p>
+
+        <p><br /><br />
+          <script src="https://gist.github.com/4039805.js?file=polluted.rb"></script><br />
+        <br /></p>
+
+        <p>Vissa människor har hävdat att detta alltid kommer att vara en bieffekt av att ha trevliga DSL:er, men detta är helt enkelt inte sant:</p>
+
+        <p><br /><br />
+          <script src="https://gist.github.com/4040698.js?file=dsl.rb"></script><br />
+        <br /></p>
+
+        <p>Så, lär er att skriva DSL:er på rätt sätt, folk. Det rätta sättet är något som inte dumpar metoder överallt i objekt och namnutrymmen utan en <em>extremt</em> bra anledning.</p>
+
+        <p><br /><br />
+          <br /><br />
+          ”Det ska läsas trevligt” är <em>inte</em> en bra anledning.</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; gå till</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">om<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/learn-to-write-dsls-the-right-way">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/learn-to-write-dsls-the-right-way">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

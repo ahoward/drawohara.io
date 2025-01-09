@@ -1,0 +1,117 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>utiliser terminal notifier dans nos capfiles</title>
+
+<meta property="og:title" content="utiliser terminal notifier dans nos capfiles"/>
+<meta property="og:description" content="continuez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"using-terminal-notifier-in-our-capfiles"}">
+    <meta property="site:path_info" content=""/using-terminal-notifier-in-our-capfiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Nous utilisons <a href="http://www.capistranorb.com/">capistrano</a> pour nos déploiements et récemment, j'ai découvert le gem sympathique <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a> qui utilise les notifications utilisateur dans OS X 10.8 et au-dessus pour montrer une jolie notification depuis la ligne de commande. Chaque fois que je déploie, je vérifie manuellement si le déploiement est terminé, et c'est une bonne solution pour éviter cela. Un problème que j'ai rencontré cependant lors de l'ajout à l'un de nos projets est que certaines personnes de notre équipe utilisent une version de Mac OS X <em>avant</em> 10.8 (je sais !), donc la commande <code>terminal-notifier</code> échouerait et leur déploiement aurait des erreurs. Voici donc le code que j'utilise maintenant pour m'assurer que les erreurs n'apparaissent pas si vous ne pouvez pas utiliser les notifications utilisateur sympas dans les nouveaux OS X :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">desc</span>&nbsp;<span style="color: #0a3069">'utiliser terminal notifier si dans &gt; osx 10.8 pour utiliser une alerte utilisateur'</span>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">task</span>&nbsp;<span style="color: #0a3069">:terminal</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'terminal-notifier'</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">fetch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:url</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">application</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">fetch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:application</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">system</span>&nbsp;<span style="color: #0a3069">"terminal-notifier -title </span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">application</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069"> -message 'Le déploiement a été complété avec succès sur </span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069">.' -sound default"</span>
+</div><div class='code-line code-line-8'>&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">warn</span>&nbsp;<span style="color: #0a3069">"Vous n'êtes probablement pas sur os x 10.8, donc vous n'utilisez pas terminal notifier. Si vous l'êtes, utilisez gem install terminal-notifier pour utiliser certaines notifications utilisateur sympas."</span>
+</div><div class='code-line code-line-10'>&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-11'><span style="color: #cf222e">end</span>
+</div></code></div>
+
+<p>Évidemment, nous incluons également <code>gem terminal-notifier</code> dans notre Gemfile. Voir <a href="http://stackoverflow.com/questions/20885606/dangers-of-putting-a-gem-into-a-gemfile-is-someone-trying-to-install-it-doesnt">ma question SO</a> sur l'inclusion de ce gem dans votre gemfile pour une explication de pourquoi j'utilise la simple instruction d'inclusion de gem.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/using-terminal-notifier-in-our-capfiles">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/using-terminal-notifier-in-our-capfiles">i-love-this</a>
+  </li>
+  <li>
+    <a href="/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

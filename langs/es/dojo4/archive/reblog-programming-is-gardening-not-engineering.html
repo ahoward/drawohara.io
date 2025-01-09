@@ -1,0 +1,110 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href="/es"/>
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! &#39;reblog: La programación es jardinería, no ingeniería&#39;</title>
+
+    <meta property="og:title" content="! &#39;reblog: La programación es jardinería, no ingeniería&#39;"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'reblog-programming-is-gardening-not-engineering'}">
+    <meta property="site:path_info" content="/reblog-programming-is-gardening-not-engineering">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p><em>Pensamos que valía la pena volver a publicar esta Conversación con Andy Hunt y Dave Thomas, Parte VII por Bill Venners del 14 de abril de 2003...</em>
+      </p>
+      <h2>Desarrollo de Software como Jardinería</h2>
+      <p>Bill Venners: En su libro, The Pragmatic Programmer, dicen: "Más que construcción, la programación es más como la jardinería". Realmente me gusta su metáfora de la jardinería para el desarrollo de software. ¿Podrían elaborar más sobre esto?</p>
+      <p>Andy Hunt: Hay una noción persistente en mucha literatura de que el desarrollo de software debería ser como la ingeniería. Primero, un arquitecto dibuja algunos grandes planos. Luego, se traen un montón de cuerpos calientes para llenar las sillas, escribir todo el código, y listo. Mucha gente todavía piensa de esa manera. Vi una entrevista en los últimos seis meses de una gran casa de outsourcing en la India donde así es como se sentían. Pintan un cuadro de la construcción de software como edificios. Los arquitectos de alto talento hacen el diseño. Los codificadores hacen la construcción. Los inquilinos se mudan, y todos viven felices para siempre. No creemos que sea muy realista. No funciona así con el software.</p>
+      <p>Pintamos un cuadro diferente. En lugar de ese proceso muy ordenado y ordenado, que no ocurre ni siquiera en el mundo real con edificios, el software es mucho más como la jardinería. Planificas. Planificas hacer un terreno de este tamaño. Preparas el suelo. Traes a un paisajista que dice que pongas las plantas grandes en la parte de atrás y las pequeñas en la parte de adelante. Tienes un gran plan, todo un diseño.</p>
+      <p>Pero cuando plantas los bulbos y las semillas, ¿qué pasa? El jardín no sale exactamente como lo dibujaste. Esta planta se hace mucho más grande de lo que pensabas. Tienes que podarla. Tienes que dividirla. Tienes que moverla por el jardín. Esta planta grande en la parte de atrás murió. Tienes que desenterrarla y tirarla al montón de compost. Estos colores no se ven como en el paquete. No se ven bien juntos. Tienes que trasplantar este a la otra parte del jardín.</p>
+      <p>Dave Thomas: También con un jardín, hay una constante suposición de mantenimiento. Todos dicen, quiero un jardín de bajo mantenimiento, pero la realidad es que un jardín es algo con lo que siempre estás interactuando para mejorar o simplemente mantenerlo igual. Aunque sé que hay mantenimiento de edificios, generalmente no cambias la forma de un edificio. Solo se queda ahí. Queremos que la gente vea el software como algo mucho más orgánico, mucho más maleable, y algo con lo que tienes que estar preparado para interactuar para mejorar todo el tiempo.</p>
+      <p><em>Lee el resto en </em>
+      <a style="font-style: italic;" title="http://www.artima.com/intv/garden.html" href="http://www.artima.com/intv/jardineria.html">http://www.artima.com/intv/jardineria.html</a>
+      <em>.</em>
+      </p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">acerca de</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this-es@drawohara.io?subject=/reblog-la-programacion-es-jardineria-no-ingenieria">odio-esto</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this-es@drawohara.io?subject=/reblog-la-programacion-es-jardineria-no-ingenieria">amo-esto</a>
+          </li>
+          <li>
+            <a href="/contact">contacto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

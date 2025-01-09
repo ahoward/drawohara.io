@@ -1,0 +1,135 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Le dojo grandit !</title>
+
+    <meta property="og:title" content="Le dojo grandit !"/>
+    <meta property="og:description" content="continuez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"le-dojo-grandit"}">
+    <meta property="site:path_info" content=""/le-dojo-grandit"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      &lt;% content_for :style do %&gt;
+      <style>
+          h2, dd {line-height: 1.7;}
+          h2 {margin-top: 1em;}
+          dd {margin-left: 0;}
+      </style>
+      &lt;% end %&gt;
+      <p>Récemment, dojo4 a embauché deux nouvelles personnes pour aider l'atelier à relever de nouveaux défis. Eh bien, pour être honnête, nous étions fatigués de nous taquiner les uns les autres, alors nous avons fait venir du nouveau sang. Dans tous les cas, si vous êtes dans le quartier, n'hésitez pas à passer et à vous présenter. En attendant, voici quelques informations sur ces gars.</p>
+      <p>Après 10 ans à l'étranger, Brett a décidé qu'il était temps de revenir aux États-Unis. Avant de le faire, il a fait beaucoup de recherches sur l'endroit idéal pour s'installer. Boulder correspondait à ses critères. Nous pensons qu'il a fait le bon choix.</p>
+      <p>En savoir plus sur Brett :</p>
+      <dl>
+        <h2>Pourquoi dojo4 ?</h2>
+        <p>Depuis que j'ai commencé à travailler avec l'équipe de dojo4, j'ai eu l'impression de m'intégrer tout de suite et leurs idéaux correspondaient vraiment aux miens. Je n'ai pas pu effacer ce sourire niais de mon visage depuis que je suis venu ici et que je travaille chez Dojo4, j'adore !</p>
+        <h2>Où étais-tu avant ?</h2>
+        <p>Je suis un peu un globe-trotter. J'étais à Sydney, en Australie, où j'ai terminé mon master et j'ai travaillé là-bas pendant un certain temps. Avant cela, je vivais à Beppu, au Japon, où j'ai obtenu mon diplôme de premier cycle. J'ai vécu dans la plus charmante petite ville de sources chaudes du monde. Après une longue journée d'école, je me rendais dans les sources chaudes. Pour quiconque voyage au Japon, je recommande vivement de s'éloigner le plus possible de Tokyo et de se rendre dans un endroit comme Kyushu ou Shikoku, cela en vaudra la peine.</p>
+        <h2>Quels sont vos points forts ou ce qui vous passionne dans le travail sur le Web ?</h2>
+        <p>Je suis une personne très visuelle et j'aime beaucoup le développement frontend où je peux voir la création au fur et à mesure que je code. Il se passe beaucoup de choses dans le monde de l'ingénierie frontend en ce moment, car JavaScript commence enfin à s'imposer comme langage de développement principal. J'ai récemment joué avec Node et Backbone.js, c'est une période intéressante pour faire du travail frontend.</p>
+        <h2>Que faites-vous lorsque vous n'êtes pas en ligne ?</h2>
+        <p>J'aime l'escalade. Depuis que je suis venu à Boulder, j'ai prévu de faire plus de vélo. J'ai aussi prévu de faire de la pêche à la mouche. Et peut-être du tubing. Boulder a tout cela juste dans mon jardin.</p>
+        <h2>Connaissez-vous des arts martiaux ?</h2>
+        <p>En fait, oui. Pendant que je vivais au Japon, j'ai étudié le Kendo, l'art martial japonais de l'escrime. Cela m'a appris la discipline et la concentration, tout en me faisant découvrir un aspect unique de la culture japonaise.</p>
+      </dl>
+      <hr>
+      <p>Originaire de l'État de Granite, Steve est arrivé chez dojo4 par la porte de derrière, que nous pensons que Garett a laissée entrouverte un soir alors qu'il sortait pour une glace à la banane. Nous ne savons pas comment les papiers ont été remplis, mais Steve est là, souvent enveloppé dans un afghan sur le canapé ou faisant une sieste (parfois il est difficile de faire la différence).</p>
+
+      <h2>Pourquoi dojo4 ?</h2>
+      <p>Parce que ces personnes sont bien plus intelligentes que moi. J'essaie d'absorber.</p>
+      <h2>Où étais-tu avant ?</h2>
+      <p>En fin de compte, je suis un théoricien littéraire raté qui s'est tourné vers le codage frontend, se promenant dans des vents de 120 mph, et installant des toilettes de montagne isolées. En fait, je ne suis pas très doué pour ce dernier, alors considérez-vous averti.</p>
+      <h2>Quels sont vos points forts ou ce qui vous passionne dans le travail sur le Web ?</h2>
+      <p>J'ai un don pour inciter les gens à faire du vélo. Cette compétence est *très* sous-estimée sur la plupart des lieux de travail ; cependant, Dojo4 encourage ce genre de choses. En ce qui concerne les choses techniques, j'aime créer des systèmes de grille et m'attarder sur la conception dense en informations. J'aime aussi essayer d'engager les audiences avec des textes accrocheurs.</p>
+      <h2>Que faites-vous lorsque vous n'êtes pas en ligne ?</h2>
+      <p>Ma femme et moi somis assez actifs, et pourtant nous sommes également très doués pour nous installer confortablement sur le canapé pour regarder de grandes séries comme The Wire, Dexter et Arrested Development.</p>
+      <h2>Connaissez-vous des arts martiaux ?</h2>
+      <p>Des amis ont observé que je suis particulièrement doué pour courir et me cacher. Y a-t-il un nom pour cette discipline ?</p>
+
+      <p>Bienvenue au dojo, les gars !</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/aller" name="aller">&mdash;&gt; aller</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/a-propos">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:je-deteste-ca@drawohara.io?subject=/le-dojo-grandit">je-deteste-ca</a>
+          </li>
+          <li>
+            <a href="mailto:j-aime-ca@drawohara.io?subject=/le-dojo-grandit">j-aime-ca</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

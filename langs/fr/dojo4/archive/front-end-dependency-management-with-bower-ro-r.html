@@ -1,0 +1,111 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/fr/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/fr/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/fr/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fr/favicon-16x16.png">
+    <link rel="manifest" href="/fr/site.webmanifest">
+
+  <!-- base -->
+    <base href='/fr' />
+
+  <!-- meta -->
+    <title>Gestion des dépendances Front-End avec Bower &amp; RoR</title>
+
+<meta property="og:title" content="Gestion des dépendances Front-End avec Bower &amp; RoR"/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/fr/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/fr/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"front-end-dependency-management-with-bower-ro-r"}">
+    <meta property="site:path_info" content="/fr/front-end-dependency-management-with-bower-ro-r">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+
+<p>La gestion des dépendances peut être délicate. Lorsque j'ai rejoint dojo4 il y a quelques semaines, il était formidable de cloner un dépôt de projet ruby on rails, de pouvoir faire un <code>bundle install</code> puis de pouvoir exécuter l'application avec <code>rails s</code>. Pour ceux d'entre vous qui ne sont pas familiers avec la gestion des dépendances de ruby on rails, les gemmes nécessaires pour exécuter l'application sont répertoriées dans un fichier nommé <code>Gemfile</code>. L'application bundle lit ce gemfile et télécharge et installe toutes les gemmes qui ne sont pas encore sur votre ordinateur. Non seulement cela facilite la mise en place rapide et correcte de l'application avec peu d'efforts, mais cela facilite également la mise à jour de ces gemmes dépendantes lorsqu'une nouvelle version est publiée. L'exécution de <code>bundle update</code> ou la mise à jour du gemfile et l'exécution à nouveau de <code>bundle install</code> rend ce processus facile et garantit que tous les autres utilisateurs de l'application utiliseront également la nouvelle version (à condition que nous partagions les modifications via le contrôle de source). C'est un excellent flux de travail pour le côté serveur, mais qu'en est-il du côté client ?</p>
+
+<p>À mesure que les applications client deviennent plus compliquées, nous avons souvent besoin de l'aide de bibliothèques et de frameworks côté client également. Chez dojo4, nous téléchargeons actuellement les fichiers dont nous avons besoin et les déposons manuellement dans le contrôle de source et les validons. Les fichiers sont sous contrôle de source, donc au moins tout le monde obtiendra ces fichiers et nous pourrons revenir à une version antérieure, mais c'est un peu désordonné. Pour mettre à jour les fichiers de la bibliothèque, nous devons répéter le processus manuel. Côté serveur, il est également très agréable que les tâches de gestion des dépendances soient moins étroitement couplées au code de l'application, de sorte que la mise à jour et le retour en arrière des versions soient plus faciles. Malheureusement, il n'y avait pas de bon moyen de gérer les dépendances pour le front end. Jusqu'à récemment.</p>
+
+<p>En septembre de l'année dernière, Twitter a publié <a href="http://bower.io">Bower</a>, qui offre « une solution générique et non opinionnée au problème de la gestion des packages front-end ». Bower fournit les mêmes capacités pour l'application front-end que bundle pour le back-end : une liste centrale des dépendances dans un fichier, des commandes d'installation et de mise à jour faciles, et une certaine séparation du code de l'application et des validations. En recherchant comment nous pourrions tirer parti de cela dans notre application ruby on rails standard, les créateurs de Bower m'ont orienté vers le <a href="https://github.com/42dev/bower-rails/">gemme bower-rails</a>, qui intègre bower dans la structure de répertoire ruby on rails et ajoute certaines commandes <code>rake</code> pour exécuter les commandes bower. Maintenant, au lieu de valider manuellement les fichiers de la bibliothèque dans le dépôt de l'application, un développeur peut faire <code>rake bower:install [nom du package]</code> et la dernière version de ce package sera installée dans le pipeline d'actifs et sera ajoutée à la liste des packages requis. Un nouveau développeur peut alors télécharger le code de l'application et après avoir exécuté <code>bundle install</code>, peut exécuter <code>rake bower:install</code> et toutes les dépendances front-end seront installées dans le répertoire approprié dans le pipeline d'actifs ruby on rails pour une utilisation immédiate.</p>
+
+<p>Personnellement, j'aime beaucoup cette approche et j'espère que nous pourrons convertir les bibliothèques front-end qui sont ajoutées manuellement à l'approche bower. Nous discutons toujours en interne des avantages et des inconvénients et prendrons une décision bientôt. Qu'en pensez-vous ? Comment gérez-vous les dépendances front-end dans une équipe distribuée ?</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/fr/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/fr/about">à propos<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">je-déteste-ça<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">j-aime-ça<a>
+  </li>
+  <li>
+    <a href="/fr/contact">contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/fr/">&lt;&mdash; quitter</a>
+    </footer>
+  </body>
+</html>

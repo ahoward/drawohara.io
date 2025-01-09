@@ -1,0 +1,182 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Зрештою, усі продукти зливаються в один і список проходить через це</title>
+
+<meta property="og:title" content="Зрештою, усі продукти зливаються в один і список проходить через це"/>
+<meta property="og:description" content="пересувайся." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'eventually-all-products-merge-into-one-and-a-list-runs-through-it'}">
+    <meta property="site:path_info" content="/eventually-all-products-merge-into-one-and-a-list-runs-through-it">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Нещодавно, допомагаючи клієнту розмітити тему <a href="http://shopify.com" target="_blank">Shopify</a>, я зіткнувся з колючим питанням: як злити результат одного циклу із циклом іншим безперервно. Дозвольте мені пояснити.
+    </p>
+    <p>
+      Більшість тем Shopify включають "шаблон колекції", де продукти перелічуються за допомогою циклу <a href="http://wiki.shopify.com/UsingLiquid" target="_blank">Liquid</a>. <a href="#figure1">Рисунок 1</a> показує, як часто формуються такі списки.
+    </p>
+    <figure id="figure1" class="pal lightestgrayBg mvl" style="text-align: center;"><img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/mockup.png' title="Mockup" alt="Mockup" /><figcaption class="mtm fontItalic">
+        <strong><em>Рисунок 1</em>
+</strong>: Типовий список продуктів Shopify
+      </figcaption>
+    </figure>
+    <p>
+      Якщо ви не проти тегів <code>TABLE</code> для таких макетів, Liquid вас накриє зі своїм тегом <code>TABLEROW</code> (<a href="http://wiki.shopify.com/UsingLiquid#Tables">посилання</a>). Якщо вам більше подобаються системи сітки, вам доведеться використовувати якийсь <a href="http://stackoverflow.com/questions/2245972/modulus-or-lack-thereof-in-rubys-liquid-templating-engine/8439160#8439160" target="_blank">хак обгортання рядків</a>, оскільки Liquid не має перерахувача <code>each_slice()</code> або оператора <code>modulus</code>.
+    </p>
+    <p>
+      Але якщо ви, як і я, вважаєте, що семантично відповідна розмітка для списку продуктів - це невпорядкований список (<code>UL</code>), ви зобов'язані працювати з потоком <code>LIs</code>.
+    </p>
+    <p>
+      Як я згадував вище, цей дизайн вимагав, щоб список колекцій продуктів з'являвся в складі списку продуктів, але не просто десь. Він повинен був бути третім елементом у першому рядку, як показано на <a href="#figure2">Рисунку 2</a>.
+    </p>
+    <figure id="figure2" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/desired-layout.png' title="Додатковий Макет" alt="Додатковий Макет" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 2</em>
+</strong>: Цикл списку продуктів нібито перерваний навігаційним списком
+      </figcaption>
+    </figure>
+    <p>
+      Я не хотів починати один цикл, зупиняти його, починати інший, зупиняти його, а потім починати перший знову з відповідним зсувом. Це здавалося занадто ручним. Знову ж таки, я хотів, щоб результат був потоком <code>LIs</code>, наприклад:
+    </p>
+      <script src="https://gist.github.com/icegulch/8373741.js"></script>
+    <p>
+      Тож у мене залишилося два варіанти розміщення цього потоку <code>LIs</code>: плаваючі та звільнені елементи або вбудовані блоки.
+    </p>
+    <p>
+      Досить легко уявити, як можна досягти бажаного макету з плаваючими елементами, розміщуючи кожен <code>LI</code> зліва, за винятком першого, який має бути сплавований праворуч. Але варіант з плаваючими елементами вимагає ретельного звільнення - і <code>UL</code>, і кожен третій <code>LI</code> (починаючи з першого) повинні бути звільнені, щоб уникнути проблеми, показаної на <a href="#figure3">Рисунку 3</a>.
+    </p>
+    <figure id="figure3" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/float-issue.png' title="Проблема Плавання" alt="Проблема Плавання" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 3</em>
+</strong>: Коли перший LI в кожному "рядку" не звільнений...
+      </figcaption>
+    </figure>
+    <p>
+      Тег <code>CYCLE</code> Liquid (<a href="http://wiki.shopify.com/UsingLiquid#Cycle">посилання</a>) - це зручний спосіб робити це, як і позиційні псевдоселектори CSS3 (<a href="http://reference.sitepoint.com/css/pseudoclass-nthchild" target="_blank">посилання</a>). Але коли потрібна підтримка IE7/IE8, циклізація - кращий варіант.
+    </p>
+    <p>
+      Все ж таки, цей будинок карт звільнення здавався мені крихким, тому я прагнув застосувати згадану вище техніку вбудовування блоків у список.
+    </p>
+<script src="https://gist.github.com/icegulch/8373784.js"></script>
+    <p>
+      Що допомогло мені майже досягти мети, як показує <strong>Рисунок 4</strong>.
+    </p>
+    <figure id="figure4" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/initial-inline-block.png' title="Перший Вбудований Блок" alt="Перший Вбудований Блок" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 4</em>
+</strong>: Перша спроба вбудованого макету
+      </figcaption>
+    </figure>
+    <p>
+      Хоча техніка вбудованих блоків звільнила мене від проблем звільнення, мені все одно довелося зіткнутися з викликом позиціонування дизайну: список навігації продуктів мав бути вирівняний праворуч у першому рядку. Плавання його праворуч також не було рішенням, оскільки це піддало б наш макет тому ж ризику, що показано на <a href="#figure3">Рисунку 3</a>.
+    </p>
+    <p>
+      Тоді в мене з'явилася божевільна ідея: а що, якщо я зміню напрямок мови <code>UL</code>, щоб список відображався справа наліво? Натхненний <a href="http://css-tricks.com/star-ratings/" target="_blank">нещодавньою статтею Кріса Койєра</a>, я вирішив спробувати. Ось що я врешті-решт придумав:
+    </p>
+<script src="https://gist.github.com/icegulch/8373820.js"></script>
+<p>
+      Як ви бачите, мені довелося змінити напрямок мови контейнера <code>UL</code>, а потім скинути його на елементи всередині його <code>LIs</code> (з якоїсь причини скидання напрямку мови на <code>LIs</code> самі по собі не спрацювало в Opera). Мені також довелося встановити розмір шрифту на <code>UL</code> на нуль, щоб <a href="http://css-tricks.com/fighting-the-space-between-inline-block-elements/" target="_blank">уникнути цього</a>.
+    </p>
+    <p>
+      Оскільки перелік продуктів у цьому магазині не вимагав конкретного порядку (алфавітного, цінового тощо), було прийнятно, щоб результат плив справа наліво, як показано на <a href="#figure5">Рисунку 5</a>.
+    </p>
+    <figure id="figure5" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/inline-block-final.png' title="Фінальний Вбудований Блок" alt="Фінальний Вбудований Блок" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Рисунок 5</em>
+</strong>: перемикання напрямку мови в дії
+      </figcaption>
+    </figure>
+    <p>
+      Хоча є плюси та мінуси як у плаваючих, так і у вбудованих макетах, мені здається, що останній трохи елегантніший у цій ситуації. Чи натрапляли хто-небудь з вас на це? Чи вас <a href="http://youtu.be/ATKQLgi5Z2Y" target="_blank">переслідують</a> списки?
+    </p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/eventually-all-products-merge-into-one-and-a-list-runs-through-it">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/eventually-all-products-merge-into-one-and-a-list-runs-through-it">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">контакти<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

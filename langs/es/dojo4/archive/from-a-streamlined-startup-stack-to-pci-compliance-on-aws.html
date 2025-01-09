@@ -1,0 +1,146 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Desde una Pila de Inicio Optimizada hasta el Cumplimiento de PCI en AWS</title>
+
+<meta property="og:title" content="Desde una Pila de Inicio Optimizada hasta el Cumplimiento de PCI en AWS"/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivo/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"desde-una-pila-de-inicio-optimizada-hasta-el-cumplimiento-de-pci-en-aws"}">
+    <meta property="site:path_info" content=""/desde-una-pila-de-inicio-optimizada-hasta-el-cumplimiento-de-pci-en-aws"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/inicio">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h2 id="intro">Intro</h2>
+
+<p>Trabajando en proyectos en <a href="http://dojo4.com">Dojo4</a> a menudo me sorprende ver cómo aumentos aparentemente pequeños en la complejidad técnica <a href="http://es.wikipedia.org/wiki/Explosión_combinatoria">se acumulan</a> en significativos sumideros de atención y recursos. En consecuencia, cuando los proyectos están comenzando, tendemos a favorecer una pila de hosting y aplicación simplificada que comparte muchas características comúnmente vistas en servicios de hosting compartidos. Esto incluye opciones como alojar la aplicación y la base de datos juntas, emplear un único usuario de implementación en el sistema de hosting, y un monitoreo de tiempo de actividad <a href="http://uptimerobot.com">simple</a>.</p>
+
+<p>Recientemente, nuestro cliente de larga data, <a href="http://www.inspirecommerce.com/">Inspire Commerce</a>, desarrolló un nuevo plan de negocios que requiere que su aplicación cumpla con el estricto nivel 1 de seguridad de cumplimiento de la <a href="https://www.pcisecuritystandards.org/">Industria de Tarjetas de Pago</a> (PCI) para procesar, transmitir y almacenar información de tarjetas de crédito. Muchos de los requisitos de seguridad detallados en el Estándar de Seguridad de Datos (DSS) de PCI motivan un cambio significativo en el pensamiento desde la pila enfocada y optimizada mencionada anteriormente. Este post enumerará brevemente algunos de estos detalles y esbozará nuestras soluciones.</p>
+
+<p>El DSS de PCI está dividido en 12 secciones que cubren desde la configuración de firewall hasta las políticas de seguridad del personal. Repasaré algunas de las secciones relevantes para la pila de hosting.</p>
+
+<h2 id="1-instalar-y-mantener-una-configuración-de-firewall-para-proteger-los-datos-de-los-titulares-de-tarjetas">1. Instalar y mantener una configuración de firewall para proteger los datos de los titulares de tarjetas</h2>
+
+<p>Esta es una sección bastante detallada del DSS que obliga a la instalación y configuración de servicios de <a href="http://es.wikipedia.org/wiki/Firewall_%28computing%29">firewall</a> en todos los dispositivos de red, desde estaciones de trabajo, hasta routers y servidores. Utilizando <a href="http://aws.amazon.com/">Amazon Web Services</a> (AWS) <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud</a> (EC2) como base de nuestra pila de hosting, muchos de estos dispositivos de red están abstraídos de nuestra vista o control. Convenientemente, <a href="http://aws.amazon.com/security/#certifications">AWS es en sí mismo cumplidor del nivel 1 de PCI</a> dejando muchos de estos detalles a los ingenieros de Amazon.</p>
+
+<p>Sin embargo, los firewalls para los nodos de EC2 sí requieren alguna consideración. Los nodos de EC2 están protegidos por un firewall implementado en la capa de <a href="www.xen.org/products/xenhyp.html">hipervisor</a> y configurado por los <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-network-security.html">Grupos de Seguridad</a> de AWS. Nuestro Grupo de Seguridad básico tiene todos los puertos denegando paquetes con la excepción de los puertos 22, 80 y 443 aceptando desde todas las fuentes. Ejecutamos <a href="www.ubuntu.com/">Ubuntu Linux</a> en nuestros nodos y, de fábrica, tenemos el firewall <a href="www.netfilter.org/projects/iptables/">IP Tables</a> configurado con una política abierta.</p>
+
+<p>El DSS de PCI se centra en el uso de firewalls para crear redes privadas seguras, o <a href="http://es.wikipedia.org/wiki/DMZ_%28computing%29">Zonas Desmilitarizadas</a> (DMZ) para sistemas que alojan aplicaciones que procesan datos de tarjetas de pago. Los Grupos de Seguridad de AWS proporcionan un mecanismo útil para crear redes privadas seguras entre los diversos componentes de la pila de aplicaciones. Por ejemplo, al crear un grupo de seguridad WEB y un grupo de seguridad DB, y abrir el puerto de la base de datos en el grupo de seguridad DB solo para fuentes del grupo de seguridad WEB, el firewall del hipervisor de EC2 que se ejecuta en un servidor de base de datos solo permitirá el acceso a la base de datos desde servidores web que se conectan en la interfaz de red privada interna.</p>
+
+<p>Para la redundancia, replicamos la configuración del Grupo de Seguridad de AWS para el firewall del hipervisor de EC2 con el servicio <a href="http://www.cloudpassage.com/">CloudPassage</a> que puede gestionar el firewall IP Tables en la capa del sistema operativo de los sistemas que alojan componentes de la aplicación de procesamiento de tarjetas. CloudPassage organiza las políticas de firewall en <a href="http://www.cloudpassage.com/features/halo-firewall.html">Grupos de Servidores</a> que son algo análogos a los Grupos de Seguridad de AWS. Otra gran característica de CloudPassage es el servicio <a href="http://www.cloudpassage.com/features/multifactor-authentication.html">GhostPorts</a>. Configuramos la política de puerto ssh en CloudPassage para aceptar conexiones desde fuentes GhostPort. Para que una máquina cliente se convierta en una fuente GhostPort, un usuario en esa máquina debe autenticarse en el portal de CloudPassage, estar autorizado para abrir GhostPorts para un grupo de servidores y autenticarse con un dongle Yubikey registrado, o responder a un desafío SMS con un teléfono celular registrado. Tras una autenticación y autorización exitosas, CloudPassage configura IP Tables para aceptar conexiones desde la dirección IP fuente de la máquina cliente. Esta es una manera conveniente, segura, temporal y auditable de gestionar el acceso a hosts sensibles.</p>
+
+<h2 id="2-no-use-valores-predeterminados-del-proveedor-para-contraseñas-del-sistema-y-otros-parámetros-de-seguridad">2. No use valores predeterminados del proveedor para contraseñas del sistema y otros parámetros de seguridad</h2>
+
+<p>Esta sección parecería bastante obvia. Un buen ejemplo de la importancia de cambiar la contraseña predeterminada proporcionada por el proveedor es la contraseña predeterminada del <a href="http://www.splunk.com/">Splunk</a> <a href="http://docs.splunk.com/Documentation/Splunk/latest/Deploy/Introducingtheuniversalforwarder">Universal Forwarder</a> de changeme.</p>
+
+<p>Sin embargo, enterrado en esta sección hay un requisito de alojamiento bastante importante algo no relacionado con el título de la sección. “2.2.1 Implemente solo una función primaria por servidor para evitar que las funciones que requieren diferentes niveles de seguridad coexistan en el mismo servidor. (Por ejemplo, los servidores web, los servidores de bases de datos y el DNS deben implementarse en servidores separados)”.</p>
+
+<p>Como se mencionó anteriormente, los grupos de seguridad de AWS facilitan la tarea de separar de manera segura servicios como servidores web y de bases de datos en hosts separados.</p>
+
+<h2 id="5-use-y-actualice-regularmente-el-software-o-programas-antivirus">5. Use y actualice regularmente el software o programas antivirus</h2>
+
+<p><a href="http://clamav.com">ClamAV</a> hace un trabajo rápido de este requisito en Ubuntu Linux.</p>
+
+<h2 id="8-asigne-un-id-único-a-cada-persona-con-acceso-a-la-computadora">8. Asigne un ID único a cada persona con acceso a la computadora</h2>
+
+<p>La intención de esta sección es facilitar la auditoría y la responsabilidad eliminando las cuentas de usuario compartidas. Dado que utilizamos un mecanismo de autenticación <a href="http://es.wikipedia.org/wiki/Ssh-keygen">basado en claves</a> para el acceso de <a href="http://es.wikipedia.org/wiki/Secure_Shell">shell seguro</a>, hay tres preocupaciones principales para saber quién hizo qué. Primero, es necesario evitar que el usuario pueda cambiar a otra cuenta de usuario con el comando <a href="http://es.wikipedia.org/wiki/Su_%28Unix%29">su</a>. Esto se logra fácilmente eliminando el <a href="http://es.wikipedia.org/wiki/Filesystem_permissions#Traditional_Unix_permissions">permiso de ejecución</a> en el binario su y modificar <a href="http://aplawrence.com/Basics/understandingpam.html">/etc/pam.d</a> para prevenir toda autorización su. Segundo, asegúrese de que los archivos <a href="http://www.eng.cam.ac.uk/help/jpmg/ssh/authorized_keys_howto.html">authorized_keys</a> para todas las cuentas de usuario contengan solo una entrada. Finalmente, asegúrese de que todas las claves utilizadas para el acceso de shell seguro estén protegidas por contraseña y que exista una política para prohibir el uso compartido de claves entre usuarios.</p>
+
+<p>Ahora, el <a href="http://www.cyberciti.biz/tips/linux-audit-files-to-see-who-made-changes-to-a-file.html">Linux Audit Daemon</a> (AuditD) se puede utilizar para rastrear la actividad del sistema a usuarios específicos.</p>
+
+<h2 id="9-restringir-el-acceso-físico-a-los-datos-de-los-titulares-de-tarjetas">9. Restringir el acceso físico a los datos de los titulares de tarjetas</h2>
+
+<p>El título de esta sección es bastante autoexplicativo. Básicamente, esta sección cubre los temas de restringir el acceso físico al centro de datos a personal autorizado. Similar a la discusión de la configuración del firewall del dispositivo de red anterior, esto está cubierto por la certificación de nivel 1 de PCI de AWS y los detalles se pueden dejar a Amazon.</p>
+
+<h2 id="10-rastrear-y-monitorear-todo-el-acceso-a-los-recursos-de-red-y-a-los-datos-de-los-titulares-de-tarjetas">10. Rastrear y monitorear todo el acceso a los recursos de red y a los datos de los titulares de tarjetas</h2>
+
+<p>La motivación de esta sección es “prevenir, detectar o minimizar el impacto de un compromiso de datos”. Esto involucra temas como el registro, la gestión de la integridad de los archivos y la detección de intrusos. Nuestra estrategia comienza con el empleo de un servicio de registro para respaldar la agregación de registros, la retención de registros, así como la búsqueda de registros de registro. Estamos utilizando la aplicación <a href="http://splunk.com">Splunk</a> para esta funcionalidad. Configuramos una instancia de EC2 para un servidor de registro e instalamos Splunk. Configuramos los Grupos de Seguridad de AWS y los Grupos de Servidores de CloudPassage para el nuevo servidor que tiene el puerto de escucha de Splunk aceptando conexiones desde fuentes de servidores web y de bases de datos en la interfaz de red privada. Luego configuramos el Splunk Universal Forwarder en los servidores web y de bases de datos y configuramos los reenviadores para monitorear los registros de aplicaciones, apache, mongodb, sys, audit, y auth.</p>
+
+<p>Para la monitoreo de la integridad de los archivos y la detección de intrusos, instalamos la aplicación <a href="http://www.ossec.net/?page_id=165">OSSEC</a> en todos nuestros servidores y agregamos todos los registros que OSSEC escribe a los reenviadores de Splunk.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/ir" name="ir">&mdash;&gt; ir</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/sobre">sobre<a>
+  </li>
+  <li>
+    <a href="mailto:odio-esto@drawohara.io?subject=/desde-una-pila-de-inicio-optimizada-hasta-el-cumplimiento-de-pci-en-aws">odio-esto<a>
+  </li>
+  <li>
+    <a href="mailto:me-encanta-esto@drawohara.io?subject=/desde-una-pila-de-inicio-optimizada-hasta-el-cumplimiento-de-pci-en-aws">me-encanta-esto<a>
+  </li>
+  <li>
+    <a href="/contacto">contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; expulsar</a>
+    </footer>
+  </body>
+</html>

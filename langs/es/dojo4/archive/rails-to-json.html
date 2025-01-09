@@ -1,0 +1,137 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>rails to_json</title>
+
+    <meta property="og:title" content="rails to_json"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivo/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"rails-to-json"}">
+    <meta property="site:path_info" content=""/rails-to-json"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/inicio">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>rails, incluyendo rails3, tiene este maravilloso fragmento de código relacionado con proporcionar un método "to_json" en los objetos integrados:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781"># Hack para cargar primero la gema json para poder sobrescribir su to_json.</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># La gema JSON añade algunos módulos a las clases principales de Ruby que contienen la definición de :to_json, sobrescribiendo</span>
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># su comportamiento predeterminado. Dicho esto, necesitamos definir el método básico to_json en todos ellos,</span>
+        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># de lo contrario, siempre usarán la implementación de la gema to_json, que es incompatible en</span>
+        </div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># varios casos (por ejemplo, la implementación JSON para Hash no funciona) con herencia</span>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># y, por lo tanto, las clases como ActiveSupport::OrderedHash no se pueden serializar en json.</span>
+        </div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
+        </div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">RUBY</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__LINE__</span>
+        </div><div class='code-line code-line-15'><span style="color: #0a3069"># Volcado del objeto en JSON (Notación de Objeto de JavaScript). Ver www.json.org para más información.</span>
+        </div><div class='code-line code-line-16'><span style="color: #0a3069">def to_json(options = nil)</span>
+        </div><div class='code-line code-line-17'><span style="color: #0a3069">ActiveSupport::JSON.encode(self, options)</span>
+        </div><div class='code-line code-line-18'><span style="color: #0a3069">end</span>
+        </div><div class='code-line code-line-19'><span style="color: #953800">RUBY</span>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-21'>
+        </div></code></div>
+
+        <p>lo que esto hace efectivamente es anular el método "to_json" que proporciona la gema json con uno que active_support considera mejor. El comentario sobre json estando roto está desactualizado y esto fue una solución provisional desde el principio. En mi caso, realmente me gusta este tipo de cosas en mi controlador /api:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">to_json</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">objecto</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">Rails</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">env</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">production?</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">JSON</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">generate</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">objecto</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">else</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">JSON</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">pretty_generate</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">objecto</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-9'>
+        </div></code></div>
+
+        <p>ya que esto hace que la depuración sea mucho más fácil. Aquí tienes cómo lo hice en una aplicación rails3 -</p>
+
+        <p>el primer paso fue hacer que rails3 admitiera el concepto de "preinicializador" que solía tener el rails de la vieja escuela:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">### archivo: config/preinitializer.rb</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">dirname</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dirname</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">expand_path</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">))</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">glob</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">dirname</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'preinicializadores'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'**/**.rb'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">preinicializadores</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Dir</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">glob</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">glob</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">preinicializadores</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">each</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">preinicializador</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #953800">Kernel</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">preinicializador</span><span style="color: #24292f;background-color: #f6f8fa">)}</span>
+        </div><div class='code-line code-line-9'>
+        </div></code></div>
+
+        <p>luego, añadí este preinicializador:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781">### archivo: config/preinicializadores/un_fuck_to_json.rb</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+        </div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-8'>
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>

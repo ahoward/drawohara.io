@@ -1,0 +1,163 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! 'Backup AWS EBS: Abbiamo Riscrittto Drebs'</title>
+
+    <meta property="og:title" content="! 'Backup AWS EBS: Abbiamo Riscrittto Drebs'"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivio/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aws-ebs-backups-we-rewrote-drebs"}">
+    <meta property="site:path_info" content=""/aws-ebs-backups-we-rewrote-drebs"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>L'altro giorno abbiamo rilasciato la versione 0.1.0 di <a href="https://rubygems.org/gems/drebs">DREBS</a>, il nostro script di Disaster Recovery per Elastic Block Storage. Lo utilizziamo ogni ora su tutte e 3 le nostre istanze EC2, effettuando il backup di 6 diversi volumi EBS. Questo script è fondamentale per noi e per la comunità AWS in generale, poiché Amazon non supporta ufficialmente alcuno script o strumento per fornire backup. Esistono diversi prodotti SaaS che offrono questa funzionalità, ma gli script open source per hacker come noi sono pochi. La nuova versione riscritta è pronta per la produzione e speriamo che vi piaccia quanto piace a noi.</p>
+
+        <p>L'anno scorso, l'ex dipendente di dojo4 e amico per sempre del dojo <a href="https://twitter.com/shulmang">Garett Shulman</a>, ha rilasciato la <a href="http://dojo4.com/blog/a-simple-backup-strategy-for-amazon-cloud-hosts">prima versione di DREBS</a>. Aveva l'obiettivo semplice di permettere a un amministratore di definire strategie di backup e compiti pre/post backup (mysqldump, ecc.) per ogni volume EBS montato su un'istanza EC2. Un semplice compito cron esegue DREBS ogni ora, che esamina ogni strategia di backup dell'istanza EBS e, se la strategia indica che deve essere eseguito un backup, DREBS utilizza il <a href="https://github.com/rightscale/right_aws">gemma right_aws</a> per eseguire il backup del volume e caricarlo nell'account AWS come snapshot EBS.</p>
+
+        <p>La nuova versione di DREBS fornisce la stessa funzionalità ma con alcuni miglioramenti:</p>
+
+        <ul>
+          <li>Lo stato è ora memorizzato in un piccolo database sqlite invece che in un file json.</li>
+          <li>Resiliente quando le strategie cambiano.</li>
+          <li>Resiliente quando gli snapshot vengono eliminati nella console AWS.</li>
+          <li>Una shell DREBS che ti permette di testare la tua configurazione facilmente e rapidamente.</li>
+        </ul>
+
+        <p>Come esempio di configurazione, ecco DREBS nel nostro crontab su tutte le nostre macchine:</p>
+
+        <pre><code>0 * * * * /home/dojo4/git/drebs/bin/drebs execute /usr/local/var/drebs_config.yml &amp;&gt; /usr/local/var/drebs_cron.out
+        </code></pre>
+
+        <p>ecco il nostro file di configurazione per una delle nostre istanze EC2:</p>
+
+        <pre><code>---
+        aws_access_key_id: XXXX
+        aws_secret_access_key: XXX
+        region: us-west-1
+        strategies:
+        - hours_between: 6
+          num_to_keep: 12
+          mount_point: /dev/sdh
+          pre_snapshot_tasks:
+          - pg_dump -U postgres -f /ebs/databases/postgresql/backups/project_name_production.sql project_name_production
+          post_snapshot_tasks:
+        - hours_between: 1
+          num_to_keep: 2
+          mount_point: /dev/sda1
+          pre_snapshot_tasks:
+          post_snapshot_tasks:
+        - hours_between: 24
+          num_to_keep: 4
+          mount_point: /dev/sda1
+        - hours_between: 96
+          num_to_keep: 4
+          mount_point: /dev/sda1
+        log_path: /usr/local/var/drebs.log
+        email_on_exception: miles@dojo4.com
+        email_host: smtp.gmail.com
+        email_port: 587
+        email_domain: gmail.com
+        email_user: xxx
+        email_password: xxx
+        </code></pre>
+
+        <p>Come sempre, abbiamo altre idee su come migliorare questo script e, se questo script ti aiuta quanto aiuta noi, ti invitiamo a forcare <a href="https://github.com/dojo4/drebs">il repository</a> e inviarci una pull request:</p>
+
+        <ul>
+          <li>Migliorare la copertura dei test</li>
+          <li>Utilizzare la gemma whenever per una configurazione più semplice del crontab</li>
+          <li>Intervalli di esecuzione arbitrari (snapshot ogni 5 minuti invece che ogni ora)</li>
+          <li>Chiavi API AWS e altri valori di configurazione dai Dati dell'Istanza AWS</li>
+          <li>Aggiungere una configurazione di esempio per l'accesso utente AWS</li>
+        </ul>
+
+        <p>Pensiamo che DREBS sia un grande contributo alla comunità AWS che ci ha aiutato a costruire una grande architettura di distribuzione che ha ospitato siti web e prodotti fantastici nel corso degli anni. Se sei d'accordo e lo usi, ci farebbe piacere sentire il tuo feedback su Twitter a <a href="https://twitter.com/intent/tweet?text=@dojo4">@dojo4</a>!</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/aws-ebs-backups-we-rewrote-drebs">non mi piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/aws-ebs-backups-we-rewrote-drebs">mi piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

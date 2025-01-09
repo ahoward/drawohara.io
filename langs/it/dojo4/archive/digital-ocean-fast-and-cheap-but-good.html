@@ -1,0 +1,153 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! &#39;DIGITAL OCEAN: VELOCE E ECONOMICO. MA BUONO?&#39;</title>
+
+    <meta property="og:title" content="! &#39;DIGITAL OCEAN: VELOCE E ECONOMICO. MA BUONO?&#39;"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivio/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"digital-ocean-veloce-e-economico-ma-buono"}">
+    <meta property="site:path_info" content=""/digital-ocean-veloce-e-economico-ma-buono"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Come CTO di un'agenzia tecnologica sto costantemente valutando nuovi strumenti, processi e servizi.</p>
+
+        <p>Recentemente ho esaminato la piattaforma DigitalOcean come parte di una strategia di alta disponibilità che stiamo sviluppando per quei momenti in cui AWS/S3 non è sufficiente: quando si desidera resistere a un'interruzione massiccia di un intero fornitore di servizi cloud.</p>
+
+        <p>Tutti i deploy di Dojo4 iniziano come deploy AWS per il motivo ovvio: è lo standard con cui vengono giudicati tutti gli altri servizi cloud. Ha il vantaggio aggiuntivo per un'agenzia nel fatto che possiamo indicarlo come un 'default sano' per il software che consegniamo ai clienti; come il gorilla da 800 libbre, il suo utilizzo è difendibile. Tuttavia, alcuni rari clienti hanno espresso preoccupazioni riguardo alle interruzioni di AWS che influenzano i loro siti e applicazioni, in particolare le applicazioni di monitoraggio che dovrebbero segnalare errori su tali interruzioni: un problema ricorsivo. Per questi casi, abbiamo esaminato deploy statici bilanciati tra i fornitori di servizi cloud con DNS, e DigitalOcean è stato nella lista dei candidati per creare e distribuire semplici siti statici ospitati da Apache per questo scopo come soluzione di emergenza per i nostri normali siti ospitati da AWS.</p>
+
+        <p>Recentemente DigitalOcean (DO) ha avuto un piccolo problema legato alle sue pratiche di sicurezza: https://github.com/fog/fog/issues/2525.</p>
+
+        <p>Si potrebbe riassumere questo problema come: quando si avvia una nuova macchina cloud, potrebbe o meno avere alcuni dati sensibili di un utente precedente che si aggirano sul disco e, quando si spegne la propria macchina cloud, si potrebbero esporre i propri dati sensibili a un terzo casuale. Il loro servizio offre un modo per cancellare tutto, ma non è <em>il default</em> - il default è lasciare <em>qualunque cosa fosse sul disco</em> esposta per il prossimo cliente da esplorare.</p>
+
+        <p><em>Questa è una strategia di default molto negativa.</em></p>
+
+        <p>Su Twitter ho suggerito che non ero sorpreso da questa strategia lassista, ma che ero deluso dal modo in cui DO aveva gestito la situazione durante la divulgazione. Durante un breve scambio su Twitter mi è stato chiesto di riassumere la fonte della mia mancanza di sorpresa:</p>
+
+        <blockquote class="twitter-tweet" lang="it"><p><a href="https://twitter.com/drawohara">@drawohara</a> Se volessi prenderti il tempo di metterlo in un'email, lo leggerei e lo condividerei con tutto il team, e lo apprezzerei molto. :)</p>&mdash; John Edgar (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">30 dicembre 2013</a></blockquote>
+        <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <p>Quindi, con il senno di poi e cercando di essere utile, sto mantenendo la mia promessa e spiegando perché ho esitato a spostare qualsiasi delle nostre cose sulla piattaforma di DigitalOcean. (Si noti che questo elenco compromette sentimenti e impressioni, ma che sono stati in qualche modo validati e rafforzati dal recente fiasco della pulizia del disco):</p>
+
+        <ul>
+          <li>Visitando la home page di DO si viene accolti da un messaggio di marketing che urla 'economico e veloce'</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
+
+        <p>data la piattaforma 'costruita per gli sviluppatori', trovo personalmente strano che il team non abbia evidentemente previsto che gli sviluppatori ricevessero il chiaro messaggio che, tra 'buono, veloce e economico', si stanno scegliendo gli ultimi <em>due</em> con DO.</p>
+
+        <ul>
+          <li>Successivamente, si ottiene un bel messaggio di conferma che, come start-up, DO è motivata a dimostrare una crescita molto, molto rapida</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8pL/Screen%20Shot%202013-12-30%20at%201.05.20%20PM.png" alt="" /></p>
+
+        <p>questo dovrebbe dare a qualsiasi ingegnere operativo una sensazione di malessere.</p>
+
+        <ul>
+          <li>Girando per il sito si trova una costante enfasi sul 'veloce e economico', ad esempio nel programma di referral</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
+
+        <p>che rafforza il messaggio e suggerisce agli sviluppatori di vendere ai loro amici veloce e economico senza nemmeno un briciolo di informazioni sulla robustezza, coerenza o sicurezza.</p>
+
+        <ul>
+          <li>Leggendo il blog è stato molto chiaro che DO segue un ciclo di sviluppo snello, guidato dall'utente:</li>
+        </ul>
+
+        <p>https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</p>
+
+        <p>e sebbene ammiri, approvi e raccomandi questo tipo di approccio al software in generale, costruire sicurezza e robustezza in modo iterativo non sembra essere il punto dolce per questo tipo di attività - nonostante quanto possa sembrare fantastico ai VC (che non hanno mai affrontato una violazione della sicurezza sul campo) deve pensare che sia. Alcune cose richiedono una grande esperienza e una pianificazione dall'alto verso il basso: uno stack che consente ai suoi utenti di memorizzare dati ed eseguire codice, sia esso un browser o un cloud, rientrano nella categoria 'voglio che qualcuno estragga codice reale da sistemi reali con una storia di attacchi' e non 'Ascoltiamo gli utenti e iteriamo rapidamente, imparando strada facendo.'</p>
+
+        <p>Quindi, non fraintendermi, sto ancora valutando DigitalOcean come una bella pila programmabile su cui distribuire semplici siti statici e sicuramente voglio vederli avere successo, ma ho delle preoccupazioni sulla loro cultura e se è il tipo di cultura che pratica pratiche di sicurezza difensive rispetto a quelle reattive e se saranno in grado di mantenere la loro crescita, punto di prezzo e, in definitiva, finanziamento quando, e se, raggiungeranno gli altri giocatori del cloud in questo senso. Leggere i loro atteggiamenti e credenze nel contesto del recente disastro (https://github.com/fog/fog/issues/2525) mi dà qualche motivo per dubitarne.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/chi-siamo">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/digital-ocean-veloce-e-economico-ma-buono">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/digital-ocean-veloce-e-economico-ma-buono">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contatti">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

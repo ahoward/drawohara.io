@@ -1,0 +1,131 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Dagens Moment av Zen</title>
+
+    <meta property="og:title" content="Dagens Moment av Zen"/>
+    <meta property="og:description" content="fortsätt." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"dagens-moment-av-zen"}">
+    <meta property="site:path_info" content=""/dagens-moment-av-zen"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <h1 id="dagens-moment-av-zen">Dagens Moment av Zen</h1>
+
+        <p>På något sätt hamnar alla artiklar från <a href="http://research.microsoft.com/sv-se/people/mickens/">James Mickens</a> i <a href="https://twitter.com/copiousfreetime">min Twitter-flöde</a>. Det är en jättetrevlig tid när det händer.</p>
+
+        <p>Den här utgåvan, <a href="https://www.usenix.org/system/files/1403_02-08_mickens.pdf">To Wash It All Away</a>, besvikar inte.</p>
+
+        <p>Det jag lärde mig idag om JavaScript från James.</p>
+
+        <blockquote>
+          <p>“\r\n\t” == false</p>
+        </blockquote>
+
+        <p>Vad fan? Jag måste testa det.</p>
+
+        <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;node
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&gt;</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">\r\n\t</span><span style="color: #0a3069">"</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #953800">false</span>
+        </div><div class='code-line code-line-4'><span style="color: #953800">    true</span>
+        </div><div class='code-line code-line-5'>
+        </div></code></div>
+
+        <p>Och naturligtvis, förklaringen från James:</p>
+
+        <blockquote>
+          <p>Här är varför: webbläsaren upptäcker att de två operanderna har olika typer, så den konverterar false till 0 och försöker jämförelsen igen. Operanderna har fortfarande olika typer (sträng och nummer), så webbläsaren tvingar “\r\n\t” till numret 0, för någon anledning är ett icke-noll antal tecken lika med 0. Voila—0 är lika med 0! FANTASISKT. Den förklaringen var som handlingen i Inception, men den inplanterade idén var “rättheten i ditt program har tvingats till false.”</p>
+        </blockquote>
+
+        <p>Verkligen, jag måste bara dela med mig.</p>
+
+        <p>P.S. <a href="https://www.destroyallsoftware.com/talks/wat">WAT</a></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">om<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/dagens-moment-av-zen">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/dagens-moment-av-zen">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

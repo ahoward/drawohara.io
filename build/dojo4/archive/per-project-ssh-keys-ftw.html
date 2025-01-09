@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"per-project-ssh-keys-ftw"}">
@@ -90,13 +92,13 @@
 </div><div class='code-line code-line-3'>
 </div></code></div>
 
-<p>is pretty much the de-facto and sane default.  It uses all your ssh key goodness for all commands, making most remote actions ‘Just Work ™’</p>
+<p>is pretty much the de-facto and sane default.  It uses all your ssh key goodness for all commands, making most remote actions Just Work </p>
 
 <p>However, there are times when this can be confusing, for instance, when you have two keys loaded in ssh-agent that map to different github or bitbucket accounts.  Which account you get will be a fun little game to figure out ;-/</p>
 
-<p>The following very simple strategy lets you check in <em>per project</em> ssh keys in a very natural way, and then to  have capistrano respect those keys for all ‘cap XXX’ operations.</p>
+<p>The following very simple strategy lets you check in <em>per project</em> ssh keys in a very natural way, and then to  have capistrano respect those keys for all cap XXX operations.</p>
 
-<p>First, you’ll want to create an .ssh/ directory in your project, them dump any relevant keys in there.  You can have many pairs, just be sure they are named using the normal *.id_rsa convention.</p>
+<p>First, youll want to create an .ssh/ directory in your project, them dump any relevant keys in there.  You can have many pairs, just be sure they are named using the normal *.id_rsa convention.</p>
 
 <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>a:~/git/dojo4/rails_app_m&nbsp;<span style="color: #0550ae">$ </span><span style="color: #953800">ls</span>&nbsp;.ssh
@@ -104,7 +106,7 @@
 </div><div class='code-line code-line-4'>
 </div></code></div>
 
-<p>Next you’ll want something like this in your Capfile, which detects these local keys, if present, and uses them via a temporary ssh-agent - otherwise falling back to your global ssh-agent loaded keys.</p>
+<p>Next youll want something like this in your Capfile, which detects these local keys, if present, and uses them via a temporary ssh-agent - otherwise falling back to your global ssh-agent loaded keys.</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #6e7781"># if this project has an .ssh/ directory, use those keys for deployment.</span>
@@ -155,7 +157,7 @@
 </div><div class='code-line code-line-47'>
 </div></code></div>
 
-<p>You’ll need the session gem in you Gemfile of course</p>
+<p>Youll need the session gem in you Gemfile of course</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #6e7781"># file: Gemfile</span>
@@ -165,7 +167,7 @@
 </div><div class='code-line code-line-6'>
 </div></code></div>
 
-<p>And don’t forget to .gitignore you fancy new .ssh setup</p>
+<p>And dont forget to .gitignore you fancy new .ssh setup</p>
 
 <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #6e7781"># file: .gitignore</span>
@@ -175,7 +177,7 @@
 </div><div class='code-line code-line-6'>
 </div></code></div>
 
-<p>There really isn’t that much more to it: now you can setup <em>per project</em> ssh keys, knowing any <em>cap deploy xxx</em> commands will use these project local keys, and still be able to pollute your normal ssh-agent to your heart’s content.</p>
+<p>There really isnt that much more to it: now you can setup <em>per project</em> ssh keys, knowing any <em>cap deploy xxx</em> commands will use these project local keys, and still be able to pollute your normal ssh-agent to your hearts content.</p>
 
 </div>
     </main>

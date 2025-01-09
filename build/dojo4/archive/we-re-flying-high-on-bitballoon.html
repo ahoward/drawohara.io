@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"we-re-flying-high-on-bitballoon"}">
@@ -83,18 +85,18 @@
 
     <main>
       <div class="ro markdown">
-  <p>If you’ve been keeping up with dojo activities lately, you’ve noticed <a href="http://dojo4.com/blog/static-is-the-new-black">we’re big fans of the static web</a> and a young static hosting company called <a href="https://www.bitballoon.com/">BitBalloon</a>. BitBalloon is a hosting provider similar to Amazon’s S3 where you simply put content on their servers and it’s served without any logic to whoever requests it, however where S3 is useful for anything at all (think uploads), BitBalloon is designed specifically for static web sites. Some of the things they do for static sites that we love:</p>
+  <p>If youve been keeping up with dojo activities lately, youve noticed <a href="http://dojo4.com/blog/static-is-the-new-black">were big fans of the static web</a> and a young static hosting company called <a href="https://www.bitballoon.com/">BitBalloon</a>. BitBalloon is a hosting provider similar to Amazons S3 where you simply put content on their servers and its served without any logic to whoever requests it, however where S3 is useful for anything at all (think uploads), BitBalloon is designed specifically for static web sites. Some of the things they do for static sites that we love:</p>
 
 <ul>
-  <li><strong>Atomic deploys</strong> Rollback? No problem, each deploy is has a hash and shows up in your admin interface, so switching between entirely different versions is easy. On S3 you have to hope you don’t end up with a mixture of old and new files from different deploys.</li>
-  <li><strong>Automatic asset minification, digest, and CDN</strong> Before we starting using BitBalloon, we used Middleman’s css and js minification and digest tools at build time. Now we don’t - BitBalloon does that for us when we deploy. They even put our assets on a CDN for us and replace the links to the assets in our HTML so that our assets are served as quickly as possible.</li>
+  <li><strong>Atomic deploys</strong> Rollback? No problem, each deploy is has a hash and shows up in your admin interface, so switching between entirely different versions is easy. On S3 you have to hope you dont end up with a mixture of old and new files from different deploys.</li>
+  <li><strong>Automatic asset minification, digest, and CDN</strong> Before we starting using BitBalloon, we used Middlemans css and js minification and digest tools at build time. Now we dont - BitBalloon does that for us when we deploy. They even put our assets on a CDN for us and replace the links to the assets in our HTML so that our assets are served as quickly as possible.</li>
   <li><strong>Form handling</strong> One thing that a simple site should be able to do without requiring an entire server side application is accept form input. We simply use the <code>&lt;form&gt;</code> tag and BitBalloon shows us responses to that form in the admin panel.</li>
-  <li><strong>Great support</strong> As I mentioned, BitBalloon is a young company and still figuring things out, but when we’ve run into questions, every member (including the founding members) of the BitBalloon team has been accessible, friendly, and helpful in addressing our questions.</li>
-  <li><strong>Cache headers</strong> BitBalloon knows what headers to send (and how to invalidate them when we re-deploy) to best take advantage of the browser’s cache. One less headache for us to worry about.</li>
-  <li><strong>Speed</strong> Holy wow is BitBalloon fast. Check out <a href="http://dojo4.com">our site</a> {oh yea, you’re on it ;)}, and you can see how quickly the pages get served.</li>
+  <li><strong>Great support</strong> As I mentioned, BitBalloon is a young company and still figuring things out, but when weve run into questions, every member (including the founding members) of the BitBalloon team has been accessible, friendly, and helpful in addressing our questions.</li>
+  <li><strong>Cache headers</strong> BitBalloon knows what headers to send (and how to invalidate them when we re-deploy) to best take advantage of the browsers cache. One less headache for us to worry about.</li>
+  <li><strong>Speed</strong> Holy wow is BitBalloon fast. Check out <a href="http://dojo4.com">our site</a> {oh yea, youre on it ;)}, and you can see how quickly the pages get served.</li>
 </ul>
 
-<p>We’ve enjoyed using their service. Here are some of the highlights from our usage so far:</p>
+<p>Weve enjoyed using their service. Here are some of the highlights from our usage so far:</p>
 
 <ul>
   <li><a href="https://github.com/BitBalloon/bitballoon-ruby/commits?author=ahoward">Ara</a> and <a href="https://github.com/BitBalloon/bitballoon-ruby/commits?author=milesmatthias">I</a> contributed to <a href="https://github.com/BitBalloon/bitballoon-ruby">their Ruby client</a>.</li>

@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"a-sane-image-magick-configuration-for-your-rails-apps"}">
@@ -83,7 +85,7 @@
 
     <main>
       <div class="ro markdown">
-  <p>i’ve often said that file uploads are a self inflicted DOS attack.  certainly one doesn’t have to look far to find examples of a seemingly small app feature wreaking havoc on many an app server: https://www.google.com/search?q=heroku+image+magick+timed+out</p>
+  <p>ive often said that file uploads are a self inflicted DOS attack.  certainly one doesnt have to look far to find examples of a seemingly small app feature wreaking havoc on many an app server: https://www.google.com/search?q=heroku+image+magick+timed+out</p>
 
 <p>@dojo4 we use image magicks ability to set limts via the environment as first line of defense to keep magick processes well behaved.</p>
 
@@ -113,7 +115,7 @@
 </div><div class='code-line code-line-20'>
 </div></code></div>
 
-<p>the second is actually the file that’s required.  it loads this file and has a dynamic whack at setting further environment variables</p>
+<p>the second is actually the file thats required.  it loads this file and has a dynamic whack at setting further environment variables</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #6e7781"># file: RAILS_ROOT/env.rb</span>
@@ -141,7 +143,7 @@
 </div><div class='code-line code-line-24'>
 </div></code></div>
 
-<p>what we’re interested in here is the section in which the imagemagick environment is configured.</p>
+<p>what were interested in here is the section in which the imagemagick environment is configured.</p>
 
 <p>here it is in all its full glory - the comments should provide context and explanation:</p>
 

@@ -1,0 +1,108 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Webbutvecklare Utmaning!</title>
+
+    <meta property="og:title" content="Webbutvecklare Utmaning!"/>
+    <meta property="og:description" content="fortsätt." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/arkiv/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"web-developer-challenge"}">
+    <meta property="site:path_info" content=""/web-developer-challenge"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Idag testar jag min webbplats i olika webbläsare innan jag lanserar den. Som vanligt innebär det några stilistiska akrobatnummer för att få sidan att se bättre-än-dåligt ut i Internet Explorer. Men idag stötte jag på ett problem i Firefox som jag inte kunde förklara.</p>
+      <p>Den webbplats jag bygger reklamerar för en cykeltävling. Den har några block som det här:</p>
+
+      <p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>
+
+      <p>De innehåller information om tävlingens sponsorer. Remarkabelt nog, även om dessa block visas i <a href="http://en.wikipedia.org/wiki/Internet_Explorer_6" title="http://en.wikipedia.org/wiki/Internet_Explorer_6">allas favorit tioåriga webbläsare</a>, visas de inte i någon version av Firefox på min dator.</p>
+      <p>På riktigt? Ja.</p>
+      <p>Dessa block är <em>osynliga</em> i Firefox. Webbläsaren ändrar dem för att ge dem en <code>display:none;</code> attribut.</p>
+      <p>Men det bästa är att om jag ändrar sektionens klass till något annat än "sponsor", visas blocken utan problem. Faktiskt, när du vet orsaken, är det den enda lösningen: Ge inte objekt på din sida en CSS-klass av "sponsor".</p>
+      <p>Tror du att du vet vad som orsakade det? <a href="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845" title="http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845">Kolla in det</a>.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; gå till</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">om<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/web-developer-challenge">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/web-developer-challenge">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

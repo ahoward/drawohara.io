@@ -1,0 +1,100 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>hackerspaces R noi</title>
+
+    <meta property="og:title" content="hackerspaces R noi"/>
+    <meta property="og:description" content="continua a camminare." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'hackerspaces-r-us'}">
+    <meta property="site:path_info" content="/hackerspaces-r-us">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p><img src='/ro/dojo4/hackerspaces-r-us/assets/dojo41.JPG' title="Dojo41" alt="Dojo41" rel="225x255" width="225" height="168" /></p>
+      <p>C'è una storia recente di KQED sugli hackerspaces, "<a href="http://hackerspaces.org/wiki/" title="http://hackerspaces.org/wiki/">luoghi fisici gestiti dalla comunità, dove le persone possono incontrarsi e lavorare ai loro progetti</a>," generalmente imprese tecnologiche o mediatiche. Leggendo la storia, ho pensato, "che bello, dovremmo farlo!" E poi ho pensato, "che bello, lo facciamo!" Anche se siamo un'azienda che sostiene i nostri mezzi di sussistenza costruendo progetti per i clienti, siamo anche uno spazio fisico orientato alla comunità, dove le persone si incontrano per lavorare ai loro progetti. La principale differenza è che i progetti su cui le persone vengono a lavorare nel nostro spazio sono più spesso progetti di lavoro o di impiego, piuttosto che puri lavori d'amore, creatività e immaginazione ossessiva. E se riservassimo del tempo solido ogni mese per un hackerspace dojo4 più puro e vedessimo cosa costruiamo insieme (o individualmente). Ne parliamo da un po'. È ora di farlo?</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/hackerspaces-r-us">non-mi-piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/hackerspaces-r-us">mi-piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; espelli</a>
+    </footer>
+  </body>
+</html>

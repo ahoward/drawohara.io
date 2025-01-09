@@ -2,7 +2,7 @@ this is the part i hate.  writing about myself.
 
 i'll start at the beginning:
 
-* grew up in alaska, 4th generational irish people
+* grew up in [alaska](https://photos.app.goo.gl/3aa3Fkwe9EyQg7kf6), 4th generational irish people, been _here and there_ the past few years
 * roamed the planet racing bikes and skis.  this before phones, gps, or digital cameras.
 * started a family in boulder
 * researched [life on earth from space](https://independent.academia.edu/arahoward) for about a decade

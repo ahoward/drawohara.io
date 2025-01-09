@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"wordpress-isn-t-worth-it-in-the-long-run"}">
@@ -89,15 +91,15 @@
 
 <p><a href="http://gnip.com">Gnip.com</a> however is a fully static website built with Middleman and hosted on S3 and CloudFront. We made this recommendation after building and hosting a full-fledged Rails application for their site and noticing that their site would be a perfect candidate for a simple static site. The factors that tipped us off to this are the same for any other static site: no user accounts, speed and uptime are the highest priority, and so few updates that an admin interface is overkill (although with our static site, dojo4.com, we built <a href="http://dojo4.com/blog/static-is-the-new-black">a webhook to listen for blog post publishes</a>).</p>
 
-<p>We had one interesting question though - since we’re training the marketing team how to use this website, not developers, what kind of reactions would they have in experiencing both the admin-heavy side of WordPress (for their blogs) versus updating code in the middleman site (for gnip.com) and deploying via the command line?</p>
+<p>We had one interesting question though - since were training the marketing team how to use this website, not developers, what kind of reactions would they have in experiencing both the admin-heavy side of WordPress (for their blogs) versus updating code in the middleman site (for gnip.com) and deploying via the command line?</p>
 
 <p>Turns out they love the middleman setup and wish we would have switched their blogs over to middleman instead of WordPress years ago.</p>
 
 <p>WordPress has one feature - an interface to draft and publish content that people are familiar with. Ignoring the <a href="http://dojo4.com/blog/irish-dance-and-wordpress-the-soul-destroyer">emotional turmoil</a> of WordPress for a second, the maintenance cost and effort for a WordPress site are astounding for a medium to large company.</p>
 
-<p>Plugins seem like a good shortcut to add functionality to your site until you have to modify or update one because it hasn’t been updated in 2 years. When Gnip was acquired by Twitter, the security team at Twitter wanted the blogs to ensure all content was over HTTPS. It’s a simple request, but when you have 25 WordPress plugins that are including their own resources, many of which don’t even support HTTPS, it’s a monster headache. Whereas with our static, Middleman approach, we do a quick search and replace in the code (and from the beginning, only using local resources or ones from reputable sources that do support HTTPS, like Google), deploy, and we’re done.</p>
+<p>Plugins seem like a good shortcut to add functionality to your site until you have to modify or update one because it hasnt been updated in 2 years. When Gnip was acquired by Twitter, the security team at Twitter wanted the blogs to ensure all content was over HTTPS. Its a simple request, but when you have 25 WordPress plugins that are including their own resources, many of which dont even support HTTPS, its a monster headache. Whereas with our static, Middleman approach, we do a quick search and replace in the code (and from the beginning, only using local resources or ones from reputable sources that do support HTTPS, like Google), deploy, and were done.</p>
 
-<p>When you take the time to help people learn simple skills like HTML, CSS, and Javascript (which are nearly required skills to learn if you’re involved in tech at all - regardless of your job title), the drawbacks of WordPress become way more than is acceptable when there’s such a simple and powerful option in static web content and hosting.</p>
+<p>When you take the time to help people learn simple skills like HTML, CSS, and Javascript (which are nearly required skills to learn if youre involved in tech at all - regardless of your job title), the drawbacks of WordPress become way more than is acceptable when theres such a simple and powerful option in static web content and hosting.</p>
 
 </div>
     </main>

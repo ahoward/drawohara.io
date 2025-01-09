@@ -1,0 +1,106 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Contrassegnato!</title>
+
+    <meta property="og:title" content="Contrassegnato!"/>
+    <meta property="og:description" content="proseguire." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"tagged"}">
+    <meta property="site:path_info" content=""/tagged"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Oggi abbiamo notato qualcosa di strano dalla finestra sul retro.</p>
+      <p><img src='/ro/dojo4/tagged/assets/img-20120328-103725.jpg' title="Img 20120328 103725" alt="Img 20120328 103725" rel="225x255" width="225" height="169" /></p>
+      <p>Ara ha capito subito di cosa si trattava. Un'indagine lo ha confermato:</p>
+      <p><img src='/ro/dojo4/tagged/assets/img-20120328-103454.jpg' title="Img 20120328 103454" alt="Img 20120328 103454" rel="450x450" width="338" height="450" /></p>
+      <p><a href="http://photograffitiboulder.wordpress.com/about/" title="http://photograffitiboulder.wordpress.com/about/">Andrew Kurcan</a>'s <em>Photo Graffiti/Boulder Is My Gallery</em>&#160;project found dojo4. La nostra piccola scatola magica è stata colpita da un magnifico ornamento.</p>
+      <p><img src='/ro/dojo4/tagged/assets/img-20120328-103508.jpg' title="Img 20120328 103508" alt="Img 20120328 103508" rel="450x450" width="450" height="338" /></p>
+      <p>Sarà (probabilmente) in mostra fino al 5/1. Se venite nel pomeriggio con una scatola di vino, avremo una fantastica inaugurazione della galleria!&#160;</p>
+      <p>Grazie Andrew. È un onore.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">informazioni</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/tagged">non-mi-piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/tagged">mi-piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

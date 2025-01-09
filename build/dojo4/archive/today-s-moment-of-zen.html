@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"today-s-moment-of-zen"}">
@@ -83,7 +85,7 @@
 
     <main>
       <div class="ro markdown">
-  <h1 id="todays-moment-of-zen">Today’s Moment of Zen</h1>
+  <h1 id="todays-moment-of-zen">Todays Moment of Zen</h1>
 
 <p>Somehow, all the articles from <a href="http://research.microsoft.com/en-us/people/mickens/">James Mickens</a> end up in <a href="https://twitter.com/copiousfreetime">my twitter stream</a>. It is a thoroughly enjoyable time when it does.</p>
 
@@ -92,7 +94,7 @@
 <p>The nugget I learned today about JavaScript from James.</p>
 
 <blockquote>
-  <p>“\r\n\t” == false</p>
+  <p>\r\n\t == false</p>
 </blockquote>
 
 <p>WTF? I had to try it out.</p>
@@ -107,7 +109,7 @@
 <p>And of course, the explanation from James:</p>
 
 <blockquote>
-  <p>Here’s why: the browser detects that the two operands have different types, so it converts false to 0 and retries the comparison. The operands still have different types (string and number), so the browser coerces “\r\n\t” into the number 0, because somehow, a non-zero number of characters is equal to 0. Voila—0 equals 0! AWESOME. That explanation was like the plot to Inception, but the implanted idea was “the correctness of your program has been coerced to false.”</p>
+  <p>Heres why: the browser detects that the two operands have different types, so it converts false to 0 and retries the comparison. The operands still have different types (string and number), so the browser coerces \r\n\t into the number 0, because somehow, a non-zero number of characters is equal to 0. Voila0 equals 0! AWESOME. That explanation was like the plot to Inception, but the implanted idea was the correctness of your program has been coerced to false.</p>
 </blockquote>
 
 <p>Really, I just had to share.</p>

@@ -14,7 +14,7 @@ PATH
 PATH
   remote: ../ro
   specs:
-    ro (4.2.2)
+    ro (4.2.3)
       image_size (~> 3.4)
       kramdown (~> 2.4, >= 2.4.0)
       kramdown-parser-gfm (~> 1.1, >= 1.1.0)

@@ -1,0 +1,116 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Réflexions sur le lancement et la mise à l'échelle rapide</title>
+
+    <meta property="og:title" content="Réflexions sur le lancement et la mise à l'échelle rapide"/>
+    <meta property="og:description" content="continuez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'thoughts-on-launching-and-scaling-quickly'}">
+    <meta property="site:path_info" content="/thoughts-on-launching-and-scaling-quickly">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Nous avons discuté <a href="http://www.jperla.com/blog/post/how-to-launch-in-a-month-scale-to-a-million-users">de cet article de blog intéressant de Joseph Perla et de la construction et de la mise à l'échelle rapide</a> en interne cette semaine, et je voulais partager quelques brèves réflexions sur certains de ses points. Voici quelques sujets de son article avec mes réflexions et réactions :</p>
+      <p><em>Gardez cela simple</em></p>
+      <p>Pas de discussion ici. Cependant, cela est souvent plus facile à dire qu'à faire. Il y a beaucoup d'art et d'intuition dans tout cela. De nombreux chefs de produit associent une grande simplicité à une faible valeur.</p>
+      <p><em>Faites-le correctement (ayez des tests).</em></p>
+      <p>Les bonnes pratiques et la culture de test sont essentielles, et cela est assez bien connu dans l'industrie à ce jour.</p>
+      <p><em>Ne cachez pas le pouvoir</em></p>
+      <p>Ils ont écrit une bibliothèque appelée <a href="http://www.jperla.com/blog/post/write-bug-free-javascript-with-pebbles">Pebbles</a> qui donne un moyen HTML pour exprimer quelques motifs d'interaction ajax courants. Il y a certainement des personnes intelligentes dans le camp de la création d'un langage spécifique au domaine (DSL) pour chaque projet. Il le fait ici au moins dans son système AJAX Pebbles et son code de parsing Twitter Python.</p>
+      <p><a href="http://pixtress.tumblr.com/post/4102228454/stylish-slabs-of-steel-and-glass-the-skyscrapers">
+        <img src='/ro/dojo4/thoughts-on-launching-and-scaling-quickly/assets/skyscraper-corey-kohn.jpg' style="max-width:100%;display:block;" /></a></p>
+      <p><em>Laissez cela au client</em></p>
+      <p>C'est le point le plus douteux de l'article, à mon avis. Cette stratégie fonctionne bien si vous n'avez qu'une seule interface, mais à quel point est-ce réaliste ? La plupart des projets auront une forme ou une autre d'interface web de bureau, et une variante mobile de celle-ci, très probablement. D'autres projets peuvent avoir une API disponible, des liaisons de langage, des outils en ligne de commande, des clients lourds, etc. Dès que vous avez une deuxième interface, toute cette logique que vous avez écrite dans le code client doit être dupliquée, et par définition si elle est dupliquée dans un autre cadre ou langage, il y aura des différences de comportement. Ma règle empirique est que toute calcul/manipulation que vous souhaitez voir fonctionner de manière cohérente dans plusieurs interfaces appartient au backend et doit être exposée via une API. Dans tous les cas, le compromis ici est une décision de stratégie commerciale qui ne doit pas être prise en isolement par l'équipe technique sans expliquer clairement le compromis (plus difficile/plus lent à construire une autre UI) aux parties prenantes de l'entreprise et aux chefs de produit.</p>
+      <p><em>Continuité</em></p>
+      <p>Il n'est pas clair sur ce qu'il veut dire exactement, mais wow, s'il dit qu'au cours d'un mois, il maintenait plusieurs versions de l'API, cela semble inutile. Supportez plusieurs versions de l'API lorsque vous le devez absolument pour des raisons commerciales, pas comme règle générale.</p>
+      <p><em>Gérez les cas normaux et les pires cas séparément comme règle</em></p>
+      <p>Cela semble assez raisonnable.</p>
+      <p><em>Conclusions</em></p>
+      <p>L'article rassemble bien plusieurs approches courantes pour la scalabilité. Beaucoup de choses se résument à "ne faites pas de choses qui ne se scalent pas" avec une bonne dose de pragmatisme. Ce que je trouve toujours difficile, c'est de savoir quand construire pour l'échelle dès le départ sera plus difficile que de ne pas s'inquiéter de l'échelle dès le départ et de faire des compromis qui favorisent un apprentissage validé plus tôt, même si cela signifie recoder plus tard. <a href="/#Ara" title="Accueil">Ara</a> m'a dit quelque chose la semaine dernière sur la construction rapide de choses en Rails et puis, si c'est un succès fou, avoir suffisamment de liquidités (et de temps/connaissances/stabilité du produit) pour le reconstruire en Scala (pratiquement l'histoire de Twitter). J'ai même vu Matz lui-même en vidéo faire valoir que si vous développez rapidement en Ruby, obtenez une traction sur le marché et avez tant de trafic que vous ne pouvez pas le gérer en Ruby, vous avez un bon problème. Vous pouvez scaler votre système Ruby tout en optimisant/réécrivant ses parties clés dans d'autres langages. Mais c'est mieux que de perdre le marché face à un concurrent plus rapide. À la fois Facebook et Twitter ont réussi ce mouvement avec succès avec des choses comme <a href="https://developers.facebook.com/blog/post/358/">HipHop pour PHP</a> et <a href="http://www.readwriteweb.com/cloud/2011/04/twitter-drops-ruby-for-java.php">la conversion du code Rails en Java</a>. Ce que nous pouvons dire avec certitude, c'est que beaucoup de projets qui étaient très préoccupés par la gestion de la grande échelle dès le début n'ont jamais été lancés, ou ont lancé quelque chose que personne ne voulait, ou ont lancé 6 mois après un concurrent qui a capturé des parts de marché, etc. Je penche définitivement vers l'extrémité agile/lean/<a href="http://fr.wikipedia.org/wiki/You_ain't_gonna_need_it">YAGNI</a> du spectre.</p>
+      <p>Une remarque générale sur l'état de l'industrie maintenant par rapport à la première bulle .com est que nous semblons beaucoup mieux pour savoir ce que le marché veut et aussi notre stack technologique permet de construire des applications web qui servent des centaines de milliers d'utilisateurs avec une petite équipe en utilisant des outils facilement disponibles.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/thoughts-on-launching-and-scaling-quickly">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/thoughts-on-launching-and-scaling-quickly">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

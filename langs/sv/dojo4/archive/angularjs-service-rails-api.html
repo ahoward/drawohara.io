@@ -1,0 +1,172 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>AngularJS Service + Rails API</title>
+
+<meta property="og:title" content="AngularJS Service + Rails API"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/arkiv/:id">
+    <meta property="site:params" content="{'ext':null,'id':'angularjs-service-rails-api'}">
+    <meta property="site:path_info" content="/angularjs-service-rails-api">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Nyligen tvingades jag att dyka in i AngularJS på en Rails-webbplats som vi byggde för en kund. Förutom innehållet på sidan, visar kundens webbplats vissa sidor med rubriker som länkar till externa källor men hämtas in i vår Rails-stack via en rakuppgift som körs periodiskt. Webbplatsen ska cachelagras kraftigt via en CDN, som <a href="http://aws.amazon.com/cloudfront/">CloudFront</a>, men för att hålla rubrikerna aktuella använde vi <a href="https://angularjs.org/">AngularJS</a> (eftersom kunden var bekant med det och det underlättade underhållet för dem) för att fråga Rails-stacken direkt om de senaste rubrikerna.</p>
+
+<p>Detta krävde att vi gjorde saker på ett sätt som korsade domäner eftersom webbplatsens domän skulle peka på CloudFront. Jag hade inte skrivit en Rails API som returnerade JSONP eller en AngularJS-tjänst tidigare, så jag behövde utforska detta och det här fungerade för mig. <em>(Du kan även <a href="https://gist.github.com/milesmatthias/fb88c9f066f1c3ab7fae">läsa gist</a>.)</em></p>
+
+<p><em>Obs: Om du inte är bekant med JSONP kommer det här inte att göra mycket mening. <a href="http://en.wikipedia.org/wiki/JSONP">Läs det här</a>.</em></p>
+
+<h2 id="angularjs-service">AngularJS Service</h2>
+
+<p>AngularJS har konceptet med <a href="https://docs.angularjs.org/guide/services">services</a>, som är singletons som kan användas var du vill. I vårt fall kan du tänka på vår rubriktjänst som rubrik-API-klienten som omsluter våra JSONP-anrop i en enklare och centraliserad syntax. AngularJS tillhandahåller vissa tjänster som standard, men du kan skriva dina egna. Faktiskt kunde vi ha använt den inbyggda <a href="https://docs.angularjs.org/api/ngResource/service/$resource"><code>$resource</code> service</a> i stället för att skriva vår egen, men jag hade problem med att få JSONP att fungera och jag ville förstå de lägre nivåerna av AngularJS-komponenterna bättre, så jag skrev min egen:</p>
+
+<pre><code class="language-html+erb">angular.module('app')
+  .factory('HeadlineService', ['$http',
+    function($http) {
+      'use strict';
+
+      var BASE_URL = "&lt;%= [App.settings.api_base_url, '/services/headlines'].join %&gt;",
+          CALLBACK_STRING = "?callback=JSON_CALLBACK";
+
+      return {
+        getHeadlines: function(){
+          return $http.jsonp(BASE_URL + CALLBACK_STRING)
+        },
+        getHeadlineForId: function(id){
+          return $http.jsonp(BASE_URL + "/" + id + ".json" + CALLBACK_STRING)
+        }
+      }
+    }
+  ]);
+</code></pre>
+
+<p>Tjänsten ovan använder den inbyggda <a href="https://docs.angularjs.org/api/ng/service/$http"><code>$http</code> service</a>, som enbart tillhandahåller en AJAX-wrapper, för att göra förfrågningar till vår Rails-backend för att få rubriker. Några saker att notera:</p>
+
+<ul>
+  <li><strong>Den returnerar ett objekt med 2 funktioner: <code>getHeadlines</code> och <code>getHeadlineForId</code>.</strong> Vi kan sedan använda dessa funktioner som genvägar för att prata med Rails API i våra AngularJS-kontroller.</li>
+  <li><strong>Den använder JSONP.</strong> Observera att vi använder <code>$http.jsonp</code> och vi skickar en frågesträng <code>?callback=JSON_CALLBACK</code>. AngularJS ersätter strängen <code>JSON_CALLBACK</code> med namnet på en callback-funktion som den skapar för dig.</li>
+  <li><strong>Den använder en annan domän.</strong> Väl, det är väntat eftersom vi gör JSONP, men vi uppnår det genom att lägga till en <code>.erb</code>-tillägg till filen och använder vad vi har ställt in för <code>App.settings.api_base_url</code> i Rails-appen som den domän som AngularJS ska prata med. Kom ihåg att detta är för att kringgå CDN-cachelagringen så att våra rubriker alltid är de senaste.</li>
+</ul>
+
+<h2 id="angularjs-controller">AngularJS Controller</h2>
+
+<p>Med vår <code>HeadlinesService</code> byggd kan vi nu använda de 2 funktioner den returnerar i vår AngularJS-app:</p>
+
+<div class="language-js highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">angular</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">module</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">app</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">controller</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">HeadlinesCtrl</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">$scope</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">HeadlineService</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">$scope</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">HeadlineService</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">use strict</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-5'>&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">HeadlineService</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getHeadlines</span><span style="color: #24292f;background-color: #f6f8fa">().</span><span style="color: #8250df">success</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">status</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">headers</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">$scope</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">headlines</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">HeadlineService</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getHeadlineForId</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #24292f;background-color: #f6f8fa">id</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">success</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">$scope</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">single_headline</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}).</span><span style="color: #8250df">error</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">error</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">status</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">headers</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">alert</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">något gick fel när du hämtade en rubrik</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}).</span><span style="color: #8250df">error</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">error</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">status</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">headers</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">alert</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">något gick fel när du hämtade alla rubriker</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">]);</span>
+</div></code></div>
+
+<p>För exempels skull hämtar jag det fullständiga rubrikobjektet för den första rubriken som returneras i success-callbacken för <code>getHeadlines</code>.</p>
+
+<p><code>$scope</code>-objektet exponeras för vyerna i AngularJS, så vi kan visa rubrikerna på sidan genom att ha en vy som:</p>
+
+<pre><code class="language-html+erb">&lt;section class="headline_section" ng-controller="HeadlinesCtrl"&gt;
+
+  &lt;h3&gt;Här är några rubriker...&lt;/h3&gt;
+
+  &lt;div class="headlines"&gt;
+
+    &lt;ul&gt;
+      &lt;li ng-repeat="headline in headlines"&gt;
+        &lt;a href="{{ headline.url }}" target="_none"&gt;{{ headline.title }}&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;ul&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class="headline"&gt;
+    &lt;a href="{{ single_headline.url }}" target="_none"&gt;{{ single_headline.title }}&lt;/a&gt;
+  &lt;/div&gt;
+
+&lt;/section&gt;
+</code></pre>
+
+<h2 id="rails-backend">Rails Backend</h2>
+
+<p>Nu när vi har fått AngularJS att ringa vår Rails-backend behöver vi skriva Rails-backenden! Följande kontroller är ganska grundläggande ruby on rails, men för att returnera JSONP i stället för vanligt gammalt JSON använder vi <code>callback</code>-alternativet i <code>render</code>-metoden. Det berättar för Rails att vi använder JSONP och att omsluta de JSON-data vi gav den i den callback och ställa in <code>Content-Type</code>-huvudet korrekt så att allt är i enlighet med JSONP-standarden och vår AngularJS-klient kan bearbeta data.</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">Services::HeadlinesController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ApplicationController</span>
+</div><div class='code-line code-line-2'>&nbsp;
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">index</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">page</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:page</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||</span>&nbsp;<span style="color: #0550ae">1</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">to_i</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">per</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:per</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;<span style="color: #0550ae">||</span>&nbsp;<span style="color: #0550ae">5</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">to_i</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">offset</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">page</span>&nbsp;<span style="color: #0550ae">-</span>&nbsp;<span style="color: #0550ae">1</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">per</span>
+</div><div class='code-line code-line-7'>&nbsp;

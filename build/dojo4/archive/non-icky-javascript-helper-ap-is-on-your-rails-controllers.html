@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"non-icky-javascript-helper-ap-is-on-your-rails-controllers"}">
@@ -85,7 +87,7 @@
       <div class="ro markdown">
   <p>ref: https://gist.github.com/ahoward/5752290</p>
 
-<p>web apps nearly always end up needing a plethora of little javascript helper methods: you know, auto-complete forms, populating defaults, validations, etc.  these aren’t API calls properly, just little tidbits of functionality needed to make the views work.</p>
+<p>web apps nearly always end up needing a plethora of little javascript helper methods: you know, auto-complete forms, populating defaults, validations, etc.  these arent API calls properly, just little tidbits of functionality needed to make the views work.</p>
 
 <p>there is always a question of which controller to hang these methods off of.  do you make a global helper controller for all this stuff?  do you hang them off the controller in question?  how to do share the backend of javascript helper methods across controllers?</p>
 
@@ -239,7 +241,7 @@
 
 <p>this organization keeps your code clean by avoiding a proliferation of controllers and prevents the need to litter clean resourceful controllers with loads of fugly js helper actions</p>
 
-<p>here is the code in it’s entirety</p>
+<p>here is the code in its entirety</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781"># file : ./lib/rpc.rb</span>

@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"chrome-logger"}">
@@ -85,7 +87,7 @@
       <div class="ro markdown">
   <p>A cool tool called <a href="http://craig.is/writing/chrome-logger">Chrome Logger</a> has been around for awhile that allows, through a known specification, client side logging from the server. It seemed to have undergone a complete rewrite recently but only had PHP and Python implementations.</p>
 
-<p>After some quick work last night, I was able to release an early version of a Ruby implementation. It’s a Rack middleware packaged as a gem that exposes <code>env['console']</code> from which you can create log messages.</p>
+<p>After some quick work last night, I was able to release an early version of a Ruby implementation. Its a Rack middleware packaged as a gem that exposes <code>env['console']</code> from which you can create log messages.</p>
 
 <p>It also comes with easy Rails integration: <code>require 'chrome_logger/railtie'</code></p>
 

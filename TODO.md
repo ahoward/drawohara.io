@@ -1,23 +1,19 @@
 todo
 ----
-- purl model
-  - purl as shortcode?
-  - /[0-9]+ -> shortcode === purl
-
-- nerd blog
 
 - /langs + Site.url_for
+
+utf8 issues
 
 - auto-translation!
   - centralize lang config via site.data.langs, or similar
 
+
+- nerd blog
+
 - cv
 
-- custom reloader for ./bin/serve
 
-- Site.root (ro, dato)... etc.
-- re-org site lib
-- site uses map.rb througout?
 
 
 
@@ -25,6 +21,25 @@ todo
 
 next
 ----
+- Site.root (ro, dato)... etc.
+- re-org site lib
+- site uses map.rb througout?
+- custom reloader for ./bin/serve
+
+
+- purl model
+  - purl as shortcode?
+  - /[0-9]+ -> shortcode === purl
+
+
+
+
+
+
+
+
+
+
 - better reloader, pure listen
 - reorg lib
 

@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"rails-to-json"}">
@@ -83,7 +85,7 @@
 
     <main>
       <div class="ro markdown">
-  <p>rails, including rails3, has this lovely bit of code related to providing a “to_json” method on built-ins:</p>
+  <p>rails, including rails3, has this lovely bit of code related to providing a to_json method on built-ins:</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #6e7781"># Hack to load json gem first so we can overwrite its to_json.</span>
@@ -108,7 +110,7 @@
 </div><div class='code-line code-line-21'>
 </div></code></div>
 
-<p>what this effectively does is clobber the “to_json” method the json gem provides with one that active_support feels is better. the comment about json being broken is out of date and this was hack to begin with. in my case i really like this sort of thing in my /api controller:</p>
+<p>what this effectively does is clobber the to_json method the json gem provides with one that active_support feels is better. the comment about json being broken is out of date and this was hack to begin with. in my case i really like this sort of thing in my /api controller:</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">to_json</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">object</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
@@ -121,9 +123,9 @@
 </div><div class='code-line code-line-9'>
 </div></code></div>
 
-<p>since it makes debugging a shit-ton easier. here’s how i did it in a rails3 app -</p>
+<p>since it makes debugging a shit-ton easier. heres how i did it in a rails3 app -</p>
 
-<p>step one was to make rails3 support the “preinitializer” concept that old-skool rails used to have:</p>
+<p>step one was to make rails3 support the preinitializer concept that old-skool rails used to have:</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">### file: config/preinitializer.rb</span>
@@ -187,7 +189,7 @@
 <ul>
   <li>make rails support code that runs before all else</li>
   <li>during this phase suck in the json gem and remember how it does things</li>
-  <li>nuke the rails’ way and restore the json method of to_json</li>
+  <li>nuke the rails way and restore the json method of to_json</li>
 </ul>
 
 

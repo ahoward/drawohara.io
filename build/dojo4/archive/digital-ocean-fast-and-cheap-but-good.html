@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"digital-ocean-fast-and-cheap-but-good"}">
@@ -83,32 +85,32 @@
 
     <main>
       <div class="ro markdown">
-  <p>As CTO of a technology agency I’m constantly evaluating new tools, processes, and services.</p>
+  <p>As CTO of a technology agency Im constantly evaluating new tools, processes, and services.</p>
 
-<p>Recently I’ve been looking at the DigitalOcean platform as part of an ultra-high-availability strategy we’ve been developing for those times when AWS/S3 isn’t enough: when you want to weather a massive outage of an entire cloud provider.</p>
+<p>Recently Ive been looking at the DigitalOcean platform as part of an ultra-high-availability strategy weve been developing for those times when AWS/S3 isnt enough: when you want to weather a massive outage of an entire cloud provider.</p>
 
-<p>All of Dojo4’s deploys start out as AWS ones for the obvious reason: it is the standard by which all other cloud services are judged.  It has the additional benefit to an agency in that we can point to it as a ‘sane default’ for software we deliver to customers; as the 800 pound gorilla its use is defensible.  However, some rare clients have voiced concerns about AWS outages affecting their sites and applications, in particular monitoring applications which are supposed to report errors about such outages: a recursive problem.  For these cases we’ve been looking at static deploys balanced across cloud providers with DNS, and DigitalOcean has been on the short list of contenders to create and deploy simple static sites hosted by Apache for this purpose as a failsafe for our normal AWS hosted sites.</p>
+<p>All of Dojo4s deploys start out as AWS ones for the obvious reason: it is the standard by which all other cloud services are judged.  It has the additional benefit to an agency in that we can point to it as a sane default for software we deliver to customers; as the 800 pound gorilla its use is defensible.  However, some rare clients have voiced concerns about AWS outages affecting their sites and applications, in particular monitoring applications which are supposed to report errors about such outages: a recursive problem.  For these cases weve been looking at static deploys balanced across cloud providers with DNS, and DigitalOcean has been on the short list of contenders to create and deploy simple static sites hosted by Apache for this purpose as a failsafe for our normal AWS hosted sites.</p>
 
-<p>Recently DigitalOcean (DO) had a wee issue related to it’s security practices: https://github.com/fog/fog/issues/2525.</p>
+<p>Recently DigitalOcean (DO) had a wee issue related to its security practices: https://github.com/fog/fog/issues/2525.</p>
 
-<p>One could summarize this issue as: when you boot up a new cloud box it may or may not have some previous user’s sensitive data lying around on the disk and, when you shut your own cloud box down, you may expose your own sensitive data to some random 3rd party.  Their service provides a way to wipe things clean but it is <em>not the default</em> - the default is to leave <em>whatever was on the disk</em> exposed for the next customer to dig around in.</p>
+<p>One could summarize this issue as: when you boot up a new cloud box it may or may not have some previous users sensitive data lying around on the disk and, when you shut your own cloud box down, you may expose your own sensitive data to some random 3rd party.  Their service provides a way to wipe things clean but it is <em>not the default</em> - the default is to leave <em>whatever was on the disk</em> exposed for the next customer to dig around in.</p>
 
 <p><em>This is a really bad default strategy.</em></p>
 
-<p>On twitter I suggested that I wasn’t surprised by this lax strategy, but that I was disappointed at the way DO handled themselves during the disclosure.   During a brief exchange on twitter I was asked to summarize the source of my non-surprise:</p>
+<p>On twitter I suggested that I wasnt surprised by this lax strategy, but that I was disappointed at the way DO handled themselves during the disclosure.   During a brief exchange on twitter I was asked to summarize the source of my non-surprise:</p>
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/drawohara">@drawohara</a> If you wanted to take the time to put it into an email, I&#39;d read and share it with the whole team, and appreciate it greatly. :)</p>&mdash; John Edgar (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">December 30, 2013</a></blockquote>
 <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p>So, here with 20/20 hindsight and actually trying to be helpful, I’m fulfilling my promise and explaining why I’ve been dragging my feet moving any of our stuff to DigitalOcean’s platform. (Please note that this list compromises feelings and impressions only, but that they’ve been somewhat validated and strengthened by the recent disk scrubbing fiasco):</p>
+<p>So, here with 20/20 hindsight and actually trying to be helpful, Im fulfilling my promise and explaining why Ive been dragging my feet moving any of our stuff to DigitalOceans platform. (Please note that this list compromises feelings and impressions only, but that theyve been somewhat validated and strengthened by the recent disk scrubbing fiasco):</p>
 
 <ul>
-  <li>Visting DO’s home page one is greeted with a blaring marketing message that screams ‘cheap and fast’</li>
+  <li>Visting DOs home page one is greeted with a blaring marketing message that screams cheap and fast</li>
 </ul>
 
 <p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
 
-<p>given that the platform is ‘built for developers’ I personally find it strange that the team apparently didn’t anticipate developers getting the clear message that of ‘good, fast, and cheap’ one is picking the latter <em>two</em> with DO.</p>
+<p>given that the platform is built for developers I personally find it strange that the team apparently didnt anticipate developers getting the clear message that of good, fast, and cheap one is picking the latter <em>two</em> with DO.</p>
 
 <ul>
   <li>Next, one gets a nice confirmation message that, as start-up, DO is motivated to demonstrate very, very fast growth</li>
@@ -119,7 +121,7 @@
 <p>this should give any operations engineer a sick in the stomach feeling.</p>
 
 <ul>
-  <li>Poking around the site one finds consistent beating of the ‘fast and cheap’ drum, for instance in the referral program</li>
+  <li>Poking around the site one finds consistent beating of the fast and cheap drum, for instance in the referral program</li>
 </ul>
 
 <p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
@@ -132,9 +134,9 @@
 
 <p>https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</p>
 
-<p>and while I admire, approve of, and recommend this kind of approach to software in general, building security and robustness iteratively doesn’t seem like the sweet spot for this kind of business - despite how awesome VCs (who have never fought a security breach in the wild) must think it is. Some things require massive experience and top-down planning: a stack that lets its users store data and execute code on, be it a browser or cloud, fall into the category of ‘I want someone extracting real code from real systems with a history of attack’ and not ‘We listen to users and iterate quickly, learning as we go.’</p>
+<p>and while I admire, approve of, and recommend this kind of approach to software in general, building security and robustness iteratively doesnt seem like the sweet spot for this kind of business - despite how awesome VCs (who have never fought a security breach in the wild) must think it is. Some things require massive experience and top-down planning: a stack that lets its users store data and execute code on, be it a browser or cloud, fall into the category of I want someone extracting real code from real systems with a history of attack and not We listen to users and iterate quickly, learning as we go.</p>
 
-<p>So, don’t get me wrong, I am still evaluating DigitalOcean as a nice programmable stack on which to deploy simple static sites and I certainly want to see them succeed, but  I have concerns about their culture and if it is the kind of culture that practices defensive vs. reactive security practices and if they’ll be able to maintain their growth, price point, and ultimately funding when, and if, they catch up with the other cloud players in this regard.  Reading through their attitudes and beliefs in the context of the recent debacle (https://github.com/fog/fog/issues/2525) gives me some reason to doubt it.</p>
+<p>So, dont get me wrong, I am still evaluating DigitalOcean as a nice programmable stack on which to deploy simple static sites and I certainly want to see them succeed, but  I have concerns about their culture and if it is the kind of culture that practices defensive vs. reactive security practices and if theyll be able to maintain their growth, price point, and ultimately funding when, and if, they catch up with the other cloud players in this regard.  Reading through their attitudes and beliefs in the context of the recent debacle (https://github.com/fog/fog/issues/2525) gives me some reason to doubt it.</p>
 
 </div>
     </main>

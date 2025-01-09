@@ -1,0 +1,119 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Адаптивний дизайн мертвий! Хай живе адаптивний дизайн!</title>
+
+    <meta property="og:title" content="Адаптивний дизайн мертвий! Хай живе адаптивний дизайн!"/>
+    <meta property="og:description" content="продовжуй рух." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'responsive-design-is-dead-long-live-responsive-design'}">
+    <meta property="site:path_info" content="/responsive-design-is-dead-long-live-responsive-design">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Адаптивні сайти залишаються з нами, і на те є вагомі причини. Наразі немає кращого способу адаптувати контент під все зростаючу кількість пристроїв та розмірів екранів на ринку. Однак, хоча технології змінилися, процес дизайну/розробки залишився досить статичним.</p>
+
+      <p>Причина цього досить очевидна: Більшість агенцій застрягли у застарілих моделях штатування, де все ще існує поділ між дизайнерами та фронтенд-розробниками. Для нових парадигм адаптивного дизайну це має змінитися.</p>
+
+      <p>Одним із способів вирішення цієї проблеми є згладжування розриву між дизайном та розробкою. Ми виявили, що ця стратегія далека від ідеалу. Робота в парі розробник-розробник може мати свої переваги, але дизайнери та розробники мають настільки різні процеси, що це швидко стає проблемою та врешті-решт уповільнює проект.</p>
+
+      <p>З іншого боку, ми тут, у dojo4, вирішили, що нам краще мати багатопрофільних співробітників. Ми не тільки шукаємо таких співробітників, ми активно заохочуємо розвиток навичок. В результаті у нас є дизайнери, які можуть кодувати, і кодери, які можуть створювати дизайн. Це дозволяє нам починати та закінчувати наш процес адаптивного дизайну майже повністю в браузері.</p>
+
+      <p>Наш процес дизайну починається з швидкої організації контенту за допомогою карти сайту або діаграми користувацького потоку. Це дозволяє нам визначити сторінки та шаблони, які потребують уваги до створення макетів, коли ми переходимо до наступного етапу нашого процесу.</p>
+
+      <p>Сподіваюся, ви насолодилися першою фазою за її простотою, оскільки це єдина фаза, проведена поза нашим улюбленим браузером.</p>
+
+      <p>Перед початком роботи з макетами ми налаштовуємо наше середовище та вирішуємо всі залежності (наприклад, Bootstrap, jquery, fontawesome та Middleman). Саме на цьому етапі ми також вирішуємо питання розгортання (переважно налаштовуємо rake-завдання та S3-сховища). Як тільки ми готові до створення та розгортання, ми починаємо розробку.</p>
+
+      <p>Працюючи з вищезгаданими матеріалами (карта сайту), ми починаємо створювати чорно-білі макети. Хоча ці макети адаптивні, вони дуже скромні. Весь контент і JavaScript-компоненти (вкладки/випадаючі списки/підказки тощо) мають базове оформлення та базову функціональність. Зображення та іконки або запасні, або сірі/обведені рамкою з описом. Мета полягає в тому, щоб закріпити архітектуру сторінки та рішення щодо адаптивних точок зламу без роздумів про дизайнерські рішення – вони прийдуть далі.</p>
+
+      <p>Після того, як макети закріплені, ми можемо перейти до етапу дизайну проекту. Ми зазвичай створюємо портфоліо шаблонів. Справедливості заради, наші портфоліо шаблонів десь між живим стильним кахелем та портфоліо шаблонів. Вони показують вибір кольорів та шрифтів, доповнюючи дизайн елементів та компонентів: заголовки, підвали, форми, кнопки, вкладки, списки, абзаци, заголовки, підзаголовки та будь-який інший значний елемент, вивчений з макетів. Ми вважаємо їх матеріалами нашого маленького веб-будинку.</p>
+
+      <p>Після схвалення портфоліо шаблонів ми починаємо інтегрувати спроектовані елементи у наші HTML-макети. Ми також починаємо заповнювати контент, вводити дані, виконувати будь-яке моделювання даних та підключати компоненти CMS, якщо вони використовуються. Хоча велика частина роботи вже виконана на цьому етапі, саме тут відчувається, ніби сайт нарешті будується.</p>
+
+      <p>На цьому етапі у нас є чернетка сайту на стенді та готова до перегляду. Зазвичай є один або два раунди ревізій – дрібні зміни та коректури. А потім настає весела частина, натискання маленької червоної кнопки, яка відправляє сайт у світ, де він нарешті починає працювати та доводить, що є найкращим і найкрутішим в інтернеті... до наступного запуску, звичайно.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/responsive-design-is-dead-long-live-responsive-design">я-ненавижу-це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/responsive-design-is-dead-long-live-responsive-design">я-люблю-це</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

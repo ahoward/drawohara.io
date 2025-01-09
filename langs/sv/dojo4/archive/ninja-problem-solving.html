@@ -1,0 +1,120 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Ninja Problemlösning</title>
+
+<meta property="og:title" content="Ninja Problemlösning"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"ninja-problem-solving"}">
+    <meta property="site:path_info" content=""/ninja-problem-solving"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Nyligen skickades det här mejlet ut till vårt tekniska team. Jag tänkte dela det oförändrat.</p>
+
+<pre>Problemlösning är den viktigaste tjänsten vi erbjuder. Under åren har jag utvecklat några högnivåidéer om det som jag funnit leda till bra lösningar, av vilka det alltid finns många. Du kanske hittar dessa idéer användbara eller inte, men jag ville dela dem i alla fall:
+
+- förstå problemet fullständigt. Om det finns en liten brist på klarhet, ställ frågor och gräv djupare. Faktum är att alla problemlösningar kommer från hänsynslös tillämpning av bara den här principen. Det lilla ordet som klienten eller manualen nämnde som du var förlegen att fråga om - fråga om det. Den lilla raden i koden som du inte helt förstod är sannolikt källan till ditt problem, ignorera den inte.
+
+- prata om problemet *högt* med någon annan. Det är förvånande hur ofta att formulera ett problem på engelska, utanför mentala konstruktioner, automatiskt föreslår en lösning.
+
+- debugga aldrig ensam. Bjud någon på kaffe eller öl. Ring en teammedlem. Det är nästan alltid en tidsslösa att debugga själv. En följd: avbryt vad du är sysselsatt med och hjälp till om det ser ut som att någon annan fastnat i ett problem.
+
+- när det finns ett problem, kontrollera dessa saker, i ordning, *varje gång*: läs koden, läs manualen, googla det. Detta är motsatsen till vad de flesta gör. På ett annat sätt "kontrollera de högkvalitativa källorna först" eftersom låga kvalitets källor leder till ytterligare förvirring. Jag kan inte starkt nog betona vikten av att bli en religiös kodläsare.
+
+- ta aldrig den låga vägen. Om du tänker "det här är en hack men..." stoppa och fråga om hjälp.
+
+- strid inte mot framtiden. En lösning behöver inte vara komplett, men den bör åtminstone ta ett steg mot att bli komplett. Spåra delvisa lösningar med #FIXME, #TODO, ett kort i redmine eller en konversation med en medarbetare.
+
+- lämna bajs. Om ditt arbete inte skapar artefakter som människor kan antingen återanvända eller redigera är det sannolikt ett plåster och inte en lösning. Att göra redigerbar kod är betydligt enklare än att göra återanvändbar kod. Undvik lösningar som varken är som pesten.
+
+- bli inte arg. Din hjärna stängs av om du blir arg på ett problem. Inget vi gör har liv som hänger på det, så lätta upp. Så du förstörde data. Ha ett skratt och gå sedan tillbaka till att återställa det.
+
+- undvik tidig adoption genom att vara en tidig användare. Sättet att förstå den perfekta balansen mellan blödande kant och gammal stabilitet, ironiskt nog, är att ruthlöst utforska och förstå nya lösningar. Du måste vara en tidig användare för att förstå när du bör undvika det. FUD (fear uncertainty and doubt) bör aldrig vara en motivator för att undvika nytt och glittrande, men ett djupt förstånd av tekniska brister *bör vara*.
+</pre>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/ninja-problem-solving">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/ninja-problem-solving">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

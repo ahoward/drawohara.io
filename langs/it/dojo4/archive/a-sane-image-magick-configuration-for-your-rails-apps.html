@@ -1,0 +1,184 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>una configurazione sana di image magick per le tue app rails</title>
+
+    <meta property="og:title" content="una configurazione sana di image magick per le tue app rails"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivio/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"una-configurazione-sana-di-image-magick-per-le-tue-app-rails"}">
+    <meta property="site:path_info" content=""/una-configurazione-sana-di-image-magick-per-le-tue-app-rails"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Ho spesso detto che gli upload di file sono un attacco DOS auto-inflitto. Certamente non è difficile trovare esempi di una funzione di app apparentemente piccola che causa il caos su molti server di app: https://www.google.com/search?q=heroku+image+magick+timed+out</p>
+
+        <p>@dojo4 utilizziamo la capacità di image magick di impostare limiti tramite l'ambiente come prima linea di difesa per mantenere i processi magick ben comportati.</p>
+
+        <p>Prima una piccola configurazione/contesto: spesso distribuiamo una coppia di file RAILS_ROOT/env.yml e RAILS_ROOT/env.rb che l'applicazione rails assorbirà all'avvio. Non contengono dipendenze rails e possono essere utilizzati negli script di background per comprendere rapidamente la configurazione rails distribuita senza dover caricare l'intera applicazione rails.</p>
+
+        <p>Il primo file è un semplice file yaml di coppie di ambiente k=v.</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>
+        </div><div class='code-line code-line-3'><span style="color: #6e7781"># file: RAILS_ROOT/config/env.yml</span>
+        </div><div class='code-line code-line-4'>
+        </div><div class='code-line code-line-5'>
+        </div><div class='code-line code-line-6'><span style="color: #6e7781"># RAILS_ENV      : production</span>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'><span style="color: #6e7781"># RAILS_STAGE : stage</span>
+        </div><div class='code-line code-line-9'>
+        </div><div class='code-line code-line-10'><span style="color: #6e7781"># APP_RUBY   : /usr/local/rbenv/versions/1.9.3-p0/bin/ruby</span>
+        </div><div class='code-line code-line-11'>
+        </div><div class='code-line code-line-12'><span style="color: #953800">APP_RUBY_VERSION</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">1.9</span><span style="color: #0550ae">.</span><span style="color: #0550ae">3</span>
+        </div><div class='code-line code-line-13'>
+        </div><div class='code-line code-line-14'><span style="color: #6e7781"># APP_PORT   : 4201</span>
+        </div><div class='code-line code-line-15'>
+        </div><div class='code-line code-line-16'><span style="color: #6e7781"># APP_USER   : dojo4</span>
+        </div><div class='code-line code-line-17'>
+        </div><div class='code-line code-line-18'><span style="color: #6e7781"># APP_GROUP  : dojo4</span>
+        </div><div class='code-line code-line-19'>
+        </div><div class='code-line code-line-20'>
+        </div></code></div>
+
+        <p>Il secondo è effettivamente il file che viene richiesto. Carica questo file e fa un tentativo dinamico di impostare ulteriori variabili di ambiente</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781"># file: RAILS_ROOT/env.rb</span>
+        </div><div class='code-line code-line-3'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-4'><span style="color: #6e7781"># prima, integriamo eventuali impostazioni di ambiente trovate in</span>
+        </div><div class='code-line code-line-5'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-6'><span style="color: #6e7781">#   RAILS_ROOT/env.yml</span>
+        </div><div class='code-line code-line-7'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-8'><span style="color: #6e7781"># facendo attenzione a non sovrapporre eventuali variabili ENV impostate manualmente. Il file env.yml viene</span>
+        </div><div class='code-line code-line-9'><span style="color: #6e7781"># normalmente creato durante una distribuzione cap.</span>
+        </div><div class='code-line code-line-10'><span style="color: #6e7781"># </span>
+        </div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'erb'</span>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'yaml'</span>
+        </div><div class='code-line code-line-13'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rbconfig'</span>
+        </div><div class='code-line code-line-14'>&nbsp;&nbsp;
+        </div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">env_yml</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">expand_path</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'../env.yml'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-16'>&nbsp;&nbsp;
+        </div><div class='code-line code-line-17'>&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">test</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">?s</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">env_yml</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">buf</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">IO</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">read</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">env_yml</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">expanded</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">ERB</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">buf</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">result</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">binding</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">YAML</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">expanded</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">each</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">val</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_s</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">val</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_s</span><span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">is_a?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-22'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-23'>
+        </div><div class='code-line code-line-24'>
+        </div></code></div>
+
+        <p>Ciò che ci interessa qui è la sezione in cui viene configurato l'ambiente di imagemagick.</p>
+
+        <p>Eccola in tutto il suo splendore - i commenti dovrebbero fornire contesto ed esplorazione:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781"># assicurati che RAILS_* siano impostati</span>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'RAILS_ENV'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||=</span>&nbsp;<span style="color: #0a3069">'development'</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'RAILS_ROOT'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dirname</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dirname</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">))</span>
+        </div><div class='code-line code-line-5'>
+        </div><div class='code-line code-line-6'><span style="color: #6e7781"># imposta l'ambiente Magick Imagick</span>
+        </div><div class='code-line code-line-7'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-8'><span style="color: #6e7781"># ref: http://www.imagemagick.org/script/resources.php</span>
+        </div><div class='code-line code-line-9'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-10'><span style="color: #6e7781"># usa il sistema "convert -list resource" nella console per visualizzare</span>
+        </div><div class='code-line code-line-11'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-12'><span style="color: #6e7781"># tieni presente che queste impostazioni sono *per processo* quindi più volte il numero</span>
+        </div><div class='code-line code-line-13'><span style="color: #6e7781"># di server di app che hai in esecuzione!</span>
+        </div><div class='code-line code-line-14'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">tmp</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'RAILS_ROOT'</span><span style="color: #24292f;background-color: #f6f8fa">],</span>&nbsp;<span style="color: #0a3069">'tmp'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-16'>
+        </div><div class='code-line code-line-17'><span style="color: #6e7781"># mantieni i tuoi file temporanei fuori dallo spazio di sistema, che su AWS fa parte del volume root!</span>
+        </div><div class='code-line code-line-18'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-19'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'TMPDIR'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">tmp</span>
+        </div><div class='code-line code-line-21'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'MAGICK_TMPDIR'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">tmp</span>
+        </div><div class='code-line code-line-22'>
+        </div><div class='code-line code-line-23'><span style="color: #6e7781"># mantieni solo questo numero di handle di file aperti alla volta</span>
+        </div><div class='code-line code-line-24'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-25'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'MAGICK_FILE_LIMIT'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">64</span>
+        </div><div class='code-line code-line-26'>
+        </div><div class='code-line code-line-27'><span style="color: #6e7781"># larghezza * altezza &lt; questo valore si adatta alla memoria. Altrimenti utilizza la cache dei pixel</span>
+        </div><div class='code-line code-line-28'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-29'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'MAGICK_AREA_LIMIT'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'64MB'</span>
+        </div><div class='code-line code-line-30'>
+        </div><div class='code-line code-line-31'><span style="color: #6e7781"># non consumare più di questa memoria</span>
+        </div><div class='code-line code-line-32'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-33'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'MAGICK_MEMORY_LIMIT'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'256MiB'</span>
+        </div><div class='code-line code-line-34'>
+        </div><div class='code-line code-line-35'><span style="color: #6e7781"># non mappare più di questa memoria</span>
+        </div><div class='code-line code-line-36'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-37'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'MAGICK_MAP_LIMIT'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'1GiB'</span>
+        </div><div class='code-line code-line-38'>
+        </div><div class='code-line code-line-39'><span style="color: #6e7781"># consuma meno di questo spazio su disco totale</span>
+        </div><div class='code-line code-line-40'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-41'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'MAGICK_DISK_LIMIT'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'64GiB'</span>
+        </div><div class='code-line code-line-42'>
+        </div><div class='code-line code-line-43'><span style="color: #6e7781"># scrivi sul disco più spesso</span>
+        </div><div class='code-line code-line-44'><span style="color: #6e7781">#</span>
+        </div><div class='code-line code-line-45'>&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'MAGICK_SYNCHRONIZE'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">true</span>
+        </div><div class='code-line code-line-46'>
+        </div><div class='code-line code-line-47'><span style="color: #6e7781"># cede la CPU in blocchi di questo numero di ms</span>
+        </div><div class='code-line code-line-48'><span style="color: #6e7781">#

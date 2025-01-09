@@ -1,0 +1,141 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Ми написали книгу!</title>
+
+    <meta property="og:title" content="Ми написали книгу!"/>
+    <meta property="og:description" content="продовжуйте рухатися." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"we-wrote-a-book}">
+    <meta property="site:path_info" content="/we-wrote-a-book">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Під час святкових канікул я розмірковував про свій досвід знайомства з Ruby on Rails у доджо. Як фул-стек розробник, що зосереджується переважно на фронтенді, було складно влитися в існуючий проект на Rails з невеликим завданням на JavaScript. Які файли редагувати? Як мої скрипти включаються на сторінку? Як обробляється запит у Rails? Ах!!</p>
+
+        <p>Тому я написав книгу про це. Мої чудові колеги з доджо4 допомогли перевірити її на технічну точність, і я вважаю, що це чудовий час, щоб випустити її в світ. Сподіваюся, вона допоможе іншим фронтенд розробникам, які потрапляють у проект на Rails і розуміють, що вони заблукали. Нехай ця книга буде вашим компасом!</p>
+
+        <p><img src='/ro/dojo4/we-wrote-a-book/assets/cover-idea-2.png' alt="img" /></p>
+
+        <p>Ось книга:</p>
+
+        <ul>
+          <li><a href="https://leanpub.com/rorfrontend">У різних форматах електронних книг (PDF, MOBI, EPUB)</a></li>
+          <li><a href="http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/">У магазині Kindle</a></li>
+          <li><a href="http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html">У паперовому вигляді!</a></li>
+        </ul>
+
+        <p>Опис:</p>
+
+        <pre><code class="language-text">Ruby on Rails - це надзвичайно потужний фреймворк для веб-застосунків з повним стеком, але з його потужністю приходить складність. Для фронтенд розробників, яким просто потрібно редагувати HTML, CSS та JS у застосунку Ruby on Rails, це може бути складною задачею. Ця книга пояснює, що потрібно знати фронтенд розробникам про Ruby on Rails, щоб використовувати свої навички у додатку на Rails.
+
+До кінця книги ви зможете:
+
+* знати, куди помістити свій html, css та js у структурі додатку ruby on rails
+
+* як rails маршрутизує запити до контролерів
+
+* використовувати представлення, макети та часткові представлення у контролерах
+
+* що таке конвеєр активів і як його використовувати
+
+* як контролери та представлення у rails працюють разом, щоб відтворити відповідь у браузері
+
+* як дані додаються до представлень і як посилатися на дані в html
+</code></pre>
+
+        <p>Вам сподобається:</p>
+
+        <ul>
+          <li><a href="https://leanpub.com/rorfrontend">У різних форматах електронних книг (PDF, MOBI, EPUB)</a></li>
+          <li><a href="http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/">У магазині Kindle</a></li>
+          <li><a href="http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html">У паперовому вигляді!</a></li>
+        </ul>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/we-wrote-a-book">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/we-wrote-a-book">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

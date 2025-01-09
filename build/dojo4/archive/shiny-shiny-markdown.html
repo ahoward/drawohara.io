@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"shiny-shiny-markdown"}">
@@ -83,7 +85,7 @@
 
     <main>
       <div class="ro markdown">
-  <p>all dojo4’s rails application use markdown in some fashion.  following is the setup we have for the shiniest of shiny markdown configurations:</p>
+  <p>all dojo4s rails application use markdown in some fashion.  following is the setup we have for the shiniest of shiny markdown configurations:</p>
 
 <p>step one is suck in the require gems</p>
 
@@ -149,7 +151,7 @@
 </div><div class='code-line code-line-3'>&nbsp;&nbsp;
 </div></code></div>
 
-<p>but, you know that’s kind of expensive and we generally avoid doing it in the view.  instead, we cache both the raw markdown and markdown formatted markdown on our objects.  don’t forget that you <em>need</em> to keep the raw markdown if you want to let the user re-edit it…</p>
+<p>but, you know thats kind of expensive and we generally avoid doing it in the view.  instead, we cache both the raw markdown and markdown formatted markdown on our objects.  dont forget that you <em>need</em> to keep the raw markdown if you want to let the user re-edit it</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781"># file : app/models/post.rb</span>
 </div><div class='code-line code-line-2'>
@@ -175,7 +177,7 @@
 </div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;
 </div></code></div>
 
-<p>one last awesome tidbit: some of us like writing simple views in markdown.  this initializer will let you create ‘app/views/foo.md’ and have rails just do the right thing, including processing the markdown through erb first which allows looping, conditionals, etc…</p>
+<p>one last awesome tidbit: some of us like writing simple views in markdown.  this initializer will let you create app/views/foo.md and have rails just do the right thing, including processing the markdown through erb first which allows looping, conditionals, etc</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #6e7781"># file: config/initializers/markdown_templates.rb</span>
@@ -200,7 +202,7 @@
 </div><div class='code-line code-line-21'>
 </div></code></div>
 
-<p>let’s you do</p>
+<p>lets you do</p>
 
 <pre><code>
 # file: app/views/markdown-is-awesome.md

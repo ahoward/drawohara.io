@@ -4,7 +4,7 @@ require_relative 'html_safe'
 
 module Render
   def render(template = nil, data: {}, binding: Kernel.binding, context: nil, layout: nil, file: nil, string: nil, &block)
-    template = template_for(template:, file:, string:)
+    template = Render.template_for(template:, file:, string:)
 
     data = Map.for(data)
 
@@ -20,7 +20,7 @@ module Render
         erb.result(ctx)
       end
 
-    string = String(result).force_encoding('utf-8').strip
+    string = Render.utf8(result).strip
 
     content = string.html_safe
 
@@ -37,7 +37,7 @@ module Render
     end
   end
 
-  def template_for(template: nil, file: nil, string: nil)
+  def Render.template_for(template: nil, file: nil, string: nil)
     case
       when template
         file = template
@@ -49,6 +49,18 @@ module Render
         Template.new(string, file:)
       else
         raise ArgumentError.new({template:, file:, string:}.inspect)
+    end
+  end
+
+  def Render.utf8(string)
+    begin
+      string.to_s.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
+    rescue
+      begin
+        string.to_s.force_encoding('UTF-8')
+      rescue
+        string.to_s.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
+      end
     end
   end
 

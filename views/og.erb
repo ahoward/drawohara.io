@@ -14,8 +14,8 @@
 
   img = absolutify[image]
 
-  width = data.get(:og, :image, :width) rescue nil
-  type = data.get(:og, :image, :type) rescue nil
+  width = data.get(:og, :image, :width).to_s rescue nil
+  type = data.get(:og, :image, :type).to_s rescue nil
 
   unless type
     ext = img.split('.', 2).last

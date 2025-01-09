@@ -1,0 +1,127 @@
+<html color-mode="user" lang="it">
+  <head>
+  <base href='/it' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Ehi, non hai bisogno di un $#%@&amp;$ CMS.</title>
+
+<meta property="og:title" content="Ehi, non hai bisogno di un $#%@&amp;$ CMS."/>
+<meta property="og:description" content="vai avanti." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"hey-you-don-t-need-a-cms"}">
+    <meta property="site:path_info" content=""/hey-you-don-t-need-a-cms"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Tutti, inclusa tua madre, ti hanno detto che hai bisogno di un Sistema di Gestione dei Contenuti (CMS). Tu stesso senti il bisogno di avere accesso istantaneo ai contenuti del tuo sito web. La verità è che, a meno che la generazione di contenuti non faccia parte del tuo modello di business (ad esempio N.Y. Times o Perez Hilton), non hai bisogno di un CMS. Inoltre, probabilmente ti sta costando tempo, denaro, sicurezza e posizionamento nella pagina.</p>
+
+<h2 id="semplicemente-non-aggiornerai-il-tuo-sito">Semplicemente non aggiornerai il tuo sito</h2>
+
+<p>Lo so, sei entusiasta del tuo nuovo sito web. Pensi che accederai ogni giorno, ok, almeno una volta alla settimana, per aggiornare i contenuti. Questa è una bugia. Ecco tre cose da considerare:</p>
+
+<ol>
+  <li>Hai altri compiti da completare che sono <em>molto</em> più importanti per la tua attività rispetto all'aggiornamento del tuo sito, come trovare clienti.</li>
+  <li>Se sei estremamente preoccupato per i tuoi contenuti (come dovresti essere), assumerai un <em>professionista</em> copywriter mentre stai costruendo il tuo sito per ottenere il messaggio giusto. Dopo di ciò, perfezionarlo ogni 4-6 mesi man mano che la voce del tuo marchio si evolve sembra appropriato.</li>
+  <li>Ci sono altri modi, non-CMS, per rendere il tuo sito dinamico - i widget sono un esempio principale o l'integrazione di contenuti che puoi aggiornare altrove, come un feed <a href="http://www.bourncreative.com/how-to-add-the-official-twitter-widget-to-your-website/" title="Widget di Twitter">Twitter</a> o <a href="https://www.tumblr.com/" title="Tumblr">Tumblr</a>.</li>
+</ol>
+
+<h2 id="il-tuo-cms-come-un-blocco-di-cemento">Il tuo CMS come un blocco di cemento</h2>
+
+<p>Stai pagando un prezzo molto alto per l'accesso costante che probabilmente non stai usando abbastanza.</p>
+
+<p>La cosa più importante da capire è che il tuo CMS deve fare <em>molto</em> lavoro per generare pagine per i tuoi visitatori. Questo lavoro richiede tempo. Questo tempo non solo rallenta la velocità con cui i visitatori visualizzano la pagina, ma influisce anche negativamente sulla tua SEO. Non sappiamo tutto quello che entra nella salsa segreta di Google, ma sappiamo che la velocità della pagina è in cima alla loro lista.</p>
+
+<p>Un'altra cosa da sapere sui CMS è che aggiungono più livelli di vulnerabilità. In altre parole, ci sono molti più punti di attacco per gli hacker per accedere e diffondere i loro affari sporchi - in particolare se stai usando un CMS popolare, come <a href="http://wordpress.org/" title="WordPress">WordPress</a> o <a href="https://drupal.org/" title="Drupal">Drupal</a>.</p>
+
+<h2 id="cosa-diavolo-devo-fare-allora">Cosa diavolo devo fare allora?</h2>
+
+<p>Semplice - HTML statico, CSS e Javascript. Consigliamo <a href="http://middlemanapp.com/" title="Middleman">Middleman</a>. Middleman è un generatore di siti statici scritto in Ruby. Questo significa che costruiamo siti web avanzati basati sui dati localmente che alla fine vengono convertiti in pagine HTML statiche e distribuiti ovunque... seriamente, ovunque, a buon mercato (pensa a S3 o BitBalloon per ~$5/mese). Questo non solo significa che il tuo sito sarà estremamente veloce, ma avrà anche un tempo di attività che si avvicina al 100%. Pensi che non sia realistico? Dai un'occhiata a dojo4.com - un sito statico costruito con middleman e servito da S3 - e abbiamo anche un blog!</p>
+
+<p>Nella mia esperienza, gli argomenti per avere un sito web basato su CMS stanno diventando sempre meno ogni giorno. Sii intelligente. Sii semplice. Sii statico.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; vai a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">chi siamo</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/hey-you-don-t-need-a-cms">non-mi-piace-questo</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/hey-you-don-t-need-a-cms">mi-piace-questo</a>
+  </li>
+  <li>
+    <a href="/contact">contatti</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

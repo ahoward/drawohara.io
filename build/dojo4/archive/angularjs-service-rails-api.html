@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"angularjs-service-rails-api"}">
@@ -83,11 +85,11 @@
 
     <main>
       <div class="ro markdown">
-  <p>Recently I had to dive into AngularJS on a Rails site we were building for a client. In addition to page content, the client has certain pages which display headlines that link to external sources but are pulled into our Rails stack through a rake task that’s run periodically. The site is to be cached heavily through use of a CDN, like <a href="http://aws.amazon.com/cloudfront/">CloudFront</a>, but to keep the headlines fresh, we used <a href="https://angularjs.org/">AngularJS</a> (because the client was familiar with it so easier maintenance for them) to query the rails stack directly for the latest headlines.</p>
+  <p>Recently I had to dive into AngularJS on a Rails site we were building for a client. In addition to page content, the client has certain pages which display headlines that link to external sources but are pulled into our Rails stack through a rake task thats run periodically. The site is to be cached heavily through use of a CDN, like <a href="http://aws.amazon.com/cloudfront/">CloudFront</a>, but to keep the headlines fresh, we used <a href="https://angularjs.org/">AngularJS</a> (because the client was familiar with it so easier maintenance for them) to query the rails stack directly for the latest headlines.</p>
 
-<p>This required doing things in a cross domain fashion since the site’s domain would be pointed to CloudFront. I hadn’t written a Rails API that returned JSONP or an AngularJS service before, so I had to do some exploring and this is what worked for me. <em>(You can also <a href="https://gist.github.com/milesmatthias/fb88c9f066f1c3ab7fae">read the gist</a>.)</em></p>
+<p>This required doing things in a cross domain fashion since the sites domain would be pointed to CloudFront. I hadnt written a Rails API that returned JSONP or an AngularJS service before, so I had to do some exploring and this is what worked for me. <em>(You can also <a href="https://gist.github.com/milesmatthias/fb88c9f066f1c3ab7fae">read the gist</a>.)</em></p>
 
-<p><em>Note: If you’re not familiar with JSONP, this won’t make much sense. <a href="http://en.wikipedia.org/wiki/JSONP">Read this</a>.</em></p>
+<p><em>Note: If youre not familiar with JSONP, this wont make much sense. <a href="http://en.wikipedia.org/wiki/JSONP">Read this</a>.</em></p>
 
 <h2 id="angularjs-service">AngularJS Service</h2>
 
@@ -118,8 +120,8 @@
 
 <ul>
   <li><strong>It returns an object with 2 functions: <code>getHeadlines</code> and <code>getHeadlineForId</code>.</strong> We can then use these functions as shorthands to talk to the Rails API in our AngularJS controllers.</li>
-  <li><strong>It uses JSONP.</strong> Notice we’re using <code>$http.jsonp</code> and we’re passing a query string <code>?callback=JSON_CALLBACK</code>. AngularJS replaces the string <code>JSON_CALLBACK</code> with the name of a callback function that it creates for you.</li>
-  <li><strong>It uses a different domain.</strong> Well that’s expected since we’re doing JSONP, but we’re achieving that by adding an <code>.erb</code> extension to the file and using whatever we set for <code>App.settings.api_base_url</code> in the Rails app as the domain that AngularJS should talk to. Remember that this is to circumvent the CDN caching layer so our headlines are always the most recent.</li>
+  <li><strong>It uses JSONP.</strong> Notice were using <code>$http.jsonp</code> and were passing a query string <code>?callback=JSON_CALLBACK</code>. AngularJS replaces the string <code>JSON_CALLBACK</code> with the name of a callback function that it creates for you.</li>
+  <li><strong>It uses a different domain.</strong> Well thats expected since were doing JSONP, but were achieving that by adding an <code>.erb</code> extension to the file and using whatever we set for <code>App.settings.api_base_url</code> in the Rails app as the domain that AngularJS should talk to. Remember that this is to circumvent the CDN caching layer so our headlines are always the most recent.</li>
 </ul>
 
 <h2 id="angularjs-controller">AngularJS Controller</h2>
@@ -173,7 +175,7 @@
 
 <h2 id="rails-backend">Rails Backend</h2>
 
-<p>Now that we’ve got AngularJS calling our Rails backend, we need to write the Rails backend! The following controller is pretty basic ruby on rails, however to return JSONP instead of regular old JSON, we use the <code>callback</code> option in the <code>render</code> method. That tells Rails that we’re using JSONP and to wrap the JSON data we gave it in that callback and set the <code>Content-Type</code> header correctly so that everything conforms to the JSONP standard and our AngularJS client can process the data.</p>
+<p>Now that weve got AngularJS calling our Rails backend, we need to write the Rails backend! The following controller is pretty basic ruby on rails, however to return JSONP instead of regular old JSON, we use the <code>callback</code> option in the <code>render</code> method. That tells Rails that were using JSONP and to wrap the JSON data we gave it in that callback and set the <code>Content-Type</code> header correctly so that everything conforms to the JSONP standard and our AngularJS client can process the data.</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">Services::HeadlinesController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ApplicationController</span>
 </div><div class='code-line code-line-2'>&nbsp;
@@ -200,7 +202,7 @@
 
 <p>And there we have it! A working JSONP-based AngularJS app with a Rails backend.</p>
 
-<p><a href="https://gist.github.com/milesmatthias/fb88c9f066f1c3ab7fae">Here’s the full gist</a> if you’d like to read it that way too. If this helped you or you have any questions, let us know on Twitter at <a href="https://twitter.com/intent/tweet?text=@dojo4">@dojo4</a>.</p>
+<p><a href="https://gist.github.com/milesmatthias/fb88c9f066f1c3ab7fae">Heres the full gist</a> if youd like to read it that way too. If this helped you or you have any questions, let us know on Twitter at <a href="https://twitter.com/intent/tweet?text=@dojo4">@dojo4</a>.</p>
 
 
 </div>

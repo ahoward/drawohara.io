@@ -1,0 +1,146 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Nybörjartutorial: iOS-certifikat och provisioneringsprofiler</title>
+
+<meta property="og:title" content="Nybörjartutorial: iOS-certifikat och provisioneringsprofiler"/>
+<meta property="og:description" content="Fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"beginner-tutorial-i-os-certificates-provisioning-profiles"}">
+    <meta property="site:path_info" content=""/beginner-tutorial-i-os-certificates-provisioning-profiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>För en ny iOS-utvecklare kan det vara mycket förvirrande. Du har en app som du vill att andra ska kunna testa på sina enheter, och du omdirigeras till Apples utvecklarportal med certifikat, enheter och provisioneringsprofiler. Innan din kropp går i chock, läser du resten av det här inlägget för en enkel förklaring av alltihop.</p>
+
+<p><img src="https://draftin.com:443/images/2623?token=JlOjG8C7kRhUxTp9Bba_TPBP4jRCn0dL-2ugH03kEATD52BLmxZYEnY4Vynx55mzHS9ub3I5QR29W1MVWjkBA0k" alt="" /></p>
+
+<p>Kombinationen av certifikat, enheter och provisioneringsprofiler är Apples svar på några svåra frågor:</p>
+
+<p>F: Hur kan du garantera att appen du laddar ner inte har ändrats av någon hackare och att den faktiskt kommer från utvecklaren/företaget som den säger sig komma ifrån?</p>
+
+<p>S: <strong>Certifikat.</strong> Någonsin läst om PGP-krypterad e-post? Den hela affären med en offentlig nyckel och en privat nyckel? Det är vad som händer här, men du är avstraherad från att behöva oroa dig för det på grund av Mac-appen "Nyckelringåtkomst". När du lägger till ett nytt certifikat i portalen och följer instruktionerna för att använda "Nyckelringåtkomst" för att ladda upp en certifikatförfrågan, använder "Nyckelringåtkomst" din privata nyckel för att skapa en offentlig nyckel, som sedan inbäddas i certifikatförfrågan som skickas till Apple. Apple ger dig tillbaka ett certifikat som du sedan lägger i din nyckelring (nu kan du ladda ner och lägga till det automatiskt via Xcode).</p>
+
+<p><em>(Uppdatering: Det verkar som att du kan låta Xcode hantera dina certifikat/"Signeringsidentiteter" i inställningarna också.)</em></p>
+
+<p><img src="https://draftin.com:443/images/2624?token=w3b1zrNeBBqC2WRMbEvt7BKrWA0U5A_FhTLXE9Uvex6mYA5pxwSfYG5M1GGWhYd0TkzxxiD8UUIyN7GA34d8NHQ" alt="" /></p>
+
+<p>Obs att det finns olika certifikat för olika scenarier också. Utvecklarcertifikat används när du bara vill få en vanlig app (app-id: *) att fungera och du utvecklar lokalt och på din utvecklingsenhet som är ansluten till din dator. Ett AdHoc-certifikat används när du vill tillåta några få tester att installera din app på sin enhet innan den allmänna AppStore-releasen. AppStore- och AdHoc-certifikat är kopplade till en specifik app (app-id), och de brukar använda en organisations certifikat, eftersom certifikatet är hur Apple vet vad som ska visas på raden "Utvecklad av" i App Store-listningen.</p>
+
+<p>F: Hur kan vi tillåta ett antal tester att installera appen på sin telefon och testa den innan vi släpper den för hela världen via App Store?</p>
+
+<p>S: <strong>Enheter och provisioneringsprofiler.</strong> Apple tillåter endast sina användare att installera appar via App Store. Men när du är utvecklare och vill att några personer ska testa den innan den kommer till App Store, måste du använda provisioneringsprofiler och enheter.</p>
+
+<p>Först får du någon att ge dig deras enhet-UUID (universellt unikt identifieringsnummer), vilket vanligtvis görs via en tjänst som <a href="http://www.testflight.com">Testflight</a> eller <a href="http://hockeyapp.net/">HockeyApp</a> där en person kan registrera sig för att bli en av dina tester och tjänsten automatiskt e-postar dig deras UUID. För att förhindra att du kringgår App Store, begränsar Apple dig till att bara lägga till 100 enheter per år till ditt iOS-utvecklarkonto.</p>
+
+<p><img src="https://draftin.com:443/images/2625?token=vjMPdsPjLmPKBD1DOANNeAD_QkMIQO7y8jE7HvP0sZCej5dwCQjQYVwVdReo7bJE6iZX53ZFBOeVrd5jtElccdU" alt="" /></p>
+
+<p>Sedan skapar du en provisioneringsprofil. Varje provisioneringsprofil inkluderar ett certifikat för att signera appen säkert från en viss person/organisation. Provisioneringsprofiler deklarerar också vem som kan installera bygget av appen. I fallet med en App Store-provisioneringsprofil säger den att den byggen av appen kan installeras av vem som helst så länge den laddas ner via App Store.</p>
+
+<p><img src="https://draftin.com:443/images/2626?token=9C_AJjhMWZQw2pe-0cdxMSUfRssZ-8gogKWU21qGyDaXl7G41hC7-eD8eCQ6rjq6oUtrZqdN_Yo-LvXyI13txqg" alt="" /></p>
+
+<p>När du får några tester ombord vill du använda en Ad Hoc-provisioneringsprofil (och certifikat). På "Redigera"-skärmen för provisioneringsprofilen kan du välja någon av de enheter som listas under "Enheter" i din utvecklarportal. Markera rutan bredvid de som du vill inkludera (Obs: du kan alltid markera eller avmarkera fler eller färre senare).</p>
+
+<p>Generera den här profilen, ladda ner den manuellt eller via Xcode-inställningarna, välj den när du arkiverar din app, och sedan kan du ladda upp den .ipa-filen till en tjänst som Testflight för dina tester att installera.</p>
+
+<p>Några fler guidade bilder:</p>
+
+<ul>
+  <li>Att låta Xcode automatiskt ladda ner provisioneringsprofiler och certifikat åt dig:</li>
+</ul>
+
+<p><img src="https://draftin.com:443/images/2627?token=0uiybrTmNZrs-1G5S3pUkV_02FcnA2PPVTNOPkIa7ugiQP8QMHhfk6swlm_kFIBOIUyv8GpmP3bATsCZylUkf20" alt="" /></p>
+
+<ul>
+  <li>Uppdatera certifikat ("Signeringsidentitet") som valts i projektets bygginställningar i Xcode:</li>
+</ul>
+
+<p><img src="https://draftin.com:443/images/2628?token=_yRFxLYAdihsFQWVEXwJVQi1JRH16YWIS-BHD0_NmLxyPzqnFg2HwgZknb_DDSBh93Bk1mHAOaOm3ZS5ug4r5bM" alt="" /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/gå till" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/om">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">i-love-this<a>
+  </li>
+  <li>
+    <a href="/kontakt">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

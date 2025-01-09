@@ -1,0 +1,108 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>helnytt</title>
+
+    <meta property="og:title" content="helnytt"/>
+    <meta property="og:description" content="gå vidare." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/arkiv/:id">
+    <meta property="site:params" content='{"ext":null,"id":"helnytt"}'>
+    <meta property="site:path_info" content="/helnytt">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Ibland kommer dagen när det är dags för en förändring. Idag var en av dessa dagar, och förändringen kom i form av en ny logga på vår framsida. </p>
+      <p><img rel="450x450" alt="Foto" title="Foto" src='/sv/dojo4/helnytt/assets/photo.JPG' height="450" width="450" /></p>
+      <p>Det har runnit mycket friskt bergsvatten under bron sedan den dagen i början av 2010 då dojo4 medgrundare, Jeffrey Larrimore (känd för avtagbara byxor och <a title="https://twitter.com/okayjeffrey" href="https://twitter.com/okayjeffrey">@okayjeffrey</a> berömmelse) gjorde sin trolldom, designade den ursprungliga dojo4-loggan och satte den på dörren till vår nystartade lilla affär. Den loggan är märket som gjorde oss kända runt stan och bortom, och har gjort oss igenkännbara som den enda butiken som "skickar ninjor." Det är den eleganta och ikonografiska loggan som gav oss mer än vår rättvisa andel av rolighet och framgång. Och det är vad människor har sett under de senaste två och ett halvt åren varje gång de går glatt genom vår dörr.</p>
+      <p><img rel="450x450" alt="Foto 1" title="Foto 1" src='/sv/dojo4/helnytt/assets/photo-1.JPG' height="450" width="450" /></p>
+      <p>Beslutet att ändra loggan är ett uttryck för den fortsatta tillväxten och metamorfosen av dojo4 och de människor som utgör den. Det är ett uttryck för den smidighet som är vår nödvändiga tillvägagångssätt för att manifestera en motståndskraftig företagskultur och hållbara kundtjänster. Det speglar den lekfulla vision vi har för att engagera belönande med världen runt oss. </p>
+      <p>Faktiskt, vi har upptäckt att det är möjligt att trivas med förändring, snarare än att bli slagen av den, och att för att göra det krävs att vara osentimental och ha förmågan att <a title="http://www.talkingsquid.net/archives/32" href="http://www.talkingsquid.net/archives/32">döda våra älsklingar</a>. Det kräver att vi rider på förändring snarare än att bli ridna av den. Det kräver att vi alltid är villiga att prova något nytt och alltid är villiga att känna oss själva bättre.</p>
+      <p>Så vi tackar dig mycket, Jeffrey, för att mynta den grundläggande dojo4-märket och ser fram emot att se vad denna nya ger oss - och den efter den, och den efter den... </p>
+      <p>Dessutom: se efter vår nya webbplats, som ska lanseras snart.</p>
+      <p><img rel="225x255" alt="Jeff" title="Jeff" src='/sv/dojo4/helnytt/assets/jeff.jpg' height="225" width="225" /> </p>
+      <p><em>[Den alltid skicklige och skäggige Jeffrey Larrimore (jeffreylarrimore.com<span>)]</span></em></p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/om">om<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/helnytt">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/helnytt">i-love-this<a>
+          </li>
+          <li>
+            <a href="/kontakt">kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

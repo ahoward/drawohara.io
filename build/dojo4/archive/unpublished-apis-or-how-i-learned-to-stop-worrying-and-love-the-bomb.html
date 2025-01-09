@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb"}">
@@ -85,11 +87,11 @@
       <div class="ro markdown">
   <p>Sometimes you have some boring repetitive online task or you need to automate some or all of a workflow on a website. Scripting these interactions can prevent us from wasting tons of man hours on mundanely clicking through the same pages on a site.</p>
 
-<p>A lot of us will reach for <a href="http://mechanize.rubyforge.org/">Mechanize</a> right off the bat. Then you find that the UI for the site you’re trying to automate a task for is JavaScript heavy or AJAXy. Now what do you use?</p>
+<p>A lot of us will reach for <a href="http://mechanize.rubyforge.org/">Mechanize</a> right off the bat. Then you find that the UI for the site youre trying to automate a task for is JavaScript heavy or AJAXy. Now what do you use?</p>
 
 <p><a href="http://http://phantomjs.org/">Phantomjs</a> to the rescue. Phantomjs is a fast, easily scriptable, headless WebKit browser. When the job fails for whatever reason, you can snap a screenshot to review. For us this meant emailing it to an admin since the jobs are running on servers and not locally. We are also using <a href="https://github.com/westoque/phantomjs.rb">Phantomjs.rb</a> to handle the path and output from Phantomjs.</p>
 
-<p>Here’s a bit of code from what we are doing.</p>
+<p>Heres a bit of code from what we are doing.</p>
 
 <pre><code>class InvitationAcceptor
   attr_accessor :invitation, :tmpdir

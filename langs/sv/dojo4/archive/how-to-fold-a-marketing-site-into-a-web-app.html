@@ -1,0 +1,124 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Hur man infogar en marknadsföringssida i en webbapplikation</title>
+
+<meta property="og:title" content="Hur man infogar en marknadsföringssida i en webbapplikation"/>
+<meta property="og:description" content="fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'how-to-fold-a-marketing-site-into-a-web-app'}">
+    <meta property="site:path_info" content="/how-to-fold-a-marketing-site-into-a-web-app">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="cf">
+
+<figure class="pal lightestgrayBg mbl mrl">
+<img src='/sv/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-before-after.png' style="max-width: 100%;" title="Inspirepay Före Efter" alt="Inspirepay Före Efter" />
+<figcaption class="mtm fontItalic" style="text-align:center;">InspirePay hemsida före och efter omstrukturering</figcaption>
+</figure>
+
+<p>Kort efter lanseringen av den nya versionen av <a href="https://inspirepay.com" title="https://inspirepay.com">InspirePay</a>, bestämde sig VD Mark Fischer för att det var dags att integrera sin marknadsföringssida med den nya glansiga webbapplikationen och uppdatera utseendet och innehållet på marknadsföringssidan också.</p>
+<p>Mark värvade hjälp från Joanna Wiebe från <a href="http://Copyhackers.com" title="http://Copyhackers.com">Copyhackers.com</a> för att berätta InspirePays historia och bad dojo4 att designa och bygga den nya sidan.</p>
+
+<p>Från ett innehållsperspektiv innebar fusionen att en enda landningssida skulle behöva göra dubbelt uppdrag: <em>göra kunder bekanta med produkten</em> och <em>förtroliggöra användare med appen</em>. Joanna och Mark arbetade först med att massagera innehållet från marknadsföringssidan till webbapplikationens landningssida, med hjälp av wireframes för att placera innehåll i diskreta buckets. Deras tydliga text förklarar hur enkelt det är för folk att använda InspirePay för att börja ta betalningar.</p>
+
+<p>Nästa,&#160;<a href="/sv/#anthony" target="_blank">Anthony Dimitre</a>, boende designmagiker på dojo4, omvandlade innehållskartan till en elegant, välformgiven webbsida:</p>
+
+<figure class="pal lightestgrayBg mvl mrl">
+<img src='/sv/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-new-design.png' title="Inspirepay Ny Design" alt="Inspirepay Ny Design" style="max-width: 100%;" />
+<figcaption class="mtm fontItalic" style="text-align:center;">Den omdesignade sidan beskriver produkten och instruerar användaren</figcaption>
+</figure>
+
+<p>Med siddesigner i hand övergick vi till implementering. I det här fallet innebar det att ersätta en avskild instans av Wordpress med statiska sidor i applikationen själv. Att leverera marknadsföringsinnehåll från samma container som InspirePays betalningshanteringsapplikation krävde att dojo4 säkerställde att alla tillgångar och inbäddningar från tredje part överfördes säkert via https. Vi integrerade även applikationens autentisering i den statiska sidan.</p>
+<p>Nu kan besökare från landningssidan lära sig om produkten, få en känsla av hur den fungerar och registrera sig för att använda den. Enstoppshandel!</p>
+
+<p>Se själv: <a href="https://inspirepay.com" target="_blank">https://inspirepay.com</a>.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/how-to-fold-a-marketing-site-into-a-web-app">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/how-to-fold-a-marketing-site-into-a-web-app">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

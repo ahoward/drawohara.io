@@ -1,0 +1,120 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Nous Volons Haut avec BitBalloon</title>
+
+<meta property="og:title" content="Nous Volons Haut avec BitBalloon"/>
+<meta property="og:description" content="passez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"we-re-flying-high-on-bitballoon"}">
+    <meta property="site:path_info" content=""/we-re-flying-high-on-bitballoon"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+
+    <base href='/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Si vous avez suivi les activités du dojo récemment, vous avez remarqué <a href="http://dojo4.com/blog/static-is-the-new-black">nous sommes de grands fans du web statique</a> et d'une jeune entreprise d'hébergement statique appelée <a href="https://www.bitballoon.com/">BitBalloon</a>. BitBalloon est un fournisseur d'hébergement similaire à Amazon S3 où vous placez simplement du contenu sur leurs serveurs et il est servi sans aucune logique à quiconque le demande, cependant, alors que S3 est utile pour à peu près tout (pensez aux téléchargements), BitBalloon est conçu spécifiquement pour les sites web statiques. Voici quelques-unes des choses qu'ils font pour les sites statiques que nous aimons :</p>
+
+<ul>
+  <li><strong>Déploiements atomiques</strong> Retour en arrière ? Pas de problème, chaque déploiement a un hachage et apparaît dans votre interface d'administration, donc il est facile de basculer entre des versions entièrement différentes. Sur S3, vous devez espérer ne pas vous retrouver avec un mélange de fichiers anciens et nouveaux provenant de différents déploiements.</li>
+  <li><strong>Minification automatique des ressources, digest et CDN</strong> Avant de commencer à utiliser BitBalloon, nous utilisions les outils de minification et de digest CSS et JS de Middleman au moment de la construction. Maintenant, nous ne le faisons plus - BitBalloon le fait pour nous lorsque nous déployons. Ils mettent même nos ressources sur un CDN pour nous et remplacent les liens vers les ressources dans notre HTML afin que nos ressources soient servies le plus rapidement possible.</li>
+  <li><strong>Gestion des formulaires</strong> Une chose qu'un site simple devrait pouvoir faire sans nécessiter une application côté serveur complète est d'accepter les entrées de formulaire. Nous utilisons simplement la balise <code>&lt;form&gt;</code> et BitBalloon nous montre les réponses à ce formulaire dans le panneau d'administration.</li>
+  <li><strong>Excellent support</strong> Comme je l'ai mentionné, BitBalloon est une jeune entreprise et ils découvrent encore les choses, mais lorsque nous avons rencontré des questions, chaque membre (y compris les membres fondateurs) de l'équipe BitBalloon a été accessible, amical et utile pour répondre à nos questions.</li>
+  <li><strong>En-têtes de cache</strong> BitBalloon sait quels en-têtes envoyer (et comment les invalider lorsque nous redéployons) pour tirer le meilleur parti du cache du navigateur. Un souci de moins pour nous.</li>
+  <li><strong>Vitesse</strong> BitBalloon est incroyablement rapide. Consultez <a href="http://dojo4.com">notre site</a> {oh oui, vous êtes dessus ;)}, et vous pouvez voir à quelle vitesse les pages sont servies.</li>
+</ul>
+
+<p>Nous avons apprécié l'utilisation de leur service. Voici quelques-uns des points forts de notre utilisation jusqu'à présent :</p>
+
+<ul>
+  <li><a href="https://github.com/BitBalloon/bitballoon-ruby/commits?author=ahoward">Ara</a> et <a href="https://github.com/BitBalloon/bitballoon-ruby/commits?author=milesmatthias">moi</a> avons contribué à <a href="https://github.com/BitBalloon/bitballoon-ruby">leur client Ruby</a>.</li>
+  <li>J'ai open sourcé <a href="https://github.com/milesmatthias/bitballoon-rakefile">un Rakefile pour télécharger sur BitBalloon</a>.</li>
+  <li>Ara a réalisé <a href="https://www.bitballoon.com/blog/2014/03/27/ara-t-howard-on-static-sites-dynamic-content-and-creativity">un podcast avec l'équipe BitBalloon</a>.</li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/aller" name="aller">&mdash;&gt; aller</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/a-propos">à propos<a>
+  </li>
+  <li>
+    <a href="mailto:je-deteste-ca@drawohara.io?subject=/we-re-flying-high-on-bitballoon">je-deteste-ca<a>
+  </li>
+  <li>
+    <a href="mailto:j-adore-ca@drawohara.io?subject=/we-re-flying-high-on-bitballoon">j-adore-ca<a>
+  </li>
+  <li>
+    <a href="/contact">contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

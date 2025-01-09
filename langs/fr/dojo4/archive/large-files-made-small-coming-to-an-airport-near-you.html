@@ -1,0 +1,116 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>! 'Des Fichiers Volumineux Devenus Petits... Bientôt à un Aéroport Près de Chez Vous!'</title>
+
+<meta property="og:title" content="! 'Des Fichiers Volumineux Devenus Petits... Bientôt à un Aéroport Près de Chez Vous!'" />
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id" />
+    <meta property="site:params" content="{'ext':null,'id':'large-files-made-small-coming-to-an-airport-near-you'}" />
+    <meta property="site:path_info" content="/large-files-made-small-coming-to-an-airport-near-you" />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><img src="assets/airplane1980bq30x40in195.jpg" alt="img" /></p>
+
+<p>Depuis quelques mois, dojo4 travaille d'arrache-pied sur un tout nouveau produit très cool pour notre client : <a href="http://www.movime.com">MoviMe Networks</a> permettant aux voyageurs aériens de louer et de télécharger rapidement des films complets sur leurs iPad depuis les portes d'embarquement des aéroports pendant qu'ils attendent d'embarquer dans leurs vols. Nous sommes ravis d'annoncer que le produit est passé en version bêta en direct à l'aéroport international O'Hare de Chicago !</p>
+
+<p>Nous espérons que vous allumerez votre iPad et l'essaierez la prochaine fois que vous volerez depuis ou via ORD. Pendant que vous attendez que votre film se télécharge, vous pourrez peut-être contempler tous les composants disparates qui travaillent ensemble pour faciliter votre navigation et votre téléchargement rapide de films. Tout d'abord, un système d'ingestion automatisé de studio récupère des fichiers de films bruts gigantesques auprès des studios de cinéma et les réencode pour une expérience de visionnage iPad parfaite. Ensuite, un système de gestion centralisé crée des produits dans le MoviMe Store pour ces nouveaux films que vous pouvez parcourir et acheter. Et, les fichiers de films sont distribués à un réseau de distribution de contenu (CDN) en aéroport afin qu'ils puissent être téléchargés en un clin d'œil avant que vous n'ayez besoin d'embarquer dans votre vol. C'est beaucoup à considérer dans le bref moment qu'il a fallu pour télécharger votre film. Peut-être devriez-vous en louer un autre pendant que nous couvrons certains des détails techniques intéressants...</p>
+
+<p>Les fichiers vidéo sont volumineux. Une version HD d'un film de long métrage fait environ 10 Go. Les fichiers que les gens téléchargent depuis iTunes sont dans une plage de 1 à 2 Go. Les fichiers vidéo que nous avons fini par utiliser pour MoviMe font environ 1 Go.</p>
+
+<p>La taille de ces fichiers a posé quelques défis intéressants. La plupart des bibliothèques HTTP ne sont pas conçues pour fonctionner avec des fichiers aussi volumineux. Ils ne tiennent pas dans la mémoire d'un iPad. Ils mettent beaucoup de temps à se déplacer. Nous devions penser différemment à la gestion de ces fichiers que nous le faisons habituellement pour les images et les autres médias. Notre solution consistait à télécharger et à télécharger les fichiers en fragments. Nous avons codé le lecteur iPad pour utiliser des plages d'octets lors du téléchargement des fichiers de films, puis les réassembler en fichiers prêts à être lus. Cela nous a également obligés à ajouter la prise en charge des plages d'octets à notre contrôleur de téléchargements, ainsi qu'à notre <a href="https://github.com/ahoward/mongoid-grid_fs">pilote Mongo gridFs</a>, afin que nous puissions récupérer les parties de fichiers de manière efficace. Nous avons utilisé des téléchargements multiparts pour pousser les fichiers depuis les serveurs qui préparaient les films pour les buckets S3 appropriés.</p>
+
+<p>Un autre avantage de la gestion des fragments de fichiers était que nous pouvions paralléliser à la fois les téléchargements et les téléchargements pour réduire le temps nécessaire pour déplacer les fichiers. Le lecteur iPad peut télécharger jusqu'à 4 fragments en parallèle, réduisant ainsi le temps nécessaire pour télécharger un fichier entier. Nous avons découvert que nous pouvions utiliser jusqu'à 5 téléchargements multiparts simultanés vers un bucket S3 pour réduire le temps de téléchargement afin d'obtenir les fichiers multimédias sur S3.</p>
+
+<p>Tout cela pour que vous puissiez trouver et télécharger <a href="http://www.youtube.com/watch?v=ZqtNxNRCcGg">votre film préféré</a> à l'aéroport à la vitesse de l'éclair et le regarder lors de votre prochain vol ! Bientôt à <a href="http://www.movime.com/#!airports/c13f3">un aéroport près de chez vous</a>...</p>
+
+<p><strong>Cet article de blog par <a href="http://dojo4.com/team/fred-jean">Fred Jean</a> et <a href="http://dojo4.com/team/garett-shulman">Garett Shulman</a> et <a href="http://dojo4.com/team/corey-kohn">Corey Kohn</a></strong></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">i-love-this</a>
+  </li>
+  <li>
+    <a href="/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Dåliga Utvecklare Fruktar Mongo och Dyrkar The RDBMS</title>
+
+<meta property="og:title" content="Dåliga Utvecklare Fruktar Mongo och Dyrkar The RDBMS"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"crap-developers-fear-mongo-and-worship-the-rdbms"}">
+    <meta property="site:path_info" content=""/crap-developers-fear-mongo-and-worship-the-rdbms"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h3 id="tl-dr">TL; DR;</h3>
+
+<blockquote>
+  <p>99.9% av webbutvecklarvärlden tror att korrekt användning av en RDBMS, tillsammans med transaktioner, förhindrar deras applikationer från att se felaktiga data och introducera allvarliga datafel. De är <em>DÖDA</em> <em>FEL</em>.</p>
+</blockquote>
+
+<p>Jag läste med stort intresse <a href="https://github.com/aphyr">Kyle Kingsburys</a> excellenta artikel om Mongos konsistensmodell på https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads</p>
+
+<p>Självklart är denna kille superkunnig och vet sitt yrke. Han gör jobbet och allt om denna artikel är insiktsfull och väl sammanställd.</p>
+
+<p>Vad jag fann förvånansvärt dock, var kommentarerna och vad de avslöjar om den genomsnittliga professionella utvecklaren:</p>
+
+<blockquote>
+  <p>Utvecklare tror att användning av en RDBMS gör deras data säkra och de är <em>absolut fel</em></p>
+</blockquote>
+
+<p>Jag kan inte berätta för dig hur många gånger jag hamnat i bråk med 'professionella' utvecklare och speciellt dumma sysadmins som verkligen tror att, genom att bara säga ordet RDBMS, snurra en kyckling runt sitt huvud 3 gånger, och ansluta till den magiska enhörningen av DB:er, deras data kommer att vara säkra och trygga som, du vet, … (något något om) …. banktransaktioner och allt det där (onsinne) prat om transaktioner och fsync. Och en massa annat som ingen utvecklare jag någonsin träffat verkligen förstår eller har övervägt i sammanhanget med en HTTP (tips: statslös) applikation.</p>
+
+<p>Innan jag fortsätter vill jag utfärda en utmaning:</p>
+
+<ul>
+  <li>Skicka mig ditt github-användarnamn</li>
+  <li>Låt mig välja en MySQL- eller PostgreSQL-baserad applikation du skrivit (så du inte kan förbereda den)</li>
+  <li>Och jag kommer att hitta kodvägar som levererar både read-uncommitted och dirty-reads i din app inom 1 dag</li>
+  <li>Om det inte finns några betalar jag dig <em>1000 dollar</em></li>
+  <li>Om det finns några får jag publicera vilket bild jag väljer av dig som ett tillägg till denna artikel. Photoshop <em>är</em> tillåtet.</li>
+</ul>
+
+<p>Hitta mig på <a href="/kontakta">/kontakta</a> eller <a href="/team/ara-t-howard">/team/ara-t-howard</a>. Nu fortsätter vi…</p>
+
+<p>Gåtan för dig utvecklare: vad är fel med denna kodväg:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-10'>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'>
+</div></code></div>
+
+<p>Låt mig avslöja något jordomvälvande för dig:</p>
+
+<p><strong>DENNA KODEN ÄR HELT FEL PÅ VARJE STÖRRE <em>RDBMS</em>, OCH VIRTUALLT VARJE<br />
+APPLIKATION, I VÄRLDEN</strong></p>
+
+<p>Jag försäkrar dig att e-postmeddelandet kommer att skickas <em>två gånger</em>.</p>
+
+<p>Att förklara transaktioner är utanför omfånget för denna artikel, men låt mig introducera dig för 'phantom reads'</p>
+
+<p>http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Phantom_reads</p>
+
+<p>I koden ovan kan en 2:a, samtidig, transaktion orsaka följande att hända:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># samtidigt har en 2:a transaktion skapat en dubbel användare...</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># följande kommer att lyckas, i __båda__ transaktioner</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># båda transaktioner kommer att leverera e-postmeddelandet</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #6e7781"># en av transaktionerna kommer att misslyckas med att committa, och gå *BOOM* men, då,</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #6e7781"># är det för sent: e-postmeddelandet har skickats två gånger och felet har gjorts</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>
+</div></code></div>
+
+<p>Jag vet jag vet, du kan inte tro det. Men det är bara för att du aldrig brydde dig om att RTFM när det gäller vad 'transaktion' betyder. Börja här:</p>
+
+<p>http://www.postgresql.org/docs/9.1/static/transaction-iso.html</p>
+
+<p>Obs den lilla tabellen. Låt mig översätta den för dig:</p>
+
+<ul>
+  <li>
+    <p>Eftersom <em>du</em> inte har varje <em>enskild</em> sekvens av <em>läs&skriv</em> omsluten i en transaktion, och ibland bara slänger kod mot dina ORM-objekt direkt, lider du av den 'skrämmande' realiteten av 'read-uncommitted' som nämns i artikeln</p>
+  </li>
+  <li>
+    <p>Eftersom <em>du</em> förlitar dig på standardisoleringsnivån lider du både från icke-repeterbara-läsningar och phantom-läsningar. (Vet du ens vad standardisoleringsnivån är för din db och vad det betyder????)</p>
+  </li>
+  <li>
+    <p>Eftersom <em>du</em> inte ställde in din transaktionsnivå till 'serialiserbar' tror du felaktigt att din databas är snabb och säker. Du har felaktigt förlitat dig på databasen för att ge dataintegritet som en abstraktion som inte kräver kritiskt tänkande och applikationskod som är minst 10 gånger bättre än din. Du har alla skrämmande funktioner i Kyles artikel i dina RDBMS-backade apparater - och, inte bara vet du <em>inte detta</em> du är <em>ganska säker på att din data är 'säker'</em></p>
+  </li>
+</ul>
+
+<p>Och så frågar jag dig vilket är ett sämre ingenjörsval:</p>
+
+<ul>
+  <li>
+    <p>Välj ett standardbaserat verktyg som alla är <em>mycket</em> säkra på att de förstår och vet hur de ska använda säkert men, i dess vanliga användning, nästan aldrig garanterar det som de tror att det lovar och, dessutom, har vidsträckt <a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Default_isolation_level">kritiserats för att ha oklara och oexakta semantik</a> ?</p>
+  </li>
+  <li>
+    <p>Eller att acceptera vad som alltid har varit sant: att databaser av sig själva inte kan ge abstraktioner som betyder att icke-extremt-smart

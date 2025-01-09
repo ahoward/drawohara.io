@@ -1,0 +1,110 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>correre con esso</title>
+
+    <meta property="og:title" content="correre con esso"/>
+    <meta property="og:description" content="muoviti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"running-with-it"}">
+    <meta property="site:path_info" content="/running-with-it">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p><a title="http://scottjurek.com" href="http://scottjurek.com"><img rel="450x450" alt="Screen Shot 2012 06 06 At 6.44.50 Pm" title="Screen Shot 2012 06 06 At 6.44.50 Pm" src='/ro/dojo4/running-with-it/assets/screen-shot-2012-06-06-at-6.44.50PM.png' height="353" width="450" /></a>
+      </p>
+      <p>Scott Jurek è uno dei corridori di ultramaratona più famosi e dominanti al mondo. Trionfa regolarmente in gare di resistenza di oltre 100 miglia. È stato chiamato uno dei migliori corridori di tutti i tempi. È stato chiamato pazzo. Lo chiamiamo un piacere lavorare con lui!</p>
+      <p>Scott è venuto da noi per ricostruire <a target="_blank" title="http://scottjurek.com" href="http://scottjurek.com">il suo sito</a> e migliorare il suo marchio in tempo per l'uscita del suo nuovo libro, <em>Eat and Run<a title="http://scottjurek.com/eatandrun/" href="http://scottjurek.com/eatandrun/"></a>
+      </em>. La sua affabilità, pazienza e attenzione ai dettagli ci hanno guidato nell'implementazione di dettagli di design cruciali e nella creazione di un sito di cui siamo stati orgogliosi di aver avuto 4.969 visite il primo giorno dopo il lancio.</p>
+      <p>La passione di Scott per l'estetica e la funzionalità ci ha dato le sfide di cui avevamo bisogno per costruire un sito davvero splendido. In termini di design, abbiamo esplorato un logo sottile e un trattamento tipografico. Abbiamo scelto Open Sans e Open Sans Condensed come carattere tipografico del sito, che si è rivelato molto versatile. E ci siamo divertiti a esplorare sfondi di carte consumate e tonalità di colore marrone per esprimere la sensazione di diario di viaggio del sito.</p>
+      <p>Il design è stato tradotto in codice con molti livelli e trame nei mockup, rendendo il codice semantico e il design responsivo piuttosto difficili e soddisfacenti da realizzare. Siamo contenti di aver reso il design responsivo parte di ciò che facciamo qui a dojo4, anche quando i clienti non lo chiedono inizialmente. Circa il 25-30% dei visitatori iniziali di Scott ha utilizzato tablet o dispositivi mobili. Non dovendo tornare indietro e retrofittare, abbiamo risparmiato tempo e budget sostanziali.</p>
+      <p>Siamo stati anche molto soddisfatti dell'app Middleman, un generatore di siti statici basato su Sinatra (http://middlemanapp.com/). Ci consente di "templatizzare" i siti web (utilizzando ERB & SASS) e sfruttare le strutture dati con loop per gestire i compiti ripetitivi proprio come WordPress, Drupal, ecc. Il vantaggio di Middleman, tuttavia, risiede nella sua capacità di produrre un sito statico, rendendo il prodotto finale più veloce e inviolabile (mi dispiace, cattivi).</p>
+      <p>Poiché volevamo che Scott potesse aggiornare i contenuti regolarmente, Justin ha scritto un fantastico plugin jQuery che "inietta" i post di Tumblr in diversi punti del sito (<a title="https://github.com/Hoosteeno/inject_tumblr" href="https://github.com/Hoosteeno/inject_tumblr">https://github.com/Hoosteeno/inject_tumblr</a>). Quindi, nonostante abbia un sito web statico, Scott ha comunque contenuti freschi e tempestivi.</p>
+      <p>Siamo felici di aver avuto l'opportunità di collaborare con Scott e supportare l'uscita del suo <a target="_blank" title="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653" href="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653">nuovo libro</a>. Scott è ora in tour per promuovere il suo libro con <a title="http://scottjurek.com/calendar/" href="http://scottjurek.com/calendar/">molti eventi di corsa</a> in tutto il paese - se ne hai l'occasione, vale la pena passare e incontrare Scott quando è nella tua città...</p>
+      <p><em>post di Anthony, Corey e Steve</em>
+      </p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/running-with-it">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/running-with-it">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

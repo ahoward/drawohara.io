@@ -1,0 +1,103 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Nous Avons Les Plus Mignons Munchkins</title>
+
+    <meta property="og:title" content="Nous Avons Les Plus Mignons Munchkins"/>
+    <meta property="og:description" content="passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"we-have-the-cutest-munchkins"}">
+    <meta property="site:path_info" content=""/nous-avons-les-plus-mignons-munchkins"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Bien sûr, il y avait beaucoup d'enfants mignons au <a href="http://www.dailycamera.com/news/boulder/ci_26838980/boulders-munchkin-masquerade-brings-halloween-pearl-street">Munchkin Masquerade</a> annuel de Boulder, qui a lieu près du dojo chaque année. Mais essentiellement, nos enfants sont les plus mignons.</p>
+
+        <p><img src='/fr/dojo4/nous-avons-les-plus-mignons-munchkins/assets/b.jpeg' alt="CoreyKohn-Halloween-dojo.jpg" /></p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/aller" name="aller">&mdash;&gt; aller</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/a-propos">a-propos</a>
+          </li>
+          <li>
+            <a href="mailto:je-deteste-ca@drawohara.io?subject=/nous-avons-les-plus-mignons-munchkins">je-deteste-ca</a>
+          </li>
+          <li>
+            <a href="mailto:j-aime-ca@drawohara.io?subject=/nous-avons-les-plus-mignons-munchkins">j-aime-ca</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; quitter</a>
+    </footer>
+  </body>
+</html>

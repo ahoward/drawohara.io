@@ -1,0 +1,135 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Доджо росте!</title>
+
+    <meta property="og:title" content="Доджо росте!"/>
+    <meta property="og:description" content="Продовжуй рух." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content='{"ext":null,"id":"the-dojo-is-growing"}'>
+    <meta property="site:path_info" content="/the-dojo-is-growing">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      &lt;% content_for :style do %&gt;
+      <style>
+        h2, dd {line-height: 1.7;}
+        h2 {margin-top: 1em;}
+        dd {margin-left: 0;}
+      </style>
+      &lt;% end %&gt;
+      <p>Нещодавно доджо4 найняв двох нових людей, щоб допомогти магазину впоратися з новими викликами. Ну, чесно кажучи, ми втомилися від того, що висміювали один одного, тому ми взяли нових людей. В будь-якому випадку, якщо ви в цьому районі, будь ласка, зайдіть і представтесь. Тим часом, ось трохи інформації про цих хлопців.</p>
+      <p>Після 10 років за кордоном Бретт вирішив, що настав час повернутися додому. Перед цим він провів купу досліджень, щоб знайти ідеальне місце для проживання. Боулдер підійшов. Ми думаємо, що він зробив правильний вибір.</p>
+      <p>Більше про Бретта:</p>
+      <dl>
+        <h2>Чому доджо4?</h2>
+        <p>З того часу, як я почав працювати з командою доджо4, я відчув, що я відразу підійшов, і їхні ідеали дійсно збігалися з моїми. Я не міг стерти цю дурашливу посмішку з обличчя з тих пір, як переїхав сюди та почав працювати в Dojo4, я люблю це!</p>
+        <h2>Де ви були раніше?</h2>
+        <p>Я трохи мандрівник. Я був у Сіднеї, Австралія, закінчуючи свою магістратуру та працюючи там деякий час. До того я жив у Беппу, Японія, де закінчив свій бакалаврат. Я жив у найкращому маленькому містечку з гарячими джерелами у світі. Після довгого дня в школі я йшов поплавати в гарячих джерелах. Для будь-кого, хто подорожує до Японії, я дійсно рекомендую їхати якнайдалі від Токіо та їхати в таке місце, як Кюсю або Сікоку, це того варте.</p>
+        <h2>Чиї ваші сильні сторони або що вас цікавить у роботі в Інтернеті?</h2>
+        <p>Я досить візуально орієнтований і мені подобається фронтенд розробка, де я можу бачити створення під час кодування. У світі фронтенд інженерії в даний час відбувається багато чого, оскільки JavaScript нарешті заробляє свої крила як основна мова розробки. Недавно грався з Node та Backbone.js, це цікавий час для зайняття фронтенд роботою.</p>
+        <h2>Що ви робите, коли не в Інтернеті?</h2>
+        <p>Мені подобається скелелазіння. З тих пір, як я переїхав до Боулдера, я планував займатися більше велосипедом. Також планував займатися полюванням на мух. І, можливо, катанням на трубках. У Боулдері все це в моєму дворі.</p>
+        <h2>Чи знаєте ви будь-які бойові мистецтва?</h2>
+        <p>Так, насправді, знаю. Під час проживання в Японії я вивчав кендо, японське бойове мистецтво фехтування. Вона навчила мене дисципліни та концентрації, крім того, що відкрила мені унікальну частину японської культури.</p>
+      </dl>
+      <hr>
+      <p>Стів, який походить із штату Граніт, прийшов до доджо4 через задні двері, які, як ми вважаємо, Гарретт залишив відчиненими одного вечора, вирушаючи на бананове морозиво. Ми не впевнені, як було заповнено папери, але Стів тут, часто загорнутий у плед на дивані або спить (іноді важко відрізнити).</p>
+
+      <h2>Чому доджо4?</h2>
+      <p>Тому що ці люди набагато розумніші за мене. Я намагаюсь всмоктати.</p>
+      <h2>Де ви були раніше?</h2>
+      <p>Зрештою, я невдалий літературний теоретик, який зайнявся фронтенд кодингом, прогулюється у вітрі 120 миль/год та встановлює віддалені гірські туалети. Насправді, я не дуже вмію останнє, тому вважайте себе попередженим.</p>
+      <h2>Чиї ваші сильні сторони або що вас цікавить у роботі в Інтернеті?</h2>
+      <p>У мене є хист до обдурювання людей на велосипедні прогулянки. Цей навик *дуже* недооцінений на більшості робочих місць; однак Dojo4 заохочує такі речі. Що стосується технічних речей, мені подобається створювати сіткові системи та затримуватися з щільним дизайном інформації. Мені також подобається намагатися залучити аудиторію за допомогою чіткого тексту.</p>
+      <h2>Що ви робите, коли не в Інтернеті?</h2>
+      <p>Ми з дружиною досить активні, і при цьому ми однаково вміло відтискуємо дивани для чудових шоу, таких як The Wire, Dexter та Arrested Development.</p>
+      <h2>Чи знаєте ви будь-які бойові мистецтва?</h2>
+      <p>Друзі помітили, що я особливо вправний у втечі та хованці. Чи є назва для цієї дисципліни?</p>
+
+      <p>Ласкаво просимо до доджо, хлопці!</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/the-dojo-is-growing">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/the-dojo-is-growing">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Statiskt är det nya svarta</title>
+
+<meta property="og:title" content="Statiskt är det nya svarta"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"static-is-the-new-black"}">
+    <meta property="site:path_info" content=""/static-is-the-new-black"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h2 id="prologue">Prolog</h2>
+
+<p>Som en webbbyrå ingenting, och jag menar ingenting, förkroppsligar andan av uttrycket:</p>
+
+<blockquote>
+  <p>Skomakarens barn går barfota.</p>
+</blockquote>
+
+<p>som att dojo4 bygger dojo4s <em>egen webbplats</em>.</p>
+
+<p>Under åren har dojo4 haft flera, gränsande till många, versioner av sin webbplats. Utvecklingen av var och en har mestadels varit som att äta glasskärvor. Den här berättelsen, dock, är en historia om lycka och commits som flyter som vårfloder.</p>
+
+<h2 id="historia">Historia</h2>
+
+<p>Många månader sedan hade dojo4 en enkel statisk webbplats</p>
+
+<p><img src='/ro/dojo4/static-is-the-new-black/assets/kung-fu.png' alt="kung-fu" /></p>
+
+<p>Det här var roligt, vi ändrade den dagligen och njöt av den skapande frihet som endast statisk kan ge.</p>
+
+<p>Naturligtvis måste vi till slut växa upp: vi designade saker, vi "behövde" ett CMS, budgeter sattes. Vi lanserade en ny webbplats, baserad på <a href="http://refinerycms.com/">Refinery</a>, i hopp om att människor skulle fortsätta att hacka, att leka, i den fantastiska såsen som ett Rails-backat CMS borde ge</p>
+
+<p><img src='/ro/dojo4/static-is-the-new-black/assets/refinery.png' alt="refinery" /></p>
+
+<p>Ingen hackade. Ingen lekte.</p>
+
+<p>(nåja, <a href="http://www.brettgoulder.com/">Brett</a> gjorde ett sött konami-kodsak där enhörningar skissade regnbågar, men det är ämnet för en annan post...</p>
+
+<p>Vår nästa iteration var "hantverksmän"-utgåvan. Hemslöjd alltihop: uppåt-rebranding, custom crazy design. Custom Rails. Custom Javascript. Verket.</p>
+
+<p>Innan vi gjorde det hade jag invändningar: varför inte enkelt återvända till statisk? Lär dig lite kod. Skriv lite HTML. Vad är det stora problemet?</p>
+
+<p>Jag gav upp. Människor var övertygade om att <em>endast</em> en fin UI skulle tillåta<br />
+icke-tekniska författare att publicera.</p>
+
+<p>Så vi gjorde det. Byggde en riktigt bra custom verktygskedja. Det <em>var</em> vackert</p>
+
+<p><img src='/ro/dojo4/static-is-the-new-black/assets/dj4.png' alt="dj4" /></p>
+
+<p>Vi njöt av vår custom lösning i en bra stund. Men sedan märkte vi<br />
+något.</p>
+
+<p>Ingen hackade. Ingen ny design hände. Samma människor skrev.</p>
+
+<p>Det visar sig att barriären till att skriva inte, och aldrig har varit, en teknisk: människor skriver eftersom de måste, oavsett verktygen. Alla andra enkelt kan eller vill inte skriva, sexig gränssnitt eller inte.</p>
+
+<p>Det visar sig att de människor som vill öppna burken av kreativt whoop-ass på webbplatsen, se och håll, inte är designare, de är inte backend-utvecklare, de är frontend-ingenjörer som kan driva 10 000 rader CSS före frukosten. De är människor som inte vill blanda sig i databasmigreringar, med servrar och processer, med komplicerade distributioner; dessa saker kommer bara i vägen för 1000 watt frontend-talang.</p>
+
+<p>Så vi började om igen.</p>
+
+<p>Det började med tysta samtal med <a href="https://twitter.com/wouldthatiwere">Steve</a>. Vi pratade om att bygga om webbplatsen på en dag - vacker och statisk. Befria oss från bollen och kedjan som en server, databas och admin-gränssnitt bringar med sig. Och sedan, gjorde vi det på en helg:</p>
+
+<p><img src='/ro/dojo4/static-is-the-new-black/assets/commits.png' alt="commits" /></p>
+
+<p>Vår nya webbplats är 100% statisk:</p>
+
+<p><img src='/ro/dojo4/static-is-the-new-black/assets/static.png' alt="static" /></p>
+
+<p>Ändå <a href="http://dojo4.com/blog">innehåll utvecklas och distribueras varje dag</a></p>
+
+<p><img src='/ro/dojo4/static-is-the-new-black/assets/content.png' alt="content" /></p>
+
+<p>Resten av den här historien handlar om hur vi gjorde det, och hur ni också bör göra det.</p>
+
+<h2 id="nu">Nu</h2>
+
+<p>Vi älskar att bygga webbplatser med <a href="http://middlemanapp.com/">Middleman</a>. Det är en enkel statisk webbplatsgenerator som låter oss stanna i Ruby när vi bygger datadrivna, mallbaserade och välfaktoriserade webbplatser. Fördelarna med den här verktygskedjan kan inte överdrivas. När dojo4 bygger något på den här verktygskedjan, frontend-ingenjörer blir fullständigt befriade - lite som att nå nirvana - men mer som att inte behöva fastna i att få någon backend-utvecklare att komma upp för att andas för att implementera någon datainteraktion som behövs för att driva visningslagret. Designers blir också befriade: befriade från stela ramverk, långsamma tider för att ändra koncept, och komplicerad infrastruktur som krävs för att lägga något i folkens händer för att be om feedback. Middleman löser allt det här och mycket mer. Det finns många andra spelare i den statiska webbplatsgeneratorn, och jag uppmanar dig att <a href="http://staticsitegenerators.net/">kolla in dem alla</a>.</p>
+
+<p><a href="https://www.bitballoon.com/">BitBalloon</a> är allt du önskat dig från Amazons S3, men var rädd att fråga. Bygg din statiska webbplats och distribuer den med 3 rader kod. Låt BitBalloon hantera tillgångsminimering, bildkompression, innehållsförhandling och skicka ut allt på Akamai för att vara oerhört snabbt. Det är sprockets som en tjänst, och s3 på steroider - äter kött och pumpar järn. Det är så här bra. Och ja, de gör atomiska distributioner och rollback för dig också. Nämnte jag att du inte behöver en server och den <a href="https://www.bitballoon.com/pricing">jättebilliga</a> delen?</p>
+
+<p><a href="https://draftin.com">DraftIn</a>. Den här delen börjar bli galen y'all... Så några av er kanske tänker - hur tråkigt måste det vara att publicera innehåll när man måste skriva kod hela dagen!? DraftIn har dig täckt. Det är den bästa skrivverktyget genom tiderna; testa det nu och du kommer att se: ingenting slår arbetsflödet av att skriva markdown, be om feedback, enkelt hantera redigeringar från ett dussin bidragande författare, och slutligen förbereda dig att publicera ditt innehåll. De har till och med en armé av redaktörer som sitter där du kan klicka för att be om - få ditt saker redigerat för en liten avgift av NDA-signerade professionella redaktörer. DraftIn gör bara skrivande, men de stödjer idén om att skicka innehåll (via WebHooks) till varje tjänst från WordPress till Tumblr till Facebook. De stödjer också att skicka till godtyckliga robotar som lyssnar i molnen.</p>
+
+<p>Vi har en sådan robot</p>
+
+<p>Hon är en liten robot som lyssnar efter publiceringshändelser från DraftIn, fångar innehållet, committar det till git, bygger webbplatsen med Middleman, och distribuerar sedan via BitBallon för att producera vad som för närvarande är <a href="http://dojo4.com">http://dojo4.com</a>.</p>
+
+<p>På ren engelska använder vi draft för att skriva innehåll, trycker på en knapp, och sedan fångar en liten robot innehållet, kompilerar det och distribuerar vår webbplats. Det ger oss en fantastisk redigeringsupplevelse - överlägsen allt arbetsflöde av varje CMS på marknaden - och en superenkel, snabb och robust webbplats.</p>
+
+<p>Resultatet av att kombinera de ovanstående tre spelarna är som choklad, med jordnötter, plus bacon.</p>
+
+<p>Flödet vi upplever är enkelt fantastiskt:</p>
+
+<ul>
+  <li>
+    <p>Först skriver vi med DraftIns verktyg. Jag gör det nu. <img src='/ro/dojo4/static-is-the-new-black/assets/draftin.png' alt="editing" /></p>
+  </li>
+  <li>
+    <p>Nästa, publicera till dojo4s robot <img src='/ro/dojo4/static-is-the-new-black/assets/publish.png' alt="publish" /></p>
+  </li>
+  <li>
+    <p>Roboten informerar oss om sin framsteg <img src='/ro/dojo4/static-is-the-new-black/assets/robot.png' alt="robot" /></p>
+  </li>
+  <li>
+    <p>Innehåll visas upp, och renderas till och med, på <a href="http://github.com">GitHub</a> <img src='/ro/dojo4/static-is-the-new-black/assets/github.png' alt="github" /> <img src='/ro/dojo4/static-is-the-new-black/assets/nova.png' alt="nova" /></p>
+  </li>
+</ul>
+
+<p>Och, efter några minuter är en ny <a href="http://dojo4.com">http://dojo4.com</a> född.</p>
+
+<h2 id="för-långt-gör-läs">För långt; Gör läs.</h2>
+
+<h3 id="författare-skriver">Författare skriver.</h3>
+
+<p>Andras gör inte. Inget verktyg i världen kommer att orsaka kreativ kundalinienergi att vakna någon vid 3 på morgonen för att posta en ny blogg.</p>
+
+<h3 id="statiskt-är-magiskt">Statiskt är magiskt.</h3>
+
+<p>Sluta resonera om caching: cache det allt NU. Statiskt serverar som blixten, till nästan noll kostnad, och det frigör den inre designern hos alla som rör vid koden.</p>
+
+<h3 id="github-är-kung">GitHub är kung.</h3>
+
+<p>Du vill ha allt ditt innehåll i versionskontroll. Vi kan rulla tillbaka vår hela webbplats <em>exakt</em> som den var för 7 dagar, 4 timmar och 2 minuter sedan inklusive stilar och data. Vi kan peka ut varje enskild ändring, oavsett hur liten, som gjordes på vår webbplats av vem och när; vi kan även göra om dessa ändringar. Vi kan återskapa vår hela webbplats på sekunder på vilken plattform som helst som kan servera enkel HTML.</p>
+
+<p>Kan du?</p>
+
+<h3 id="design-är-dött">Design är dött.</h3>
+
+<p>Jag vet inte vad du kallar det, men de människor som bygger den moderna webben är tekniker - frontend-ingenjörer. Spridningen av enheter, tekniker och förväntningar har kersplodat till en landskap som bara kan hanteras av människor med noggranna anteckningar i moleskiner som obsederar över webbstandarder och - vänta på det - kod. Idéer har blivit komplicerade och den gamla "designa och bygg"-filosofin som fungerade med 960-pixlarskärmar (i en vecka) har gått vägen till Dojo. Er, Dodo.</p>
+
+<p>Vi är inte i Kansas längre och din designer bör bättre veta hur man kodar.</p>
+
+<h2 id="epilog">Epilog</h2>
+
+<p>Det finns så mycket mer jag skulle vilja säga om varför att gå statiskt är fantastiskt. Fantastiskt att se alla i butiken bidra till koden under <em>första veckan</em> efter distribution. Fantastiskt att se nya bitar av <a href="http://dojo4.com/fun">kreativitet tas till livet</a>. Fantastiskt att se <a href="http://dojo4.com/blog/today-s-moment-of-zen">nya människor skriva</a>. Fantastiskt att sova på natten och inte bry sig om om "servern är uppe". Fantastiskt att sp

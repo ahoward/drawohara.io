@@ -1,0 +1,111 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Les lutins aiment les arcs-en-ciel.</title>
+
+    <meta property="og:title" content="Les lutins aiment les arcs-en-ciel."/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"les-lutins-aiment-les-arcs-en-ciel"}">
+    <meta property="site:path_info" content=""/les-lutins-aiment-les-arcs-en-ciel"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Nous, au dojo, aimons les fêtes. En l'honneur de nombreuses fêtes, nous avons activé sur notre site un changement rapide de couleurs. La Saint-Patrick a été la première occasion de tester cela. Nous avons déployé le vert et étions très satisfaits de nous-mêmes en sirotant des chopes géantes de Guinness.</p>
+
+        <p>Puis, la catastrophe a frappé. Nous avons appris les situations lamentables à New York et à Boston où les personnes LGBTQ (en particulier les anciens combattants gays) étaient exclues de la marche du défilé. Cela a conduit à un boycott des défilés par les maires et les brasseurs. Nous aussi, nous étions tous comme, "pas sous ma garde, les gars". Nous avons retiré le vert. La paix était restaurée.</p>
+
+        <p>Il n'a pas fallu longtemps avant que le vert nous manque comme un lutin manque son pot d'or. Nous le voulions de retour, mais nous ne voulions pas sembler céder.</p>
+
+        <p>Nous avons réévalué la situation et décidé que dans ce cas particulier, faire quelque chose allait faire plus de bruit que de ne rien faire du tout.</p>
+
+        <p>En conséquence, le vert est de retour et plus fort que jamais. Et pour nous assurer de ne pas être mal compris, nous avons ajouté un petit arc-en-ciel au logo... vous savez, parce que les lutins aiment les arcs-en-ciel.</p>
+
+        <p>Joyeuse Saint-Patrick !!</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/aller" name="aller">&mdash;&gt; aller</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/a-propos">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:je-deteste-ça@drawohara.io?subject=/les-lutins-aiment-les-arcs-en-ciel">je-deteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:j-aime-ça@drawohara.io?subject=/les-lutins-aiment-les-arcs-en-ciel">j-aime-ça</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

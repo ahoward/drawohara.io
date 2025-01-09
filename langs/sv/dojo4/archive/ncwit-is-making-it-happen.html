@@ -1,0 +1,107 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>NCWIT gör det möjligt</title>
+
+    <meta property="og:title" content="NCWIT gör det möjligt"/>
+    <meta property="og:description" content="gå vidare." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"ncwit-is-making-it-happen"}">
+    <meta property="site:path_info" content=""/ncwit-is-making-it-happen"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src="http://www.ncwit.org/sites/all/themes/ncwit/logo.png" alt="Mindre ikon" /></p>
+
+        <p>Jag hade nyligen ett fantastiskt möte med <a href="http://www.ncwit.org/profile/terry-morreale">Terry Morreale</a>, biträdande direktör för <a href="http://www.ncwit.org/">National Center for Women and Information Technology</a>. NCWIT finns här på University of Colorado men är en nationell organisation som fungerar som en kanal och förespråkare för ”mer än 300 framstående företag, akademiska institutioner, myndigheter och ideella organisationer som arbetar för att öka kvinnors deltagande i teknik och datavetenskap.” Deras uppdrag är att vara en onödig enhet inom 12 år, eftersom om de gör sitt jobb, kommer kvinnor då att vara fullt engagerade i att utveckla och skapa informationsteknik som förnyar vår värld. Under tiden kommer NCWIT att fortsätta att hjälpa organisationer att rekrytera, behålla och befordra kvinnor i alla åldrar ”genom industri- och entreprenörskarriärer genom att erbjuda samarbete, bevis och handling.”</p>
+
+        <p>Det finns många sätt att åstadkomma verkliga och bestående positiva förändringar, men jag ser att fler och fler kvinnor kodar som ett av de mäktigaste sätten att låta teknologisk innovation leda samhällsförändringar. <a href="http://www.un.org/apps/news/story.asp?NewsID=24698&amp;Cr=women&amp;Cr1">Studier i alla möjliga sektorer</a> visar att när kvinnor utbildas och ges makt, skjuter innovationen i den sektorn i höjden. NCWIT arbetar med organisationer för att göra det i IT.</p>
+
+        <p>Så blev vi medlemmar i deras Entrepreneurial Alliance. Men jag kan redan se att de resurser de erbjuder kommer att vara lika mycket, om inte mer, stöd för oss som ett teknikföretag som vi kan vara för dem som stödjande medlemmar. Det är lätt (och gratis) att bli medlem och avkastningen är enorm. Gör det.</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">om</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/ncwit-is-making-it-happen">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/ncwit-is-making-it-happen">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">kontakt</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

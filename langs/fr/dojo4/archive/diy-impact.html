@@ -1,0 +1,129 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Impact DIY</title>
+
+    <meta property="og:title" content="Impact DIY"/>
+    <meta property="og:description" content="Continuez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"diy-impact"}">
+    <meta property="site:path_info" content=""/diy-impact"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><a href="http://www.desicreative.com/sumedha-sah-interview-illustrator/"><img src='/ro/dojo4/diy-impact/assets/b.jpeg' alt="Auto-Étreinte.jpg" /> </a><br />
+        Lorsque nous avons dédié notre entreprise à l'impact social, nous ne savions pas vraiment ce que cela signifiait.</p>
+
+        <p>Voici comment nous l'avons défini <a href="http://dojo4.com/about">sur notre site web</a> :</p>
+
+        <blockquote>
+          <p>Nous comprenons que les organisations à impact sont celles qui utilisent l'ingéniosité pour <a href="http://">aider activement les gens et notre environnement, en fournissant des solutions à des problèmes réels</a>. Nous avons constaté que nous faisons notre meilleur travail lorsqu'il traite de problèmes réels, lorsque nous aidons à créer <a href="http://dojo4.com/blog/program-like-you-give-a-damn">un monde où personne n'est limité par sa situation</a>.</p>
+        </blockquote>
+
+        <p>La compréhension que l'impact social efficace fonctionne pour créer un monde où personne n'est limité par sa situation est une compréhension que nous avons acquise au cours d'une <a href="http://dojo4.com/blog/wanted-gnu-unreasonable-nerds">conversation</a> avec le cofondateur de <a href="https://unreasonablegroup.com/">Unreasonable</a>, <a href="http://danielepstein.me/">Daniel Epstein</a>. Cette définition avait le plus de sens pour nous car elle prend l'aphorisme vague de "rendre le monde meilleur" et lui donne une définition et éclaire le potentiel qui existe pour ce "monde meilleur" aspirant si ses habitants étaient vraiment libres des limitations de leurs circonstances pour pouvoir faire quelque chose pour l'améliorer. Cette définition reconnaît également la profonde et nuancée complexité de faire le bien dans ce monde.</p>
+
+        <p>Cependant, mon approche initiale et naïve a externalisé la responsabilité de ce que signifie vraiment limiter les circonstances de nos vies. Je pensais qu'il était aussi simple de travailler avec des clients partageant les mêmes idées qui font un travail "impactant". Nous allions construire des technologies pour des entreprises qui traitaient de "vrais problèmes" tels que l'injustice sociale, la dégradation de l'environnement, l'inégalité des sexes, la pauvreté et la faim. Et par procuration, nous créerions de l'impact. Mais... ce n'est pas si facile.</p>
+
+        <p>Il s'avère que créer un impact n'est pas quelque chose que les autres peuvent faire pour vous, même si vous soutenez leur travail impactant. Nous avons eu la chance de travailler avec des <a href="http://dojo4.com/work">clients</a> qui sont des poids lourds dans l'impact qu'ils créent, mais le simple fait d'écrire du code pour eux ne signifie pas que nous créons nous-mêmes un impact. Cela doit aller plus loin que cela.</p>
+
+        <p>L'un de nos plus grands défis a été de maintenir la clarté sur ce que signifie l'impact et de s'y tenir. Ce n'est pas simple. Nous avons appris que même si un client faisait un bon travail, cela ne signifiait pas nécessairement que nous étions un bon partenaire et que nous devions nécessairement travailler ensemble. D'autres fois, ce qui semble être un impact positif pourrait ne pas être si simple : en tant que technologues, nous avons souvent accès à des informations montrant que ce qui semble bon de l'extérieur pourrait ne pas vraiment faire beaucoup de bien une fois que vous regardez sous le capot dans la technologie ou les pratiques commerciales. Ou parfois, il y a juste une différence d'approche pour laquelle nous ne pouvions pas offrir le meilleur soutien. De plus, notre idée de travailler exclusivement avec des "clients à impact" signifiait que nous excluions la possibilité de travailler en collaboration avec des clients plus conventionnels pour rendre leurs produits plus impactants.</p>
+
+        <p>Nous avons réalisé que, pour nous, l'impact signifie vraiment faire un travail significatif, qu'il soit techniquement, culturellement, socialement, environnementalement ou personnellement significatif. Faire un travail significatif signifie que nous sommes animés et inspirés par ce que nous faisons et que nous apportons cela dans nos relations avec nos clients et entre nous. Cela signifie créer des relations de confiance qui permettent à la bonne technologie et au bon design d'informer l'impact que les entreprises et leurs produits peuvent créer. Cela signifie suivre nos intuitions, ne pas être simplistes dans l'idéologie et toujours pratiquer la rigueur dans notre métier. Cela signifie que nous ne pouvons jamais être paresseux.</p>
+
+        <p><a href="http://www.evolveandascend.com/2017/01/31/these-10-quotes-by-chogyam-trungpa-rinpoche-cut-through-spiritual-b-s/">Chögyam Trungpa</a> l'a dit de manière percutante :</p>
+
+        <blockquote>
+          <p>« Vous n'avez pas besoin de vous précipiter pour devenir le maire de votre ville ou le président des États-Unis pour aider les autres, mais vous pouvez commencer avec vos proches et amis et les personnes autour de vous. En fait, vous pouvez commencer par vous-même. L'important est de réaliser que vous n'êtes jamais hors service. »</p>
+        </blockquote>
+
+        <p>Pour dojo4, cela a signifié commencer par la graine de notre propre entreprise et construire un endroit qui soutient chacun d'entre nous dans nos propres vies. Cela a signifié créer un environnement qui vise à favoriser l'honnêteté, la gentillesse envers nous-mêmes et les autres, et soutenir le bon travail et le bon amusement. Cela pourrait sembler un petit impact de simplement créer cela au sein de notre propre organisation, mais c'est une graine. Si chaque petite entreprise pouvait fournir cette amabilité en interne et dans sa communauté, cela aurait un énorme impact sur les personnes et les populations. Et cette graine dans nos vies individuelles permet un plus grand potentiel réel pour un impact à grande échelle. Une façon de le dire est que nous ne pouvons pas aider efficacement les autres tant que nous ne pouvons pas nous aider nous-mêmes.</p>
+
+        <p>C'est quelque chose que toute organisation peut faire. Toute entreprise peut être une entreprise à impact - un magasin de matériel, un courtier en assurances, une entreprise de services de nettoyage, une agence de publicité, etc. Nous pouvons tous aspirer à créer un monde où personne n'est limité par sa situation, mais pour cela, nous devons penser près de chez nous et de manière inclusive à ce que cela signifie. Nous pouvons tous travailler à résoudre les nombreux et réels problèmes du monde, mais pour le faire efficacement, nous devons commencer par nous-mêmes. Nous ne pouvons pas nous laisser aller : nous devons nous regarder et nous aider nous-mêmes et créer des entreprises qui sont des lieux véritablement engagés, gentils et joyeux avant de pouvoir aider les autres. Ce n'est pas une chose simple ou facile à faire, mais si nous pouvons le faire, l'effet est vraiment impactant.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/aller" name="aller">&mdash;&gt; aller</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/a-propos">a-propos<a>
+          </li>
+          <li>
+            <a href="mailto:je-deteste-ca@drawohara.io?subject=/diy-impact">je-deteste-ca<a>
+          </li>
+          <li>
+            <a href="mailto:j-adore-ca@drawohara.io?subject=/diy-impact">j-adore-ca<a>
+          </li>
+          <li>
+            <a href="/contact">contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/fr/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/fr/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/fr/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fr/favicon-16x16.png">
+    <link rel="manifest" href="/fr/site.webmanifest">
+
+  <!-- meta -->
+    <title>Tester IE9 est moins comme manger du verre qu'avant</title>
+
+<meta property="og:title" content="Tester IE9 est moins comme manger du verre qu'avant"/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/fr/dojo4/archive/:id"/>
+    <meta property="site:params" content="{'ext':null,'id':'testing-ie9-is-less-like-eating-glass-than-before'}">
+    <meta property="site:path_info" content="/fr/testing-ie9-is-less-like-eating-glass-than-before">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Ce week-end, je corrigeais des bugs dans deux projets (http://fr/dojo4.com lui-même et http://fr/my.windowfarms.com). J'avais repoussé cela depuis longtemps car tester dans IE9, traditionnellement, c'est comme manger du verre ou claquer votre truc dans la portière de la voiture.</p>
+
+<p>Cela faisait un moment que je n'avais pas exploré les options pour "ne pas avoir à démarrer une véritable machine Windows" et j'ai été agréablement surpris de trouver deux alternatives radicalement géniales :</p>
+
+<hr />
+
+<p>La première est http://fr/saucelabs.com/ - ils vous permettent plus ou moins de démarrer n'importe quel navigateur dans le navigateur web</p>
+
+<p><img src='/fr/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.03.18_PM.png' alt="img" /></p>
+
+<p>C'est moi démarrant une instance d'IE9. Une fois que c'est fait, cela ressemble à ceci :</p>
+
+<p><img src='/fr/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.06.14_PM.png' alt="img" /></p>
+
+<p>Ils enregistrent et vous permettent de partager toutes les sessions :</p>
+
+<p><img src='/fr/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.07.19_PM.png' alt="img" /></p>
+
+<p>PS. c'est un service payant, mais ils vous offrent un compte gratuit si vous êtes certifié OSS. Avec > 150 rubygems là-bas, j'en ai profité pour prévisualiser, mais je prévois d'intégrer des comptes payants dans http://fr/dojo4.com car c'est rapide, génial, et aussi extrêmement rapide et génial de tester un stupide bug IE en urgence en utilisant leur plateforme.</p>
+
+<p>C'est à peu près tout. Vous le démarrez, vous l'utilisez. C'est un peu lent.</p>
+
+<p>Au fait - les écrans de démarrage sont les <em>meilleurs</em> :</p>
+
+<p><img src='/fr/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.05.27_PM.png' alt="img" /></p>
+
+<hr />
+
+<p>L'outil suivant utilisé est moins sophistiqué et extrêmement lent à installer, mais il vous donne des instances d'IE en direct dans une instance https://www.virtualbox.org/ en un clin d'œil. Les captures d'écran ressemblent exactement à Windows sanglant : mais rendez-vous sur</p>
+
+<p>https://github.com/xdissent/ievms</p>
+
+<p>et suivez les instructions. 4-8 heures plus tard, vous aurez des VM IE faciles à démarrer sur votre boîte OSX/linux.</p>
+
+<p><em>ÉNORME</em> mention à https://twitter.com/janeqpublic // https://github.com/xdissent pour le beau travail.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/fr/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/fr/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/fr/testing-ie9-is-less-like-eating-glass-than-before">je-déteste-ça</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/fr/testing-ie9-is-less-like-eating-glass-than-before">j-adore-ça</a>
+  </li>
+  <li>
+    <a href="/fr/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/fr/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

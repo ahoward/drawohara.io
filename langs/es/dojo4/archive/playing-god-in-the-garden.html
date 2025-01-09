@@ -1,0 +1,112 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Jugando a ser Dios en el jardín</title>
+
+    <meta property="og:title" content="Jugando a ser Dios en el jardín"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'playing-god-in-the-garden'}">
+    <meta property="site:path_info" content="/playing-god-in-the-garden">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Mi esposo dice que hacer tierra (también conocido como compostar) es como ser el Creador mismo, y que la jardinería es como jugar a ser Dios. Todo lo que sé es que se siente divino poner las manos en la tierra y cultivar vida verde y todas las cosas buenas que lo acompañan.</p>
+
+        <p>Finalmente terminé los lechos del jardín de dojo4 - ¡ha sido una primavera larga y húmeda! Ahora, es hora de ir a casa y trabajar en el mío.</p>
+
+        <p>Que tengan un gran fin de semana, amigos.</p>
+
+        <p><img src='/es/dojo4/playing-god-in-the-garden/assets/b.jpeg' alt="IMG_2692.jpg" /></p>
+
+        <p><img src='/es/dojo4/playing-god-in-the-garden/assets/c.jpeg' alt="IMG_2693.jpg" /></p>
+
+        <p><img src='/es/dojo4/playing-god-in-the-garden/assets/d.jpeg' alt="IMG_2690.jpg" /></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/playing-god-in-the-garden">no-me-gusta<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/playing-god-in-the-garden">me-gusta<a>
+          </li>
+          <li>
+            <a href="/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

@@ -45,8 +45,10 @@
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
+  <meta property="og:image:width" content="" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"dangling-rpc-fruit-off-of-your-rails-controllers"}">
@@ -83,7 +85,7 @@
 
     <main>
       <div class="ro markdown">
-  <p>when working on any non-hello-world rails application you invariably need teeny ajax helpers to communicate with the server - in order to perform client side logic.  i’m not talking an api per-se, but ad-hoc utilities like this:</p>
+  <p>when working on any non-hello-world rails application you invariably need teeny ajax helpers to communicate with the server - in order to perform client side logic.  im not talking an api per-se, but ad-hoc utilities like this:</p>
 
 <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">markdown</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">change</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
@@ -121,15 +123,15 @@
 
 <p>etc.</p>
 
-<p>these types of functions aren’t part of a server-to-server public api, they are just cooperating js/backend endpoints that are needed to make the view function.</p>
+<p>these types of functions arent part of a server-to-server public api, they are just cooperating js/backend endpoints that are needed to make the view function.</p>
 
-<p>most rails’ applications will accumulate many of these and the question arises:</p>
+<p>most rails applications will accumulate many of these and the question arises:</p>
 
-<p>“Where do you put them?”</p>
+<p>Where do you put them?</p>
 
-<p>in most teams you’ll have three or four developers naming and organizing these functions differently, ensuring that the code base turns into a cowboy spaghetti mess in short order.</p>
+<p>in most teams youll have three or four developers naming and organizing these functions differently, ensuring that the code base turns into a cowboy spaghetti mess in short order.</p>
 
-<p>@dojo4 we’ve abstracted this with a teeny rpc design pattern:  first we have a teeny controller dsl that’s included into our ApplicationController that allows declarative definitions of ‘rpc’ js helpers on a per-controller basis.</p>
+<p>@dojo4 weve abstracted this with a teeny rpc design pattern:  first we have a teeny controller dsl thats included into our ApplicationController that allows declarative definitions of rpc js helpers on a per-controller basis.</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">ApplicationController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ActionController</span><span style="color: #0550ae">::</span><span style="color: #953800">Base</span>
@@ -145,7 +147,7 @@
 
 <p>in plain english this dsl just defined a single action on the controller that multi-plexes which method to employ based on params, and an easy way to define them.  it expects that all rpc actions will return a hash and give back json.</p>
 
-<p>it’s implementation boils down to</p>
+<p>its implementation boils down to</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">rpc</span>
@@ -161,7 +163,7 @@
 </div><div class='code-line code-line-12'>
 </div></code></div>
 
-<p>it’s usage should be obvious from the code</p>
+<p>its usage should be obvious from the code</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">GeoLocationController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ApplicationController</span>
@@ -200,7 +202,7 @@
 
 </code></pre>
 
-<p>normally, at the bottom of a view, we’re just intantiating an rpc object for the page with a relative url</p>
+<p>normally, at the bottom of a view, were just intantiating an rpc object for the page with a relative url</p>
 
 <div class="language-erb highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;script&gt;</span>
 </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
@@ -215,7 +217,7 @@
 </div><div class='code-line code-line-11'>
 </div></code></div>
 
-<p>and we’re off and running.</p>
+<p>and were off and running.</p>
 
 <p>so, there you have it - a simple way to keep your rpc helper js from polluting your controllers and views with varied strategies and another example about how having <em>brutally consistent</em> interfaces makes abstraction possible and simple.</p>
 

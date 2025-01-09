@@ -1,0 +1,114 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Дякую за всіх єдинорогів!</title>
+
+    <meta property="og:title" content="Дякую за всіх єдинорогів!"/>
+    <meta property="og:description" content="йдіть далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'so-long-and-thanks-for-all-the-unicorns'}">
+    <meta property="site:path_info" content="/uk/so-long-and-thanks-for-all-the-unicorns">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src="http://farm7.staticflickr.com/6190/6035265163_3bf4587be3_z.jpg" alt="Єдиноріг" /></p>
+
+        <p>Сьогодні моє останнє день у Dojo4. Це була пригода, повна підйомів і спадів, складних технологій і оточення чудовою командою.</p>
+
+        <p>Я вперше почув про Доджо чотири роки тому. Я відвідував рубі-код і кавовий захід, коли Джеремі згадав, що він йде працювати в доджо. Я запитав про це містичне місце, але вагався відвідати його спочатку. Зрештою я подолав це вагання і став частим відвідувачем. Я повинен вас попередити: спілкування в доджо підвищує ризик працювати в доджо. Зрештою я почув про позицію, яку шукала dojo4. Я подав заявку і моя доля була визначена.</p>
+
+        <p>Я повернувся до джоджу трохи більше ніж через рік, щоб приєднатися як повноцінний співробітник. Тут у мене була можливість працювати з чудовими клієнтами над надзвичайно цікавими проєктами. Було iOS, інфраструктура, фронтенд, бекенд, операції, девопс, нуопс можливості. Багато MVP, деяке постійне обслуговування.</p>
+
+        <p>Тим не менш, мені бракувало роботи в масштабі. Тож я відповів на запит місцевого стартапу, який вже мав продукт і круту криву зростання, якому потрібна була допомога у масштабуванні, розширенні та запуску свого продукту. Робота з мільйонами електронних листів на день змусить мене підняти мою гру на кілька рівнів.</p>
+
+        <p>Гірко-солодко залишати таку команду позаду, але вони обійдуться. Вони чудові кожен на свій спосіб.</p>
+
+        <p>Я опублікую більше подробиць про мої пригоди на <a href="http://twitter.com/fredjean">моїй Twitter-стрічці</a> і <a href="http://fredjean.net">у моєму блозі</a>. Залишайтеся на зв'язку!</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/uk/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/uk/so-long-and-thanks-for-all-the-unicorns">не подобається</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/uk/so-long-and-thanks-for-all-the-unicorns">подобається</a>
+          </li>
+          <li>
+            <a href="/uk/contact">контакти</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/uk">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

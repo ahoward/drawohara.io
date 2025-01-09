@@ -1,0 +1,114 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Non toccare il titolo della mia finestra!</title>
+
+    <meta property="og:title" content="Non toccare il titolo della mia finestra!"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"hands-off-my-window-title}">
+    <meta property="site:path_info" content="/hands-off-my-window-title">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Quindi mi sono recentemente collegato via ssh a un nuovo server Ubuntu 11.10 su EC2 e ho notato alcune novità. In primo luogo, Ubuntu sembra aver abilitato la configurazione del multiplexer terminale <a href="https://help.ubuntu.com/11.10/serverguide/C/byobu.html">byobu</a> per impostazione predefinita. Questo sembra potenzialmente utile, ma come <a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh</a>, non mi sento motivato a traffICARE con esso in questo momento. È facile disabilitare byobu con un rapido <code>byobu-disable</code>, che, abbastanza sorprendentemente, terminerà completamente la tua shell, ti disconnetterà e chiuderà la tua sessione ssh. Ma la prossima volta otterrai una shell normale invece di una sessione byobu/screen.</p>
+
+      <p>Ora, una cosa che ho notato e che finalmente mi ha motivato a "ricercare" (e con questo intendo chiedere a persone più intelligenti su twitter) e risolvere è che quando mi sono collegato via ssh, il titolo della finestra nella mia scheda iTerm2 è stato modificato dinamicamente da quello che avevo impostato con cura ("asset pipeline") a "ubuntu@ip-10-11-12-13" estremamente poco utile. In alcune situazioni non cloud in cui il server ha un nome host significativo, questo potrebbe essere utile, ma distinguere decine di server dal loro IP interno EC2 non è allettante per me. La ricerca iniziale suggeriva le mie variabili di ambiente <code>PROMPT</code> o <code>PROMPT_COMMAND</code>, ma nessuna delle due era impostata. Ho letto questo <a href="http://www.ibm.com/developerworks/linux/library/l-tip-prompt/">articolo di DeveloperWorks</a> e ho trovato il codice responsabile nel file <code>~/.bashrc</code>. Ecco l'estratto incriminato.</p>
+
+      <pre><code># Se questo è un xterm imposta il titolo a user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+</code>
+</pre>
+
+      <p>Quindi puoi commentare quella linea che modifica <code>PS1</code> se preferisci il tuo titolo della finestra impostato manualmente.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/hands-off-my-window-title">non mi piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">mi piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>
