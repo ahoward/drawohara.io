@@ -1,4 +1,5 @@
 require 'map'
+
 require_relative 'path'
 
 class Pattern < ::Array
@@ -149,7 +150,6 @@ class Pattern < ::Array
 
   def validate_key!(key)
     key = key.to_s.to_sym
-
     @keys.index(key) || raise(Error.new("invalid key=#{ key.inspect } for path=#{ @path.inspect }"))
   end
 end

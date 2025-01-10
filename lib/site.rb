@@ -5,8 +5,9 @@ require 'fileutils'
 require 'ro'
 require 'parallel'
 
-require_relative 'server.rb'
-require_relative 'dato.rb'
+require_relative 'site/server.rb'
+require_relative 'site/dato.rb'
+require_relative 'site/model.rb'
 
 class Site
 #
@@ -41,11 +42,13 @@ class Site
 
 #
   attr_reader :name
-  attr_reader :root
   attr_reader :domain
-  attr_reader :server
+  attr_reader :root
   attr_reader :ro
   attr_reader :dato
+  attr_reader :server
+
+  attr_accessor :layout
 
   def initialize(*args, **kws, &block)
     @name = kws.fetch(:name){ args.shift || :default }
@@ -54,13 +57,15 @@ class Site
 
     @root = Path.for(kws.fetch(:root){ '.' })
 
-    @server = Server.new
-
-    block.call(self) if block
-
     @ro = Ro::Root.new(path_for('./public/ro'))
 
     @dato = Dato.load(path_for('./dato'))
+
+    @layout = path_for(kws.fetch(:layout){ './views/layout.erb' })
+
+    @server = Server.new(site: self)
+
+    block.call(self) if block
   end
 
   def path_for(...)
@@ -71,9 +76,8 @@ class Site
     @name.inspect
   end
 
-  def route(*args, **kws, &block)
-    kws[:site] = self
-    @server.route(*args, **kws, &block)
+  def route(...)
+    @server.route(...)
   end
 
   def routes

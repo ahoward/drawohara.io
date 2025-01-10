@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>! &#39;The Mongoid Wars: Removing Production Indexes&#39;</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="! &#39;The Mongoid Wars: Removing Production Indexes&#39;"/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"the-mongoid-wars-removing-production-indexes"}">
@@ -87,7 +87,7 @@
       <div class="ro markdown">
   <p>Yesterday <a href="https://twitter.com/cookrn">Ryan Cook</a> and I hit one of those dreaded production only issues experienced developers know and hate on the soft launched <a href="http://gomoshimoshi.com/">Moshi Moshi Co</a> product <a href="http://wallspacefinder.com/">Wall Space Finder</a>.</p>
 
-<p>This one was a doozy, models would fail to save in staging only, not locally or in production.  Obviously this was <em>RAILS_ENV</em> related, or so I thought</p>
+<p>This one was a doozy, models would fail to save in staging only, not locally or in production.  Obviously this was <em>RAILS_ENV</em> related, or so I thought…</p>
 
 <p>First we did the obvious, looked at the code locally in development mode.  Nothing, it totally worked.  No problems.</p>
 
@@ -117,10 +117,10 @@ data, and the <em>RAILS_ENV</em> via</p>
 
 <p>But still, we could not replicate. <em>#WTF</em>!?</p>
 
-<p>Finally, I instrumented the staging deploy to use <a href="https://twitter.com/search?f=realtime&amp;q=%23die%C3%BCberawesomesauce&amp;src=typd">#dieberawesomesauce</a> <a href="https://github.com/Mon-Ouie/pry-remote">pry-remote</a> and dropped right into the <em>BOOMing</em> code on the staging node.</p>
+<p>Finally, I instrumented the staging deploy to use <a href="https://twitter.com/search?f=realtime&amp;q=%23die%C3%BCberawesomesauce&amp;src=typd">#dieüberawesomesauce</a> <a href="https://github.com/Mon-Ouie/pry-remote">pry-remote</a> and dropped right into the <em>BOOMing</em> code on the staging node.</p>
 
 <p>And there it was: a unique contraint was being violated in the database.  Yet no<br />
-unique indexes were defined in the model, or anywhere else.  Hrmmmmm</p>
+unique indexes were defined in the model, or anywhere else.  Hrmmmmm…</p>
 
 <p>Reviewing the git logs I found that, previously, a unique index <em>had</em> been<br />
 defined on the offending model.  Problem solved I thought, a quick</p>
@@ -159,13 +159,13 @@ defined on the offending model.  Problem solved I thought, a quick</p>
 <p>I decided to write about this experience because:</p>
 
 <ul>
-  <li>20/20 hindsight Ive hit it before myself.  /cc <a href="https://twitter.com/spikex">@spikex</a></li>
+  <li>20/20 hindsight I’ve hit it before myself.  /cc <a href="https://twitter.com/spikex">@spikex</a></li>
   <li>It underscores how development and dev-ops need to converge to debug real-world issues: not everything is stateless and lives in the repo, and not all state can be replicated.  Sometimes you gotta do it live.</li>
   <li>Someone will undoubtedly have the same issue and, I hope, find this post via the magic of teh googlez.</li>
   <li><a href="https://twitter.com/modetojoy">@modetojoy</a> might consider my current thinking, which is that we should backport the better Mongoid 4 behavior into 3.1.0.</li>
 </ul>
 
-<p>And people wonder why we engineers cant estimate the time and effort to fix a simple bug.</p>
+<p>And people wonder why we engineers can’t estimate the time and effort to fix a simple bug.</p>
 
 <p>P.S.  Some of you readers might be wondering how I fixed this.  I simply re-defined the index in the console, so Mongoid would be aware of it, and then used the model level methods to nuke it</p>
 
@@ -206,7 +206,7 @@ defined on the offending model.  Problem solved I thought, a quick</p>
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/the-mongoid-wars-removing-production-indexes">i-hate-this<a>

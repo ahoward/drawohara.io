@@ -14,24 +14,31 @@ class Server
   include Render
 
 #
+  attr_reader :site
+  attr_reader :root
   attr_reader :routes
 
 #
-  def initialize(root: './public', &block)
-    @routes = []
-
+  def initialize(root: './public', site: nil, &block)
     @root = Rack::Files.new(root)
+    @site = site
+    @routes = []
 
     block.call(self) if block
   end
 
-  def route(...)
-    @routes.push(Route.new(...))
+  def route(*args, **kws, &block)
+    kws[:site] = site
+
+    Route.new(*args, **kws, &block).tap do |route|
+      @routes.push(route)
+    end
   end
 
 #
   def call(env)
     status, headers, body = Rack::Files.new('./public').call(env)
+
     if status < 400
       return [status, headers, body]
     end
@@ -53,11 +60,11 @@ class Server
         begin
           result = route.call(*args)
 
-          next unless result.is_a?(String)
+          next unless result
 
           status = 200
           headers = {}
-          body = [result]
+          body = [result.to_s]
         rescue => e
           error = e
 

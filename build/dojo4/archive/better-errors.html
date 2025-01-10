@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Better Errors</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="Better Errors"/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"better-errors"}">
@@ -85,14 +85,14 @@
 
     <main>
       <div class="ro markdown">
-  <p>One of the rails gems that weve been using in our newer apps is <a href="https://github.com/charliesome/better_errors">Better Errors</a>, which allows you to be dropped into a pry-like REPL and nicer error page when rails raises an exception during the browsers request process.</p>
+  <p>One of the rails gems that we’ve been using in our newer apps is <a href="https://github.com/charliesome/better_errors">Better Errors</a>, which allows you to be dropped into a pry-like REPL and nicer error page when rails raises an exception during the browser’s request process.</p>
 
 <p><img src='/ro/dojo4/better-errors/assets/b.png' alt="" /> <br />
 <em>(<a href="https://github.com/charliesome/better_errors">Image source</a>)</em></p>
 
 <p>This is helpful for our developers because instead of getting a static error page, going to search in the code where to put a <code>binding.pry</code>, and re-running the error prone code, Better Errors loads a page where we can interact with the code right there and then, enabling us to find the problem faster, write a fix faster, and iterate faster.</p>
 
-<p>One of the recent features we just discovered is the ability to see the last rpc error. We have a pattern of ajax calling an rpc method in our rails app when we just need to get some information or post a simple object like favoriting a user or something. The code that runs on our rails server that handles that ajax request wont blow up the whole server and automatically invoke Better Errors, so the work around is to go to a special url that better errors exposes to show the last error thrown in our rails code: http://localhost:3000/__better_errors.</p>
+<p>One of the recent features we just discovered is the ability to see the last rpc error. We have a pattern of ajax calling an rpc method in our rails app when we just need to get some information or post a simple object like favoriting a user or something. The code that runs on our rails server that handles that ajax request won’t blow up the whole server and automatically invoke Better Errors, so the work around is to go to a special url that better errors exposes to show the last error thrown in our rails code: http://localhost:3000/__better_errors.</p>
 
 <p>Has anyone else out there used this tool? What are some things you like/dislike about it? Always love to hear feedback via twitter (click below).</p>
 
@@ -105,7 +105,7 @@
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/better-errors">i-hate-this<a>

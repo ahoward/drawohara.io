@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>geoNear queries with mongoid 3</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="geoNear queries with mongoid 3"/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"geo-near-queries-with-mongoid-3"}">
@@ -85,17 +85,17 @@
 
     <main>
       <div class="ro markdown">
-  <p>today i was rolling out some new search functionality and really needed the geoNear functionality of mongo</p>
+  <p>today i was rolling out some new search functionality and really needed the ‘geoNear’ functionality of mongo</p>
 
 <p>http://docs.mongodb.org/manual/reference/command/geoNear/</p>
 
-<p>unfortunately the mongoid (3) gem doesnt directly support it.</p>
+<p>unfortunately the mongoid (3) gem doesn’t directly support it.</p>
 
-<p>fortunately durrans (https://twitter.com/modetojoy) code is tight enough that a few moments of digging found the solution, and led to this actual code:</p>
+<p>fortunately durran’s (https://twitter.com/modetojoy) code is tight enough that a few moments of digging found the solution, and led to this actual code:</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #6e7781"># http://stackoverflow.com/questions/5319988/how-is-maxdistance-measured-in-mongodb</span>
-</div><div class='code-line code-line-3'><span style="color: #6e7781">#   1 latitude = 69.047 miles = 111.12 kilometers</span>
+</div><div class='code-line code-line-3'><span style="color: #6e7781">#   1° latitude = 69.047 miles = 111.12 kilometers</span>
 </div><div class='code-line code-line-4'><span style="color: #6e7781">#</span>
 </div><div class='code-line code-line-5'>
 </div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #953800">DEGREES_PER_MILE</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">1</span>&nbsp;<span style="color: #0550ae">/</span>&nbsp;<span style="color: #0550ae">69.047</span>
@@ -144,7 +144,7 @@
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/geo-near-queries-with-mongoid-3">i-hate-this<a>

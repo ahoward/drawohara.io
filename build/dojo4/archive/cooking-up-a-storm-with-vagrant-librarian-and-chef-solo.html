@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Cooking Up a Storm with Vagrant, Librarian and Chef-Solo</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="Cooking Up a Storm with Vagrant, Librarian and Chef-Solo"/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"cooking-up-a-storm-with-vagrant-librarian-and-chef-solo"}">
@@ -85,9 +85,9 @@
 
     <main>
       <div class="ro markdown">
-  <p>Its pretty easy to configure apache on a single system. It gets a little more interesting if you have multiple vhosts in the configuration. It gets even more fun when you have a complex configuration that includes proxying, URL rewriting and some text substitution.</p>
+  <p>It’s pretty easy to configure apache on a single system. It gets a little more interesting if you have multiple vhosts in the configuration. It gets even more fun when you have a complex configuration that includes proxying, URL rewriting and some text substitution.</p>
 
-<p>But still, nothing that an experience system administrator cant handle with a little care.</p>
+<p>But still, nothing that an experience system administrator can’t handle with a little care.</p>
 
 <p>Until, well, you have to do it again.</p>
 
@@ -95,7 +95,7 @@
 
 <p>Just like software, you still need to build and test the configuration that you are building. Your options to do so range from the really expensive (buy one or more servers), to the moderately expensive (run a few instances on EC2) to the really, really cheap. The really, really cheap option would be to build and test your recipies on virtual machine(s) running on your system. This is where <a href="http://www.vagrantup.com/">Vagrant</a> comes into play.</p>
 
-<p>Vagrant is a wrapper around Oracles <a href="https://www.virtualbox.org/">VirtualBox</a> desktop virtualization platform. Vagrants configuration revolves around a few simple concepts. You have a configuration file named <code>Vagrantfile</code> at the root of the project. That file holds some basic configuration such as what base box to use for the project and what ports to expose to the host system. And just as important, it can describe how to provision the virtual machine so it fits the needs of your project. While Vagrant supports both Puppet and Chef, I chose to use Chef-Solo to provision this project.</p>
+<p>Vagrant is a wrapper around Oracle’s <a href="https://www.virtualbox.org/">VirtualBox</a> desktop virtualization platform. Vagrant’s configuration revolves around a few simple concepts. You have a configuration file named <code>Vagrantfile</code> at the root of the project. That file holds some basic configuration such as what base box to use for the project and what ports to expose to the host system. And just as important, it can describe how to provision the virtual machine so it fits the needs of your project. While Vagrant supports both Puppet and Chef, I chose to use Chef-Solo to provision this project.</p>
 
 <p>Getting started with Vagrant is simple. The first step is simply to install the <code>vagrant</code> gem. Just like any other Ruby project, I chose to install <code>vagrant</code> and a few other gems through Bundler. Here is the resulting <code>Gemfile</code>:</p>
 
@@ -121,9 +121,9 @@
 
 <p>This achieves 2 things. First, it declares the name of the box we are going to build upon and where to find that box. A quick <code>vagrant up</code> will initially download the base box, import it into the project and boot up the VM. It takes a while to download the box, but it is cached on your system so you do not need to download it again. You can also reuse the same base box if you choose to do so on other projects. Calling <code>vagrant halt</code> stops the VM and calling <code>vagrant destroy</code>, well, destroys the VM itself.</p>
 
-<p>We still havent done much to provision our VM though. The next step is to tell Vagrant how to do so.</p>
+<p>We still haven’t done much to provision our VM though. The next step is to tell Vagrant how to do so.</p>
 
-<p><a href="https://github.com/applicationsonline/librarian">Librarian</a> is another nice gem in the lines of Bundler and CocoaPods that allows you to declare what Chef recipes you are using. In our case, a redacted copy of the projects <code>Cheffile</code> looks like so:</p>
+<p><a href="https://github.com/applicationsonline/librarian">Librarian</a> is another nice gem in the lines of Bundler and CocoaPods that allows you to declare what Chef recipes you are using. In our case, a redacted copy of the project’s <code>Cheffile</code> looks like so:</p>
 
 <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">#!/usr/bin/env ruby</span>
 </div><div class='code-line code-line-2'><span style="color: #6e7781">#^syntax detection</span>
@@ -221,7 +221,7 @@
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/cooking-up-a-storm-with-vagrant-librarian-and-chef-solo">i-hate-this<a>

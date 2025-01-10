@@ -1,46 +1,41 @@
 Site.for 'drawohara.io' do |site|
-# defaults
-#
-  layout = 'views/layout.erb'
-
-
 # home
 #
   site.route '/' do |route|
-    route.call do |request|
+    route.call do |ctx|
       page = Page.index
       data = page
-      request.render 'views/index.erb', layout:, data:
+      ctx.render 'views/index.erb', data:
     end
   end
 
 # ai
 #
   site.route '/ai' do |route|
-    route.call do |request|
-      request.render 'views/ai.erb', layout:
+    route.call do |ctx|
+      ctx.render 'views/ai.erb'
     end
   end
 
 # translations // langs
 #
   site.route '/langs' do |route|
-    route.call do |request|
+    route.call do |ctx|
       langs = site.dato.fetch(:langs)
       data = {langs:}
-      request.render 'views/langs.erb', layout:, data:
+      ctx.render 'views/langs.erb', data:
     end
   end
 
 # dojo4 archives
 #
   site.route '/dojo4/archive/:id' do |route|
-    route.call do |request|
-      id = request.params.fetch(:id)
+    route.call do |ctx|
+      id = ctx.params.fetch(:id)
       page = site.ro.get("dojo4/#{ id }")
 
       if page
-        request.render string: page.body.html_safe, layout:, data: page
+        ctx.render string: page.body.html_safe, data: page
       end
     end
 
@@ -50,35 +45,35 @@ Site.for 'drawohara.io' do |site|
   end
 
   site.route '/dojo4' do |route|
-    route.call do |request|
+    route.call do |ctx|
       posts = site.ro.dojo4.sort_by{|post| post.published_at}.reverse
       ara, dojo4 = posts.partition{|post| post.author == 'ara@dojo4.com'}
       data = {ara:, dojo4:}
-      request.render 'views/dojo4.erb', layout:, data:
+      ctx.render 'views/dojo4.erb', data:
     end
   end
 
 # big fat list of everything
 #
   site.route '/goto' do |route|
-    route.call do |request|
+    route.call do |ctx|
       urls = site.urls
       data = {urls:}
-      request.render 'views/goto.erb', layout:, data:
+      ctx.render 'views/goto.erb', data:
     end
   end
 
 # purls
 #
   site.route '/purls/:id' do |route|
-    route.call do |request|
-      id = request.params.fetch(:id)
+    route.call do |ctx|
+      id = ctx.params.fetch(:id)
 
       unless id =~ /^[0-9]$/
         purl = site.ro.purls.get(id)
 
         if purl
-          request.render 'views/purl.erb', layout:, data: purl
+          ctx.render 'views/purl.erb', data: purl
         end
       end
     end
@@ -89,24 +84,24 @@ Site.for 'drawohara.io' do |site|
   end
 
   site.route '/purls' do |route|
-    route.call do |request|
+    route.call do |ctx|
       purls = site.ro.purls
       data = {purls:}
-      request.render 'views/purls.erb', layout:, data:
+      ctx.render 'views/purls.erb', data:
     end
   end
 
 # top-level purls
 #
   site.route '/:id' do |route|
-    route.call do |request|
-      id = request.params[:id]
+    route.call do |ctx|
+      id = ctx.params[:id]
 
       if id =~ /^[0-9]$/
         purl = site.ro.purls.get(id)
 
         if purl
-          request.render 'views/purl.erb', data: purl
+          ctx.render 'views/purl.erb', data: purl
         end
       end
     end
@@ -119,12 +114,12 @@ Site.for 'drawohara.io' do |site|
 # top-level pages
 #
   site.route '/:id' do |route|
-    route.call do |request|
-      id = request.params.fetch(:id)
+    route.call do |ctx|
+      id = ctx.params.fetch(:id)
       page = site.ro.get("pages/#{ id }")
 
       if page
-        request.render string: page.body.html_safe, layout:, data: page
+        ctx.render string: page.body.html_safe, data: page
       end
     end
 
@@ -138,8 +133,8 @@ Site.for 'drawohara.io' do |site|
 # nested pages
 #
   site.route '**/**' do |route|
-    route.call do |request|
-      path_info = request.params.fetch(:path_info)
+    route.call do |ctx|
+      path_info = ctx.params.fetch(:path_info)
     end
 
     route.urls do

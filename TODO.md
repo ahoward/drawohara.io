@@ -1,22 +1,98 @@
 todo
 ----
 
-- /langs + Site.url_for
+- /now
+  - ro.page
+  - promote threat.ceo
 
-utf8 issues
+- /nonsequitur
+  - basic blog shit
+  - la fires
 
-- auto-translation!
-  - centralize lang config via site.data.langs, or similar
+- /nerd
+  - /one -> this site
+  - /map-dot-rb -> map.rb
 
 
-- nerd blog
+- site.helpers in context...
+
+- better ogs
+  - random but deterministic ogs
+    - md5sum url
+    - can i export og?
 
 - cv
 
+- ro/prototypes for content creation
 
 
 
+```ruby
+  require 'digest'
 
+  def md5_to_integer(input_string)
+    # 1. Calculate the MD5 hash
+    md5_hash = Digest::MD5.hexdigest(input_string)
+
+    # 2. Convert the hexadecimal hash to an integer.
+    #    We use base 16 (hexadecimal) for the conversion.
+    md5_integer = md5_hash.to_i(16)
+
+    return md5_integer
+  end
+
+  # Example usage:
+  test_string1 = "This is a test string."
+  test_string2 = "This is another test string."
+  test_string3 = "This is a test string." # Same as test_string1
+
+  integer1 = md5_to_integer(test_string1)
+  integer2 = md5_to_integer(test_string2)
+  integer3 = md5_to_integer(test_string3)
+
+  puts "String 1: #{test_string1}"
+  puts "MD5 Integer 1: #{integer1}"
+
+  puts "\nString 2: #{test_string2}"
+  puts "MD5 Integer 2: #{integer2}"
+
+  puts "\nString 3 (same as String 1): #{test_string3}"
+  puts "MD5 Integer 3: #{integer3}"
+
+  puts "\nAre integer1 and integer3 equal? #{integer1 == integer3}" # Should be
+  true
+
+  # Example demonstrating a potential issue with large integers
+  very_long_string = "a" * 10000 # create a very long string
+  long_string_int = md5_to_integer(very_long_string)
+  puts "\nVery Long String MD5 Integer: #{long_string_int}"
+  puts "Class of Integer: #{long_string_int.class}" # Bignum in Ruby if the
+  number is too big to fit in a Fixnum
+
+  puts "\nDemonstrating Modulo to get a smaller integer:"
+  smaller_int = md5_to_integer(test_string1) % 1000 # Modulo 1000 gets the last
+  3 digits in decimal
+  puts "Smaller Integer (modulo 1000): #{smaller_int}"
+
+  smaller_int_large_mod = md5_to_integer(very_long_string) % (2**32) # Modulo
+  2^32 to get a 32-bit integer
+  puts "Smaller Integer (modulo 2^32): #{smaller_int_large_mod}"
+  puts "Class of Smaller Integer (modulo 2^32): #{smaller_int_large_mod.class}"
+```
+
+- /now
+
+- /music
+
+
+- extract fabula
+  - site.url_for
+
+- utf8ify
+
+
+- auto-translation!
+  - centralize lang config via site.data.langs, or similar
 
 
 next

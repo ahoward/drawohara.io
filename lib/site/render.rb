@@ -1,4 +1,5 @@
 require 'map'
+
 require_relative 'eruby'
 require_relative 'html_safe'
 
@@ -6,7 +7,9 @@ module Render
   def render(template = nil, data: {}, binding: Kernel.binding, context: nil, layout: nil, file: nil, string: nil, &block)
     template = Render.template_for(template:, file:, string:)
 
-    data = Map.for(data)
+    if data.is_a?(Hash)
+      data = Map.for(data)
+    end
 
     erb = ERuby.new(template, trim_mode: '%<>')
     erb.filename = template.file
@@ -20,9 +23,7 @@ module Render
         erb.result(ctx)
       end
 
-    string = Render.utf8(result).strip
-
-    content = string.html_safe
+    content = result.to_s.strip.html_safe
 
     if layout
       if layout.is_a?(Hash)
@@ -52,18 +53,6 @@ module Render
     end
   end
 
-  def Render.utf8(string)
-    begin
-      string.to_s.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
-    rescue
-      begin
-        string.to_s.force_encoding('UTF-8')
-      rescue
-        string.to_s.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
-      end
-    end
-  end
-
   class Template < ::String
     attr_reader :file
 
@@ -72,4 +61,6 @@ module Render
       @file = file
     end
   end
+
+  extend Render
 end

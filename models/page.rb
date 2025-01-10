@@ -1,6 +1,6 @@
-require_relative '../lib/model.rb'
+require_relative '../config/boot.rb'
 
-class Page < Model
+class Page < Site::Model
   collection_name :pages
 
   def Page.index
@@ -20,11 +20,13 @@ class Page < Model
   end
 
   def top_level?
-    get(:path_info).nil? && id != 'index'
+    get(:path_info).nil? &&
+    id != 'index'
   end
 
   def other?
-    get(:path_info) && id != 'index'
+    get(:path_info) &&
+    id != 'index'
   end
 
   def url

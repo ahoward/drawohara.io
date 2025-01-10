@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Know Thy Forms</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="Know Thy Forms"/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"know-thy-forms"}">
@@ -154,7 +154,7 @@
 </div></code></div>
 
 <p>the goal of having people skim this completely broken html form was just to<br />
-see peoples line of thinking with this: the backbone of html interfaces</p>
+see people’s line of thinking with this: the backbone of html interfaces</p>
 
 <p>following are some sample answers, grouped roughly by category, and commentary on each of them</p>
 
@@ -163,7 +163,7 @@ see peoples line of thinking with this: the backbone of html interfaces</p>
 <hr />
 
 <ul>
-  <li>No doctype. It makes it difficult to figure out what flavor of HTML it is, which should lead to interesting responses</li>
+  <li>No doctype. It makes it difficult to figure out what flavor of HTML it is, which should lead to interesting responses…</li>
   <li>Mixes xhtml style empty tags with HTML tags.</li>
 </ul>
 
@@ -176,14 +176,14 @@ declaration.  what style of tags you may use depends entirely on the doctype.</p
 
 <ul>
   <li>line 1: DELETE is not an action supported in HTML forms:</li>
-  <li>method=delete isnt directly supported in most/any? browsers.o</li>
-  <li>forms dont support delete in older browsers</li>
+  <li>method=delete isn’t directly supported in most/any? browsers.o</li>
+  <li>forms don’t support delete in older browsers</li>
   <li>Method delete</li>
-  <li>form method=DELETE  thats not allowed</li>
+  <li>form method=’DELETE’ – that’s not allowed</li>
 </ul>
 
 <p>although we think about http verbs with client apis, including javascript.<br />
-for a majority of browsers you get GET and POST.   this is important if youve<br />
+for a majority of browsers you get GET and POST.   this is important if you’ve<br />
 been considering an xhtml based api.</p>
 
 <hr />
@@ -191,11 +191,11 @@ been considering an xhtml based api.</p>
 <hr />
 
 <ul>
-  <li>enctype=multipart/form-data not enctype=multipart/file-upload</li>
-  <li>enc-type=multipart/file-upload makes no sense if our intention is to DELETE</li>
+  <li>enctype=”multipart/form-data” not enctype=”multipart/file-upload”</li>
+  <li>enc-type=”multipart/file-upload makes no sense if our intention is to DELETE</li>
 </ul>
 
-<p>enctype bugs always waste a day.  get it wrong and youll waste the day<br />
+<p>enctype bugs always waste a day.  get it wrong and you’ll waste the day<br />
 posting the name of your file as a string, instead of the actual encoded file<br />
 contents.  also important to note is that the enctype merely dictates how the<br />
 form is encoded and is fully orthogonal to the http verb used.</p>
@@ -206,20 +206,20 @@ form is encoded and is fully orthogonal to the http verb used.</p>
 
 <ul>
   <li>text input tags in the first fieldset have the name</li>
-  <li>duplicate  tags. Or two tags with the same name again</li>
-  <li>2 text fields named tags only the last one will be used.</li>
-  <li>Two inputs with same tags name. Second one would overwrite value of 1st.</li>
-  <li>Two inputs with name foo (not self closed)</li>
+  <li>duplicate “” tags. Or two tags with the same name again</li>
+  <li>2 text fields named “tags” only the last one will be used.</li>
+  <li>Two inputs with same ‘tags’ name. Second one would overwrite value of 1st.</li>
+  <li>Two inputs with name ‘foo’ (not self closed)</li>
   <li>text inputs with the same name would override re: inputs w/ name tags</li>
-  <li>duplicate assignments to input name=tags</li>
-  <li>duplicate assignments to input name=vehicle</li>
+  <li>duplicate assignments to input name=’tags’</li>
+  <li>duplicate assignments to input name=’vehicle’</li>
 </ul>
 
-<p>lots of misperceptions on this one.  it is <em>totally legit</em> to post the same<br />
+<p>lot’s of misperceptions on this one.  it is <em>totally legit</em> to post the same<br />
 parameter &gt; 1 times in a form.  the spec supports it and even ancient cgi<br />
 support the notion of posting multiple values under the same key.  it is<br />
-merely convention that many controllers dump these into a hash where last in<br />
-wins</p>
+merely convention that many controllers dump these into a hash where ‘last in<br />
+wins’</p>
 
 <p>you can prove this easily to yourself.  post this from a form</p>
 
@@ -230,10 +230,10 @@ wins</p>
 </div><div class='code-line code-line-5'>&nbsp;&nbsp;
 </div></code></div>
 
-<p>and youll see the following in the browser console</p>
+<p>and you’ll see the following in the browser console</p>
 
 <p>&lt;img<br />
-style =max-height:420px; src=http://cl.ly/image/3I2Q2v0D1B1G/Screen%20Shot%202013-06-17%20at%204.09.23%20PM.png</p>
+style =’max-height:420px;’ src=’http://cl.ly/image/3I2Q2v0D1B1G/Screen%20Shot%202013-06-17%20at%204.09.23%20PM.png’</p>
 <blockquote>
 
 </blockquote>
@@ -299,10 +299,10 @@ style =max-height:420px; src=http://cl.ly/image/3I2Q2v0D1B1G/Screen%20Shot%20201
 <h4 id="tldr">TL:DR;</h4>
 
 <p>your web stack may drop multiple values on the floor by loading a hash,<br />
-but rubys cgi.rb library, and http generally does <em>not</em>.  this applies to<br />
+but ruby’s cgi.rb library, and http generally does <em>not</em>.  this applies to<br />
 inputs, checkboxen, etc - anything with name can pass multiple values.</p>
 
-<p>in particular rubys cgi.rb does <em>not</em> limit posting multiple values under a key</p>
+<p>in particular ruby’s cgi.rb does <em>not</em> limit posting multiple values under a key</p>
 
 <p>while rails <em>does</em></p>
 
@@ -311,11 +311,11 @@ inputs, checkboxen, etc - anything with name can pass multiple values.</p>
 <hr />
 
 <ul>
-  <li>No for on the Bar: label.</li>
-  <li>unbound label: <label>Bar:</label> (label for what?)</li>
+  <li>No for on the ‘Bar:’ label.</li>
+  <li>unbound label: <label>Bar:…</label> (label for what?)</li>
 </ul>
 
-<p>labels without a for are <em>totally legit</em>.  when you wrap an input with a label the for is implied as being the contained input. these are equivalent</p>
+<p>labels without a for are <em>totally legit</em>.  when you wrap an input with a label the ‘for’ is implied as being the contained input. these are equivalent</p>
 
 <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'><span style="color: #116329">&lt;label</span>&nbsp;<span style="color: #116329">for=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>Foo<span style="color: #116329">&lt;/label&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>
@@ -325,7 +325,7 @@ inputs, checkboxen, etc - anything with name can pass multiple values.</p>
 </div><div class='code-line code-line-6'>
 </div></code></div>
 
-<p>with the former being <em>much</em> simpler to deal with in js ( $label.find(input) )</p>
+<p>with the former being <em>much</em> simpler to deal with in js ( $label.find(‘input’) )</p>
 
 <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">$label</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">find</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">input</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
@@ -382,13 +382,13 @@ quoted/non-quoted and valued/non-valued permutations</p>
 <hr />
 
 <ul>
-  <li>action=./ seems like bad practice to me</li>
-  <li>form action is invalid as a unix filepath descriptor  to submit to the current url remove the action entirely as that is the default</li>
+  <li>action=”./” seems like bad practice to me</li>
+  <li>form action is invalid as a unix filepath descriptor – to submit to the current url remove the action entirely as that is the default</li>
 </ul>
 
 <p>relative actions are not only totally legit, but useful.  consider a login form<br />
-used both for general users under /login thats also used under /admin/login:<br />
-in this case it may be quite useful for a form to post back relative to its<br />
+used both for general users under /login that’s also used under /admin/login:<br />
+in this case it may be quite useful for a form to post back relative to it’s<br />
 controller</p>
 
 <hr />
@@ -396,8 +396,8 @@ controller</p>
 <hr />
 
 <ul>
-  <li>file upload cant have a value attribute (bad security)</li>
-  <li>file inputs dont take default values  user must select</li>
+  <li>file upload can’t have a value attribute (bad security)</li>
+  <li>file inputs don’t take default values – user must select</li>
   <li>it automatically selects your ~/.bashrc file for upload</li>
 </ul>
 
@@ -411,29 +411,29 @@ controller</p>
   <li>improper password input declaration</li>
   <li>No type on the password field (nor on email field, but less important there)</li>
   <li>password input should be of type password</li>
-  <li>should be input type=email name=email</li>
+  <li>should be input type=’email’ name=’email’</li>
 </ul>
 
 <p>yup, gotta have the correct type on those inputs to mask passwords, pop up<br />
 email keyboard, all sorts of goodies.  html5 introduces many new types.  now<br />
-em!</p>
+‘em!</p>
 
 <hr />
 <h3 id="radioselectoptionscheckboxes-are-teh-hardz">radio/select/options/checkboxes are teh hardz</h3>
 <hr />
 
 <ul>
-  <li>No text for female option, nor radio button for Sex radio buttons, radio buttons not setup properly for value submission / toggle in group. Its just all bad in that area.</li>
-  <li>fieldset sex radio buttons are not constructed correctly. should be Male  tags are used with select lists not radio buttons. All radio buttons in a group need the same name attribute</li>
-  <li>radio inputs dont take options, but should instead have the same name w/ different values</li>
+  <li>No text for female option, nor radio button for ‘Sex’ radio buttons, radio buttons not setup properly for value submission / toggle in group. Its just all bad in that area.</li>
+  <li>fieldset “sex” radio buttons are not constructed correctly. should be Male – tags are used with select lists not radio buttons. All radio buttons in a group need the same name attribute</li>
+  <li>radio inputs don’t take options, but should instead have the same name w/ different values</li>
   <li>checkboxes with the same name would override re: checkbox inputs w/ name vehicle</li>
 </ul>
 
 <p>checkboxes pass values <em>only if</em> the box is checked and, like other form<br />
-elements, case easily pass in multiple values under the same name.  its only<br />
-because rails stuff them into a hash that this appears not to be true.</p>
+elements, case easily pass in multiple values under the same name.  it’s only<br />
+because rails’ stuff them into a hash that this appears not to be true.</p>
 
-<p>in general, dont rely on helpers to generate the correct html for you. learn<br />
+<p>in general, don’t rely on helpers to generate the correct html for you. learn<br />
 how radio buttons, checkboxen, and selects work under the hood.</p>
 
 <hr />
@@ -452,7 +452,7 @@ how radio buttons, checkboxen, and selects work under the hood.</p>
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/know-thy-forms">i-hate-this<a>

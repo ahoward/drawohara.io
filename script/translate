@@ -124,16 +124,17 @@ private
   def iso_639_1
     @iso_639_1
   end
-end
-
-BEGIN {
-  require_relative '../lib/script.rb'
-  require_relative '../config/boot.rb'
-  require_relative '../lib/ai.rb'
 
   def site
     Site.only
   end
+end
 
+BEGIN {
   Dir.chdir(File.dirname(__dir__))
+
+  require_relative '../lib/script.rb'
+  require_relative '../config/boot.rb'
+
+  require_relative '../lib/ai.rb'
 }

@@ -1,7 +1,7 @@
-stolen_from_activesupport =
+$STEAL_VERBATIM_FROM_ACTIVESUPPORT =
   (not defined?(ActiveSupport::SafeBuffer))
 
-if stolen_from_activesupport
+if $STEAL_VERBATIM_FROM_ACTIVESUPPORT
 
   class Object
     def html_safe?
@@ -141,10 +141,4 @@ if stolen_from_activesupport
     end
   end
 
-end
-
-class Numeric
-  def html_safe
-    to_s.html_safe
-  end
 end

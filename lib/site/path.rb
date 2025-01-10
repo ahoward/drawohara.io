@@ -174,6 +174,10 @@ class Path < ::String
     IO.binwrite(self, data)
   end
 
+  def binread(data)
+    IO.binread(self)
+  end
+
   def sibling?(other)
     expand.dirname == Path.for(other).expand.dirname
   end

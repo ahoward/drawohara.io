@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Using redis with sensitive information</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="Using redis with sensitive information"/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"using-redis-with-sensitive-information"}">
@@ -87,29 +87,29 @@
       <div class="ro markdown">
   <p><strong>Update:</strong> Redis creator <a href="https://github.com/antirez">Salvatore Sanfilippo</a> responded to my pull request documenting this method of disabling <code>bgsave</code> with <a href="https://github.com/antirez/redis/pull/1683#issuecomment-41163718">this comment</a>. Since he agrees there should be a community design process around supporting the disabling of persistence in redis, I added a <a href="https://github.com/antirez/redis/issues/1704">new issue</a> to allow that discussion to happen. Looking forward to seeing the design process and being a part of it.</p>
 
-<p><strong>Update:</strong> Initial work on officially supporting a disable persistence configuration has begun by <a href="https://twitter.com/mattsta">Matt Stancliff</a>. See Matts work <a href="https://github.com/antirez/redis/issues/1704#issuecomment-42575432">here</a>. This is awesome to see. Thanks Matt!</p>
+<p><strong>Update:</strong> Initial work on officially supporting a ‘disable persistence’ configuration has begun by <a href="https://twitter.com/mattsta">Matt Stancliff</a>. See Matt’s work <a href="https://github.com/antirez/redis/issues/1704#issuecomment-42575432">here</a>. This is awesome to see. Thanks Matt!</p>
 
-<p>I spent hours researching and scheming on how to prevent <a href="redis.io">redis</a> from writing any database values to disk, since the redis instance will be handling sensitive information. (In our case were storing cvvs for 60 minutes and due to PCI compliance regarding credit card usage, absolutely cannot write these values to disk - ever.)</p>
+<p>I spent hours researching and scheming on how to prevent <a href="redis.io">redis</a> from writing any database values to disk, since the redis instance will be handling sensitive information. (In our case we’re storing cvv’s for 60 minutes and due to PCI compliance regarding credit card usage, absolutely cannot write these values to disk - ever.)</p>
 
 <p>Read the docs, the config file, googled, tested, and even tried telling it to write to <code>/dev/null</code>.</p>
 
-<p>Finally the answer came from TheRealBill_here on the <code>#redis</code> irc channel:</p>
+<p>Finally the answer came from ‘TheRealBill_here’ on the <code>#redis</code> irc channel:</p>
 
 <pre><code>dbfilename ""
 </code></pre>
 
 <p>in the config file.</p>
 
-<p>Heres <a href="http://irclogger.com/.redis/2014-04-14#1397514047">a link to our whole conversation</a> if youre interested.</p>
+<p>Here’s <a href="http://irclogger.com/.redis/2014-04-14#1397514047">a link to our whole conversation</a> if you’re interested.</p>
 
 <p>I also submitted <a href="https://github.com/antirez/redis/pull/1683">a pull request</a> to add a note in the config file for redis.</p>
 
 <p>This answer came to me after I had already made a couple of other decisions about configuring redis to store credit card information:</p>
 
 <ul>
-  <li><code>loglevel</code> has a default of info, which wont print each read/write, so were good there. Although for our use case we would probably feel comfortable just disabling logging altogether.</li>
+  <li><code>loglevel</code> has a default of info, which won’t print each read/write, so we’re good there. Although for our use case we would probably feel comfortable just disabling logging altogether.</li>
   <li><code>save</code> directive is set at <code>save ""</code> so that snapshotting is definitely disabled.</li>
-  <li><code>replication</code> not in play. When using replication, the master initializes a slave by writing its own database contents to disk, sending the slave that file, and the slave loading the database dump into its database. Obviously, we cant do that. (Also note that if we did add a slave at some point, it wouldnt be able to sync with our current config of <code>dbfilename ""</code>. See the log for the error when you call <code>bgsave</code> from <code>redis-cli</code> yourself.)</li>
+  <li><code>replication</code> not in play. When using replication, the master initializes a slave by writing its own database contents to disk, sending the slave that file, and the slave loading the database dump into its database. Obviously, we can’t do that. (Also note that if we did add a slave at some point, it wouldn’t be able to sync with our current config of <code>dbfilename ""</code>. See the log for the error when you call <code>bgsave</code> from <code>redis-cli</code> yourself.)</li>
 </ul>
 
 </div>
@@ -121,7 +121,7 @@
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/using-redis-with-sensitive-information">i-hate-this<a>

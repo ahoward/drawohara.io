@@ -1,10 +1,11 @@
 require 'erb'
+
 require_relative 'html_safe'
 
 class ERuby < ERB
   def ERuby.escape_iff_needed(content)
     if content.html_safe?
-      content
+      content.to_s
     else
       ::ERB::Util.html_escape(content)
     end

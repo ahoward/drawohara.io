@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Resque best practices.</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="Resque best practices."/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"resque-best-practices"}">
@@ -128,7 +128,7 @@ is our base job class.</p>
 
 <p>As you can probably see, this class (which could easily be ported to ActiveRecord) allows submission of arbitrary jobs,<br />
 mailer or otherwise, and each job leaves a turd in the main database that ties<br />
-it to the resque/redis entry.  It makes working with jobs objects extremely natural  - for instance having a polling loop check the status of a particular job by id, or getting a quick count of how may jobs have succeeded in the last week.  It also keeps our resque install super vanilla - we dont use any plugins - and makes it possible to drop in another background processing system in a matter of minutes.<br />
+it to the resque/redis entry.  It makes working with jobs objects extremely natural  - for instance having a polling loop check the status of a particular job by id, or getting a quick count of how may jobs have succeeded in the last week.  It also keeps our resque install super vanilla - we don’t use any plugins - and makes it possible to drop in another background processing system in a matter of minutes.<br />
 About the only management it needs is a periodic task to to clean out the job<br />
 collection/table.  We use whenever( https://github.com/javan/whenever/ ) plus a rake<br />
 task to accomplish this:</p>
@@ -166,7 +166,7 @@ task to accomplish this:</p>
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/resque-best-practices">i-hate-this<a>

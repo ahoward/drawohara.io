@@ -158,8 +158,8 @@ end
 
 
 BEGIN {
-  Dir.chdir(File.dirname(File.dirname(__FILE__)))
+  Dir.chdir(File.dirname(__dir__))
 
   require './lib/script.rb'
-  require './lib/boot.rb'
+  require './config/boot.rb'
 }

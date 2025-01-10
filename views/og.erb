@@ -3,19 +3,21 @@
   title       = '@drawohara'
   description = 'my insides are made out of outside. i bite.'
   image       = 'https://drawohara.io/media/mick.jpg'
+  width       = nil
+  type        = nil
 
-  if data
+  if data && data.is_a?(Map)
     title       = data.get(:og, :title) || data.get(:title) || 'nothing to see here.'
     description = data.get(:og, :description) || data.get(:description) || 'move along.'
     image       = data.get(:og, :image, :url) || data.get(:og, :image) || data.get(:image) || image
+
+    width = data.get(:og, :image, :width).to_s rescue nil
+    type = data.get(:og, :image, :type).to_s rescue nil
   end
 
   absolutify = proc{|url| url.index('://') ? url : "#{ site }#{ ('/' + url).squeeze('/') }"}
 
   img = absolutify[image]
-
-  width = data.get(:og, :image, :width).to_s rescue nil
-  type = data.get(:og, :image, :type).to_s rescue nil
 
   unless type
     ext = img.split('.', 2).last
@@ -42,9 +44,11 @@
 <meta property="og:title" content="<%= title %>"/>
 <meta property="og:description" content="<%= description %>" />
 <meta property="og:image" content="<%= image.url %>" />
+
 <% if image.width %>
   <meta property="og:image:width" content="<%= image.width %>" />
 <% end %>
+
 <% if image.type %>
   <meta property="og:image:type" content="<%= image.type %>" />
 <% end %>

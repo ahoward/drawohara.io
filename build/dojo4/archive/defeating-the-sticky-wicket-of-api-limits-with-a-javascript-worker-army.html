@@ -39,16 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>defeating the sticky wicket of api limits with a javascript worker army</title>
+    <title>@drawohara</title>
 
-<meta property="og:title" content="defeating the sticky wicket of api limits with a javascript worker army"/>
-<meta property="og:description" content="move along." />
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="my insides are made out of outside. i bite." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:width" content="" />
 
 
-  <meta property="og:image:type" content="" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army"}">
@@ -89,10 +89,10 @@
 
 <p>when you have <em>way</em> too much work to do on the server with respect to api limits</p>
 
-<p>hand some work of to your clients browsers to perform - shipping the results back to your database</p>
+<p>hand some work of to your client’s browsers to perform - shipping the results back to your database</p>
 
 <h2 id="the-problem">the problem</h2>
-<p>last week i was dealing with (g-provider) api limits and too many geolocation requests coming from a server(s).  i worked at that a bit, doing things in the background, with periodic retries - you know: the standard stuff</p>
+<p>last week i was dealing with (g-provider) api limits and too many geolocation requests coming from a server(s).  i worked at that a bit, doing things in the background, with periodic retries - you know: the standard stuff…</p>
 
 <p>the api in question is throttled by ip, and the docs recommend taking advantage of this by doing most api calls client side - in js.</p>
 
@@ -260,11 +260,11 @@
 </div><div class='code-line code-line-38'>
 </div></code></div>
 
-<p>this model lets us hand a job off to a client and, if they do not respond in a certain time, assume another client can run the job.</p>
+<p>this model let’s us hand a job off to a client and, if they do not respond in a certain time, assume another client can run the job.</p>
 
 <p>aka. jobs are considered to be both idempotent and stateless.</p>
 
-<p>here is an example of job, one that performs a geolocation lookup in the clients browser and then ships it back to the server</p>
+<p>here is an example of job, one that performs a geolocation lookup in the client’s browser and then ships it back to the server</p>
 
 <div class="language-erb highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
 </div><div class='code-line code-line-2'>//&nbsp;performs&nbsp;a&nbsp;geolocation&nbsp;lookup&nbsp;on&nbsp;the&nbsp;google&nbsp;maps&nbsp;api&nbsp;and&nbsp;ships&nbsp;it&nbsp;back&nbsp;to&nbsp;the&nbsp;server
@@ -339,7 +339,7 @@ on our behalf.</p>
 <blockquote>
 <ul>
   <li>
-    <a href="/about">about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
     <a href="mailto:i-hate-this@drawohara.io?subject=/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army">i-hate-this<a>
