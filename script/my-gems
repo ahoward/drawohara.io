@@ -33,4 +33,4 @@ end
 
 puts JSON.parse(report.to_json).to_yaml
 
-# gsub(/\B(?=(...)*\b)/, ',')
+# fmt_number = '1,000,000'.gsub(/\B(?=(...)*\b)/, ',')

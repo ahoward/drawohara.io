@@ -2,8 +2,16 @@
   fmt = proc{|n| n.to_s.gsub(/\B(?=(...)*\b)/, ',')}
   rubygems = site.dato.fetch(:rubygems)
   gems = rubygems.fetch(:gems)
-
   total = gems.map{|g| g.fetch(:downloads)}.sum
+
+  title = 'lotta rubygems'
+  description = 'like a tall, code whacking giraffe 🦒'
+  image = '/media/giraffe.jpeg'
+
+  exports[:og] = render(
+    'views/og.erb',
+     data:{title:, description:, image:}
+  )
 %>
 
 <p>

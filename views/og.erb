@@ -11,8 +11,8 @@
     description = data.get(:og, :description) || data.get(:description) || 'move along.'
     image       = data.get(:og, :image, :url) || data.get(:og, :image) || data.get(:image) || image
 
-    width = data.get(:og, :image, :width).to_s rescue nil
-    type = data.get(:og, :image, :type).to_s rescue nil
+    width = data.get(:og, :image, :width) rescue nil
+    type = data.get(:og, :image, :type) rescue nil
   end
 
   absolutify = proc{|url| url.index('://') ? url : "#{ site }#{ ('/' + url).squeeze('/') }"}
