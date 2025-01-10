@@ -20,40 +20,11 @@ i'll start at the beginning:
 
 this site is _absolutely_ a work in progress..., so check back soon or just <a href="contact">contact</a> me if you are a-wondering _wtf_ is up?
 
-the latest tidbit i have been making additions to, is the _[nerd blog!](/nerd)_
-
 > bored: 🐼 ?
 
-[iff](https://letmegooglethat.com/?q=what+does+iff+mean) you are so inclined, you can follow along here ->
+[iff](https://letmegooglethat.com/?q=what+does+iff+mean) you are so inclined, you can follow along with the madness here ->
 
 - <a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward/drawohara.io</a>
 - here <a href="https://bsky.app/profile/drawohara.io">https://bsky.app/profile/drawohara.io</a>
 - or here -> <a href="https://www.instagram.com/drawohara">https://www.instagram.com/drawohara</a>
 - or even here (ssssshhhhhhh) -> <a href="https://syntheticecho.com">https://syntheticecho.com</a>
-
-> wut even is _that ^_ ? and, *"why are you so weird"*
-
-well, i get that question often from mean people spell better than i can (dislexic: esp. when tired) but i will answer anyhow...   i've been working on a secret ai based project for close to a year, with some good friends from boulder.  we bring the social context - the voice of the people - to ai.
-
-> E.M.F.D.Y.S.I !?!?!
-![english mother fucker do you speak it!?](./assets/speak-english-pulp-fiction.gif)
-
-here's a teeny example of what we're doing.  more soon!
-
-<a href="/purl/public-sentiment-towards-the-fortune-500-in-america">/purl/public-sentiment-towards-the-fortune-500-in-america</a>
-
-> i still dont' get it, and seem to be in imminent danger of giving democracy
-> away on facebook, along with my entire existance and that of the human race.
-> please explain.
-
-^that result, was informed by an analysis of over *one million* relevant and highly regraded social media converstaions.  those conversations were analyzed for thematic trends around feelings towards the fortune 500, in general.  you will note that, unlike openai, google's gemini, anthropic, or *ai flavour of the day*, these results are informed by _real_ conversations and, those conversations are included as citations.
-
-at present, i am working to develop and individual threat index for each individual company, also informed by millions of relevant and specific conversations.  reach out iff this is intriguing.
-
-a side note to consider and understand, and i will be writing much, much more about this in the coming weeks, but this analysis is _not_ informed by big tech, seo ladden websites that provide the fodder that foundational models plan to use in order to turn you, my dear reader, into a 🐑, that does not know reality from double-speak, leading you to the 🐺's.  the goal of this work is to bring _what people think_, vs. _what seo experts publish_ , to bear on the questions we ask these fancy new robots.
-
-in the coming week i'll have a public demo and api available (developers, please reach out).
-
-> what is wrong with you!?
-
-_sigh..._
