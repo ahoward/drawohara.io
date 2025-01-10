@@ -1,10 +1,6 @@
 todo
 ----
 
-- /now
-  - ro.page
-  - promote threat.ceo
-
 - /nonsequitur
   - basic blog shit
   - la fires
@@ -194,6 +190,9 @@ next
 
 done
 ----
+- /now
+  - ro.page
+  - promote threat.ceo
 - purls...
 - a model layer
   - Page.home

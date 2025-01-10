@@ -35,6 +35,10 @@ script do
     exec './script/translate'
   end
 
+  run :server do
+    exec './script/server'
+  end
+
   def site
     Site.only
   end

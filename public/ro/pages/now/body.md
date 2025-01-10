@@ -16,7 +16,7 @@
 
 here's a teeny example of what i mean.  more soon!
 
-[-->> Public Sentiment Towards The Fortune 500 In America](/purl/public-sentiment-towards-the-fortune-500-in-america)
+[-->> Public Sentiment Towards The Fortune 500 In America](/purls/public-sentiment-towards-the-fortune-500-in-america)
 
 soon, i will have a threat index compiled for the entire fortune 500.  basically, love and hate metrics for each company.
 
