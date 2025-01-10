@@ -17,6 +17,14 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
+# rubygems
+#
+  site.route '/rubygems' do |route|
+    route.call do |ctx|
+      ctx.render 'views/rubygems.erb'
+    end
+  end
+
 # translations // langs
 #
   site.route '/langs' do |route|

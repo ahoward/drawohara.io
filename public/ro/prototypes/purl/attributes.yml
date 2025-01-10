@@ -1,0 +1,8 @@
+url: https://todo.com
+og:
+  title: 'Teh Title'
+  description: >-
+    So much, so many
+  image:
+    url: ./assets/free-luigi.jpg
+    width: 1024

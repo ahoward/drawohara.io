@@ -1,9 +1,24 @@
 todo
 ----
 
+- /rubygems
+
+
+- site.helpers -> Context
+  - fmt
+
+- mygems
+  - https://rubygems.org/dashboard
+  - gem search --remote "^.*$" --details | tee gem-details.oe
+
+- site.url
+
+- prototypes
+
 - /nonsequitur
   - basic blog shit
   - la fires
+  - https://docs.google.com/document/d/1XHMOcsVu-PPPsAzao0hXKEBp_vL7AbdqC4PpuYJHm1w/edit?tab=t.0
 
 - /nerd
   - /one -> this site

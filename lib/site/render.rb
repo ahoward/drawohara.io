@@ -23,7 +23,7 @@ module Render
         erb.result(ctx)
       end
 
-    content = result.to_s.strip.html_safe
+    content = result.to_s.strip.force_encoding('UTF-8').html_safe
 
     if layout
       if layout.is_a?(Hash)

@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'json'
+
+Dir.chdir(File.dirname(__dir__))
+
+report = {
+  gems: [],
+  total: {gems: 0, downloads: 0}
+}
+
+html = IO.binread('./keep/my-gems.html')
+
+name, number = nil, nil
+
+html.each_line do |line|
+  name ||= (line.match(%r`<h4 class="text-b1 flex">(.*)</h4>`) || [])[1]
+  downloads ||= (line.match(%r`Total downloads: ([,0-9]+)`) || [])[1]
+
+  if name and downloads
+    url = "https://rubygems.org/gems/#{ name }"
+    downloads = downloads.delete(',').to_i
+    report[:gems].push(name:, url:, downloads:)
+    name, downloads = nil, nil
+  end
+end
+
+report[:gems].each do |g|
+  report[:total][:gems] += 1
+  report[:total][:downloads] += g[:downloads]
+end
+
+puts JSON.parse(report.to_json).to_yaml
+
+# gsub(/\B(?=(...)*\b)/, ',')
