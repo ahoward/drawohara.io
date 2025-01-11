@@ -53,7 +53,7 @@ private
     @noop = params.has_key?(:noop)
 
     @build_dir = Path.for(params.fetch(:build_dir){ './build' })
-    @lang_dir = Path.for(params.fetch(:lang_dir){ './lang' })
+    @lang_dir = Path.for(params.fetch(:lang_dir){ './tmp/lang' })
   end
 
   def translate!(lang:, name:, src:, dst:)

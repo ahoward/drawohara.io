@@ -1,6 +1,3 @@
-/now
-----
-
 - nursing a broken leg, etc., in L.A. with a [very nice witch](https://photos.app.goo.gl/MpSigk5BJwqeouiUA)
 
 - the air isn't too good [due to the fires](https://photos.app.goo.gl/Kjipk8eKT88CtSRSA) but we are surviving, better than some 💙
@@ -20,7 +17,7 @@ here's a teeny example of what i mean.
 
 [🪓 💣 🤬 Public Sentiment Towards The Fortune 500 In America](/purls/public-sentiment-towards-the-fortune-500-in-america)
 
-this is teeny example of using the *public voice*, combined with AI, to get better insight into the world.
+this is example of using the *public voice*, combined with AI, to get better insight into the world.
 
 [reach out](/contact) if you want an invite to our forthcoming _beta_, due _annnnnnny_ day now
 

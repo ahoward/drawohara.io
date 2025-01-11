@@ -59,10 +59,10 @@ class Route
     attr_reader :path_info
     attr_reader :site
     attr_reader :exports
-    attr_reader :h
 
-    def initialize(route:, params:, &block)
+    def initialize(route:, params:, data: {}, &block)
       @ctx = self
+      @block = block
 
       @route = route
       @params = params
@@ -70,14 +70,19 @@ class Route
       @path_info = @route.url_for(params)
       @site = @route.site
 
-      @block = block
-
       @exports = {}
 
       @renderno = 0
+      @stack = [{data: Map.for(data)}]
+    end
+
+    def call(&block)
+      @block.call(self)
     end
 
     def render(*args, **kws, &block)
+      kws[:context] = self
+
       @renderno += 1
 
       if @renderno == 1
@@ -87,8 +92,16 @@ class Route
       super(*args, **kws, &block)
     end
 
-    def call(&block)
-      @block.call(self)
+    def push(data:)
+      @stack.push(data: Map.for(data))
+    end
+
+    def pop
+      @stack.pop
+    end
+
+    def data
+      @stack.last.fetch(:data)
     end
 
     def h(...)

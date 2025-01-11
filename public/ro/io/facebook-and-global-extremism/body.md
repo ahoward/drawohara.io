@@ -1,3 +1,5 @@
+today i reviewed a million reddit posts to understand society's feeling around facebook's newly announced content moderation plan.  i did it using a new tool i've been working on, that brings the *real social conversations* to AI.
+
 recently, there has been a lot of noise about facebook (meta) and its [abandonment of 'fact-checkers'](https://www.theverge.com/2025/1/7/24338127/meta-end-fact-checking-misinformation-zuckerberg).
 
 in lieu of favoring pure community moderation (a-ka self-moderated echo-chambre).
@@ -22,7 +24,7 @@ but, rather, on
 
 [we](https://syntheticecho.com) use this type of analysis for research purposes.  it was in this context that i decided to spent a 1/2 hour using the very same technology i am building to peform a survey, of *over a million voices*, to see how deeply society truly understands, what i consider to be, the real and present danger of such wanton and unregulated capitlism.
 
-again, please consider that i abore large goverments, and rules in general - with passion...  but, i try to care about, and study people.  even as they wreak havoc on the planet and many beings smaller, and more helpless, than [hairless monkeys](https://open.spotify.com/track/6VliewH4TM7jVPXH3e1aVj?si=99baf6fd986b40ae).
+again, please consider that i abhor large goverments, and rules in general - with passion...  but, i try to care about, and study people.  even as they wreak havoc on the planet and many beings smaller, and more helpless, than [hairless monkeys](https://open.spotify.com/track/6VliewH4TM7jVPXH3e1aVj?si=99baf6fd986b40ae).
 
 my study was aimed, specifically, at understanding the deepest dangers of big technology, and unregulated echo chambres:
 
@@ -120,7 +122,7 @@ without further gibberish, i outline my methodology, and my results.  any/all qu
    - **Confidence Score:** 8/10
    - **Rationale:** The responses are based on detailed information provided in the context, which outlines Facebook/Meta's role in facilitating global extremism, ethnic cleansing, and human trafficking. The context also discusses the measures Facebook has taken to combat extremism and the criticisms it has faced. Therefore, the answers are well-supported by the provided context.
 
-### @SE( https://syntheticecho.com ) - REFS (aka the social context that informed ^these^ answers).
+### @SE( https://syntheticecho.com ) - REFS (aka the *ACTUAL* social conversations that informed ^these^ answers).
 
 - [https://www.reddit.com/r/science/comments/1awgivo/aigenerated_propaganda_is_just_as_persuasive_as/krh9b6o/](https://www.reddit.com/r/science/comments/1awgivo/aigenerated_propaganda_is_just_as_persuasive_as/krh9b6o/)
 - [https://www.reddit.com/r/science/comments/1bfiw48/a_new_study_shows_that_people_are_likely_to/kv0xj8t/](https://www.reddit.com/r/science/comments/1bfiw48/a_new_study_shows_that_people_are_likely_to/kv0xj8t/)

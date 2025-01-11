@@ -90,7 +90,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = site.urls
+      urls = site.urls#.select{|url| url.scan(%r`/`).size == 1} - %w[ / /goto ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
     end

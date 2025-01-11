@@ -15,12 +15,17 @@ module Render
     erb.filename = template.file
 
     result =
-      if context.respond_to?(:to_hash)
-        hash = context.to_hash
-        erb.result_with_hash(hash)
+      if context
+        binding = context ? context.instance_eval{ binding } : binding
+        context.push(data:)
+
+        begin
+          erb.result(binding)
+        ensure
+          context.pop
+        end
       else
-        ctx = context ? context.instance_eval{ binding } : binding
-        erb.result(ctx)
+        erb.result_with_hash(data)
       end
 
     content = result.to_s.strip.force_encoding('UTF-8').html_safe
