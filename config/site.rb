@@ -1,5 +1,5 @@
 Site.for 'drawohara.io' do |site|
-# home
+# /home
 #
   site.route '/' do |route|
     route.call do |ctx|
@@ -9,7 +9,7 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
-# ai
+# /ai
 #
   site.route '/ai' do |route|
     route.call do |ctx|
@@ -17,7 +17,7 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
-# rubygems
+# /rubygems
 #
   site.route '/rubygems' do |route|
     route.call do |ctx|
@@ -25,7 +25,7 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
-# translations // langs
+# /langs
 #
   site.route '/langs' do |route|
     route.call do |ctx|
@@ -35,7 +35,7 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
-# io archives
+# /io
 #
   site.route '/io/:id' do |route|
     route.call do |ctx|
@@ -57,6 +57,14 @@ Site.for 'drawohara.io' do |site|
       index = site.ro.io
       data = {index:}
       ctx.render 'views/io.erb', data:
+    end
+  end
+
+# /nerd
+#
+  site.route '/nerd' do |route|
+    route.call do |ctx|
+      ctx.render string: 'coming soon! 🤓'
     end
   end
 
@@ -86,13 +94,23 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
-# big fat list of everything
+# /goto
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = site.urls#.select{|url| url.scan(%r`/`).size == 1} - %w[ / /goto ]
+      urls = %w[ /now /about /io /nerd /contact /purls /langs /dojo4 /sitemap /home ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
+    end
+  end
+
+# /sitemap
+#
+  site.route '/sitemap' do |route|
+    route.call do |ctx|
+      urls = site.urls
+      data = {urls:}
+      ctx.render 'views/sitemap.erb', data:
     end
   end
 

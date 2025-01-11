@@ -15,9 +15,11 @@
 
 here's a teeny example of what i mean.
 
-[🪓 💣 🤬 Public Sentiment Towards The Fortune 500 In America](/purls/public-sentiment-towards-the-fortune-500-in-america)
+[🪓 💣 🤬 public sentiment towards the fortune 500 in america](/purls/public-sentiment-towards-the-fortune-500-in-america)
 
 this is example of using the *public voice*, combined with AI, to get better insight into the world.
+
+another application, was using the same approach to analyze [facebooks role in global extremism](/io/facebook-and-global-extremism).
 
 [reach out](/contact) if you want an invite to our forthcoming _beta_, due _annnnnnny_ day now
 

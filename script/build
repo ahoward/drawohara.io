@@ -96,6 +96,28 @@ script do
       block.call(url:, file:) if block
     end
 
+    build_sitemap = proc do |urls|
+      base = 'https://drawohara.io'
+      langs = @site.dato.fetch(:langs)
+
+      links = []
+
+      urls.each do |url|
+        cannonical = base + url
+        links.push(cannonical)
+
+        langs.each do |lang|
+          translation = "#{ base }/langs/#{ lang }" + url
+          links.push(translation)
+        end
+      end
+
+      sitemap = links.join("\n")
+
+      path = File.join(dir, 'sitemap.txt')
+      binwrite!(path, sitemap)
+    end
+
     a = Time.now.to_f
     urls = @site.urls.uniq
     n = urls.size
@@ -113,6 +135,8 @@ script do
         build[url]
       end
     end
+
+    build_sitemap[urls]
 
     b = Time.now.to_f
     e = (b - a).round(2)

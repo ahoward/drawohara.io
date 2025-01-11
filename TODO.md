@@ -1,6 +1,32 @@
 todo
 ----
 
+- better fb survey!
+  - ask questsions individually
+  - better likert
+  - design a panel
+  - group subreddits appropriately
+  - ensure to use compact tldr
+  - better prompt lib
+
+- fortune 500 survery
+
+- autolinks in ro?  gah
+ - gfm tool
+
+- nothing but ctx + data in views...
+
+- support for views/foobar.erb.md
+
+- dotenv
+  - encrypt
+  - decrypt
+
+- clean up goto
+  - sitemap.txt
+  - sitemap/
+    - https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#text
+
 - /io
   - basic blog shit
   - meta-bullshit
@@ -11,9 +37,12 @@ https://www.linkedin.com/feed/?highlightedUpdateType=COMMENTS_BY_YOUR_NETWORK&hi
 
 
 - site.helpers -> Context
+  - gsub(/\B(?=(...)*\b)/, ',')
   - fmt
 
-- site.url
+- site.url_for
+  - url_for(route, params)
+  - url_for(path_info | *args, **kws)
 
 - prototypes
 

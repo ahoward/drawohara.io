@@ -1,4 +1,4 @@
-today i reviewed a million reddit posts to understand society's feeling around facebook's newly announced content moderation plan.  i did it using a new tool i've been working on, that brings the *real social conversations* to AI.
+today i reviewed a million reddit posts to understand society's feeling around facebook's newly announced content moderation plan.  i did it using a new tool i've been working on, that brings the *the voice of real social conversations* to AI.
 
 recently, there has been a lot of noise about facebook (meta) and its [abandonment of 'fact-checkers'](https://www.theverge.com/2025/1/7/24338127/meta-end-fact-checking-misinformation-zuckerberg).
 
