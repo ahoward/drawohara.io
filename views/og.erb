@@ -6,7 +6,7 @@
   width       = nil
   type        = nil
 
-  if data && data.is_a?(Map)
+  if data && data.respond_to?(:get)
     title       = data.get(:og, :title) || data.get(:title) || 'nothing to see here.'
     description = data.get(:og, :description) || data.get(:description) || 'move along.'
     image       = data.get(:og, :image, :url) || data.get(:og, :image) || data.get(:image) || image

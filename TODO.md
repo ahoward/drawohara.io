@@ -1,24 +1,22 @@
 todo
 ----
 
-- /rubygems
+- /io
+  - basic blog shit
+  - meta-bullshit
+https://www.linkedin.com/feed/?highlightedUpdateType=COMMENTS_BY_YOUR_NETWORK&highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7283605163066408960
+
+  - la fires
+  - https://docs.google.com/document/d/1XHMOcsVu-PPPsAzao0hXKEBp_vL7AbdqC4PpuYJHm1w/edit?tab=t.0
 
 
 - site.helpers -> Context
   - fmt
 
-- mygems
-  - https://rubygems.org/dashboard
-  - gem search --remote "^.*$" --details | tee gem-details.oe
-
 - site.url
 
 - prototypes
 
-- /nonsequitur
-  - basic blog shit
-  - la fires
-  - https://docs.google.com/document/d/1XHMOcsVu-PPPsAzao0hXKEBp_vL7AbdqC4PpuYJHm1w/edit?tab=t.0
 
 - /nerd
   - /one -> this site
@@ -205,6 +203,11 @@ next
 
 done
 ----
+- /rubygems
+  - export og:
+- mygems
+  - https://rubygems.org/dashboard
+  - gem search --remote "^.*$" --details | tee gem-details.oe
 - /now
   - ro.page
   - promote threat.ceo

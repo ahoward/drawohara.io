@@ -35,6 +35,31 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
+# io archives
+#
+  site.route '/io/:id' do |route|
+    route.call do |ctx|
+      id = ctx.params.fetch(:id)
+      page = site.ro.get("io/#{ id }")
+
+      if page
+        ctx.render string: page.body.html_safe, data: page
+      end
+    end
+
+    route.urls do
+      site.ro.io.map{|post| "/io/#{ post.id }"}
+    end
+  end
+
+  site.route '/io' do |route|
+    route.call do |ctx|
+      index = site.ro.io
+      data = {index:}
+      ctx.render 'views/io.erb', data:
+    end
+  end
+
 # dojo4 archives
 #
   site.route '/dojo4/archive/:id' do |route|
