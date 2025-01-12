@@ -1,6 +1,6 @@
 in case you're wondering... this is most definitely a work-in-progress.
 
-(isn't it *always* a [work-in-progress](https://github.com/ahoward/drawohara.io)?)
+... isn't it *always* a [work-in-progress](https://github.com/ahoward/drawohara.io)?
 
 for now, it's a little home for
 

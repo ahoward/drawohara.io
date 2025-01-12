@@ -68,6 +68,14 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
+# /stream
+#
+  site.route '/stream' do |route|
+    route.call do |ctx|
+      ctx.render string: 'coming soon? i dunno... perhaps there is enough ;-/'
+    end
+  end
+
 # dojo4 archives
 #
   site.route '/dojo4/archive/:id' do |route|
