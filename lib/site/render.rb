@@ -5,11 +5,11 @@ require_relative 'html_safe'
 
 module Render
   def render(template = nil, data: {}, binding: Kernel.binding, context: nil, layout: nil, file: nil, string: nil, &block)
-    template = Render.template_for(template:, file:, string:)
-
     if data.is_a?(Hash)
       data = Map.for(data)
     end
+
+    template = Render.template_for(template:, file:, string:)
 
     erb = ERuby.new(template, trim_mode: '%<>')
     erb.filename = template.file

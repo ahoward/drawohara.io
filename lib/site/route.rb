@@ -113,23 +113,27 @@ class Route
     if block
       @urls = block
     else
-      urls = (@urls.respond_to?(:call) ? @urls.call : @urls).dup
-      return [] unless urls
+      parse_urls(@urls)
+    end
+  end
 
-      urls = [urls] unless urls.is_a?(Array)
+  def parse_urls(urls)
+    urls = (urls.respond_to?(:call) ? urls.call : urls).dup
+    return [] unless urls
 
-      urls.flatten!
-      urls.compact!
+    urls = [urls] unless urls.is_a?(Array)
 
-      urls.map do |url|
-        case url
-          when Hash
-            url_for(url)
-          when String
-            url
-          else
-            raise Error.new("url=#{ url.inspect }")
-        end
+    urls.flatten!
+    urls.compact!
+
+    urls.map do |url|
+      case url
+        when Hash
+          url_for(url)
+        when String
+          url.dup
+        else
+          raise Error.new("url=#{ url.inspect }")
       end
     end
   end

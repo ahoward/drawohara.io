@@ -9,23 +9,40 @@ todo
   - ensure to use compact tldr
   - better prompt lib
 
+- diabetes, ar15s, and tractors
+
 - fortune 500 survery
 
+- more writing
+  - /io/analytical-idealism
+    - time, matter etc...
+      https://www.linkedin.com/feed/update/urn:li:activity:7283916702977769472/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A7283916702977769472%2C7283940187804483585)&dashCommentUrn=urn%3Ali%3Afsd_comment%3A(7283940187804483585%2Curn%3Ali%3Aactivity%3A7283916702977769472)
+  - /nerd/ro
+  - /nerd/langs
+- arbitary nubmers make meaning
+
+
+
+- /stream
+  - tumblr-esc
+  - needs to be super fast
+  - for ppl not seo so, js?
+  - https://www.youtube.com/watch?app=desktop&v=hgCqz3l33kU
+
+
 - autolinks in ro?  gah
- - gfm tool
+  - hardwraps
+   - gfm tool
 
-- nothing but ctx + data in views...
 
-- support for views/foobar.erb.md
+
+
+
 
 - dotenv
   - encrypt
   - decrypt
 
-- clean up goto
-  - sitemap.txt
-  - sitemap/
-    - https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#text
 
 - /io
   - basic blog shit
@@ -208,9 +225,7 @@ next
 
 - short-codes // purls that share well
   ```txt
-
     https://gohugo.io/content-management/urls/#aliases
-
     <!DOCTYPE html>
     <html lang="en-us">
       <head>
@@ -224,14 +239,16 @@ next
 
   ```
 
-- integrate short form content
-  - cli
-  - gh-issues
-  - socials?
-
 
 done
 ----
+- https://search.google.com/search-console/sitemaps?resource_id=sc-domain%3Adrawohara.io
+- nothing but ctx + data in views...
+- fix translations!
+- clean up goto
+  - sitemap.txt
+  - sitemap/
+    - https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#text
 - /rubygems
   - export og:
 - mygems

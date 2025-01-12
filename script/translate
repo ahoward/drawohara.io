@@ -17,6 +17,10 @@ script do
     jobs =
       []
 
+    if langs.empty?
+      langs = site.dato.fetch(:langs)
+    end
+
     langs.each do |lang, name|
       @build_dir.glob '**/**.html' do |src|
         rel = src.relative_to(@build_dir)
@@ -67,7 +71,7 @@ private
       l.push "  respond with the translated document and ONLY the translated document."
       l.push "  be sure to translate the content of any links as well."
       l.push "  finally, add an html <base> tag to the output to constrain usees to the given lang,"
-      l.push "  for example, if translating to '#{ lang }' you should add `<base href='/#{ lang }' />` to the <head> section of the translated document."
+      l.push "  for example, if translating to '#{ lang }' you should add `<base href='/langs/#{ lang }' />` to the <head> section of the translated document."
       l.push "</INSTRUCTIONS>"
       l.push
 

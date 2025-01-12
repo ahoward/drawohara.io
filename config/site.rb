@@ -76,7 +76,8 @@ Site.for 'drawohara.io' do |site|
       page = site.ro.get("dojo4/#{ id }")
 
       if page
-        ctx.render string: page.body.html_safe, data: page
+        data = {page:}
+        ctx.render 'views/dojo4-archive.erb', data:
       end
     end
 
@@ -98,7 +99,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = %w[ /now /about /io /nerd /contact /purls /langs /dojo4 /sitemap /home ]
+      urls = %w[ /io /nerd /purls /langs /dojo4 /sitemap /home ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
     end
