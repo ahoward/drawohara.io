@@ -139,7 +139,7 @@ Site.for 'drawohara.io' do |site|
     end
 
     route.urls do
-      site.ro.purls.map{|purl| "/purls/#{ purl.id }"}
+      site.ro.purls.reverse.map{|purl| "/purls/#{ purl.id }"}
     end
   end
 

@@ -1,6 +1,19 @@
 todo
 ----
-- purls have types
+
+- site build does not build dojo4 by default....
+
+- ro rendering improvments
+  - front-matter
+  - hard vs soft wrapping...
+  - autolink option?
+
+- mo betta purls
+  - model
+  - types
+  - simple script for new cones
+  ./script/purl create
+  ./script/purl edit
   - redirect | ....
   - purl model
   - paulsboutque
@@ -8,6 +21,12 @@ todo
   - https://www.linkedin.com/feed/?highlightedUpdateType=SHARED_BY_YOUR_NETWORK&highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7284337904615583744
   - ./script/edit type
   - https://www.youtube.com/watch?v=_U82_MiB2OM&t=22s
+
+- instant purls
+  - hack for speed _might be_
+    1) render *just that thing*
+    2) upload to cloud storage, branch of repo maybe?
+    3) client-side fetches via js
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_U82_MiB2OM?si=Y6Ube-2E7wyP_rX5&amp;start=27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
