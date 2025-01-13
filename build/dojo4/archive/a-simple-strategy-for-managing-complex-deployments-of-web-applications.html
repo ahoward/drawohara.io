@@ -39,9 +39,9 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>A Simple Strategy for Managing Complex Deployments of Web Applications</title>
+    <title>nothing to see here.</title>
 
-<meta property="og:title" content="A Simple Strategy for Managing Complex Deployments of Web Applications"/>
+<meta property="og:title" content="nothing to see here."/>
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
@@ -77,13 +77,24 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
 <hr>
 <strong>/a-simple-strategy-for-managing-complex-deployments-of-web-applications</strong>
     </header>
 
     <main>
-      <div class="ro markdown">
+      <em>published on: 2012-08-09</em>
+<br>
+<br>
+<div class="ro markdown">
   <p>Web application deployments are complex from the get-go.  One often starts with at least a staging and a production deployment.  Add to this multi-tennancy, configs for third party integrations like facebook auth or salesforce, configs for cloud storage and content distribution networks, continuous integration environments, multi-client theming, SSL configs, vhost configs, build processes configs for js frontends, background task configuration, upload processing configuration, the list goes on… combinatorial explosion.</p>
 
 <p>At dojo4 we have a rails based web app stack and we use Multistage Capistrano for deployment to AWS EC2 nodes.  We’ve found a simple strategy for managing the large variety of config and deployment requirements that our clients have presented us with.  The strategy involves a rake task which uses a RAILS_STAGE environment variable based on the Capistrano Multistage stage.  We setup a file structure for deployment specific configs in repo_root/config/deploy/files/RAILS_STAGE which is structured identically to the source repo file system.  During cap deploy, before current symlink or build processes, the rake task recursively copies repo_root/config/deploy/files/RAILS_STAGE into repo_root.</p>
@@ -106,10 +117,16 @@
 <blockquote>
 <ul>
   <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">i ❤️  this<a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">😩, i 🖤 ^this!<a>
   </li>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">i 🖤 this<a>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
   </li>
 </ul>
 </blockquote>

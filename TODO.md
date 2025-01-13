@@ -1,25 +1,86 @@
 todo
 ----
+- purls have types
+  - redirect | ....
+  - purl model
+  - paulsboutque
+  -  https://www.linkedin.com/posts/adammchase_why-i-spent-600k-on-macrocom-in-2022-activity-7284337904615583744-pAzY?utm_source=share&utm_medium=member_desktop
+  - https://www.linkedin.com/feed/?highlightedUpdateType=SHARED_BY_YOUR_NETWORK&highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7284337904615583744
+  - ./script/edit type
+  - https://www.youtube.com/watch?v=_U82_MiB2OM&t=22s
 
-- better fb survey!
-  - ask questsions individually
-  - better likert
-  - design a panel
-  - group subreddits appropriately
-  - ensure to use compact tldr
-  - better prompt lib
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_U82_MiB2OM?si=Y6Ube-2E7wyP_rX5&amp;start=27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-- diabetes, ar15s, and tractors
+- i @need better notes.....
 
-- fortune 500 survery
+  - /stardate/.....?
 
-- more writing
-  - /io/analytical-idealism
+- evolve ventures
+  - study on psycadelics
+  - https://www.tristanharris.com/
+  - extract post about our convo
+    - geo politics, big picture of american exceptionalism
+    - dangers of ai, responsiblities of developers and importance of goals
+      - the suits difficult expressing themselves
+        - difficulties naming
+      - character.ai
+      - replacing people with our code,he quark, me fsl
+      - ai willpower
+      - girls and social media
+    - weakness of the left
+      - self worship
+      - progressive==fast, convervative==slow, not dem vs. republican
+      - 51% does not mean it's ok to force your will on the other 49%.  mental violence.
+      - smaller is better
+      - complexity kills
+        - neil g
+
+- @writing
+  - /io/of-ar15s-4chan-and-diabetes
+  - /io/polar-bear-eats-capitalist
+  - /io/the-giant-snake
+  - /io/la-fires
+  - /io/names-are-teh-hardz
+  - /io/in-defense-of-convervatism
+  - /io/time-is-not-real
+  - /io/the-world-is-mental
     - time, matter etc...
       https://www.linkedin.com/feed/update/urn:li:activity:7283916702977769472/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A7283916702977769472%2C7283940187804483585)&dashCommentUrn=urn%3Ali%3Afsd_comment%3A(7283940187804483585%2Curn%3Ali%3Aactivity%3A7283916702977769472)
-  - /nerd/ro
-  - /nerd/langs
-- arbitary nubmers make meaning
+
+
+  - /nerd/evolve-ventures
+  - /nerd/python-is-poison
+  - /nerd/site
+  - /nerd/read-only
+  - /nerd/babelfish-that-shit
+  - /nerd/destructuring-selective-results-with-ruby
+  - /nerd/your-style-is-orthodox-and-it-sucks
+
+- /convos
+- /story
+
+  - /search
+  - lunar?
+  - https://github.com/yusufhilmi/client-vector-search
+
+- dotenv
+  - encrypt
+  - decrypt
+
+- se
+  - a better fb survey!
+    - ask questsions individually
+    - better likert
+    - design a panel
+    - group subreddits appropriately
+    - ensure to use compact tldr
+    - better prompt lib
+
+
+- study
+  - diabetes, ar15s, and tractors
+  - fortune 500 survery
+
 
 
 
@@ -39,9 +100,6 @@ todo
 
 
 
-- dotenv
-  - encrypt
-  - decrypt
 
 
 - /io

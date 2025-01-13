@@ -39,9 +39,9 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Hands off my window title!</title>
+    <title>nothing to see here.</title>
 
-<meta property="og:title" content="Hands off my window title!"/>
+<meta property="og:title" content="nothing to see here."/>
 <meta property="og:description" content="move along." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
@@ -77,13 +77,24 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
 <hr>
 <strong>/hands-off-my-window-title</strong>
     </header>
 
     <main>
-      <p>So I recently ssh'ed into a shiny new Ubuntu 11.10 server on EC2 and noticed some new things.  Firstly, Ubuntu seems to have enabled the <a href="https://help.ubuntu.com/11.10/serverguide/C/byobu.html">byobu</a> terminal multiplexer configuration by default.  This looks potentially handy, but just like <a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh</a>, I don't feel motivated to futz with it just now.  It's easy to disable byobu with just a quick <code>byobu-disable</code>, which will, somewhat surprisingly, fully exit your shell, log you out and close your ssh session.  But next time you'll get a normal shell instead of a byobu/screen session.</p>
+      <em>published on: 2011-11-29</em>
+<br>
+<br>
+<p>So I recently ssh'ed into a shiny new Ubuntu 11.10 server on EC2 and noticed some new things.  Firstly, Ubuntu seems to have enabled the <a href="https://help.ubuntu.com/11.10/serverguide/C/byobu.html">byobu</a> terminal multiplexer configuration by default.  This looks potentially handy, but just like <a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh</a>, I don't feel motivated to futz with it just now.  It's easy to disable byobu with just a quick <code>byobu-disable</code>, which will, somewhat surprisingly, fully exit your shell, log you out and close your ssh session.  But next time you'll get a normal shell instead of a byobu/screen session.</p>
 
 <p>Now one thing I noticed and finally got motivated with to "research" (and by that I mean ask smarter people on twitter) and fix was that when I connected via ssh, the window title in my iTerm2 tab was dynamically changed from what I had carefully set it to ("asset pipeline") to the supremely unhelpful "ubuntu@ip-10-11-12-13".  In some non-cloud situations where the server has a meaningful hostname, this might be handy, but distinguishing dozens of servers by their internal EC2 IP is not appealing to me.  Initial research suggested my <code>PROMPT</code> or <code>PROMPT_COMMAND</code> environment variables, but neither was set.  I read through <a href="http://www.ibm.com/developerworks/linux/library/l-tip-prompt/">this DeveloperWorks article</a> and found the responsible code in the <code>~/.bashrc</code> file.  Here's the offending excerpt.</p>
 
@@ -107,10 +118,16 @@ esac
 <blockquote>
 <ul>
   <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">i ❤️  this<a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/hands-off-my-window-title">😩, i 🖤 ^this!<a>
   </li>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/hands-off-my-window-title">i 🖤 this<a>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
   </li>
 </ul>
 </blockquote>

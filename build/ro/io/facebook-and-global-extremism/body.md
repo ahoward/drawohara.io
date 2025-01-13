@@ -1,4 +1,11 @@
-today i reviewed a million reddit posts to understand society's feeling around facebook's newly announced content moderation plan.  i did it using a new tool i've been working on, that brings the *real social conversations* to AI.
+following is an AI generated summary of this article, so you won't have to read it! (saves **one llm call!**)
+
+> ### "
+> A data scientist analyzed over a million Reddit posts to understand public sentiment around Facebook's content moderation changes. Using custom AI technology to process social conversations, they found concerning gaps in society's understanding of how unregulated social media can enable extremism and ethnic violence, beyond just issues of free speech and minority protections.
+> ### "
+
+
+today i reviewed a million reddit posts to understand society's feeling around facebook's newly announced content moderation plan.  i did it using a new tool i've been working on, that brings the *the voice of real social conversations* to AI.
 
 recently, there has been a lot of noise about facebook (meta) and its [abandonment of 'fact-checkers'](https://www.theverge.com/2025/1/7/24338127/meta-end-fact-checking-misinformation-zuckerberg).
 

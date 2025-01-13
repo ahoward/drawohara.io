@@ -1,20 +1,28 @@
 <%
-  url = data.fetch(:url)
+  url = data.get(:url)
   seconds = 4.2.to_s
 %>
 
-hiya! -- you are being redirected to by a giant 🤖
+<% if url %>
 
-<blockquote>
-  <a href="<%= url %>"><%= url %></a>
-</blockquote>
+  hiya! -- you are being redirected to by a giant 🤖
 
-in <%= seconds %> seconds...
+  <blockquote>
+    <a href="<%= url %>"><%= url %></a>
+  </blockquote>
 
-<br>
-<br>
-thanks for playing!
+  in <%= seconds %> seconds...
 
-<script>
-  setTimeout(function(){window.location = '<%= h(url).html_safe %>'}, <%= seconds %> * 1000);
-</script>
+  <br>
+  <br>
+  thanks for playing!
+
+  <script>
+    setTimeout(function(){window.location = '<%= h(url).html_safe %>'}, <%= seconds %> * 1000);
+  </script>
+
+<% else %>
+
+<%= data.fetch(:body) %>
+
+<% end %>
