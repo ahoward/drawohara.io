@@ -59,13 +59,6 @@ script do
     end
 
   #
-    puts "=" * 42
-    puts "RSYNC ./public/ -> #{ tmp }"
-    puts "-" * 42
-    system "rsync --archive --ignore-existing ./public/ #{ tmp }"
-    puts
-
-  #
     if translate
       puts "=" * 42
       langs = site.dato.fetch(:langs)
@@ -75,11 +68,13 @@ script do
       puts
     end
 
+  #
     puts "=" * 42
-    puts "RSYNC ./langs/ -> #{ tmp }/langs"
+    puts "RSYNC ./public/ -> #{ tmp }"
     puts "-" * 42
-    system "rsync --archive --ignore-existing ./langs/ #{ tmp }/langs"
+    system "rsync --archive --ignore-existing ./public/ #{ tmp }"
     puts
+
 
   #
     puts "=" * 42

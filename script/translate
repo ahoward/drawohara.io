@@ -35,9 +35,9 @@ script do
       abort
     end
 
-    if force?
-      @lang_dir.delete!(recursive: true)
-    end
+    #if force?
+      #@lang_dir.delete!(recursive: true)
+    #end
 
     parallel =
       AI::Mistral::RPS - 1
@@ -55,7 +55,7 @@ private
     @force = params.has_key?(:force)
 
     @build_dir = Path.for(params.fetch(:build_dir){ './build' })
-    @lang_dir = Path.for(params.fetch(:lang_dir){ './langs' })
+    @lang_dir = Path.for(params.fetch(:lang_dir){ './public/langs' })
   end
 
   def translate!(lang:, name:, src:, dst:, force:)
