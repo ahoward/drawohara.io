@@ -1,50 +1,66 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/uk' />
+  <base href='/langs/uk' />
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
 
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Путівник dojo4 2019 року до кращого року: 42 поради</title>
+  <!-- meta -->
+    <title>Нічого немає тут.</title>
 
-    <meta property="og:title" content="Путівник dojo4 2019 року до кращого року: 42 поради"/>
-    <meta property="og:description" content="рухайтесь далі." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="Нічого немає тут."/>
+<meta property="og:description" content="Продовжуйте йти." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"2019-dojo4-guide-to-a-better-year-42-tips"}">
     <meta property="site:path_info" content=""/2019-dojo4-guide-to-a-better-year-42-tips"">
 
     <style>
-      /* проти pico */
+      /* anti pico */
       a {text-decoration: none !important; }
 
-      /* проти turbo */
+      /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
 
-      /* проти progressive */
+      /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
     </style>
@@ -52,116 +68,128 @@
     <script>
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
-        if (progressBar) {
-          progressBar.remove();
-        }
+        if (progressBar) { progressBar.remove(); }
       });
     </script>
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
-      <hr>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/2019-dojo4-guide-to-a-better-year-42-tips">я ❤️ це!</a>
+<small>
+  <small>
+    <small>
+      <span title='випий мене'>&lt;&lt; натисніть мене 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/2019-dojo4-guide-to-a-better-year-42-tips</strong>
     </header>
 
     <main>
-      <div class="ro markdown">
-        <ul>
-          <li>Будьте на свіжому повітрі.</li>
-          <li>Відмовіться від автомобіля, катайтеся на велосипеді. <a href="https://www.radpowerbikes.com/">Електричні велосипеди</a> також цікаві.</li>
-          <li>Їжте більше <a href="https://fungi.com/">грибів</a>.</li>
-          <li>Подаруйте <a href="https://jesslove.format.com/julian-is-a-mermaid"><em>Джуліан - русалка</em></a> комусь, кого ви любите. Або будь-якій людині.<br />
-            <img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/b.png' alt="Screen Shot 2018-12-19 at 12.29.45 PM.png" /></li>
-          <li>Перейдіть на <a href="https://gofossilfree.org/">відновлювану енергію</a>.</li>
-          <li>Скорочуйте час перед екраном.</li>
-          <li>Підписуйтесь на <a href="https://www.instagram.com/sweateredgoats/">козів у светрах</a>.</li>
-          <li>Вивчайте та практикуйте <a href="https://www.4ringstactical.com/">бойове мистецтво</a>.</li>
-          <li>Спробуйте щось, чого ніколи не робили.</li>
-          <li>Спробуйте щось знову, що ви вже спробували, але тоді це не сподобалося.<br />
-            <img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/c.jpeg' alt="TryThemAndYouMay.jpg" /></li>
-          <li>Занурюйтеся в холодну воду, щоб заряджати <a href="https://www.wimhofmethod.com/science">вашу імунну систему, покращувати метаболізм і діяльність мозку, а також зменшувати запалення і біль</a>. <a href="https://www.youtube.com/watch?v=VaMjhwFE1Zw">Вім Гоф</a> так radyть, і він правий.</li>
-          <li>Їжте <a href="http://jaimix.com/">Джай Мікс</a>.</li>
-          <li>Слухайте людиноцентричний <a href="http://bouldertechpodcast.com/">Boulder Tech Podcast</a>.</li>
-          <li>Читайте та підтримуйте незалежні ЗМІ, такі як <a href="https://thecorrespondent.com/">The Correspondent</a> та інші джерела, які <a href="https://mediabiasfactcheck.com/center/">вважаються найменш упередженими</a>.</li>
-          <li>Отримайте допомогу, яка вам може знадобитися, щоб <a href="https://hirediversity.us/">наймати більш інклюзивно</a>.</li>
-          <li><a href="http://www.giftitforwardproject.com/screenings/">Організуйте показ</a> фільму <a href="http://www.giftitforwardproject.com/the-film/">Gift</a><br />
-            <a href="http://www.giftitforwardproject.com/trailer/"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/d.png' alt="Screen Shot 2018-12-20 at 11.46.33 AM.png" /> </a></li>
-          <li>Приєднуйтеся до <a href="http://cecmeditate.com/">Клубу дослідників свідомості</a>.</li>
-          <li>Дізнайтеся більше про пермакультуру та мовлення за допомогою книжок, таких як <a href="https://www.amazon.com/Change-Here-Now-Permaculture-Transformation/dp/1623170648"><em>Change Here Now: Permaculture Solutions for Personal and Community Transformation</em></a></li>
-          <li>Дізнайтеся, що ви думаєте про нову книгу <a href="https://www.ynharari.com/book/homo-deus/">Homo Deus</a> від <a href="https://www.youtube.com/watch?v=JJ1yS9JIJKs">Ювала Ноя Гарарі</a>.</li>
-          <li>Виділіть принаймні 25% вашого часу, проведеного на Spotify, iTunes тощо, на дослідження <a href="https://bandcamp.com/">Bandcamp</a> або створення <a href="https://www.mixcloud.com/TheVibrarian/dancing-about-architecture-ignite-boulder-37-mixtape/">мікстейпу</a> для когось (і, звичайно, підписуйтесь на <a href="https://twitter.com/thevibrarian">@TheVibrarian</a>). Не забувайте, що ви завжди можете <a href="https://www.youtube.com/watch?v=vXqkhK3lXhA">знайти нову музику для кохання</a>.</li>
-          <li>Слухайте новий мікстейп dojo4 тут: <a href="bit.ly/coloradojoyride">ColoraDOJOyride</a></li>
-          <li>Не забувайте про <a href="https://g.co/kgs/Vki1FV">джаз</a>.</li>
-          <li>Не забувайте про <a href="https://g.co/kgs/zHQvZB">поезію</a>.</li>
-          <li>Не забувайте про <a href="https://www.npr.org/series/tiny-desk-concerts/">Tiny Desk Concerts</a>. Ось деякі наші улюблені:
-            <ul>
-              <li><a href="https://www.youtube.com/watch?v=mhyD2qchkEw">Sylvan Esso</a></li>
-              <li><a href="https://www.youtube.com/watch?v=QKzobTCIRDw&amp;t=1213s">Tank and the Bangas</a></li>
-              <li><a href="https://www.youtube.com/watch?v=-rl26QKPHtE">Mariachi Flor De Toloache</a></li>
-              <li><a href="https://www.youtube.com/watch?v=8KUV2TFTpGo">Nathaniel Rateliff &amp; the Night Sweats</a></li>
-            </ul>
-          </li>
-          <li>Носіть ваше <a href="http://">серце</a> або вашу <a href="https://iheartguts.com/collections/buttons-pins/products/spleen-lapel-pin">селезінку</a> на рукаві.</li>
-          <li><a href="https://microcosmpublishing.com/catalog/patches">Пачік</a> себе (або <a href="https://iheartguts.com/collections/buttons-pins/products/vadge-of-honor-patch">частину себе</a>)<br />
-            <a href="https://iheartguts.com/collections/buttons-pins/products/ova-achiever-patch"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/e.png' alt="Screen Shot 2019-01-30 at 10.16.30 AM.png" /> </a></li>
-          <li>Підписуйтеся на більше художників в Instagram, таких як ці:
-            <ul>
-              <li><a href="https://www.instagram.com/vanessalgerman/">Vanessa German</a></li>
-              <li><a href="https://www.instagram.com/ruby_onyinyechi_amanze/">Ruby Onyinyechi Amanze</a></li>
-              <li><a href="https://www.instagram.com/asahinyc/">Elia Alba</a></li>
-              <li><a href="https://www.instagram.com/rhianneclarke/">Rhianne Clarke</a></li>
-              <li><a href="https://www.instagram.com/suchitramattaiart/">Suchitra Mattai</a></li>
-              <li><a href="https://www.instagram.com/gneural/">Debbie Clapper</a></li>
-              <li><a href="https://www.instagram.com/ianmclaughlin/">Ian Mclaughlin</a></li>
-              <li><a href="https://www.instagram.com/linairisviktor/">Lina Iris Viktor</a><br />
-                <img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/f.png' alt="Screen Shot 2018-12-20 at 1.41.02 PM.png" /></li>
-            </ul>
-          </li>
-          <li>Дивіться більше <a href="https://mymodernmet.com/iapbp-birth-photography-contest-2018/">зображень</a> <a href="https://www.birthbecomeshercontest.com/image-contest-2018/">людей, які народжуються</a>.</li>
-          <li>Діліться більше <a href="https://www.instagram.com/forgottenneighbors/">зображеннями</a> людей без дому, ставши <a href="https://forgottenneighbors.typeform.com/to/KlpI6F">співробітником</a> <a href="https://www.forgotten-neighbors.com/">Forgotten Neighbors</a>.</li>
-          <li>Займіться мистецтвом. Або, принаймні, малюйте в деяких <a href="https://microcosmpublishing.com/catalog/books?subject=coloring_books&amp;mm=or&amp;pg=1#subjects=">розмальовках</a>.</li>
-          <li>Розгляньте можливість використання <a href="https://www.scientificamerican.com/article/scientists-are-starting-to-test-claims-about-microdosing/">психоделіків</a>.</li>
-          <li>Використовуйте свій <a href="https://aconica.com/">iPhone для візуальних подорожей</a>.<br />
-            <a href="https://aconica.com/travel/cuba/"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/g.jpeg' alt="Screen-Shot-2019-01-09-at-12.40.14-PM.jpg" /> </a></li>
-          <li>Якщо ви не можете подорожувати далеко, <a href="http://www.globalgadding.com/travel-locally/">подорожуйте поблизу</a>.</li>
-          <li>Розвивайте більш дружні, більш <a href="https://www.highlanderwealth.com/mindful-finance-blog/">свідомі відносини зі своїми фінансами</a>.</li>
-          <li>Формуйте нові звички, обираючи щось і роблячи це 200 днів у цьому році. Це трохи більше половини днів.<br />
-            <img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/h.png' alt="Screen Shot 2019-01-23 at 2.18.37 PM.png" /></li>
-          <li><a href="https://www.vox.com/2018/7/16/17067214/cellphone-cancer-5g-evidence-studies">Не спіть поблизу телефону</a>.</li>
-          <li>Не дозволяйте сплачувати податки вас пригнічувати: використовуйте <a href="https://brasstaxes.com/">BrassTaxes</a>.</li>
-          <li>Забезпечьте електроніці час сну - спробуйте спостерігати цифровий захід сонця.</li>
-          <li>Слідкуйте за фазами місяця.<br />
-            <a href="https://bisonbookbinding.com/products/2019-moon-phase-calendar"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/i.png' alt="Screen Shot 2019-01-24 at 3.48.37 PM.png" /> </a></li>
-          <li>Не чекайте, щоб сказати комусь, що ви відчуваєте.</li>
-          <li>Створіть (або приєднайтеся) регулярну, постійну зустріч, щоб проводити час на свіжому повітрі з іншими людьми. Ми віддаємо перевагу тижневій сімейній прогулянці, за якою слідує ранній обід/вечірка.</li>
-          <li>Зробіть <a href="https://www.thehikinglife.com/2018/01/wanderlust-hiking-on-legendary-trails/">прогулянку</a>.<br />
-            <a href="https://us.gestalten.com/products/wanderlust"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/j.png' alt="Screen Shot 2019-01-28 at 3.35.04 PM.png" /></a></li>
-          <li>Сповільніться.</li>
-        </ul>
-      </div>
+      <em>опубліковано: 2019-01-31</em>
+<br>
+<br>
+<div class="ro markdown">
+  <ul>
+  <li>Будьте на свіжому повітрі.</li>
+  <li>Відмовіться від машини, їздіть на велосипеді. <a href="https://www.radpowerbikes.com/uk">Електровелосипеди</a> також весело.</li>
+  <li>Їжте більше <a href="https://fungi.com/uk">грибів</a>.</li>
+  <li>Подаруйте <a href="https://jesslove.format.com/julian-is-a-mermaid"><em>Джуліан - русалка</em></a> комусь, кого ви любите. Або кому завгодно.<br />
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/b.png' alt="Screen Shot 2018-12-19 at 12.29.45 PM.png" /></li>
+  <li>Перейдіть на <a href="https://gofossilfree.org/uk">відновлювану енергію</a>.</li>
+  <li>Зменшіть час, проведений перед екраном.</li>
+  <li>Слідкуйте за <a href="https://www.instagram.com/sweateredgoats/">козами в светрах</a>.</li>
+  <li>Вивчайте та практикуйте <a href="https://www.4ringstactical.com/uk">бойове мистецтво</a>.</li>
+  <li>Спробуйте щось, чого ніколи не пробували.</li>
+  <li>Спробуйте щось ще раз, що ви пробували раніше і не сподобалося на той час.<br />
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/c.jpeg' alt="TryThemAndYouMay.jpg" /></li>
+  <li>Зануріться в холодну воду, щоб зарядити <a href="https://www.wimhofmethod.com/uk/science">вашу імунну систему, підвищити метаболічну та мозкову активність, а також зменшити запалення та біль</a>. <a href="https://www.youtube.com/watch?v=VaMjhwFE1Zw">Вім Хоф</a> так каже, і він правий.</li>
+  <li>Їжте <a href="http://jaimix.com/uk">Джай Мікс</a>.</li>
+  <li>Слухайте людино-центрований <a href="http://bouldertechpodcast.com/uk">Boulder Tech Podcast</a>.</li>
+  <li>Читайте та підтримуйте незалежні ЗМІ, такі як <a href="https://thecorrespondent.com/uk">The Correspondent</a> та інші джерела, які <a href="https://mediabiasfactcheck.com/uk/center/">оцінені як найменш упереджені</a>.</li>
+  <li>Отримайте допомогу, яка може знадобитися для <a href="https://hirediversity.us/uk">підбор більш інклюзивно</a>.</li>
+  <li><a href="http://www.giftitforwardproject.com/uk/screenings/">Організуйте показ</a> фільму <a href="http://www.giftitforwardproject.com/uk/the-film/">Gift</a><br />
+<a href="http://www.giftitforwardproject.com/uk/trailer/"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/d.png' alt="Screen Shot 2018-12-20 at 11.46.33 AM.png" /> </a></li>
+  <li>Приєднуйтесь до <a href="http://cecmeditate.com/uk">Клубів дослідників свідомості</a>.</li>
+  <li>Дізнайтеся більше про пермакультуру та мовленнєві патерни, читаючи книги, такі як <a href="https://www.amazon.com/Change-Here-Now-Permaculture-Transformation/dp/1623170648"><em>Change Here Now: Permaculture Solutions for Personal and Community Transformation</em></a></li>
+  <li>Подивіться, що ви думаєте про нову книгу <a href="https://www.ynharari.com/uk/book/homo-deus/">Homo Deus</a> <a href="https://www.youtube.com/watch?v=JJ1yS9JIJKs">Ювал Ной Харарі</a>.</li>
+  <li>Виділіть принаймні 25% часу, проведеного на Spotify, iTunes тощо, на дослідження <a href="https://bandcamp.com/uk">Bandcamp</a> або створення <a href="https://www.mixcloud.com/TheVibrarian/dancing-about-architecture-ignite-boulder-37-mixtape/">мікстейпу</a> для когось (і, звичайно, підписуйтесь на <a href="https://twitter.com/thevibrarian">@TheVibrarian</a>). Не забувайте, що ви завжди можете <a href="https://www.youtube.com/watch?v=vXqkhK3lXhA">знайти нову музику для любові</a>.</li>
+  <li>Слухайте останній мікстейп dojo4 тут: <a href="bit.ly/coloradojoyride">ColoraDOJOyride</a></li>
+  <li>Не забувайте про <a href="https://g.co/kgs/Vki1FV">джаз</a>.</li>
+  <li>Не забувайте про <a href="https://g.co/kgs/zHQvZB">поезію</a>.</li>
+  <li>Не забувайте про <a href="https://www.npr.org/uk/series/tiny-desk-concerts/">Tiny Desk Concerts</a>. Ось деякі з наших улюблених:
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=mhyD2qchkEw">Sylvan Esso</a></li>
+      <li><a href="https://www.youtube.com/watch?v=QKzobTCIRDw&amp;t=1213s">Tank and the Bangas</a></li>
+      <li><a href="https://www.youtube.com/watch?v=-rl26QKPHtE">Mariachi Flor De Toloache</a></li>
+      <li><a href="https://www.youtube.com/watch?v=8KUV2TFTpGo">Nathaniel Rateliff &amp; the Night Sweats</a></li>
+    </ul>
+  </li>
+  <li>Носіть своє <a href="http://uk">серце</a>, або свою <a href="https://iheartguts.com/uk/collections/buttons-pins/products/spleen-lapel-pin">селезінку</a>, на рукаві.</li>
+  <li><a href="https://microcosmpublishing.com/uk/catalog/patches">Нашивайте</a> себе (або <a href="https://iheartguts.com/uk/collections/buttons-pins/products/vadge-of-honor-patch">частину себе</a>)<br />
+<a href="https://iheartguts.com/uk/collections/buttons-pins/products/ova-achiever-patch"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/e.png' alt="Screen Shot 2019-01-30 at 10.16.30 AM.png" /> </a></li>
+  <li>Слідкуйте за більшою кількістю художників в Instagram, наприклад цими:
+    <ul>
+      <li><a href="https://www.instagram.com/vanessalgerman/">Vanessa German</a></li>
+      <li><a href="https://www.instagram.com/ruby_onyinyechi_amanze/">Ruby Onyinyechi Amanze</a></li>
+      <li><a href="https://www.instagram.com/asahinyc/">Elia Alba</a></li>
+      <li><a href="https://www.instagram.com/rhianneclarke/">Rhianne Clarke</a></li>
+      <li><a href="https://www.instagram.com/suchitramattaiart/">Suchitra Mattai</a></li>
+      <li><a href="https://www.instagram.com/gneural/">Debbie Clapper</a></li>
+      <li><a href="https://www.instagram.com/ianmclaughlin/">Ian Mclaughlin</a></li>
+      <li><a href="https://www.instagram.com/linairisviktor/">Lina Iris Viktor</a><br />
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/f.png' alt="Screen Shot 2018-12-20 at 1.41.02 PM.png" /></li>
+    </ul>
+  </li>
+  <li>Дивіться більше <a href="https://mymodernmet.com/uk/iapbp-birth-photography-contest-2018/">зображень</a> <a href="https://www.birthbecomeshercontest.com/uk/image-contest-2018/">людей, що народжуються</a>.</li>
+  <li>Діліться більш <a href="https://www.instagram.com/forgottenneighbors/">зображеннями</a> людей без дому, ставши <a href="https://forgottenneighbors.typeform.com/to/KlpI6F">співробітником</a> <a href="https://www.forgotten-neighbors.com/">Forgotten Neighbors</a>.</li>
+  <li>Творіть мистецтво. Або, принаймні, малюйте в деяких <a href="https://microcosmpublishing.com/uk/catalog/books?subject=coloring_books&amp;mm=or&amp;pg=1#subjects=">розмальовках</a>.</li>
+  <li>Розгляньте можливість використання <a href="https://www.scientificamerican.com/uk/article/scientists-are-starting-to-test-claims-about-microdosing/">психоделіків</a>.</li>
+  <li>Використовуйте свій <a href="https://aconica.com/uk">iPhone для подорожей</a> більш візуально.<br />
+<a href="https://aconica.com/uk/travel/cuba/"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/g.jpeg' alt="Screen-Shot-2019-01-09-at-12.40.14-PM.jpg" /> </a></li>
+  <li>Якщо ви не можете подорожувати далеко, <a href="http://www.globalgadding.com/uk/travel-locally/">подорожуйте поруч</a>.</li>
+  <li>Розвивайте більш дружнє, більш <a href="https://www.highlanderwealth.com/uk/mindful-finance-blog/">усвідомлене ставлення до своїх фінансів</a>.</li>
+  <li>Формуйте нові звички, вибираючи щось і роблячи це 200 днів у цьому році. Це трохи більше половини днів.<br />
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/h.png' alt="Screen Shot 2019-01-23 at 2.18.37 PM.png" /></li>
+  <li><a href="https://www.vox.com/2018/7/16/17067214/cellphone-cancer-5g-evidence-studies">Не спіть поруч із телефоном</a>.</li>
+  <li>Не дозволяйте податкам вас пригнічувати: використовуйте <a href="https://brasstaxes.com/uk">BrassTaxes</a>.</li>
+  <li>Надайте своїй електроніці час сну - спробуйте спостерігати за цифровим заходом сонця.</li>
+  <li>Відстежуйте фази місяця.<br />
+<a href="https://bisonbookbinding.com/uk/products/2019-moon-phase-calendar"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/i.png' alt="Screen Shot 2019-01-24 at 3.48.37 PM.png" /> </a></li>
+  <li>Не чекайте, щоб сказати комусь, що ви відчуваєте.</li>
+  <li>Створіть (або приєднуйтесь до) регулярної, постійної зустрічі для проведення часу на свіжому повітрі з іншими людьми. Ми віддаємо перевагу щотижневій сімейній прогулянці, за якою слідує рання вечеря/хепі-аур.</li>
+  <li>Зробіть <a href="https://www.thehikinglife.com/uk/2018/01/wanderlust-hiking-on-legendary-trails/">прогулянку</a>.<br />
+<a href="https://us.gestalten.com/uk/products/wanderlust"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/j.png' alt="Screen Shot 2019-01-28 at 3.35.04 PM.png" /></a></li>
+  <li>Сповільніть.</li>
+</ul>
+
+
+</div>
     </main>
 
     <footer>
       <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="/about">про нас<a>
-          </li>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/2019-dojo4-guide-to-a-better-year-42-tips">i-hate-this<a>
-          </li>
-          <li>
-            <a href="mailto:i-love-this@drawohara.io?subject=/2019-dojo4-guide-to-a-better-year-42-tips">i-love-this<a>
-          </li>
-          <li>
-            <a href="/contact">контакти<a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/2019-dojo4-guide-to-a-better-year-42-tips">😩, я 🖤 ^це!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
     </footer>
   </body>
 </html>

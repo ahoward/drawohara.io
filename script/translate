@@ -3,23 +3,19 @@
 
 script do
   tldr <<~____
-    ~> translate uk sv fr es it
+    ~> translate uk sv fr es it nl
   ____
-
-  param :noop
 
   param :build_dir, value: :required
   param :lang_dir, value: :required
+  param :force
+  param :noop
 
   run do
     setup!
 
     jobs =
       []
-
-    if langs.empty?
-      langs = site.dato.fetch(:langs)
-    end
 
     langs.each do |lang, name|
       @build_dir.glob '**/**.html' do |src|
@@ -29,7 +25,7 @@ script do
         next if %w[ ro langs ].include?(root)
 
         dst = @lang_dir.join(lang, *parts)
-        job = {lang:, name:, src:, dst:}
+        job = {lang:, name:, src:, dst:, force:force?}
         jobs.push(job)
       end
     end
@@ -39,14 +35,15 @@ script do
       abort
     end
 
+    if force?
+      @lang_dir.delete!(recursive: true)
+    end
+
     parallel =
       AI::Mistral::RPS - 1
 
     Parallel.each(jobs, in_threads: parallel) do |job|
       lang = job.fetch(:lang)
-
-      @lang_dir.delete!(recursive: true)
-
       translate!(**job)
     end
   end
@@ -55,13 +52,24 @@ private
   def setup!
     @iso_639_1 = JSON.parse(IO.binread('./config/iso-639-1.json'))
     @noop = params.has_key?(:noop)
+    @force = params.has_key?(:force)
 
     @build_dir = Path.for(params.fetch(:build_dir){ './build' })
-    @lang_dir = Path.for(params.fetch(:lang_dir){ './tmp/lang' })
+    @lang_dir = Path.for(params.fetch(:lang_dir){ './langs' })
   end
 
-  def translate!(lang:, name:, src:, dst:)
+  def translate!(lang:, name:, src:, dst:, force:)
     p(lang:, name:, src:, dst:)
+
+    translate = [
+      force,
+      test(?e, src) && test(?e, dst) && test('>', src, dst)
+    ].any?
+
+    unless translate
+      p(skipping: {src:, dst:})
+      return nil
+    end
 
     html = IO.binread(src)
 
@@ -70,7 +78,7 @@ private
       l.push "  translate the following html file to '#{ name }', ISO-639-1 code '#{ lang }'."
       l.push "  respond with the translated document and ONLY the translated document."
       l.push "  be sure to translate the content of any links as well."
-      l.push "  finally, add an html <base> tag to the output to constrain usees to the given lang,"
+      l.push "  also, add an html <base> tag to the output to constrain usees to the given lang,"
       l.push "  for example, if translating to '#{ lang }' you should add `<base href='/langs/#{ lang }' />` to the <head> section of the translated document."
       l.push "</INSTRUCTIONS>"
       l.push
@@ -104,17 +112,23 @@ private
     AI
   end
 
-  def default_langs
-    %w[ ]
+  def langs
+    keys =
+      if argv.empty?
+        default_langs
+      else
+        argv
+      end
+
+    keys -= %w[ en ]
+
+    values = keys.map{|key| iso_639_1.fetch(key)}
+
+    Hash[keys.zip(values)]
   end
 
-  def langs
-    @langs ||= (
-      keys = argv + default_langs
-      values = keys.map{|key| iso_639_1.fetch(key)}
-
-      Hash[keys.zip(values)]
-    )
+  def default_langs
+    site.dato.fetch(:langs)
   end
 
   def langdirs
@@ -122,7 +136,11 @@ private
   end
 
   def noop?
-    @noop
+    !!@noop
+  end
+
+  def force?
+    !!@force
   end
 
   def iso_639_1

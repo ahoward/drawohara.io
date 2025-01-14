@@ -1,4 +1,6 @@
-- nursing a broken leg, etc., in L.A. with a [very nice witch](https://photos.app.goo.gl/MpSigk5BJwqeouiUA)
+- **big news**. jess and are moving to colorado!  it's been a five year journey, and i'll be writing much more about it soon....
+
+- still nursing a broken leg, etc., in L.A. with a [very nice witch](https://photos.app.goo.gl/MpSigk5BJwqeouiUA)
 
 - the air isn't too good [due to the fires](https://photos.app.goo.gl/Kjipk8eKT88CtSRSA) but we are surviving, better than some 💙
 

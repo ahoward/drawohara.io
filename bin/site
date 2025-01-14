@@ -1,52 +1,8 @@
 #! /usr/bin/env ruby
 #  encoding: utf-8
 
-script do
-  tldr <<~____
-    ~> site console
-    ~> site build
-    ~> site get /about
-    ~> site translate uk es fr sv
-  ____
+script = ARGV.shift
 
-  run :console do
-    exec './script/console'
-  end
+Dir.chdir(File.dirname(__dir__))
 
-  run :build do
-    exec './script/build'
-  end
-
-  run :get do
-    argv.each do |url|
-      resp = site.get(url)
-
-      if resp.ok?
-        puts resp
-        exit 0
-      else
-        puts resp.inspect
-        exit resp.status
-      end
-    end
-  end
-
-  run :translate do
-    exec './script/translate'
-  end
-
-  run :server do
-    exec './script/server'
-  end
-
-  def site
-    Site.only
-  end
-end
-
-BEGIN {
-  Dir.chdir(File.dirname(__dir__))
-
-  require_relative '../lib/script.rb'
-  require_relative '../config/boot.rb'
-}
+exec "./script/#{ script }", *ARGV

@@ -1,6 +1,5 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
@@ -17,6 +16,17 @@
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
   <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,13 +39,14 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Проста стратегія резервного копіювання для Amazon Cloud Hosts</title>
+    <base href='/langs/uk' />
+    <title>нічого не потрібно бачити тут.</title>
 
-<meta property="og:title" content="Проста стратегія резервного копіювання для Amazon Cloud Hosts"/>
-<meta property="og:description" content="переходьте." />
+<meta property="og:title" content="нічого не потрібно бачити тут."/>
+<meta property="og:description" content="продовжуйте рух." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-  <meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"a-simple-backup-strategy-for-amazon-cloud-hosts"}">
@@ -57,21 +68,31 @@
     <script>
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
-        if (progressBar) {
-          progressBar.remove();
-        }
+        if (progressBar) { progressBar.remove(); }
       });
     </script>
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">я ❤️ це!</a>
+<small>
+  <small>
+    <small>
+      <span title='випий мене'>&lt;&lt; натисніть мене 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
 <hr>
+<strong>/a-simple-backup-strategy-for-amazon-cloud-hosts</strong>
     </header>
 
     <main>
-      <p>Протягом багатьох років Dojo4 зібрала чудовий стек розробки та хостингу веб-додатків.&#160; Облако Amazon Web Services (AWS) є основою цього стеку. &#160; Гнучкість та зручність тому EBS (Elastic Block Store) є переконливими, і ми використовуємо їх для системних томів, а також для томів даних для розгортання програм та збереження баз даних на наших хмарних комп'ютерах Elastic Compute Cloud (EC2).&#160; Деякий час тому, наприкінці розмови про архітектуру хостингу, Ара неофіційно сказав: "О, і періодичні резервні копії дисків повинні відбуватися автоматично кожного разу, коли ми запускаємо новий інстанс EC2".&#160; Тож я почав працювати над невеликим скриптом під назвою DREBS (Disaster Recovery for Elastic Block Store).&#160; DREBS можна інтегрувати в ваш Amazon Machine Image (AMI) або налаштувати в ваших механізмах Chef або іншого хмарного провізіонінгу.&#160;&#160; DREBS можна налаштувати для періодичного створення знімків EBS томів, приєднаних до інстансу EC2, на якому він працює. &#160; Він підтримує гнучкі стратегії зберігання знімків, а також завдання до та після створення знімків для таких завдань, як збереження баз даних на диск для послідовних резервних копій баз даних.&#160; <a href="https://github.com/dojo4/DREBS" title="https://github.com/dojo4/DREBS">Ознайомтеся з DREBS</a> і дайте нам знати, що ви думаєте.</p>
+      <em>опубліковано: 2012-03-01</em>
+<br>
+<br>
+<p>Протягом багатьох років Dojo4 створила чудовий стек розробки та хостингу веб-додатків. Хмара Amazon Web Services (AWS) складає основу цього стеку. Гнучкість та зручність тому Elastic Block Store (EBS) дисків привабливі, і ми використовуємо їх для системних томів, а також для томів даних для розгортання програм та зберігання баз даних на наших хмарних комп'ютерах Elastic Compute Cloud (EC2). Деякий час тому, в кінці розмови про архітектуру хостингу, Ара недбало зауважив: "О, і періодичні резервні копії дисків повинні відбуватися автоматично кожного разу, коли ми запускаємо новий інстанс EC2". Тож я почав працювати над невеликим скриптом під назвою DREBS (Відновлення після катастроф для Elastic Block Store). DREBS можна вбудувати у ваш Amazon Machine Image (AMI) або налаштувати в ваших Chef або інших механізмах хмарного провізіонінгу. DREBS можна налаштувати для створення періодичних знімків EBS томів, прикріплених до інстансу EC2, на якому він працює. Він підтримує гнучкі стратегії зберігання знімків, а також завдання до та після знімків для таких речей, як зливання баз даних на диск для послідовних резервних копій баз даних. <a href="https://github.com/dojo4/DREBS" title="https://github.com/dojo4/DREBS">Подивіться на DREBS</a> і дайте нам знати, що ви думаєте.</p>
 <br />
     </main>
 
@@ -81,20 +102,20 @@
 <blockquote>
 <ul>
   <li>
-    <a href="/about">про нас</a>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">😩, я 🖤 ^це!<a>
   </li>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">i-hate-this</a>
+    <a href="/now">/зараз<a>
   </li>
   <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">i-love-this</a>
+    <a href="/about">/про</a>
   </li>
   <li>
-    <a href="/contact">контакт</a>
+    <a href="/contact">/контакти<a>
   </li>
 </ul>
 </blockquote>
-<a href="/">&lt;&mdash; eject</a>
+<a href="/">&lt;&mdash; вийти</a>
     </footer>
   </body>
 </html>

@@ -1,0 +1,126 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"css3-horizontal-rules"}">
+    <meta property="site:path_info" content=""/css3-horizontal-rules"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/css3-horizontal-rules">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/css3-horizontal-rules</strong>
+    </header>
+
+    <main>
+      <em>published on: 2012-01-18</em>
+<br>
+<br>
+<p>I recently found myself devising styles for the "short story" posts on my personal site, which I decided to re-plumb, switching from WordPress to Octopress and GitHub—post about that experience forthcoming!</p>
+<p>In any event, short stories tend to be long-winded (as blog posts go), so I wanted to provide authors with an easy way to include emphatic, semantic section breaks. The humble horizontal rule <code>&lt;hr&gt;</code> seemed like the right solution, the more so since <a href="http://daringfireball.net/projects/markdown/syntax" class="darkTxt" target="_blank">Markdown</a> makes them so easy to include&mdash;just add <code>***</code> on a new line.</p>
+<p>Most browsers render the <code>&lt;hr&gt;</code> tag as an inset border&mdash;essentially a dark line stacked directly on top of a lighter line. But that's about as exciting as one of <a href="/#Ara" class="darkTxt" target="_blank">Ara's</a> two hour lectures on the history and advantages of wind-briefs in rural Alaska.</p>
+<p>So, I sleuthed the interwebs for sexier solutions and came across an all-too-familiar site: <a href="http://css-tricks.com/simple-styles-for-horizontal-rules/" class="darkTxt" target="_blank">Chris Coyier's CSS Tricks</a>.</p>
+<p>A word of caution: because these styles rely on the <code>:after</code> and <code>:before</code> pseudo-element selectors, IE7 and below don't do a great job rendering them. Thus, you might have to spend some time futzing with IE-specific styles. Or you might choose to do something more valuable with your time.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/css3-horizontal-rules">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

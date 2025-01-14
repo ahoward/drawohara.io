@@ -7,6 +7,9 @@ script do
 
   ____
 
+  param :dojo4
+  param :translate
+
   run do
     setup!
 
@@ -29,6 +32,8 @@ script do
   #
     dir = './build'
     tmp = tmpdir!
+    dojo4 = !!params.has_key?(:dojo4)
+    translate = !!params.has_key?(:translate)
 
   #
     puts "=" * 42
@@ -36,13 +41,22 @@ script do
     puts "-" * 42
 
     stats =
-      site_build!(dir: tmp) do |url:, file:|
+      site_build!(dir: tmp, dojo4:) do |url:, file:|
         puts("#{ url } -> #{ file }")
       end
 
     puts '---'
     p(stats:)
     puts
+
+  #
+    unless dojo4
+      puts "=" * 42
+      puts "RSYNC ./dojo4 -> #{ tmp }"
+      puts "-" * 42
+      system "rsync --archive --ignore-existing ./dojo4 #{ tmp }"
+      puts
+    end
 
   #
     puts "=" * 42
@@ -52,6 +66,15 @@ script do
     puts
 
   #
+    if translate
+      puts "=" * 42
+      langs = site.dato.fetch(:langs)
+      puts "TRANSLATE #{ langs.join ' ' }"
+      puts "-" * 42
+      system "./script/translate #{ langs.join ' ' }"
+      puts
+    end
+
     puts "=" * 42
     puts "RSYNC ./langs/ -> #{ tmp }/langs"
     puts "-" * 42
@@ -66,7 +89,7 @@ script do
     puts
   end
 
-  def site_build!(dir:, parallel: 8, &block)
+  def site_build!(dir:, dojo4: false, parallel: 8, &block)
     err = proc do |details|
       $stderr.puts(JSON.pretty_generate(details))
       exit(1)
@@ -120,11 +143,19 @@ script do
 
     a = Time.now.to_f
     urls = @site.urls.uniq
+
+    build_urls =
+      if dojo4
+        urls
+      else
+        urls.select{|url| not url.start_with?('/dojo4') }
+      end
+
     n = urls.size
 
     if parallel
       begin
-        Parallel.each(urls, in_processes: parallel) do |url|
+        Parallel.each(build_urls, in_processes: parallel) do |url|
           build_url[url]
         end
       rescue Parallel::DeadWorker

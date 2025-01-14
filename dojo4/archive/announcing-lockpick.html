@@ -1,0 +1,144 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"announcing-lockpick"}">
+    <meta property="site:path_info" content=""/announcing-lockpick"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/announcing-lockpick">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/announcing-lockpick</strong>
+    </header>
+
+    <main>
+      <em>published on: 2013-06-26</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/announcing-lockpick/assets/lockpick.jpg' alt="img" /></p>
+
+<p>Like many other shops, we deal with many smallish problems. Problems like where to get our coffee from (<a href="http://boxcarcoffeeroasters.com/">Boxcar</a>), where to go for lunch, what editor to use (Vim).</p>
+
+<p>We also struggled with how to manage who has access to our development, staging and production servers. We went through a few iterations attempting to solve this problem. We then hit two realizations:</p>
+
+<ul>
+  <li>Everyone that develop and deploy code are in a single team on GitHub</li>
+  <li>GitHub provides access to the <a href="http://developer.github.com/v3/users/keys/">public SSH key for their user via their API</a></li>
+</ul>
+
+<p>It turns out that SSH <em>public</em> keys are indeed <strong>public</strong>. The impending arrival of <a href="http://dojo4.com/blog/miles-smiles">Miles Matthias</a> provided the motivation to act on this insight. <a href="https://github.com/fredjean/lockpick">lockpick</a> came out of that realization.</p>
+
+<p>We now have the <code>lockpick</code> script on a cron job. Any member of the dojo4 and trusted sub team now has access to our servers.</p>
+
+<p><a href="https://github.com/fredjean/lockpick">lockpick</a> is open source software and is licensed under the MIT license.</p>
+
+<p>–</p>
+
+<p>Image from <a href="http://www.flickr.com/photos/ranh/">Ran Yaniv Hartstein</a>, found on <a href="http://flickr.com">Flickr</a> at http://www.flickr.com/photos/71052670@N00/106709219/in/photolist-aqUW8-2NYNRp-3afgoE-56hKYh-6tsdur-6twmtW-7bBkEv-acmuGx</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-lockpick">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

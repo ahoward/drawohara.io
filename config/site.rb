@@ -35,6 +35,33 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
+# /io/story
+#
+=begin
+  site.route '/io/story/:id' do |route|
+    route.call do |ctx|
+      id = ctx.params.fetch(:id)
+      page = site.ro.get("story/#{ id }")
+
+      if page
+        ctx.render string: page.body.html_safe, data: page
+      end
+    end
+
+    route.urls do
+      site.ro.io.map{|post| "/io/story/#{ post.id }"}
+    end
+  end
+
+  site.route '/io/story' do |route|
+    route.call do |ctx|
+      index = site.ro.story
+      data = {index:}
+      ctx.render 'views/story.erb', data:
+    end
+  end
+=end
+
 # /io
 #
   site.route '/io/:id' do |route|
@@ -139,7 +166,7 @@ Site.for 'drawohara.io' do |site|
     end
 
     route.urls do
-      site.ro.purls.reverse.map{|purl| "/purls/#{ purl.id }"}
+      site.ro.purls.to_a.reverse.map{|purl| "/purls/#{ purl.id }"}
     end
   end
 

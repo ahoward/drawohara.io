@@ -1,0 +1,163 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"screen-set-up-your-project-s-terminal-environment-once-and-only-once"}">
+    <meta property="site:path_info" content=""/screen-set-up-your-project-s-terminal-environment-once-and-only-once"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/screen-set-up-your-project-s-terminal-environment-once-and-only-once</strong>
+    </header>
+
+    <main>
+      <em>published on: 2013-11-01</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>With any project, I’m running several programs at once during the development process. This usually results in several tabs in the Terminal app - one for my local server, one for my database, one for my client application, and one for git. (Right now I use a GUI editor (ST2), but I may be reverting to vim soon…) This multiple tab setup re-occurs for each project I’m working on, and I’m usually switching between multiple projects several times a day.</p>
+
+<p>With this multi-tab setup, when I have to switch the project that I’m working on, I have to either open a new Terminal window with its own tabs for that project and deal with having a more than required number of windows open (not an option for a minimalist like myself) or close all of the tabs I have open, only to re-open them all when I switch back to that project.</p>
+
+<p>Well like most days, I learned a clever solution to this problem from the dojo4 wise and all-powerful leader, <a href="http://dojo4.com/team/ara-t-howard">Ara</a>. He uses the GNU <a href="https://www.gnu.org/software/screen/">Screen</a> program. Within a single Terminal tab, Screen allows you to open multiple “windows” (aka tabs) within the same Terminal tab. Here’s how to use it:</p>
+
+<pre><code class="language-text"># creating and reattaching to a session
+screen -S [name] = create a named screen
+screen -D -R [name] = reattach to a named screen and detach other people if nec
+screen -list = list screens
+
+# (exiting all windows in a screen session will exit that session. However a screen session is a running process, so you can kill it manually.)
+
+# within a screen session:
+ctrl-A + ? = help
+ctrl-A + " = list windows
+ctrl-A + c = create new window
+ctrl-A + n = next window
+ctrl-A + p = previous window
+ctrl-A + A = rename a window
+
+# aliases we use
+alias sl='screen -list '
+alias sdr='screen -d -r '
+alias s='screen -D -R '
+alias ss='screen -S'
+
+sdr [name] = reattach to a named screen and detach other people if nec
+ss [name] = create a named screen
+sl = list screens
+</code></pre>
+
+<p>Another really cool feature of screen is that when you detach from a screen session, all of your windows remain running, and when you re-attach to the screen session, you have all of your windows back at your disposal.</p>
+
+<p>When we discussed this in our office, <a href="http://dojo4.com/team/ryan-cook">Ryan Cook</a> created a <a href="https://gist.github.com/cookrn/2711966">nice little Ruby helper</a> to create screen sessions that are named after your current directory.</p>
+
+<p>So my workflow has changed from having multiple tabs in Terminal open to a single tab in Terminal where I re-connect to a screen session for each project I’m working on. That allows me to switch projects extremely quickly and to stop wasting time re-setting up and re-tearing down all of the Terminal tabs I’m using for a project.</p>
+
+<p>Now I just have to convert more things to terminal usage (like my editor) in order to really make the most of screen…</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

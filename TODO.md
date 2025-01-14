@@ -1,8 +1,6 @@
 todo
 ----
 
-- site build does not build dojo4 by default....
-
 - ro rendering improvments
   - front-matter
   - hard vs soft wrapping...
@@ -37,6 +35,7 @@ todo
 - evolve ventures
   - study on psycadelics
   - https://www.tristanharris.com/
+  - https://www.humanetech.com/
   - extract post about our convo
     - geo politics, big picture of american exceptionalism
     - dangers of ai, responsiblities of developers and importance of goals
@@ -46,6 +45,9 @@ todo
       - replacing people with our code,he quark, me fsl
       - ai willpower
       - girls and social media
+      - "software is the only engineering field in the world where you can
+        literally make something that kills someone and not be liable.
+      - and now we have ai....
     - weakness of the left
       - self worship
       - progressive==fast, convervative==slow, not dem vs. republican
@@ -55,8 +57,18 @@ todo
         - neil g
 
 - @writing
+  - /io/story/one
+
+  - /io/ai-the-hand-of-doom
+    counter:
+      - consider ai and the pawnbroker/holocaust.   meaning, art and images can change the world.
+  - /io/science-is-murder
+    - 'this intersection of science, technology, and climate'
+    - https://www.threads.net/@proto_millennial/post/DEwBS26N-BG?xmt=AQGziCiEK9-hQ6ouAfD4lD_7tjf5CjHGZPNpTOX0rUGbBA
   - /io/of-ar15s-4chan-and-diabetes
   - /io/polar-bear-eats-capitalist
+      - consider ai and the pawnbroker/holocaust.   meaning, art and images can change the world.
+      - https://www.threads.net/@proto_millennial/post/DEwBS26N-BG?xmt=AQGziCiEK9-hQ6ouAfD4lD_7tjf5CjHGZPNpTOX0rUGbBA
   - /io/the-giant-snake
   - /io/la-fires
   - /io/names-are-teh-hardz
@@ -66,6 +78,14 @@ todo
     - time, matter etc...
       https://www.linkedin.com/feed/update/urn:li:activity:7283916702977769472/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A7283916702977769472%2C7283940187804483585)&dashCommentUrn=urn%3Ali%3Afsd_comment%3A(7283940187804483585%2Curn%3Ali%3Aactivity%3A7283916702977769472)
 
+  - /io/series
+    - public/ro/series/index
+      - position: 0.0
+    - public/ro/series/one
+      - position: 1.0
+
+
+
 
   - /nerd/evolve-ventures
   - /nerd/python-is-poison
@@ -74,6 +94,8 @@ todo
   - /nerd/babelfish-that-shit
   - /nerd/destructuring-selective-results-with-ruby
   - /nerd/your-style-is-orthodox-and-it-sucks
+
+  - /nerd/series/how-i-built-this-site
 
 - /convos
 - /story
@@ -319,6 +341,7 @@ next
 
 done
 ----
+- site build does not build dojo4 by default....
 - https://search.google.com/search-console/sitemaps?resource_id=sc-domain%3Adrawohara.io
 - nothing but ctx + data in views...
 - fix translations!
