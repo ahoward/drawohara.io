@@ -1,0 +1,146 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>PROGRAMMERA SOM OM DU BRYR DIG OM NÅGOT</title>
+
+<meta property="og:title" content="PROGRAMMERA SOM OM DU BRYR DIG OM NÅGOT"/>
+<meta property="og:description" content="fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/arkiv/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"programmera-som-om-du-bryr-dig-om-nagot"}">
+    <meta property="site:path_info" content=""/programmera-som-om-du-bryr-dig-om-nagot"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><em>*<a href="https://www.youtube.com/embed/21Jj2ObZI9M">Detta tal hölls på Ruby Conference 2015 i Kiev, Ukraina</a>.</em></p>
+
+<p><strong>Introduktion</strong></p>
+
+<p><em>Tekniker har nycklarna till den mäktigaste kraften i den moderna världen, men de har nyligen glömt bort inte bara hur de ska använda den, utan att de äger den. Det var inte så länge sedan att teknologi representerade hopp; att den representerade makt; och, framför allt, att den representerade förändring. Vår hackerkultur har lugnat sig, och den accepterar nu meningslösa mål, meningslösa belöningar och meningslösa liv.</em></p>
+
+<p><em>Vi lever i den exakta stunden när, för första gången i historien, planeten är ansluten på ett praktiskt och personligt plan via ett nätverk av hyperintelligent mjukvara och hyperintelligent hårdvara. Vi lever våra liv under den exakta stunden då individer besitter den största makten att påverka förändring som de någonsin haft i mänsklighetens historia.</em></p>
+
+<p><em>En vändpunkt kan redan ha nåtts. Liksom tryckpressen, radion och televisionen före den, har internetskaparna kanske redan gett bort den djupa kunskapen till dem som endast söker konsolidering av rikedom och kontroll.</em></p>
+
+<p><em>Men det kan vara för sent. Den massiva spridningen av kunskap och utjämningen av förståelse erbjuder en unik möjlighet för oss som för närvarande styr rymdskeppen: vi kan välja att fortsätta patrullera planeten och upprätthålla status quo, eller vi kan välja att titta över våra axlar - till vänster - på det skimrande ljuset i fjärran och sätta en ny kurs.</em></p>
+
+<p><strong>HÄR ÄR PUNKTEN DÅR DU BÖR KAFFEINERA DIG OCH LÄSA DEN (REDIGERADE) AVSKRIFTEN NEDAN.</strong></p>
+
+<hr />
+
+<p><img src='/ro/dojo4/programmera-som-om-du-bryr-dig-om-nagot/assets/b.jpeg' alt="Skärmbild 2015-09-23 kl. 17.13.09.jpg" /></p>
+
+<p>Mitt namn är Ara T. Howard. Jag driver en liten butiksprogramvarufirma. Vi bygger alla sorters applikationer som rör Internetet - mobil, webb, stordata - i stöd för impactföretag. Vår definition av impact är företag som arbetar för att skapa en värld där ingen begränsas av omständigheter. Det betyder inte nödvändigtvis att allt är för socialt goda ändamål, eller att det inte tjänar pengar, men det försöker jämna ut spelplanen för alla människor på planeten - en mycket bred definition.</p>
+
+<p>Jag har varit i Ruby-gemenskapen i mycket lång tid - sedan före Ruby 1.4 - långt före Rails - och jag har sett Ruby gå igenom några grundläggande förändringar. En av dessa förändringar är hur utvecklingsgemenskapen i stort, och Ruby i synnerhet, har blivit lite smalare i sinnet än de var inledningsvis.</p>
+
+<p>Jag kommer att uppmuntra dig att fundera över att många av de saker vi pratar om, vi är besatt av, vi tänker på kanske faktiskt är de <em>felaktiga</em> saker, och verkligen försöka påminna människor om att programmering är en superkraft och att alla i det här rum faktiskt har ett stort ansvar att göra något med den makten.</p>
+
+<p>Jag vill börja med att fråga - handuppråckning - hur många människor tror att den globala ekonomin skulle kollapsa inom tre dagar om varje programmerare i världen slutade gå till jobbet? Inga händer. Så, det är vad jag pratar om och ändå arbetar de flesta av oss inte med att förändra världen till det bättre.</p>
+
+<p><img src='/ro/dojo4/programmera-som-om-du-bryr-dig-om-nagot/assets/c.jpeg' alt="Skärmbild 2015-09-23 kl. 16.50.52.jpg" /></p>
+
+<p>Så, jag kommer att illustrera detta med en berättelse. Jag är killen i mitten - alltid Linux-killen. Jag kommer att börja med Ruby Conf. 2006, som hölls i Denver. På den här Ruby-konferensen var jag fortfarande på en Linux-laptop och vad jag var med om var, i efterhand, lite av början på slutet. Vid den tiden hade jag aldrig en Windows-maskin. Jag kom från Linux-hackarkultur där det fanns en djup övertygelse vid den tiden att genom öppen källkod och genom mjukvara kunde vi faktiskt förändra världen. Rätt? Kod hade makt. Det fanns den här djupa, revolutionära tro på vad vi gjorde.</p>
+
+<p>Och det här, tror jag, var ögonblicket när det började förändras i flertalet utvecklares sinne. Jag tror att den här killen till vänster är problemet. Jag har en av dessa nu. Men jag minns att jag satt där på Ruby Conf. och den här killen hade en Mac. Det var den första Macbook. DHH talade på den här Ruby Conf., och jag minns att det var som för första gången när Ruby-programmering hade den här aura av att vara cool. Det handlade inte bara om att göra datorprogram, det handlade inte bara om att försöka förändra världen genom öppen källkod, eller vara snäll, eller något av dessa saker. Det var också cool för första gången. Och jag minns att jag tänkte på mig själv, "Fan, jag vill ha en av dessa datorer."</p>
+
+<p>Så, vid den tiden arbetade jag för en forskningsfakultet vid The Cooperative Institute for Research in the Earth Sciences. Jag hjälpte till att bygga vad som då var de största superdatorerna i världen (i fem dagar eller något sådant tills den överträffades). Och efter det gjorde jag någon riktigt snyggt Ruby-arbete - också superdatorarbete och stordata - verkligen stordata, som i Petabyte av data - visualiseringar och analys med Ruby, vilket var något banbrytande vid den tiden.</p>
+
+<p>Data kom från en uppsättning polärbanande satelliter, som producerar den enda avläst datauppsättningen som mäter människan. Dessa DMSP-satelliter samlar in data kontinuerligt över hela världen och den används för realtids taktiska flygbeslut av USA:s flygvapen. Den har den snygga egenskapen, dock, att på baksidan av världen - den mörka sidan - kastar de bara bort den data.</p>
+
+<p>Min grupp var det officiella arkivet för den här data, så vi fick en massa pengar för att göra något som jag fortfarande inte känner mig så bra för. Men vad vi gjorde på sidan var lite av en Robin Hood-spel, där vi skulle ta bortkastad information och vi skulle göra saker som att kunna mäta omfattningen av stormarna efter orkanen Katrina för Vita huset. Vi skulle göra saker som mäta platsen för flyktingläger i Saharaöknen så att matdropp kunde gå in men inte avslöja platsen för dessa flyktingläger för den motsatta sidan så att de kunde bombas. Eller vi skulle mäta den totala mängden CO2 som släpptes ut i atmosfären av gastorcher, som för övrigt verkligen motsvarar all bensin som bränns i bilar per dag. Så, vi kände oss ganska bra för det och jag kände att jag gjorde ett positivt bidrag - stjäla från Petrus för att betala Paulus, men det var en rolig tid.</p>
+
+<p><img src='/ro/dojo4/programmera-som-om-du-bryr-dig-om-nagot/assets/d.jpeg' alt="Skärmbild 2015-09-24 kl. 15.16.37.jpg" /></p>
+
+<p>Men det var den jävla Mac-laptopen. Jag tror att när Ruby Conf. 2007 rullade in, handlade det verkligen bara om dessa två killar, rätt? Steve Jobs & Bill Gates och ingen tänkte egentligen på Linux i Ruby-gemenskapen längre, eller riktigt den sorts tidsanda. Vi blev hängda.</p>
+
+<p>Ungefär vid den här tiden kontaktades jag av vad som nu är känt som en startup som köptes upp av Oracle för att kompilera Gnu Scientific Library så att den skulle köra i Ruby en-klick-installatören. Och det var där jag tog betet, i princip. Jag slutade på mitt jobb och jag började konsultera. Det var riktigt snyggt. När jag tittar tillbaka nu inser jag att jag hjälpte till att bygga många av de startups som har köpts upp i Boulder sedan dess. Jag var en del av maskinen.</p>
+
+<p><img src='/ro/dojo4/programmera-som-om-du-bryr-dig-om-nagot/assets/e.jpeg' alt="Skärmbild 2015-09-23 kl. 16.51.19.jpg" /></p>
+
+<p>Så, ja, jag drack Kool-aid. Jag var fullständigt hängd och engagerad i att göra något som jag nu ifrågasätter med viss misstänksamhet. Jag tjänade mycket pengar, träffade mycket människor, superkul. Jag kunde starta ett företag - DOJO4. Vi bor i en fantastisk plats. Boulder är fantastiskt. Vi har superkula människor. Vi njuter av vad vi gör. Det är något av en tårta, rätt? Så det verkar som om allt skulle vara bra...</p>
+
+<p><img src='/ro/dojo4/programmera-som-om-du-bryr-dig-om-nagot/assets/f.jpeg' alt="Skärmbild 2015-09-24 kl. 15.55.11.jpg" /></p>
+
+<p>Men jag började få den här irriterande känslan att jag inte verkligen kändes drivet av det arbete jag gjorde. Jag började ligga där på natten och tänka, "Fan, måste jag verkligen bygga det där samma användarsystem igen, det där samma röstningssystem eller den där samma funktion som varje startup har?" Allting började verka mycket likt. Det började kännas mycket inaveligt och utan syfte.</p>
+
+<p>Så vi började ha dessa interna diskussioner i företaget, början av förra året. Allt är bra men varför gör vi det här? Är det värt det? Borde vi göra något annat? Och mjukvara är svårt, så dessa är viktiga frågor att ställa. Det är inte som om det är ett lätt jobb eller ett stressfritt jobb. Vi började verkligen vilja ha mer.</p>
+
+<p><img src='/ro/dojo4/programmera-som-om-du-bryr-dig-om-nagot/assets/g.jpeg' alt="Skärmbild 2015-09-23 kl. 16.51.36.jpg" /></p>
+
+<p>Så, den här killen var också i baksidan av mitt sinne vid den tiden. Hur många människor vet vem det här är? [Händer går upp] Det är fantastiskt. Jag höll det här talet i ett rum med 300 människor för två veckor sedan i Denver och jag ställde samma fråga och noll människor höjde sina händer. Det var chockerande för mig.</p>
+
+<p>Det här är Richard Stallman, och när jag var en Linux-hackare skrev han mycket manifest. Han är en galen jävel, för alla ändamål. Vid den tiden verkar han ha varit verkligen galen - han pratade om saker som varför öppen källkodsmjukvara är viktig för saker som integritet och varför den kunde vara en kraft att kämpa mot statlig övervakning av din kommunikation, bara som ett exempel. Alla trodde att han var galen.</p>
+
+<p>Så, den här spindelkänslan ringde i mitt öra. Om du går tillbaka och läser några av de saker han sa, kommer du att upptäcka att allt var <em>jävligt</em> rätt. Varje enda sak var rätt. Han kanske inte var den bästa budbäraren - det var inte sötsatt, kanske var det inte sexy nog, det kom inte inbakat med en liten Apple-ikon på, det var inte aluminium och det fanns inga aktieoptioner. Dock var allt han sa rätt, och jag tror att människor har glömt bort det. Ingen pratar om frihet längre i mjukvara.</p>
+
+<p>Faktum är att vi vet nu att enkla beslut som de människor i det här rumet tar som att bidra till öppen källkodsmjukvara så att vi har kryptografibibliotek som inte kontrolleras av regeringar eller företag är ganska viktiga - <em>otroligt</em> viktiga, faktiskt, och påverkar miljoner liv.</p>
+
+<p>Så dessa saker rullar runt i mitt huvud - Stallman, vad fan gör vi? Vad bygger vi? Samma sak om och om igen. Sedan blev jag inbjuden till en konferens som arrangerades av <a href="http://unreasonableinstitute.org/">The Unreasonable Institute</a>. Nu, de har inte något att göra med mjukvara. De är en accelerator, en inkubator. De är de cui definition av impact jag kapade: En värld där ingen begränsas av sina omständigheter. Deras hela mission är att underlätta den revolutionen, och deras hela tro är att regeringar kan inte göra det, NGO:er kan inte göra det - bara företag kan göra det.</p>
+
+<p>Så det här handlar inte om välgörenhet, det handlar inte om lagstiftning. Idén är att affärer kan lösa världens problem. Jag tror att många gånger i mjukvara tänker vi på en mycket tudelad koncept mellan att donera vår tid till öppen källkod, att arbeta för välgörenhet, att ha hackfester för att hjälpa våra städer; och sedan arbetar vi för att tjäna pengar och göra skit som många av oss kanske inte bryr oss så mycket om. Så att använda affärer som en kraft för gott är en riktigt ny idé och det tog lång tid för mig att verkligen acceptera det.</p>
+
+<p><img src='/ro/dojo4/programmera-som-om-du-bryr-dig-om-nagot/assets/h.jpeg' alt="Skärmbild 2015-09-25 kl. 09.39.45.jpg" /></p>
+
+<p>Så, jag var en teknisk mentor på den här tvåveckors <a href="http://dojo4.com/blog/girl-effect-accelerator-braindump">Girl Effect Accelerator</a>

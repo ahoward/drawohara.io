@@ -1,0 +1,115 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>La technologie considérée comme dangereuse</title>
+
+    <meta property="og:title" content="La technologie considérée comme dangereuse"/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'technology-considered-harmful'}">
+    <meta property="site:path_info" content="/technology-considered-harmful">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Mes parents sont à Boulder depuis l'Alaska pour quelques semaines. Je ne les vois pas très souvent.</p>
+
+        <p>Ce matin, je les ai aidés à trouver une belle randonnée à faire dans la région à Hall Ranch (http://www.singletracks.com/bike-trails/hall-ranch.html) qui se trouve à environ 20 miles dans une ville appelée Lyons. Mes parents n'y étaient jamais allés, alors ma mère m'a demandé des indications. Mon père a un iPhone et m'a montré à quel point il est cool de pouvoir faire une recherche dans les cartes et obtenir des indications comme ça - la technologie à la rescousse !</p>
+
+        <p>En allant au travail, j'ai eu un mauvais pressentiment : ai-je vraiment aidé ma mère ? Au lieu de lui montrer comment utiliser un petit bout de technologie, j'aurais pu prendre 30 secondes pour lui donner des indications. Pourquoi ne l'ai-je pas fait ?</p>
+
+        <p>La technologie est là pour nous aider. C'est un outil pour rendre nos vies plus faciles et plus heureuses. N'est-ce pas ?</p>
+
+        <p>Faux. La technologie n'est qu'un outil, comme n'importe quel autre - c'est la relation avec son utilisateur qui la rend utile ou dangereuse. Si l'on suppose un instant que ce qui rend les gens heureux, ce sont leurs relations avec les autres (une supposition sûre - http://www.pbs.org/thisemotionallife/topic/connecting/connection-happiness), alors toute application qui réduit réellement le contact humain pourrait ne <em>pas être utile</em> à long terme.</p>
+
+        <p>Il est vrai que pouvoir afficher une carte lorsque vous êtes seul et perdu est vraiment utile. Mais <em>parler réellement</em> à votre fils, ou même à un étranger, au lieu d'utiliser une 'application' lorsque vous avez besoin d'indications est sans aucun doute une expérience plus profonde pour les deux personnes.</p>
+
+        <p>Votre technologie favorise-t-elle l'autonomie et moins d'interaction humaine ?</p>
+
+        <p>Si c'est le cas, elle risque d'être réellement dangereuse pour les gens - peu importe à quel point elle pourrait aider l'individu à ce moment-là.</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/technology-considered-harmful">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/technology-considered-harmful">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

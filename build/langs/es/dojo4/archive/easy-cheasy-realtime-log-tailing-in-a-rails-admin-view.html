@@ -1,0 +1,124 @@
+<html color-mode="user" lang="es">
+  <head>
+  <base href='/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>registro en tiempo real fácil y sencillo en una vista de administrador de rails</title>
+
+<meta property="og:title" content="registro en tiempo real fácil y sencillo en una vista de administrador de rails"/>
+<meta property="og:description" content="siga adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"}">
+    <meta property="site:path_info" content=""/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>en nuestras aplicaciones de rails siempre tenemos una sección de ‘/su’ o ‘superusuario’. colocamos cosas como informes en ese backend. recientemente necesité permitir que los superusuarios vieran los registros en tiempo real desde el navegador (para ayudar a depurar problemas de firewall para un servidor de licencias que construimos). consideré hacer algo inteligente como websockets y luego me volví cuerdo y simplemente decidí hacer lo más sencillo que podría funcionar posiblemente - recuerde, esto es solo para superusuarios, por lo que el siguiente enfoque de sondeo es <em>juuuusto dandy</em>…<br />
+<br /><br />
+<br /></p>
+
+<p>el primer paso fue configurar una acción y una vista que pudieran seguir un registro, mostrarlo y luego actualizarlo mediante ajax. el glaseado fue agregar una interfaz de usuario elegante (es decir, <em>enlace</em>) que pudiera iniciar y detener el sondeo<br />
+<br /><br />
+<br /></p>
+
+<p>aquí está la mayoría del código relevante<br />
+<br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/1994292.js?file=tail-f.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<p>el segundo paso, mostrado en ese gist, fue silenciar la función de registro recursivo que agregué inadvertidamente: es decir, el sondeo ajax en sí creó toneladas de salida de registro.<br />
+<br /></p>
+
+<p>así que ahí lo tienes. baja tecnología. fácil y sencillo. k.i.s.s. seguimiento de registros para administradores.<br />
+<br /><br />
+<br /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">sobre<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

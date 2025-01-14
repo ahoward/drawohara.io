@@ -1,0 +1,111 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Chrome Logger</title>
+
+    <meta property="og:title" content="Chrome Logger"/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'chrome-logger'}">
+    <meta property="site:path_info" content="/chrome-logger">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Un outil sympa appelé <a href="http://craig.is/writing/chrome-logger">Chrome Logger</a> existe depuis un moment et permet, grâce à une spécification connue, le journalisation côté client depuis le serveur. Il semble avoir subi une réécriture complète récemment, mais n'avait que des implémentations en PHP et Python.</p>
+
+        <p>Après un travail rapide hier soir, j'ai pu publier une version précoce d'une implémentation en Ruby. C'est un middleware Rack emballé comme une gemme qui expose <code>env['console']</code> à partir duquel vous pouvez créer des messages de journal.</p>
+
+        <p>Il est également livré avec une intégration facile de Rails : <code>require 'chrome_logger/railtie'</code></p>
+
+        <p>Vous pouvez consulter <a href="https://github.com/cookrn/chrome_logger/blob/master/example/config.ru">un exemple</a>, lire <a href="https://github.com/cookrn/chrome_logger">le code</a>, ou simplement l'installer !</p>
+
+        <p><code>gem install chrome_logger</code></p>
+
+        <p>Ryan</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/aller" name="goto">&mdash;&gt; aller</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/a-propos">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:je-déteste-ça@drawohara.io?subject=/chrome-logger">je-déteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:j-adore-ça@drawohara.io?subject=/chrome-logger">j-adore-ça</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

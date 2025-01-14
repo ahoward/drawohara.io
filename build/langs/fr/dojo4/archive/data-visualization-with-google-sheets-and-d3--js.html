@@ -1,0 +1,123 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <base href='/fr' />
+
+  <!-- meta -->
+    <title>Visualisation de données avec Google Sheets et D3.js</title>
+
+<meta property="og:title" content="Visualisation de données avec Google Sheets et D3.js"/>
+<meta property="og:description" content="poursuivre." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"data-visualization-with-google-sheets-and-d3--js"}">
+    <meta property="site:path_info" content=""/data-visualization-with-google-sheets-and-d3--js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Il y a des gens qui regardent une feuille de calcul et voient la magie.  Il y a d'autres qui regardent une feuille de calcul et leurs yeux deviennent flous et ils ont une forte envie de faire une sieste.  Pas de jugement sur l'un ou l'autre type, mais parfois il faut rendre les choses plus faciles à digérer.</p>
+
+<p>Mettre des lignes et des colonnes de données dans un format qui aide les gens à comprendre "de quoi il s'agit" s'appelle généralement la <em>visualisation de données</em>.  Il existe de nombreux outils pour créer des graphiques et des graphiques à partir de feuilles de calcul - y compris ceux intégrés à Excel ou Google Sheets.  Parfois, vous avez besoin de quelque chose de plus robuste - et le meilleur outil pour le travail est <a href="http://d3js.org">D3</a>.</p>
+
+<p>Exemple : dojo4 a récemment terminé un travail pour <a href="https://350.org">350.org</a> - une organisation axée sur la réduction des combustibles fossiles et le passage à 100 % de sources d'énergie renouvelables.  Nous avons utilisé le concept de diagramme en corde pour représenter les efforts de plusieurs groupes et organisations ciblant les banques internationales qui financent des projets de combustibles fossiles dans le monde.  Le codage des couleurs donne un aperçu rapide des groupes et de leur focus particulier sur les combustibles fossiles.</p>
+
+<p><img src='/fr/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg' alt="350-chord-diagram-base.jpg" /></p>
+
+<p>Les utilisateurs peuvent passer la souris sur une organisation et voir quelles banques elles ciblent :<br />
+<img src='/fr/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg' alt="350-d3-chord-diagram-hover1.jpg" /></p>
+
+<p>Ou passer la souris sur une banque et voir quels groupes ciblent cette banque spécifique.<br />
+<img src='/fr/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg' alt="350-d3-chord-diagram-hover2.jpg" /></p>
+
+<p><sup><em>(notez que les noms des banques et des organisations ont été supprimés pour des raisons de confidentialité)</em></sup></p>
+
+<p>Ce diagramme en corde a été généré dynamiquement à partir d'une feuille Google Sheets partagée à l'aide de Google App Script et de Javascript personnalisé attaché à la feuille.  Cette relation autonome aide à s'assurer que les données sources et le code pour générer le graphique ne perdent pas leur relation, et que toute mise à jour de la feuille partagée mettra automatiquement à jour le graphique.</p>
+
+<blockquote>
+  <p><em>J'ai apprécié de travailler avec dojo4. L'équipe voulait vraiment comprendre comment une visualisation de mes données serait précieuse et semblait travailler à partir de là. J'ai maintenant un graphique accessible et engageant qui raconte une histoire sur les lacunes, les redondances et les opportunités de coordination supplémentaire. J'ai apprécié qu'ils prennent le temps d'apprendre l'esthétique de mon organisation et qu'ils travaillent pour correspondre à notre style.</em>    –Analyste Global Senior, <a href="https://350.org/">350.org</a></p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/fr/goto" name="goto">&mdash;&gt; aller</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/fr/about">à propos<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">je-déteste-cela<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">j'adore-cela<a>
+  </li>
+  <li>
+    <a href="/fr/contact">contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/fr">&lt;&mdash; quitter</a>
+    </footer>
+  </body>
+</html>

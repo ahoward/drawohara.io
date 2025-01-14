@@ -1,0 +1,111 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Leprechauns älskar regnbågar.</title>
+
+    <meta property="og:title" content="Leprechauns älskar regnbågar."/>
+    <meta property="og:description" content="fortsätt." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"leprechauns-love-rainbows"}">
+    <meta property="site:path_info" content=""/leprechauns-love-rainbows"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Vi här på dojo älskar helgdagar. Till ära för många helgdagar har vi aktiverat vår webbplats med ett snabbt färgbyteschema. Sankt Patricks dag var den första möjligheten att testa detta. Vi rullade ut grönt och var mycket nöjda med oss själva när vi drack jättekrus av Guinness.</p>
+
+        <p>Sedan slog katastrofen till. Vi fick reda på de tråkiga <a href="http://www.washingtonpost.com/news/morning-mix/wp/2014/03/17/no-brewers-and-no-mayor-in-new-yorks-st-patricks-day-parade/">situationerna</a> i New York Citay och Boston där HBTQ-personer (särskilt homosexuella veteraner) uteslöts från att marschera i paraden. Detta ledde till en bojkott av paraderna av borgmästare och bryggare lika. Vi var också alla som, "inte på min vakt, suckers." Vi tog bort grönt. Freden återställdes.</p>
+
+        <p>Det dröjde inte länge förrän vi började sakna grönt som en leprechaun saknar sin guldpott. Vi ville ha tillbaka det, men vi ville inte verka som om vi gav efter.</p>
+
+        <p>Vi utvärderade situationen igen och bestämde oss för att i det här specifika fallet skulle att göra något bli mer av ett uttalande än att inte göra något alls.</p>
+
+        <p>Som ett resultat är grönt tillbaka och dimmigt ännu en gång. Och för att se till att vi inte blir missförstådda lade vi till en liten regnbåge till loggan... du vet, eftersom leprechauns älskar regnbågar.</p>
+
+        <p>Glad Sankt Paddys Dag!!</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; gå till</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">om<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/leprechauns-love-rainbows">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/leprechauns-love-rainbows">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

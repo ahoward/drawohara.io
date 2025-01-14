@@ -1,0 +1,124 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>log tailing in tempo reale facilissimo in una vista amministrativa di rails</title>
+
+    <meta property="og:title" content="log tailing in tempo reale facilissimo in una vista amministrativa di rails"/>
+    <meta property="og:description" content="prosegui." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"}">
+    <meta property="site:path_info" content=""/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>nelle nostre app rails abbiamo sempre una sezione '/su' o 'super utente'. Inseriamo roba come report in quel backend. Recentemente ho avuto bisogno di consentire ai super utenti di visualizzare i log in tempo reale dal browser (per assistere nella risoluzione dei problemi del firewall per un server di licenze che abbiamo costruito). Ho pensato di fare qualcosa di intelligente come i websocket e poi sono diventato sano e ho deciso di fare la cosa più semplice che potesse funzionare - ricorda, questo è solo per super utenti quindi l'approccio di polling seguente è <em>juuuust dandy</em>...<br />
+        <br /><br />
+        <br /></p>
+
+        <p>il primo passo è stato impostare un'azione e una visualizzazione che potesse eseguire il tail di un log, mostrarlo e poi aggiornarlo con ajax polling. La ciliegina sulla torta è stata aggiungere un'interfaccia utente elegante (alias <em>link</em>) che potesse avviare e interrompere il polling<br />
+        <br /><br />
+        <br /></p>
+
+        <p>ecco la maggior parte del codice rilevante<br />
+        <br /><br />
+        <br /></p>
+
+        <script src="https://gist.github.com/1994292.js?file=tail-f.rb"></script>
+
+        <p><br /><br />
+        <br /></p>
+
+        <p>il secondo passo, mostrato in quel gist, è stato silenziare la funzione di logger ricorsivo che ho inavvertitamente aggiunto: alias - il polling ajax stesso ha creato tonnellate di output del logger.<br />
+        <br /></p>
+
+        <p>ecco fatto. Bassa tecnologia. Facilissimo. k.i.s.s. log tailing per amministratori.<br />
+        <br /><br />
+        <br /></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">informazioni</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">non-mi-piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">mi-piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>L'Empathie dans les Logiciels (F)LOSS</title>
+
+    <meta property="og:title" content="L'Empathie dans les Logiciels (F)LOSS"/>
+    <meta property="og:description" content="passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"empathie-dans-logiciels-floss"}">
+    <meta property="site:path_info" content=""/empathie-dans-logiciels-floss"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>J'ai récemment vu un tweet qui m'a <em>vraiment</em> surpris. Pour fournir un peu de contexte, le tweet a été écrit par quelqu'un qui maintient une bibliothèque JavaScript populaire sur GitHub. Il a depuis été supprimé, mais voici le texte :</p>
+
+        <blockquote>
+          <p>La plupart des gens sont des ordures. Certains sont incroyables. Comptez-vous<br />
+          chanceux si vous êtes ami avec certains des incroyables.</p>
+        </blockquote>
+
+        <p>Bonté divine. Je me demande si cette déclaration inclut toutes les personnes qui prennent le temps d'apprendre et d'utiliser leur logiciel ? En leur donnant le bénéfice du doute, j'espère que c'était juste le produit d'une mauvaise journée. J'ai fini par réfléchir à quelque chose que je pense être important : parmi beaucoup d'autres choses, il faut être empathique pour être un <em>excellent</em> contributeur ou mainteneur de logiciels open source.</p>
+
+        <p>Pourquoi cela ? Si vous n'appréciez pas les personnes utilisant votre logiciel (F)LOSS, comment allez-vous créer une atmosphère et une communauté de qualité autour de celui-ci ? Vous avez ressenti la même douleur que vos utilisateurs, donc vous vous souciez probablement d'eux au moins un peu si vous avez publié le code pour qu'ils l'utilisent. Voici quelques autres motivations positives et empathiques pour contribuer, publier ou maintenir des logiciels (F)LOSS :</p>
+
+        <ul>
+          <li>Aider les autres à apprendre</li>
+          <li>Aider les autres à faire leur travail</li>
+          <li>Améliorer les communautés</li>
+        </ul>
+
+        <p>Remarquez cependant que j'ai utilisé "excellent" comme adjectif plus tôt. Je pense qu'il est possible d'être un bon contributeur sans être trop empathique. Par exemple, les gens peuvent contribuer avec pour objectif de démontrer leurs compétences ou de construire leur réputation, ce qui est très bien.</p>
+
+        <p>Gérer et travailler dans la communauté (F)LOSS est très difficile à sa manière, j'en suis sûr. Il semble très important, cependant, de faire un effort pour se mettre à la place de ses utilisateurs si l'objectif est de créer le logiciel le plus approprié pour la situation. Garder cela à l'esprit est déjà, ou deviendra avec un peu de chance, une bonne base pour avoir plus de personnes heureuses dans notre industrie.</p>
+
+        <p><strong>Note :</strong> J'espère qu'il est clair que je ne fais pas de distinction entre les logiciels libres et les logiciels open source ici. Ils sont très différents et cet article généralise à ce sujet.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/aller-à" name="aller-à">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/à-propos">à propos<a>
+          </li>
+          <li>
+            <a href="mailto:je-déteste-ça@drawohara.io?subject=/empathie-dans-logiciels-floss">je-déteste-ça<a>
+          </li>
+          <li>
+            <a href="mailto:j-adore-ça@drawohara.io?subject=/empathie-dans-logiciels-floss">j-adore-ça<a>
+          </li>
+          <li>
+            <a href="/contact">contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

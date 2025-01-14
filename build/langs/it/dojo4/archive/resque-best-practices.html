@@ -1,0 +1,158 @@
+<html color-mode="user" lang="it">
+  <head>
+  <base href='/it' />
+
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Migliori pratiche per Resque.</title>
+
+<meta property="og:title" content="Migliori pratiche per Resque."/>
+<meta property="og:description" content="proseguire." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivio/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"resque-best-practices"}">
+    <meta property="site:path_info" content=""/resque-best-practices"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+
+<h2 id="introduzione">Introduzione</h2>
+
+<p>Resque ( https://github.com/defunkt/resque ) è una soluzione davvero valida, robusta e di qualità per i lavori in background per rails. Tuttavia, lascia molto lavoro di riflessione al programmatore riguardo le migliori pratiche per modellare i tuoi lavori, gestire le distribuzioni e gestire i processi dei worker. Di seguito è riportato un insieme di migliori pratiche per l'utilizzo di resque/redis come sistema per i lavori in background.</p>
+
+<h2 id="gestione-dei-processi-in-background">Gestione dei Processi in Background</h2>
+
+<p>Resque ha alcune funzionalità per la gestione dei processi in background, ma sono rudimentali e piene di bug. Utilizziamo questo semplice script wrapper per gestire una singola istanza del daemon dei lavori in background:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123756.js?file=jobs.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="modellazione-dei-tuoi-lavori">Modellazione dei Tuoi Lavori</h2>
+
+<p>Una delle prime cose da fare è determinare come modellare i tuoi lavori. Resque rende abbastanza semplice inviare metodi arbitrari sui moduli, ma preferiamo fare qualcosa di un po' più pulito. In particolare, ci piace avere id sui lavori, poterli interrogare facilmente e renderli super resistenti in caso di guasti del sistema o del processo. Semplicemente consolidando tutta la logica dei lavori in un unico modello che rispecchia il lavoro di resque, questo è possibile. Ecco la nostra classe di base per i lavori.</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123839.js?file=job.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<p>Come probabilmente puoi vedere, questa classe (che potrebbe essere facilmente trasportata su ActiveRecord) consente l'invio di lavori arbitrari, postali o meno, e ogni lavoro lascia una traccia nel database principale che lo collega alla voce resque/redis. Rende il lavoro con gli oggetti dei lavori estremamente naturale - ad esempio, avere un loop di polling che controlla lo stato di un particolare lavoro per id, o ottenere un rapido conteggio di quanti lavori sono riusciti nell'ultima settimana. Mantiene anche la nostra installazione di resque super semplice - non utilizziamo alcun plugin - e rende possibile sostituire un altro sistema di elaborazione in background in pochi minuti.<br />
+L'unica gestione di cui ha bisogno è un'attività periodica per pulire la raccolta/tabella dei lavori. Utilizziamo whenever ( https://github.com/javan/whenever/ ) più un task rake per fare questo:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=jobs.rake"></script>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=schedule.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="distribuzione">Distribuzione</h2>
+
+<p>Infine, la tua distribuzione deve mantenere le cose in funzione:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=Capfile.rb"></script>
+
+<p><br /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/vai" name="vai">&mdash;&gt; vai</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/chi-siamo">chi-siamo<a>
+  </li>
+  <li>
+    <a href="mailto:odio-questo@drawohara.io?subject=/resque-best-practices">odio-questo<a>
+  </li>
+  <li>
+    <a href="mailto:adoro-questo@drawohara.io?subject=/resque-best-practices">adoro-questo<a>
+  </li>
+  <li>
+    <a href="/contatti">contatti<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

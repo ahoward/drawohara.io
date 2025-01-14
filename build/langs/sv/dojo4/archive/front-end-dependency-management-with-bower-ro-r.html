@@ -1,0 +1,110 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Front-End Dependency Management med Bower & RoR</title>
+
+<meta property="og:title" content="Front-End Dependency Management med Bower & RoR"/>
+<meta property="og:description" content="fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'front-end-dependency-management-with-bower-ro-r'}">
+    <meta property="site:path_info" content="/front-end-dependency-management-with-bower-ro-r">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+
+<p>Dependency management kan vara svårhanterat. När jag började på dojo4 för några veckor sedan, var det fantastiskt att klona en ruby on rails-projektrepo, kunna köra en <code>bundle install</code> och sedan kunna köra appen med <code>rails s</code>. För dem av er som inte är bekanta med ruby on rails dependency management, de gems som behövs för att köra applikationen listas i en fil som heter <code>Gemfile</code>. Bundle-applikationen läser den här gemfilen och laddar ner och installerar alla gems som inte finns på din dator ännu. Detta gör det inte bara enkelt att få applikationen igång korrekt snabbt och med lite konfigurationsarbete, det gör det också enkelt att uppdatera dessa beroende gems när en ny version släpps. Att köra <code>bundle update</code> eller uppdatera gemfilen och köra <code>bundle install</code> igen gör detta till en enkel process som garanterar att alla andra användare av appen också kommer att använda den nya versionen (förutsatt att vi delar ändringarna via källkodkontroll). Detta är en fantastisk arbetsflöde för serversidan, men vad gäller klientsidan?</p>
+
+<p>När klientapplikationer blir mer komplicerade behöver vi ofta hjälp av bibliotek och ramverk på klientsidan också. På dojo4 laddar vi för närvarande ner de filer vi behöver och lägger manuellt de filer som behövs i källkodkontrollen och committar dem. Filerna är under källkodkontroll, så åtminstone kommer alla att få dessa filer och vi kan återställa en versionsuppgradering, men det är lite krångligt. För att uppdatera biblioteksfilerna måste vi upprepa den manuella processen. På serversidan är det också väldigt trevligt att dependency management-uppgifter är mindre tätt kopplade till applikationskoden så att uppdateringar och återställningar av versioner blir enklare. Tyvärr har det inte funnits ett bra sätt att hantera beroenden för front-end. Tills nyligen.</p>
+
+<p>I september förra året släppte Twitter <a href="http://bower.io">Bower</a>, som erbjuder "en generisk, oberoende lösning på problemet med front-end package management". Bower ger samma möjligheter för front-end-applikationen som bundle gör för back-end: en central lista över beroenden i en fil, enkla installations- och uppdateringskommandon, och en viss separation från appkod och commits. När jag undersökte hur vi kunde dra nytta av detta i vår standard ruby on rails-applikation, hänvisade Bower-skaparna mig till <a href="https://github.com/42dev/bower-rails/">bower-rails</a> gem, som integrerar bower i ruby on rails-katalogstrukturen och lägger till några <code>rake</code> kommandon för att köra bower-kommandon. Nu behöver en utvecklare inte längre committa biblioteksfiler till apprepon manuellt, utan kan köra <code>rake bower:install [paketnamn]</code> och den senaste versionen av det paketet kommer att installeras i tillgångspipelinen och kommer att läggas till i listan över nödvändiga paket. En ny utvecklare kan sedan ladda ner appkoden och efter att ha kört <code>bundle install</code>, kan de köra <code>rake bower:install</code> och alla front-end-beroenden kommer att installeras i den rätta katalogen i ruby on rails-tillgångspipelinen för omedelbar användning.</p>
+
+<p>Personligen tycker jag mycket om det här tillvägagångssättet och hoppas att vi kan konvertera de front-end-bibliotek som läggs till manuellt till Bower-tillvägagångssättet. Vi diskuterar fortfarande för- och nackdelarna internt och kommer att fatta ett beslut snart. Vad tycker du? Hur hanterar du front-end-beroenden i ett distribuerat team?</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

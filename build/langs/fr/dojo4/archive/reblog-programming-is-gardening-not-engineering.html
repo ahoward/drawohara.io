@@ -1,0 +1,108 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! 'reblog: La programmation est du jardinage, pas de l'ingénierie'</title>
+
+    <meta property="og:title" content="! 'reblog: La programmation est du jardinage, pas de l'ingénierie'" />
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"reblog-programming-is-gardening-not-engineering"}">
+    <meta property="site:path_info" content=""/reblog-programming-is-gardening-not-engineering"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p><em>Nous avons pensé qu'il valait la peine de rebloguer cette Conversation avec Andy Hunt et Dave Thomas, Partie VII de Bill Venners du 14 avril 2003...</em></p>
+      <h2>Le développement logiciel comme jardinage</h2>
+      <p>Bill Venners : Dans votre livre, The Pragmatic Programmer, vous dites : « Plutôt que de la construction, la programmation ressemble plus au jardinage. » J'aime beaucoup votre métaphore du jardinage pour le développement logiciel. Pourriez-vous l'élaborer ?</p>
+      <p>Andy Hunt : Il existe une notion persistante dans beaucoup de littérature selon laquelle le développement logiciel devrait ressembler à de l'ingénierie. D'abord, un architecte dessine de superbes plans. Ensuite, vous obtenez un flot de corps chauds pour venir remplir les sièges, taper tout le code, et c'est fait. Beaucoup de gens ressentent encore cela. J'ai vu une interview dans les six derniers mois d'une grande maison d'externalisation en Inde où c'était leur sentiment. Ils peignent un tableau de la construction de logiciels comme des bâtiments. Les architectes talentueux font la conception. Les codeurs font la construction. Les locataires emménagent, et tout le monde vit heureux pour toujours. Nous ne pensons pas que ce soit très réaliste. Cela ne fonctionne pas ainsi avec les logiciels.</p>
+      <p>Nous peignons un tableau différent. Au lieu de ce processus très ordonné, qui ne se produit même pas dans le monde réel avec les bâtiments, le logiciel ressemble beaucoup plus au jardinage. Vous planifiez. Vous planifiez de faire un terrain de cette taille. Vous préparez le sol. Vous faites venir un paysagiste qui dit de mettre les grandes plantes à l'arrière et les petites à l'avant. Vous avez un super plan, un design complet.</p>
+      <p>Mais lorsque vous plantez les bulbes et les graines, que se passe-t-il ? Le jardin ne pousse pas exactement comme vous l'aviez dessiné. Cette plante devient beaucoup plus grande que vous ne le pensiez. Vous devez la tailler. Vous devez la diviser. Vous devez la déplacer dans le jardin. Cette grande plante à l'arrière est morte. Vous devez la déterrer et la jeter dans le tas de compost. Ces couleurs ne ressemblaient pas à celles du paquet. Elles ne sont pas belles l'une à côté de l'autre. Vous devez transplanter celle-ci de l'autre côté du jardin.</p>
+      <p>Dave Thomas : De plus, avec un jardin, il y a une supposition constante de maintenance. Tout le monde dit : je veux un jardin à faible maintenance, mais la réalité est qu'un jardin est quelque chose avec lequel vous interagissez toujours pour l'améliorer ou même simplement le maintenir. Bien que je sache qu'il y a une maintenance de bâtiment, vous ne changez généralement pas la forme d'un bâtiment. Il reste juste là. Nous voulons que les gens voient les logiciels comme quelque chose de beaucoup plus organique, beaucoup plus malléable, et quelque chose avec lequel vous devez être prêt à interagir pour l'améliorer tout le temps.</p>
+      <p><em>Lire la suite à </em>
+      <a style="font-style: italic;" title="http://www.artima.com/intv/garden.html" href="http://www.artima.com/intv/garden.html">http://www.artima.com/intv/garden.html</a>
+      <em>.</em></p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/reblog-programming-is-gardening-not-engineering">je-deteste-cela</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/reblog-programming-is-gardening-not-engineering">j-aime-cela</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

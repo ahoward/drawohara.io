@@ -1,0 +1,147 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/sv/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/sv/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/sv/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/sv/favicon-16x16.png">
+    <link rel="manifest" href="/sv/site.webmanifest">
+
+  <!-- meta -->
+    <title>Från En Strömlinjeformad Startup-Stack till PCI-Compliance på AWS</title>
+
+<meta property="og:title" content="Från En Strömlinjeformad Startup-Stack till PCI-Compliance på AWS"/>
+<meta property="og:description" content="Fortsätt." />
+<meta property="og:image" content="https://drawohara.io/sv/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/sv/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'from-a-streamlined-startup-stack-to-pci-compliance-on-aws'}">
+    <meta property="site:path_info" content="/sv/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+
+    <base href="/sv" />
+  </head>
+
+  <body>
+    <header>
+      <a href="/sv/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h2 id="intro">Intro</h2>
+
+<p>När jag arbetar med projekt på <a href="http://dojo4.com">Dojo4</a> överraskas jag ofta av hur små ökningar i teknikkomplexitet <a href="http://en.wikipedia.org/wiki/Combinatorial_explosion">förstärker</a> till betydande uppmärksamhet och resurssänkor. Därför, när projekt startar, tenderar vi att föredra en förenklad värd- och applikationsstack som delar många funktioner som ofta ses i delade värdtjänster. Detta inkluderar val som att värda appen och databasen tillsammans, använda en enda distributionsanvändare på värdsystemet och enkel <a href="http://uptimerobot.com">uptime-övervakning</a>.</p>
+
+<p>Nyligen utvecklade vår långvariga kund, <a href="http://www.inspirecommerce.com/">Inspire Commerce</a>, en ny affärsplan som kräver att deras applikation uppfyller de stränga <a href="https://www.pcisecuritystandards.org/">Payment Card Industry</a> (PCI) Level 1 säkerhetskraven för att behandla, överföra och lagra kreditkortsinformation. Många av de säkerhetskrav som specificeras i PCI <a href="https://www.pcisecuritystandards.org/security_standards/">Data Security Standard</a> (DSS) motiverar en betydande ändring i tänkandet från den strömlinjeformade fokuserade stack som nämnts ovan. Den här posten kommer kortfattat uppräkna några av dessa detaljer och redogöra för våra lösningar.</p>
+
+<p>PCI DSS är uppdelat i 12 avsnitt som täcker allt från brandväggskonfiguration till personalens säkerhetspolicyer. Jag kommer gå igenom några avsnitt som är relevanta för värdstacken.</p>
+
+<h2 id="1-install-and-maintain-a-firewall-configuration-to-protect-cardholder-data">1. Installera och underhåll en brandväggskonfiguration för att skydda kortinnehavares data</h2>
+
+<p>Det här är ett ganska detaljerat avsnitt av DSS som kräver installation och konfiguration av <a href="http://en.wikipedia.org/wiki/Firewall_%28computing%29">brandvägg</a>-tjänster på alla nätverksenheter, från arbetsstationer till router och servrar. Med <a href="http://aws.amazon.com/">Amazon Web Services</a> (AWS) <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud</a> (EC2) som grund för vår värdstack, är många av dessa nätverksenheter abstraherade bort från vår syn eller kontroll. Lämpligt nog, <a href="http://aws.amazon.com/security/#certifications">AWS är själv PCI Level 1-kompatibel</a> och lämnar många av dessa detaljer till ingenjörerna på Amazon.</p>
+
+<p>Dock kräver brandväggar för EC2-noder någon övervägande. EC2-noder skyddas av en brandvägg som implementerats på <a href="www.xen.org/products/xenhyp.html">hypervisor</a>-nivån och konfigureras av AWS <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a>. Vår grundläggande Security Group har alla portar som nekar paket med undantag av 22, 80 och 443 som accepterar från alla källor. Vi kör <a href="www.ubuntu.com/">Ubuntu Linux</a> på våra noder och har utanför lådan <a href="www.netfilter.org/projects/iptables/">IP Tables</a> brandvägg konfigurerad med en öppen policy.</p>
+
+<p>PCI DSS fokuserar på att använda brandväggar för att skapa säkra privata nätverk eller <a href="http://en.wikipedia.org/wiki/DMZ_%28computing%29">Demilitariserade Zoner</a> (DMZ) för system som värdar appar som behandlar betalkortsdata. AWS Security Groups erbjuder ett användbart sätt att skapa säkra privata nätverk mellan olika komponenter i applikationsstacken. Till exempel, genom att skapa en WEB-säkerhetsgrupp och en DB-säkerhetsgrupp och öppna databasporten i DB-säkerhetsgruppen endast för WEB-säkerhetsgruppkällor, kommer EC2 hypervisor-brandväggen som körs på en databasserver endast tillåta åtkomst till databasen från webbservrar som ansluter på det interna privata nätverksgränssnittet.</p>
+
+<p>För redundans, speglar vi AWS Security Group-konfigurationen för EC2 hypervisor-brandväggen med <a href="http://www.cloudpassage.com/">CloudPassage</a>-tjänsten som kan hantera IP Tables-brandväggen på operativsystemsnivån för system som värdar komponenter i kortbearbetningsapplikationen. CloudPassage organiserar brandväggspolicyer i <a href="http://www.cloudpassage.com/features/halo-firewall.html">Server Groups</a> som är något analoga med AWS Security Groups. En annan bra funktion med CloudPassage är <a href="http://www.cloudpassage.com/features/multifactor-authentication.html">GhostPorts</a>-tjänsten. Vi konfigurerar ssh-portpolicyn i CloudPassage för att acceptera anslutningar från GhostPort-källor. För att en klientdator ska bli en GhostPort-källa, måste en användare på den datorn autentisera till CloudPassage-portalen, vara auktoriserad att öppna GhostPorts för en servergrupp och autentisera med en registrerad Yubikey-dongel eller svara på en SMS-utmaning med en registrerad mobiltelefon. Vid lyckad autentisering och auktorisering konfigurerar CloudPassage IP Tables för att acceptera anslutningar från klientdatorns käll-IP. Det här är ett bekvämt, säkert, tillfälligt och granskbart sätt att hantera åtkomst till känsliga värdar.</p>
+
+<h2 id="2-do-not-use-vendor-supplied-defaults-for-system-passwords-and-other-security-parameters">2. Använd inte leverantörstillhandahållna standardinställningar för systemlösenord och andra säkerhetsparametrar</h2>
+
+<p>Det här avsnittet skulle verka vara ganska uppenbart. Ett bra exempel på vikten av att ändra leverantörstillhandahållna standardlösenord är <a href="http://www.splunk.com/">Splunk</a> <a href="http://docs.splunk.com/Documentation/Splunk/latest/Deploy/Introducingtheuniversalforwarder">Universal Forwarder</a> standardlösenord changeme.</p>
+
+<p>Dock döljs i det här avsnittet ett viktigt värdkrav som är något orelaterat till avsnittets titel. "2.2.1 Implementera endast en primär funktion per server för att förhindra funktioner som kräver olika säkerhetsnivåer från att samexistera på samma server. (Till exempel bör webbservrar, databasservrar och DNS implementeras på separata servrar)."</p>
+
+<p>Som nämnts ovan, gör AWS-säkerhetsgrupper uppgiften att säkert separera tjänster som webb- och databasservrar till separata värdar ganska enkelt.</p>
+
+<h2 id="5-use-and-regularly-update-anti-virus-software-or-programs">5. Använd och uppdatera regelbundet antivirusprogramvara eller program</h2>
+
+<p><a href="http://clamav.com">ClamAV</a> gör snabbt klart det här kravet på Ubuntu Linux.</p>
+
+<h2 id="8-assign-a-unique-id-to-each-person-with-computer-access">8. Tilldela ett unikt ID till varje person med datoråtkomst</h2>
+
+<p>Syftet med det här avsnittet är att underlätta granskbarhet och ansvarsfullhet genom att ta bort delade användarkonton. Eftersom vi använder en <a href="http://en.wikipedia.org/wiki/Ssh-keygen">nyckelbaserad</a> autentiseringsmekanism för <a href="http://en.wikipedia.org/wiki/Secure_Shell">säker shell</a>-åtkomst, finns det tre primära bekymmer för att veta vem som gjorde vad. Först är det nödvändigt att förhindra att användare kan byta till ett annat användarkonto med <a href="http://en.wikipedia.org/wiki/Su_%28Unix%29">su-kommandot</a>. Detta uppnås enkelt genom att ta bort <a href="http://en.wikipedia.org/wiki/Filesystem_permissions#Traditional_Unix_permissions">körbehörigheten</a> på su-binärfilen och ändra <a href="http://aplawrence.com/Basics/understandingpam.html">/etc/pam.d</a> för att förhindra all su-auktorisering. För det andra, se till att <a href="http://www.eng.cam.ac.uk/help/jpmg/ssh/authorized_keys_howto.html">authorized_keys</a>-filerna för alla användarkonton endast innehåller en post. Slutligen, se till att alla nycklar som används för säker shell-åtkomst är lösenordsskyddade och att det finns en policy på plats för att förbjuda delning av nycklar mellan användare.</p>
+
+<p>Nu kan <a href="http://www.cyberciti.biz/tips/linux-audit-files-to-see-who-made-changes-to-a-file.html">Linux Audit Daemon</a> (AuditD) användas för att spåra systemaktivitet till specifika användare.</p>
+
+<h2 id="9-restrict-physical-access-to-cardholder-data">9. Begränsa fysisk åtkomst till kortinnehavares data</h2>
+
+<p>Titeln på det här avsnittet är ganska självförklarande. Grundsakligen täcker det här avsnittet ämnen som begränsar fysisk datacenteråtkomst till auktoriserad personal. Liksom diskussionen om nätverksenhetsbrandväggskonfiguration ovan, täcks detta av AWS PCI Level 1-certifiering och detaljerna kan lämnas till Amazon.</p>
+
+<h2 id="10-track-and-monitor-all-access-to-network-resources-and-cardholder-data">10. Spåra och övervaka all åtkomst till nätverksresurser och kortinnehavares data</h2>
+
+<p>Motivationen för det här avsnittet är "att förhindra, upptäcka eller minimera effekten av en datakompromiss". Detta innebär ämnen som loggning, filintegritetsmanagement och intrångsdetektering. Vår strategi börjar med att använda en loggningsservice för att stödja aggregering av loggar, kvarhållning av loggar samt sökning av loggposter. Vi använder <a href="http://splunk.com">Splunk</a>-applikationen för den här funktionaliteten. Vi har satt upp en EC2-instans för en loggningsserver och installerade Splunk. Vi har konfigurerat AWS Security Groups och CloudPassage ServerGroups för den nya servern som har Splunk-lyssnarporten som accepterar anslutningar från webbserver- och db-serverkällor på det privata nätverksgränssnittet. Sedan har vi satt upp Splunk Universal Forwarder på webb- och db-servrar och konfigurerat forwardrarna för att övervaka applikations-, apache-, mongodb-, sys-, audit- och auth-loggar.</p>
+
+<p>För filintegritetsövervakning och intrångsdetektering har vi installerat <a href="http://www.ossec.net/?page_id=165">OSSEC</a>-applikationen på alla våra servrar och lagt till alla loggar som OSSEC skriver till Splunk-forwardrarna.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/sv/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/sv/about">om</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/sv/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/sv/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">i-love-this</a>
+  </li>
+  <li>
+    <a href="/sv/contact">kontakt</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/sv">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <base href='/fr' />
+    <title>Le Responsive Design est mort ! Vive le Responsive Design !</title>
+
+<meta property="og:title" content="Le Responsive Design est mort ! Vive le Responsive Design !" />
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id" />
+    <meta property="site:params" content="{"ext":null,"id":"le-responsive-design-est-mort-vive-le-responsive-design"}">
+    <meta property="site:path_info" content="/le-responsive-design-est-mort-vive-le-responsive-design" />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Les sites web responsives sont là pour rester, et pour de bonnes raisons. Il n'y a actuellement pas de meilleure méthode pour adapter le contenu à la multitude croissante d'appareils et de tailles d'appareils sur le marché. Cependant, bien que la technologie ait changé, le processus de conception/développement est resté relativement stagnant.</p>
+
+<p>La raison en est assez simple : la plupart des agences sont bloquées dans des modèles de personnel obsolètes où une division entre designers et développeurs front-end existe toujours. Pour que de nouveaux paradigmes de conception responsive fonctionnent, cela doit changer.</p>
+
+<p>Une méthode pour résoudre ce problème est de combler le fossé entre le design et le développement. Nous avons constaté que cette stratégie est loin d'être idéale. Le jumelage de développeur à développeur peut avoir ses mérites, mais les designers et les développeurs ont des processus tellement différents qu'il devient rapidement problématique et finit par entraver le projet.</p>
+
+<p>Alternativement, ici chez dojo4, nous avons décidé qu'il était dans notre intérêt d'avoir des employés polyvalents. Non seulement nous recherchons ces employés, mais nous encourageons fortement l'expansion des compétences. En conséquence, nous avons des designers qui peuvent coder et des codeurs qui peuvent designer. Cela nous permet de commencer et de terminer notre processus de conception responsive presque entièrement dans le navigateur.</p>
+
+<p>Notre processus de conception commence par une organisation rapide du contenu au moyen d'un plan de site ou d'un organigramme utilisateur. Cela nous permet d'identifier les pages et les modèles qui nécessitent des maquettes filaires à mesure que nous passons à la phase suivante de notre processus.</p>
+
+<p>J'espère que vous avez apprécié la première phase pour son charme, car c'est la seule phase passée en dehors de notre navigateur bien-aimé.</p>
+
+<p>Avant de commencer avec les maquettes filaires, nous configurons nos environnements et résolvons toutes les dépendances (par exemple, Bootstrap, jQuery, Fontawesome et Middleman). C'est aussi à ce moment-là que nous réglons les besoins de déploiement (notamment la configuration des tâches rake et des compartiments S3). Une fois que nous sommes prêts à construire et à déployer, nous commençons à faire des étincelles.</p>
+
+<p>À partir des livrables mentionnés précédemment (plan de site), nous commençons à créer des fils de fer en niveaux de gris. Bien que les fils de fer soient responsives, ils sont très simples. Tout le contenu et les composants JavaScript (onglets/menus déroulants/infobulles/etc.) ont un style de base et une fonctionnalité de base. Les images et les icônes sont soit des images d'archive, soit grisées/encadrées avec une description. L'objectif ici est de fixer l'architecture de la page et les décisions de points de rupture responsives sans penser ni s'attarder sur les décisions de conception - celles-ci viendront ensuite.</p>
+
+<p>Une fois les fils de fer verrouillés, nous pouvons passer à la phase de conception du projet. Nous générons généralement un portefeuille de motifs. Pour être honnête, nos portefeuilles de motifs se situent quelque part entre un style tile en direct et un portefeuille de motifs. Ils montrent les choix de couleurs et de typographie en plus de la conception des éléments et des composants : en-têtes, pieds de page, formulaires, boutons, onglets, listes, paragraphes, titres, sous-titres, et tout autre élément substantiel appris des fils de fer. Nous considérons qu'il s'agit des matériaux de notre petite maison web.</p>
+
+<p>Avec le portefeuille de motifs approuvé, nous commençons à intégrer les éléments conçus dans nos fils de fer HTML. Nous commençons également à faire circuler le contenu, à saisir les données, à faire toute modélisation de données et à connecter les composants CMS si l'un est utilisé. Bien que la majeure partie du travail ait été faite à ce stade, c'est généralement la phase qui semble être la construction réelle du site.</p>
+
+<p>À ce stade, nous avons un site brouillon en phase de test et prêt pour la revue. Il y a généralement un ou deux tours de révisions - petits changements et ajustements. Puis vient la partie amusante, appuyer sur le petit bouton rouge qui envoie le site dans le monde où il commence enfin à faire son travail et à prouver qu'il est le meilleur et le plus méchant sur le web... jusqu'au prochain lancement, bien sûr.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/fr/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/fr/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:je-déteste-ça@drawohara.io?subject=/le-responsive-design-est-mort-vive-le-responsive-design">je-déteste-ça</a>
+  </li>
+  <li>
+    <a href="mailto:j-adore-ça@drawohara.io?subject=/le-responsive-design-est-mort-vive-le-responsive-design">j-adore-ça</a>
+  </li>
+  <li>
+    <a href="/fr/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/fr">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

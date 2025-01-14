@@ -1,0 +1,152 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Виявлення мобільних пристроїв за CDN</title>
+
+<meta property="og:title" content="Виявлення мобільних пристроїв за CDN"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"mobile-detection-behind-a-cdn"}">
+    <meta property="site:path_info" content=""/mobile-detection-behind-a-cdn"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>У нещодавньому проекті ми отримали завдання створити мобільну версію існуючого вебсайту. Існуючий вебсайт не був хорошим кандидатом для адаптивного дизайну, тому ми вирішили створити повністю нову версію сайту для мобільних пристроїв.</p>
+
+<p>![5547851770<em>3598506559_z.jpg](assets/b.jpeg)<br />
+_(фото від <a href="https://www.flickr.com/photos/johanl/5547851770/in/photolist-9sfc3J-63nmeT-3BAAy-dWUBhB-pAZUn-ccjB1w-st5Gc-7B2UEE-bbLNKX-8yTj9M-9e6jeJ-72jTj6-8RU8QS-5TNHyH-8FkSqy-5r7dgL-5A6ymJ-atHdpQ-7BbKMK-8P8X2-7bD7t6-2ViX1A-5E6qqL-6NDF76-9hBh7m-4bSRnn-sZomP-6VbEE-buapa2-5Kw5si-85KrwR-5kpSzg-bjEUUE-bV9J19-5GXRmg-6zbLPt-8yWpiA-akq64F-5n4ciA-9hmSj5-msHvhK-hZpPt-bFe25b-Bjwzo-mFYCVT-d3v8y-6wRQrs-f1p7uv-f8rrUJ-ebxiKS">Johan Larsson</a>)</em></p>
+
+<p>Спочатку ми розглядали можливість використання шаблону m.example.com, де сайти є повністю окремими доменами. Проте, оскільки ми не керуємо інфраструктурою для цього сайту, ми хотіли обрати вибір, який би потребував якомога менше змін інфраструктури. Підтримка іншого домену на тих самих серверах не надто складна, але це просто ще одне завдання, яке легко можна зіпсувати і яке не є необхідним у нашому випадку.</p>
+
+<p>Я також випустив цю техніку для будь-кого, хто хоче легко використовувати її в додатку Rails через двигун Rails:</p>
+
+<ul>
+  <li>https://github.com/milesmatthias/cdddn</li>
+  <li>http://rubygems.org/gems/cdddn</li>
+</ul>
+
+<h2 id="intro-to-cloudfront">Вступ до CloudFront</h2>
+
+<p>Однією з великих переваг цього конкретного вебсайту є те, що він використовує <a href="http://aws.amazon.com/cloudfront/">CloudFront</a>. CloudFront - це мережа постачання контенту (CDN), де статичні вебсторінки розміщені в <a href="http://aws.amazon.com/cloudfront/details/">52 дата-центрах по всьому світу</a>. Це дозволяє сторінці завантажуватися в браузері якомога швидше, оскільки незалежно від того, де ви знаходитесь у світі, ви не будете далеко від одного з вузлів CloudFront, тому займе менше часу для доставки вебсайту на ваш пристрій. CloudFront є частиною пропозиції Amazon AWS і, крім гарантованої швидкості, гарантує час безумовної роботи. (На відміну від <a href="http://aws.amazon.com/s3/">S3</a>, де гарантується лише час безумовної роботи.)</p>
+
+<p>Коли ви використовуєте CloudFront, ви повідомляєте йому, де знаходиться ваш вебсервер, щоб CloudFront міг отримати останню версію вебсторінок, які він обслуговує для вас. CloudFront також запитує ваш вебсервер щодо нових версій ваших вебсторінок кожні кілька хвилин або кожні кілька хвилин, або в будь-якому часовому інтервалі, який ви налаштували у панелі керування CloudFront. Зазвичай це десь біля 24 годин. Це дозволяє CloudFront зосередитися на доступності та швидкості, значно зменшуючи навантаження на ваш вебсервер. (Це також займає час для CloudFront, щоб взяти нову версію сторінки та оновити всі 52 дата-центри.)</p>
+
+<p>Однак це викликає проблему відстеження стану. Наприклад, якщо ваш сайт повністю обслуговується CloudFront, як ви підтримаєте вхід користувачів на ваш сайт? Якщо я користувач на ім'я Боб, і сторінка за адресою <code>/my/account</code> каже "Привіт, Боб!", CloudFront вважатиме, що всі, хто запитує сторінку за адресою <code>/my/account</code>, повинні бачити версію сторінки, яка каже "Привіт, Боб!". Користувачі (можливо, крім людей на ім'я Боб...) будуть дуже збентежені. Не тільки це, але що, якщо користувач оновив деяке значення в своєму обліковому записі і очікує, що ця зміна відобразиться миттєво? CloudFront не отримує нову версію сторінки при кожному запиті (це б трохи зводило нанівець сенс CloudFront), він чекає кілька хвилин, щоб отримати нову версію. CloudFront розв'язав кілька цих питань за допомогою <a href="http://aws.amazon.com/cloudfront/dynamic-content/">нових функцій</a>, але вам потрібно бути обізнаним про ці наслідки при використанні CloudFront.</p>
+
+<p>У нашому випадку сайт, над яким ми працюємо, не має поняття "користувачів", і ніхто не може увійти в систему. Проте ми все одно хочемо, щоб CloudFront показував різні версії сайту залежно від того, з якого пристрою ви запитуєте сайт (мобільний або настільний).</p>
+
+<p>CloudFront може виконувати виявлення пристроїв для вас, а потім надсилати спеціальний заголовок до вашого вебсервера, щоб сказати: "Надай мені версію сторінки для телефону", проте ми хотіли контролювати метод виявлення пристроїв (відповідаючи на питання - це телефон чи настільний?) і ми хотіли можливості для кінцевих користувачів і розробників обійти вибраний для них пристрій. Наприклад, кінцеві користувачі на планшеті можуть просто захотіти побачити настільну версію, хоча ми спочатку показуємо їм мобільну версію. Нашим розробникам також буде важко переключати свій пристрій кожного разу, коли вони хочуть переключитися між версіями при розробці сайту.</p>
+
+<h2 id="our-solution">Наше рішення</h2>
+
+<p>Ось метод, який ми придумали, щоб мати і настільну, і мобільну версії сайту на одному домені та обслуговувати його за допомогою CloudFront. Одне обов'язкове зауваження полягає в тому, що CloudFront зазвичай відключає всі файли cookie для вашого домену, але ви можете налаштувати його для дозволу файлів cookie, які ви називаєте. У нашому випадку ми сказали CloudFront дозволити файл cookie під назвою ‘device’. Також зауважте, що ми знаходимося в контексті додатку rails 4, але цю архітектуру можна реплікувати на будь-якому стеку. Основна ідея тут полягає в тому, що клієнт повинен визначити, на якому пристрої знаходиться користувач, дозволити їм обійти це, і тримати сервер в курсі типу пристрою, щоб сервер міг обслуговувати правильні сторінки (це робиться за допомогою файлів cookie).</p>
+
+<h3 id="on-every-page-we-need-to-do-something-like-this-snippet-from-appviewslayoutapplicationhtmlerb">На кожній сторінці нам потрібно зробити щось подібне (уривок з app/views/layout/application.html.erb)</h3>
+
+<pre><code class="language-html+erb">&lt;%= javascript_include_tag "mobile_detection" %&gt;
+
+&lt;script&gt;
+
+  if (!window.location.href.match(/get_device|set_device/)){
+    console.log('logging the window.location.href = ' + window.location.href);
+    localStorage.setItem('referrer_href', window.location.href);
+  }
+
+  var device_cookie  = cookie.get('device'),
+      cookiesEnabled = cookie.enabled();
+
+  if (cookiesEnabled &amp;&amp; device_cookie == undefined) {
+    window.location = '/get_device.html'
+  }
+
+&lt;/script&gt;
+</code></pre>
+
+<p>Наведений вище код просто запам'ятовує, на якій сторінці ви потрапили (зазвичай це головна сторінка, але ми хочемо, щоб клієнт міг ділитися посиланнями і щоб це працювало на мобільному пристрої), а потім перенаправляє вас на сторінку <code>/get_device</code>, щоб виявити ваш пристрій, якщо ми ще не зробили цього. Зверніть увагу на використання <code>localStorage</code>, що означає, що це працюватиме лише на IE8+ і не працюватиме на Opera Mini.</p>
+
+<p>Також зверніть увагу, що вищенаведений фрагмент розміщено в <code>&lt;head&gt;</code> макета, щоб він виконувався якомога швидше і до будь-яких скриптів, які можуть бути в настільній версії. У цьому випадку настільна версія активно використовує JavaScript для завантаження великої кількості контенту, тому ми точно не хотіли, щоб все це відбувалося на телефоні, перш ніж сайт розпізнав, що користувач повинен бачити мобільну версію сайту.</p>
+
+<h3 id="on-every-mobile-page-we-need-to-do-this-from-appviewslayoutapplicationmobileerb">На кожній мобільній сторінці нам потрібно зробити це (з `app/views/layout/application.mobile.erb):</h3>
+
+<div class="language-js highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">script</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">device_cookie</span>&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookie</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">get</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">device</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">),</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookiesEnabled</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookie</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">enabled</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-4'>&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if </span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">cookiesEnabled</span>&nbsp;<span style="color: #0550ae">&amp;&amp;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">device_cookie</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">desktop</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">reload</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">true</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/script</span><span style="color: #f6f8fa;background-color: #82071e">&gt;</span>
+</div></code></div>
+
+<p>Це тому, що мобільні пристрої активно кешують сторінки (що має сенс), тому якщо користувач змінив свій пристрій, ми повинні переконатися, що ми відправимо цей оновлений файл cookie на сервер, навіть якщо URL не змінився (і, отже, кеш вважає, що це та сама сторінка, яку потрібно послужити). <code>true</code> у виклику функції <code>reload</code> каже браузеру ігнорувати те, що знаходиться в кеші.</p>
+
+<p>Зверніть увагу, що ми робимо точно те саме на кожній настільній сторінці, за винятком перевірки, чи користувач змінив свій пристрій на <code>'mobile'</code>.</p>
+
+<h3 id="device-detection-at-get_device-appviewshomeget_devicehtml">Виявлення пристроїв на <code>/get_device</code> (app/views/home/get_device.html)</h3>
+
+<div class="language-js highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">script</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-2'>&nbsp;
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">function</span>&nbsp;<span style="color: #8250df">isMobile</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color:

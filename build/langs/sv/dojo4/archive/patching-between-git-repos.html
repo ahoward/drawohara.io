@@ -1,0 +1,162 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Patchning Mellan Git-repot</title>
+
+<meta property="og:title" content="Patchning Mellan Git-repot"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"patching-between-git-repos"}">
+    <meta property="site:path_info" content=""/patching-between-git-repos"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>(Det här inlägget finns ursprungligen på Spikes <a href="http://stuff-things.net/">Saker… Och Ting… blogg</a>)</p>
+
+<p>Även om berömmelse och gratis bilar är skönt, är anledningen till att jag bloggar för att lära, eller, som i det här fallet, för att hjälpa mig att komma ihåg saker.</p>
+
+<p>Jag arbetar med flera olika Rails-projekt som delar ett gemensamt ursprung. Ofta måste en buggfix eller en ny funktion i ett projekt porteras till (några av) de andra.</p>
+
+<p>Eftersom alla projekt ligger i sina egna repoar, kan ändringarna inte sammanfogas med Git. Nej, det här är ett jobb för patchar. Och när det gäller patchning med Git, finns det två inlägg om processen som jag inte kan klara mig utan.</p>
+
+<p>När du patchar, kommer tre Git-kommandon att användas, <a href="http://git-scm.com/docs/git-format-patch">git format-patch</a>, <a href="http://git-scm.com/docs/git-apply]">git apply</a>, och det något obskura <a href="http://git-scm.com/docs/git-am">git am</a>.</p>
+
+<p><code>git patch</code> är ganska rakt på sak, ge en lista med commits, den genererar en diff i <a href="http://en.wikipedia.org/wiki/Patch_%28Unix%29">patch-format</a> som sedan kan appliceras av Git eller av patch-kommandot. Det jag alltid måste slå upp är genvägen för att få en patch från den senaste committen.</p>
+
+<p>Den icke-genvägsmetoden är att få SHA för den näst senaste committen och skicka den till format-patch. Varför den näst senaste? SHA representerar tillståndet för repo efter att committen har gjorts, alltså är den slutliga SHA var vi är nu, och den näst senaste där vi var innan våra ändringar.</p>
+
+<p>Vi genererar patchen på följande sätt:</p>
+
+<pre><code>git log --oneline
+975d4dc Auto-generated CHANGELOG.md
+ca1216d Bump for validation fix
+git format-patch ca1216d
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p>(Du kan också skapa flera patchar genom att använda en SHA längre tillbaka i historiken.)</p>
+
+<p>Dock finns det en genväg för att få den näst senaste committen som jag hittade för länge sedan i det här inlägget:</p>
+
+<p><a href="http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit">http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit</a> och den är:</p>
+
+<pre><code>git format-patch HEAD^
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p><code>HEAD^</code> är en förkortning för <code>HEAD^1</code>, <em>^1</em> betyder den första föräldern till committen, i det här fallet committen innan <em>HEAD</em>, som naturligtvis är den näst senaste committen.</p>
+
+<p>Nu när du har din patch måste du applicera den. För det når jag efter rådet som finns i <a href="https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/">https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/</a></p>
+
+<p>Först kan du använda:</p>
+
+<pre><code>git apply --stat patch-file
+</code></pre>
+
+<p>för att se vilka ändringar som faktiskt finns i patchen. Sedan kan du använda</p>
+
+<pre><code>git apply --check patch-file
+</code></pre>
+
+<p>för att se om den kommer att fungera.</p>
+
+<p>Dock, enligt Ariejans artikel, använder jag egentligen inte <code>git apply</code> för att applicera patchen. Varför inte? Tillskrivning.</p>
+
+<p>Alternativet till <em>apply</em> är <code>git am</code>, som är utformat för att applicera patchar från e-post(er). Vad som gör det annorlunda är att committeraren på committen tas från <em>From</em>-adressen i patchen. För patchar som skapats av <code>git format-patch</code> är det committeraren av den ursprungliga koden. Med <code>git apply</code> är du committeraren. Alltså, om du använder <code>git am</code>, får du en anteckning om vem som skrev koden och med <code>git apply</code> en anteckning om vem som applicerade patchen.</p>
+
+<p>Det leder oss till <code>--signoff</code>-alternativet. Skickas till <code>git am</code> lägger det till <em>Signed-off-by</em> som innehåller namnet på personen som applicerade patchen till <code>git log</code>.</p>
+
+<pre><code>git am --signoff &lt; patch file
+</code></pre>
+
+<p>Med det får vi båda, en commit som visar vem som skrev koden och vem som applicerade den till det här repo.</p>
+
+<p>Och nu kanske jag kommer ihåg det!</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/patching-between-git-repos">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/patching-between-git-repos">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

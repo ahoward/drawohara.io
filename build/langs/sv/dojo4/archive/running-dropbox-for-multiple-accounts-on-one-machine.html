@@ -1,0 +1,144 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <base href='/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Köra Dropbox för flera konton på en dator</title>
+
+<meta property="og:title" content="Köra Dropbox för flera konton på en dator"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{\"ext\":null,\"id\":\"running-dropbox-for-multiple-accounts-on-one-machine\"}">
+    <meta property="site:path_info" content="/running-dropbox-for-multiple-accounts-on-one-machine">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Jag har ställt in en ny dator den här veckan och behövde verkligen köra två Dropbox-instanser: en för mina personliga saker och en för mitt http://dojo4.com konto.</p>
+
+<p>Det finns ganska många sätt att göra detta, men följande sätt är, med avstånd, det enklaste och mest robusta.</p>
+
+<p>Det stöder även &gt; 2 instanser som körs på samma dator.</p>
+
+<p>Steg ett är att skapa ett shell-skript med din favorit textredigerare (vim) och placera det var som helst. Det bör se ut så här:</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">#!/usr/bin/env bash</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #6e7781"># denna fil sparas på : /Users/$USER/bin/dojo4.dropbox</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'><span style="color: #0550ae">HOME</span><span style="color: #0550ae">=</span>/Users/<span style="color: #0550ae">$USER</span>/dojo4&nbsp;/Applications/Dropbox.app/Contents/MacOS/Dropbox
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>
+</div></code></div>
+
+<p>Ersätt ‘dojo4’ ovan med vad du vill kalla din alternativa instans. Att köra detta direkt kommer att starta Dropbox med dess normala ‘Dropbox’-katalog nestlad under en ‘dojo4’-mapp.</p>
+
+<p><img src='/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.29.09_AM.png' alt="img" /></p>
+
+<p>Du kommer dock inte att köra detta direkt. Du kommer att ladda ner Platypus ( http://sveinbjorn.org/platypus ).</p>
+
+<p>Du är nästan klar. Ladda ner och installera det. På grund av säkerhetsinställningar kan du behöva tillåta icke-AppStore-installationer på din dator:</p>
+
+<p><img src='/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.14.31_AM.png' alt="img" /></p>
+
+<p>Nästa steg är att starta Platypus och skapa ett nytt shell-skriptprogram</p>
+
+<p><img src='/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.17.42_AM.png' alt="img" /></p>
+
+<p>i mitt fall döpte jag detta till ‘Dojo4Dropbox’ och detta nya inbäddade Dropbox-programmet sparas som ‘/Applications/Dojo4Dropbox.app’.</p>
+
+<p>Det är egentligen allt. Du kan köra detta nya program precis som ‘/Applications/Dropbox.app’ och dess lagringskatalog kommer att vara nestlad. Och du kan hantera det som ett startobjekt precis som något annat program:</p>
+
+<p><img src='/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.20.36_AM.png' alt="img" /></p>
+
+<p>För den sista detaljen justerar du din andra instans för att använda en svartvit ikon så att du kan skilja dem åt:</p>
+
+<p><img src='/ro/dojo4/running-dropbox-for-multiple-accounts-on-one-machine/assets/screen-shot-2013-01-22-at-9.27.08_AM.png' alt="img" /></p>
+
+<p>Upprepa för att köra mer än 2 Dropbox-program. ;-)</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/running-dropbox-for-multiple-accounts-on-one-machine">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/running-dropbox-for-multiple-accounts-on-one-machine">i-love-this</a>
+  </li>
+  <li>
+    <a href="/contact">kontakt</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

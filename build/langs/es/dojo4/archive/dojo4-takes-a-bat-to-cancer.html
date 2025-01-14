@@ -1,0 +1,136 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>dojo4 le da un bateazo al cáncer.</title>
+
+    <meta property="og:title" content="dojo4 le da un bateazo al cáncer."/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"dojo4-takes-a-bat-to-cancer"}">
+    <meta property="site:path_info" content=""/dojo4-takes-a-bat-to-cancer"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><a href="http://dojo4.com/blog/dojo4-stands-up-to-cancer">El último proyecto de dojo4 con Stand Up to Cancer</a> (SU2C) <a href="http://dojo4.com/blog/su2c-live-telethon-rawked">les ayudó a recaudar más de $100 millones en una telethon</a>. Un mes después estamos trabajando con SU2C nuevamente; esta vez se están asociando con Major League Baseball para recaudar fondos en la Serie Mundial!</p>
+
+        <p>SU2C vino a nosotros con un problema - ¡MLB está presentando a SU2C y la lucha contra el cáncer durante el <a href="http://mlb.mlb.com/mlb/gameday/index.jsp?gid=2014_10_24_kcamlb_sfnmlb_1">Juego 3 de la Serie Mundial</a> (mañana - viernes, 24 de octubre)! Querían mejorar una aplicación que les construimos hace unos meses que permite a las personas hacer un tributo a un ser querido afectado por el cáncer: <a href="http://istandupfor.su2c.org">#istandupfor</a>.</p>
+
+        <p>Originalmente construimos la aplicación como un sitio web responsivo donde las personas podían subir una imagen, escribir una dedicatoria, compartir su tributo en las redes sociales y ser destacados en la galería de SU2C. Con la nueva visibilidad de Major League Baseball, SU2C quería llevar la aplicación a un nivel completamente nuevo. Así que volvimos al tablero de dibujo.</p>
+
+        <p>Aquí estaban los requisitos:</p>
+
+        <ul>
+          <li><strong>¡manejar toneladas de tráfico!</strong> La Serie Mundial de MLB es un evento internacional con millones de personas mirando. Cuando mencionen el movimiento #istandupfor, vamos a ver un gran aumento en el tráfico.</li>
+          <li><strong>¡tener una presencia de aplicación nativa!</strong> Había una versión más antigua de #istandupfor en la tienda de aplicaciones de iOS, pero necesitaba actualizarse y no había una aplicación para Android. Necesitábamos permitir que las personas honraran a sus seres queridos y compartieran su tributo en sus dispositivos móviles también.</li>
+          <li><strong>mantener el mantenimiento al mínimo</strong> El objetivo de SU2C es recaudar dinero para la investigación del cáncer, no tener 3 aplicaciones diferentes para mantener para el mismo movimiento #istandupfor.</li>
+        </ul>
+
+        <p>Así que esto es lo que hicimos:</p>
+
+        <h2 id="deja-el-escalado-a-los-expertos">deja el escalado a los expertos</h2>
+
+        <p>Intentar manejar la carga de una gran cantidad de tráfico directamente en nuestros servidores es un boleto directo a desarrolladores estresados arreglando frenéticamente errores y dejando a los usuarios colgados cuando intentan contribuir a la increíble comunidad de SU2C. ¿Sabes quién es bueno manejando grandes cantidades de cargas? Amazon S3.</p>
+
+        <p>Entonces, en lugar de requerir que uno de nuestros servidores web EC2 esté activo y funcionando, las aplicaciones cargan imágenes y toda la información requerida sobre un tributo (dedicatoria, correo electrónico, etc. en un pequeño archivo json) directamente a AWS S3. La versión web de #istandupfor ya cargaba imágenes a S3, por lo que la refactorización fue mínima. Amazon también tiene soporte nativo para aplicaciones móviles para cargas en S3 con SDKs para iOS y Android.</p>
+
+        <p>Luego, nuestros servidores EC2 simplemente verifican periódicamente S3 para nuevas cargas de tributos y las procesan en nuestra base de datos central para ver tributos individuales en línea (piensa en compartir en redes sociales) y para que SU2C los apruebe y agregue a la galería. Nuestros usuarios siempre podrán crear tributos sin importar la plataforma que estén usando (web, iOS o android), gracias a S3 y CloudFront.</p>
+
+        <p>Tuvimos una conferencia telefónica con AWS (un saludo a David y Nathaniel!) para asegurarnos de que nuestro plan era sólido y estuvieron de acuerdo en que era el mejor enfoque. Los ingenieros de AWS saben exactamente cómo manejar miles de solicitudes por segundo sin romper nada, así que los dejamos hacerlo.</p>
+
+        <h2 id="aplicaciones-nativas-híbridas">aplicaciones nativas híbridas</h2>
+
+        <p>SU2C quería una presencia de aplicación nativa, pero también quería evitar mucho mantenimiento en el futuro. Las tiendas de aplicaciones son grandes mecanismos de distribución, pero contienen muchos aros para saltar. Pasar por esos aros una vez es mucho más fácil de manejar que tener que pasar por ellos cada vez que se requiere un cambio en las aplicaciones.</p>
+
+        <p>Así que usamos mis puntos de partida de iOS y Android, <a href="http://imbed.github.io/">Imbed</a>, para crear aplicaciones nativas de iOS y Android que usan una vista web para cargar la aplicación. Los wrappers nativos proporcionan controladores de javascript que activan el código nativo, por lo que podemos crear cualquier código nativo que necesitemos (para este caso, la mayoría del código nativo era seleccionar una imagen del dispositivo y cargarla a AWS S3 a través de los SDKs de AWS) y luego llamar a ese código nativo a través de una página web cargada dentro de la aplicación. Esa página web sigue siendo una página web, por lo que podemos hacer actualizaciones, ponerlas en vivo y la aplicación se actualizará sin tener que volver a pasar por los aros de la tienda de aplicaciones.</p>
+
+        <p>¡Mira la <a href="https://play.google.com/store/apps/details?id=com.eifoundation.su2c">Aplicación Android en Google Play</a> y la <a href="https://itunes.apple.com/us/app/stand-up-to-cancer/id669692145?mt=8">aplicación iOS en la Apple App Store</a>!</p>
+
+        <p>Nos encanta trabajar con SU2C. No solo recaudan bajillones para luchar contra el cáncer, sino que también son muy amables y geniales para trabajar. No podemos esperar a ver los resultados del juego de mañana - ¡descarga la aplicación y dona!</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-takes-a-bat-to-cancer">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-takes-a-bat-to-cancer">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contacto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

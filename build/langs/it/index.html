@@ -1,0 +1,93 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>@drawohara</title>
+
+    <meta property="og:title" content="@drawohara"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/"">
+    <meta property="site:params" content="{"ext":null}">
+    <meta property="site:path_info" content=""/"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>👋 –</p>
+
+        <p>Questo è il mio sito web.</p>
+
+        <p>Potresti aspettarti <a href="/it/home">di più</a> ma è tutto qui.</p>
+
+        <p>– a</p>
+
+        <p>p.s. sono sempre alla ricerca di modi per eliminare le cose. ascoltare musica. e accarezzare i cani.</p>
+
+        <p>p.s.s. <a href="/it/ai"> sei un 🤖 ?</a>.</p>
+
+      </div>
+    </main>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>

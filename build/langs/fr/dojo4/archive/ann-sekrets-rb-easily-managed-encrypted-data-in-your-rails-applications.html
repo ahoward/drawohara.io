@@ -1,0 +1,216 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluide.sans-classe.fuchsia.min.css">
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! '&#39;[ANN] sekrets.rb - données cryptées facilement gérées dans vos applications rails&#39;&#39;'</title>
+
+    <meta property="og:title" content="! '&#39;[ANN] sekrets.rb - données cryptées facilement gérées dans vos applications rails&#39;&#39;'"/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content='{"ext":null,"id":"ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"}'>
+    <meta property="site:path_info" content="/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>ref: https://github.com/ahoward/sekrets</p>
+
+        <pre>
+
+NOM
+  sekrets.rb
+
+SYNOPSIS
+  sekrets est un outil en ligne de commande et une bibliothèque utilisée pour gérer de manière sécurisée les fichiers et paramètres cryptés dans vos applications rails et dépôts git.
+
+INSTALL
+  gem install sekrets
+  gem 'sekrets'
+
+DESCRIPTION
+  TL;DR
+    # créer un fichier de configuration crypté
+
+      ruby -r yaml -e'puts({:api_key => 1234}.to_yaml)' | sekrets write config/settings.yml.enc --key 42
+
+    # l'afficher
+
+      sekrets read config/settings.yml.enc --key 42
+
+    # l'éditer
+
+      sekrets edit config/settings.yml.enc --key 42
+
+    # voir qu'il est crypté
+
+      cat config/settings.yml.enc
+
+    # le commiter
+
+      git add config/settings.yml.enc
+
+    # mettre la clé de décryptage dans un fichier
+
+      echo 42 > .sekrets.key
+
+    # ignorer ce fichier dans git
+
+      echo .sekrets.key >> .gitignore
+
+    # vous n'avez plus besoin de fournir l'argument --key aux commandes
+
+      sekrets read config/settings.yml.enc
+
+      sekrets edit config/settings.yml.enc
+
+    # assurez-vous que ce fichier est déployé sur votre serveur
+
+      echo " require 'sekrets/capistrano' " >> Capfile
+
+    # commiter et déployer
+
+      git add config/settings.yml.enc
+      git commit -am'paramètres cryptés yo'
+      git pull && git push && cap staging deploy
+
+    # accéder à ces paramètres dans le code de votre application
+
+      settings = Sekrets.settings_for('./config/settings.yml.enc')
+
+
+  DESCRIPTION
+    sekrets fournit des outils en ligne de commande et une bibliothèque pour gérer et accéder aux fichiers cryptés dans votre base de code.
+
+    il permet de vérifier les informations cryptées dans un dépôt et de les gérer avec le reste de la base de code. il élimine le besoin de vérifier les informations non cryptées, les clés ou autres informations sensibles.
+
+    sekrets fournit à la fois un mécanisme général pour gérer les fichiers cryptés arbitraires et un mécanisme spécifique pour gérer les fichiers de configuration cryptés.
+
+
+  RECHERCHE DE CLÉ
+    pour *toutes* les opérations, depuis la ligne de commande ou autrement, sekrets utilise l'algorithme suivant pour rechercher une clé de décryptage :
+
+    - toute clé passée directement en tant que paramètre à un appel de bibliothèque sera préférée
+
+    - sinon le code recherche un fichier de clé compagnon. par exemple, pour le fichier 'config/sekrets.yml.enc' sekrets recherchera une clé à
+
+        config/.sekrets.yml.enc.key
+
+      si l'un de ceux-ci est trouvé comme non vide, le contenu du fichier sera utilisé comme clé de décryptage pour ce fichier. vous ne devriez *jamais* commiter ces fichiers de clé et également les ajouter à votre .gitignore - ou similaire.
+
+    - ensuite un fichier de clé de projet est recherché. le chemin de ce fichier est
+
+        ./.sekrets.key
+
+      normalement et, dans une application rails
+
+        RAILS_ROOT/.sekrets.key
+
+    - si cela n'est pas trouvé sekrets recherche la clé dans l'environnement sous la variable d'environnement
+
+        SEKRETS_KEY
+
+      la variable d'environnement utilisée est configurable dans la bibliothèque
+
+    - ensuite le fichier de clé global est recherché, le chemin de ce fichier est
+
+        ~/.sekrets.key
+
+    - enfin, si aucune clé n'a encore été spécifiée ou trouvée, l'utilisateur est invité à entrer la clé. l'invite ne se produit que si l'utilisateur est attaché à un tty. donc, par exemple, aucune invitation ne suspendra une application démarrée en arrière-plan comme une application rails gérée par passenger.
+
+    voir Sekrets.key_for pour plus de détails
+
+  DISTRIBUTION DE CLÉ
+    sekrets ne *tente* pas de résoudre le problème de distribution de clé pour vous, avec une exception :
+
+    si vous utilisez capistrano pour faire un déploiement 'vanille' basé sur ssh, une recette simple est fournie qui détectera un fichier de clé local et le scp sur le(s) serveur(s) distant(s) lors du déploiement.
+
+    sekrets suppose que le fichier de clé local, s'il existe, est correct.
+
+    en anglais simple, la recette capistrano fait :
+
+      scp ./sekrets.key deploy@remote.host.com:/rails_root/current/sekrets.key
+
+    il va sans dire que le fichier de clé local ne devrait *jamais* être vérifié et devrait également être dans .gitignore
+
+    la distribution de cette clé parmi les développeurs est hors du champ de la bibliothèque. l'email non crypté est probablement le meilleur mécanisme pour la distribution ;-/
+
+</pre>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">je-déteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">j'adore-ça</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

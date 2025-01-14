@@ -1,0 +1,141 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Varför Phonegap suger.</title>
+
+<meta property="og:title" content="Varför Phonegap suger."/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"varfor-phonegap-suger"}">
+    <meta property="site:path_info" content=""/varfor-phonegap-suger"">
+
+    <base href='/sv' />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Som alla utvecklingsbyråer får vi många klienter som vill skapa en app för både iOS och Android. De vill hitta på ett sätt att spara tid och pengar genom att inte behöva göra dubbelarbete för varje OS. Så naturligtvis pratar vi med dessa potentiella klienter om arkitekturoptioner med HTML-innehåll och webbvyer. (Vår senaste kund ville dela funktionalitet mellan en iOS-app och en webbplats, så vi riktades speciellt mot att använda HTML i den mobila appen.) På den här vägen kommer tanken på att använda Phonegap alltid upp. Vi har gått den här vägen några gånger, och här är våra slutsatser.</p>
+
+<p>Phonegap suger. Här är varför:</p>
+
+<ul>
+  <li>
+    <p>Lära sig en helt ny ramverk när du egentligen skulle lära dig Obj-C eller Java.</p>
+  </li>
+  <li>
+    <p>Beroende på dem för att stödja OS-funktioner (hoppas det finns och fungerar! hoppas de stöder nya saker snabbt!)</p>
+  </li>
+  <li>
+    <p>En röra av en organisation—Phonegap? Cordova? Vilket är det?????? (Använd bara Phonegap och du kommer att bli bra—Okej… vänta, jag måste använda cordova CLI för att lägga till plugin-program?!)</p>
+  </li>
+  <li>
+    <p>Föråldrad, felaktig och förvirrande dokumentation (delvis på grund av ovanstående punkt)</p>
+  </li>
+  <li>
+    <p>Communityn kring det är mer intresserad av att stödja varje enskild enhet på planeten istället för att hjälpa en utvecklare att ta något HTML-innehåll och publicera det smidigt på en av de två huvudsakliga OS. (Väl, det är vad Phonegap Cloud är för—försökte använda det tre gånger, det är trasigt.)</p>
+  </li>
+</ul>
+
+<p>Kort sagt, Phonegap är inriktat på att göra dig 10% nöjd på 100% av enheterna i världen. I vår erfarenhet bryr sig klienterna om att vara 100% nöjda på endast 2 av enheterna i världen—iOS och Android.</p>
+
+<p>Vad är då vår lösning? Omfamna Obj-C och Java! HTML-innehåll i en app är ett bra sätt för enkla appar att ha en enda kodbas på flera plattformar, men du behöver finmaskig kontroll över hela appen och du måste följa Apples och Googles instruktioner för hur du ska dra nytta av deras OS-funktioner. Så har vi ramverk (iOS nästan redo för öppen källkod & Android fortfarande i tidiga skeden) som innehåller en webbvy och använder sedan små, öppen källkodsbibliotek för att skapa en bro mellan den webbvyn och den nativa applikationen. Detta gör att vi kan skriva vår egen Javascript API för att anropa vilken nativ kod vi skriver. (För iOS använder vi den fantastiska WebViewJavascriptBridge av Marcus Westin)</p>
+
+<p>Till exempel, när vi har HTML-innehåll som vill dela en länk till Facebook eller Twitter, skrev vi vår egen Javascript API för att säga:</p>
+
+<p>bridge.callHandler(‘facebookShare’, ‘http://ducksarethebest.com’);<br />
+och sedan i Objective-C, skrev vi handlaren för att ta den URL:en och använda den officiella Facebook iOS SDK för att dela den länken:</p>
+
+<p>[_bridge registerHandler:@”facebook_share” handler:^(id data, WVJBResponseCallback responseCallback) {<br />
+FBAppCall *appCall = [FBDialogs presentShareDialogWithLink:[NSURL URLWithString:data] handler:fbHandler];<br />
+}];<br />
+Detta är en dramatiskt bättre upplevelse än att låta webbvyn dela den länken eftersom om användaren redan har Facebook-appen och är inloggad i den, kommer Facebook SDK inte att kräva att de loggar in igen, medan webbvyens delningsmetod kommer att göra det.</p>
+
+<p>Det är ännu bättre för lösningar där det inte finns någon webbalternativ, som in-app-köp. Och speciellt något så viktigt för din apps framgång—användare betalar dig pengar—du vill se till att det görs korrekt på det mest aktuella och rekommenderade sättet. Det enda sättet att göra det är att följa Apples eller Googles riktlinjer i deras officiella SDK.</p>
+
+<p>Den här metoden ger oss flexibiliteten att skriva vilken JS API som passar oss bäst, omedelbaren nyttan av att dra nytta av vilken funktion som helst som finns tillgänglig i iOS eller Android SDK:er, och det förbättrar våra utvecklingsfärdigheter i ett språk och en SDK som verkligen spelar roll för våra långsiktiga karriärer. Viktigast av allt är att klienten är nöjd med att vi har full kontroll över appen, vi är inte beroende av någon tredje parts grupp för att stödja funktioner som Apple eller Google släppte månader tidigare, och appen kan vara lika nativ eller webbaserad som det krävs för att skapa den bästa användarupplevelsen.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/varfor-phonegap-suger">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/varfor-phonegap-suger">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

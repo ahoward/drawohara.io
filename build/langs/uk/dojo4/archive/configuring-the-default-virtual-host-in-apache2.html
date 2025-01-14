@@ -1,0 +1,177 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Налаштування віртуального хоста за замовчуванням у apache2</title>
+
+<meta property="og:title" content="Налаштування віртуального хоста за замовчуванням у apache2"/>
+<meta property="og:description" content="Продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"configuring-the-default-virtual-host-in-apache2"}">
+    <meta property="site:path_info" content=""/configuring-the-default-virtual-host-in-apache2"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <div class="language-apache highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781"># apache має дивну поведінку переадресації будь-якого запиту з поганим або невідомим</span>
+</div><div class='code-line code-line-6'><span style="color: #6e7781"># заголовком Host: до першого віртуального хоста, знайденого в його конфігурації. це може викликати</span>
+</div><div class='code-line code-line-7'><span style="color: #6e7781"># дуже серйозні проблеми, коли кілька сайтів розміщено на одному інстансі apache</span>
+</div><div class='code-line code-line-8'><span style="color: #6e7781"># наприклад, невдалий запит на http://foo.bar.com/missing</span>
+</div><div class='code-line code-line-9'><span style="color: #6e7781"># може влучити в віртуальний хост passenger і викликати невизначену поведінку в залежності</span>
+</div><div class='code-line code-line-10'><span style="color: #6e7781"># від поведінки цього додатку.</span>
+</div><div class='code-line code-line-11'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-12'><span style="color: #6e7781"># рішення полягає в тому, щоб забезпечити наявність віртуального хоста, який ловить все, і щоб він</span>
+</div><div class='code-line code-line-13'><span style="color: #6e7781"># завантажувався перед усіма іншими файлами конфігурації віртуальних хостів - і щоб цей віртуальний</span>
+</div><div class='code-line code-line-14'><span style="color: #6e7781"># хост просто повертав 404 (ви також можете показувати дружнє повідомлення про помилку)</span>
+</div><div class='code-line code-line-15'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-16'><span style="color: #6e7781"># припустимо, що конфігураційні файли apache завантажуються з, наприклад:</span>
+</div><div class='code-line code-line-17'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-18'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/*.conf</span>
+</div><div class='code-line code-line-19'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-20'><span style="color: #6e7781"># ви повинні помістити цю конфігурацію в файл з назвою</span>
+</div><div class='code-line code-line-21'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-22'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/0.conf</span>
+</div><div class='code-line code-line-23'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-24'><span style="color: #6e7781"># '0.conf' забезпечує його завантаження першим. ви можете перевірити, що ця конфігурація</span>
+</div><div class='code-line code-line-25'><span style="color: #6e7781"># завантажується першою за допомогою</span>
+</div><div class='code-line code-line-26'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-27'><span style="color: #6e7781">#   ls -1 /etc/apache2/sites-enabled/ | sort | head -1</span>
+</div><div class='code-line code-line-28'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-29'><span style="color: #6e7781"># це повинно надрукувати</span>
+</div><div class='code-line code-line-30'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-31'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/0.conf</span>
+</div><div class='code-line code-line-32'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-33'><span style="color: #6e7781"># після встановлення конфігурації ви можете перевірити, що вона дійсно є</span>
+</div><div class='code-line code-line-34'><span style="color: #6e7781"># конфігурацією за замовчуванням/першою використовуваною конфігурацією за допомогою</span>
+</div><div class='code-line code-line-35'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-36'><span style="color: #6e7781">#   curl --silent --header 'Host: fu.bar.com' your.domain.com</span>
+</div><div class='code-line code-line-37'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-38'><span style="color: #6e7781"># якщо це правильно, буде показана стандартна сторінка 404 apache. очевидно,</span>
+</div><div class='code-line code-line-39'><span style="color: #6e7781"># ви можете налаштувати віртуальні сервери за замовчуванням так, щоб у них був фактичний кореневий документ</span>
+</div><div class='code-line code-line-40'><span style="color: #6e7781"># і т.д...</span>
+</div><div class='code-line code-line-41'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-42'><span style="color: #6e7781"># ще одна важлива заувага. недостатньо просто налаштувати</span>
+</div><div class='code-line code-line-43'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-44'><span style="color: #6e7781">#   _default_:80</span>
+</div><div class='code-line code-line-45'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-46'><span style="color: #6e7781"># віртуальний хост.</span>
+</div><div class='code-line code-line-47'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-48'><span style="color: #6e7781"># вам також потрібно налаштувати фактичний іменований хост</span>
+</div><div class='code-line code-line-49'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-50'><span style="color: #6e7781">#   ServerName _default_</span>
+</div><div class='code-line code-line-51'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-52'><span style="color: #6e7781"># причина цього полягає в тому, що віртуальне хостинг на основі імені за замовчуванням використовує</span>
+</div><div class='code-line code-line-53'><span style="color: #6e7781"># перший *віртуальний хост на основі імені*, тому ви не можете покладатися на неіменований,</span>
+</div><div class='code-line code-line-54'><span style="color: #6e7781"># який був би достатнім у більшості ситуацій.</span>
+</div><div class='code-line code-line-55'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-56'>
+</div><div class='code-line code-line-57'>
+</div><div class='code-line code-line-58'><span style="color: #6e7781"># цей розділ оброблятиме запити до відсутніх хостів під конфігурацією віртуального хоста на основі імені</span>
+</div><div class='code-line code-line-59'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-60'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-61'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;</span><span style="color: #0550ae">VirtualHost</span><span style="color: #116329"> *:80</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-62'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">ServerName</span>&nbsp;_default_
+</div><div class='code-line code-line-63'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Redirect</span>&nbsp;404&nbsp;/
+</div><div class='code-line code-line-64'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;/</span><span style="color: #0550ae">VirtualHost</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-65'>
+</div><div class='code-line code-line-66'>
+</div><div class='code-line code-line-67'><span style="color: #6e7781"># а це оброблятиме все інше</span>
+</div><div class='code-line code-line-68'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-69'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;</span><span style="color: #0550ae">VirtualHost</span><span style="color: #116329"> _default_:80</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-70'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Redirect</span>&nbsp;404&nbsp;/
+</div><div class='code-line code-line-71'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;/</span><span style="color: #0550ae">VirtualHost</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-72'>
+</div><div class='code-line code-line-73'>
+</div><div class='code-line code-line-74'>
+</div></code></div>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про цей сайт<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/configuring-the-default-virtual-host-in-apache2">ненавижу це</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/configuring-the-default-virtual-host-in-apache2">люблю це</a>
+  </li>
+  <li>
+    <a href="/contact">контакти</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; вихід</a>
+    </footer>
+  </body>
+</html>

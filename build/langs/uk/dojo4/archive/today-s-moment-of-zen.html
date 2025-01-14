@@ -1,0 +1,133 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/uk/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/uk/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/uk/favicon-16x16.png">
+    <link rel="manifest" href="/uk/site.webmanifest">
+
+  <!-- meta -->
+    <title>Сьогоднішній момент дзену</title>
+
+<meta property="og:title" content="Сьогоднішній момент дзену"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/uk/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"today-s-moment-of-zen"}">
+    <meta property="site:path_info" content="/uk/today-s-moment-of-zen">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/uk' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/uk/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h1 id="todays-moment-of-zen">Сьогоднішній момент дзену</h1>
+
+<p>Яксь усі статті з <a href="http://research.microsoft.com/en-us/people/mickens/">Джеймса Мікенса</a> потрапляють у <a href="https://twitter.com/copiousfreetime">мій твіттер-стрім</a>. Це дуже приємний час, коли це відбувається.</p>
+
+<p>Це видання, <a href="https://www.usenix.org/system/files/1403_02-08_mickens.pdf">Щоб все змити</a>, не розчаровує.</p>
+
+<p>Щоденне натхнення, яке я дізнався сьогодні про JavaScript від Джеймса.</p>
+
+<blockquote>
+  <p>“\r\n\t” == false</p>
+</blockquote>
+
+<p>ЩО? Мені довелося спробувати.</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;node
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&gt;</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">\r\n\t</span><span style="color: #0a3069">"</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #953800">false</span>
+</div><div class='code-line code-line-4'><span style="color: #953800">    true</span>
+</div><div class='code-line code-line-5'>
+</div></code></div>
+
+<p>І, звичайно, пояснення від Джеймса:</p>
+
+<blockquote>
+  <p>Ось чому: браузер виявляє, що два операнди мають різні типи, тому він перетворює false в 0 і повторно порівнює. Операнди все ще мають різні типи (рядок і число), тому браузер примусово перетворює “\r\n\t” у число 0, бо якимось чином не нульова кількість символів дорівнює 0. Ось і все – 0 дорівнює 0! ЧУДОВО. Це пояснення було схоже на сюжет фільму "Початок", але імплантована ідея була "правильність вашої програми була примусово змінена на false"</p>
+</blockquote>
+
+<p>Справді, я просто мусив поділитися.</p>
+
+<p>P.S. <a href="https://www.destroyallsoftware.com/talks/wat">WAT</a></p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/uk/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/uk/about">про нас</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/today-s-moment-of-zen">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/today-s-moment-of-zen">i-love-this</a>
+  </li>
+  <li>
+    <a href="/uk/contact">контакти</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/uk">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

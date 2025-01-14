@@ -1,0 +1,129 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <base href='/sv' />
+    <title>AWS, DNS &amp; HTTPS @ Doj4 Hosting</title>
+
+<meta property="og:title" content="AWS, DNS &amp; HTTPS @ Doj4 Hosting"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aws-dns-https-doj4-hosting"}">
+    <meta property="site:path_info" content=""/aws-dns-https-doj4-hosting"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Hosting, DNS &amp; HTTPS kräver ofta interaktioner med mer än några få leverantörer. Det blir ofta ohållbart om det inte hanteras effektivt.</p>
+
+<p>DNS kräver både posthantering och domänregistrering. För båda har Dojo4 använt <a href="http://dyn.com/dns">DyDNS</a> i många år.</p>
+
+<p>Dojo4 använder vanligtvis <a href="http://aws.amazon.com/ec2">Amazon AWS EC2 molndatorer</a> för hosting och använder därför ofta <a href="http://aws.amazon.com/elasticloadbalancing">AWS ELB belastningsutjämnare</a> framför dessa webbvärdar. Tyvärr ger inte Amazon konsekventa IP-adresser för ELB-instanser och därför är det enda sättet att skapa andra nivåns domänposter som pekar på ELB-instanser att använda <a href="http://aws.amazon.com/route53">Amazon AWS Route53</a> för posthantering som har en specialaliaspost för ändamålet. Så vi tenderar att använda Route53 för DNS-posthantering.</p>
+
+<p>På grund av hur TLS-handskakningar förhandlas av linux/apache begränsas du till antalet SSL-certifikat som kan serveras till antalet IP-adresser på värden. Med EC2 är det i princip ett certifikat om du inte använder en <a href="http://aws.amazon.com/vpc">VPC</a>. Dojo4 använder ofta ELB för att tillhandahålla SSL som ett sätt att kringgå detta.</p>
+
+<p>DNS &amp; HTTPS är nära relaterade eftersom domänerna och underdomänerna som ska säkras måste räknas upp innan certifikatprovisionering. Ofta är den mest bekväma och flexibla strategin att få ett jokerteckencertifikat. Observera dock att inte alla utgivare av jokerteckencertifikat inkluderar basdomänen i certifikatet (så du bara kan använda certifikatet för att skydda *.somedomain.com, och inte somedomain.com). Det $100/år jokerteckencertifikatet från <a href="http://dnsimple.com">dnsimple.com</a> utfärdat av <a href="http://comodo.com">Comodo</a> och inkluderar basdomänen är ett bra värde trots den $96 ($8/månad * 12 månader) dnsimple dns-värdkostnaden.</p>
+
+<p>dnsimple har några andra bekväma funktioner som att kunna delegera hantering av postuppsättningar till andra dnsimple användarkonton. Eftersom vi har flyttat postuppsättningshantering från DynDNS till Route53 och har ett konto på dnsimple för SSL-provisionering har vi gått vidare och flyttat domänregistrering från DynDNS till dnsimple för att konsolidera tjänsterna.</p>
+
+<p>Några användbara kommandoradsposter:</p>
+
+<p>Hitta Start Of Authority för en DNS-post</p>
+<blockquote>
+  <p>dig SOA dojo4.com</p>
+</blockquote>
+
+<p>Visa det certifikat som en värd server</p>
+<blockquote>
+  <p>openssl s_client -showcerts -connect dojo4.com:443 &lt; /dev/null</p>
+</blockquote>
+
+<p>Åtkomst till en webbserver via IP och ignorerar SSL-verifiering</p>
+<blockquote>
+  <p>curl -k https://184.72.61.241 -H "Host: projects.dojo4.com"</p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå vidare</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">jag-hatar-detta<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">jag-älskar-detta<a>
+  </li>
+  <li>
+    <a href="/contact">kontakta<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

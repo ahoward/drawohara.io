@@ -1,0 +1,110 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! 'Lanzamiento del Sitio: Planted Nutrition'</title>
+
+    <meta property="og:title" content="! 'Lanzamiento del Sitio: Planted Nutrition'" />
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id" />
+    <meta property="site:params" content="{'ext':null,'id':'site-launch-planted-nutrition'}" />
+    <meta property="site:path_info" content="/site-launch-planted-nutrition" />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <figure style="float:right;"><a href="http://plantadanutricion.com"><img alt="El nuevo sitio de Planted Nutrition" title="El nuevo sitio de Planted Nutrition" src='/es/dojo4/site-launch-planted-nutrition/assets/screen-shot-2012-06-18-at-1.28.12PM.png' height="753" width="450" /></a>
+      </figure>
+
+      <div>
+        <p>Acabamos de lanzar un sitio web de marketing para <a title="http://plantadanutricion.com" href="http://plantadanutricion.com">Planted Nutrition</a>, una nueva práctica de nutrición en Boulder dirigida por Ellen Teig. </p>
+        <p>Planted Nutrition es un negocio nuevo, que apenas comienza a cocinar, y Ellen quería un sitio web brillante y profesional para ayudar a los clientes a aprender más sobre sus servicios y enfoque. El presupuesto y las necesidades de Ellen eran pequeños, por lo que decidimos crear un sitio web de una página rápido que mostrara todo su contenido.</p>
+        <p>Las inspiraciones de diseño de Ellen incluyeron varios blogs culinarios con grandes y hermosas imágenes de comida. Anthony Dimitre llevó ese aspecto audaz a la página con un par de zanahorias muy bonitas. </p>
+        <p>Anthony también creó un logotipo muy bonito que dará sabor a todos los demás materiales de Planted Nutrition: tarjetas de visita, paquetes de clientes y más.</p>
+        <p>Detrás de escena, Planted Nutrition es un sitio web estático construido con <a title="http://middlemanapp.com/" href="http://middlemanapp.com/">Middleman</a>. No podemos decir lo suficiente sobre esta herramienta. La generación de sitios estáticos no es nueva y Middleman no es el primer generador de sitios estáticos, pero es una herramienta <em>muy buena</em>. </p>
+        <p>En dojo4 estamos usando Middleman como alternativa a los sistemas de gestión de contenido LAMP omnipresentes. Hay varias buenas herramientas de CMS LAMP, pero no son de talla única y todas requieren algunos compromisos. En este caso, incluso un CMS tan simple como WordPress sería demasiado complejo y requeriría mucho mantenimiento para las necesidades inmediatas de Planted Nutrition.</p>
+        <p>Algún día, Planted Nutrition puede querer algo más que un sitio estático. Mientras tanto, este sitio delicioso es suficiente. </p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">acerca de<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/site-launch-planted-nutrition">no-me-gusta<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/site-launch-planted-nutrition">me-gusta<a>
+          </li>
+          <li>
+            <a href="/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

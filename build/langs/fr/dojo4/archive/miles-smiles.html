@@ -1,0 +1,118 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Miles Sourit</title>
+
+    <meta property="og:title" content="Miles Sourit"/>
+    <meta property="og:description" content="avancer." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"miles-smiles"}">
+    <meta property="site:path_info" content=""/miles-smiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Nous voulons accueillir notre nouveau développeur, <a href="https://twitter.com/miles_matthias">Miles Matthias</a> dans le royaume magique de dojo4 ! dojo4, où chaque jour est la <a href="http://biketowork2013.org/fr">Journée du vélo au travail</a> et l'IPA coule comme une source éternelle. Nous nous sommes rencontrés ce matin et avons discuté des causes et des conditions de son ascension au pouvoir autour d'un délicieux <a href="http://boxcarcoffeeroasters.com/fr">Boxcar Coffee</a>.</p>
+
+      <h2>Créature Cryptozoologique Préférée :</h2>
+      <p><a href="http://fr.wikipedia.org/wiki/Bigfoot">Bigfoot</a></p>
+      <h2>Écrivain Préféré :</h2>
+      <p><a href="http://fr.wikipedia.org/wiki/David_McCullough">David McCullough</a></p>
+      <h2>Plages Nudistes?</h2>
+      <p>Non catégorique.</p>
+      <h2>Passion pour le Développement :</h2>
+      <p>Intégrer la fluidité et la simplicité dans l'art du développement.</p>
+      <h2>Approche de la Vie :</h2>
+      <p>Organisé et minimaliste (maniaque de la propreté ?)</p>
+      <h2>Livre de Design Préféré :</h2>
+      <p><a href="http://www.amazon.fr/Design-Everyday-Things-Donald-Norman/dp/0465067107">The Design of Everyday Things</a></p>
+      <h2>Pouvoir Secret :</h2>
+      <p><a href="http://fr.wikipedia.org/wiki/Lecture_rapide">Lecture Rapide</a></p>
+      <h2>Sujet de la Rencontre dojo4 :</h2>
+      <p><a href="http://meteor.com/fr">Meteor.js</a></p>
+
+      <p>Pour conclure, nous vous suggérons de faire connaissance avec le nouveau développeur iOS, HTML/CSS, javascript de dojo4. Contactez-le à <a href="https://twitter.com/miles_matthias">@miles_matthias</a> ou à <a href="http://milesmatthias.com/fr">http://milesmatthias.com/fr</a> et discutez avec lui !</p>
+      <p>Oh oui, une dernière chose !</p>
+      <h2>Monture Préférée :</h2>
+      <p><img src='/fr/dojo4/miles-smiles/assets/nph-unicorn.png'></p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/miles-smiles">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/miles-smiles">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

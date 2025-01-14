@@ -1,0 +1,132 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Il Momento di Zen di Oggi</title>
+
+<meta property="og:title" content="Il Momento di Zen di Oggi"/>
+<meta property="og:description" content="vai avanti." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"today-s-moment-of-zen"}">
+    <meta property="site:path_info" content=""/today-s-moment-of-zen"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h1 id="il-momento-di-zen-di-oggi">Il Momento di Zen di Oggi</h1>
+
+<p>In qualche modo, tutti gli articoli di <a href="http://research.microsoft.com/en-us/people/mickens/">James Mickens</a> finiscono nel <a href="https://twitter.com/copiousfreetime">mio flusso di Twitter</a>. È un momento molto piacevole quando accade.</p>
+
+<p>Questa edizione, <a href="https://www.usenix.org/system/files/1403_02-08_mickens.pdf">Per Lavare Via Tutto</a>, non delude.</p>
+
+<p>La perla che ho imparato oggi su JavaScript da James.</p>
+
+<blockquote>
+  <p>“\r\n\t” == false</p>
+</blockquote>
+
+<p>WTF? Ho dovuto provarlo.</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;node
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&gt;</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">\r\n\t</span><span style="color: #0a3069">"</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #953800">false</span>
+</div><div class='code-line code-line-4'><span style="color: #953800">    true</span>
+</div><div class='code-line code-line-5'>
+</div></code></div>
+
+<p>E ovviamente, la spiegazione di James:</p>
+
+<blockquote>
+  <p>Ecco perché: il browser rileva che i due operandi hanno tipi diversi, quindi converte false in 0 e riprova il confronto. Gli operandi hanno ancora tipi diversi (stringa e numero), quindi il browser costringe “\r\n\t” nel numero 0, perché in qualche modo, un numero non zero di caratteri è uguale a 0. Voilà—0 uguale a 0! FANTASTICO. Quella spiegazione era come la trama di Inception, ma l'idea impiantata era “la correttezza del tuo programma è stata costretta a false.”</p>
+</blockquote>
+
+<p>Davvero, dovevo solo condividere.</p>
+
+<p>P.S. <a href="https://www.destroyallsoftware.com/talks/wat">WAT</a></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; vai</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">chi siamo<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/today-s-moment-of-zen">non-mi-piace<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/today-s-moment-of-zen">mi-piace<a>
+  </li>
+  <li>
+    <a href="/contact">contatti<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

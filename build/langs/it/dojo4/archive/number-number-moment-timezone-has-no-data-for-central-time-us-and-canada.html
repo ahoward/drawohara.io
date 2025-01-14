@@ -1,0 +1,116 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href="/it" />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>! &#39;## Moment Timezone non ha dati per Central Time (US &amp; Canada)....&#39;</title>
+
+    <meta property="og:title" content="! &#39;## Moment Timezone non ha dati per Central Time (US &amp; Canada)....&#39;"/>
+    <meta property="og:description" content="continua." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'number-number-moment-timezone-has-no-data-for-central-time-us-and-canada'}">
+    <meta property="site:path_info" content="/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/ro/dojo4/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada/assets/b.png' alt="moment_js_error.png" /> <br />
+        Questo messaggio di errore nella console è il risultato del passaggio diretto di <code>Central Time (US &amp; Canada)</code> come valore per <code>time_zone</code> in una chiamata <a href="http://momentjs.com/timezone/docs/#/using-timezones/parsing-in-zone/"><code>moment.tz(date, time_zone)</code></a>.</p>
+
+        <p>Invece di <code>Central Time (US &amp; Canada)</code>, il valore corretto da passare qui è <code>America/Chicago</code> - che è in linea con la <a href="http://momentjs.com/timezone/docs/#/zone-object/name/">proprietà del nome dell'oggetto della zona</a> che momentjs utilizza per identificare in modo univoco il fuso orario.</p>
+
+        <p><code>Central Time (US &amp; Canada)</code> è il <a href="http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html"><strong>nome più amichevole per il fuso orario</strong></a> utilizzato da <code>rails</code>.</p>
+
+        <p>Ho risolto il problema passando <code>time_zone.tzinfo.identifier</code> invece di solo <code>time_zone</code>.</p>
+
+        <p><code>ruby</code></p>
+        <blockquote>
+          <p>time_zone<br />
+          => (GMT-06:00) Central Time (US &amp; Canada)</p>
+        </blockquote>
+
+        <blockquote>
+          <p>time_zone.tzinfo.identifier<br />
+          => “America/Chicago”</p>
+        </blockquote>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">informazioni</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada">non-mi-piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada">mi-piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Sinskey, Vin65 y Dragones</title>
+
+    <meta property="og:title" content="Sinskey, Vin65 y Dragones"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"sinskey-vin65-y-dragones"}">
+    <meta property="site:path_info" content=""/sinskey-vin65-y-dragones"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Había una vez, en un (napa) valle muy, muy lejano, un hermoso viñedo. <a href="http://www.robertsinskey.com/es">Robert Sinskey Vineyards</a>, como se le conocía, producía algunos de los vinos más notables del planeta. Pero había un problema. Algo de inquietud. Su proveedor de comercio electrónico era poco confiable, ¡incluso tiránico! Así que llamaron al dojo para que los ayudara.</p>
+
+        <p>Sinskey había seleccionado <a href="http://www.vin65.com/es">Vin65</a> para reemplazar a su proveedor anterior y nos pidió que encontráramos la mejor manera de integrar el nuevo sistema con su sitio existente e infraestructura para restaurar algo de paz y normalidad en su soleado viñedo. El sueño era que la integración de Vin65 fuera lo más fluida e invisible posible, esto <em>no</em> es el caso de uso típico para Vin65.</p>
+
+        <p>Vin65 ofrece un conjunto de widgets de JavaScript para ayudar con la integración remota. Aunque estos son increíblemente útiles, la realización del objetivo final aún requería un buen trato de contorsiones.</p>
+
+        <p>Integramos los widgets, reestilizamos el micro-carrito y las páginas de listado de vinos. También escribimos JavaScript personalizado para redirigir las páginas alojadas en Vin65 de vuelta a robertsinskey.com. En el backend, hicimos que la API de Vin65 funcionara bien con BrowserCMS para extraer dinámicamente los vinos y rastrear el inventario.</p>
+
+        <p>Como con cualquier solución de API/no personalizada, había dragones que matar y sapos que besar. Como en todos los cuentos de hadas que involucran a dojo4, las cosas terminaron felices para siempre. <a href="http://www.robertsinskey.com/es">Mira tú mismo</a> y toma una botella o tres de un vino seriamente espectacular.</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/sinskey-vin65-y-dragones">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/sinskey-vin65-y-dragones">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

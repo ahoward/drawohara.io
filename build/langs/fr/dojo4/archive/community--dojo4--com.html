@@ -1,0 +1,126 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>community.dojo4.com</title>
+
+    <meta property="og:title" content="community.dojo4.com"/>
+    <meta property="og:description" content="passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"community--dojo4--com"}">
+    <meta property="site:path_info" content=""/community--dojo4--com"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/fr/ro/dojo4/community--dojo4--com/assets/b.png' alt="Logo_large_transparent.png" /> <br />
+        Quelque chose de beau s'est passé chez dojo4 ces dernières 5+ années : nous avons construit une communauté. D'innombrables personnes sont passées par nos portes. Nous avons partagé des repas, des boissons, des playlists, des joies, des tragédies, des idées, des blagues, des connaissances, des retours et des connexions. dojo4 est devenu un lieu qui est la maison de nombreuses personnes, un lieu où nous faisons des affaires d'une nouvelle manière, et un lieu où nous explorons ce que signifie faire un travail significatif.</p>
+
+        <p>Cela a été assez incroyable de créer un endroit où n'importe qui peut entrer et voir où il pourrait s'intégrer, et récemment nous avons commencé à parler de la façon dont nous pourrions ouvrir notre communauté au-delà de nos murs à Boulder, Colorado. Dans l'esprit de faire <em>quelque chose</em> et de ne pas laisser le parfait être l'ennemi du bien, nous avons lancé <a href="http://community.dojo4.com/">community.dojo4.com</a> : communauté dojo4, open-source.</p>
+
+        <p>C'est ouvert. Cela peut être utilisé de la manière la plus utile pour vous. Nous espérons qu'il sera utilisé pour rassembler les gens autour de conversations sur :</p>
+
+        <ul>
+          <li>travail significatif</li>
+          <li>nouvelles façons de faire des affaires</li>
+          <li>partage de compétences techniques et de design</li>
+          <li>partage de nouvelles, d'innovations et de recommandations</li>
+          <li>opportunités (emplois, investissements, connexions)</li>
+          <li>choses que nous aimons : voyages, nourriture, musique, perles cachées</li>
+        </ul>
+
+        <p>Nous espérons également qu'il sera utilisé pour discuter des articles de blog.</p>
+
+        <p><img src='/fr/ro/dojo4/community--dojo4--com/assets/c.png' alt="blog_talk.png" /></p>
+
+        <p>Nous avons créé quelques catégories qui peuvent (ou non) être évocatrices, et avons posté quelques sujets là-bas. Mais l'inspiration et la praticité l'emportent sur le concept, donc utilisez-le de la manière qui vous convient le mieux.</p>
+
+        <blockquote>
+          <p><a href="http://little-startup-handbook.dojo4.com/call-on-community">Aucun de nous n'est aussi intelligent que nous tous. ~Proverbe japonais</a></p>
+        </blockquote>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/fr/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/fr/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/community--dojo4--com">je-déteste-ça</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/community--dojo4--com">j-adore-ça</a>
+          </li>
+          <li>
+            <a href="/fr/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/fr/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

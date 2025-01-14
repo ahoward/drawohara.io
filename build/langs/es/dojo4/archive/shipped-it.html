@@ -1,0 +1,103 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>¡Enviado!</title>
+
+    <meta property="og:title" content="¡Enviado!"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/es/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"enviado"}">
+    <meta property="site:path_info" content="/es/enviado">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/es/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><a href="http://selectnewmexico.com/es">Select New Mexico</a> es mi primer proyecto de Dojo4 que se puso en marcha. Select New Mexico es un distribuidor de chile verde que quería renovar su sitio web. Es un gran ejemplo de la amplitud de servicios que ofrece Dojo4. Peter lo diseñó, Corey tomó fotos de los productos, Steve construyó el HTML y el CSS, y yo añadí transiciones y animaciones.</p>
+
+        <p>El resultado es un sitio web hermoso y sencillo que celebra los chiles verdes hatch y te da hambre de un gran tazón de chili verde de cerdo.</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/es/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/es/about">sobre<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/enviado">no-me-gusta<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/enviado">me-encanta<a>
+          </li>
+          <li>
+            <a href="/es/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/es">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

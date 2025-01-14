@@ -1,0 +1,128 @@
+<html color-mode="user" lang="it">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <base href='/it' />
+    <title>Sì, Possiamo(.js)</title>
+
+<meta property="og:title" content="Sì, Possiamo(.js)"/>
+<meta property="og:description" content="continua." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"sì-possiamo-js"}">
+    <meta property="site:path_info" content=""/sì-possiamo-js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Abbiamo utilizzato <a href="http://canjs.us/">Can.js</a> di recente per alcuni lavori mobili su tablet. È una libreria frontend leggera per la creazione di applicazioni web e l'abbiamo utilizzata in Phonegap per creare interfacce native. Lo sforzo per imparare e applicare il framework sembra essere stato un successo, quindi volevamo condividere la nostra esperienza.</p>
+
+<h2 id="pros">Pro</h2>
+
+<p>Can.js ha molte qualità che gli sviluppatori hanno imparato ad amare nel corso degli anni. Eccole elencate:</p>
+
+<ul>
+  <li>Leggero – Il framework non impone nulla. In effetti, sembra che ci siano pochissime convenzioni espresse dagli sviluppatori.</li>
+  <li>Conciso – L'utilizzo degli oggetti Can è rapido e pulito e tendono a fornire interfacce dichiarative pulite per cose come il binding degli eventi e il routing.</li>
+  <li>Veloce – Can.js si vanta di essere veloce. Non abbiamo eseguito i nostri benchmark, ma non abbiamo notato nulla di contrario.</li>
+  <li>Flessibile – Poiché il framework non esprime o implica molte convenzioni, l'organizzazione e l'utilizzo del codice dipendono molto da noi, gli sviluppatori.</li>
+  <li>Componibile – Can viene fornito con un utile oggetto base chiamato <code>Can.Construct</code> che supporta cose come proprietà statiche e di prototipo, costruttori e ereditarietà. Questo è utile per definire i propri oggetti specifici dell'applicazione o del dominio in modo coerente.</li>
+</ul>
+
+<h2 id="annoyances">Seccature</h2>
+
+<p>Sono stato tentato di chiamare questa lista una lista di "contro", ma non sembrava appropriato poiché sono più seccature che contro.</p>
+
+<ul>
+  <li>Documentazione – Sembra completa a prima vista, ma ho trovato il testo e gli esempi non così utili come potrebbero essere. Penso che un aumento della diversità degli esempi sarebbe una vittoria immediata.</li>
+  <li>Nessuna struttura suggerita – Questo è stato anche menzionato sopra come un pro. Abbiamo investito una quantità significativa di tempo per creare quello che sembrava codice boilerplate per avviare un'applicazione ricca. Non credo che questo appartenga al framework stesso, ma esempi di diverse metodologie potrebbero aiutare.</li>
+  <li>Mancanza di astrazioni di livello superiore – La maggior parte degli oggetti Can forniti sono piuttosto di basso livello dal punto di vista dell'applicazione. Molti degli investimenti menzionati nel punto precedente sono stati utilizzati per creare alcuni oggetti base utili per diversi scopi per collegare i Can in modi diversi. Questo includeva cose come una classe di applicazione da collegare a <code>window</code> e rappresentare/contenere alcuni concetti di stato. Inoltre, abbiamo creato un oggetto base per rappresentare i controller a livello di pagina piuttosto che i controller a livello di "widget".</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Consigliamo vivamente di provare Can.js. Ha molto altro che non è nemmeno coperto qui, come il modo in cui aiuta a prevenire le perdite di memoria. Sentitevi liberi di inviare un'email a ryan@dojo4.com per qualsiasi domanda abbiate.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; vai</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">informazioni<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/sì-possiamo-js">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/sì-possiamo-js">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">contatti<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

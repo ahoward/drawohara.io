@@ -1,0 +1,112 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Ne touchez pas à mon titre de fenêtre !</title>
+
+    <meta property="og:title" content="Ne touchez pas à mon titre de fenêtre !"/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{&quot;ext&quot;:null,&quot;id&quot;:&quot;hands-off-my-window-title&quot;}">
+    <meta property="site:path_info" content="/hands-off-my-window-title">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Donc, récemment, je me suis connecté en ssh à un tout nouveau serveur Ubuntu 11.10 sur EC2 et j'ai remarqué quelques nouvelles choses. Tout d'abord, Ubuntu semble avoir activé la configuration du multiplexeur de terminal <a href="https://help.ubuntu.com/11.10/serverguide/C/byobu.html">byobu</a> par défaut. Cela semble potentiellement utile, mais tout comme <a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh</a>, je ne me sens pas motivé pour le bidouiller pour l'instant. Il est facile de désactiver byobu avec juste un rapide <code>byobu-disable</code>, qui, de manière quelque peu surprenante, quittera complètement votre shell, vous déconnectera et fermera votre session ssh. Mais la prochaine fois, vous obtiendrez un shell normal au lieu d'une session byobu/screen.</p>
+
+      <p>Maintenant, une chose que j'ai remarquée et que j'ai finalement été motivé à "rechercher" (et par là, je veux dire demander à des personnes plus intelligentes sur twitter) et à corriger, c'est que lorsque je me suis connecté via ssh, le titre de la fenêtre dans mon onglet iTerm2 a été modifié dynamiquement de ce que j'avais soigneusement défini ("asset pipeline") à l'extrêmement peu utile "ubuntu@ip-10-11-12-13". Dans certaines situations non cloud où le serveur a un nom d'hôte significatif, cela pourrait être utile, mais distinguer des dizaines de serveurs par leur adresse IP interne EC2 ne m'attire pas. Les recherches initiales suggéraient mes variables d'environnement <code>PROMPT</code> ou <code>PROMPT_COMMAND</code>, mais aucune n'était définie. J'ai lu cet <a href="http://www.ibm.com/developerworks/linux/library/l-tip-prompt/">article DeveloperWorks</a> et j'ai trouvé le code responsable dans le fichier <code>~/.bashrc</code>. Voici l'extrait incriminé.</p>
+
+      <pre><code># Si c'est un xterm définir le titre sur user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+</code></pre>
+
+      <p>Donc, vous pouvez commenter cette ligne qui change <code>PS1</code> si vous préférez votre propre titre de fenêtre défini manuellement.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/hands-off-my-window-title">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

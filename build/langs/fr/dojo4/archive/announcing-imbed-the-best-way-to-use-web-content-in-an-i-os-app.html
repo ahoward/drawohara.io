@@ -1,0 +1,125 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Annonce d'Imbed - la meilleure façon d'utiliser du contenu web dans une application iOS</title>
+
+    <meta property="og:title" content="Annonce d'Imbed - la meilleure façon d'utiliser du contenu web dans une application iOS"/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"}">
+    <meta property="site:path_info" content=""/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Souvent, il est logique de faire du développement en HTML, JS et CSS, puis d'utiliser ce contenu dans une application native. Phonegap prétend être la meilleure solution pour ce cas, mais d'après <a href="http://dojo4.com/blog/why-phonegap-sucks">mon expérience</a>, c'est l'une des pires.</p>
+
+        <p>En réponse à Phonegap, j'ai open sourcé notre dépôt de démarrage de l'entreprise pour les applications iOS qui doivent utiliser du contenu web dans un UIWebView, en l'appelant <a href="https://github.com/dojo4/imbed">Imbed</a>.</p>
+
+        <p>Caractéristiques:</p>
+
+        <ul>
+          <li>
+            <p><strong>Petit et Open Source.</strong> Un UIViewController, un fichier HTML et le projet super petit, open source à 1 classe, <a href="https://github.com/marcuswestin/WebViewJavascriptBridge">WebViewJavascriptBridge</a>.</p>
+          </li>
+          <li>
+            <p><strong>Supportez immédiatement toute fonctionnalité iOS.</strong> Pas besoin d'attendre qu'un développeur tiers crée un plugin. Vous écrivez vous-même du code natif Objective-C. Donc, dès qu'Apple le publie, vous pouvez le supporter.</p>
+          </li>
+          <li>
+            <p><strong>Suivez les guides d'Apple, pas ceux de quelqu'un d'autre.</strong> Apple fait un excellent travail de documentation sur l'utilisation des fonctionnalités d'iOS. La plupart des développeurs tiers ne le font pas. Lequel préférez-vous suivre?</p>
+          </li>
+          <li>
+            <p><strong>Automatisez tout avec Rake.</strong> Concentrez-vous sur l'écriture de votre code, testez-le dans le navigateur, puis automatisez tout le reste dans un fichier Rake clair et open source. Même archivez, envoyez à Testflight et notifiez Campfire.</p>
+          </li>
+        </ul>
+
+        <p>C'est votre application. Ne vous fiez pas à un outil tiers pour prendre en charge les fonctionnalités qu'iOS offre déjà. Prenez votre code en main.</p>
+
+        <p><a href="https://github.com/dojo4/imbed/archive/master.zip">Téléchargez Imbed</a> maintenant.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<html color-mode="user" lang="es">
+  <head>
+  <base href='/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Desarrolladores Mediocres Temen a Mongo y Adoran el RDBMS</title>
+
+<meta property="og:title" content="Desarrolladores Mediocres Temen a Mongo y Adoran el RDBMS"/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'crap-developers-fear-mongo-and-worship-the-rdbms'}">
+    <meta property="site:path_info" content="/crap-developers-fear-mongo-and-worship-the-rdbms">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h3 id="tl-dr">TL; DR;</h3>
+
+<blockquote>
+  <p>El 99.9% del mundo de los desarrolladores web cree que el uso correcto de un RDBMS, junto con transacciones, evita que sus aplicaciones vean datos incorrectos e introduzcan errores graves de calidad de datos. Están <em>TOTALMENTE EQUIVOCADOS</em>.</p>
+</blockquote>
+
+<p>Leí con gran interés el excelente artículo de <a href="https://github.com/aphyr">Kyle Kingsbury</a> sobre el modelo de consistencia de Mongo en https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads</p>
+
+<p>Obviamente, este tipo está muy bien informado y sabe de lo que habla. Está haciendo el trabajo y todo sobre este artículo es perspicaz y bien estructurado.</p>
+
+<p>Lo que me pareció asombroso, sin embargo, fueron los comentarios y lo que revelan sobre el desarrollador profesional promedio:</p>
+
+<blockquote>
+  <p>Los desarrolladores piensan que usar un RDBMS hace que sus datos sean seguros y están <em>absolutamente equivocados</em></p>
+</blockquote>
+
+<p>No puedo decirte cuántas veces me he metido en discusiones con desarrolladores "profesionales" y especialmente con administradores de sistemas tontos que realmente creen que, simplemente diciendo la palabra RDBMS, girando un pollo alrededor de su cabeza 3 veces y conectándose al unicornio mágico de las bases de datos, sus datos estarán seguros y protegidos como, ya sabes, ... (algo sobre) ... transacciones bancarias y todas esas (tonterías) sobre transacciones y fsync. Y un montón de otras cosas que ningún desarrollador que haya conocido realmente entiende o ha considerado en el contexto de una aplicación HTTP (pista: sin estado).</p>
+
+<p>Antes de continuar, voy a lanzar un desafío:</p>
+
+<ul>
+  <li>Envíame tu nombre de usuario de GitHub</li>
+  <li>Déjame elegir una aplicación respaldada por MySQL o PostgreSQL que hayas escrito (para que no puedas prepararla)</li>
+  <li>Y encontraré rutas de código que proporcionen tanto lecturas no comprometidas como lecturas sucias en tu aplicación en un día</li>
+  <li>Si no hay ninguna, te pagaré <em>$1000 dólares</em></li>
+  <li>Si hay alguna, puedo publicar cualquier foto que elija de ti como apéndice de este artículo. Photoshop <em>está</em> permitido.</li>
+</ul>
+
+<p>Encúentrame en <a href="/contact">/contacto</a> o <a href="/team/ara-t-howard">/equipo/ara-t-howard</a>. Ahora sigamos con esto...</p>
+
+<p>Desafío al desarrollador: ¿qué tiene de malo esta ruta de código:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-10'>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'>
+</div></code></div>
+
+<p>Déjame revelarte algo devastador:</p>
+
+<p><strong>ESTE CÓDIGO ESTÁ TOTALMENTE ROTO EN TODOS LOS PRINCIPALES <em>RDBMS</em> Y VIRTUALMENTE EN TODAS LAS<br />
+APLICACIONES DEL MUNDO</strong></p>
+
+<p>Te aseguro que el correo electrónico saldrá <em>dos veces</em>.</p>
+
+<p>Explicar las transacciones está fuera del alcance de este artículo, pero déjame presentarte las 'lecturas fantasma'</p>
+
+<p>http://es.wikipedia.org/wiki/Aislamiento_(sistemas_de_bases_de_datos)#Lecturas_fantasma</p>
+
+<p>En el código anterior, una segunda transacción concurrente puede hacer que ocurra lo siguiente:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># mientras tanto, una 2da transacción ha creado un usuario duplicado...</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># lo siguiente tendrá éxito, en __ambas__ transacciones</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># ambas transacciones enviarán el correo electrónico</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #6e7781"># una de las transacciones fallará al confirmar y explotará, pero, para entonces,</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #6e7781"># es demasiado tarde: el correo electrónico se ha enviado dos veces y se ha cometido el error</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>
+</div></code></div>
+
+<p>Sé que no lo puedes creer. Pero es solo porque nunca te molestaste en leer el manual cuando se trata de lo que significa 'transacción'. Comienza aquí:</p>
+
+<p>http://www.postgresql.org/docs/9.1/static/transaction-iso.html</p>
+
+<p>Observa esa pequeña tabla. Déjame traducirla para ti:</p>
+
+<ul>
+  <li>
+    <p>Porque <em>tú</em> no tienes cada <em>una sola</em> secuencia de <em>lectura y escritura</em> envuelta en una transacción, y a veces solo arrojas código contra tus objetos ORM directamente, sufres de la realidad 'aterradora' de la 'lectura no comprometida' mencionada en el artículo</p>
+  </li>
+  <li>
+    <p>Debido a que <em>tú</em> confías en el nivel de aislamiento predeterminado, sufres de lecturas no repetibles y lecturas fantasma. (¿Sabes siquiera cuál es el nivel de aislamiento predeterminado para tu base de datos y qué significa eso????)</p>
+  </li>
+  <li>
+    <p>Porque <em>tú</em> no estableciste tu nivel de transacción en 'serializable', falsamente crees que tu base de datos es rápida y segura. Has confiado equivocadamente en la base de datos para proporcionar integridad de datos como una abstracción que no requiere pensamiento crítico y código de aplicación al menos 10 veces mejor que el tuyo. Tienes todas las características aterradoras del artículo de Kyle en tus aplicaciones respaldadas por RDBMS, y no solo <em>no lo sabes</em>, sino que estás <em>bastante seguro de que tus datos son 'seguros'</em></p>
+  </li>
+</ul>
+
+<p>Entonces te pregunto cuál es una peor decisión de ingeniería:</p>
+
+<ul>
+  <li>
+    <p>Elegir una herramienta basada en estándares que todos están <em>muy</em> seguros de entender y saber cómo usar de manera segura, pero que, en su uso común, casi nunca garantiza lo que creen que promete y, además, ha sido ampliamente <a href="http://es.wikipedia.org/wiki/Aislamiento_(sistemas_de_bases_de_datos)#Nivel_de_aislamiento_predeterminado">criticada por tener semántica ambigua e inexacta</a>?</p>
+  </li>
+  <li>
+    <p>¿O aceptar lo que siempre ha sido cierto: que por sí mismas, las bases de datos no pueden proporcionar abstracciones que signifiquen que los desarrolladores no extremadamente inteligentes no puedan estropear las cosas de manera trivial? Y que la integridad de los datos es un concepto específico del dominio que debe implementarse en la capa de aplicación, con solo una pequeña parte de esa integridad ayudada por la elección de la base de datos.</p>
+  </li>
+</ul>
+
+<p>PD. He trabajado en sistemas financieros, en tiempo real y de alta disponibilidad a gran escala que utilizan tanto Mongo como PostgreSQL. Es increíblemente difícil de cualquier manera.</p>
+
+<p>PSS. Intenté comentar en tu blog, Kyle, pero los comentarios estaban explotando ;-)</p>
+
+<p><img src="https://s3.amazonaws.com/ss.dojo4.com/JKeSPdp46a4R3paZkp6oo7X1b7QNhI6hQN4kp1QPx3ZYqn3exRzqht0.png" style="max-width:200px;" /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">sobre<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/desarrolladores-mediocres-temen-a-mongo-y-adoran-el-rdbms">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/desarrolladores-mediocres-temen-a-mongo-y-adoran-el-rdbms">i-love-this<a>
+  </li>
+  <li>
+    <a href="/contact">contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

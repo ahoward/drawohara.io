@@ -1,0 +1,109 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Nos ❤️ AwesomeBoulder</title>
+
+    <meta property="og:title" content="Nos ❤️ AwesomeBoulder"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'we-3-awesomeboulder'}">
+    <meta property="site:path_info" content="/we-3-awesomeboulder">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Como si no fueras ya consciente, Boulder es increíblemente genial. Tan genial, que hay un grupo de personas increíbles trabajando para hacer que Boulder sea aún más genial y nosotros en dojo4 los ayudamos de cualquier manera que podamos.</p>
+
+        <p><a href="http://www.awesomeboulder.org">Awesome Boulder</a> es el capítulo local de la <a href="http://www.awesomefoundation.org/">Awesome Foundation</a>, que concede $1,000 al mes a proyectos locales que trabajan para mejorar la comunidad de alguna manera. AwesomeBoulder ha estado funcionando durante 25 meses y ha financiado 25 proyectos para un total de $25,000 otorgados a proyectos locales. Puedes ver la lista completa de proyectos financiados en <a href="http://www.awesomefoundation.org/en/chapters/boulder">su página de capítulo</a>.</p>
+
+        <p>Dojo4 cree en esta organización, así que ayudamos actuando en su junta de fideicomisarios, haciendo una donación monetaria mensual y albergando todos sus eventos y reuniones en nuestra oficina. También mejoramos su sitio web en awesomeboulder.org de manera gratuita. Su sitio comenzó como una simple página de aterrizaje con una explicación y un enlace para aplicar en el sitio web de la Awesome Foundation.</p>
+
+        <p>La página hacía un buen trabajo explicando el proceso de obtener financiación, pero un gran desafío administrativo era recordar a cada donante que escribiera un cheque cada mes a Awesome Boulder. Así que convertimos su página de aterrizaje en una aplicación completa de Rails para que pudieran permitir que sus donantes hicieran su contribución automáticamente cada mes. Este cambio también les permite construir y publicar un blog, y tener flexibilidad sobre su proceso de aplicación si desean cambiarlo en el futuro.</p>
+
+        <p>¡Estamos ansiosos por ver qué proyectos increíbles apoyan a continuación!</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre nosotros<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/we-3-awesomeboulder">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/we-3-awesomeboulder">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

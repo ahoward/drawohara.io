@@ -1,0 +1,108 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Gli incontri non devono sembrare incontri</title>
+
+    <meta property="og:title" content="Gli incontri non devono sembrare incontri"/>
+    <meta property="og:description" content="vai avanti." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"meetings-do-not-need-to-look-like-meetings"}">
+    <meta property="site:path_info" content=""/meetings-do-not-need-to-look-like-meetings"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src="assets/walktalkcartoon.png" alt="img" /></p>
+
+        <p>Gli incontri non devono svolgersi intorno a un tavolo. E gli incontri non devono durare a lungo.</p>
+
+        <p>Invece di chiuderti in una stanza soffocante con colleghi o clienti, porta la conversazione all'aperto. Fai una passeggiata: i migliori incontri avvengono quando c'è un cambio di scenario, aria fresca e i corpi sono in movimento. A volte aiuta la comunicazione non essere faccia a faccia, ma camminare fianco a fianco, dirigendosi da qualche parte. Specialmente le conversazioni difficili possono essere più facili da avere quando si è in movimento.</p>
+
+        <p>Gli studi dimostrano che essere in movimento allunga <a href="http://www.prdaily.com/Main/Articles/What_is_the_length_of_an_audiences_attention_span_12517.aspx">la nostra attenzione</a>, ma anche se le persone sono interessate all'incontro e anche se gli importa davvero, la durata dell'attenzione si aggira comunque intorno ai 7-10 minuti per la maggior parte degli incontri. Quindi abbiamo scoperto che aiuta a mantenere il morale e un generale senso di buon umore tenere gli incontri brevi, diretti e spostarli all'aperto ogni volta che è possibile.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">informazioni<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/meetings-do-not-need-to-look-like-meetings">non-mi-piace<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/meetings-do-not-need-to-look-like-meetings">mi-piace<a>
+          </li>
+          <li>
+            <a href="/contact">contatti<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

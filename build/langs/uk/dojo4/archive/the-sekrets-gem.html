@@ -1,0 +1,169 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Гем Sekrets</title>
+
+<meta property="og:title" content="Гем Sekrets"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-sekrets-gem"}">
+    <meta property="site:path_info" content=""/the-sekrets-gem"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>(Цей пост спочатку з'явився на блозі Spike’s <a href="http://stuff-things.net/">Stuff… And Things…</a>)</p>
+
+<p>Іноді я пишу про шифрування в Ruby, але якимось чином я не зміг охопити власний гем Dojo <a href="https://github.com/ahoward">Ara’s</a> <a href="https://github.com/ahoward/sekrets">Sekrets</a>.</p>
+
+<p>Sekrets надає простий інтерфейс для створення та управління зашифрованими файлами в Ruby. Його раціон д’етр полягає в тому, щоб зробити досить безболісним зберігання конфіденційних даних, API-ключів і подібного, в репозиторіях Git, а потім отримати доступ до цих даних всередині вашого додатку Rails, як у розробці, так і в експлуатації. Як і всі хороші геми, його просто потрібно додати до вашого Gemfile:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'sekrets'</span>
+</div></code></div>
+
+<p>І продовжити з <code>bundle install</code>. Це додасть кілька завдань <em>rake</em>, почніть із:</p>
+
+<pre><code>rake sekrets:generate:key
+</code></pre>
+
+<p>Це створює файл <code>.sekrets.key</code> у кореневому каталозі застосунку. Він містить випадково згенерований пароль і є тим, що дозволить нам автоматично розшифрувати зашифрований конфігураційний файл. Якщо ви працюєте з командою, можливо, ви захочете замінити цей пароль на щось більш легко повідомлюване, просто зробіть це, перш ніж ви виконаєте наступний крок.</p>
+
+<p>Ми хочемо, щоб цей файл існував у розробці, і щоб він був доступним для нашого розгортання, але поміщення його в репозиторій Git зведе нанівець мету, тому цей крок також додає <code>.sekrets.key</code> до вашого <code>.gitignore</code>.</p>
+
+<p>Щоб підкреслити, <code>.sekrets.key</code> не повиннен бути зафіксований у вашому репозиторії.</p>
+
+<p>Далі виконайте:</p>
+
+<pre><code>rake sekrets:generate:config
+</code></pre>
+
+<p>Це створює <code>config/sekrets.yml.enc</code>, зашифрований ключем у <code>.sekrets.key</code>, і налаштовує <code>config/initializers/sekrets.rb</code>.</p>
+
+<p><code>config/sekrets.yml.enc</code> — це зашифрований YAML-файл. Саме тут ви зберігаєте будь-які дані, які ми хочемо зберігати в таємниці:</p>
+
+<div class="language-yaml highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">---</span>
+</div><div class='code-line code-line-2'><span style="color: #116329">api_key</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">42</span>
+</div><div class='code-line code-line-3'><span style="color: #116329">aws</span><span style="color: #24292f;background-color: #f6f8fa">:</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #116329">access_key_id</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">XXXXXXXXXXXXXXXXXXXX</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #116329">secret_access_key</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</span>
+</div><div class='code-line code-line-6'><span style="color: #116329">the_list_of_my_enemies</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">Боб'</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">'</span><span style="color: #0a3069">Кевін'</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">'</span><span style="color: #0a3069">Стюарт'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-7'><span style="color: #116329">winter_is_coming</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">true</span>
+</div></code></div>
+
+<p>Ви можете редагувати файл з:</p>
+
+<pre><code>sekrets edit config/sekrets.yml.enc
+</code></pre>
+
+<p>Або переглядати його з:</p>
+
+<pre><code>sekrets read config/sekrets.yml.enc
+</code></pre>
+
+<p>Ініціалізатор налаштовує глобальну константу <code>SEKRETS</code>. Якщо файл <code>.sekrets.key</code> існує, то він заповнюється значеннями з <code>config/sekrets.yml.enc</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">SEKRETS</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:aws</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-2'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">"access_key_id"</span><span style="color: #0550ae">=&gt;</span><span style="color: #0a3069">"XXXXXXXXXXXXXXXXXXXX"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">"secret_access_key"</span><span style="color: #0550ae">=&gt;</span><span style="color: #0a3069">"YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"</span><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div></code></div>
+
+<p>(SEKRETS насправді є <a href="https://github.com/ahoward/map">Map</a>, різновидом розумного Hash, тож ви також можете отримувати значення методом <code>SEKRETS.aws</code> чи <code>SEKRETS.winter_is_coming?</code>)</p>
+
+<p>Тепер усі конфіденційні дані, які потрібні вашому додатку, знаходяться в репозиторії та переміщуються з ним. Однак, якщо хтось отримає доступ до репозиторію, але без ключа, він все одно не матиме доступу до ваших секретів. Все, що вам потрібно зробити при залученні нового розробника, це попросити його помістити ключ у файл <code>.sekrets.key</code> на його локальній машині.</p>
+
+<p>Це вирішує проблему розробки, як на рахунку виробництва? Sekrets пропонує вам два варіанти. По-перше, ви можете встановити <code>SEKRETS_KEY</code> у середовищі вашого веб-сервера, так само, як люди зазвичай роблять конфіденційну інформацію доступною поза межами їхнього кодової бази. Альтернативно, якщо ви використовуєте Capistrano, ви можете додати <code>require 'sekrets/capistrano'</code> до вашого <code>Capfile</code>. Це додає завдання, яке копіює <code>.sekrets.key</code> на сервер при розгортанні.</p>
+
+<p>З будь-яким методом, коли додаток запускається, Sekrets знайде свій ключ, розшифрує конфігураційний файл і налаштує константу <code>SEKRETS</code>.</p>
+
+<p>Має бути очевидно, що ваші секрети захищені лише стільки, скільки захищений ваш сервер. Хтось з доступом до сервера може відновити змінну середовища <code>SEKRETS_KEY</code> або файл <code>.sekrets.key</code> та використати її для розшифрування секретів.</p>
+
+<p>Однак це нічим не відрізняється від поширеного підходу до розміщення конфіденційних речей, таких як API-ключі, у середовищі веб-сервера та доступу до них через <code>ENV</code> у додатку. Насправді встановлення <code>SEKRETS_KEY</code> у середовищі — це точно такий самий підхід.</p>
+
+<p>У підсумку, якщо конфіденційні дані знаходяться на сервері та у формі, до якої може отримати доступ ваше програмне забезпечення, то вони захищені лише стільки, скільки захищений сервер. Sekrets не вирішує цю проблему. Те, що воно робить, — це поміщає ці дані під контроль версії в безпечний спосіб та спрощує обмін цими даними між розробниками. І це велике досягнення.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">про нас<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/the-sekrets-gem">я-ненавижу-це<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/the-sekrets-gem">я-люблю-це<a>
+  </li>
+  <li>
+    <a href="/contact">контакт<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

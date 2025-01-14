@@ -1,0 +1,116 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Wallspace Finder è Operativo</title>
+
+    <meta property="og:title" content="Wallspace Finder è Operativo"/>
+    <meta property="og:description" content="continua." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"wallspace-finder-is-up-running"}">
+    <meta property="site:path_info" content=""/wallspace-finder-is-up-running"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Qualche mese fa, abbiamo iniziato a <a href="http://dojo4.com/blog/hello-hello-moshimoshico-is-all-about-puilding-broducts">lavorare su Moshi Moshi Co.</a> e abbiamo scelto <a href="http://wallspacefinder.com/">Wallspace Finder</a> come nostra iniziale avventura. Questo era entusiasmante per noi a causa dei nostri amici nella comunità artistica sia localmente che nazionalmente, senza menzionare che ci piacerebbe usarlo noi stessi. Chi non vuole arte girante e bellissima nel proprio ufficio, caffetteria, boutique di mobili o studio?</p>
+
+        <p>Ad un livello alto, ecco il nostro processo:</p>
+
+        <ul>
+          <li>identificare quale pensavamo fosse il problema</li>
+          <li>dettagliare una possibile soluzione</li>
+          <li>intervistare potenziali artisti per stabilire il problema e raccogliere feedback sulla soluzione</li>
+          <li>intervistare anche potenziali spazi</li>
+          <li>costruire la soluzione</li>
+        </ul>
+
+        <p>L'applicazione è ancora piccola e concentrata sulla risoluzione del problema principale: è difficile sapere quale arte/spazi sono disponibili in una comunità e comunicare tra loro per organizzare mostre. Ora che abbiamo un'applicazione funzionante da testare, speriamo di continuare a perfezionare il processo e la nostra comprensione del problema.</p>
+
+        <p>Per favore <a href="http://wallspacefinder.com/signup">registrati</a> e facci sapere cosa ne pensi! O ancora meglio, carica alcune delle tue opere d'arte e richiedi di appenderle nel nostro ufficio :D</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">chi siamo</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/wallspace-finder-is-up-running">non-mi-piace</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/wallspace-finder-is-up-running">mi-piace</a>
+          </li>
+          <li>
+            <a href="/contact">contatti</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Згрібайся!</title>
+
+    <meta property="og:title" content="Згрібайся!"/>
+    <meta property="og:description" content="Проходи далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id"/>
+    <meta property="site:params" content='{"ext":null,"id":"snuggin"}'>
+    <meta property="site:path_info" content="/snuggin"/>
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p>Брр! Вчора вночі вітер зісковзнув зі схилів Флетіронів, як лавина, та врізався в будинки ранчо у Боулдері, які мають проблеми з ізоляцією. Прощавай, бабине літо; вітай, крижана зима.</p>
+      <a href="http://www.flickr.com/photos/michaelbuck/310303516/" title="Сніг в КУ від Майкла Бака, на Flickr"><img src="http://farm1.static.flickr.com/114/310303516_460245c202.jpg" width="500" height="375" alt="Сніг в КУ" /></a>
+      <p>Нелегко затримати холод у цих старих будинках. Вся герметизація у світі не допоможе, якщо на горищі немає достатньої кількості ізоляції. І тоді потрібні нові вікна, нова піч і термостат, ізоляція труб, ізоляція водонагрівача, ізоляція стін, ізоляція підлоги, ізоляція ізоляції тощо.</p>
+      <p>Люди з <a href="http://snugghome.com" title="http://snugghome.com">Snugg Home</a> (що також представлені в наших <a href="http://dojo4.com/clients/snugg-home" title="http://dojo4.com/clients/snugg-home">кейс-стадіях</a>) роблять це легше. Поліпшення дому, які зменшують енергоспоживання, часто підлягають пільгам на місцевому, державному та федеральному рівнях. Але це <em>важко</em>, розібратися в усьому в разі кризи, коли ви навіть не можете користуватися клавіатурою, тому що ваші пальці синіють від холоду.</p>
+      <p>Snugg Home співпрацює з багатьма місцевими урядами, щоб розплутати павутину відшкодувань, стимулів, продажів тощо, які допомагають людям робити енергоефективні поліпшення своїх будинків. Завдяки їхній допомозі домовласники по всій країні відкривають для себе нові способи допомоги своїм родинам і зменшення вуглецевого сліду завдяки розумним оновленням.</p>
+      <p>Цінність цієї корисності відображається в успіху Snugg Home. Вони перетворили свою ідею на дуже міцний стартап з вражаючими доходами та обнадійливими перспективами. Зараз вони шукають кількох партнерів, які хотіли б приєднатися до них на наступному етапі їхнього розвитку. Ви можете дізнатися більше з відео нижче або, <a href="http://www.snugghome.com/contact-us/" title="http://www.snugghome.com/contact-us/">зв'язавшись з Адамом у Snugg Home</a>.</p>
+      <figure>
+        <div class="flex-video vimeo">
+          <iframe src="http://player.vimeo.com/video/31414422?title=0&byline=0&portrait=0" width="400" height="350" frameborder="0"></iframe>
+        </div>
+        <figcaption><a href="http://vimeo.com/31414422">Огляд Snugg Home</a> від <a href="http://vimeo.com/user3824926">Snugg Home</a> на <a href="http://vimeo.com">Vimeo</a>.</figcaption>
+      </figure>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">про нас</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/snuggin">я-ненавижу-це</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/snuggin">я-люблю-це</a>
+          </li>
+          <li>
+            <a href="/contact">контакт</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

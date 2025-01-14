@@ -1,0 +1,103 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Règles horizontales CSS3</title>
+
+<meta property="og:title" content="Règles horizontales CSS3"/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/fr/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"css3-horizontal-rules"}">
+    <meta property="site:path_info" content=""/fr/css3-horizontal-rules"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>Récemment, je me suis retrouvé à concevoir des styles pour les publications de "nouvelles" sur mon site personnel, que j'ai décidé de restructurer, passant de WordPress à Octopress et GitHub—un article sur cette expérience est à venir !</p>
+<p>Quoi qu'il en soit, les nouvelles ont tendance à être longues (pour des articles de blog), donc je voulais offrir aux auteurs un moyen facile d'inclure des pauses de section emphatiques et sémantiques. La simple règle horizontale <code>&lt;hr&gt;</code> semblait être la bonne solution, d'autant plus que <a href="http://daringfireball.net/projects/markdown/syntax" class="darkTxt" target="_blank">Markdown</a> les rend si faciles à inclure&mdash;il suffit d'ajouter <code>***</code> sur une nouvelle ligne.</p>
+<p>La plupart des navigateurs affichent la balise <code>&lt;hr&gt;</code> comme une bordure en retrait&mdash;essentiellement une ligne foncée empilée directement sur une ligne plus claire. Mais ce n'est pas plus excitant que l'une des conférences de deux heures d'<a href="/fr/#Ara" class="darkTxt" target="_blank">Ara</a> sur l'histoire et les avantages des culottes courtes en Alaska rural.</p>
+<p>J'ai donc fouillé le web pour des solutions plus sexy et je suis tombé sur un site bien connu : <a href="http://css-tricks.com/simple-styles-for-horizontal-rules/" class="darkTxt" target="_blank">CSS Tricks de Chris Coyier</a>.</p>
+<p>Un mot d'avertissement : comme ces styles reposent sur les sélecteurs de pseudo-éléments <code>:after</code> et <code>:before</code>, IE7 et les versions antérieures ne les rendent pas très bien. Vous devrez peut-être passer un peu de temps à vous battre avec les styles spécifiques à IE. Ou vous pourriez choisir de faire quelque chose de plus valorisant avec votre temps.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/fr/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/fr/about">à propos</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/fr/css3-horizontal-rules">je-déteste-ça</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/fr/css3-horizontal-rules">j'adore-ça</a>
+  </li>
+  <li>
+    <a href="/fr/contact">contact</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/fr/">&lt;&mdash; quitter</a>
+    </footer>
+  </body>
+</html>

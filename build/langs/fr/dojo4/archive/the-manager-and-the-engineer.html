@@ -1,0 +1,117 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Le Manager Et L'Ingénieur</title>
+
+    <meta property="og:title" content="Le Manager Et L'Ingénieur"/>
+    <meta property="og:description" content="continuez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"le-manager-et-lingenieur"}">
+    <meta property="site:path_info" content=""/le-manager-et-lingenieur"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Un vieux mais bon ;-)</p>
+
+        <p>Un homme vole dans une montgolfière et réalise qu'il est perdu. Il réduit l'altitude et repère un homme en bas. Il descend la montgolfière encore plus bas et crie : « Excusez-moi, pouvez-vous me dire où je suis ? »</p>
+
+        <p>L'homme en bas dit : « Oui, vous êtes dans une montgolfière, flottant à 30 pieds au-dessus de ce champ. »</p>
+
+        <p>« Vous devez être un ingénieur » dit le montgolfier.</p>
+
+        <p>« Je le suis » répond l'homme. « Comment le saviez-vous. »</p>
+
+        <p>« Eh bien, » dit le montgolfier, « tout ce que vous m'avez dit est techniquement correct, mais ce n'est d'aucune utilité pour qui que ce soit. »</p>
+
+        <p>L'homme en bas dit « vous devez être dans la gestion. »</p>
+
+        <p>« Je le suis » répond le montgolfier, « mais comment le saviez-vous ? »</p>
+
+        <p>« Eh bien, » dit l'homme, « vous ne savez pas où vous êtes, ni où vous allez, mais vous vous attendez à ce que je puisse vous aider. Vous êtes dans la même position qu'avant notre rencontre, mais maintenant c'est de ma faute. »</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/fr/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/fr/about">à propos</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/le-manager-et-lingenieur">je-deteste-ca</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/le-manager-et-lingenieur">j-adore-ca</a>
+          </li>
+          <li>
+            <a href="/fr/contact">contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/fr/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

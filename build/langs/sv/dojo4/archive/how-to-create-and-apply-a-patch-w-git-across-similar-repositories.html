@@ -1,0 +1,111 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Hur man skapar och applicerar en patch med Git över liknande repositories</title>
+
+    <meta property="og:title" content="Hur man skapar och applicerar en patch med Git över liknande repositories"/>
+    <meta property="og:description" content="flytta vidare." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"hur-man-skapar-och-applicerar-en-patch-med-git-over-liknande-repositories"}">
+    <meta property="site:path_info" content=""/hur-man-skapar-och-applicerar-en-patch-med-git-over-liknande-repositories"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p>Vi har en uppsättning applikationer som vi ofta klonar för att starta nya projekt. Hanteringen av nedströmsuppdateringar till många liknande, men inte exakt identiska kodbaser kan vara knölig, även med git. http://twitter.com/cookrn kom med den här lösningen:</p>
+
+        <blockquote class="twitter-tweet"><p>skapar/applicerar patch-filer med git :: <a href="https://t.co/w3wUZymh" title="https://gist.github.com/2140571">gist.github.com/2140571</a> /cc @<a href="https://twitter.com/brettgoulder">brettgoulder</a> @<a href="https://twitter.com/drawohara">drawohara</a></p>&mdash; Ryan Cook (@cookrn) <a href="https://twitter.com/cookrn/status/182197510356475904" data-datetime="2012-03-20T20:10:46+00:00">20 mars 2012</a></blockquote>
+        <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <p>sammanfattat här</p>
+
+        <script src="https://gist.github.com/2140571.js"> </script>
+
+        <p>perfekt!</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; gå till</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">om<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/hur-man-skapar-och-applicerar-en-patch-med-git-over-liknande-repositories">i-hate-this<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/hur-man-skapar-och-applicerar-en-patch-med-git-over-liknande-repositories">i-love-this<a>
+          </li>
+          <li>
+            <a href="/contact">kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

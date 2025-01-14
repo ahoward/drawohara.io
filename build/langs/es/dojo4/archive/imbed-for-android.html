@@ -1,0 +1,110 @@
+<html color-mode="user" lang="es">
+  <head>
+  <base href='/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Imbed para Android</title>
+
+<meta property="og:title" content="Imbed para Android"/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivo/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"imbed-para-android"}">
+    <meta property="site:path_info" content=""/imbed-para-android"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Hace un tiempo escribí sobre <a href="http://dojo4.com/blog/por-que-phonegap-apesta">por qué phonegap apesta</a> y cómo decidimos incorporar contenido web en nuestras aplicaciones nativas. El código abierto que resultó de construir varias aplicaciones nativas que incluían contenido web fue el <a href="https://github.com/Imbed">proyecto Imbed</a>. Lanzamos la <a href="http://dojo4.com/blog/anunciando-imbed-la-mejor-manera-de-usar-contenido-web-en-una-aplicacion-i-os">versión de iOS primero</a>.</p>
+
+<p>El proyecto tiene como objetivo ser un punto de partida para lo que pensamos que es la mejor manera de incorporar contenido web en una aplicación nativa: usando código nativo. En iOS, eso significa escribir Objective-C para usar un UIWebView y en Android, escribir Java para usar un WebView. Sí, esto requiere que sepas lo suficiente sobre iOS/Objective-C y Android/Java para escribir tus propias funciones nativas cuando quieras usar las características del dispositivo, pero eso significa poder seguir las direcciones de Apple y Google exactamente y no depender de un tercero para soportar una nueva característica y soportarla sin errores propios.</p>
+
+<p>Recientemente he estado investigando más a fondo sobre Android y he creado la <a href="https://github.com/imbed/android">versión de Android de Imbed</a>. Además de proporcionar un buen punto de partida para incluir contenido web, el código html de ejemplo demuestra algunas limitaciones de javascript en el webview y proporciona soporte integrado para el importante botón de retroceso en los teléfonos Android cuando haces clic en un enlace que necesita abrirse en Chrome en lugar de en el contenido web dentro de tu aplicación.</p>
+
+<p>Echa un vistazo a la <a href="https://github.com/imbed/android">versión de Android</a> y házmelo saber tus pensamientos en twitter!</p>
+
+<p>Como siempre, las solicitudes de extracción son bienvenidas :)</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/about">sobre</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/imbed-para-android">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/imbed-para-android">i-love-this</a>
+  </li>
+  <li>
+    <a href="/contact">contacto</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

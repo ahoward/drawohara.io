@@ -1,0 +1,174 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Configurar el VirtualHost predeterminado en apache2</title>
+
+<meta property="og:title" content="Configurar el VirtualHost predeterminado en apache2"/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivo/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"configurar-el-virtual-host-predeterminado-en-apache2"}">
+    <meta property="site:path_info" content=""/configurar-el-virtual-host-predeterminado-en-apache2"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <div class="language-apache highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781"># apache tiene el comportamiento extraño de enrutar cualquier solicitud con un encabezado Host:</span>
+</div><div class='code-line code-line-6'><span style="color: #6e7781"># malo o desconocido al primer host virtual encontrado en su config. esto puede causar</span>
+</div><div class='code-line code-line-7'><span style="color: #6e7781"># problemas serios cuando múltiples sitios se alojan en la misma instancia de apache</span>
+</div><div class='code-line code-line-8'><span style="color: #6e7781"># por ejemplo, una solicitud fallida para http://foo.bar.com/missing</span>
+</div><div class='code-line code-line-9'><span style="color: #6e7781"># podría afectar a un host virtual de passenger y causar un comportamiento no especificado dependiendo de</span>
+</div><div class='code-line code-line-10'><span style="color: #6e7781"># cómo se comporta esa aplicación.</span>
+</div><div class='code-line code-line-11'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-12'><span style="color: #6e7781"># la solución es asegurarse de que exista un host virtual que lo capture todo y que se cargue</span>
+</div><div class='code-line code-line-13'><span style="color: #6e7781"># antes de todos los demás archivos de configuración de host virtual - y que este host virtual simplemente</span>
+</div><div class='code-line code-line-14'><span style="color: #6e7781"># devuelva un 404 (también podrías servir una página de error amigable)</span>
+</div><div class='code-line code-line-15'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-16'><span style="color: #6e7781"># asumiendo un diseño donde los archivos de config de apache se cargan desde, por ejemplo:</span>
+</div><div class='code-line code-line-17'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-18'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/*.conf</span>
+</div><div class='code-line code-line-19'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-20'><span style="color: #6e7781"># deberías poner esta configuración en un archivo llamado</span>
+</div><div class='code-line code-line-21'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-22'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/0.conf</span>
+</div><div class='code-line code-line-23'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-24'><span style="color: #6e7781"># el '0.conf' asegura que se cargue primero. puedes validar que esta configuración</span>
+</div><div class='code-line code-line-25'><span style="color: #6e7781"># se carga primero a través de</span>
+</div><div class='code-line code-line-26'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-27'><span style="color: #6e7781">#   ls -1 /etc/apache2/sites-enabled/ | sort | head -1</span>
+</div><div class='code-line code-line-28'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-29'><span style="color: #6e7781"># esto debería imprimir</span>
+</div><div class='code-line code-line-30'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-31'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/0.conf</span>
+</div><div class='code-line code-line-32'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-33'><span style="color: #6e7781"># una vez que la configuración esté en su lugar, puedes probar que realmente es la</span>
+</div><div class='code-line code-line-34'><span style="color: #6e7781"># configuración predeterminada/primera utilizada a través de</span>
+</div><div class='code-line code-line-35'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-36'><span style="color: #6e7781">#   curl --silent --header 'Host: fu.bar.com' tu.dominio.com</span>
+</div><div class='code-line code-line-37'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-38'><span style="color: #6e7781"># la página 404 predeterminada de apache se servirá si esto es correcto. obviamente</span>
+</div><div class='code-line code-line-39'><span style="color: #6e7781"># puedes configurar los servidores virtuales predeterminados para que tengan un documento raíz real, etc...</span>
+</div><div class='code-line code-line-40'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-41'><span style="color: #6e7781"># otra nota importante. no es *suficiente* simplemente configurar el</span>
+</div><div class='code-line code-line-42'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-43'><span style="color: #6e7781">#   _default_:80</span>
+</div><div class='code-line code-line-44'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-45'><span style="color: #6e7781"># host virtual.</span>
+</div><div class='code-line code-line-46'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-47'><span style="color: #6e7781"># también necesitas configurar el host nombrado real</span>
+</div><div class='code-line code-line-48'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-49'><span style="color: #6e7781">#   ServerName _default_</span>
+</div><div class='code-line code-line-50'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-51'><span style="color: #6e7781"># la razón de esto es que el alojamiento virtual basado en nombres usará, por defecto,</span>
+</div><div class='code-line code-line-52'><span style="color: #6e7781"># el primer *host virtual basado en nombres* por lo que no puedes confiar en uno sin nombre,</span>
+</div><div class='code-line code-line-53'><span style="color: #6e7781"># lo cual sería suficiente en la mayoría de las situaciones.</span>
+</div><div class='code-line code-line-54'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-55'>
+</div><div class='code-line code-line-56'>
+</div><div class='code-line code-line-57'><span style="color: #6e7781"># esta sección capturará las solicitudes a hosts faltantes bajo una configuración de vhost basada en nombres</span>
+</div><div class='code-line code-line-58'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-59'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;</span><span style="color: #0550ae">VirtualHost</span><span style="color: #116329"> *:80</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-60'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">ServerName</span>&nbsp;_default_
+</div><div class='code-line code-line-61'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Redirect</span>&nbsp;404&nbsp;/
+</div><div class='code-line code-line-62'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;/</span><span style="color: #0550ae">VirtualHost</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-63'>
+</div><div class='code-line code-line-64'>
+</div><div class='code-line code-line-65'><span style="color: #6e7781"># y esto manejará el resto</span>
+</div><div class='code-line code-line-66'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-67'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;</span><span style="color: #0550ae">VirtualHost</span><span style="color: #116329"> _default_:80</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-68'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Redirect</span>&nbsp;404&nbsp;/
+</div><div class='code-line code-line-69'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;/</span><span style="color: #0550ae">VirtualHost</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-70'>
+</div><div class='code-line code-line-71'>
+</div><div class='code-line code-line-72'>
+</div></code></div>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/ir" name="ir">&mdash;&gt; ir</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/sobre">sobre<a>
+  </li>
+  <li>
+    <a href="mailto:odio-esto@drawohara.io?subject=/configurar-el-virtual-host-predeterminado-en-apache2">odio-esto<a>
+  </li>
+  <li>
+    <a href="mailto:amo-esto@drawohara.io?subject=/configurar-el-virtual-host-predeterminado-en-apache2">amo-esto<a>
+  </li>
+  <li>
+    <a href="/contacto">contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/es">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

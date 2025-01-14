@@ -1,0 +1,178 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>розмір має значення</title>
+
+<meta property="og:title" content="розмір має значення"/>
+<meta property="og:description" content="продовжити." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"size-matters"}">
+    <meta property="site:path_info" content="/size-matters">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <base href='/uk' />
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Мультиплексування, яке зображення надсилати на які пристрої, є складною проблемою.</p>
+
+<p>Деякі люди використовують виявлення пристроїв (user-agents), щоб визначити, кому потрібні великі зображення. Іноді медіа-запити/ширина екрана використовуються як проксі.</p>
+
+<p>Обидва варіанти погані.</p>
+
+<p>Сьогодні легко захотіти, щоб зображення високої роздільної здатності відображалися на планшеті з ретина-екраном по локальному Wi-Fi. З "нормальними" підходами до покращення зображень деякі пристрої із хорошими з'єднаннями та щільністю пікселів отримають зображення низької якості.</p>
+
+<p>Планшет на повільному з'єднанні в горизонтальній орієнтації може мати екран, який перевищує деякий довільний поріг (768px) і отримувати масивні зображення, призначені для настільних машин з широкосмуговим з'єднанням.</p>
+
+<p>Проблема посилюється тим, що покращення пристроїв і/або ширини екрана легко може призвести до відправки маленького зображення на пристрій із екраном високої щільності, що спричиняє реальні проблеми з макетом: 320px зображення може займати весь екран на деяких iPhone, тоді як на інших воно займе половину екрана або буде розтягнуте до заповнення всіх 640 і виглядатиме погано.</p>
+
+<p>Що, якщо ми замість цього просто завжди намагатимемося надавати зображення найвищої якості всім пристроям і надаватимо зображення нижчої якості, якщо дізнаємося, що це погана ідея в час виконання?</p>
+
+<p>Підхід jquery.bires саме такий.</p>
+
+<p>Спочатку контент надходить із зображеннями низької якості, що робить час завантаження сторінки максимально швидким і надає користувачеві повний контент. Після завантаження всіх зображень низької якості jquery.bires починає замінювати зображення низької якості на зображення високої якості <em>послідовно</em>, вимірюючи швидкість кожної заміни. Якщо будь-яка заміна здається занадто довгою, покращення просто зупиняється. Оскільки jquery.bires завантажує більші зображення одне за одним, інтерфейс користувача залишається реактивним до кліків і взаємодій.</p>
+
+<p>Ключовим тут є те, що сьогодні з мобільними дисплеями високої щільності це саме пропускна здатність, а не розмір екрана, що має визначати, хто отримує зображення високої якості.</p>
+
+<p>Цей підхід забезпечує найкращий можливий досвід для дорогого планшета на локальному Wi-Fi, одночасно утримуючи сторінки, переглянуті на настільному комп'ютері, підключеному через 3G з'єднання, від знищення тарифного плану та дуже повільного завантаження.</p>
+
+<p>Найкраще те, що замість управління списками user-agentів, вгадування щодо різних точок зламу тощо - код просто завжди використовує одну й ту саму стратегію спробувати намагатися робити сторінки максимально швидкими та якомога кращими пізніше.</p>
+
+<p>посилання:</p>
+
+<ul>
+  <li>https://github.com/bjankord/Categorizr</li>
+  <li>http://www.brettjankord.com/2013/01/10/active-development-on-categorizr-has-come-to-an-end/</li>
+  <li>https://gist.github.com/paulirish/268257</li>
+  <li>https://github.com/desandro/imagesloaded</li>
+  <li>http://www.youtube.com/watch?v=Tj0lmwg27EY</li>
+  <li>http://dojo4.com</li>
+</ul>
+
+<p>примітка:</p>
+
+<ul>
+  <li>jquery.bires <em>залежить від</em> https://github.com/desandro/imagesloaded</li>
+</ul>
+
+<p>репозиторій:</p>
+
+<ul>
+  <li>https://github.com/ahoward/jquery.bires</li>
+</ul>
+
+<p><br /><br />
+використання:</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #116329">&lt;li&gt;</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #116329">&lt;a</span>&nbsp;<span style="color: #116329">href=</span><span style="color: #0a3069">"#!scott-jurek"</span>&nbsp;<span style="color: #116329">title=</span><span style="color: #0a3069">"Скотт Юрек"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;img</span>&nbsp;<span style="color: #116329">class=</span><span style="color: #0a3069">"bires"</span>&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">data-hires=</span><span style="color: #0a3069">"assets/banner.png"</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"assets/banner.png"</span>&nbsp;<span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #116329">&lt;/a&gt;</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;
+</div><div class='code-line code-line-10'><span style="color: #116329">&lt;/li&gt;</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'><span style="color: #116329">&lt;li&gt;</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #116329">&lt;a</span>&nbsp;<span style="color: #116329">href=</span><span style="color: #0a3069">"#!robert-sinskey-vinyards"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"42"</span>&nbsp;<span style="color: #116329">title=</span><span style="color: #0a3069">"Виноградники Роберта Сінскі"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;img</span>&nbsp;<span style="color: #116329">class=</span><span style="color: #0a3069">"bires"</span>&nbsp;
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">data-hires=</span><span style="color: #0a3069">"assets/banner.png"</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"assets/banner.png"</span>&nbsp;<span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #116329">&lt;/a&gt;</span>
+</div><div class='code-line code-line-20'><span style="color: #116329">&lt;/li&gt;</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>
+</div></code></div>
+
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">download</span><span style="color: #24292f;background-color: #f6f8fa">({</span><span style="color: #0a3069">'</span><span style="color: #0a3069">selector</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">img.bires</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-7'>
+</div></code></div>
+
+<p><br /><br />
+джерело:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">namespace</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781">// об'єкт завантажувача зображень високої роздільної здатності</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">selector</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">img.bires</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">too_damn_slow</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">420</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">bires</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">debug_delay</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">420</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #6e7781">// клас завантажувача та фабричний метод</span>

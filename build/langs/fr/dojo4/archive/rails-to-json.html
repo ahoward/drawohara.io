@@ -1,0 +1,201 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rails to_json</title>
+
+<meta property="og:title" content="rails to_json"/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/fr/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"rails-to-json"}">
+    <meta property="site:path_info" content=""/fr/rails-to-json"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/fr/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>rails, y compris rails3, possède ce joli morceau de code lié à la fourniture d'une méthode « to_json » sur les types intégrés :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781"># Astuce pour charger la gemme json en premier afin de pouvoir écraser sa méthode to_json.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># La gemme JSON ajoute quelques modules aux classes de base de Ruby contenant la définition de :to_json, écrasant</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># leur comportement par défaut. Cela dit, nous devons définir la méthode to_json de base dans toutes,</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># sinon elles utiliseront toujours l'implémentation de la gemme to_json, qui est incompatible en arrière dans</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># plusieurs cas (par exemple, l'implémentation JSON pour Hash ne fonctionne pas) avec l'héritage</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># et par conséquent les classes telles que ActiveSupport::OrderedHash ne peuvent pas être sérialisées en json.</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">RUBY</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__LINE__</span>
+</div><div class='code-line code-line-15'><span style="color: #0a3069"># Déverse l'objet en JSON (JavaScript Object Notation). Voir www.json.org pour plus d'infos.</span>
+</div><div class='code-line code-line-16'><span style="color: #0a3069">def to_json(options = nil)</span>
+</div><div class='code-line code-line-17'><span style="color: #0a3069">ActiveSupport::JSON.encode(self, options)</span>
+</div><div class='code-line code-line-18'><span style="color: #0a3069">end</span>
+</div><div class='code-line code-line-19'><span style="color: #953800">RUBY</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-21'>
+</div></code></div>
+
+<p>ce que cela fait effectivement, c'est écraser la méthode « to_json » que fournit la gemme json avec une que active_support estime meilleure. Le commentaire sur le fait que json soit cassé est obsolète et cela a toujours été une astuce. Dans mon cas, j'aime vraiment ce genre de chose dans mon contrôleur /api :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">to_json</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">object</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">Rails</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">env</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">production?</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">JSON</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">generate</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">object</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">else</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">JSON</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">pretty_generate</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">object</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-9'>
+</div></code></div>
+
+<p>car cela facilite énormément le débogage. Voici comment je l'ai fait dans une application rails3 -</p>
+
+<p>la première étape consistait à faire en sorte que rails3 supporte le concept de « préinitialisateur » que l'ancien rails utilisait :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">### fichier : config/preinitializer.rb</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">dirname</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dirname</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">expand_path</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">))</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">glob</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">dirname</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'preinitializers'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'**/**.rb'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">preinitializers</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Dir</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">glob</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">glob</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">preinitializers</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">each</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">preinitializer</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #953800">Kernel</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">preinitializer</span><span style="color: #24292f;background-color: #f6f8fa">)}</span>
+</div><div class='code-line code-line-9'>
+</div></code></div>
+
+<p>ensuite, j'ai ajouté ce préinitialisateur :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">### fichier : config/preinitializers/un_fuck_to_json.rb</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">alias_method</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'__to_json__'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'to_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">method_defined?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'to_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-19'>
+</div></code></div>
+
+<p>enfin, cet initialisateur :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">### fichier : config/preinitializers/un_fuck_to_json.rb</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">alias_method</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'__to_json__'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'to_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">method_defined?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'to_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-19'>
+</div></code></div>
+
+<p>en anglais, ce que cela fait, c'est</p>
+
+<ul>
+  <li>faire en sorte que rails supporte le code qui s'exécute avant tout le reste</li>
+  <li>pendant cette phase, absorber la gemme json et se souvenir de la façon dont elle fait les choses</li>
+  <li>nuire à la méthode de rails et restaurer la méthode json de to_json</li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/fr/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/fr/about">à propos<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/fr/rails-to-json">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/fr/rails-to-json">i-love-this<a>
+  </li>
+  <li>
+    <a href="/fr/contact"

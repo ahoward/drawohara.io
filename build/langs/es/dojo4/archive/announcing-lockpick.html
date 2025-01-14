@@ -1,0 +1,120 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Anunciando Lockpick</title>
+
+    <meta property="og:title" content="Anunciando Lockpick"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'announcing-lockpick'}">
+    <meta property="site:path_info" content="/announcing-lockpick">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/ro/dojo4/announcing-lockpick/assets/lockpick.jpg' alt="img" /></p>
+
+        <p>Como muchas otras tiendas, lidiamos con muchos problemas pequeños. Problemas como de dónde obtener nuestro café (<a href="http://boxcarcoffeeroasters.com/">Boxcar</a>), a dónde ir a almorzar, qué editor usar (Vim).</p>
+
+        <p>También luchamos con cómo gestionar quién tiene acceso a nuestros servidores de desarrollo, pruebas y producción. Pasamos por algunas iteraciones intentando resolver este problema. Luego tuvimos dos realizaciones:</p>
+
+        <ul>
+          <li>Todos los que desarrollan y despliegan código están en un solo equipo en GitHub</li>
+          <li>GitHub proporciona acceso a la <a href="http://developer.github.com/v3/users/keys/">clave SSH pública para su usuario a través de su API</a></li>
+        </ul>
+
+        <p>Resulta que las claves SSH <em>públicas</em> son realmente <strong>públicas</strong>. La inminente llegada de <a href="http://dojo4.com/blog/miles-smiles">Miles Matthias</a> proporcionó la motivación para actuar sobre esta idea. <a href="https://github.com/fredjean/lockpick">lockpick</a> surgió de esa realización.</p>
+
+        <p>Ahora tenemos el script <code>lockpick</code> en un trabajo cron. Cualquier miembro del equipo dojo4 y subequipos de confianza ahora tiene acceso a nuestros servidores.</p>
+
+        <p><a href="https://github.com/fredjean/lockpick">lockpick</a> es software de código abierto y está licenciado bajo la licencia MIT.</p>
+
+        <p>–</p>
+
+        <p>Imagen de <a href="http://www.flickr.com/photos/ranh/">Ran Yaniv Hartstein</a>, encontrada en <a href="http://flickr.com">Flickr</a> en http://www.flickr.com/photos/71052670@N00/106709219/in/photolist-aqUW8-2NYNRp-3afgoE-56hKYh-6tsdur-6twmtW-7bBkEv-acmuGx</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-lockpick">no-me-gusta-esto<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/announcing-lockpick">me-gusta-esto<a>
+          </li>
+          <li>
+            <a href="/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

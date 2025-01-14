@@ -1,0 +1,207 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rails till_json</title>
+
+<meta property="og:title" content="rails till_json"/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/arkiv/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"rails-till-json"}">
+    <meta property="site:path_info" content=""/rails-till-json"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+    <base href='/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>rails, inklusive rails3, har denna härliga bit av kod som är relaterad till att tillhandahålla en “till_json”-metod på inbyggda funktioner:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781"># Hack för att ladda json-gemmet först så att vi kan skriva över dess till_json.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># JSON-gemmet lägger till några moduler till Ruby-kärnklasser som innehåller :till_json-definitionen, skriver om</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># deras standardbeteende. Det sades, vi behöver definiera den grundläggande till_json-metoden i alla av dem,</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># annars kommer de alltid att använda till_json-gemmets implementation, vilket är bakåtkompatibelt i</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># flera fall (till exempel fungerar inte JSON-implementeringen för Hash med arv)</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># och som ett resultat kan klasser som ActiveSupport::OrderedHash inte serialiseras till json.</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">RUBY</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__LINE__</span>
+</div><div class='code-line code-line-15'><span style="color: #0a3069"># Dumper objekt i JSON (JavaScript Object Notation). Se www.json.org för mer info.</span>
+</div><div class='code-line code-line-16'><span style="color: #0a3069">def till_json(options = nil)</span>
+</div><div class='code-line code-line-17'><span style="color: #0a3069">ActiveSupport::JSON.encode(self, options)</span>
+</div><div class='code-line code-line-18'><span style="color: #0a3069">end</span>
+</div><div class='code-line code-line-19'><span style="color: #953800">RUBY</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-21'>
+</div></code></div>
+
+<p>vad detta effektivt gör är att överskriva “till_json”-metoden som json-gemmet tillhandahåller med en som aktiv_support anser är bättre. Kommentaren om att json är trasig är oaktuell och detta var ett hack från början. I mitt fall gillar jag verkligen den här typen av saker i min /api-kontrollant:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">till_json</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">objekt</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">Rails</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">env</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">production?</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">JSON</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">generate</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">objekt</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">else</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">JSON</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">pretty_generate</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">objekt</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-9'>
+</div></code></div>
+
+<p>eftersom det gör felsökningen mycket enklare. Så här gjorde jag det i en rails3-app -</p>
+
+<p>första steget var att få rails3 att stödja konceptet med “förinitialisering” som gamla rails-versioner brukade ha:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">### fil: config/förinitialisering.rb</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">dirname</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dirname</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">expand_path</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">))</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">glob</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">dirname</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'förinitialiseringar'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'**/**.rb'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">förinitialiseringar</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Dir</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">glob</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">glob</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">förinitialiseringar</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">each</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">förinitialisering</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #953800">Kernel</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">förinitialisering</span><span style="color: #24292f;background-color: #f6f8fa">)}</span>
+</div><div class='code-line code-line-9'>
+</div></code></div>
+
+<p>därefter lade jag till den här förinitialiseringen:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">### fil: config/förinitialiseringar/un_fuck_till_json.rb</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">alias_method</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'__till_json__'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'till_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">method_defined?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'till_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-19'>
+</div></code></div>
+
+<p>slutligen den här initialiseringen:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">### fil: config/förinitialiseringar/un_fuck_till_json.rb</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'json'</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #953800">Object</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">FalseClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">Integer</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">NilClass</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">String</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">TrueClass</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">each</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">klass</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class_eval</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">alias_method</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'__till_json__'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'till_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #953800">method_defined?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'till_json'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-19'>
+</div></code></div>
+
+<p>på engelska gör det här följande:</p>
+
+<ul>
+  <li>gör så att rails stödjer kod som körs innan allt annat</li>
+  <li>under den här fasen suger den in json-gemmet och kommer ihåg hur den gör saker</li>
+  <li>nollställ rails’ metod och återställ till_json-metoden</li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/om">om<a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/rails-till-json">i-hate-this<a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/rails-till-json">i-love-this<a>
+  </li>
+  <li>
+    <a href="/kontakt">kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

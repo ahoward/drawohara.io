@@ -1,0 +1,125 @@
+<html color-mode="user" lang="es">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <base href='/es' />
+
+  <!-- meta -->
+    <title>Aprende a escribir DSL's de la manera correcta</title>
+
+<meta property="og:title" content="Aprende a escribir DSL's de la manera correcta"/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archivo/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aprende-a-escribir-dsls-de-la-manera-correcta"}">
+    <meta property="site:path_info" content=""/aprende-a-escribir-dsls-de-la-manera-correcta"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/es/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p>Estaba trabajando con una cierta biblioteca de pruebas de Ruby popular hoy para preparar una solicitud de extracción y me encontré con un problema que he tenido muchas veces: pruebas que pasan y/o fallan debido a que el marco de pruebas en sí contamina el infierno de los espacios de nombres globales. ¿No lo crees? Mira esto:</p>
+
+<p><br /><br />
+<script src="https://gist.github.com/4039805.js?file=polluted.rb.txt"></script><br />
+<br /></p>
+
+<p>los resultados se produjeron utilizando este script</p>
+
+<p><br /><br />
+<script src="https://gist.github.com/4039805.js?file=polluted.rb"></script><br />
+<br /></p>
+
+<p>algunas personas han dicho que esto siempre será un efecto secundario de tener DSL agradables, pero esto simplemente no es cierto:</p>
+
+<p><br /><br />
+<script src="https://gist.github.com/4040698.js?file=dsl.rb"></script><br />
+<br /></p>
+
+<p>así que, aprendan a escribir DSL de la manera correcta, gente. La manera correcta es cualquier manera que no arroje métodos en todos los objetos y espacios de nombres sin una razón <em>extremadamente</em> buena.</p>
+
+<p><br /><br />
+<br /><br />
+“debe leerse bien” <em>no</em> es una buena razón.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/es/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="/es/about">acerca de</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/aprende-a-escribir-dsls-de-la-manera-correcta">i-hate-this</a>
+  </li>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/aprende-a-escribir-dsls-de-la-manera-correcta">i-love-this</a>
+  </li>
+  <li>
+    <a href="/es/contact">contacto</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/es">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

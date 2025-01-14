@@ -1,0 +1,135 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>¡El dojo está creciendo!</title>
+
+    <meta property="og:title" content="¡El dojo está creciendo!"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/es/dojo4/archivo/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-dojo-is-growing"}">
+    <meta property="site:path_info" content=""/el-dojo-esta-creciendo"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      &lt;% content_for :style do %&gt;
+      <style>
+        h2, dd {line-height: 1.7;}
+        h2 {margin-top: 1em;}
+        dd {margin-left: 0;}
+      </style>
+      &lt;% end %&gt;
+      <p>Recientemente, dojo4 contrató a dos nuevas personas para ayudar a la tienda a enfrentar nuevos desafíos. Bueno, para ser sincero, nos cansamos de molestarnos entre nosotros, así que trajimos sangre nueva. En cualquier caso, si estás en el vecindario, por favor pasa y preséntate. Mientras tanto, aquí tienes algo de información sobre estos tipos.</p>
+      <p>Después de 10 años en el extranjero, Brett decidió que era hora de regresar al país. Antes de hacerlo, hizo mucha investigación sobre el lugar perfecto para establecerse. Boulder cumplía con los requisitos. Creemos que tomó la decisión correcta.</p>
+      <p>Más sobre Brett:</p>
+      <dl>
+        <h2>¿Por qué dojo4?</h2>
+        <p>Desde que empecé a trabajar con el equipo de dojo4, sentí que encajaba perfectamente y sus ideales realmente coincidían con los míos. ¡No he podido quitarme esta sonrisa tonta de la cara desde que me mudé aquí y empecé a trabajar en Dojo4, me encanta!</p>
+        <h2>¿Dónde estabas antes?</h2>
+        <p>Soy un poco viajero del mundo. Estaba en Sídney, Australia, terminando mi maestría y trabajando allí por un tiempo. Antes de eso, vivía en Beppu, Japón, donde completé mi licenciatura. Vivía en el pueblo de aguas termales más genial del mundo. Después de un largo día de escuela, solía ir a darme un baño en las aguas termales. Para cualquiera que viaje a Japón, realmente recomiendo alejarse lo más posible de Tokio y dirigirse a un lugar como Kyushu o Shikoku, valdrá la pena.</p>
+        <h2>¿Cuáles son tus puntos fuertes o qué te emociona trabajar en la Web?</h2>
+        <p>Soy una persona bastante orientada visualmente y me gusta mucho el desarrollo frontend, donde puedo ver la creación mientras la estoy codificando. Hay mucho en marcha en el mundo de la ingeniería frontend en este momento, ya que JavaScript finalmente se está ganando sus alas como lenguaje de desarrollo principal. He estado jugando con Node y Backbone.js recientemente, es un momento interesante para hacer trabajo frontend.</p>
+        <h2>¿Qué haces cuando no estás en línea?</h2>
+        <p>Me gusta escalar en roca. Desde que me mudé a Boulder, he querido meterme más en el ciclismo. También he querido hacer algo de pesca con mosca. Y quizás algo de tubing. Boulder lo tiene todo justo en mi patio trasero.</p>
+        <h2>¿Conoces algún arte marcial?</h2>
+        <p>De hecho, sí. Mientras vivía en Japón, estudié Kendo, el arte marcial japonés de la lucha con espadas. Me enseñó disciplina y enfoque además de exponerme a una parte única de la cultura japonesa.</p>
+      </dl>
+      <hr>
+      <p>Originario del Estado de Granito, Steve llegó a dojo4 por la puerta trasera, que creemos que Garett dejó entreabierta una noche mientras salía en busca de helado de plátano. No estamos seguros de cómo se llenó el papeleo, pero Steve está aquí, a menudo envuelto en un afgano en el sofá o tomando una siesta (a veces es difícil notar la diferencia).</p>
+
+      <h2>¿Por qué dojo4?</h2>
+      <p>Porque estas personas son mucho más inteligentes que yo. Estoy tratando de absorber.</p>
+      <h2>¿Dónde estabas antes?</h2>
+      <p>En última instancia, soy un teórico literario fallido que se dedicó a la codificación frontend, pasear en vientos de 120 mph y instalar baños de montaña remotos. En realidad, no soy muy bueno en esto último, así que considérese advertido.</p>
+      <h2>¿Cuáles son tus puntos fuertes o qué te emociona trabajar en la Web?</h2>
+      <p>Tengo habilidad para engañar a la gente para que vaya en bicicleta. Esta habilidad está *altamente* subvalorada en la mayoría de los lugares de trabajo; sin embargo, Dojo4 fomenta tales cosas. En cuanto a cosas nerd, me gusta crear sistemas de cuadrícula y entretenerme con diseños densos en información. También disfruto tratando de atraer a las audiencias con copys ingeniosos.</p>
+      <h2>¿Qué haces cuando no estás en línea?</h2>
+      <p>Mi esposa y yo somos bastante activos, y sin embargo, somos igualmente hábiles para hundirnos en los sofás para ver grandes programas como The Wire, Dexter y Arrested Development.</p>
+      <h2>¿Conoces algún arte marcial?</h2>
+      <p>Los amigos han observado que soy particularmente hábil para correr y esconderme. ¿Hay un nombre para esa disciplina?</p>
+
+      <p>¡Bienvenidos al dojo, chicos!</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/about">sobre<a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/el-dojo-esta-creciendo">no-me-gusta-esto<a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/el-dojo-esta-creciendo">me-encanta-esto<a>
+          </li>
+          <li>
+            <a href="/contact">contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

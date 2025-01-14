@@ -1,0 +1,105 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Hace 30 años dije "buscapersonas primero", pero nadie escuchó...</title>
+
+    <meta property="og:title" content="Hace 30 años dije 'buscapersonas primero', pero nadie escuchó..."/>
+    <meta property="og:description" content="siga adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"30-years-ago-i-said-pager-first-but-no-one-listened"}">
+    <meta property="site:path_info" content=""/30-years-ago-i-said-pager-first-but-no-one-listened"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <p><img src='/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png' title="Ilustración de Mobile First" alt="Ilustración de Mobile First" rel="450x450" width="450" height="450" /></p>
+      <p>Recientemente hice un viaje a la ciudad de Nueva York justo después de leer el libro <a href="http://www.abookapart.com/products/mobile-first" title="http://www.abookapart.com/products/mobile-first" target="_blank">"Mobile First"</a> de <a href="http://www.lukew.com/" title="http://www.lukew.com/" target="_blank">Luke Wroblewski.</a> Durante el viaje entre Queens y Manhattan, vi a muchas personas en sus dispositivos móviles. Y aunque no necesitaba este viaje para convencerme de que el móvil está en auge, seguro que hizo que el hecho fuera aún más claro.</p>
+      <p>El sexto libro de la serie de diseño de <cite>A Book Apart</cite>, "Mobile First" explora las razones y la estrategia para poner el diseño web móvil antes que todo lo demás. Aquí están algunos de mis puntos favoritos.</p>
+      <p><strong>Enlaces.</strong> Cada vez que se comparte un enlace web en línea o se referencia en una aplicación nativa, se abre en un navegador web. Entonces, si tienes tu aplicación nativa de Facebook abierta en tu dispositivo móvil y haces clic en un enlace, te lleva a un navegador que ahora muestra el sitio web. ¿Este sitio ha preparado su contenido para móvil? Probablemente no.</p>
+      <p><strong>Espacio Pequeño.</strong> El pequeño espacio de pantalla de los móviles obliga a diseñadores, desarrolladores y clientes a considerar qué es lo que más importa. Debes dar a tus clientes exactamente lo que necesitan y quieren. No hay espacio para información inútil.</p>
+      <p><strong>Sé rápido.</strong> El móvil te obliga a pensar en construir para un tiempo de carga rápido. Haz las cosas rápido, los usuarios se irán si no lo haces. Usa sprites, minifica archivos CSS y JavaScript, estila en CSS no en imágenes, etc.</p>
+      <p>Genial, has simplificado tu producto, has considerado qué contenido es el que más importa y lo has hecho cargar rápido. Ahora aplícalo a la experiencia de escritorio. Ese es "mobile first" en resumen. Ah, y... si estuviéramos viviendo en los 80, el título de este libro probablemente sería "buscapersonas primero". Alguien me acaba de llamar por el buscapersonas, tengo que irme.</p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+      <ul>
+        <li>
+          <a href="/about">acerca de</a>
+        </li>
+        <li>
+          <a href="mailto:i-hate-this@drawohara.io?subject=/30-years-ago-i-said-pager-first-but-no-one-listened">i-hate-this</a>
+        </li>
+        <li>
+          <a href="mailto:i-love-this@drawohara.io?subject=/30-years-ago-i-said-pager-first-but-no-one-listened">i-love-this</a>
+        </li>
+        <li>
+          <a href="/contact">contacto</a>
+        </li>
+      </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

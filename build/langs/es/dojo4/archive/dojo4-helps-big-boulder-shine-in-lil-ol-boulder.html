@@ -1,0 +1,136 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>dojo4 ayuda a Big Boulder a brillar en la pequeña y vieja Boulder</title>
+
+    <meta property="og:title" content="dojo4 ayuda a Big Boulder a brillar en la pequeña y vieja Boulder"/>
+    <meta property="og:description" content="sigue adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"dojo4-ayuda-a-big-boulder-a-brillar-en-la-pequena-y-vieja-boulder"}">
+    <meta property="site:path_info" content="/dojo4-ayuda-a-big-boulder-a-brillar-en-la-pequena-y-vieja-boulder">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/inicio">@drawohara</a>
+      <hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+        <p><img src='/ro/dojo4/dojo4-ayuda-a-big-boulder-a-brillar-en-la-pequena-y-vieja-boulder/assets/screen-shot-2013-06-05-at-4.22.51_PM.png' alt="img" /></p>
+
+        <p>A partir de hoy, la pequeña y vieja Boulder acoge <a href="http://bigboulderconf.com">Big Boulder 2013</a>, la segunda conferencia anual de <a href="http://gnip.com/">Gnip</a>, llena de estrellas y dedicada a los datos sociales. Disfrutamos trabajando con Gnip a lo largo del año como cliente, pero apoyar este proyecto siempre es especialmente divertido.</p>
+
+        <p>En términos de diseño, actualizamos el icónico logotipo de Flatirons para la conferencia de este año, y rediseñamos el folleto y las acreditaciones de prensa. También estuvimos encantados de hacer el logotipo y el diseño de la disposición para la <a href="http://bigboulderconf.com/initiative">Iniciativa Big Boulder</a>, lanzada hoy.</p>
+
+        <p><img src="assets/bigboulderbrosh.png" alt="img" /></p>
+
+        <p>Para que la estética asesina y responsiva de la conferencia (sí, pensamos que se ve hermosa, en la carne y en el teléfono) brille sin problemas, nos aseguramos de que todos los componentes técnicos estuvieran correctamente en su lugar:</p>
+
+        <ul>
+          <li>
+            <p>movimos el hosting a S3</p>
+          </li>
+          <li>
+            <p>implementamos nuevas <a href="https://github.com/fredjean/middleman-s3_sync">gemas de Middleman para la sincronización de S3</a>, compresión gzip y otros tipos de optimización del sitio</p>
+          </li>
+          <li>
+            <p>elaboramos una estrategia para la <a href="http://2012.bigboulderconf.com/">archivación de la vieja conferencia</a> / nueva conferencia</p>
+          </li>
+          <li>
+            <p>cambiamos el <a href="http://dojo4.com/blog/zurbs-foundation-3-embracing-the-new-old-box-model">marco CSS de Zurb</a> por Twitter Bootstrap para la consistencia entre las propiedades web de Gnip</p>
+          </li>
+          <li>
+            <p>creamos y construimos el <a href="http://bigboulderconf.com/initiative">micrositio de la Iniciativa Big Boulder</a></p>
+          </li>
+          <li>
+            <p>ayudamos a automatizar la creación de etiquetas con nombre, alimentando el archivo CSV en InDesign (un simple tutorial sobre esto seguirá a esta publicación pronto...)</p>
+          </li>
+        </ul>
+
+        <p><img src="assets/bigboulderresponsive.png" alt="img" /></p>
+
+        <p>¡dojo4 está emocionado de poder apoyar al equipo de Gnip y contribuir a esta importante reunión!</p>
+
+        <p><em>esta publicación de blog fue posible gracias a <a href="http://dojo4.com/team/steve-bailey">Steve</a> y <a href="http://dojo4.com/team/anthony-dimitre">Anthony</a></em></p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/ir" name="ir">&mdash;&gt; ir</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="/sobre">sobre</a>
+          </li>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-ayuda-a-big-boulder-a-brillar-en-la-pequena-y-vieja-boulder">i-hate-this</a>
+          </li>
+          <li>
+            <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-ayuda-a-big-boulder-a-brillar-en-la-pequena-y-vieja-boulder">i-love-this</a>
+          </li>
+          <li>
+            <a href="/contacto">contacto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

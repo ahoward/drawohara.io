@@ -1,0 +1,312 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>&quot;Тіньовий світ CSS-таблиць&quot;</title>
+
+<meta property="og:title" content="&quot;Тіньовий світ CSS-таблиць&quot;"/>
+<meta property="og:description" content="Продовжуйте рух." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-shadow-world-of-css-tables"}">
+    <meta property="site:path_info" content=""/the-shadow-world-of-css-tables"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) {
+          progressBar.remove();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <p>
+  Майбутнє веб-макетування виглядає <a href="http://dev.w3.org/csswg/css-flexbox/" target="_blank">обіцяючим</a>, особливо для досвідчених веб-розробників, чиї глибоко вкладені таблиці все ще <a href="http://www.isse.ucar.edu/water_climate/index.html" target="_blank">переслідують інтернет</a>. Але доти, поки flexbox не буде готовий до використання, CSS-плаваючі елементи – основний механізм макетування для CSS-фреймворків, таких як Twitter Bootstrap і Zurb Foundation – доведеться використовувати.
+</p>
+
+<p>
+  Чи доведеться?
+</p>
+
+<img src='/ro/dojo4/the-shadow-world-of-css-tables/assets/display-table.gif' />
+
+<p>
+  Деякі з сьогоднішніх талановитих молодих веб-розробників можуть не знати, що після повалення макетів на основі TABLE утворився вакуум. <a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a>, який демонстрував обіцянки CSS-макетування та вбив макети на основі TABLE, не обов'язково коронував наступника.
+</p>
+
+<p>
+  Була техніка Святого Грааля, Фальшиве Абсолютне Позиціювання та безліч інших частин <a href="http://www.positioniseverything.net/" target="_blank">PIE</a>. Це був час експериментів, дух яких трохи згас у світлі всіх чудових фреймворків, що існують (хоча деякі люди все ще <a href="https://github.com/necolas/suit-grid-layouts" target="_blank">експериментують</a> з часу в час).
+</p>
+
+<p>
+  Однією з технік, які не набули популярності, були CSS-макети таблиць. Декілька речей зіграли проти неї:
+</p>
+
+<ol>
+  <li>
+    назва книги, яка її пропагувала, <a href="http://www.amazon.co.uk/dp/0980455227" target="_blank">Все, що ви знаєте про CSS, неправильно</a>, була, скажемо так, трохи відштовхуючою
+  </li>
+  <li>
+    сама назва техніки викликала демонів минулого (макети на основі TABLE!)
+  </li>
+  <li>
+    вона випередила свій час – доти, коли дві важливі браузери епохи її не підтримували (IE6/IE7)
+  </li>
+</ol>
+
+<p>
+  Але нещодавно декілька людей повернулися до цієї техніки, тому що вона дозволяє позиціювання, яке інші техніки не можуть забезпечити без хаків або JS. Крім того, вона пропонує хитрощі з порядком джерел, які корисні в контексті респонсивного дизайну.
+</p>
+
+<h2 id="vertical-centering">
+  Вертикальне центрування
+</h2>
+
+<p>
+  Фронтенд-розробники знайомі з проблемою вирівнювання елементів по вертикалі в рядку, коли висоти невідомі. Дійсно, це зазвичай перша проблема, яку потрібно вирішити в будь-якому сайті в <code>HEADER</code> (логотип і навігація).
+</p>
+
+<p>
+  <code>TABLE</code> робили вертикальне центрування легким завдяки атрибуту <code>VALIGN</code>. У макетах на основі плаваючих елементів все складніше, потрібно багато хитрощів (позиціювання, відступи або висота рядків зазвичай).
+</p>
+
+<p>
+  Тут на допомогу приходять CSS-таблиці, які роблять вертикальне центрування тривіальним завдяки властивості <code>vertical-align: middle</code>. Для ілюстрації візьміть наступний розмітку:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-table"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        foo
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        bar
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        baz
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        foo<span class="nt">&lt;br&gt;</span>bar<span class="nt">&lt;br&gt;</span>baz<span class="nt">&lt;br&gt;</span>qux
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  </pre>
+</div>
+
+<p>
+  Поєднайте це з наступним CSS:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nc">.row-table</span> {
+      <span class="nl">display</span>: <span class="m">table</span>;
+      <span class="nl">table-layout</span>: <span class="m">fixed</span>;
+      <span class="nl">width</span>: <span class="m">100%</span>;
+    }
+
+    <span class="nc">.cell</span> {
+      <span class="nl">display</span>: <span class="m">table-cell</span>;
+      <span class="nl">width</span>: <span class="m">25%</span>;
+      <span class="nl">vertical-align</span>: <span class="m">middle</span>;
+    }
+  </pre>
+</div>
+
+<p>
+  І ви отримаєте наступний макет з вертикальним центруванням, незважаючи на більший вміст останнього стовпця:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+
+    <div class="cell">
+      foo
+    </div>
+
+    <div class="cell">
+      bar
+    </div>
+
+    <div class="cell">
+      baz
+    </div>
+
+    <div class="cell">
+      foo<br>bar<br>baz<br>qux
+    </div>
+
+</div>
+
+<p>
+  Додаткова перевага цього методу полягає в тому, що більшість бекенд-розробників <em>просто розуміють</em> <code>TABLE</code> (я маю на увазі тебе, <a href="/team/ara-t-howard" target="_blank">Ара</a>). Тож, якщо ви пишете стилі для інших людей, ви можете створити сіткову систему OOCSS з інтуїтивно зрозумілими класами та підкласами (".col", ".col-valign-middle", ".col-valign-top" тощо), щоб полегшити їм життя.
+</p>
+
+<h2 id="equal-height-columns">
+  Стовпці однакової висоти
+</h2>
+
+<p>
+  З тією самою розміткою, як вище, дуже легко створити стовпці однакової висоти; ми просто додамо трохи фонових кольорів для демонстрації:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B">
+      foo
+    </div>
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7">
+      bar
+    </div>
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#777777">
+      baz
+    </div>
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA">
+      foo<br>bar<br>baz<br>qux
+    </div>
+
+</div>
+
+<p>
+  Звичайно, існують JS-бібліотеки, які роблять плаваючі стовпці такими, але є всяка кумедна історія зі зміною розміру вікна, яку потрібно робити в респонсивному контексті, щоб запобігти тому, щоб (JS-розрахована) висота стовпців не "протікала" на менші в'юпорти.
+</p>
+
+<p>
+  Натомість, за допомогою простого медіа-запиту, я можу зробити так, щоб CSS-таблиці перетворювалися на блоки (<code>display: block</code>) або групи таблиць (<code>display: table-header-group</code>) залежно від того, що відповідає конкретному контексту.
+</p>
+
+<h2 id="source-ordering-tricks">
+  Хитрощі з порядком джерел
+</h2>
+
+<p>
+  Властивості CSS-таблиць можуть бути корисні, коли ви хочете перетасувати ті карти, які ви отримали від порядку джерел HTML. У макетах на основі плаваючих елементів ви можете штовхати та тягнути елементи в більших в'юпортах, але вони будуть складатися в тому ж порядку, що й порядок джерел HTML, на менших.
+</p>
+
+<p>
+  CSS-таблиці дозволяють значно перевпорядкувати речі, особливо на менших в'юпортах. Візьміть, наприклад, наш попередній приклад:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B;">
+      0
+    </div>
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7;">
+      1
+    </div>
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#777777;">
+      2
+    </div>
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA;">
+      3
+    </div>
+
+</div>
+
+<p>
+  Змінивши налаштування відображення на одну з властивостей груп таблиць (<code>display: table-caption</code>, <code>display: table-header-group</code>, <code>display: table-row-group</code> або <code>display: table-footer-group</code>), ми можемо скласти елементи значно інакше, ніж вони виглядають у рядковому макеті на більших в'юпортах (ніж порядок джерел).
+</p>
+
+<p>
+  Наприклад, якщо ми хочемо, щоб стовпці вище складалися в такому порядку (2,3,1,0), ми застосуємо наступні властивості відображення до клітинок (зліва направо): <code>display: table-footer-group</code> (0), <code>display: table-row-group</code> (1), <code>display: table-caption</code> (2), <code>display: table-header-group</code> (3). І клітинки тоді складуться так:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+
+    <div class="cell" style="width:100%;display:table-footer-group;color:rgba(0,0,0, 0.6);background-color:#F05F3B;">
+      0
+    </div>
+
+    <div class="cell" style="width:100%;display:table-row-group;color:rgba(0,0,0, 0.6);background-color:#E7E5D7;">
+      1
+    </div>
+
+    <div class="cell" style="width:100%;display:table-caption;color:rgba(0,0,0, 0.6);background-color:#777777;">
+      2
+    </div>
+
+    <div class="cell" style="width:100%;display:table-header-group;color:rgba(0,0,0, 0.6);background-color:#55ACAA;">
+      3
+    </div>
+
+</div>
+
+<p>
+  Примітка: мені довелося додати правило <code>width: 100%</code> для елемента <code>display: table-caption</code>, тому що інакше він не заповнював би доступний простір.
+</p>
+
+<p>
+  Навіщо вам це потрібно?! Ну, можливо, ви робите одну з цих хитрих <a href="http://bradfrostweb.com/blog/web/responsive-nav-patterns/#footer-anchor" target="_blank">хитрощів з навігацією в підвалі</a> для малих в'юпортів і хочете, щоб уся навігація, яка знаходиться в вашому <code>HEADER</code>, опускалася вниз сторінки.
+</p>
+
+<p>
+  Або, можливо, у вас є якийсь стовпець у рядку, який потрібно переглядати першим на малих в'юпортах, але який відображається посередині рядка на більших в'юпортах.
+</p>
+
+<p>
+  Можливості <strong>НЕ</strong> безмежні та не такі гнучкі, як у flexbox, але це щось, що можна запасти в задній кишені вашого інструментального набору.
+</p>
+
+<h2 id="notes">
+  Нотатки
+</h2>
+
+<p>
+  CSS-таблиці підтримувалися в Internet Explorer, починаючи з IE8. В іншому випадку, підтримка <a href="http://caniuse.com/css-table" target="_blank">досить ро
