@@ -9,4 +9,6 @@ require "bundler/setup"
 require "#{ lib }/site.rb"
 require "#{ config }/site.rb"
 
+require "dotenv"
+
 Dir.glob("#{ root }/models/**/**.rb").each{|model| require(model)}

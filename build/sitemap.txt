@@ -126,6 +126,14 @@ https://drawohara.io/langs/fr/io/facebook-and-global-extremism
 https://drawohara.io/langs/es/io/facebook-and-global-extremism
 https://drawohara.io/langs/it/io/facebook-and-global-extremism
 https://drawohara.io/langs/nl/io/facebook-and-global-extremism
+https://drawohara.io/purls/disco
+https://drawohara.io/langs/en/purls/disco
+https://drawohara.io/langs/uk/purls/disco
+https://drawohara.io/langs/sv/purls/disco
+https://drawohara.io/langs/fr/purls/disco
+https://drawohara.io/langs/es/purls/disco
+https://drawohara.io/langs/it/purls/disco
+https://drawohara.io/langs/nl/purls/disco
 https://drawohara.io/purls/paulsboutiqueisthegreatestalbumofalltime
 https://drawohara.io/langs/en/purls/paulsboutiqueisthegreatestalbumofalltime
 https://drawohara.io/langs/uk/purls/paulsboutiqueisthegreatestalbumofalltime

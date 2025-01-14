@@ -8,6 +8,8 @@ script do
 
   param :build_dir, value: :required
   param :lang_dir, value: :required
+
+  param :clean
   param :force
   param :noop
 
@@ -35,9 +37,11 @@ script do
       abort
     end
 
-    #if force?
-      #@lang_dir.delete!(recursive: true)
-    #end
+    if clean?
+      langs.each do |lang, name|
+        @lang_dir.join(lang).delete!(recursive: true)
+      end
+    end
 
     parallel =
       AI::Mistral::RPS - 1
@@ -53,6 +57,7 @@ private
     @iso_639_1 = JSON.parse(IO.binread('./config/iso-639-1.json'))
     @noop = params.has_key?(:noop)
     @force = params.has_key?(:force)
+    @clean = params.has_key?(:clean)
 
     @build_dir = Path.for(params.fetch(:build_dir){ './build' })
     @lang_dir = Path.for(params.fetch(:lang_dir){ './public/langs' })
