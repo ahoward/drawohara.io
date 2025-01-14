@@ -150,6 +150,14 @@ https://drawohara.io/langs/fr/purls/public-sentiment-towards-the-fortune-500-in-
 https://drawohara.io/langs/es/purls/public-sentiment-towards-the-fortune-500-in-america
 https://drawohara.io/langs/it/purls/public-sentiment-towards-the-fortune-500-in-america
 https://drawohara.io/langs/nl/purls/public-sentiment-towards-the-fortune-500-in-america
+https://drawohara.io/purls/software-developer-vs-startup-developer
+https://drawohara.io/langs/en/purls/software-developer-vs-startup-developer
+https://drawohara.io/langs/uk/purls/software-developer-vs-startup-developer
+https://drawohara.io/langs/sv/purls/software-developer-vs-startup-developer
+https://drawohara.io/langs/fr/purls/software-developer-vs-startup-developer
+https://drawohara.io/langs/es/purls/software-developer-vs-startup-developer
+https://drawohara.io/langs/it/purls/software-developer-vs-startup-developer
+https://drawohara.io/langs/nl/purls/software-developer-vs-startup-developer
 https://drawohara.io/dojo4/archive/2015-complete-boulder-voter-guide
 https://drawohara.io/langs/en/dojo4/archive/2015-complete-boulder-voter-guide
 https://drawohara.io/langs/uk/dojo4/archive/2015-complete-boulder-voter-guide
