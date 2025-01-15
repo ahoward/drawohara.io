@@ -10,5 +10,6 @@ require "#{ lib }/site.rb"
 require "#{ config }/site.rb"
 
 require "dotenv"
+Dotenv.load
 
 Dir.glob("#{ root }/models/**/**.rb").each{|model| require(model)}

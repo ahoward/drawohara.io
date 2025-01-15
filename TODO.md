@@ -58,6 +58,7 @@ todo
 
 - @writing
   - /io/story/one
+  - /io/still-rubying
 
   - /io/ai-the-hand-of-doom
     counter:

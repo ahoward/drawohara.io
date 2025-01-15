@@ -148,6 +148,10 @@ private
     !!@force
   end
 
+  def clean?
+    !!@clean
+  end
+
   def iso_639_1
     @iso_639_1
   end
