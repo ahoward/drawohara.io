@@ -1,0 +1,165 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"from-a-streamlined-startup-stack-to-pci-compliance-on-aws"}">
+    <meta property="site:path_info" content=""/from-a-streamlined-startup-stack-to-pci-compliance-on-aws"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">i ❤️  this!</a>
+<hr>
+<strong>/from-a-streamlined-startup-stack-to-pci-compliance-on-aws</strong>
+    </header>
+
+    <main>
+      <em>published on: 2012-09-10</em>
+<br>
+<br>
+<div class="ro markdown">
+  <h2 id="intro">Intro</h2>
+
+<p>Working through projects at <a href="http://dojo4.com">Dojo4</a> I’m often surprised to see the way that seemingly tiny increases in technical complexity <a href="http://en.wikipedia.org/wiki/Combinatorial_explosion">compound</a> into significant attention and resource sinks.  Consequently, when projects are initially getting going, we tend to favor a simplified hosting and application stack which shares many features commonly seen in shared hosting services.  This includes choices like hosting the app and db together, employing a single deployment user on the hosting system, and simple <a href="http://uptimerobot.com">uptime monitoring</a>.</p>
+
+<p>Recently, our long time client, <a href="http://www.inspirecommerce.com/">Inspire Commerce</a>, developed a new business plan requiring that their application meet the stringent <a href="https://www.pcisecuritystandards.org/">Payment Card Industry</a> (PCI) Level 1 security compliance for processing, transmitting, and storing credit card information.  Many of the security requirements detailed in the PCI <a href="https://www.pcisecuritystandards.org/security_standards/">Data Security Standard</a> (DSS) motivate a significant change in thinking from the streamlined focused stack mentioned above.   This post will briefly enumerate some of these details and outline our solutions.</p>
+
+<p>The PCI DSS is broken into 12 sections covering everything from firewall configuration to personnel security policies.  I’ll run down a few of the sections which are relevant to the hosting stack.</p>
+
+<h2 id="1-install-and-maintain-a-firewall-configuration-to-protect-cardholder-data">1. Install and maintain a firewall configuration to protect cardholder data</h2>
+
+<p>This is a pretty detailed section of the DSS which mandates the installation and configuration of <a href="http://en.wikipedia.org/wiki/Firewall_%28computing%29">firewall</a> services on all networking devices, from workstations, to routers, to servers.  Using <a href="http://aws.amazon.com/">Amazon Web Services</a> (AWS) <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud</a> (EC2) as the foundation of our hosting stack, many of these networking devices are abstracted out of our view or control.  Conveniently, <a href="http://aws.amazon.com/security/#certifications">AWS is itself PCI Level 1 compliant</a> leaving a lot of these details to the engineers at Amazon.</p>
+
+<p>However, firewalls for the EC2 nodes themselves does require some conideration.   EC2 nodes are protected by a firewall implemented at the <a href="www.xen.org/products/xenhyp.html">hypervizor</a> layer and configured by AWS <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a>.  Our basic Security Group has all ports denying packets with the exception of 22, 80, &amp; 443 accepting from all sources.  We run <a href="www.ubuntu.com/">Ubuntu Linux</a> on our nodes and out of the box have the <a href="www.netfilter.org/projects/iptables/">IP Tables</a> firewall configured with an open policy.</p>
+
+<p>The PCI DSS focuses on using firewalls to create secure private networks, or <a href="http://en.wikipedia.org/wiki/DMZ_%28computing%29">De-Militarized-Zones</a> (DMZ) for systems hosting apps which process payment card data.  AWS Security Groups provide a useful mechanism for creating secure private networks between various components of the application stack.  For example, by creating a WEB security group and a DB security group, and opening the database port in the DB security group to only WEB security group sources, the EC2 hypervisor firewall running on a database server will only allow access to the database from web servers connecting on the internal private network interface.</p>
+
+<p>For redundancy, we mirror the AWS Security Group configuration for the EC2 hypervisor firewall with the <a href="http://www.cloudpassage.com/">CloudPassage</a> service which is able to manage the IP Tables firewall at the operating system layer of systems hosting components of the card processing application.  CloudPassage organizes firewall policies in <a href="http://www.cloudpassage.com/features/halo-firewall.html">Server Groups</a> which are somewhat analogous to AWS Security Groups.  Another great feature of CloudPassage is the <a href="http://www.cloudpassage.com/features/multifactor-authentication.html">GhostPorts</a> service.  We configure the ssh port policy in CloudPassage to accept connections from GhostPort sources.  In order for a client machine to become a GhostPort source, a user on that machine must authenticate to the CloudPassage portal, be authorized to open GhostPorts for a server group, and authenticate with a registered Yubikey dongle, or respond to an SMS challenge with a registered cell phone.  Upon successful authentication and authorization, CloudPassage configures IP Tables to accept connections from the client machine source ip.  This is a convenient, secure, temporary, and auditable way to manage access to sensitive hosts.</p>
+
+<h2 id="2-do-not-use-vendor-supplied-defaults-for-system-passwords-and-other-security-parameters">2. Do not use vendor-supplied defaults for system passwords and other security parameters</h2>
+
+<p>This section would seem to be pretty obvious.  A good example of the importance of changing vendor supplied default password is the <a href="http://www.splunk.com/">Splunk</a> <a href="http://docs.splunk.com/Documentation/Splunk/latest/Deploy/Introducingtheuniversalforwarder">Universal Forwarder</a> default password of changeme.</p>
+
+<p>However buried in this section is an important hosting requirement somewhat unrelated to the section title.  “2.2.1 Implement only one primary function per server to prevent functions that require different security levels from co-existing on the same server. (For example web servers, database servers, and DNS should be implemented on separate servers)”.</p>
+
+<p>As mentioned above, AWS security groups make the task of securely separating services like web and database servers onto separate hosts pretty simple.</p>
+
+<h2 id="5-use-and-regularly-update-anti-virus-software-or-programs">5. Use and regularly update anti-virus software or programs</h2>
+
+<p><a href="http://clamav.com">ClamAV</a> makes quick work of this requirement on Ubuntu Linux.</p>
+
+<h2 id="8-assign-a-unique-id-to-each-person-with-computer-access">8. Assign a unique ID to each person with computer access</h2>
+
+<p>The intent of this section is to facilitate auditability and accountability by removing shared user accounts.  Since we use a <a href="http://en.wikipedia.org/wiki/Ssh-keygen">key based</a> authentication mechanism for <a href="http://en.wikipedia.org/wiki/Secure_Shell">secure shell</a> access, there are three primary concerns for knowing who did what.  First it is necessary to prevent user from being able to switch to another user account with the <a href="http://en.wikipedia.org/wiki/Su_%28Unix%29">su command</a>.  This is easily accomplished by removing the <a href="http://en.wikipedia.org/wiki/Filesystem_permissions#Traditional_Unix_permissions">execute permission</a> on the su binary and modify <a href="http://aplawrence.com/Basics/understandingpam.html">/etc/pam.d</a> prevent all su authorization.  Second, ensure that the <a href="http://www.eng.cam.ac.uk/help/jpmg/ssh/authorized_keys_howto.html">authorized_keys</a> files for all user accounts only contain a single entry.  Lastly, ensure that all keys used for secure shell access are password protected and that a policy is in place to forbid sharing of keys between users.</p>
+
+<p>Now, the <a href="http://www.cyberciti.biz/tips/linux-audit-files-to-see-who-made-changes-to-a-file.html">Linux Audit Daemon</a> (AuditD) can be used to track system activity to specific users.</p>
+
+<h2 id="9-restrict-physical-access-to-cardholder-data">9. Restrict physical access to cardholder data</h2>
+
+<p>The title of this section is pretty self explanatory.  Basically, this section covers the topics of restricting physical data center access to authorized personnel.  Similar to the discussion of network device firewall configuration above, this is covered by the AWS PCI Level 1 certification and the details can be left to Amazon.</p>
+
+<h2 id="10-track-and-monitor-all-access-to-network-resources-and-cardholder-data">10. track and monitor all access to network resources and cardholder data</h2>
+
+<p>The motivation of this section is “preventing, detecting, or minimizing the impact of a data compromise”.  This involves topics like logging, file integrity management, and intrusion detection.  Our strategy starts with the employment of a logging service to support aggregation of logs, retention of logs, as well as searching of log records.  We are using the <a href="http://splunk.com">Splunk</a> application for this functionality.  We setup an EC2 instance for a logging server and installed Splunk.  We setup AWS Security Groups and CloudPassage ServerGroups for the new server which has the Splunk listener port accepting connections from web server and db server sources on the private network interface.  Next we setup the Splunk Universal Forwarder on web and db servers and configured the forwarders to monitor application, apache, mongodb, sys, audit, &amp; auth logs.</p>
+
+<p>For file integrity monitoring and intrusion detection we installed the <a href="http://www.ossec.net/?page_id=165">OSSEC</a> application on all of our servers and added all of the logs that OSSEC writes to the Splunk forwarders.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+  <li>
+    <a href='/langs' id='lang'>🌎</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

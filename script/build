@@ -98,11 +98,15 @@ script do
         err[details]
       end
 
-      file = "#{ url == '/' ? '/index' : url }"
+      file = url
       ext = file[%r`\..*$`]
-      file += '.html' unless ext
 
-      path = File.join(dir, file)
+      path =
+        if ext
+          File.join(dir, file)
+        else
+          File.join(dir, file, 'index.html')
+        end
 
       if test(?e, path)
         details = {url:, file:, path:, exists: true}

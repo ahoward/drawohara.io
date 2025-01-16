@@ -1,0 +1,188 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-sekrets-gem"}">
+    <meta property="site:path_info" content=""/the-sekrets-gem"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/the-sekrets-gem">i ❤️  this!</a>
+<hr>
+<strong>/the-sekrets-gem</strong>
+    </header>
+
+    <main>
+      <em>published on: 2016-01-29</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>(This post originally appears on Spike’s <a href="http://stuff-things.net/">Stuff… And Things… blog</a>)</p>
+
+<p>I occasionally write about encryption in Ruby, yet somehow I haven’t managed to cover the Dojo’s own <a href="https://github.com/ahoward">Ara’s</a> <a href="https://github.com/ahoward/sekrets">Sekrets</a> gem.</p>
+
+<p>Sekrets provides a simple interface to create and manage encrypted files in Ruby. It’s raison d’être is to make it reasonably painless to store sensitive data, API keys and the like, in Git repos and then access that data inside your Rails app, both in development and production.  <!-- more --> Like all good gems, it just need to be added to your Gemfile:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'sekrets'</span>
+</div></code></div>
+
+<p>And followed up with <code>bundle install</code>. This will add a couple of <em>rake</em> tasks, start with:</p>
+
+<pre><code>rake sekrets:generate:key
+</code></pre>
+
+<p>This creates a <code>.sekrets.key</code> file in application’s root directory. It contains a randomly generated password and is what will allow us to automatically decrypt the encrypted configuration file. If you work with a team, you might want to replace that password with something more easily communicated, just do so before you run the next step.</p>
+
+<p>We want this file to exist in development, and to be available to our deploy, but putting it in the Git repo would defeat the purpose, so this step also adds <code>.sekrets.key</code> to your <code>.gitignore</code>.</p>
+
+<p>To reiterate, <code>.sekrets.key</code> should not be committed to your repo.</p>
+
+<p>Next run:</p>
+
+<pre><code>rake sekrets:generate:config
+</code></pre>
+
+<p>This creates <code>config/sekrets.yml.enc</code>, encrypted with the key in <code>.sekrets.key</code> and sets up <code>config/initializers/sekrets.rb</code>.</p>
+
+<p><code>config/sekrets.yml.enc</code> is an encrypted YAML file. This is where you store whatever data we wish to keep secret:</p>
+
+<div class="language-yaml highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">---</span>
+</div><div class='code-line code-line-2'><span style="color: #116329">api_key</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">42</span>
+</div><div class='code-line code-line-3'><span style="color: #116329">aws</span><span style="color: #24292f;background-color: #f6f8fa">:</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #116329">access_key_id</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">XXXXXXXXXXXXXXXXXXXX</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #116329">secret_access_key</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</span>
+</div><div class='code-line code-line-6'><span style="color: #116329">the_list_of_my_enemies</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">Bob'</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">'</span><span style="color: #0a3069">Kevin'</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">'</span><span style="color: #0a3069">Stuart'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-7'><span style="color: #116329">winter_is_coming</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">true</span>
+</div></code></div>
+
+<p>You can edit the file with:</p>
+
+<pre><code>sekrets edit config/sekrets.yml.enc
+</code></pre>
+
+<p>Or view it with:</p>
+
+<pre><code>sekrets read config/sekrets.yml.enc
+</code></pre>
+
+<p>The initializer sets up a global constant <code>SEKRETS</code>. If the <code>.sekrets.key</code> file exists, then it’s populated with the values from <code>config/sekrets.yml.enc</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">SEKRETS</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:aws</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-2'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">"access_key_id"</span><span style="color: #0550ae">=&gt;</span><span style="color: #0a3069">"XXXXXXXXXXXXXXXXXXXX"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">"secret_access_key"</span><span style="color: #0550ae">=&gt;</span><span style="color: #0a3069">"YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"</span><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div></code></div>
+
+<p>(SEKRETS is actually a <a href="https://github.com/ahoward/map">Map</a>, a kind of smart Hash, so you can also get values by method <code>SEKRETS.aws</code> or <code>SEKRETS.winter_is_coming?</code>)</p>
+
+<p>Now all that sensitive data your app needs is in the repo and moves around with it. However, if someone gets access to the repo, without the key, they still don’t have access to your secrets. All you need do when bringing on a new developer is have them put the key in the <code>.sekrets.key</code> file on their local machine.</p>
+
+<p>That takes care of development, what about production? Sekrets gives you two options. First, you can set <code>SEKRETS_KEY</code> in your web servers environment, in much the same way people typically make sensitive information available outside of their code base. Alternatively, if you use Capistrano, you can add <code>require 'sekrets/capistrano'</code> to your <code>Capfile</code>. This adds a task that copies the <code>.sekrets.key</code> to the server on deploy.</p>
+
+<p>With either method, when the App boots, Sekrets will find it’s key, decrypt the config file and set up the <code>SEKRETS</code> constant.</p>
+
+<p>It should be obvious, that your sekrets, sorry, secrets are only as secure as your server. Someone with access to the server can recover the <code>SEKRETS_KEY</code> environmental variable or <code>.sekrets.key</code> file and use it to decrypt the sekrets.</p>
+
+<p>However, this is really no different than the common approach of putting sensitive things, like API keys, in the web server environment and accessing them through <code>ENV</code> in the app. In fact, setting <code>SEKRETS_KEY</code> in environment is exactly the same approach.</p>
+
+<p>Ultimately, if sensitive data is on the server and in a form that can be accessed by your software, then it’s only as secure as the server. Sekrets doens’t solve that problem. What it does do is get that data under revision control in a secure way and simplify sharing that data between developers. And that’s a big win.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/the-sekrets-gem">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+  <li>
+    <a href='/langs' id='lang'>🌎</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

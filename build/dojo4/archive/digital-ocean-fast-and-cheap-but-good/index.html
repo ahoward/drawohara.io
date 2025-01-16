@@ -1,0 +1,172 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"digital-ocean-fast-and-cheap-but-good"}">
+    <meta property="site:path_info" content=""/digital-ocean-fast-and-cheap-but-good"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">i ❤️  this!</a>
+<hr>
+<strong>/digital-ocean-fast-and-cheap-but-good</strong>
+    </header>
+
+    <main>
+      <em>published on: 2013-12-30</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>As CTO of a technology agency I’m constantly evaluating new tools, processes, and services.</p>
+
+<p>Recently I’ve been looking at the DigitalOcean platform as part of an ultra-high-availability strategy we’ve been developing for those times when AWS/S3 isn’t enough: when you want to weather a massive outage of an entire cloud provider.</p>
+
+<p>All of Dojo4’s deploys start out as AWS ones for the obvious reason: it is the standard by which all other cloud services are judged.  It has the additional benefit to an agency in that we can point to it as a ‘sane default’ for software we deliver to customers; as the 800 pound gorilla its use is defensible.  However, some rare clients have voiced concerns about AWS outages affecting their sites and applications, in particular monitoring applications which are supposed to report errors about such outages: a recursive problem.  For these cases we’ve been looking at static deploys balanced across cloud providers with DNS, and DigitalOcean has been on the short list of contenders to create and deploy simple static sites hosted by Apache for this purpose as a failsafe for our normal AWS hosted sites.</p>
+
+<p>Recently DigitalOcean (DO) had a wee issue related to it’s security practices: <a href="https://github.com/fog/fog/issues/2525" target="_blank">https://github.com/fog/fog/issues/2525</a>.</p>
+
+<p>One could summarize this issue as: when you boot up a new cloud box it may or may not have some previous user’s sensitive data lying around on the disk and, when you shut your own cloud box down, you may expose your own sensitive data to some random 3rd party.  Their service provides a way to wipe things clean but it is <em>not the default</em> - the default is to leave <em>whatever was on the disk</em> exposed for the next customer to dig around in.</p>
+
+<p><em>This is a really bad default strategy.</em></p>
+
+<p>On twitter I suggested that I wasn’t surprised by this lax strategy, but that I was disappointed at the way DO handled themselves during the disclosure.   During a brief exchange on twitter I was asked to summarize the source of my non-surprise:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/drawohara">@drawohara</a> If you wanted to take the time to put it into an email, I&#39;d read and share it with the whole team, and appreciate it greatly. :)</p>&mdash; John Edgar (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">December 30, 2013</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>So, here with 20/20 hindsight and actually trying to be helpful, I’m fulfilling my promise and explaining why I’ve been dragging my feet moving any of our stuff to DigitalOcean’s platform. (Please note that this list compromises feelings and impressions only, but that they’ve been somewhat validated and strengthened by the recent disk scrubbing fiasco):</p>
+
+<ul>
+  <li>Visting DO’s home page one is greeted with a blaring marketing message that screams ‘cheap and fast’</li>
+</ul>
+
+<p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
+
+<p>given that the platform is ‘built for developers’ I personally find it strange that the team apparently didn’t anticipate developers getting the clear message that of ‘good, fast, and cheap’ one is picking the latter <em>two</em> with DO.</p>
+
+<ul>
+  <li>Next, one gets a nice confirmation message that, as start-up, DO is motivated to demonstrate very, very fast growth</li>
+</ul>
+
+<p><img src="http://cl.ly/T8pL/Screen%20Shot%202013-12-30%20at%201.05.20%20PM.png" alt="" /></p>
+
+<p>this should give any operations engineer a sick in the stomach feeling.</p>
+
+<ul>
+  <li>Poking around the site one finds consistent beating of the ‘fast and cheap’ drum, for instance in the referral program</li>
+</ul>
+
+<p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
+
+<p>which hammers the message home and suggests devs sell their buddies on fast and cheap without even a shred of information about robustness, consistency, or security.</p>
+
+<ul>
+  <li>Reading through the blog it was very clear that DO follows a lean, user driven, development cycle:</li>
+</ul>
+
+<p><a href="https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean" target="_blank">https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</a></p>
+
+<p>and while I admire, approve of, and recommend this kind of approach to software in general, building security and robustness iteratively doesn’t seem like the sweet spot for this kind of business - despite how awesome VCs (who have never fought a security breach in the wild) must think it is. Some things require massive experience and top-down planning: a stack that lets its users store data and execute code on, be it a browser or cloud, fall into the category of ‘I want someone extracting real code from real systems with a history of attack’ and not ‘We listen to users and iterate quickly, learning as we go.’</p>
+
+<p>So, don’t get me wrong, I am still evaluating DigitalOcean as a nice programmable stack on which to deploy simple static sites and I certainly want to see them succeed, but  I have concerns about their culture and if it is the kind of culture that practices defensive vs. reactive security practices and if they’ll be able to maintain their growth, price point, and ultimately funding when, and if, they catch up with the other cloud players in this regard.  Reading through their attitudes and beliefs in the context of the recent debacle (<a href="https://github.com/fog/fog/issues/2525" target="_blank">https://github.com/fog/fog/issues/2525</a>) gives me some reason to doubt it.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+  <li>
+    <a href='/langs' id='lang'>🌎</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

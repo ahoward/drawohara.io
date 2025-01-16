@@ -1,0 +1,144 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"thoughts-on-launching-and-scaling-quickly"}">
+    <meta property="site:path_info" content=""/thoughts-on-launching-and-scaling-quickly"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/thoughts-on-launching-and-scaling-quickly">i ❤️  this!</a>
+<hr>
+<strong>/thoughts-on-launching-and-scaling-quickly</strong>
+    </header>
+
+    <main>
+      <em>published on: 2011-10-12</em>
+<br>
+<br>
+<p>We discussed <a href="http://www.jperla.com/blog/post/how-to-launch-in-a-month-scale-to-a-million-users">this interesting blog post by Joseph Perla and building and scaling quickly</a> internally this week, and I wanted to share some brief thoughts about some of his points.  Below are some topics from his post with my thoughts and reactions:</p>
+<p><em>Keep it simple</em>
+</p>
+<p>No argument here. This is often easier said than done, however. There's a lot of art and gut to this. Many product managers equate high simplicity with low value.</p>
+<p><em>Get it right (have tests).</em>
+</p>
+<p>Good testing practices and culture are key, and this is fairly well-known in the industry at this point</p>
+<p><em>Don't hide power</em>
+</p>
+<p>They wrote a library called <a href="http://www.jperla.com/blog/post/write-bug-free-javascript-with-pebbles">Pebbles</a> which gives an HTML way to express a few common ajax interaction patterns. Definitely there are smart folks in the camp of making a domain specific language (DSL) for every project.  He's doing that here in at least his pebbles AJAX system and his python twitter parsing code.</p>
+
+<p><a href="http://pixtress.tumblr.com/post/4102228454/stylish-slabs-of-steel-and-glass-the-skyscrapers">
+  <img src='/ro/dojo4/thoughts-on-launching-and-scaling-quickly/assets/skyscraper-corey-kohn.jpg' style="max-width:100%;display:block;" /></a></p>
+<p><em>Leave it to the client</em>
+</p>
+<p>This is the most dubious point in the article in my opinion.  This strategy works OK if you only have a single interface, but how realistic is that?  Most projects are going to have one form or another of a desktop web interface, and some mobile variant thereof in all likelihood.  Other projects might have an API available, language bindings, command line tools, fat clients, etc.  As soon as you have a second interface, all that logic that you wrote in the client code must be duplicated, and by definition if it's duplicated in another framework or language, there will be behavioral differences.  My rule of thumb is any computation/manipulation that you would want to work consistently in multiple interfaces belongs in the back end and should be exposed via an API. In any case, the trade-off here is a business strategy decision that should not be made in isolation by the technical team without clearly explaining the trade-off (harder/slower to build another UI) to the business stakeholders and product managers.</p>
+<p><em>Continuity</em>
+</p>
+<p>He's not clear on exactly what he means but wow, if he's saying over the course of a month he was maintaining several API versions, that seems unnecessary.  Support multiple API versions when you absolutely must for business reasons, not as a general rule.</p>
+<p><em>Handle normal and worst cases separately as a rule</em>
+</p>
+<p>Sounds pretty reasonable to me.</p>
+
+<p><em>Take-aways</em>
+</p>
+<p>The post nicely collects a bunch of common approaches for scalability. A lot of it boils down to "don't do things that don't scale" with a healthy dose of pragmatism thrown in there.  The thing I always struggle with is knowing when building for scale from the start will be harder than not worrying about scale at the start and making trade-offs that favor validated learning sooner even if it means recoding later.  <a href="/#Ara" title="Home">Ara</a> mentioned something to me last week about building things fast in Rails and then if its wildly successful having enough cash (and time/knowledge/product stability) around to get it rebuilt in Scala (basically the Twitter story).  I've even seen Matz himself on video make the argument that if you develop rapidly in Ruby, get market traction, and have so much traffic that you can't handle it in Ruby, you've got a good problem.  You can scale your Ruby system while optimizing/rewriting key pieces of it in other languages. But this is better than losing the market to a faster competitor.  Both Facebook and Twitter have pulled this move successfully with things like <a href="https://developers.facebook.com/blog/post/358/">HipHop for PHP</a> and <a href="http://www.readwriteweb.com/cloud/2011/04/twitter-drops-ruby-for-java.php">converting Rails code to Java</a>. What we can say for sure is that a lot of projects that were very concerned with handling large scale from the beginning never made it to launch, or launched something nobody wanted, or launched 6 months after a competitor who captured marketshare, etc.  I definitely lean toward the agile/lean/<a href="http://en.wikipedia.org/wiki/You_ain't_gonna_need_it">YAGNI</a> end of the spectrum.</p>
+<p>A general comment about the state of the industry now vs in the first .com bubble is we seem way better at figuring out what the market wants and also our technology stack makes it possible to build web apps that serve hundreds of thousands of users with a small team using readily available tools.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/thoughts-on-launching-and-scaling-quickly">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+  <li>
+    <a href='/langs' id='lang'>🌎</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

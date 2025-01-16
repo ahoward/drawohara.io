@@ -1,0 +1,141 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"data-visualization-with-google-sheets-and-d3--js"}">
+    <meta property="site:path_info" content=""/data-visualization-with-google-sheets-and-d3--js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">i ❤️  this!</a>
+<hr>
+<strong>/data-visualization-with-google-sheets-and-d3--js</strong>
+    </header>
+
+    <main>
+      <em>published on: 2018-10-11</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>There are people who look at a spreadsheet and see the magic.  There are others who look at a spreadsheet and their eyes go all blurry and there’s a strong urge to take a nap.  No judgement on either type, but sometimes you need to make it easier to digest.</p>
+
+<p>Putting rows and columns of data into a format the helps people understand “what it’s all about” is usually called <em>data visualization</em>.  There a lots of tools out there to create charts and graphics from spreadsheets - including ones built in to Excel or Google Sheets.  Sometimes you need something more robust though - and the best tool for the job is <a href="http://d3js.org">D3</a>.</p>
+
+<p>Case in point: dojo4 recently finished a job for <a href="https://350.org">350.org</a> - an organization focused on reducing fossil fuels and moving to 100% renewable energy sources.  We used the concept of a chord diagram to represent the efforts of several groups and organizations targeting international banks that fund fossil fuel projects around the world.  The color coding gives a quick overview on the groups and their particular fossil fuel focus.</p>
+
+<p><img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg' alt="350-chord-diagram-base.jpg" /></p>
+
+<p>Users can hover over an organization and see which banks they are targeting:<br />
+<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg' alt="350-d3-chord-diagram-hover1.jpg" /></p>
+
+<p>Or hover over a bank and see which groups are targeting that specific bank.<br />
+<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg' alt="350-d3-chord-diagram-hover2.jpg" /></p>
+
+<p><sup><em>(note that the names of banks and organizations have been removed for privacy)</em></sup></p>
+
+<p>This chord diagram was dynamically generated from a shared Google Sheet using Google App Script and custom Javascript attached to the Sheet.  This self-contained relationship helps to make sure the source data and the code to generate the chart don’t lose their relationship, and any updates to the shared sheet will automatically update the chart.</p>
+
+<blockquote>
+  <p><em>I enjoyed working with dojo4. The team really wanted to understand how a visualization of my data would be valuable and they seem to work from there. I now have an accessible and engaging graphic that tells a story of where there are gaps, redundancies, and opportunities for more coordination. I appreciated how they took the time to learn my organization’s aesthetics and worked to match our style.</em>    –Senior Global Analyst, <a href="https://350.org/">350.org</a></p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+  <li>
+    <a href='/langs' id='lang'>🌎</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

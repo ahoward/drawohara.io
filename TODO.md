@@ -1,6 +1,8 @@
 todo
 ----
 
+front-matter.. ro!
+
 - ro rendering improvments
   - front-matter
   - hard vs soft wrapping...
