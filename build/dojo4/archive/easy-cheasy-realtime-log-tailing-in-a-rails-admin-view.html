@@ -1,0 +1,147 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"}">
+    <meta property="site:path_info" content=""/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view</strong>
+    </header>
+
+    <main>
+      <em>published on: 2012-03-07</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>in our rails apps we always have an ‘/su’ or ‘super user’ section.  we dump stuff like reports into that backend.  recently i needed to allow super users to view logs in realtime from the browser (to assist debugging firewall issues for a license server we built).  i considered doing something clever like websockets and then i became sane and just decided to do the simplest thing that could possibly work - remember, this is super users only so the following polling approach is <em>juuuust dandy</em>…<br />
+<br /><br />
+<br /></p>
+
+<p>step one was to setup an action and view that could tail a log, show it, and then ajax poll update it.  icing was adding a fancy ui (aka <em>link</em>) that could start and stop the polling<br />
+<br /><br />
+<br /></p>
+
+<p>here’s a majority of the relevant codez<br />
+<br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/1994292.js?file=tail-f.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<p>step two, shown in that gist, was to quiet down the recursive logger feature i inadvertently added: aka - the polling ajax itself created tons of logger output.<br />
+<br /></p>
+
+<p>so there you have it.  low tech.  easy cheasy.  k.i.s.s. log tailing for admins.<br />
+<br /><br />
+<br /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

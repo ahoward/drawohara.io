@@ -93,7 +93,7 @@ Site.for 'drawohara.io' do |site|
     route.call do |ctx|
       index = site.ro.nerd
       nerd = site.ro.nerd.get(:index)
-      data = {nerd:, index:}
+      data = {nerd:, index:}.update(nerd) #FIXME og:
       ctx.render 'views/nerd.erb', data:
     end
   end

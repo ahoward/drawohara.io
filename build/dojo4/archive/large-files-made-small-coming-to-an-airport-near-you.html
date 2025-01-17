@@ -1,0 +1,140 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"large-files-made-small-coming-to-an-airport-near-you"}">
+    <meta property="site:path_info" content=""/large-files-made-small-coming-to-an-airport-near-you"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/large-files-made-small-coming-to-an-airport-near-you</strong>
+    </header>
+
+    <main>
+      <em>published on: 2013-05-31</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src="assets/airplane1980bq30x40in195.jpg" alt="img" /></p>
+
+<p>For the past few months, dojo4 has been working feverishly on an very cool new product for our client: <a href="http://www.movime.com">MoviMe Networks</a> allowing air travelers to quickly rent and download feature films to their iPads from airport gates while waiting to board their flights.  We are excited to announce that the product has gone into live beta testing at Chicago O’Hare International Airport!</p>
+
+<p>We hope you will fire up your iPad and give it a try the next time you are flying out of or through ORD.  While you are waiting for your movie to download you may like to contemplate all of disparate  components working together to facilitate your movie browsing and fast downloading.  First, a studio ingest automation system retrieves gigantic raw movie files from movie studios and re-encodes them for the perfect iPad viewing experience.  Then a centralized management system creates products in the MoviMe Store for those new movies which you can browse and purchase.  And, movie files are distributed to an in-airport Content Distribution Network (CDN) so they can be downloaded lickedy-split before you need to board your flight.  That’s a lot to consider in the brief time it took to download your movie.  Perhaps you should rent another while we cover some more of the interesting technical details…</p>
+
+<p>Video files are large. A feature length HD version of a movie takes around 10GB. The files that people download from iTunes are in a 1-2GB range. The video files that we ended up using for MoviMe are around 1GB in size.</p>
+
+<p>The size of these files introduced a few interesting challenges. Most HTTP libraries are not designed to work with such large files. They do not fit in the memory of an iPad. They take a long time to move. We needed to think differently about handling such files than we normally do about images and other media. Our solution was to upload and download files in fragments. We coded the iPad player to use byte ranges when downloading the movie files, and then reassemble them into ready-to-play files. This also required us to add byte range support to our uploads controller, as well as in <a href="https://github.com/ahoward/mongoid-grid_fs">Mongo gridFs driver</a>, so we could retrieve file portions efficiently. We used multi-part uploads to push files from the servers, which were preparing the movies for the appropriate S3 buckets.</p>
+
+<p>Another advantage of dealing with file fragments was that we could parallelize both uploads and downloads to reduce the amount of time it takes to move the files around. The iPad player can download up to 4 fragments in parallel, reducing the amount of time required to download a whole file. We discovered that we could use up to 5 concurrent multipart uploads to an S3 bucket to reduce the upload time to get the media files to S3.</p>
+
+<p>All this so you can find and download <a href="http://www.youtube.com/watch?v=ZqtNxNRCcGg">your favorite movie</a> at the airport at lightning speed and watch it on your next flight! Coming to <a href="http://www.movime.com/#!airports/c13f3">an airport near you</a> soon…</p>
+
+<p><strong>this blog post by <a href="http://dojo4.com/team/fred-jean">Fred Jean</a> and <a href="http://dojo4.com/team/garett-shulman">Garett Shulman</a> and <a href="http://dojo4.com/team/corey-kohn">Corey Kohn</a></strong></p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
