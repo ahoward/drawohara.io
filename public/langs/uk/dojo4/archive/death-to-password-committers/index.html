@@ -1,0 +1,162 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>тут нічого немає.</title>
+
+<meta property="og:title" content="тут нічого немає."/>
+<meta property="og:description" content="продовжуй рухатися." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"death-to-password-committers"}">
+    <meta property="site:path_info" content=""/death-to-password-committers"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/uk' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/death-to-password-committers">я ❤️ це!</a>
+<hr>
+<strong>/death-to-password-committers</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2014-04-01</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Нещодавно я побачив статтю у своєму не-RSS фіді про кількість розробників, які недбало закомітили чутливі дані, дозволивши їх побачити всьому світу:</p>
+
+<ul>
+  <li><a href="http://www.net-security.org/secworld.php?id=16566" target="_blank">http://www.net-security.org/secworld.php?id=16566</a></li>
+</ul>
+
+<p>Декілька речей вразили мене в цій статті:</p>
+
+<ul>
+  <li>
+    <p>Як, бляха муха, хтось може вести сайт із ‘security’ <em>та</em> ‘php’ у своїх URL… ?</p>
+  </li>
+  <li>
+    <p>Наскільки ще лінивішими можуть бути середні розробники?</p>
+  </li>
+</ul>
+
+<p>Серйозно, лінь вважається великою чеснотою серед програмістів (<a href="http://c2.com/cgi/wiki?LazinessImpatienceHubris" target="_blank">http://c2.com/cgi/wiki?LazinessImpatienceHubris</a>), але це ніколи не стосувалося безпеки, незважаючи на мою особисту схильність вирішувати проблеми за допомогою ‘chmod -R 0777’. (тимчасово, Дейв!)</p>
+
+<p>Є ціла армія розробників, перелічених як співробітники в згаданих репозиторіях, які будуть сперечатися до червоного кольору обличчя про всякі речі, такі як редактори, мови, фреймворки, платформи, CSS сітки та тестові фреймворки. ці ж розробники закомітять чутливі паролі в <em>репозиторій</em>, щоб зберегти їх як бурштин у льодяній печері, тому що вони просто не можуть собі дозволити написати 100 рядків коду для правильного шифрування речей, <em>які ніколи не повинні бути в репозиторії</em>.</p>
+
+<p>Якщо ви один з таких розробників, будь ласка, засуньте шматок цибулі у свою сечовипускну трубку і подумайте про це трохи.</p>
+
+<p>Якщо ви компанія, яка практикує цей антипатерн, будь ласка, скористайтеся цілою цибулиною.</p>
+
+<p>Якщо ви пишете фреймворки, що заохочують використання ‘config/hack-my-db-little-pony.yml’, скористайтеся цілим пакетом.</p>
+
+<p>OpenSSl не такий складний. Зашифруйте свої речі. Принаймні зашифруйте речі своїх клієнтів.</p>
+
+<p>Просто <em>не</em> залишайте пароль, який використовує ваш бос, клієнт або засновники для <em>усього іншого</em> (бо ви знаєте, що вони це роблять) лежати в кріогенному заморожуванні репозиторію GitHub. Публічному <em>або</em> приватному.</p>
+
+<p>Паттерни дизайну для вирішення цієї проблеми прості;</p>
+
+<ul>
+  <li><a href="https://github.com/ahoward/sekrets" target="_blank">https://github.com/ahoward/sekrets</a></li>
+</ul>
+
+<p>це один.</p>
+
+<p>Якщо ви програміст Ruby, ви можете просто <em>мати</em> цей.</p>
+
+<p>Якщо ні, будь ласка, напишіть свій на вашій улюбленій мові.</p>
+
+<p>Але що б ви не робили, не будьте лінивими, коли йдеться про закоміт паролів. Це просто повністю і абсолютно - аматорська година #weaksauce.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/death-to-password-committers">😩, я 🖤 ^це!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+  <li>
+    <a href='/langs' id='lang'>🌎</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -27,14 +27,14 @@ Site.for 'drawohara.io' do |site|
 
 # /langs
 #
-  site.route '/langs' do |route|
-    route.call do |ctx|
-      langs = site.dato.fetch(:langs)
-      data = {langs:}
-      ctx.render 'views/langs.erb', data:
-    end
-  end
-
+# site.route '/langs' do |route|
+#   route.call do |ctx|
+#     langs = site.dato.fetch(:langs)
+#     data = {langs:}
+#     ctx.render 'views/langs.erb', data:
+#   end
+# end
+#
 # /io/story
 #
 =begin
@@ -91,7 +91,10 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/nerd' do |route|
     route.call do |ctx|
-      ctx.render string: 'coming soon! 🤓'
+      index = site.ro.nerd
+      nerd = site.ro.nerd.get(:index)
+      data = {nerd:, index:}
+      ctx.render 'views/nerd.erb', data:
     end
   end
 
@@ -134,7 +137,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = %w[ /io /nerd /purls /langs /dojo4 /sitemap /home ]
+      urls = %w[ /io /nerd /purls /dojo4 /sitemap /home ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
     end

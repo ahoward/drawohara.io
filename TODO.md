@@ -1,12 +1,24 @@
 todo
 ----
 
+- /io/still-rubying
+  - translation script
+  - babe-lit
+
+
+- /recipes/hot-potato-smoothies
+- /recipes/eggs-on-tits
+
+
 front-matter.. ro!
 
 - ro rendering improvments
   - front-matter
   - hard vs soft wrapping...
   - autolink option?
+
+- svc
+  - supabase
 
 - mo betta purls
   - model

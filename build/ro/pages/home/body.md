@@ -1,17 +1,7 @@
-in case you're wondering... this is most definitely a work-in-progress.
+hi again --
 
-... isn't it *always* a [work-in-progress](https://github.com/ahoward/drawohara.io)?
+the [way out](/) is always there:
 
-for now, it's a little home for
+here, i do a little [writing](/io), a little [narcissism](/about), a [lotta code](/nerd), and [other random drivel](/goto).
 
-- [my writing](/io)
-- [status updates](/now)
-- [narcissism](/about)
-- [random stuff](/stream)
-
-and, soon, a brand new [*nerd blog*](/nerd)!
-
-forgive me it's all under 🚧 ⚒️  👷.
-
-1. **test it in prod** 💣
-2. **hack the planet** 💪
+-- thanks for playing

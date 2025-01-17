@@ -77,14 +77,268 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/nerd">i ❤️  this!</a>
+      <a href="/home">@drawohara</a>
 <hr>
-<strong>/nerd</strong>
     </header>
 
     <main>
-      coming soon! 🤓
+      <div class="ro markdown">
+  <h3 id="they-say-i-am-a-big-fat---and-they-are-right">they say i am a big fat 🤓 – and they are right!</h3>
+
+<p>for some strange reason, this makes me happy</p>
+
+<p><img src='/ro/nerd/index/assets/terminal.jpg' alt="" title="image of terminal" /></p>
+
+<p>as you can read on my <a href="/about">about</a> page, i have written <a href="/rubygems">too much software</a></p>
+
+<p>i got my start researching <em>in</em> <a href="https://www.boulder.noaa.gov/">NOAA</a></p>
+
+<p><em>for</em> <a href="https://cires.colorado.edu/">C.I.R.E.S</a></p>
+
+<p>while studying <em>at</em> <a href="https://www.colorado.edu/engineering/">CU’s College of Engineering &amp; Applied Science</a></p>
+
+<blockquote>
+  <p>wut?</p>
+</blockquote>
+
+<p>well, basically, the university has a program that donates young scientists to
+other research institutes, to help do science.</p>
+
+<p>the goal is getting the university’s name on papers which, if you know anything
+about science, is gold.  publish or perish… etc.  publishing == funding.</p>
+
+<p>my first big project, which i completed with my friends:</p>
+
+<ul>
+  <li><a href="https://www.linkedin.com/in/daveclem/">Dave Clements</a></li>
+  <li><a href="https://www.linkedin.com/in/tom-lauren-a46b793/">Tom Lauren</a></li>
+  <li><a href="https://www.linkedin.com/in/dougfales/">Doug Fales</a></li>
+  <li><a href="https://www.linkedin.com/in/scott-symmank-23b6a64/">Scott Symmank</a></li>
+</ul>
+
+<p>was a cutting edge bit of software.  essentially, we wrote a J2EE (java.  yep)
+app that was deployed on linux field computers.  the purpose, was to analyze
+weather data, in the field, while on large forest fire suppression projects, to
+make <strong>go</strong> or <strong>no-go</strong> calls.  by this, i mean the “local weather report
+needed to know if i will kill this team by sending them up this canyon, right
+now”</p>
+
+<p>this was pre-ruby, pre-common-js, and pre-iphone.   we wrote a crazy thing that
+worked on bizarre linux filed computers using satellite internet which, at that
+time.  was way, way out there.</p>
+
+<p>i also wrote a ‘golf app’ for blackberry but… ok.  another story!</p>
+
+<p>anyhow, we worked very, very hard on this - i didn’t miss a single day at the
+engineering center in a year - and it turned into a job with C.I.R.E.S for me.</p>
+
+<p>subsequently, i went to work at FSL (Forecast Systems Lab) doing
+hyper-high-availability (5 9s ((99.999 % uptime))) for operational satellite
+ingest systems.</p>
+
+<p>we designed cutting edge systems and novel… <strong>brutal</strong>… methods of ensuring
+consistency of data such as <strong>STONITH</strong>, which stands for <strong>“Stone The Other In The
+Head”</strong>.   this was the way we would ensure a single lead systems would know all
+the subordinate systems <strong>(we used to call these ‘master’ and ‘slave’ but that
+has, thankfully, gone out of fashion….)</strong></p>
+
+<p>anyhow, <em>basically</em>, when taking over ownership of an important system we
+couldn’t rely on such simple measures like concencus, or some other arrangment,
+when you take over control, literally toggle the power of the other system you
+are taking over: stone it in the head!  in this way, we could be damn sure that
+our code worked, and acheive 5 9s. of uptime.  if you are wondering, we actualy
+built hardware to support this and, at that time, were doing some of the first
+ha-postgress systems in the world.</p>
+
+<p>i also did a lot of work in verification.</p>
+
+<p>geophysical models take hundreds, or thousands, or even hundreds of thousands,
+of configurations. to run.  people talk about how <strong>neat 12-factor</strong> is now,
+and i just shake my head… what if you had to manage <strong>millions</strong> of
+configuration values.  the next trick is version them, so we know how they
+change over time because, as scientists, if we make a change to say, a cloud
+physics model, we need to ‘test it’.  but</p>
+
+<blockquote>
+  <p>how <em>do</em> you test software, when you don’t now the ‘right answer’?</p>
+</blockquote>
+
+<p>ain’t that relevant now?!</p>
+
+<p>the approach is actually theoretically simple:</p>
+
+<p>some people know it as <strong>the scientific method</strong> (air-quotes).  basically, you
+make your change, hold all other variables the same, and look for changes.  in
+the case of storms you might re-run 10 years of weather predictions, each at
+the 0hr, 1hr, 8hr, 24hr, etc.  predictions, and then analyze all <strong>that</strong> data,</p>
+
+<p>to see if</p>
+
+<p><strong>“it got better”</strong></p>
+
+<p>what do we mean by <strong>“better”</strong> you ask?</p>
+
+<p><strong>good question</strong>!</p>
+
+<p>this reminds me, very much. of the current 🌎 situation, in which hundreds of
+thousands of well-meaning and progressive technologies have, despite linters,
+test-suites, cults like xp and agile.bs, who have all been, literally
+<strong>screaming</strong> to the world about how hard thier job is, and how powerful thier
+stuff is, and how bad you need to buy it so we can have an IPO, have suddenly
+thown out all need to <strong>test anything at all</strong>, understand the outputs, the ramifications,
+or anything.  <em>we just ask the <strong>oracle</strong></em>!  (this is AI for those of you
+non-nerds)…</p>
+
+<blockquote>
+  <p>software development <strong>is presently</strong> one of the biggest existential threats to democracy</p>
+</blockquote>
+
+<p><strong>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</strong></p>
+
+<p>, the economny, and the environemnt, let alone human beings, because
+of this trend.  i have heard PhD level programmers refer to AI as <em>a universal
+API</em>, claiming they can replace ‘anyone’ via this ability to distill an API
+from thin air, and then program a human (we call these “agents”) to use the
+silly think.  so, let me say this back to you slowly, and in english:</p>
+
+<p>software developers, ranging from ones that work in social media, self driving cars, ecnonimics, space-weather, video games, etc. have decided the following is statement is <strong>valid</strong>:</p>
+
+<blockquote>
+  <p>” We can pattern match ANYTHING (rawr!), if only we pump enough data into it!</p>
+</blockquote>
+
+<p>ergo…</p>
+
+<blockquote>
+  <p>GIVE US ALL THE DATA AND <a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzc0bG9xd29hbG95c3N3cmk3dTNyMW1zYTR4bWc0ajEzaW00YzRkcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26CalrOGwwL9265yw/giphy.gif">FEAR ME</a>!</p>
+</blockquote>
+
+<p>now, here is the hitch.  who says what all this data is?  where does it come
+from?  well, i will tell you one thing: <strong>they aren’t telling us</strong>.  instead,
+they are <strong>selling us</strong>.  and by this i literally mean they are <strong>selling me to
+you</strong> and <strong>you to me</strong>.  the thoughts and communications we share these are
+what they capture and sell.  good time to re-watch the matrix, btw….</p>
+
+<p>consider just two companies.</p>
+
+<h3 id="1-google">1. google</h3>
+
+<p>the ‘deep research feature’ one can use in version 1.5 is amazing.  ask it to
+research, it downloads a tiny, relevant, subset of the interwebs, it compiles a
+little RAG database for you, and informs your questions to the oracle with
+that.  <strong>neato</strong>!</p>
+
+<p>here are, but a <strong>few</strong> small problems with this:</p>
+
+<ul>
+  <li>
+    <p>you are researching on data that google has ‘discovered to be relevant’.
+now, i don’t know if you are ever even heard of something calle <strong>S E O</strong>, but,
+i assure you there is a battle happening with little aliens to tricky the
+google for a very, very long time.  so long, that some of this information may
+even be considered ‘fact’.   the key yere is that <strong>S stands for Sales</strong>.  see
+what i mean?</p>
+  </li>
+  <li>
+    <p>next, google understands exactly who you are, what your facebook handle is,
+when you took a piss, your fitness data (corelated with your response after the
+election which is almost as easy as marking them with two yellow triangles in
+the form of the star of david)… you <strong>give this to them btw</strong>, and now it
+also reads your text messages and understands the things you really really
+research.  what could <em>possibly</em> go wrong?</p>
+  </li>
+  <li>
+    <p>oh god i nearly forgot haha!  you have <em>zero fucking idea</em> if the answer you
+get from these things is ‘right’.   i’m not even going to go there but, if you
+ever, talked to me about ‘testing’ and did’t appreciate that, in fact, their
+are more ways to verify programs than ‘coverage’ (which is, btw, the biggest
+waste of resources the industry has ever made, even more than AI.. more on this
+soon).  next, you buy a service to look for ‘trends in the data’ and integrate
+it into your CI pipeline and OMFG 🤦 - <strong>STOP AND LOOK IN THE MIRROR PEOPLE</strong>.
+if you are using AI in either science or programmer, and have not stopped to
+consider what little things like ‘correctness’ or ‘reproducability’ are.
+perhaps you are <strong>actually</strong> in <a href="https://photos.app.goo.gl/V34nXqtH4PZa1emV7">this camp</a>
+ but don’t even know it yet…  (more soon on the connection between technology
+and facism but… so little time!)</p>
+  </li>
+</ul>
+
+<h3 id="2-openai">2. openai</h3>
+
+<p>… more on the real evils of this company soon but, i wouldn’t send them <em>my</em> data.  personal, or business.  just sayin.</p>
+
+<h3 id="3-so-who-should-i-use">3. so, who should i use?</h3>
+
+<p><a href="https://mistral.ai/">https://mistral.ai/</a> … more on this soon too.  sooooo much to write!</p>
+
+<blockquote>
+  <p>but, we are <strong>way</strong> of topic.</p>
+</blockquote>
+
+<p>back at FSL, i continued working in the area of complex notions of
+‘correctness’, and ended up developing novel database platform at the time,
+called ‘bitemporal postgresql’.  some remains of it live on the interwebs.
+think version control on steriods.  enough about that.</p>
+
+<p>my next stint was at <a href="https://www.ngdc.noaa.gov/">The National Geophysical Data Center</a>, where i <strong>helped</strong> write a bunch of papers:</p>
+
+<ul>
+  <li><a href="/purls/can-poverty-rates-be-estimated-using-satellite-data">/purls/can-poverty-rates-be-estimated-using-satellite-data</a></li>
+  <li><a href="/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights">/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights</a></li>
+  <li><a href="/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003">/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003</a></li>
+  <li><a href="/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data">/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data</a></li>
+  <li><a href="/purls/global-distribution-and-density-of-constructed-impervious-surfaces">/purls/global-distribution-and-density-of-constructed-impervious-surfaces</a></li>
+</ul>
+
+<blockquote>
+  <p>what do i mean by ‘help’?</p>
+</blockquote>
+
+<p>mostly, i built very, very <a href="https://www.linuxjournal.com/article/7922">large super-compute</a>,
+essentially big fat map-reduce style computing but, at the time, neither of
+those terms existed.  we had to invent novel ways, of moving our code of off
+big-endian (not spelled wrong) cray (also not spelled wrong) machines and onto
+tons of commodity hardware.  namely, hundreds of linux boxen.</p>
+
+<p>i also did a ton of work around clustering… very low level c/c++ code, using
+ideas from signal processing and computer vision, to detect the edges of cities
+via a process similar to the <a href="https://en.wikipedia.org/wiki/Watershed_(image_processing)">watershed algorithm</a>
+ but…  at scale.</p>
+
+<p>i also got to release piles of open source software at NGDC and, for this alone, i am very grateful.</p>
+
+<hr />
+
+<p>__… breathe.. __</p>
+
+<p>next, <a href="https://www.linkedin.com/in/gregory-greenstreet-082635/">this crazy mofo</a> hired me.  to compile the <a href="https://www.gnu.org/software/gsl/">GNU scientific library</a> on.. wait for it…</p>
+
+<p><strong>windows</strong>!</p>
+
+<p>wowza i <em>am</em> old!</p>
+
+<p>anyhow, Greg worked for <a href="https://www.linkedin.com/in/dospringer/">Don Springer</a>, at company called <a href="https://www.oracle.com/corporate/pressrelease/oracle-buys-collective-intellect-060512.html">Collective Intellect</a>.  which, at the time, was the “Mobius Group” (which would eventually become <a href="https://foundry.vc/">The Foundry Group</a> and… <strong>#BOOM</strong> .. start-ups in Boulder, Colorado, were a thing.</p>
+
+<p>it was fun time.</p>
+
+<p>it was after this that i started <a href="/dojo4">dojo4</a>, which was the crown jewl in my life as a geek, for many reasons i hope to write about soon.  including close to ten years mentoring <a href="https://www.techstars.com/">techstars</a> companies where, i have made some super duper great friends.</p>
+
+<p>until then, i will say, as i always do that:</p>
+
+<ul>
+  <li>this is a work in progress.</li>
+  <li>i am doing it live.</li>
+  <li>i cannot spell, so fucking sue me.</li>
+</ul>
+
+<p>(if you <strong>do</strong> find an errer (heh), then <a href="/contact">ping me</a> or <a href="https://github.com/ahoward/drawohara.io">submit a pr</a> as this is all in gh)</p>
+
+<p>and … fucking <strong>ads</strong>!, my <a href="/purls/disco">new company</a>, aims to remedy some, but not all, of the symptoms i am watching the ‘AI movement’ go through…</p>
+
+<p>with more than a little bit of horror.</p>
+
+
+</div>
     </main>
 
     <footer>
@@ -93,19 +347,16 @@
 <blockquote>
 <ul>
   <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/nerd">😩, i 🖤 ^this!<a>
+    <a href="mailto:i-love-this@drawohara.io?subject=/nerd">i ❤️  this^</a>
   </li>
   <li>
-    <a href="/now">/now<a>
+    <a href="mailto:i-hate-that@drawohara.io?subject=/nerd">i 🖤 ^that<a>
   </li>
   <li>
-    <a href="/about">/about<a>
+    <a href="/about">narcissism<a>
   </li>
   <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
+    <a href="/now">tl;dr;<a>
   </li>
 </ul>
 </blockquote>
