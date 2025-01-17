@@ -1,0 +1,153 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+<meta property="og:title" content="Rien à voir ici."/>
+<meta property="og:description" content="Circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aws-dns-https-doj4-hosting"}">
+    <meta property="site:path_info" content=""/aws-dns-https-doj4-hosting"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">j'❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/aws-dns-https-doj4-hosting</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2014-04-07</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>L'hébergement, le DNS et le HTTPS nécessitent souvent les interactions de plusieurs fournisseurs. Souvent cela devient ingérable si ce n'est pas géré efficacement.</p>
+
+<p>Le DNS nécessite à la fois la gestion des enregistrements et l'enregistrement de domaine. Pour les deux, Dojo4 a utilisé <a href="http://dyn.com/dns">DyDNS</a> pendant de nombreuses années.</p>
+
+<p>Dojo4 utilise généralement des <a href="http://aws.amazon.com/ec2">ordinateurs cloud Amazon AWS EC2</a> pour l'hébergement et utilise donc souvent des <a href="http://aws.amazon.com/elasticloadbalancing">balanceurs de charge AWS ELB</a> devant ces hôtes web. Malheureusement, Amazon ne vous donne pas d'adresses IP cohérentes pour les instances ELB et par conséquent, le seul moyen de créer des enregistrements de domaine de deuxième niveau pointant vers les instances ELB est d'utiliser <a href="http://aws.amazon.com/route53">Amazon AWS Route53</a> pour la gestion des enregistrements qui a un enregistrement alias spécial pour cet usage. Nous avons donc tendance à utiliser Route53 pour la gestion des enregistrements DNS.</p>
+
+<p>En raison de la façon dont les handshakes TLS sont négociés par linux/apache, vous êtes limité au nombre de certificats SSL pouvant être servis au nombre d'IP sur l'hôte. Avec EC2, cela se limite essentiellement à un seul certificat si vous n'utilisez pas un <a href="http://aws.amazon.com/vpc">VPC</a>. Dojo4 utilise souvent les ELB pour fournir SSL comme moyen de contourner cela.</p>
+
+<p>Le DNS et le HTTPS sont étroitement liés car les domaines et sous-domaines à sécuriser doivent être énumérés avant la fourniture de certificat. Souvent, la stratégie la plus pratique et flexible consiste à obtenir un certificat générique. Notez cependant que tous les émetteurs de certificats génériques n'incluent pas le domaine de base dans le certificat (vous pouvez donc uniquement utiliser le certificat pour protéger *.somedomain.com, et non somedomain.com). Le certificat générique de 100 $/an de <a href="dnsimple.com">dnsimple.com</a> émis par <a href="http://comodo.com">Comodo</a> et incluant le domaine de base est une bonne affaire même avec le coût de 96 $ (8 $/mois * 12 mois) de l'hébergement dns dnsimple.</p>
+
+<p>dnsimple a d'autres fonctionnalités pratiques telles que la possibilité de déléguer la gestion des ensembles d'enregistrements à d'autres comptes d'utilisateurs dnsimple. Comme nous avons déplacé la gestion des ensembles d'enregistrements de DynDNS à Route53 et que nous avons un compte sur dnsimple pour la fourniture de SSL, nous avons déplacé l'enregistrement de domaine de DynDNS à dnsimple pour consolider les services.</p>
+
+<p>Quelques commandes en ligne utiles :</p>
+
+<p>Trouver le début de l'autorité pour un enregistrement DNS</p>
+<blockquote>
+  <p>dig SOA dojo4.com</p>
+</blockquote>
+
+<p>Voir le certificat qu'un hôte sert</p>
+<blockquote>
+  <p>openssl s_client -showcerts -connect dojo4.com:443 &lt; /dev/null</p>
+</blockquote>
+
+<p>Accéder à un serveur web par IP en ignorant la vérification SSL</p>
+<blockquote>
+  <p>curl -k https://184.72.61.241 -H “Host: projects.dojo4.com”</p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">😩, j'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/maintenant<a>
+  </li>
+  <li>
+    <a href="/about">/à propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

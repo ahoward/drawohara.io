@@ -1,0 +1,141 @@
+<html color-mode="user" lang="es">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <base href='/langs/es' />
+
+  <!-- meta -->
+    <title>no hay nada que ver aquí.</title>
+
+<meta property="og:title" content="no hay nada que ver aquí."/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"responsive-design-is-dead-long-live-responsive-design"}">
+    <meta property="site:path_info" content=""/responsive-design-is-dead-long-live-responsive-design"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/responsive-design-is-dead-long-live-responsive-design">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='bébelo'>&lt;&lt; haz clic 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/responsive-design-is-dead-long-live-responsive-design</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2013-12-05</em>
+<br>
+<br>
+<p>Los sitios web responsivos están aquí para quedarse, y con buena razón. Actualmente no hay un método mejor para moldear el contenido a la creciente cantidad de dispositivos y tamaños de dispositivos en el mercado. Sin embargo, aunque la tecnología ha cambiado, el proceso de diseño/desarrollo ha permanecido bastante estancado.</p>
+
+<p>La razón de esto es bastante sencilla: La mayoría de las agencias están atrapadas en modelos de personal anticuados donde existe una división entre diseñadores y desarrolladores front-end. Para que los nuevos paradigmas de diseño responsivo funcionen, esto tiene que cambiar.</p>
+
+<p>Un método para abordar este problema es cerrar la brecha entre el diseño y el desarrollador. Hemos encontrado que esta estrategia es menos que ideal. El emparejamiento de desarrollador a desarrollador puede tener sus méritos, pero los diseñadores y desarrolladores tienen procesos inherentemente tan diferentes que rápidamente se vuelve problemático y, en última instancia, obstaculiza el proyecto.</p>
+
+<p>Alternativamente, aquí en dojo4 hemos decidido que es de nuestro mejor interés tener empleados multifacéticos. No solo buscamos estos empleados, sino que fomentamos activamente la expansión de habilidades. Como resultado, tenemos diseñadores que pueden codificar y codificadores que pueden diseñar. Esto nos permite comenzar y terminar nuestro proceso de diseño responsivo casi completamente en el navegador.</p>
+
+<p>Nuestro proceso de diseño comienza con una rápida organización del contenido mediante un mapa del sitio o un diagrama de flujo de usuario. Esto nos permite identificar páginas y plantillas que necesitan amor en forma de wireframes a medida que avanzamos a la siguiente fase de nuestro proceso.</p>
+
+<p>Espero que hayas disfrutado de la primera fase por su encanto, ya que es la única fase que se pasa fuera de nuestro querido navegador.</p>
+
+<p>Antes de comenzar con los wireframes, configuramos nuestros entornos y resolvemos cualquier dependencia (es decir, Bootstrap, jquery, fontawesome y Middleman). También es en este punto en que resolvemos cualquier necesidad de implementación (especialmente configurando tareas de rake y buckets de S3). Una vez que estamos listos para construir y desplegar, comenzamos a rockear y/o rodar.</p>
+
+<p>Trabajando a partir de los entregables mencionados anteriormente (mapa del sitio), comenzamos a construir alambres en escala de grises. Aunque los alambres son responsivos, son bastante sencillos. Todo el contenido y los componentes de javascript (pestañas/desplegables/tootips/&amp;c.) tienen un estilo base y una funcionalidad base. Las imágenes y los iconos son de stock o están grisáceos/encajonados con una descripción. El objetivo aquí es cementar la arquitectura de la página y las decisiones de los puntos de ruptura responsivos sin pensar ni demorarse en las decisiones de diseño; esas vienen después.</p>
+
+<p>Después de que los alambres estén bloqueados en su lugar, podemos pasar a la fase de diseño del proyecto. Generalmente generamos un portafolio de patrones. En justicia, nuestros portafolios de patrones están en algún lugar entre una baldosa de estilo viva y un portafolio de patrones. Muestran elecciones de color y tipografía además del diseño de elementos y componentes: encabezados, pies de página, formularios, botones, pestañas, listas, párrafos, títulos, subtítulos y cualquier otra pieza sustancial aprendida de los alambres. Consideramos que estos son los materiales de nuestra pequeña casa web.</p>
+
+<p>Con el portafolio de patrones aprobado, comenzamos a integrar los elementos diseñados en nuestros alambres html. También comenzamos a fluir contenido, ingresar datos, hacer cualquier modelado de datos y conectar componentes de CMS si se usa uno. Aunque gran parte del trabajo se ha realizado en este punto, esta es generalmente la fase que se siente como la construcción real del sitio.</p>
+
+<p>En este punto, tenemos un sitio de borrador en preparación y listo para revisión. Generalmente hay una o dos rondas de revisiones: cambios y ajustes pequeños. Y luego viene la parte divertida, presionar el pequeño botón rojo que envía el sitio al mundo donde finalmente puede comenzar a trabajar y demostrar ser el mejor y el más malo en la web... hasta el próximo lanzamiento, es decir.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/responsive-design-is-dead-long-live-responsive-design">😩, i 🖤 ^esto!<a>
+  </li>
+  <li>
+    <a href="/now">/ahora<a>
+  </li>
+  <li>
+    <a href="/about">/acerca de<a>
+  </li>
+  <li>
+    <a href="/contact">/contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eyectar</a>
+    </footer>
+  </body>
+</html>

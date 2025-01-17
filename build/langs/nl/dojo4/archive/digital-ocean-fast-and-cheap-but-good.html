@@ -1,0 +1,174 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niets te zien hier.</title>
+
+    <meta property="og:title" content="niets te zien hier."/>
+    <meta property="og:description" content="ga door." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"digital-ocean-snel-en-goedkoop-maar-goed"}">
+    <meta property="site:path_info" content=""/digital-ocean-snel-en-goedkoop-maar-goed"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/digital-ocean-snel-en-goedkoop-maar-goed">ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink me'>&lt;&lt; klik op me 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/digital-ocean-snel-en-goedkoop-maar-goed</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2013-12-30</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Als CTO van een technologiebureau ben ik constant nieuwe tools, processen en services aan het evalueren.</p>
+
+        <p>Recentelijk heb ik naar het DigitalOcean-platform gekeken als onderdeel van een ultra-hoge-beschikbaarheidsstrategie die we ontwikkelen voor die momenten dat AWS/S3 niet voldoende is: wanneer je een massale storing van een hele cloudprovider wilt doorstaan.</p>
+
+        <p>Alle deploys van Dojo4 beginnen als AWS-deploys om de evidente reden: het is de standaard waar alle andere cloudservices aan worden gemeten. Het heeft het extra voordeel voor een bureau dat we er naar kunnen verwijzen als een 'verstandige standaard' voor software die we leveren aan klanten; als de 800 pond gorilla is zijn gebruik verdedigbaar. Echter, sommige zeldzame klanten hebben bezorgdheden geuit over AWS-storingen die hun sites en applicaties beïnvloeden, in het bijzonder monitoringapplicaties die fouten moeten rapporteren over dergelijke storingen: een recursief probleem. Voor deze gevallen hebben we naar statische deploys gekeken die zijn gebalanceerd over cloudproviders met DNS, en DigitalOcean stond op de shortlist van kandidaten om eenvoudige statische sites te creëren en te implementeren die worden gehost door Apache voor dit doel als een veiligheidsmaatregel voor onze normale AWS-gehoste sites.</p>
+
+        <p>Recentelijk had DigitalOcean (DO) een klein probleem met betrekking tot zijn beveiligingspraktijken: https://github.com/fog/fog/issues/2525.</p>
+
+        <p>Dit probleem kan worden samengevat als: wanneer je een nieuwe cloudbox opstart, kan deze mogelijk enige gevoelige gegevens van een vorige gebruiker op de schijf hebben liggen, en wanneer je je eigen cloudbox afsluit, kun je je eigen gevoelige gegevens blootstellen aan een willekeurige derde partij. Hun service biedt een manier om alles schoon te wissen, maar dat is <em>niet de standaardinstelling</em> - de standaardinstelling is om <em>wat er ook op de schijf was</em> bloot te stellen aan de volgende klant om erin te graven.</p>
+
+        <p><em>Dit is een echt slechte standaardstrategie.</em></p>
+
+        <p>Op Twitter suggereerde ik dat ik niet verbaasd was door deze losse strategie, maar dat ik teleurgesteld was over de manier waarop DO zich gedroeg tijdens de onthulling. Tijdens een kort uitwisseling op Twitter werd ik gevraagd om de bron van mijn niet-verrassing samen te vatten:</p>
+
+        <blockquote class="twitter-tweet" lang="nl"><p><a href="https://twitter.com/drawohara">@drawohara</a> Als je de tijd wilde nemen om het in een e-mail te zetten, zou ik het lezen en delen met het hele team, en het zeer op prijs stellen. :)</p>&mdash; John Edgar (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">30 december 2013</a></blockquote>
+        <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <p>Dus, met 20/20 achteraf en echt proberen om behulpzaam te zijn, houd ik mijn belofte en leg ik uit waarom ik aarzelde ons spul naar het DigitalOcean-platform te verplaatsen. (Let op dat deze lijst gevoelens en indrukken bevat, maar dat ze enigszins zijn gevalideerd en versterkt door de recente schijfschoonmaakfiasco):</p>
+
+        <ul>
+          <li>Bij het bezoeken van de homepage van DO wordt je begroet met een schreeuwende marketingboodschap die 'goedkoop en snel' roept</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
+
+        <p>aangezien het platform 'gebouwd is voor ontwikkelaars', vind ik het persoonlijk vreemd dat het team kennelijk niet heeft voorzien dat ontwikkelaars de duidelijke boodschap krijgen dat van 'goed, snel en goedkoop' je de laatste <em>twee</em> kiest met DO.</p>
+
+        <ul>
+          <li>Vervolgens krijg je een mooi bevestigingsbericht dat, als start-up, DO gemotiveerd is om zeer, zeer snelle groei te demonstreren</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8pL/Screen%20Shot%202013-12-30%20at%201.05.20%20PM.png" alt="" /></p>
+
+        <p>dit zou elke operationele ingenieur een ziek gevoel in de maag geven.</p>
+
+        <ul>
+          <li>Bij het rondkijken op de site vind je een consistente nadruk op 'snel en goedkoop', bijvoorbeeld in het verwijzingsprogramma</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
+
+        <p>wat de boodschap versterkt en ontwikkelaars suggereert om hun vrienden te verkopen op snel en goedkoop zonder zelfs een schim van informatie over robustheid, consistentie of beveiliging.</p>
+
+        <ul>
+          <li>Bij het lezen van de blog werd duidelijk dat DO een lean, gebruikersgedreven ontwikkelcyclus volgt:</li>
+        </ul>
+
+        <p>https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</p>
+
+        <p>en hoewel ik deze benadering van software in het algemeen bewonder, aanvaard en aanbeveel, lijkt het iteratief bouwen van beveiliging en robustheid niet de ideale plek voor dit soort bedrijf - ondanks hoe geweldig VC's (die nooit een beveiligingsbreuk in het wild hebben bevochten) er misschien van denken. Sommige dingen vereisen enorme ervaring en top-down planning: een stack die gebruikers toelaat om gegevens op te slaan en code uit te voeren, of het nu een browser of cloud is, valt in de categorie van 'Ik wil iemand die echte code uit echte systemen met een geschiedenis van aanvallen haalt' en niet 'We luisteren naar gebruikers en itereren snel, terwijl we leren.'</p>
+
+        <p>Dus, mis me niet, ik evalueer DigitalOcean nog steeds als een mooie programmeerbare stack om eenvoudige statische sites te implementeren en ik wil ze zeker zien slagen, maar ik heb zorgen over hun cultuur en of het de soort cultuur is die defensieve vs. reactieve beveiligingspraktijken beoefent en of ze in staat zullen zijn om hun groei, prijspunt en uiteindelijk financiering te handhaven wanneer en als ze opgrijpen met de andere cloudspelers in deze. Het lezen van hun houdingen en overtuigingen in de context van de recente debacle (https://github.com/fog/fog/issues/2525) geeft me enige reden om er twijfels aan te hebben.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/digital-ocean-snel-en-goedkoop-maar-goed">😩, ik 🖤 ^dit!<a>
+          </li>
+          <li>
+            <a href="/now">/nu</a>
+          </li>
+          <li>
+            <a href="/about">/over</a>
+          </li>
+          <li>
+            <a href="/contact">/contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; uitstappen</a>
+    </footer>
+  </body>
+</html>

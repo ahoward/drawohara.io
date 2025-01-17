@@ -1,0 +1,137 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>rien à voir ici.</title>
+
+    <meta property="og:title" content="rien à voir ici."/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"wordpress-isn-t-worth-it-in-the-long-run"}">
+    <meta property="site:path_info" content=""/wordpress-isn-t-worth-it-in-the-long-run"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/wordpress-isn-t-worth-it-in-the-long-run">j'❤️ ça !</a>
+      <small>
+        <small>
+          <small>
+            <span title='bois moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/wordpress-isn-t-worth-it-in-the-long-run</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2014-11-25</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>L'un de nos clients préférés, <a href="http://gnip.com">Gnip</a> (récemment <a href="https://blog.gnip.com/gnip-twitter-join-forces/">acquis par Twitter</a>), s'appuie sur nous pour tout leur design marketing et leurs sites web, y compris <a href="http://gnip.com">gnip.com</a>, <a href="https://blog.gnip.com">blog.gnip.com</a> et <a href="https://engineering.gnip.com">engineering.gnip.com</a>.</p>
+
+        <p>Leurs deux blogs sont des instances WordPress (vestiges d'un héritage pré-dojo4) qui ne semblaient pas valoir l'effort de migrer hors de WordPress à l'époque.</p>
+
+        <p><a href="http://gnip.com">Gnip.com</a> cependant est un site web entièrement statique construit avec Middleman et hébergé sur S3 et CloudFront. Nous avons fait cette recommandation après avoir construit et hébergé une application Rails complète pour leur site et remarqué que leur site serait un candidat parfait pour un simple site statique. Les facteurs qui nous ont alertés à ce sujet sont les mêmes pour tout autre site statique : pas de comptes utilisateurs, la vitesse et le temps de disponibilité sont la priorité la plus élevée, et si peu de mises à jour qu'une interface admin est excessive (bien que pour notre site statique, dojo4.com, nous avons construit <a href="http://dojo4.com/blog/static-is-the-new-black">un webhook pour écouter la publication de billets de blog</a>).</p>
+
+        <p>Nous avions une question intéressante cependant - puisque nous formons l'équipe marketing à utiliser ce site web, et non des développeurs, quelles réactions auraient-ils en expérimentant à la fois le côté admin-lourd de WordPress (pour leurs blogs) par rapport à la mise à jour du code dans le site middleman (pour gnip.com) et le déploiement via la ligne de commande ?</p>
+
+        <p>Il s'avère qu'ils adorent la configuration de middleman et souhaitent que nous ayons basculé leurs blogs vers middleman au lieu de WordPress il y a des années.</p>
+
+        <p>WordPress a une fonctionnalité - une interface pour rédiger et publier du contenu que les gens connaissent. En ignorant la <a href="http://dojo4.com/blog/irish-dance-and-wordpress-the-soul-destroyer">tourmente émotionnelle</a> de WordPress pendant une seconde, le coût et l'effort de maintenance d'un site WordPress sont stupéfiants pour une entreprise de taille moyenne à grande.</p>
+
+        <p>Les plugins semblent être un bon raccourci pour ajouter des fonctionnalités à votre site jusqu'à ce que vous deviez en modifier ou en mettre à jour un parce qu'il n'a pas été mis à jour depuis 2 ans. Lorsque Gnip a été acquis par Twitter, l'équipe de sécurité de Twitter voulait que les blogs s'assurent que tout le contenu était sur HTTPS. C'est une demande simple, mais lorsque vous avez 25 plugins WordPress qui incluent leurs propres ressources, dont beaucoup ne supportent même pas HTTPS, c'est un véritable casse-tête. Alors qu'avec notre approche statique, Middleman, nous effectuons une recherche et un remplacement rapides dans le code (et dès le début, en n'utilisant que des ressources locales ou celles de sources fiables qui supportent HTTPS, comme Google), déployons, et nous avons terminé.</p>
+
+        <p>Lorsque vous prenez le temps d'aider les gens à apprendre des compétences simples comme HTML, CSS et Javascript (qui sont presque des compétences requises si vous êtes impliqué dans la technologie - quel que soit votre titre de poste), les inconvénients de WordPress deviennent bien plus que ce qui est acceptable lorsqu'il existe une option aussi simple et puissante dans le contenu web statique et l'hébergement.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/wordpress-isn-t-worth-it-in-the-long-run">😩, j'🖤 ^ça!<a>
+          </li>
+          <li>
+            <a href="/now">/maintenant<a>
+          </li>
+          <li>
+            <a href="/about">/à propos<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

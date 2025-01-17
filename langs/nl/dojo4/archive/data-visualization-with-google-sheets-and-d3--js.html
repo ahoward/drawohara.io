@@ -1,0 +1,143 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niets te zien hier.</title>
+
+    <meta property="og:title" content="niets te zien hier."/>
+    <meta property="og:description" content="ga verder." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"data-visualization-with-google-sheets-and-d3--js"}">
+    <meta property="site:path_info" content=""/data-visualization-with-google-sheets-and-d3--js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/data-visualization-with-google-sheets-and-d3--js</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2018-10-11</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Er zijn mensen die naar een spreadsheet kijken en de magie zien. Er zijn anderen die naar een spreadsheet kijken en wier ogen vervaagd raken en er een sterke drang is om een napje te nemen. Geen oordeel over welk type, maar soms moet je het makkelijker maken om te verteren.</p>
+
+        <p>Rijen en kolommen met gegevens in een formaat plaatsen dat mensen helpt te begrijpen "waar het allemaal over gaat" wordt meestal <em>data visualisatie</em> genoemd. Er zijn veel gereedschappen om grafieken en grafische weergaven te maken van spreadsheets - inclusief die die zijn ingebouwd in Excel of Google Sheets. Soms heb je echter iets robuuster nodig - en het beste gereedschap voor de taak is <a href="http://d3js.org">D3</a>.</p>
+
+        <p>Punt aan de hand: dojo4 heeft onlangs een opdracht afgerond voor <a href="https://350.org">350.org</a> - een organisatie gericht op het verminderen van fossiele brandstoffen en het overstappen op 100% hernieuwbare energiebronnen. We gebruikten het concept van een koorddiagram om de inspanningen van meerdere groepen en organisaties weer te geven die internationale banken aanvallen die wereldwijd fossiele brandstofprojecten financieren. De kleurcodering geeft een snel overzicht van de groepen en hun specifieke focus op fossiele brandstoffen.</p>
+
+        <p><img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg' alt="350-koorddiagram-basis.jpg" /></p>
+
+        <p>Gebruikers kunnen met de muis over een organisatie zweven en zien welke banken ze aanvallen:<br />
+        <img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg' alt="350-d3-koorddiagram-hover1.jpg" /></p>
+
+        <p>Of zweef met de muis over een bank en zie welke groepen die specifieke bank aanvallen.<br />
+        <img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg' alt="350-d3-koorddiagram-hover2.jpg" /></p>
+
+        <p><sup><em>(let op dat de namen van banken en organisaties zijn verwijderd om de privacy)</em></sup></p>
+
+        <p>Dit koorddiagram is dynamisch gegenereerd vanaf een gedeelde Google Sheet met behulp van Google App Script en aangepaste JavaScript die is gekoppeld aan de Sheet. Deze zelfbevattende relatie helpt ervoor te zorgen dat de brondatabestanden en de code om de grafiek te genereren hun relatie niet verliezen, en dat updates aan het gedeelde blad automatisch de grafiek bijwerken.</p>
+
+        <blockquote>
+          <p><em>Ik heb genoten van het werken met dojo4. Het team wilde echt begrijpen hoe een visualisatie van mijn gegevens waardevol zou zijn en het lijkt alsof ze van daar uit werken. Ik heb nu een toegankelijke en boeiende grafiek die een verhaal vertelt over waar er lacunes, redundanties en kansen voor meer coördinatie zijn. Ik waardeerde hoe ze de tijd namen om de esthetiek van mijn organisatie te leren en werkten om onze stijl overeen te laten komen.</em> –Senior Global Analyst, <a href="https://350.org/">350.org</a></p>
+        </blockquote>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">😩, ik 🖤 ^dit!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/over<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; uitstappen</a>
+    </footer>
+  </body>
+</html>

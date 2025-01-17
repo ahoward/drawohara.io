@@ -60,7 +60,7 @@ private
     @clean = params.has_key?(:clean)
 
     @build_dir = Path.for(params.fetch(:build_dir){ './build' })
-    @lang_dir = Path.for(params.fetch(:lang_dir){ './public/langs' })
+    @lang_dir = Path.for(params.fetch(:lang_dir){ './langs' })
   end
 
   def translate!(lang:, name:, src:, dst:, force:)

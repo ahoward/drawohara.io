@@ -1,0 +1,124 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <base href='/langs/nl' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>@drawohara</title>
+
+<meta property="og:title" content="@drawohara"/>
+<meta property="og:description" content="ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"now"}">
+    <meta property="site:path_info" content=""/now"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <ul>
+  <li>
+    <p>de <a href="https://photos.app.goo.gl/Kjipk8eKT88CtSRSA">branden</a> zijn, ik vermoed, minder. 💙</p>
+  </li>
+  <li>
+    <p><a href="https://photos.app.goo.gl/MpSigk5BJwqeouiUA">jess</a> en ik werken als klootzakken om terug te verhuizen naar Colorado</p>
+  </li>
+  <li>
+    <p>ongeveer 8 maanden geleden begonnen met een nieuw <a href="https://syntheticecho.com">bedrijf</a>. Doen het allemaal <a href="/purls/disco">live</a></p>
+  </li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/now">ik ❤️ dit^</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-that@drawohara.io?subject=/now">ik 🖤 ^dat</a>
+  </li>
+  <li>
+    <a href="/about">narcisme</a>
+  </li>
+  <li>
+    <a href="/now">tl;dr;</a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; verlaten</a>
+    </footer>
+  </body>
+</html>

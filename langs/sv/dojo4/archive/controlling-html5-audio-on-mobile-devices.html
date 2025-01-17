@@ -1,0 +1,177 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Inget att se här.</title>
+
+<meta property="og:title" content="Inget att se här."/>
+<meta property="og:description" content="Fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"controlling-html5-audio-on-mobile-devices"}">
+    <meta property="site:path_info" content=""/controlling-html5-audio-on-mobile-devices"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+
+    <base href='/langs/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/controlling-html5-audio-on-mobile-devices">jag ❤️ det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/kontrollera-html5-audio-pa-mobil-enheter</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2015-01-12</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>(Det här dök först upp på Spikes <a href="http://stuff-things.net/">Saker… Och Grejer…</a> blogg)</p>
+
+<p>HTML5 <code>&lt;audio&gt;</code> taggar är ganska rakt på sak. Given:</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;audio</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"player"</span><span style="color: #116329">&gt;&lt;/audio&gt;</span>
+</div></code></div>
+
+<p>den här biten av Javascript:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">some-audio-file-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">()</span>
+</div></code></div>
+
+<p>kommer att börja spela upp vad helst som src pekar på. (Pro-tip: Om du använder jQuery, måste du få den faktiska HTML-elementet med <code>player = $('#player')[0]</code> eller <code>player = $('#player').get(0)</code>)</p>
+
+<p>Dock, om användaren är på en iOS eller Android mobil enhet, kommer ovanstående inte att spela upp något. Ingen av dessa operativsystem tillåter webbaudio (eller video) att börja strömma utan användarinteraktion. Rationalen är att strömning av data över mobilnätet kan kosta pengar och inte bör ske utan att användaren faktiskt trycker på en knapp.</p>
+
+<p>Allt väl och bra, men vad om du vill spela ett ljud som svar på en händelse, säg pipa webbläsaren en gång per minut:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">beep-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">beeper</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">setInterval</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0550ae">1000</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #0550ae">60</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div></code></div>
+
+<p>Det här kommer att fungera bra i skrivbordswebbläsare, men på mobil kommer anropet till <code>play()</code> att göra ingenting.</p>
+
+<p>Lyckligtvis finns det tre saker som gör omgående enkelt:</p>
+
+<ol>
+  <li>Användaren behöver bara trycka på play en gång per audioelement.</li>
+  <li>“Att trycka på play” kan också betyda att trigga <code>play()</code> genom ett klickhändelse.</li>
+  <li>Att spela upp ett audioelement utan källa är ett lagligt no-op.</li>
+</ol>
+
+<p>Kort sagt, allt vi behöver är att användaren ska klicka på en knapp som spelar ett tomt audioelement för att få kontroll över det:</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;audio</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"player"</span><span style="color: #116329">&gt;&lt;/audio&gt;</span>
+</div><div class='code-line code-line-2'><span style="color: #116329">&lt;button</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"ok"</span><span style="color: #116329">&gt;</span>OK&nbsp;att&nbsp;pip<span style="color: #116329">&lt;/button&gt;</span>
+</div></code></div>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">// Förutsätter jQuery</span>
+</div><div class='code-line code-line-2'><span style="color: #8250df">$</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">"</span><span style="color: #0a3069">#ok</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">click</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-3'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-4'>&nbsp;<span style="color: #8250df">$</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #cf222e">this</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">slideUp</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-5'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #6e7781">// Spela upp det tomma elementet för att få kontroll</span>
+</div><div class='code-line code-line-6'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">beep-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #6e7781">// Ange den riktiga ljudkällan</span>
+</div><div class='code-line code-line-7'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">beeper</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">setInterval</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0550ae">1000</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #0550ae">60</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-8'><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div></code></div>
+
+<p>Klicken kan vara något, en mer subtil version skulle vara att koppla den till den <em>stäng</em> knappen i en instruktionsmodal i början av ett spel.</p>
+
+<p>Den här tekniken försvårar kanske lite gränsen mellan andan och bokstaven i lagen, men den gör jobbet och låter dig skapa en konsistent upplevelse för både skrivbords- och mobilanvändare.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/controlling-html5-audio-on-mobile-devices">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/nu">/nu<a>
+  </li>
+  <li>
+    <a href="/om">/om<a>
+  </li>
+  <li>
+    <a href="/kontakt">/kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

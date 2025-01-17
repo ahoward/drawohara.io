@@ -1,0 +1,165 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Inget att se här.</title>
+
+    <meta property="og:title" content="Inget att se här."/>
+    <meta property="og:description" content="Fortsätt." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"whats-new-in-dojo4--2-version-notes"}">
+    <meta property="site:path_info" content=""/whats-new-in-dojo4--2-version-notes"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/whats-new-in-dojo4--2-version-notes">jag ❤️ det här!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</span>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/whats-new-in-dojo4--2-version-notes</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2015-01-23</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p><img src='/ro/dojo4/whats-new-in-dojo4--2-version-notes/assets/b.jpeg' alt="IMG_3766.JPG" /> Corey Kohn, medägare av dojo4, och jag pratade länge idag om den nya riktningen för dojo4. Här är vad jag lärde mig:</p>
+
+        <p>dojo4 omorganiserar sig som en syftestyrd teknikutvecklings- och designbyrå, men varför?</p>
+
+        <p>Den har haft framgångsrik affärsverksamhet i tjänst till entreprenörsinsatser under de senaste 4-5 åren. Den har förfinat sina smidiga ledningsmetoder och utvecklat metoder för att skickligt avlägsna lager av komplexitet som är inneboende i varje teknologiproblem/lösningsinsats. Dess ingenjörer, ledda av CTO Ara Howard, använder finansiella och mänskliga resurser effektivt genom att upptäcka kärnintresset bakom varje entreprenörsmål och utför smidiga lösningar snabbt och elegant.</p>
+
+        <p>Nyligen ledde en serie händelser till en välkommen möjlighet för dojo4:s primära intressenter att ta ett steg bort från daglig grind och reflektera över några djupare frågor. De har övervägt dojo4:s roll i världen och:</p>
+        <ul>
+          <li>bidragen den gör till att lindra mänskligt lidande.</li>
+          <li>hur bidrar den till att lösa mänsklighetens största utmaningar som hunger, krig, planetens hälsa etc.?</li>
+          <li>hur växer medlemmarna i dojo4-gemenskapen som människor genom det arbete de utför dag efter dag?</li>
+          <li>hur kan vi mer djupt ansluta till visionerna och missionerna hos de entreprenörer och investerare som dojo4 arbetar med?</li>
+        </ul>
+
+        <p>Genom att reflektera över dessa frågor insåg dojo4:s intressenter att de behövde något mer från det dagliga arbetet med att producera en fantastisk teknologisk lösning efter en annan.</p>
+
+        <p>Så, vi har bestämt oss för att riva ner många av de arkitektoniska funktionerna i den traditionella affärsverksamheten och bygga om från grunden upp. Här är vad vi har bestämt oss för att bygga in i nästa version av dojo4...</p>
+
+        <h1 id="dojo42">dojo4.2:</h1>
+
+        <p><strong>3 framträdande funktioner i den nya versionen</strong></p>
+
+        <ol>
+          <li>dojo4 omstrukturerar relationer internt i team och med kunder<br />
+            - <strong>intern</strong>, dojo4 arbetar för att ytterligare odla rika mänskliga relationer inom dojo4-gemenskapen och inom projektteam. Ett uttryck och en praktik för detta är att <strong><a href="http://orgdev.com/sv">Org Dev</a></strong> har flyttat in i dojo4:s kontor och är redo att assistera i dojo4:s organisationsutveckling såväl som andra.
+            <ul>
+              <li><strong>extern</strong>, dojo4 vill bygga partnerskap med entreprenörer och investerare istället för att ha kunder, av flera anledningar. Huvudsakligen är det en frustration med de incitament som finns i typiska kund/leverantörsrelationer. dojo4 har funnit att typiska projektbusinessstrukturer inte är gynnsamma för djupa och meningsfulla mänskliga relationer. dojo4 tror att den kan fungera bättre i sunda och belönande mänskliga relationer. Värderingssamstämmighet och gemensam investering, antingen i finansiell eller mänsklig kapital, är några av byggstenarna i dessa partnerskap.</li>
+            </ul>
+          </li>
+          <li>dojo4 är tillgänglig för att arbeta på impactprojekt med rätt partner på rätt projekt.</li>
+          <li>dojo4 ser ett fördelaktigt värde för samhället genom att bidra till en funktionell integration mellan:
+            <ul>
+              <li>den <a href="http://www.meetup.com/BoulderBCorps/sv">sociala entreprenörsgemenskapen</a></li>
+              <li>den <a href="http://www.kirschfoundation.org/why/venture.html">impactinvesterargemenskapen</a></li>
+              <li>den <a href="http://www.inc.com/welcome.html?destination=http://www.inc.com/magazine/201312/boulder-colorado-fast-growing-business.html">starka teknik-/startupgemenskapen här i Boulder.</a></li>
+            </ul>
+          </li>
+        </ol>
+
+        <h1 id="min-syn-på-allt-detta">Min syn på allt detta</h1>
+        <p>Den primära frågan jag lämnade intervjun med var hur dojo4 föreslår en partnerskapsmodell med vad som tidigare kallades "kunder." Partnerskap innebär gemensam investering och känsla av delad risk och belöning i en affärsverksamhet. Jag skulle vilja se ett tydligt sätt för dojo4 att planera att ingå i en delad riskrelation med syftestyrda entreprenörer. Inom den nya riktningen för dojo4 finns det många frågor relaterade till detaljerna i hur allt detta ska spela ut. Jag undrar vad en typisk eller till och med en ideal "partnerskap" med en entreprenör skulle se ut för dojo4. Vad är investeringsmöjligheten för socialt drivet riskkapital? Vad har dojo4 att investera i ett syftestyrkt projekt?</p>
+
+        <p>Jag tror på vad dojo4 gör och vill hjälpa till att se det lyckas liksom så många andra som har visat intresse för denna nya riktning nyligen. Jag vill till och med bidra/investera min tid i att hjälpa till att förverkliga det, men hur detaljerna kommer ihop till en innovativ och utvecklad teknikbutik är ännu ett pågående arbete. Håll er uppdaterade på bloggen när denna berättelse utvecklas. Vi kommer att se till att hålla er informerade när nya strukturer börjar få fäste.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/whats-new-in-dojo4--2-version-notes">😩, jag 🖤 ^det här!</a>
+          </li>
+          <li>
+            <a href="/nu">/nu</a>
+          </li>
+          <li>
+            <a href="/om">/om</a>
+          </li>
+          <li>
+            <a href="/kontakt">/kontakt</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

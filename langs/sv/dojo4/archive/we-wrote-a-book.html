@@ -1,0 +1,162 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Inget att se här.</title>
+
+    <meta property="og:title" content="Inget att se här."/>
+    <meta property="og:description" content="Fortsätt gå." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"we-wrote-a-book"}">
+    <meta property="site:path_info" content=""/we-wrote-a-book"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/we-wrote-a-book">Jag älskar det här!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/we-wrote-a-book</strong>
+    </header>
+
+    <main>
+      <em>publicerad på: 2014-01-21</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Under semesterledigheten reflekterade jag över min introduktion till Ruby on Rails på dojo. Som en fullstack-utvecklare som huvudsakligen koncentrerar sig på frontend, var det överväldigande att komma in i ett befintligt rails-projekt med en liten JavaScript-uppgift. Vilka filer ska jag redigera? Hur inkluderas mina skript på sidan? Hur hanteras en förfrågan i rails? Åh!!</p>
+
+        <p>Så jag skrev en bok om det. Mina fantastiska dojo4-kollegor hjälpte till att granska den för teknisk korrekthet och jag tycker att den är på en bra nivå att släppa ut i världen. Hoppas att den hjälper andra frontend-utvecklare som hoppar in i ett rails-projekt och inser att de är förvirrade. Låt denna bok vara din kompass!</p>
+
+        <p><img src='/ro/dojo4/we-wrote-a-book/assets/cover-idea-2.png' alt="img" /></p>
+
+        <p>Kolla in boken:</p>
+
+        <ul>
+          <li><a href="https://leanpub.com/rorfrontend">I flera e-boksformat (PDF, MOBI, EPUB)</a></li>
+          <li><a href="http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/">I Kindle-butiken</a></li>
+          <li><a href="http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html">I pocketupplaga!</a></li>
+        </ul>
+
+        <p>Beskrivning:</p>
+
+        <pre><code class="language-text">Ruby on Rails är en extremt kraftfull fullstack-webbapplikationsramverk, men med dess kraft kommer komplexitet. För frontend-utvecklare som behöver redigera HTML, CSS och JS inom en Ruby on Rails-applikation, kan det vara en dyster uppgift. Den här boken förklarar vad frontend-utvecklare behöver veta om Ruby on Rails för att kunna använda sina färdigheter inom en rails-app.
+
+När du har läst boken kommer du att kunna:
+
+* veta var du ska placera din html, css & js inom strukturen i en ruby on rails-app
+
+* hur rails dirigerar förfrågningar till kontrollanter
+
+* använda vy, layout och delar i kontrollanter
+
+* vad tillgångspipelinen är och hur du använder den
+
+* hur kontrollanter och vyer i rails samverkar för att rendera ett svar i webbläsaren
+
+* hur data läggs till i vyer och hur du länkar till data i din html
+</code></pre>
+
+        <p>Du kommer att älska den:</p>
+
+        <ul>
+          <li><a href="https://leanpub.com/rorfrontend">I flera e-boksformat (PDF, MOBI, EPUB)</a></li>
+          <li><a href="http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/">I Kindle-butiken</a></li>
+          <li><a href="http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html">I pocketupplaga!</a></li>
+        </ul>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; gå till</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/we-wrote-a-book">😩, jag 🖤 ^detta!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/om<a>
+          </li>
+          <li>
+            <a href="/contact">/kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+<meta property="og:title" content="Rien à voir ici."/>
+<meta property="og:description" content="Circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"imbed-for-android"}">
+    <meta property="site:path_info" content=""/imbed-for-android"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/imbed-for-android">J'❤️ ça!</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/imbed-for-android</strong>
+    </header>
+
+    <main>
+      <em>Publié le : 2014-04-09</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Il y a quelque temps, j'ai écrit sur <a href="http://dojo4.com/blog/why-phonegap-sucks">pourquoi phonegap est nul</a> et comment nous avons choisi d'incorporer du contenu web dans nos applications natives. Le code open source qui a résulté de la construction de plusieurs applications natives incluant du contenu web était le <a href="https://github.com/Imbed">projet Imbed</a>. Nous avons d'abord publié la <a href="http://dojo4.com/blog/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">version iOS</a>.</p>
+
+<p>Le projet vise à être un point de départ pour ce que nous pensons être la meilleure façon d'incorporer du contenu web dans une application native - en utilisant du code natif. Sur iOS, cela signifie écrire en Objective-C pour utiliser un UIWebView et sur Android, cela signifie écrire en Java pour utiliser un WebView. Oui, cela nécessite que vous connaissiez suffisamment iOS/Objective-C et Android/Java pour écrire vos propres fonctions natives lorsque vous souhaitez utiliser les fonctionnalités de l'appareil, mais cela signifie pouvoir suivre les directives d'Apple et de Google exactement et ne pas dépendre d'un tiers pour supporter une nouvelle fonctionnalité et la supporter sans bugs.</p>
+
+<p>Récemment, j'ai approfondi mes recherches sur Android et j'ai créé la <a href="https://github.com/imbed/android">version Android d'Imbed</a>. En plus de fournir un bon point de départ pour inclure du contenu web, le code HTML d'exemple démontre certaines limitations de JavaScript dans la webview et fournit un support intégré pour le bouton retour très important sur les téléphones Android lorsque vous cliquez sur un lien qui doit s'ouvrir dans Chrome plutôt que dans le contenu web de votre application.</p>
+
+<p>Consultez la <a href="https://github.com/imbed/android">version Android</a> et faites-moi part de vos pensées sur Twitter!</p>
+
+<p>Comme toujours, les demandes de tirage sont les bienvenues :)</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/imbed-for-android">😩, j'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/maintenant<a>
+  </li>
+  <li>
+    <a href="/about">/à propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

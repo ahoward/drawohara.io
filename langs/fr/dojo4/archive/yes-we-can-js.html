@@ -1,0 +1,152 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+<meta property="og:title" content="Rien à voir ici."/>
+<meta property="og:description" content="Passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"yes-we-can-js"}">
+    <meta property="site:path_info" content=""/yes-we-can-js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/yes-we-can-js">j'❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois moi'>&lt;&lt; clique 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/yes-we-can-js</strong>
+    </header>
+
+    <main>
+      <em>Publié le : 2013-01-22</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Nous avons récemment utilisé <a href="http://canjs.us/">Can.js</a> pour certains travaux mobiles sur tablettes. C'est une bibliothèque frontend légère pour créer des applications web et nous l'avons utilisée dans Phonegap pour créer des interfaces natives. L'effort pour apprendre et appliquer ce framework semble avoir été couronné de succès, alors nous voulions partager notre expérience.</p>
+
+<h2 id="pros">Avantages</h2>
+
+<p>Can.js possède de nombreuses qualités que les développeurs ont appris à connaître et à aimer au fil des ans. Pour les énumérer :</p>
+
+<ul>
+  <li>Léger – Le framework n'impose rien du tout. En fait, il semble y avoir très peu de conventions exprimées par les développeurs.</li>
+  <li>Concis – L'utilisation des objets Can est une affaire rapide et propre et ils tendent à fournir des interfaces déclaratives agréables pour des choses comme la liaison d'événements et le routage.</li>
+  <li>Rapide – Can.js se vante d'être rapide. Nous n'avons pas exécuté nos propres benchmarks, mais nous n'avons rien remarqué de contraire.</li>
+  <li>Flexible – Puisque le framework n'exprime ni n'implique beaucoup de conventions, l'organisation et l'utilisation du code dépendent beaucoup de nous, les développeurs.</li>
+  <li>Composable – Can est livré avec un objet de base pratique appelé <code>Can.Construct</code> qui prend en charge des éléments tels que les propriétés statiques et de prototype, les constructeurs et l'héritage. Cela est utile pour définir vos propres objets spécifiques à l'application ou au domaine de manière cohérente.</li>
+</ul>
+
+<h2 id="annoyances">Inconvénients</h2>
+
+<p>J'ai été tenté d'appeler cette liste une liste de « inconvénients », mais cela ne semblait pas approprié car ce sont plus des désagréments que des inconvénients.</p>
+
+<ul>
+  <li>Documentation – Elle semble complète au premier abord, mais j'ai trouvé le texte et les exemples moins utiles qu'ils ne pourraient l'être. Je pense qu'une augmentation de la diversité des exemples serait un gain immédiat.</li>
+  <li>Pas de structure suggérée – Cela a également été mentionné ci-dessus comme un avantage. Nous avons investi une quantité significative de temps à créer ce qui semblait être du code boilerplate pour démarrer une application riche. Je ne pense pas que cela appartienne au framework lui-même, mais des exemples de différentes méthodologies pourraient aider.</li>
+  <li>Manque d'abstractions de haut niveau – La plupart des objets Can fournis sont assez bas niveau d'un point de vue applicatif. Une grande partie de l'investissement mentionné dans le point précédent a été utilisée pour créer certains objets de base utiles à différentes fins pour lier Can de différentes manières. Cela incluait des éléments comme une classe d'application à attacher à <code>window</code> et à représenter/contenir certains concepts étatiques. De plus, nous avons créé un objet de base pour représenter les contrôleurs au niveau de la page par opposition aux contrôleurs au niveau de « widget ».</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Nous recommandons vivement d'essayer Can.js. Il a beaucoup plus à offrir qui n'est même pas couvert ici, comme la manière dont il aide à prévenir les fuites de mémoire. N'hésitez pas à envoyer un e-mail à ryan@dojo4.com pour toute question que vous pourriez avoir.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/yes-we-can-js">😩, j'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/maintenant<a>
+  </li>
+  <li>
+    <a href="/about">/à propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

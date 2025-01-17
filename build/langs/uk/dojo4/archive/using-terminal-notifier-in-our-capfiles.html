@@ -1,0 +1,142 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <base href='/langs/uk' />
+
+  <!-- meta -->
+    <title>тут нічого немає.</title>
+
+<meta property="og:title" content="тут нічого немає."/>
+<meta property="og:description" content="продовжуйте рухатися." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"using-terminal-notifier-in-our-capfiles"}">
+    <meta property="site:path_info" content=""/using-terminal-notifier-in-our-capfiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/using-terminal-notifier-in-our-capfiles">я ❤️ це!</a>
+<small>
+  <small>
+    <small>
+      <span title='випий мене'>&lt;&lt; натисни мене 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/використання-terminal-notifier-в-наших-capfiles</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2014-01-02</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Ми використовуємо <a href="http://www.capistranorb.com/">capistrano</a> для наших деплоїв і нещодавно я дізнався про чудовий гем <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a>, який використовує користувацькі сповіщення в OS X 10.8 і вище, щоб показати гарне сповіщення з командного рядка. Кожного разу, коли я деплою, я завжди вручну перевіряю, чи завершився деплой, і це гарний спосіб уникнути цього. Проблема, з якою я зіткнувся, коли додавав його до одного з наших проектів, полягає в тому, що деякі люди в нашій команді використовують версію Mac OS X <em>до</em> 10.8 (я знаю!), тому команда <code>terminal-notifier</code> не спрацює, і їхній деплой буде містити помилки. Ось код, який я зараз використовую, щоб уникнути помилок, якщо ви не можете використовувати круті користувацькі сповіщення в новіших версіях OS X:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">desc</span>&nbsp;<span style="color: #0a3069">'використовувати terminal notifier, якщо в > osx 10.8 для користувацького сповіщення'</span>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">task</span>&nbsp;<span style="color: #0a3069">:terminal</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'terminal-notifier'</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">fetch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:url</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">application</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">fetch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:application</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">system</span>&nbsp;<span style="color: #0a3069">"terminal-notifier -title </span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">application</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069"> -message 'Deploy completed successfully to </span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069">.' -sound default"</span>
+</div><div class='code-line code-line-8'>&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">warn</span>&nbsp;<span style="color: #0a3069">"Ви, ймовірно, не на os x 10.8, тому не використовуєте terminal notifier. Якщо ви на ній, використовуйте gem install terminal-notifier, щоб використовувати деякі круті користувацькі сповіщення."</span>
+</div><div class='code-line code-line-10'>&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-11'><span style="color: #cf222e">end</span>
+</div></code></div>
+
+<p>Звичайно, ми також включаємо <code>gem terminal-notifier</code> у наш Gemfile. Дивіться <a href="http://stackoverflow.com/questions/20885606/dangers-of-putting-a-gem-into-a-gemfile-is-someone-trying-to-install-it-doesnt">моє питання на SO</a> щодо включення цього гем до вашого Gemfile для пояснення, чому я використовую просту включення гем.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/using-terminal-notifier-in-our-capfiles">😩, i 🖤 ^це!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; ежект</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niets te zien hier.</title>
+
+    <meta property="og:title" content="niets te zien hier."/>
+    <meta property="og:description" content="ga verder." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"running-with-it"}">
+    <meta property="site:path_info" content=""/running-with-it"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/running-with-it">ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/running-with-it</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2012-06-06</em>
+      <br>
+      <br>
+      <p><a title="http://scottjurek.com" href="http://scottjurek.com"><img rel="450x450" alt="Schermafbeelding 2012 06 06 Om 6.44.50 Pm" title="Schermafbeelding 2012 06 06 Om 6.44.50 Pm" src='/ro/dojo4/running-with-it/assets/screen-shot-2012-06-06-at-6.44.50PM.png' height="353" width="450" /></a>
+      </p>
+      <p>Scott Jurek is een van de wereld's meest beroemde en dominante ultramarathonlopers. Hij overwint regelmatig uithoudingswedstrijden van meer dan 100 mijl. Hij wordt beschouwd als een van de beste lopers aller tijden. Hij wordt gek genoemd. Wij noemen hem een plezier om mee samen te werken!</p>
+      <p>Scott kwam naar ons om <a target="_blank" title="http://scottjurek.com" href="http://scottjurek.com">zijn site</a> te herbouwen en zijn merk te verfijnen op tijd voor de release van zijn nieuwe boek, <em>Eat and Run<a title="http://scottjurek.com/eatandrun/" href="http://scottjurek.com/eatandrun/"></a>
+      </em>. Zijn vriendelijkheid, geduld en aandacht voor detail hielpen ons cruciaal ontwerpdetaillen te implementeren en een site te maken waar we trots op waren met 4.969 bezoeken op de eerste dag na de lancering.</p>
+      <p>Scott's passie voor esthetiek en functionaliteit gaf ons de uitdagingen die we nodig hadden om een echt prachtige site te bouwen. Wat betreft ontwerp, verkenden we een subtiel logo en typografie. We kozen Open Sans en Open Sans Condensed als het lettertype van de site, wat zeer veelzijdig bleek te zijn. En we hadden plezier met het verkennen van afgesleten, getekstuurde achtergronden en bruine kleurtinten om het reisjournaalgevoel van de site uit te drukken.</p>
+      <p>Het ontwerp werd vertaald in code met veel lagen en texturen in de mockups, waardoor semantische code en responsive design moeilijk maar bevredigend was om te realiseren. We zijn blij dat we responsive design gewoon hebben gemaakt van wat we doen bij dojo4, zelfs als cliënten er niet om vragen. Ongeveer 25-30% van Scott's aanvankelijke bezoekers gebruikten tablets of mobiele apparaten. Door niet terug te hoeven gaan en aan te passen, hebben we aanzienlijk tijd en budget bespaard.</p>
+      <p>We zijn ook enorm tevreden met de Middleman App, een statische sitegenerator gebaseerd op Sinatra (http://middlemanapp.com/). Het stelt ons in staat "sjablonen" te maken voor websites (met behulp van ERB & SASS) en datastructuren met lussen te gebruiken om herhaalde taken te behandelen, net zoals WordPress, Drupal, enz. doen. Het voordeel van Middleman ligt echter in de mogelijkheid om een statische site uit te spuwen, waardoor het eindproduct sneller en onkraakbaar is (sorry, slechte jongens).</p>
+      <p>Omdat we wilden dat Scott regelmatig inhoud kon bijwerken, schreef Justin een mooie jQuery-plug-in die Tumblr-berichten "injecteert" op verschillende plaatsen op de site (<a title="https://github.com/Hoosteeno/inject_tumblr" href="https://github.com/Hoosteeno/inject_tumblr">https://github.com/Hoosteeno/inject_tumblr</a>). Dus, ondanks een statische website, heeft Scott nog steeds verse, actuele inhoud.</p>
+      <p>We zijn blij dat we de kans hebben gekregen om samen te werken met Scott en de release van zijn <a target="_blank" title="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653" href="http://www.hmhbooks.com/books/buybooks.html?isbn13=9780547569659&isbn10=0547569653">nieuwe boek</a> te steunen. Scott is nu op tournee om zijn boek te promoten met <a title="http://scottjurek.com/calendar/" href="http://scottjurek.com/calendar/">veel hardloopevenementen</a> door het hele land - als je de kans krijgt, is het de moeite waard om langs te komen en Scott te ontmoeten wanneer hij in jouw stad is...</p>
+      <p><em>bericht door Anthony, Corey en Steve</em>
+      </p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/running-with-it">😩, ik 🖤 ^dit!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/over<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

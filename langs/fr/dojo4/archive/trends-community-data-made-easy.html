@@ -1,0 +1,132 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rien à voir ici.</title>
+
+<meta property="og:title" content="rien à voir ici."/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"trends-community-data-made-easy"}">
+    <meta property="site:path_info" content=""/trends-community-data-made-easy"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+
+    <base href='/langs/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:j-adore-cela@drawohara.io?subject=/trends-community-data-made-easy">j'❤️  cela !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/trends-community-data-made-easy</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2016-10-12</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/trends-community-data-made-easy/assets/b.png' alt="Capture d'écran 2016-10-12 à 11.44.54 AM.png" /></p>
+
+<p>Le rapport annuel <a href="http://www.commfound.org/">Community Foundation Boulder County</a>’s <a href="http://trends.commfound.org/"><em>Trends</em></a> fournit “un ensemble commun de données mesurables pour aider à améliorer la qualité de vie dans la communauté.” Et <a href="http://dojo4.com/work/code-for-america">Code for America</a> s'est récemment associé à la Fondation pour rendre ces données communautaires plus accessibles. Le partenariat, appelé <a href="https://github.com/CodeForBoulder/trends-online">Code for Boulder</a>, a invité dojo4 à s'impliquer. Après une session d'idéation communautaire utilisée pour découvrir les méthodes potentielles qui pourraient être utilisées pour exposer le contenu de données précieux dans le rapport <a href="http://trends.commfound.org/"><em>Trends</em></a>, dojo4 a travaillé avec le partenariat pour mettre en œuvre un microsite indépendant, entièrement réactif, que la Community Foundation pourrait facilement maintenir. Le site principal de la Community Foundation était en cours de réconception par <a href="https://www.vermilion.com/">Vermillion Design</a>, dojo4 a donc distillé les modèles de conception de leurs maquettes de bureau.</p>
+
+<p>Nous avons commencé notre travail en construisant un site statique “de remplacement” pour déterminer quelles parties du contenu devraient être mises à jour régulièrement et quels éléments étaient plus permanents. En fin de compte, cela a rendu le travail d'intégration de l'administration backend du site beaucoup, beaucoup plus rapide.</p>
+
+<p>Initialement, nous n'étions pas sûrs de la manière dont le site serait mis à jour : 1) en utilisant notre générateur de site statique préféré <a href="https://middlemanapp.com/">Middleman</a> ou 2) en utilisant notre CMS basé sur rails fait maison. Mais puisque c'était une stipulation du projet que le site soit facilement mis à jour par des bénévoles de Code for Boulder, nous avons choisi une option qui priorisait la maintenabilité par un personnel rotatif, à court terme, aux compétences techniques variées. Nous avons choisi un nouvel outil CMS appelé <a href="https://www.datocms.com/">DatoCMS</a>, “une zone administrative entièrement personnalisable pour les sites web statiques”. En effet, <a href="https://github.com/stefanoverna">Stefano Verna</a>, le fondateur de Dato, nous a contactés et nous a expliqué à quel point il était facile d'intégrer DatoCMS, et plus important encore, à quel point il était facile pour les utilisateurs non techniques de le gérer. Le timing était parfait et tout le monde peut s'engager plus efficacement dans la ressource web qui rapporte les indicateurs clés de la qualité de vie dans la communauté de Boulder.</p>
+
+<p><em>Écrit avec <a href="http://dojo4.com/team/steve-bailey">Steve Bailey</a>, qui a fait la majeure partie du travail sur ce projet.</em></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:je-deteste-cela@drawohara.io?subject=/trends-community-data-made-easy">😩, j'🖤 ^cela!<a>
+  </li>
+  <li>
+    <a href="/now">/maintenant<a>
+  </li>
+  <li>
+    <a href="/about">/à propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

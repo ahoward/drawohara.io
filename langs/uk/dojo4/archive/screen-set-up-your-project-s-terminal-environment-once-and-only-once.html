@@ -1,0 +1,161 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/langs/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>тут нічого немає.</title>
+
+    <meta property="og:title" content="тут нічого немає."/>
+    <meta property="og:description" content="йдіть далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content='{"ext":null,"id":"screen-set-up-your-project-s-terminal-environment-once-and-only-once"}'>
+    <meta property="site:path_info" content="/screen-set-up-your-project-s-terminal-environment-once-and-only-once">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">я ❤️ це!</a>
+      <small>
+        <small>
+          <small>
+            <span title='пий мене'>&lt;&lt; натисніть мене 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/screen-set-up-your-project-s-terminal-environment-once-and-only-once</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2013-11-01</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>З будь-яким проектом я запускаю кілька програм одночасно під час розробки. Це зазвичай призводить до кількох вкладок у додатку Terminal - одна для мого локального сервера, одна для моєї бази даних, одна для мого клієнтського додатку та одна для git. (Зараз я використовую GUI-редактор (ST2), але можливо, я скоро повернуся до vim…) Цей багатовіконний налаштування відбувається для кожного проекту, над яким я працюю, і я зазвичай перемикаюся між кількома проектами кілька разів на день.</p>
+
+        <p>З цим багатовіконним налаштуванням, коли я повинен переключити проект, над яким працюю, мені доводиться або відкривати нове вікно Terminal з власними вкладками для цього проекту та мати справу з надмірною кількістю відкритих вікон (не варіант для мінімаліста, як я) або закривати всі вкладки, які я маю відкритими, щоб знову відкрити їх усі, коли я переключуся назад на цей проект.</p>
+
+        <p>Ну, як і більшість днів, я дізнався геніальне рішення цієї проблеми від мудрого та всемогутнього лідера dojo4, <a href="http://dojo4.com/team/ara-t-howard">Ари</a>. Він використовує програму GNU <a href="https://www.gnu.org/software/screen/">Screen</a>. У межах однієї вкладки Terminal Screen дозволяє відкривати кілька «вікон» (або вкладок) у межах тієї ж вкладки Terminal. Ось як це використовувати:</p>
+
+        <pre><code class="language-text"># створення та повторне підключення до сесії
+screen -S [назва] = створити іменований екран
+screen -D -R [назва] = повторно підключитися до іменованого екрану та відключити інших користувачів, якщо потрібно
+screen -list = список екранів
+
+# (вихід зі всіх вікон у сесії екрану призведе до виходу з цієї сесії. Однак сесія екрану є запущеним процесом, тому ви можете вручну завершити її.)
+
+# у межах сесії екрану:
+ctrl-A + ? = допомога
+ctrl-A + " = список вікон
+ctrl-A + c = створити нове вікно
+ctrl-A + n = наступне вікно
+ctrl-A + p = попереднє вікно
+ctrl-A + A = перейменувати вікно
+
+# псевдоніми, які ми використовуємо
+alias sl='screen -list '
+alias sdr='screen -d -r '
+alias s='screen -D -R '
+alias ss='screen -S'
+
+sdr [назва] = повторно підключитися до іменованого екрану та відключити інших користувачів, якщо потрібно
+ss [назва] = створити іменований екран
+sl = список екранів
+</code></pre>
+
+        <p>Ще одна дуже крута функція screen полягає в тому, що коли ви відключаєтеся від сесії екрану, всі ваші вікна залишаються запущеними, а коли ви повторно підключаєтеся до сесії екрану, у вас знову є всі ваші вікна в розпорядженні.</p>
+
+        <p>Коли ми обговорювали це в нашому офісі, <a href="http://dojo4.com/team/ryan-cook">Раян Кук</a> створив <a href="https://gist.github.com/cookrn/2711966">гарненький допоміжний засіб Ruby</a>, щоб створювати сесії екрану, іменовані відповідно до вашої поточної директорії.</p>
+
+        <p>Так що мій робочий процес змінився від мати кілька вкладок відкритими в Terminal до однієї вкладки в Terminal, де я повторно підключаюся до сесії екрану для кожного проекту, над яким працюю. Це дозволяє мені дуже швидко переключатися між проектами та припинити марнувати час на повторне налаштування та закриття всіх вкладок Terminal, які я використовую для проекту.</p>
+
+        <p>Тепер мені просто потрібно перевести більше речей на використання терміналу (наприклад, мого редактора), щоб дійсно скористатися всіма перевагами screen...</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/screen-set-up-your-project-s-terminal-environment-once-and-only-once">😩, я 🖤 ^це!<a>
+          </li>
+          <li>
+            <a href="/now">/now<a>
+          </li>
+          <li>
+            <a href="/about">/about<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

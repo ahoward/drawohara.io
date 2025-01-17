@@ -1,0 +1,163 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rien à voir ici.</title>
+
+<meta property="og:title" content="rien à voir ici."/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"ninja-problem-solving"}">
+    <meta property="site:path_info" content=""/ninja-problem-solving"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+
+    <base href='/langs/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:j-adore-ca@drawohara.io?subject=/ninja-problem-solving">j'❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/ninja-problem-solving</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2011-11-22</em>
+<br>
+<br>
+<p>Récemment, cet e-mail a été envoyé à notre équipe technique. Je pensais le partager sans édition.</p>
+
+<pre>la résolution de problèmes est le service numéro un que nous offrons. au fil des ans
+j'ai développé quelques idées de haut niveau à ce sujet qui, je trouve,
+mènent constamment à de bonnes solutions, dont il y en a toujours
+beaucoup. vous pouvez ou non trouver ces idées utiles mais je voulais
+les partager quand même:
+
+
+- comprendre le problème complètement. s'il y a même une petite lacune
+de clarté, posez des questions et creusez plus profond. en fait, toutes les solutions de problèmes
+découlent de l'application impitoyable de ce seul principe. ce petit mot que le client ou le manuel a mentionné et que vous étiez gêné de demander - demandez-le. cette petite ligne de code que vous n'avez pas
+complètement comprise est probablement la source de votre problème, ne l'ignorez pas.
+
+- parlez du problème *à haute voix* avec quelqu'un d'autre. il est
+surprenant à quel point le fait de formuler un problème en anglais, en dehors des constructions mentales,
+suggérera automatiquement une solution.
+
+- ne déboguez jamais seul. achetez un café ou une bière à quelqu'un. appelez un membre de l'équipe.
+c'est presque toujours une perte de temps de déboguer seul. un corollaire: arrêtez ce que vous faites et aidez si quelqu'un d'autre semble bloqué sur un problème.
+
+- lorsqu'il y a un problème, vérifiez ces choses, dans l'ordre, *à chaque fois*: lisez le code, lisez le manuel, recherchez-le sur google. c'est l'opposé de ce que la plupart des gens font. en d'autres termes "vérifiez d'abord les sources de la plus haute qualité" car les sources de faible qualité entraînent une confusion supplémentaire. je ne peux pas insister assez sur l'importance de devenir un lecteur de code religieux.
+
+- ne prenez jamais le chemin le plus facile. si vous pensez "c'est un hack mais..." arrêtez-vous et demandez de l'aide.
+
+- ne combattez pas l'avenir. une solution n'a pas besoin d'être complète mais
+elle devrait au moins faire un pas vers la complétude. suivez les solutions partielles avec #FIXME, #TODO, une carte dans redmine ou une
+conversation avec un collègue.
+
+- laissez des traces. si votre travail ne produit pas d'artefacts que les gens peuvent
+soit réutiliser soit rééditer, c'est probablement un pansement et non une solution.
+faire du code rééditable est beaucoup plus facile que de faire du code réutilisable.
+évitez les solutions qui ne sont ni l'un ni l'autre comme la peste.
+
+- ne vous énervez pas. votre cerveau s'arrête si vous vous fâchez contre un problème. rien de ce que nous faisons n'a de vies en jeu, alors détendez-vous. alors vous avez supprimé les données.
+ayez un rire et retournez les récupérer.
+
+- évitez l'adoption précoce en étant un early adopter. la façon de
+comprendre le juste milieu entre la pointe de la technologie et la stabilité poussiéreuse,
+ironiquement, est d'explorer et de comprendre sans relâche les nouvelles solutions.
+vous devez être un early adopter pour comprendre quand vous devez l'éviter. la FUD (peur, incertitude et doute) ne devrait jamais être une motivation pour éviter le nouveau et le brillant, mais une compréhension profonde des défauts techniques
+*devrait l'être*.
+</pre>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:j-deteste-ca@drawohara.io?subject=/ninja-problem-solving">😩, j'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

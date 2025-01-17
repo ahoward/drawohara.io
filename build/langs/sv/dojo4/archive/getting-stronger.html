@@ -1,0 +1,204 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Inget att se här.</title>
+
+    <meta property="og:title" content="Inget att se här."/>
+    <meta property="og:description" content="Fortsätt." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"blir-starkare"}">
+    <meta property="site:path_info" content=""/blir-starkare"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/hem">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/blir-starkare">jag ❤️ det här!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/blir-starkare</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2013-02-19</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Jag tror att många utvecklare anser arbetet med utveckling att handla om att utveckla programvara.</p>
+
+        <p>Säkert, det handlar om det!</p>
+
+        <p>Dock handlar det också om att utveckla utvecklaren.</p>
+
+        <p><em>Bli starkare.</em></p>
+
+        <p>Här är en enkel algoritm som man kan använda för att bli en starkare utvecklare:</p>
+
+        <ul>
+          <li>
+            <p>Förstå problemet fullständigt</p>
+          </li>
+          <li>
+            <p>Designa en abstraktion</p>
+          </li>
+          <li>
+            <p>Implementera abstraktionen</p>
+          </li>
+          <li>
+            <p>Släpp abstraktionen</p>
+          </li>
+          <li>
+            <p>Söka feedback</p>
+          </li>
+          <li>
+            <p>Använd feedback för att bygga förståelse</p>
+          </li>
+        </ul>
+
+        <p>Det är ganska abstrakt för vissa att förstå, så låt mig ge ett konkret exempel som kontrasterar denna utvecklare</p>
+
+        <p><img src='/ro/dojo4/blir-starkare/assets/weak.jpg' alt="img" /></p>
+
+        <p>med denna</p>
+
+        <p><img src='/ro/dojo4/blir-starkare/assets/arnoldschwarzenegger227.jpg' alt="img" /></p>
+
+        <p>i utvecklingen av ett program som behöver skapa liksidiga och rätvinkliga trianglar.</p>
+
+        <p>Utvecklare ett använder följande process:</p>
+
+        <ul>
+          <li>
+            <p>Dra 'liksidig' kort från brädan. Läs inte 'rätvinklig' kort.</p>
+          </li>
+          <li>
+            <p>Ta exempel på liksidiga trianglar. Skriv kod som kan pålitligt producera just dessa typer av liksidiga trianglar som koden förväntar sig. Eftersom att göra mer är YAGNI, checka in den, se till att CI är grön. Och åk hem.</p>
+          </li>
+        </ul>
+
+        <p>Utvecklare två gör istället:</p>
+
+        <ul>
+          <li>
+            <p>Granska brädan. Läs nyliga commits. Förstå 10 000 fot roadmap utvecklaren slå ihop 'liksidiga' och 'rätvinkliga' triangelkort till ett enda nytt kort som heter 'bygg en triangeldomänmodell' (förstå problemet)</p>
+          </li>
+          <li>
+            <p>Utvecklaren arbetar på papper, slutligen når (abstraktionen)</p>
+          </li>
+        </ul>
+
+        <p><img src='/ro/dojo4/blir-starkare/assets/pythagorean.png' alt="img" /></p>
+
+        <ul>
+          <li>
+            <p>Utvecklaren implementerar kod som modellerar generiska trianglar med hjälp av teoremet och specialiseringar för var och en av de specifika typerna 'liksidig' och 'rätvinklig' (implementera abstraktionen)</p>
+          </li>
+          <li>
+            <p>Utvecklaren isolerar domänkoden från icke-domänkod och skickar ett bibliotek till github. (publicera abstraktionen och söka feedback)</p>
+          </li>
+          <li>
+            <p>Utvecklaren slår samman pull request för 'dividera-med-noll' bug några dagar senare (använda feedback för att ytterligare förstå)</p>
+          </li>
+        </ul>
+
+        <p>I slutändan bockar utvecklare ett en ruta och stärker teamets process. Utvecklare två stärker koden, teamet och, främst av allt, sig själv.</p>
+
+        <p>Genom att upprepa processen igen och igen kan utvecklare ett förvandla sig till utvecklare två genom upprepad träning för att stärka tekniska och domänmuskler. Omvänt kan utvecklare två sluta träna och bli mjuk som utvecklare ett.</p>
+
+        <p>Utvecklares förmåga är precis som muskler: du måste använda den eller förlora den.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/blir-starkare">😩, jag 🖤 ^det här!<a>
+          </li>
+          <li>
+            <a href="/nu">/nu<a>
+          </li>
+          <li>
+            <a href="/om">/om<a>
+          </li>
+          <li>
+            <a href="/kontakt">/kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; ejaktera</a>
+    </footer>
+  </body>
+</html>

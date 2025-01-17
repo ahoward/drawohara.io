@@ -1,0 +1,145 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+    <meta property="og:title" content="Rien à voir ici."/>
+    <meta property="og:description" content="Circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"}">
+    <meta property="site:path_info" content=""/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">j'❤️ ça!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bois-moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2013-10-24</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Très souvent, il est logique de faire du développement en HTML, JS et CSS, puis d'utiliser ce contenu dans une application native. Phonegap prétend être la meilleure solution pour ce cas, mais d'après <a href="http://dojo4.com/blog/why-phonegap-sucks">mon expérience</a>, c'est l'une des pires.</p>
+
+        <p>En réponse à Phonegap, j'ai rendu open source le dépôt de démarrage de notre entreprise pour les applications iOS qui doivent utiliser du contenu web dans une UIWebView, en l'appelant <a href="https://github.com/dojo4/imbed">Imbed</a>.</p>
+
+        <p>Fonctionnalités :</p>
+
+        <ul>
+          <li>
+            <p><strong>Petit &amp; Open Source.</strong> Un UIViewController, un fichier HTML et le projet open source super petit, 1 classe, <a href="https://github.com/marcuswestin/WebViewJavascriptBridge">WebViewJavascriptBridge</a>.</p>
+          </li>
+          <li>
+            <p><strong>Prend en charge immédiatement toute fonctionnalité iOS.</strong> Pas besoin d'attendre qu'un développeur tiers crée un plugin. Vous écrivez vous-même du code natif en Objective-C. Dès qu'Apple le publie, vous pouvez le prendre en charge.</p>
+          </li>
+          <li>
+            <p><strong>Suivez les guides d'Apple, pas ceux de quelqu'un d'autre.</strong> Apple fait un excellent travail en documentant comment utiliser les fonctionnalités d'iOS. La plupart des développeurs tiers ne le font pas. Lequel préférez-vous suivre ?</p>
+          </li>
+          <li>
+            <p><strong>Automatisez tout avec Rake.</strong> Concentrez-vous sur l'écriture de votre code, testez-le dans le navigateur, puis automatisez tout le reste dans un fichier Rake clair et open source. Même archivez, envoyez à Testflight et notifiez Campfire.</p>
+          </li>
+        </ul>
+
+        <p>C'est votre application. Ne vous fiez pas à un outil tiers pour prendre en charge les fonctionnalités qu'iOS offre déjà. Prenez votre code en main.</p>
+
+        <p><a href="https://github.com/dojo4/imbed/archive/master.zip">Téléchargez Imbed</a> maintenant.</p>
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">😩, j'🖤 ^ça!<a>
+          </li>
+          <li>
+            <a href="/now">/maintenant<a>
+          </li>
+          <li>
+            <a href="/about">/à-propos<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

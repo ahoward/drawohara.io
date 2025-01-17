@@ -1,0 +1,127 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <base href='/langs/fr' />
+
+  <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+<meta property="og:title" content="Rien à voir ici."/>
+<meta property="og:description" content="Circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"css3-horizontal-rules"}">
+    <meta property="site:path_info" content=""/css3-horizontal-rules"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/css3-horizontal-rules">J'❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/css3-horizontal-rules</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2012-01-18</em>
+<br>
+<br>
+<p>Récemment, je me suis retrouvé à concevoir des styles pour les publications de "courtes histoires" sur mon site personnel, que j'ai décidé de restructurer, passant de WordPress à Octopress et GitHub—un article sur cette expérience à venir !</p>
+<p>Quoi qu'il en soit, les courtes histoires tendent à être longues (comme les articles de blog), j'ai donc voulu offrir aux auteurs un moyen facile d'inclure des pauses de section emphatiques et sémantiques. La simple ligne horizontale <code>&lt;hr&gt;</code> semblait être la bonne solution, d'autant plus que <a href="http://daringfireball.net/projets/markdown/syntax" class="darkTxt" target="_blank">Markdown</a> les rend si faciles à inclure—il suffit d'ajouter <code>***</code> sur une nouvelle ligne.</p>
+<p>La plupart des navigateurs rendent la balise <code>&lt;hr&gt;</code> comme une bordure en retrait—essentiellement une ligne sombre empilée directement au-dessus d'une ligne plus claire. Mais ce n'est pas plus excitant qu'une des conférences de deux heures d'<a href="/#Ara" class="darkTxt" target="_blank">Ara</a> sur l'histoire et les avantages des culottes ventilées dans l'Alaska rural.</p>
+<p>J'ai donc parcouru le web pour trouver des solutions plus attrayantes et je suis tombé sur un site bien trop familier : <a href="http://css-tricks.com/styles-simples-pour-les-lignes-horizontales/" class="darkTxt" target="_blank">Les astuces CSS de Chris Coyier</a>.</p>
+<p>Un mot de prudence : comme ces styles reposent sur les sélecteurs de pseudo-éléments <code>:after</code> et <code>:before</code>, IE7 et les versions antérieures ne les rendent pas très bien. Vous devrez peut-être passer du temps à vous débattre avec des styles spécifiques à IE. Ou vous pourriez choisir de faire quelque chose de plus précieux de votre temps.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/css3-horizontal-rules">😩, J'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/maintenant<a>
+  </li>
+  <li>
+    <a href="/about">/à propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

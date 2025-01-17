@@ -1,0 +1,143 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+<meta property="og:title" content="Rien à voir ici."/>
+<meta property="og:description" content="Circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'spine-js-an-experience-a-review'}">
+    <meta property="site:path_info" content="/spine-js-an-experience-a-review">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:j-adore-ca@drawohara.io?subject=/spine-js-an-experience-a-review">j' ❤️  ça!</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/spine-js-an-experience-a-review</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2013-10-24</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Donc, ici chez dojo4, nous aimons essayer des frameworks front-end aléatoires sur des projets, et le dernier que nous avons essayé est <a href="http://spinejs.com/">SpineJS</a>. Voici mes réflexions après l'avoir utilisé sur quelques projets :</p>
+
+<p><em>Avantages :</em></p>
+
+<p><strong>1. Code court et open source.</strong> Chaque fois que j'avais une question sur la façon dont le framework interprétait mon code, il était incroyablement simple d'ouvrir les fichiers source et de lire le code moi-même.</p>
+
+<p><strong>2. Outil de serveur web solide avec Hem</strong> Tout ce dont vous avez besoin pour lancer une application front-end est fourni avec hem et SpineJS. Les tests sont automatiquement configurés et faciles à modifier. Hem dispose également d'un joli drapeau <code>-d</code>, qui ne minifiera pas votre application pour la rendre plus facile à déboguer en développement.</p>
+
+<p><strong>3. Couche de persistance des données intégrée</strong> SpineJS est livré avec des adaptateurs Ajax et LocalStorage pour vos modèles qui sont très faciles à utiliser et à sous-classer. Il est également facile d'écrire les vôtres puisque vous avez le code source des adaptateurs Ajax et LocalStorage et qu'ils sont relativement courts.</p>
+
+<p><strong>4. Groupe Google actif et communauté GitHub</strong> Chaque fois que j'avais des questions en cours de route, il y avait toujours quelqu'un dans la communauté capable de proposer une idée. Ils ont un <a href="https://groups.google.com/forum/#!forum/spinejs">Groupe Google</a> et une organisation <a href="https://github.com/spine">GitHub active</a>.</p>
+
+<p><strong>4. Coffeescript est génial.</strong> Ce point concerne moins SpineJS, mais SpineJS était ma première utilisation de Coffeescript et c'est formidable. Je devrais écrire un article de blog sur Coffeescript, mais il est formidable pour sa facilité de lecture sans toutes ces parenthèses et points-virgules encombrants, la portée des fonctions avec la flèche grasse, et le point d'interrogation pour m'éviter d'avoir à faire des tonnes de conditionnels existentiels. Et oh oui – les classes.</p>
+
+<p><em>Inconvénients :</em></p>
+
+<p><strong>La documentation n'est pas totalement complète.</strong> Je suppose que ce point n'est pas tout à fait juste car leur documentation ressemble plus à une collection d'exemples expliqués plutôt qu'à une véritable documentation d'API, mais il reste que <a href="https://github.com/spine/spine.site/issues/52">il y a des fonctions</a> dans le framework qui ne sont pas abordées dans la documentation. Cependant, avec le point #1 ci-dessus, il est super facile de lire le code source soi-même.</p>
+
+<p><em>Conclusion :</em></p>
+
+<p>Dans l'ensemble, je recommanderais ce framework et il est très probable que je l'utilise à nouveau. Entre la simplicité et la facilité d'utilisation de Coffeescript et SpineJS, ils semblent faits l'un pour l'autre au paradis du web.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:j-deteste-ca@drawohara.io?subject=/spine-js-an-experience-a-review">😩, j' 🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

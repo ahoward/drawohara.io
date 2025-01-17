@@ -1,0 +1,240 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Inget att se här.</title>
+
+    <meta property="og:title" content="Inget att se här."/>
+    <meta property="og:description" content="Fortsätt." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"tips-for-mongodb-migrations-in-rails"}">
+    <meta property="site:path_info" content=""/tips-for-mongodb-migrations-in-rails"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/tips-for-mongodb-migrations-in-rails">jag ❤️ det här!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/tips-for-mongodb-migrations-in-rails</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2011-12-27</em>
+      <br>
+      <br>
+      <p>Jag vill dela en snabb och enkel metod för att testa Rails-migreringar när man använder MongoDB-databasen. MongoDB:s och rubys flexibilitet gör detta ganska enkelt. I det här exemplet kommer vi att byta namn på en fält i vår exempel "books"-samling från "isbn" till "book_number". Det är en ganska vanlig typ av migrering och när du väl har fått hang av det här enkla fallet, följer mer komplexa migreringar samma mönster. Först, låt oss generera vår tidstämlade migreringsskriptmall.</p>
+      <pre><code>rails generate migration rename_isbn_to_book_number
+</code>
+      </pre>
+      <p>Sedan redigerar vi filen som genererades under <code>db/migrate</code>. Vi delar upp vår kod i flera avsnitt enligt följande.</p>
+      <ol>
+        <li>Några klasskonstanter delade av alla metoder</li>
+        <li>Metoden <code>self.up</code> som utför migreringen framåt</li>
+        <li>En hjälpmetod för att ställa in några exempeldata för att testa migreringen framåt</li>
+        <li>Metoden <code>self.down</code> som utför återställningen</li>
+        <li>En hjälpmetod för att ställa in några exempeldata (om så behövs) för att testa återställningen</li>
+      </ol>
+      <p>Först, definiera bara några konstanter som våra metoder kommer att använda. Vi lagrar Mongo-uppdateringsalternativhash <code>MultiUpdate</code> för bekvämlighet eftersom de flesta migreringsuppdateringsoperationer vill upsert false (skapa inga nya dokument), multi true (uppdatera alla matchande dokument) och safe true.</p>
+      <p>Vi definierar också en konstant för samlingsnamnet. För den riktiga migreringen är samlingen "books", men för testning kommer vi att skapa en ny samling som heter "test_books_migration" när vi utvecklar vår kod.</p>
+      <pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Slutlig produktionskod
+  Collection = db.collection("test_books_migration") #Endast för testning i konsolen
+  def up
+  end
+
+  def down
+  end
+end
+</code>
+      </pre>
+      <p>OK, det är vår initiala mall. Nästa steg är att ta en säkerhetskopia av vår utvecklingsdatabas om det finns några data där som vi inte vill råka förstöra. Sedan börjar vi koda en liten hjälpmetod för att fylla i vår testsamling med falska dokument som liknar det vi förväntar oss se i produktion, men bara fokuserar på de fält som är relevanta för migreringen. Lägg till den här metoden i din migrationsklass.</p>
+      <pre><code>def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+end
+
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+</code>
+      </pre>
+      <p>Detta kommer att skapa 3 dummydokument som vi kan använda för testning. Vi lägger den här koden i en metod så att den är enkel att köra igen när vi justerar och testar vår migrationskod. För komplexa migreringar kan många justeringsomgångar behövas för att få alla gränsfall.</p>
+      <p>Vi kan nu starta en Rails-konsol och köra den här koden genom att kopiera och klistra in de två klasskonstanterna och metoden mock_data_for_testing_up i konsolen och sedan köra mock_data_for_testing_up</p>
+      <pre><code>$ bundle exec rails console
+Loading development environment (Rails 3.1.1)
+irb(main):001:0&gt; #Klistra in följande i konsolen
+MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+Collection = db.collection("test_books_migration") #Endast för testning i konsolen
+def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  Collection.find({}).each {|_| puts _}
+end
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+irb(main):008:0&gt; mock_data_for_testing_up
+mock_data_for_testing_up
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"0", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000001')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"1", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000002')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"2", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000003')}])
+irb(main):009:0&gt; show_collection
+MONGODB app_development['test_books_migration'].find({})
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000001'), "isbn"=&gt;"0"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000002'), "isbn"=&gt;"1"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000003'), "isbn"=&gt;"2"}
+=&gt; nil
+</code>
+      </pre>
+      <p>Så nu har vi en separat, välförstådd testsamling redo att testa vår enkla migrering. Låt oss koda vår <code>up</code>-metod. För att utföra vår migrering.</p>
+      <pre><code>def up
+  #Vi vill byta namn på fältet book.isbn till book.book_number
+  Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+    update_op = {
+      "$unset" =&gt; {"isbn" =&gt; 1},
+      "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+    }
+  Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+end
+</code>
+      </pre>
+      <p>Vi kan klistra in det i konsolen och köra det för att testa vår migrering. Vi kan verifiera resultaten med <code>show_colletion</code>. Om vi vill testa andra poster för återställningen kan vi skapa en <code>mock_data_for_testing_down</code>-metod.</p>
+      <p>Detta bör ge dig ett mycket snabbt sätt att experimentera och få din migrationskod att fungera. Mongo har några avancerade fråge- och modifieringsmöjligheter som kan göra fantastiska saker, och ett enkelt sätt att göra lite prövning och fel är användbart. Om du gör ett oreda av dina testdata kan du använda <code>Collection.drop</code> för att få en ren ritning. Här är den slutliga migrationskoden för referens. <strong>Glöm inte</strong> att ta bort testsamlingens konstant och ta bort testsamlingen från din databas när du är redo att börja köra din kod på riktigt med <code>rake db:migrate</code>.</p>
+      <pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Slutlig produktionskod
+
+  def up
+    #Vi vill byta namn på fältet book.isbn till book.book_number
+    Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"isbn" =&gt; 1},
+        "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  def down
+    #Vi vill byta namn på fältet book.book_number till book.isbn
+    Collection.find({"book_number" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"book_number" =&gt; 1},
+        "$set" =&gt; {"isbn" =&gt; book["book_number"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  #Dessa metoder anropas inte av migreringen. Endast för manuell testning
+  #genom att kopiera/klistra in i konsolen
+  #För att testa (genom att kopiera/klistra in härifrån till konsolen)
+  #1. Ställ in konstanten MultiUpdate. Justera "Collection" till att vara en testsamling
+  #2. Kopiera/klistra in de 2 metoderna nedan
+  #2. Kör mock_data_for_testing_up
+  #3. Kör kroppen på self.up
+  #3b. Kör alternativt kroppen på self.up igen för att se till att den är idempotent
+  def mock_data_for_testing_up
+    3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  end
+
+  def show_collection
+    Collection.find({}).each {|_| puts _}
+  end
+end
+</code>
+      </pre>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; gå till</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/tips-for-mongodb-migrations-in-rails">😩, jag 🖤 ^det här!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/om<a>
+          </li>
+          <li>
+            <a href="/contact">/kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Niets te zien hier.</title>
+
+<meta property="og:title" content="Niets te zien hier."/>
+<meta property="og:description" content="Ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"koken-in-een-storm-met-vagrant-bibliothecaris-en-chef-solo"}">
+    <meta property="site:path_info" content=""/koken-in-een-storm-met-vagrant-bibliothecaris-en-chef-solo"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+
+    <base href='/langs/nl' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/koken-in-een-storm-met-vagrant-bibliothecaris-en-chef-solo">i ❤️  dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/koken-in-een-storm-met-vagrant-bibliothecaris-en-chef-solo</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2013-02-19</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Het is vrij eenvoudig om apache te configureren op een enkel systeem. Het wordt een beetje interessanter als je meerdere vhosts in de configuratie hebt. Het wordt nog leuker als je een complexe configuratie hebt die proxy's, URL-herstructurering en enkele tekstvervangingen bevat.</p>
+
+<p>Maar nog steeds niets wat een ervaren systeembeheerder niet met een beetje zorg kan handelen.</p>
+
+<p>Tot je het opnieuw moet doen.</p>
+
+<p>Dit is waar tools zoals <a href="http://www.opscode.com">Chef</a> en <a href="http://puppetlabs.com">Puppet</a> in het spel komen. Beide tools laten je aangeven en definiëren hoe systemen eruit moeten zien en hoe ze geconfigureerd moeten worden. Beide zijn krachtig en worden beide actief gebruikt om alles te configureren, van <a href="https://github.com/boxen/boxen">ontwikkel</a> <a href="https://github.com/atmos/cinderella">werkstations</a> tot <a href="http://www.opscode.com/press-releases/facebook-likes-opscode-and-private-chef/">grote implementaties van honderdduizenden machines</a>.</p>
+
+<p>Net als software, moet je de configuratie die je bouwt, nog steeds bouwen en testen. Je opties om dat te doen variëren van het echt duur (koop één of meer servers), tot matig duur (laat een paar exemplaren op EC2 draaien) tot het echt, echt goedkoop. De echt, echt goedkope optie zou zijn om je recepten te bouwen en te testen op virtuele machine(s) die op je systeem draaien. Dit is waar <a href="http://www.vagrantup.com/">Vagrant</a> in het spel komt.</p>
+
+<p>Vagrant is een wrapper rond Oracle's <a href="https://www.virtualbox.org/">VirtualBox</a> desktop virtualisatieplatform. De configuratie van Vagrant draait om een paar eenvoudige concepten. Je hebt een configuratiebestand genaamd <code>Vagrantfile</code> aan de root van het project. Dat bestand bevat enkele basisconfiguraties, zoals welke basisbox je voor het project gaat gebruiken en welke poorten je aan het hostsysteem blootlegt. En net zo belangrijk, het kan beschrijven hoe de virtuele machine te provisioneren is zodat het aan de behoeften van je project voldoet. Hoewel Vagrant zowel Puppet als Chef ondersteunt, koos ik ervoor om Chef-Solo te gebruiken om dit project te provisioneren.</p>
+
+<p>Aan de slag gaan met Vagrant is eenvoudig. De eerste stap is simpelweg de <code>vagrant</code> gem te installeren. Net als elk ander Ruby-project, koos ik ervoor om <code>vagrant</code> en een paar andere gems te installeren via Bundler. Hier is het resulterende <code>Gemfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">source</span>&nbsp;<span style="color: #0a3069">'https://rubygems.org'</span>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'vagrant'</span>
+</div><div class='code-line code-line-4'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'librarian'</span>
+</div></code></div>
+
+<p>Het uitvoeren van <code>bundle install</code> installeerde de benodigde gems in de projectmap. Een snelle <code>rbenv rehash</code> maakte de vagrant-uitvoerbaar beschikbaar voor mijn shell.</p>
+
+<p>De volgende stap was het instellen van de meest basale Vagrant-configuratie. Ik voerde <code>vagrant init</code> uit en bewerkte vervolgens het resulterende Vagrantfile zodat het er als volgt uitzag:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">Vagrant</span><span style="color: #0550ae">::</span><span style="color: #953800">Config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">run</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781"># Every Vagrant virtual environment requires a box to build off of.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"ubuntu-precise-64"</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781"># The url from where the 'config.vm.box' box will be fetched if it</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781"># doesn't already exist on the user's system.</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box_url</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"http://files.vagrantup.com/precise64.box"</span>
+</div><div class='code-line code-line-8'><span style="color: #cf222e">end</span>
+</div></code></div>
+
+<p>Dit realiseert 2 dingen. Ten eerste declareert het de naam van de box die we gaan gebruiken en waar we die box kunnen vinden. Een snel <code>vagrant up</code> zal initieel de basisbox downloaden, deze in het project importeren en de VM opstarten. Het duurt een tijdje om de box te downloaden, maar deze wordt gecached op je systeem zodat je het niet opnieuw hoeft te downloaden. Je kunt ook dezelfde basisbox hergebruiken als je ervoor kiest om dat te doen in andere projecten. Het uitvoeren van <code>vagrant halt</code> stopt de VM en het uitvoeren van <code>vagrant destroy</code>, ja, vernietigt de VM zelf.</p>
+
+<p>We hebben nog niet veel gedaan om onze VM te provisioneren. De volgende stap is om Vagrant te vertellen hoe dat moet.</p>
+
+<p><a href="https://github.com/applicationsonline/librarian">Librarian</a> is nog een leuke gem in de lijn van Bundler en CocoaPods die je laat aangeven welke Chef-recepten je gebruikt. In ons geval ziet een geredigeerde kopie van het <code>Cheffile</code> van het project er als volgt uit:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">#!/usr/bin/env ruby</span>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">#^syntax detection</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #24292f;background-color: #f6f8fa">site</span>&nbsp;<span style="color: #0a3069">'http://community.opscode.com/api/v1'</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'apt'</span>
+</div><div class='code-line code-line-7'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'apache2'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'&gt;= 1.0.0'</span>
+</div><div class='code-line code-line-8'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'rbenv'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:git</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'git://github.com/fnichol/chef-rbenv.git'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:ref</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'v0.7.2'</span>
+</div><div class='code-line code-line-9'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'ruby_build'</span>
+</div><div class='code-line code-line-10'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'openssh'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:git</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'git://github.com/fnichol/chef-openssh.git'</span>
+</div><div class='code-line code-line-11'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'git'</span>
+</div><div class='code-line code-line-12'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'build-essential'</span>
+</div><div class='code-line code-line-13'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'vim'</span>
+</div><div class='code-line code-line-14'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'user'</span>
+</div><div class='code-line code-line-15'><span style="color: #24292f;background-color: #f6f8fa">cookbook</span>&nbsp;<span style="color: #0a3069">'sudo'</span>
+</div></code></div>
+
+<p>Het grootste voordeel is dat je de kookboeken niet hoeft te verkopen in je projecten. Het uitvoeren van <code>librarian-chef install</code> haalt de kookboeken op en installeert deze onder de <code>cookbooks</code>-map. Dit genereert ook een <code>Cheffile.lock</code> om te documenteren welke versie van de kookboeken geïnstalleerd zijn.</p>
+
+<p>Ik was vervolgens aan een punt waar ik Vagrant kon vertellen om Chef-Solo te gebruiken om de box te provisioneren door het <code>Vagrantfile</code> bij te werken:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #953800">Vagrant</span><span style="color: #0550ae">::</span><span style="color: #953800">Config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">run</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781"># Every Vagrant virtual environment requires a box to build off of.</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"ubuntu-precise-64"</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781"># The url from where the 'config.vm.box' box will be fetched if it</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781"># doesn't already exist on the user's system.</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">box_url</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"http://files.vagrantup.com/precise64.box"</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;<span style="color: #6e7781"># Enable provisioning with chef solo, specifying a cookbooks path, roles</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;<span style="color: #6e7781"># path, and data_bags path (all relative to this Vagrantfile), and adding </span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #6e7781"># some recipes and/or roles.</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">vm</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">provision</span>&nbsp;<span style="color: #0a3069">:chef_solo</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">chef</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">cookbooks_path</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">"cookbooks"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a

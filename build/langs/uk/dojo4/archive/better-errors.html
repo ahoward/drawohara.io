@@ -1,0 +1,132 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/langs/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>тут нічого немає.</title>
+
+    <meta property="og:title" content="тут нічого немає."/>
+    <meta property="og:description" content="продовжуйте рух." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{&quot;ext&quot;:null,&quot;id&quot;:&quot;better-errors&quot;}">
+    <meta property="site:path_info" content="/better-errors">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/better-errors">я ❤️ це!</a>
+      <small>
+        <small>
+          <small>
+            <span title='випий мене'>&lt;&lt; натисни мене 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/better-errors</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2014-03-31</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Однією з гем Rails, яку ми використовуємо в наших нових додатках, є <a href="https://github.com/charliesome/better_errors">Better Errors</a>, яка дозволяє вам запустити REPL, схожий на pry, і кращий екран помилок, коли Rails під час запиту браузера викидає виняток.</p>
+
+        <p><img src='/ro/dojo4/better-errors/assets/b.png' alt="" /> <br />
+        <em>(<a href="https://github.com/charliesome/better_errors">Джерело зображення</a>)</em></p>
+
+        <p>Це корисно для наших розробників, оскільки замість статичної сторінки помилок, пошуку в коді, куди поставити <code>binding.pry</code>, і повторного запуску коду, що спричиняє помилку, Better Errors завантажує сторінку, на якій ми можемо взаємодіяти з кодом відразу, що дозволяє нам знайти проблему швидше, написати виправлення швидше та ітеративно працювати швидше.</p>
+
+        <p>Однією з останніх функцій, яку ми нещодавно відкрили, є можливість бачити останню помилку rpc. Ми маємо шаблон ajax-запиту до методу rpc у нашому додатку Rails, коли ми просто хочемо отримати деяку інформацію або відправити простий об'єкт, наприклад, додати користувача до улюблених. Код, який обробляє цей ajax-запит на нашому сервері Rails, не викличе помилку на всьому сервері та автоматично не викличе Better Errors, тому обхідний шлях - перейти за спеціальним URL-адресою, щоб Better Errors показали останню помилку, яка виникла в нашому коді Rails: http://localhost:3000/__better_errors.</p>
+
+        <p>Хтось ще використовував цей інструмент? Що ви думаєте про нього? Завжди раді чути відгуки через Twitter (натисніть нижче).</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/better-errors">😩, я 🖤 ^це!<a>
+          </li>
+          <li>
+            <a href="/now">/зараз<a>
+          </li>
+          <li>
+            <a href="/about">/про</a>
+          </li>
+          <li>
+            <a href="/contact">/контакти<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; вийти</a>
+    </footer>
+  </body>
+</html>

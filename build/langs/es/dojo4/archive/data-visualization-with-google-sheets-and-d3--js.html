@@ -1,0 +1,143 @@
+<html color-mode="user" lang="es">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+<meta property="og:title" content="nada que ver aquí."/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"data-visualization-with-google-sheets-and-d3--js"}">
+    <meta property="site:path_info" content=""/data-visualization-with-google-sheets-and-d3--js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/es' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">¡me encanta esto!</a>
+<small>
+  <small>
+    <small>
+      <span title='bébeme'>&lt;&lt; haz clic en mí 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/data-visualization-with-google-sheets-and-d3--js</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2018-10-11</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Hay personas que miran una hoja de cálculo y ven la magia. Hay otras que miran una hoja de cálculo y sus ojos se vuelven borrosos y tienen un fuerte deseo de echarse una siesta. Sin juzgar a ninguno de los tipos, pero a veces necesitas hacerlo más fácil de digerir.</p>
+
+<p>Poner filas y columnas de datos en un formato que ayuda a las personas a entender "de qué se trata" generalmente se llama <em>visualización de datos</em>. Hay muchas herramientas para crear gráficos y gráficos a partir de hojas de cálculo, incluido Excel o Google Sheets. A veces necesitas algo más robusto, y la mejor herramienta para el trabajo es <a href="http://d3js.org">D3</a>.</p>
+
+<p>Un ejemplo: dojo4 recientemente terminó un trabajo para <a href="https://350.org">350.org</a> - una organización centrada en reducir los combustibles fósiles y cambiar a fuentes de energía 100% renovables. Usamos el concepto de un diagrama de acordes para representar los esfuerzos de varios grupos y organizaciones que apuntan a los bancos internacionales que financian proyectos de combustibles fósiles en todo el mundo. La codificación de colores proporciona una visión general rápida de los grupos y su enfoque particular en los combustibles fósiles.</p>
+
+<p><img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg' alt="350-chord-diagram-base.jpg" /></p>
+
+<p>Los usuarios pueden pasar el ratón sobre una organización y ver a qué bancos están apuntando:<br />
+<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg' alt="350-d3-chord-diagram-hover1.jpg" /></p>
+
+<p>O pasar el ratón sobre un banco y ver qué grupos están apuntando a ese banco específico.<br />
+<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg' alt="350-d3-chord-diagram-hover2.jpg" /></p>
+
+<p><sup><em>(nota: los nombres de los bancos y las organizaciones se han eliminado por privacidad)</em></sup></p>
+
+<p>Este diagrama de acordes se generó dinámicamente a partir de una hoja de cálculo compartida de Google utilizando Google App Script y JavaScript personalizado adjunto a la hoja. Esta relación autocontenida ayuda a asegurar que los datos de origen y el código para generar el gráfico no pierdan su relación, y cualquier actualización de la hoja compartida actualizará automáticamente el gráfico.</p>
+
+<blockquote>
+  <p><em>Disfruté trabajando con dojo4. El equipo realmente quería entender cómo una visualización de mis datos sería valiosa y parecían trabajar desde allí. Ahora tengo un gráfico accesible y atractivo que cuenta una historia sobre dónde hay brechas, redundancias y oportunidades para una mayor coordinación. Aprecié cómo se tomaron el tiempo para aprender la estética de mi organización y trabajaron para igualar nuestro estilo.</em>    – Analista Global Sénior, <a href="https://350.org/">350.org</a></p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">😩, no me gusta ^esto!<a>
+  </li>
+  <li>
+    <a href="/now">/ahora<a>
+  </li>
+  <li>
+    <a href="/about">/sobre<a>
+  </li>
+  <li>
+    <a href="/contact">/contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

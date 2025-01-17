@@ -1,0 +1,138 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/langs/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>non c'è nulla da vedere qui.</title>
+
+    <meta property="og:title" content="non c'è nulla da vedere qui."/>
+    <meta property="og:description" content="circolare." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"using-terminal-notifier-in-our-capfiles"}">
+    <meta property="site:path_info" content=""/using-terminal-notifier-in-our-capfiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/using-terminal-notifier-in-our-capfiles">io ❤️ questo!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bevimi'>&lt;&lt; clicca qui 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/utilizzando-terminal-notifier-nei-nostri-capfiles</strong>
+    </header>
+
+    <main>
+      <em>pubblicato il: 2014-01-02</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Utilizziamo <a href="http://www.capistranorb.com/">capistrano</a> per i nostri deployment e recentemente ho scoperto il fantastico gem <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a> che utilizza le notifiche utente in OS X 10.8 e versioni successive per mostrare una notifica dalla riga di comando. Ogni volta che faccio un deployment, controllo manualmente se il deployment è finito, e questa è una buona soluzione per evitarlo. Un problema che ho riscontrato, però, quando l'ho aggiunto a uno dei nostri progetti è che alcune persone del nostro team utilizzano una versione di Mac OS X <em>precedente</em> alla 10.8 (lo so!), quindi il comando <code>terminal-notifier</code> fallirebbe e il loro deployment avrebbe errori. Ecco il codice che uso ora per assicurarmi che non compaiano errori se non puoi utilizzare le notifiche utente nelle versioni più recenti di OS X:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">desc</span>&nbsp;<span style="color: #0a3069">'usa terminal notifier se in &gt; osx 10.8 per utilizzare un avviso utente'</span>
+        </div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">task</span>&nbsp;<span style="color: #0a3069">:terminal</span>&nbsp;<span style="color: #cf222e">do</span>
+        </div><div class='code-line code-line-3'>&nbsp;<span style="color: #cf222e">begin</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'terminal-notifier'</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">fetch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:url</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">application</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">fetch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:application</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">system</span>&nbsp;<span style="color: #0a3069">"terminal-notifier -title </span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">application</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069"> -message 'Deploy completato con successo a </span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069">.' -sound default"</span>
+        </div><div class='code-line code-line-8'>&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">LoadError</span>
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">warn</span>&nbsp;<span style="color: #0a3069">"Probabilmente non sei su os x 10.8, quindi non stai usando terminal notifier. Se lo sei, usa gem install terminal-notifier per utilizzare alcune notifiche utente."</span>
+        </div><div class='code-line code-line-10'>&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-11'><span style="color: #cf222e">end</span>
+        </div></code></div>
+
+        <p>Ovviamente includiamo anche <code>gem terminal-notifier</code> nel nostro Gemfile. Vedi <a href="http://stackoverflow.com/questions/20885606/dangers-of-putting-a-gem-into-a-gemfile-is-someone-trying-to-install-it-doesnt">la mia domanda su SO</a> sull'inclusione di questo gem nel tuo gemfile per una spiegazione del perché sto utilizzando la semplice istruzione di inclusione del gem.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/using-terminal-notifier-in-our-capfiles">😩, io 🖤 ^questo!<a>
+          </li>
+          <li>
+            <a href="/now">/ora<a>
+          </li>
+          <li>
+            <a href="/about">/chi-siamo<a>
+          </li>
+          <li>
+            <a href="/contact">/contatti<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

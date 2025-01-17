@@ -1,0 +1,151 @@
+<html color-mode="user" lang="it">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>non c'è nulla da vedere qui.</title>
+
+<meta property="og:title" content="non c'è nulla da vedere qui."/>
+<meta property="og:description" content="proseguire." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"using-redis-with-sensitive-information"}">
+    <meta property="site:path_info" content=""/using-redis-with-sensitive-information"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/it' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/using-redis-with-sensitive-information">io ❤️ questo!</a>
+<small>
+  <small>
+    <small>
+      <span title='bevimi'>&lt;&lt; clicca su di me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/utilizzo-redis-con-informazioni-sensibili</strong>
+    </header>
+
+    <main>
+      <em>pubblicato il: 2014-04-14</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><strong>Aggiornamento:</strong> Il creatore di Redis <a href="https://github.com/antirez">Salvatore Sanfilippo</a> ha risposto alla mia richiesta di pull documentando questo metodo per disabilitare <code>bgsave</code> con <a href="https://github.com/antirez/redis/pull/1683#issuecomment-41163718">questo commento</a>. Poiché è d'accordo che dovrebbe esserci un processo di progettazione comunitaria intorno al supporto della disabilitazione della persistenza in redis, ho aggiunto una <a href="https://github.com/antirez/redis/issues/1704">nuova questione</a> per consentire che questa discussione avvenga. Non vedo l'ora di vedere il processo di progettazione e di farne parte.</p>
+
+<p><strong>Aggiornamento:</strong> Il lavoro iniziale per supportare ufficialmente una configurazione di 'disabilitazione della persistenza' è iniziato da <a href="https://twitter.com/mattsta">Matt Stancliff</a>. Vedi il lavoro di Matt <a href="https://github.com/antirez/redis/issues/1704#issuecomment-42575432">qui</a>. È fantastico vedere questo. Grazie Matt!</p>
+
+<p>Ho trascorso ore a ricercare e progettare come impedire a <a href="redis.io">redis</a> di scrivere qualsiasi valore del database su disco, poiché l'istanza di redis gestirà informazioni sensibili. (Nel nostro caso stiamo memorizzando i cvv per 60 minuti e, a causa della conformità PCI relativa all'uso delle carte di credito, non possiamo assolutamente scrivere questi valori su disco - mai.)</p>
+
+<p>Leggi la documentazione, il file di configurazione, cerca su Google, testa e prova anche a dirgli di scrivere su <code>/dev/null</code>.</p>
+
+<p>Infine la risposta è arrivata da 'TheRealBill_here' sul canale irc <code>#redis</code>:</p>
+
+<pre><code>dbfilename ""
+</code></pre>
+
+<p>nel file di configurazione.</p>
+
+<p>Ecco un <a href="http://irclogger.com/.redis/2014-04-14#1397514047">link alla nostra intera conversazione</a> se sei interessato.</p>
+
+<p>Ho anche inviato una <a href="https://github.com/antirez/redis/pull/1683">richiesta di pull</a> per aggiungere una nota nel file di configurazione per redis.</p>
+
+<p>Questa risposta mi è arrivata dopo aver già preso un paio di altre decisioni sulla configurazione di redis per memorizzare le informazioni delle carte di credito:</p>
+
+<ul>
+  <li><code>loglevel</code> ha un valore predefinito di info, che non stamperà ogni lettura/scrittura, quindi siamo a posto lì. Anche se per il nostro caso d'uso probabilmente ci sentiremmo a nostro agio disabilitando completamente il logging.</li>
+  <li><code>save</code> directive è impostata su <code>save ""</code> in modo che lo snapshotting sia sicuramente disabilitato.</li>
+  <li><code>replica</code> non in gioco. Quando si utilizza la replica, il master inizializza uno slave scrivendo il proprio contenuto del database su disco, inviando quel file allo slave e lo slave caricando il dump del database nel suo database. Ovviamente, non possiamo farlo. (Nota anche che se dovessimo aggiungere uno slave in un secondo momento, non sarebbe in grado di sincronizzarsi con la nostra configurazione attuale di <code>dbfilename ""</code>. Vedi il log per l'errore quando chiami <code>bgsave</code> da <code>redis-cli</code> tu stesso.)</li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; vai a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/using-redis-with-sensitive-information">😩, io 🖤 ^questo!<a>
+  </li>
+  <li>
+    <a href="/now">/ora<a>
+  </li>
+  <li>
+    <a href="/about">/chi-siamo<a>
+  </li>
+  <li>
+    <a href="/contact">/contatti<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; esci</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <base href='/langs/nl' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>niets om te zien.</title>
+
+<meta property="og:title" content="niets om te zien."/>
+<meta property="og:description" content="ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"dangling-rpc-fruit-off-of-your-rails-controllers"}">
+    <meta property="site:path_info" content=""/dangling-rpc-fruit-off-of-your-rails-controllers"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/dangling-rpc-fruit-off-of-your-rails-controllers">ik ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/dangling-rpc-fruit-off-of-your-rails-controllers</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2013-11-05</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>als je aan een niet-hello-world rails-applicatie werkt, heb je onvermijdelijk kleine ajax-hulpprogramma's nodig om te communiceren met de server - om cliëntzijdige logica uit te voeren. ik heb het niet over een api per se, maar over ad-hoc utiliteiten zoals dit:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">markdown</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">change</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #8250df">generate_html_on_the_server</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">markdown</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">val</span><span style="color: #24292f;background-color: #f6f8fa">(),</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">html</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">preview</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">html</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">html</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-11'>
+</div></code></div>
+
+<p>of</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">reservation</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">change</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #8250df">check_availibity_on_the_server</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">reservation</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">val</span><span style="color: #24292f;background-color: #f6f8fa">(),</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">!</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">available</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">]){</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">alert</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">die tijd is niet beschikbaar - kies een andere!</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">})</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'>
+</div></code></div>
+
+<p>enz.</p>
+
+<p>deze soort functies maakt geen deel uit van een publieke server-to-server api, het zijn gewoon samenwerkende js/back-end-eindpunten die nodig zijn om de weergavefunctie te laten werken.</p>
+
+<p>de meeste rails-applicaties zullen veel van deze functies verzamelen en de vraag rijst:</p>
+
+<p>“Waar plaats je ze?”</p>
+
+<p>in de meeste teams heb je drie of vier ontwikkelaars die deze functies anders benoemen en organiseren, waardoor de codebasis in korte tijd verandert in een cowboy-spaghetti-chaos.</p>
+
+<p>@dojo4 hebben we dit geabstraheerd met een klein rpc-ontwerppatroon: eerst hebben we een kleine controller-dsl die is opgenomen in onze ApplicationController die declaratieve definities van 'rpc' js-hulpprogramma's op basis van per controller toelaat.</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">ApplicationController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ActionController</span><span style="color: #0550ae">::</span><span style="color: #953800">Base</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #cf222e">include</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">RPC</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'><span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>
+</div></code></div>
+
+<p>bekijk de implementatie hier: https://gist.github.com/ahoward/7320900</p>
+
+<p>in het Engels vertaald betekent deze dsl dat er een enkele actie op de controller is gedefinieerd die multiplexen welke methode moet worden gebruikt op basis van params, en een eenvoudige manier om deze te definiëren. het verwacht dat alle rpc-acties een hash teruggeven en json teruggeven.</p>
+
+<p>de implementatie komt erop neer</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">rpc</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">which</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'method'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">action</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">@rpc</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">which</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">result</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">action</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">call</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">render</span>&nbsp;<span style="color: #0a3069">:json</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">result</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_json</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>
+</div></code></div>
+
+<p>het gebruik moet duidelijk zijn uit de code</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">GeoLocationController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ApplicationController</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rpc</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:geo_location</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">geo_location</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">GeoLocation</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">geo_locate</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'address'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">geo_location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">attributes</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rpc</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:lat_lng</span><span style="color: #24292f;background

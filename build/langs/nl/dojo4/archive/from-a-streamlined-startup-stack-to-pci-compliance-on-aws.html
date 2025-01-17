@@ -1,0 +1,167 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>niets te zien hier.</title>
+
+<meta property="og:title" content="niets te zien hier."/>
+<meta property="og:description" content="ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"van-een-gestroomlijnde-startup-stack-naar-pci-compliance-op-aws"}">
+    <meta property="site:path_info" content=""/van-een-gestroomlijnde-startup-stack-naar-pci-compliance-op-aws"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/nl' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/van-een-gestroomlijnde-startup-stack-naar-pci-compliance-op-aws">ik ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/van-een-gestroomlijnde-startup-stack-naar-pci-compliance-op-aws</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2012-09-10</em>
+<br>
+<br>
+<div class="ro markdown">
+  <h2 id="intro">Intro</h2>
+
+<p>Door projecten bij <a href="http://dojo4.com">Dojo4</a> te begeleiden, ben ik vaak verrast door de manier waarop schijnbaar kleine toenames in technische complexiteit <a href="http://en.wikipedia.org/wiki/Combinatorial_explosion">samenvallen</a> in significante aandacht en middelenverlies. Daarom kiezen we, wanneer projecten opstarten, vaak voor een vereenvoudigd hosting en applicatiestack die veel eigenschappen deelt die vaak worden gezien in gedeelde hostingservices. Dit omvat keuzes zoals het hosten van de app en db samen, het gebruiken van een enkele implementatiegebruiker op het hostsysteem, en eenvoudige <a href="http://uptimerobot.com">uptimemonitoring</a>.</p>
+
+<p>Onze langjarige klant, <a href="http://www.inspirecommerce.com/">Inspire Commerce</a>, ontwikkelde onlangs een nieuw bedrijfsplan dat vereist dat hun applicatie voldoet aan de strenge <a href="https://www.pcisecuritystandards.org/">Payment Card Industry</a> (PCI) Level 1 beveiligingseisen voor het verwerken, verzenden en opslaan van creditcardinformatie. Veel van de beveiligingseisen die in detail staan in de PCI <a href="https://www.pcisecuritystandards.org/security_standards/">Data Security Standard</a> (DSS) motiveren een significante verandering in denken van de gestroomlijnde gefocuste stack die hierboven wordt genoemd. Deze post zal enkele van deze details opsommen en onze oplossingen uitleggen.</p>
+
+<p>De PCI DSS is verdeeld in 12 secties die alles bestrijken van firewallconfiguratie tot personeelsbeveiligingsbeleid. Ik zal een aantal secties doorlopen die relevant zijn voor de hostingstack.</p>
+
+<h2 id="1-installeer-en-onderhoud-een-firewallconfiguratie-om-kaarthoudersgegevens-te-beschermen">1. Installeer en onderhoud een firewallconfiguratie om kaarthoudersgegevens te beschermen</h2>
+
+<p>Dit is een gedetailleerde sectie van de DSS die de installatie en configuratie van <a href="http://en.wikipedia.org/wiki/Firewall_%28computing%29">firewall</a> services vereist op alle netwerkapparaten, van werkstations tot routers tot servers. Door <a href="http://aws.amazon.com/">Amazon Web Services</a> (AWS) <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud</a> (EC2) als basis van onze hostingstack te gebruiken, worden veel van deze netwerkapparaten geabstraheerd van ons zicht of controle. Handig genoeg, <a href="http://aws.amazon.com/security/#certifications">AWS is zelf PCI Level 1 conform</a> en laat veel van deze details aan de ingenieurs van Amazon.</p>
+
+<p>Echter, firewalls voor de EC2-knooppunten vereisen wel enige overweging. EC2-knooppunten worden beschermd door een firewall die is geïmplementeerd op de <a href="www.xen.org/products/xenhyp.html">hypervizor</a> laag en geconfigureerd door AWS <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a>. Onze basis Security Group heeft alle poorten die pakketten weigeren met uitzondering van 22, 80, & 443 die accepteren van alle bronnen. We draaien <a href="www.ubuntu.com/">Ubuntu Linux</a> op onze knooppunten en standaard hebben we de <a href="www.netfilter.org/projects/iptables/">IP Tables</a> firewall geconfigureerd met een open beleid.</p>
+
+<p>De PCI DSS richt zich op het gebruik van firewalls om veilige privénetwerken of <a href="http://en.wikipedia.org/wiki/DMZ_%28computing%29">De-Militarized-Zones</a> (DMZ) te creëren voor systemen die apps hosten die betalingskaartgegevens verwerken. AWS Security Groups bieden een nuttig mechanisme voor het creëren van veilige privénetwerken tussen de diverse componenten van de applicatiestack. Bijvoorbeeld, door een WEB-beveiligingsgroep en een DB-beveiligingsgroep te creëren en de databasepoort in de DB-beveiligingsgroep te openen alleen voor WEB-beveiligingsgroepbronnen, zal de EC2-hypervisor firewall die op een databaseserver draait alleen toegang tot de database toestaan van webservers die verbinding maken op de interne privénetwerkinterface.</p>
+
+<p>Voor redundantie, spiegelen we de AWS Security Group-configuratie voor de EC2-hypervisor firewall met de <a href="http://www.cloudpassage.com/">CloudPassage</a> service die de IP Tables firewall kan beheren op het besturingssysteemlaag van systemen die componenten van de kaartverwerkingsapplicatie hosten. CloudPassage organiseert firewallbeleidsregels in <a href="http://www.cloudpassage.com/features/halo-firewall.html">Server Groups</a> die enigszins analogisch zijn aan AWS Security Groups. Een andere geweldige functie van CloudPassage is de <a href="http://www.cloudpassage.com/features/multifactor-authentication.html">GhostPorts</a> service. We configureren het ssh-poortbeleid in CloudPassage om verbindingen te accepteren van GhostPort-bronnen. Om een clientmachine een GhostPort-bron te laten worden, moet een gebruiker op die machine zich authenticeren bij het CloudPassage-portaal, geautoriseerd zijn om GhostPorts te openen voor een servergroep, en zich authenticeren met een geregistreerde Yubikey-dongle, of reageren op een SMS-uitdaging met een geregistreerde mobiele telefoon. Bij succesvolle authenticatie en autorisatie configureert CloudPassage IP Tables om verbindingen te accepteren van de bron-ip van de clientmachine. Dit is een handige, veilige, tijdelijke en controleerbare manier om toegang tot gevoelige hosts te beheren.</p>
+
+<h2 id="2-gebruik-nooit-standaardinstellingen-van-de-leverancier-voor-systeemwachtwoorden-en-andere-beveiligingsparameters">2. Gebruik nooit standaardinstellingen van de leverancier voor systeemwachtwoorden en andere beveiligingsparameters</h2>
+
+<p>Deze sectie lijkt vrij duidelijk. Een goed voorbeeld van het belang van het wijzigen van door de leverancier geleverde standaardwachtwoorden is het <a href="http://www.splunk.com/">Splunk</a> <a href="http://docs.splunk.com/Documentation/Splunk/latest/Deploy/Introducingtheuniversalforwarder">Universele Forwarder</a> standaardwachtwoord changeme.</p>
+
+<p>Echter, verborgen in deze sectie is een belangrijke hostingvereiste die enigszins niet gerelateerd is aan de sectietitel. “2.2.1 Implementeer slechts één primaire functie per server om te voorkomen dat functies die verschillende beveiligingsniveaus vereisen samen bestaan op dezelfde server. (Bijvoorbeeld moeten webservers, databaseservers en DNS op aparte servers worden geïmplementeerd)”.</p>
+
+<p>Zoals hierboven vermeld, maken AWS-beveiligingsgroepen de taak om services zoals web- en databaseservers veilig te scheiden op aparte hosts vrij eenvoudig.</p>
+
+<h2 id="5-gebruik-en-werk-regelmatig-antivirussoftware-of-programma's-bij">5. Gebruik en werk regelmatig antivirussoftware of programma's bij</h2>
+
+<p><a href="http://clamav.com">ClamAV</a> maakt snel werk van deze eis op Ubuntu Linux.</p>
+
+<h2 id="8-wijs-een-unieke-id-toe-aan-elke-persoon-met-computertoegang">8. Wijs een unieke id toe aan elke persoon met computertoegang</h2>
+
+<p>Het doel van deze sectie is om controleerbaarheid en verantwoordelijkheid te bevorderen door gedeelde gebruikersaccounts te verwijderen. Aangezien we een <a href="http://en.wikipedia.org/wiki/Ssh-keygen">sleutelgebaseerd</a> authenticatiemechanisme gebruiken voor <a href="http://en.wikipedia.org/wiki/Secure_Shell">secure shell</a> toegang, zijn er drie primaire zorgen om te weten wie wat heeft gedaan. Ten eerste is het noodzakelijk om te voorkomen dat gebruikers kunnen overschakelen naar een andere gebruikersaccount met de <a href="http://en.wikipedia.org/wiki/Su_%28Unix%29">su-opdracht</a>. Dit is eenvoudig te realiseren door de <a href="http://en.wikipedia.org/wiki/Filesystem_permissions#Traditional_Unix_permissions">uitvoertoestemming</a> op het su-binair bestand te verwijderen en /etc/pam.d te wijzigen om alle su-autorisatie te voorkomen. Ten tweede, zorg ervoor dat de <a href="http://www.eng.cam.ac.uk/help/jpmg/ssh/authorized_keys_howto.html">authorized_keys</a> bestanden voor alle gebruikersaccounts slechts één enkele invoer bevatten. Ten slotte, zorg ervoor dat alle sleutels die worden gebruikt voor secure shell toegang worden beveiligd met een wachtwoord en dat er een beleid is om het delen van sleutels tussen gebruikers te verbieden.</p>
+
+<p>Nu kan de <a href="http://www.cyberciti.biz/tips/linux-audit-files-to-see-who-made-changes-to-a-file.html">Linux Audit Daemon</a> (AuditD) worden gebruikt om systeemactiviteit te traceren naar specifieke gebruikers.</p>
+
+<h2 id="9-beperk-fysieke-toegang-tot-kaarthoudersgegevens">9. Beperk fysieke toegang tot kaarthoudersgegevens</h2>
+
+<p>De titel van deze sectie is vrij zelfverklarend. In wezen, behandelt deze sectie de onderwerpen van het beperken van fysieke toegang tot datacenters tot geautoriseerd personeel. Vergelijkbaar met de bespreking van de firewallconfiguratie van netwerkapparaten hierboven, wordt dit bedekt door de AWS PCI Level 1-certificering en kunnen de details aan Amazon worden overgelaten.</p>
+
+<h2 id="10-volg-en-bewaak-alle-toegang-tot-netwerkbronnen-en-kaarthoudersgegevens">10. volg en bewaak alle toegang tot netwerkbronnen en kaarthoudersgegevens</h2>
+
+<p>De motivatie van deze sectie is “het voorkomen, detecteren of minimaliseren van de impact van een datalek”. Dit betekent onderwerpen als logboekregistratie, bestandsintegriteitsbeheer en intrusiedetectie. Onze strategie begint met de inzet van een logboekregistratieservice om de aggregatie van logboeken, de bewaarperiode van logboeken, evenals het doorzoeken van logboekrecords te ondersteunen. We gebruiken de <a href="http://splunk.com">Splunk</a> applicatie voor deze functionaliteit. We hebben een EC2-instantie ingesteld voor een logboekserver en Splunk geïnstalleerd. We hebben AWS Security Groups en CloudPassage ServerGroups ingesteld voor de nieuwe server die de Splunk-listenerpoort accepteert verbindingen van webserver- en db-serverbronnen op de privénetwerkinterface. Vervolgens hebben we de Splunk Universele Forwarder op web- en db-servers ingesteld en de forwarders geconfigureerd om applicatie-, apache-, mongodb-, sys-, audit- en auth-logboeken te bewaken.</p>
+
+<p>Voor bestandsintegriteitsbewaking en intrusiedetectie hebben we de <a href="http://www.ossec.net/?page_id=165">OSSEC</a> applicatie geïnstalleerd op al onze servers en alle logboeken die OSSEC schrijft aan de Splunk forwarders toegevoegd.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; naar</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/van-een-gestroomlijnde-startup-stack-naar-pci-compliance-op-aws">😩, ik 🖤 ^dit!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/over<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; uitwerpen</a>
+    </footer>
+  </body>
+</html>

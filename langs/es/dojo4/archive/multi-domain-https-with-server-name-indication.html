@@ -1,0 +1,172 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/langs/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+    <meta property="og:title" content="nada que ver aquí."/>
+    <meta property="og:description" content="siga adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"multi-domain-https-with-server-name-indication"}">
+    <meta property="site:path_info" content=""/multi-domain-https-with-server-name-indication"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/multi-domain-https-with-server-name-indication">¡me encanta esto!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bébelo'>&lt;&lt; haz clic aquí 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/multi-domain-https-with-server-name-indication</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2014-12-18</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>(Esta es una versión condensada de <a href="http://www.stuff-things.net/2014/11/14/yes-virginia-you-can-use-sni/">Sí, Virginia, puedes usar SNI</a> que apareció originalmente en el blog <a href="http://www.stuff-things.net/">Cosas... y cosas...</a> de Spike)</p>
+
+        <p>Cuando te conectas a un servidor web de manera segura usando HTTPS, la seguridad se negocia utilizando <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a>. Dos cosas ocurren: se verifica la identidad del servidor y se cifra la conexión.</p>
+
+        <p>La verificación es importante; no importa si la conexión está cifrada si de alguna manera has sido redirigido a un servidor malintencionado. Sin embargo, esa verificación puede ser problemática si un servidor web está sirviendo más de un nombre de host.</p>
+
+        <p>Puedes leer los <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_handshake">detalles escabrosos</a>, pero la versión simplificada del proceso es que el servidor envía un <a href="http://en.wikipedia.org/wiki/Public_key_certificate">certificado de clave pública firmado</a> que debe coincidir con el nombre de host en la URL. Si un cliente navega a dojo4.com, entonces el certificado debe ser para dojo4.com; si no lo es, el navegador muestra una gran advertencia de seguridad.</p>
+
+        <p>Técnicamente, es posible tener múltiples nombres de host en un certificado; de hecho, es común tener, por ejemplo, tanto "dojo4.com" como "www.dojo4.com" por completitud. Sin embargo, es una tremenda molestia agregar y eliminar nombres de host de un certificado. Debes hacer que el emisor genere uno nuevo y revocar el anterior. Y, si estás trabajando con una Red de Entrega de Contenidos, es poco probable que agreguen tus nombres de host a su certificado.</p>
+
+        <p>Originalmente, TLS soportaba un certificado por servidor web (o más correctamente, por dirección IP adjunta al servidor web). Se agregó <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Indicación de Nombre de Servidor (SNI)</a> a TLS para resolver este problema. Al inicio de la negociación TLS, el cliente le dice al servidor el nombre del host al que intenta conectarse y el servidor puede entonces seleccionar y enviar el archivo de certificado correcto. ¡Problema resuelto!</p>
+
+        <p>Excepto... No todos los navegadores soportan SNI. Todos <em>saben</em> esto, y como resultado, tienden a saltarse SNI e ir directamente a IPs dedicadas por sitio o incluso múltiples servidores. Esta es una opción costosa, especialmente cuando se trabaja con CDNs como CloudFront. Cuando esto surgió para mí, decidí ver qué significaba realmente "no todos los navegadores".</p>
+
+        <p>Resulta que SNI es ampliamente soportado, con los grandes problemas siendo IE8 y versiones anteriores, y cualquier versión de IE ejecutándose en Windows XP (porque la biblioteca subyacente del sistema operativo no soporta SNI). También hay algunas versiones antiguas de Android que carecen de soporte.</p>
+
+        <p>Entonces, la mayoría de los visitantes no tendrán problemas con SNI y el grupo que sí los tiene es lo suficientemente pequeño como para que podamos manejarlos como un caso especial.</p>
+
+        <p>Para los navegadores sin soporte de SNI, la solución alternativa es redirigirlos a un certificado que funcione o a una página sarcástica de "actualiza tu navegador". Si buscas en Google, encontrarás varias soluciones sobre la construcción de listas blancas de navegadores buenos y/o listas negras de malos y luego usar esas listas en reglas de redirección del lado del servidor. Feo. Las listas deben ser mantenidas y, dependiendo del servidor, rompen el caché.</p>
+
+        <p>Hay una manera más inteligente. Mientras navegaba por un mar de configuraciones de redirección de Apache, lo encontré en esta <a href="https://www.ebower.com/wiki/Detecting_SNI_with_Apache">publicación</a>. La idea central de la publicación se puede destilar en esto: si un navegador que no soporta SNI intenta cargar contenido SNI, obtendrá un error. Si probamos esto en segundo plano y diferenciamos entre error y éxito, entonces podemos redirigir al visitante en consecuencia. Y la forma más sencilla de hacerlo es intentar agregar una imagen de un píxel a la página.</p>
+
+        <p>En código se ve así:</p>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #cf222e">function</span>&nbsp;<span style="color: #8250df">secure_redirect</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #0550ae">=</span><span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">createElement</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">img</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>&nbsp;<span style="color: #6e7781">// crear un elemento de imagen.</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Establecer el src a una URL SNI de una imagen de un píxel</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'</span><span style="color: #0a3069">https://www.example.org/pixel.gif</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Esto se ejecuta si SNI funciona.</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">onload</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Redirigir a la página segura.</span>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">href</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">https://example.org/</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Esto se ejecuta si SNI no funciona.</span>
+        </div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">onerror</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// Redirigir a otro lugar</span>
+        </div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">href</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">http://example.org/snarky-old-browser-message</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+        </div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// No mostrar realmente la imagen</span>
+        </div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">style</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">display</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'</span><span style="color: #0a3069">none</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// pero adjuntarla a las páginas para que se cargue.</span>
+        </div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">body</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">appendChild</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">img</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+        </div></code></div>
+
+        <p>Aquí estoy aprovechando dos callbacks de HTML en la etiqueta <em>img</em>, 'OnLoad', que se dispara cuando una imagen termina de cargarse, y 'OnError', que se dispara si la imagen no puede cargarse. Si un navegador no soporta SNI, la imagen fallará en cargarse debido a un error de certificado, disparando 'OnError'. Sin embargo, como estamos agregando la imagen a una página ya cargada, no generará un error en el navegador.</p>
+
+        <p>Ahora podemos probar SNI y manejar la falta de soporte de manera elegante. ¡La Navidad está salvada!</p>
+
+        <p>Sin embargo, lo que realmente hemos llegado es a algo más inteligente. Nota que el código no está realmente probando SNI, solo la capacidad de cargar la imagen de manera segura. Si la URL HTTPS en cuestión no requiere realmente SNI, hay solo un certificado o el primer certificado coincide con el dominio solicitado, aún funciona. El problema se ha reducido a "¿Puede el navegador de este visitante mostrar el sitio seguro o no?" y al final del día, eso es todo lo que realmente nos importa.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+      <ul>
+        <li>
+          <a href="mailto:i-hate-this@drawohara.io?subject=/multi-domain-https-with-server-name-indication">😩, i 🖤 ^this!</a>
+        </li>
+        <li>
+          <a href="/now">/now</a>
+        </li>
+        <li>
+          <a href="/about">/about</a>
+        </li>
+        <li>
+          <a href="/contact">/contact</a>
+        </li>
+      </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

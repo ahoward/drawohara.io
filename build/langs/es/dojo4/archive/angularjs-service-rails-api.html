@@ -1,0 +1,146 @@
+<html color-mode="user" lang="es">
+  <head>
+  <base href='/langs/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>no hay nada que ver aquí.</title>
+
+<meta property="og:title" content="no hay nada que ver aquí."/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"angularjs-service-rails-api"}">
+    <meta property="site:path_info" content=""/angularjs-service-rails-api"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/angularjs-service-rails-api">¡me encanta esto!</a>
+<small>
+  <small>
+    <small>
+      <span title='bébeme'>&lt;&lt; haga clic en mí 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/angularjs-service-rails-api</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2014-06-10</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Recientemente tuve que sumergirme en AngularJS en un sitio de Rails que estábamos construyendo para un cliente. Además del contenido de la página, el cliente tiene ciertas páginas que muestran titulares que enlazan a fuentes externas pero que se extraen en nuestro stack de Rails a través de una tarea rake que se ejecuta periódicamente. El sitio debe ser almacenado en caché intensamente a través del uso de una CDN, como <a href="http://aws.amazon.com/cloudfront/">CloudFront</a>, pero para mantener los titulares actualizados, utilizamos <a href="https://angularjs.org/">AngularJS</a> (porque el cliente estaba familiarizado con él, lo que facilitaba su mantenimiento) para consultar directamente el stack de rails sobre los últimos titulares.</p>
+
+<p>Esto requirió hacer las cosas de manera transversal, ya que el dominio del sitio apuntaría a CloudFront. No había escrito una API de Rails que devolviera JSONP ni un servicio de AngularJS antes, así que tuve que explorar un poco y esto es lo que funcionó para mí. <em>(También puedes <a href="https://gist.github.com/milesmatthias/fb88c9f066f1c3ab7fae">leer el gist</a>.)</em></p>
+
+<p><em>Nota: Si no estás familiarizado con JSONP, esto no tendrá mucho sentido. <a href="http://en.wikipedia.org/wiki/JSONP">Lee esto</a>.</em></p>
+
+<h2 id="angularjs-service">Servicio de AngularJS</h2>
+
+<p>AngularJS tiene el concepto de <a href="https://docs.angularjs.org/guide/services">servicios</a>, que son solo singletons que se pueden usar donde sea necesario. En nuestro caso, puedes pensar en nuestro servicio de titulares como el cliente de la API de titulares que envuelve nuestras llamadas JSONP en una sintaxis más simple y centralizada. AngularJS proporciona algunos servicios por defecto, pero puedes escribir los tuyos propios. De hecho, podríamos haber usado el servicio <a href="https://docs.angularjs.org/api/ngResource/service/$resource"><code>$resource</code> integrado</a> en lugar de escribir el nuestro, sin embargo, tuve algunos problemas para que JSONP funcionara y quería entender mejor los componentes de bajo nivel de AngularJS, así que escribí el mío:</p>
+
+<pre><code class="language-html+erb">angular.module('app')
+  .factory('HeadlineService', ['$http',
+    function($http) {
+      'use strict';
+
+      var BASE_URL = "&lt;%= [App.settings.api_base_url, '/services/headlines'].join %&gt;",
+          CALLBACK_STRING = "?callback=JSON_CALLBACK";
+
+      return {
+        getHeadlines: function(){
+          return $http.jsonp(BASE_URL + CALLBACK_STRING)
+        },
+        getHeadlineForId: function(id){
+          return $http.jsonp(BASE_URL + "/" + id + ".json" + CALLBACK_STRING)
+        }
+
+    }
+  ]);
+</code></pre>
+
+<p>El servicio anterior usa el servicio <a href="https://docs.angularjs.org/api/ng/service/$http"><code>$http</code> integrado</a>, que simplemente proporciona un wrapper AJAX, para hacer solicitudes a nuestro backend de rails para obtener titulares. Algunas cosas a tener en cuenta:</p>
+
+<ul>
+  <li><strong>Devuelve un objeto con 2 funciones: <code>getHeadlines</code> y <code>getHeadlineForId</code>.</strong> Luego podemos usar estas funciones como atajos para hablar con la API de Rails en nuestros controladores de AngularJS.</li>
+  <li><strong>Usa JSONP.</strong> Nota que estamos usando <code>$http.jsonp</code> y estamos pasando una cadena de consulta <code>?callback=JSON_CALLBACK</code>. AngularJS reemplaza la cadena <code>JSON_CALLBACK</code> con el nombre de una función de callback que crea para ti.</li>
+  <li><strong>Usa un dominio diferente.</strong> Bueno, eso se espera ya que estamos haciendo JSONP, pero lo logramos agregando una extensión <code>.erb</code> al archivo y usando lo que establezcamos para <code>App.settings.api_base_url</code> en la aplicación de Rails como el dominio con el que AngularJS debe hablar. Recuerda que esto es para eludir la capa de caché de la CDN para que nuestros titulares sean siempre los más recientes.</li>
+</ul>
+
+<h2 id="angularjs-controller">Controlador de AngularJS</h2>
+
+<p>Con nuestro <code>HeadlinesService</code> construido, ahora podemos usar las 2 funciones que devuelve en nuestra aplicación de AngularJS:</p>
+
+<div class="language-js highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">angular</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">module</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">app</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">controller</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">HeadlinesCtrl</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">$scope</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">HeadlineService</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">$scope</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">HeadlineService</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">use strict</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-5'>&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">HeadlineService</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getHeadlines</span><span style="color: #24292f;background-color: #f6f8fa">().</span><span style="color: #8250df">success</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">status</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">headers</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">$scope</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">headlines</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">HeadlineService</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getHeadlineForId</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #24292f;background-color: #f6f8fa">id</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">success</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">){

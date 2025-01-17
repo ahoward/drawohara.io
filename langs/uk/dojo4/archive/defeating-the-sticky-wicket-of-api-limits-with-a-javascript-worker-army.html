@@ -1,0 +1,325 @@
+``
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>тут нічого немає.</title>
+
+<meta property="og:title" content="тут нічого немає."/>
+<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army"}">
+    <meta property="site:path_info" content=""/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army"">
+
+  <base href='/langs/uk' />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/goto">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army">я ❤️ це!</a>
+<small>
+  <small>
+    <small>
+      <span title='випий мене'>&lt;&lt; натисніть мене 🐛 🫖 🧚</span>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2013-11-12</em>
+<br>
+<br>
+<div class="ro markdown">
+  <h2 id="tldr">TL;DR</h2>
+
+<p>коли у вас <em>дуже</em> багато роботи на сервері через обмеження API</p>
+
+<p>передайте частину роботи клієнтам для виконання - відправте результати назад до вашої бази даних</p>
+
+<h2 id="the-problem">проблема</h2>
+<p>минулого тижня я мав справу з (g-provider) обмеженнями API та надто великою кількістю запитів на геолокацію, що надходили з сервера(ів). Я трохи попрацював над цим, виконуючи речі на задньому плані з періодичними повторними спробами - ви знаєте: стандартні речі…</p>
+
+<p>API, про яке йдеться, обмежується за IP, і документація рекомендує скористатися цим, виконуючи більшість викликів API на стороні клієнта - у js.</p>
+
+<p>Тепер, у цьому конкретному випадку мені абсолютно <em>потрібно</em> було, щоб результати викликів API знаходилися на стороні сервера, тому я зупинився на цьому компромісному (у кількох сенсах) рішенні</p>
+
+<h2 id="the-solution">рішення</h2>
+<p>припустімо, що деякі клієнти готові витрачати свій процесорний час на заповнення даних, які їх цікавлять. Простими словами, змусіть деяких своїх клієнтів виконувати завдання з черги JavaScript, щоб підготувати насос, з якого вони хочуть пити.</p>
+
+<p>у моєму випадку певні вибрані інтерфейси (цікаві результатами цих робіт) виконують маленький iframe</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- вставте виконавця черги завдань на певні сторінки/перегляди/макети --&gt;</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #116329">&lt;iframe</span>&nbsp;<span style="color: #116329">height=</span><span style="color: #0a3069">"0"</span>&nbsp;<span style="color: #116329">width=</span><span style="color: #0a3069">"0"</span>&nbsp;<span style="color: #116329">style=</span><span style="color: #0a3069">"display:none;"</span>&nbsp;<span style="color: #116329">src=</span><span style="color: #0a3069">"/javascript_jobs/runner"</span><span style="color: #116329">&gt;&lt;/iframe&gt;</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>
+</div></code></div>
+
+<div class="language-erb highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #6e7781">&lt;!-- виконавець завдань --&gt;</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">javascript_include_tag</span>&nbsp;<span style="color: #0a3069">:jquery</span>&nbsp;<span style="color: #6e7781">%&gt;</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">javascript_include_tag</span>&nbsp;<span style="color: #0a3069">:jobs</span>&nbsp;<span style="color: #6e7781">%&gt;</span>
+</div><div class='code-line code-line-6'>
+</div><div class='code-line code-line-7'><span style="color: #116329">&lt;script&gt;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">complete</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">write</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">завершено </span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">id</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">write</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">&lt;br&gt;</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">setTimeout</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">start</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">},</span>&nbsp;<span style="color: #0550ae">1000</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-16'><span style="color: #116329">&lt;/script&gt;</span>
+</div><div class='code-line code-line-17'>
+</div><div class='code-line code-line-18'>
+</div></code></div>
+
+<p>JS, необхідний для взаємодії з чергою завдань, короткий і простий</p>
+
+<p>все, що він робить - це отримує завдання, виконує його та відправляє назад на сервер - дотримуючись як пропускної здатності, так і максимальної кількості завдань для виконання.</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">!</span><span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-3'><span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">count</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">max</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">256</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">throttle</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">1000</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">complete</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){};</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'><span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">get_next_job</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">success</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">response</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">response</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">data</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">][</span><span style="color: #0a3069">'</span><span style="color: #0a3069">job</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">count</span><span style="color: #0550ae">++</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-17'>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">run</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">count</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">max</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">setTimeout</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">get_next_job</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">throttle</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-25'>
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">ajax</span><span style="color: #24292f;background-color: #f6f8fa">({</span>
+</div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">url</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">/api/jobs/next</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">type</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">GET</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">cache</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">success</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">success</span>
+</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-33'>
+</div><div class='code-line code-line-34'><span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-35'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">run</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">callback</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">code</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">code</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">result</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">undefined</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-38'>
+</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">callback</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">callback</span>&nbsp;<span style="color: #0550ae">||</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){};</span>
+</div><div class='code-line code-line-40'>
+</div><div class='code-line code-line-41'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">code</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-42'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">try</span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-44'>
+</div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">result</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">eval</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">code</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-46'>
+</div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">})()</span>
+</div><div class='code-line code-line-48'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">catch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+</div><div class='code-line code-line-49'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-50'>
+</div><div class='code-line code-line-51'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">/api/jobs/:id</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">replace</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #116329">/:id/</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">id</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">]);</span>
+</div><div class='code-line code-line-52'>
+</div><div class='code-line code-line-53'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">data</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">'</span><span style="color: #0a3069">job</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-54'>
+</div><div class='code-line code-line-55'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">success</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">response</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-56'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">response</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">data</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">][</span><span style="color: #0a3069">'</span><span style="color: #0a3069">job</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+</div><div class='code-line code-line-57'>
+</div><div class='code-line code-line-58'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">try</span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-59'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">complete</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-60'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">catch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">){};</span>
+</div><div class='code-line code-line-61'>
+</div><div class='code-line code-line-62'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">try</span><span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-63'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">callback</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-64'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">catch</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">e</span><span style="color: #24292f;background-color: #f6f8fa">){};</span>
+</div><div class='code-line code-line-65'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-66'>
+</div><div class='code-line code-line-67'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">ajax</span><span style="color: #24292f;background-color: #f6f8fa">({</span>
+</div><div class='code-line code-line-68'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">url</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-69'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">type</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">PUT</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-70'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">cache</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0550ae">false</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-71'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">data</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">'</span><span style="color: #0a3069">job</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">job</span><span style="color: #24292f;background-color: #f6f8fa">},</span>
+</div><div class='code-line code-line-72'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">dataType</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">json</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-73'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">success</span><span style="color: #0a3069">'</span>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">success</span>
+</div><div class='code-line code-line-74'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-75'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-76'>
+</div><div class='code-line code-line-77'><span style="color: #6e7781">//</span>
+</div><div class='code-line code-line-78'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">start</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">jobs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">get_next_job</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-79'><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-80'>
+</div><div class='code-line code-line-81'>
+</div></code></div>
+
+<p>Ця модель дозволяє нам передати завдання клієнту, і якщо він не відповість протягом певного часу, ми припускаємо, що інший клієнт може виконати це завдання.</p>
+
+<p>також відомо як. завдання вважаються і ідемпотентними, і безстановими.</p>
+
+<p>ось приклад завдання, що виконує геолокаційний пошук у браузері клієнта та відправляє його назад на сервер</p>
+
+<div class="language-erb highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>// виконує геолокаційний пошук на google maps api та відправляє його назад на сервер
+</div><div class='code-line code-line-3'>//
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781">&lt;%</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">address</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">raw_address</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">GGeocode</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">geocode_url_for</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:address</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">address</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">to_s</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #6e7781">%&gt;</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;var&nbsp;address&nbsp;=&nbsp;<span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">raw</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">address</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_json</span>&nbsp;<span style="color: #6e7781">%&gt;</span>;
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;var&nbsp;url&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">raw</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_json</span>&nbsp;<span style="color: #6e7781">%&gt;</span>;
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;var&nbsp;result;
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;jQuery.ajax({
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;'type'&nbsp;&nbsp;:&nbsp;'GET',
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;'url'&nbsp;&nbsp;&nbsp;:&nbsp;url,
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;'cache'&nbsp;:&nbsp;false,
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;'async'&nbsp;:&nbsp;false,
+</div><div class='code-line code-line-20'>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;'success'&nbsp;:&nbsp;function(data){
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;data;
+</div><div class='code-line code-line-23'>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jQuery.ajax({
+</div><div class='code-line code-line-25'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'type'&nbsp;&nbsp;:&nbsp;'POST',
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'url'&nbsp;&nbsp;&nbsp;:&nbsp;'/api/geo_locations',
+</div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'cache'&nbsp;:&nbsp;false,
+</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'async'&nbsp;:&nbsp;false,
+</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'data'&nbsp;&nbsp;:&nbsp;{'address'&nbsp;:&nbsp;address,&nbsp;'data'&nbsp;:&nbsp;data}
+</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})
+</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;}
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;});
+</div><div class='code-line code-line-33'>
+</div><div class='code-line code-line-34'>&nbsp;&nbsp;result;
+</div><div class='code-line code-line-35'>
+</div><div class='code-line code-line-36'>
+</div></code></div>
+
+<p>генерування цих завдань з сервера просте</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781"># використовуючи чудовий gem rails_view</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">code</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">View</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">render</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'javascript_jobs/job/geo_location.js.erb'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:locals</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">:location</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">})</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #953800">JavascriptJob</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">create</span>&nbsp;<span style="color: #0a3069">:code</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">code</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>
+</div></code></div>
+
+<p>тепер завдання знаходиться в черзі, і якийсь клієнт врешті-решт виконає роботу<br />
+на нашу користь.</p>
+
+<h2 id="the-result">результат</h2>
+
+<p>мені вдалося уникнути ліцензійного збору в розмірі 10 000 доларів і виконати багато запитів до API для насичення моїх даних за невелику ціну в складності та сплачуючи ціну евентуальної консистенції заздалегідь.</p>
+
+<h2 id="updates">оновлення</h2>
+
+<p>на боксі, обмеженому 2500 запитами/день, ось що відбувається за <em>1</em> день</p>
+
+<p><img src='/ro/dojo4/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army/assets/screen-shot-2013-11-13-at-8.12.05_PM.png' /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>inget att se här.</title>
+
+    <meta property="og:title" content="inget att se här."/>
+    <meta property="og:description" content="flytta på." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"you-should-learn-to-code"}">
+    <meta property="site:path_info" content=""/you-should-learn-to-code"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/you-should-learn-to-code">jag ❤️ det här!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/du-borde-lära-dig-att-koda</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2012-08-23</em>
+      <br>
+      <br>
+      <p class="font-size-small">(Det här inlägget är en anpassning av ett presentation jag höll nyligen på en lunchträff för <a title="http://boulder2140.com/" href="http://boulder2140.com/">Boulder Chamber of Commerce's 2140 grupp</a>
+      <span>.)</span>
+      <a title="http://boulder2140.com/" href="http://boulder2140.com/"></a>
+      </p>
+      <p>En proliferation av onlinekurser som lovar att lära dig hur man skriver datorkod har lockat några stora kändisnamn det här året. Men även om du inte är en <a href="http://mashable.com/2012/01/05/bloomberg-codecademy/">miljardärborgmästare</a> eller en <a href="#">kändis BBQ-såssmakare</a> (OK, jag ljuger totalt om den delen), bör du nog lära dig några kodningsfärdigheter. Nedan ger jag sex bra skäl till att försöka.</p>
+
+      <img src="http://farm4.staticflickr.com/3660/3345387692_909b4db4d6.jpg" alt="Open Pit Barbeque Sauce, 1970's by Roadsidepictures, on Flickr" class="imgRgt mll mbl" height="500" width="214" />
+
+      <p>Först, låt oss vara tydliga om terminologin:</p>
+
+      <ul>
+        <li> För det här inläggets skull menar jag samma sak när jag säger "kodare", "utvecklare", "hackare" eller "programmerare". Det är stort roligt att dela upp alla programskapare i något olika lag och sedan få dem att tävla mot varandra, men det är inte vad jag gör just nu. </li>
+        <li> När jag säger "koda", "utveckla", "hacka" eller "programmera" menar jag egentligen bara, "skapa kodade instruktioner som en dator kan tolka för att producera något resultat." Datorer är maskiner som implementerar logiska instruktioner. Kodare skriver instruktionerna i kod. </li>
+        <li> När jag säger "kodare skriver instruktionerna" menar jag att de använder ett tangentbord, inte en mus. Kodare drar & släpper inte kod. Kodare skriver dock <em>drag & drop</em> kod, ibland i drag.</li>
+      </ul>
+
+      <p>Nu när vi pratar om samma sak, här är sex skäl till att du bör lära dig att koda.</p>
+
+      <h2>SKÄL 1: Om du lär dig att koda kommer du att vara en bättre kommunikatör i framtiden.</h2>
+
+      <p>En höstdag år 2020 kommer du att känna dig lite kall trots den heltäckande silverfärgade stretchdräkten du har på dig. Så kommer du att säga något högt som, "Hej hus, höj temperaturen tre grader." Då kommer en dator att göra så att termostaten i ditt hus stiger tre grader. Men om du i stället hade sagt, "Jasså, det är kallt nog att frysa pälsen av en snöjäv", så skulle ditt hus definitivt göra som om det inte hörde dig.</p>
+
+      <p>Vi kommer snart att interagera med datorer med hjälp av en mängd olika inmatningsmetoder utöver mus och tangentbord, inklusive talet. Men i den nära framtiden när vi pratar med datorer kommer vi att behöva prata med dem på en dialekt de förstår, precis som vi pratar med barn och hundar och våra chefer med hjälp av speciella ordföråd. Och att lära sig att koda kommer att göra dig mycket mer flytande i den här dialekten.</p>
+
+      <img rel="450x450" alt="Cheddar Drone 03" title="Cheddar Drone 03" src='/ro/dojo4/you-should-learn-to-code/assets/cheddar-drone-03.jpg' class="imgRgt mll mtl mbl" height="299" width="399" />
+
+      <p>Låt dig inte oroa: En dag kommer också när datorer förstår delen om snöjävarna. Men vägen till den ljusa horisonten är pavlad med många galna missöden. Medan tiden går kommer att lära dig att tala och tänka som en dator kommer att ge dig makt och bekvämligheter som du bara drömmer om nu. Och i den avlägsna framtiden kommer det att göra det möjligt för dig att styra en cheddar-drönare bara med hjälp av dina tankar!</p>
+
+      <h2>SKÄL 2: Om du lär dig att koda kommer du att få nya, kul vänner!</h2>
+
+      <p>De flesta människorna på internet är inte kodare. Men om Facebook skulle drabbas av en förlamande fall av tyrotoxism eller något sådant och föll av internet, skulle de flesta kvarvarande människorna online vara kodare. Många skulle nog vara ganska nöjda, också.</p>
+
+      <p>I alla fall är en hel del av människorna på internet kodare och många av dem <a href="http://stackoverflow.com">tillbringar mycket tid med att hjälpa varandra</a> att lära sig saker. De är vanligtvis smarta och snälla. Och trots stereotyper i motsatt riktning är de flesta kodare också ganska hippa.</p>
+
+      <p>Du tror jag skämtar? Tänk dig en grupp människor som är så passionerade av sitt arbete att de gör det på helgerna också, och ger sedan resultatet av sina ansträngningar bort gratis till vem som helst i världen. De flesta kodare anser detta som standardprocedur. De gör det för att de älskar det och förväntas göra det av gemenskapen. Det är deras sätt att påverka historien. Som <a href="http://www.cddc.vt.edu/sionline/si/manifesto.html">konstnärer</a>.</p>
+
+      <p>Nu, tänk dig att du försöker lära dig att koda och du stöter på ett problem. Om du flitigt försöker lösa det genom att läsa och experimentera och du fortfarande inte kan lösa det, och sedan frågar om hjälp i en online forum för kodare, kommer du nästan alltid att få ett vänligt, hjälpsamt och rent av generöst svar från någon du aldrig har träffat och vars tid är värd mycket pengar. Om du deltar och bidrar till gemenskapen kan du till och med bli vän med eller bli en sådan person. Du ansluter dig då till ett globalt sällskap av kodare och kommer till slut att få en diskret, mystisk bok med riter via post.</p>
+
+      <img class="imgRgt mll mtl mbl" src="http://farm7.staticflickr.com/6039/6341791720_95796c2a53.jpg" alt="lämna området lämna området av dno1967b, på Flickr" height="333" width="500" />
+
+      <p>På den andra sidan, om du inte försöker lösa dina kodproblem själv och i stället omedelbart frågar efter hjälp, kommer du att bli rundligt retad. Ungefär som om du frågade en massa konstnärer hur man använder en sprayburk. Konstnärerna skulle skratta åt och säga, "RTFC, man!", som är en förkortning för "<a href="http://en.wikipedia.org/wiki/RTFM">läs den jävla behållaren</a>".</p>
+
+      <h2>SKÄL 3: Äventyr, förmögenhet och frihet väntar på dig!</h2>
+
+      <p>Det finns ingen tvekan om att programmering av datorer är en lönsam sysselsättning för många som är bra på det och även för många som inte är det. Enligt den här skrivningen kan en senior Ruby on Rails-kodare tjäna ungefär femtusen dollar per timme. Så om du gillar pengar eller de saker pengar kan köpa bör du kanske få ett jobb som kodare.</p>
+
+      <p>På den andra sidan kanske du inte bryr dig om pengar, i så fall skulle du <a href="https://inspirepay.com/pay/justincrawford/4.50">köpa mig en öl</a>? Tack. </p>
+
+      <p>Den länk du nyss klickade på leder till InspirePay, en betalningsstartup grundad av Mark Fischer. Mark tar inget för tjänsten -- så, eftersom du betalar, skulle du säga <a href="https://inspirepay.com/pay/mark/4.50">neja till en pint åt honom också</a>? </p>
+
+      <p>Som många mjukvaruentreprenörer verkar Mark drivas av äventyret i sig. Världen är packad en engelsk mil djup med problem som mjukvara kan lösa men som inte redan är lösta. Dessa problem kommer att uppta mjukvaruinnovatörer i decennier framöver. Entreprenörer som Mark är som tidiga pionjärer som korsar den höga prärien, som legendariska boskapsskötare på högöknen, som de första guldbrytarna i Sierras. De ser äventyrets löfte och de accepterar. De går först.</p>
+
+      <p>Att lära sig att koda ger dig en skinande verktygslåda att bära in i den här nya stora gränsen, en gräns där du kommer att hitta otaliga möjligheter att göra en förmögenhet och ta vilda risker. Låter spännande, eller hur? Jag dricker på det.</p>
+
+      <h2>SKÄL 4: Om du lär dig att koda kan du döda många flugor med en sten. Mer än två flugor i alla fall.</h2>
+
+      <p>Jag har en vän som driver en mjukvarutvecklingsfirma liknande dojo4, med den skillnaden att hans företag arbetar främst med programmeringsspråket PHP istället för Ruby. Han uttalar inte PHP som "fup", men jag gör det.</p>
+
+      <p>De flesta mjukvarutvecklingsfirmor får många förfrågningar, och en bråkdel av dessa förfrågningar blir servicekontrakt. På vägen producerar en firma ofta ett förslag som beskriver det arbete som avses. Det är en utmaning: Förslagsskrivande är repetitivt, tidskrävande och ofta fruktlöst.</p>
+
+      <p>Så min vän vill automatisera sin ideala förslagsgenereringsprocess med en webbapplikation. Han hackar på den på kvällar och helger med hjälp av <a href="http://laravel.com/">laravel-ramverket</a>. Många tekniktjänsteföretag gör <a href="http://usestacks.com/">sådant här</a>; <a href="http://www.freshbooks.com/about.php?header_about=1">några gör till och med affärer av det</a>.</p>
+
+      <p>När han är klar kommer min vän att ha:</p>
+
+      <ul>
+        <li>Ett verktyg som tillfredsställer hans eget affärsbehov, gör hans försäljningsprocess mer effektiv och rolig.</li>
+        <li> En mjukvaruprodukt som han kan antingen ge bort för att generera god vilja, eller sälja för att generera intäkter, eller båda.</li>
+        <li>Startupplevnad (som är den bästa sorten) med ett nytt kodramverk (laravel) som han A) letat efter en ursäkt att arbeta med och B) skulle vilja erbjuda som en tjänst till sina kunder.</li>
+      </ul>
+
+      <img class="imgRgt mll mtl mbl" src="http://farm3.staticflickr.com/2288/1816927058_2a822acc25.jpg" alt="Stor Skrämmande Fågel av anna_debenham, på Flickr" height="375" width="500" />
+
+      <p>Det är minst tre döda flugor; det kan vara fler beroende på hur du räknar. Så om du hatar flugor eller något så, nu är din chans att göra något åt det.</p>
+
+      <h2>SKÄL 5: Du har allt du behöver för att börja koda.</h2>
+
+      <p>Programmering av datorer är en svår sysselsättning, ingen tvekan om det. Men det kräver inte mer intelligens än att vara en aktuarie eller advokat. Det är troligtvis mindre stressigt än att vara en sjukvårdsbiträde eller börsmäklare. Och det innefattar i princip noll stora rovdjur, till skillnad från djurskötare. Kodning är matematisk och konceptuell, abstrakt och mycket dynamisk, och den är inte för alla. Men se, du är redan på SKÄL #5 av en lång och irriterande sex-skäls-blogginlägg. Du har tydligen den viktigaste egenskapen hos en bra kodare: <del>snabbläsning</del> <del>fokus</del> <del>tålamod</del> intresse.</p>
+
+      <p>Läser du det här på en dator som ibland är ansluten till internet? Om inte -- om du läser det här i tryck -- skulle jag vilja tacka dig. Jag har alltid velat bli publicerad på papper. Det är verkligen, som, <em>brännbart</em>, du vet? Vill du vara snäll och tända på ett hörn av det nu? Ja, baby. </p>
+
+      <p>Nu, om du verkligen är intresserad av kodning och du har en dator som ibland är ansluten till internet, har du allt som de flesta människor som kodar någonsin hade när de började. De flesta av dem hade ingen datavetenskaplig utbildning. Många av dem hade inte ens någon högskoleexamen eller gymnasieexamen. Alla bra kodare är självlärda i någon mån. Med din dator och ditt intresse kan du göra precis vad de gör:</p>
+
+      <ul>
+        <li><a title="http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/" href="http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/">Bygg en utvecklingsmiljö</a> -- en sandlåda där du kan kasta runt datorkod utan att skada andra saker på din dator som du bryr dig om. Till exempel skulle du inte vilja skada de suddiga bilderna av enchiladas du tog under den resan till Tucson.</li>
+        <li>Försök göra något enkelt i kod, börja från en handledning online eller från en galen vision i ditt huvud. </li>
+        <li>Gör många misstag på vägen, men vem bryr sig? Du är i sandlådan!</li>
+        <li>Läs mycket dokumentation online.</li>
+        <li>Kanske ställ några frågor online, förklara att du redan läst dokumentationen.</li>
+        <li>Upprepa dessa steg en stund, och gör det igen varje gång du vill lära dig något nytt.</li>
+      </ul>
+
+      <p>Allvarligt, du kan lära dig att koda oavsett vem du är. Alla börjar någonstans.</p>
+
+      <h2>SKÄL 6: Världen behöver fler människor som förstår, bryr sig om och kan göra saker med de råmaterial som vår tappra nya samhälle består av.</h2>
+
+      <p>Detta kan inte överdrivas: Mänskligheten har upplevt bara några få inflexionspunkter så viktiga som den som gör det möjligt för mig att säga det här till dig just nu. Oavsett hur du känner inför media, smarttelefoner, bloggar, Facebook, internet eller datorer, måste du förstå att de radikalt och snabbt förändrar kulturen och samhället i alla riktningar samtidigt. <em>Dina finansiella transaktioner och fotbollsresultaten och din exakta position på jorden, bilder på ditt barn och hängivna kommentarer från dess mormor, ditt jobb och dina vänner och dina hemligheter, ditt sista samtal med någon du älskar, livsmedel på butikshyllor, missiler i sina silos, trafikljusen och bilar som väntar vid dem och människorna som sitter i bilarna och nyheterna i bilradion -- allt det och mer varje dag är anslutet och styrs genom ett informationsnätverk som människor skapat med <strong>kod</strong>.</em></p>
+
+      <p>När den kom ut gjorde tryckpressen skriven material mycket mer tillgängligt för många fler människor. Ändå lärde sig inte alla omedelbart att läsa och skriva. De människor som lärde sig att läsa och skriva är de som du och jag härstammar från. De deltog fullt ut i den nya värld som tryckpressen gjorde möjlig. De kontrollerade ekonomisk aktivitet. De gjorde regeringen och dess lagar. De skrev historierna. De spred världens religioner. De ägde en del av kulturen, och de kämpade för sin del.</p>
+
+      <p>De som inte lärde sig att läsa och skriva? De flesta av dem levde bra nog, precis som de flesta människor alltid har gjort. Men en värld av rikedom och förmåga undvek dem. Fantastiska romaner, eldiga pamfletter, lagar och heliga böcker: Allt var bara mystiska symboler för de oläskunniga. Precis som kod är för så många människor nu.</p>
+
+      <img class="imgRgt mll mtl mbl" src="http://farm5.staticflickr.com/4008/4298887640_beb8678204.jpg" alt="Gå till det! av drbexl, på Flickr" height="286" width="206" />
+
+      <p>Idag är för många smarta människor rädda för eller ignorerar kod, och avfärdar sin likgiltighet som acceptabel och normal. Men kod håller mat på våra hyllor. Kod berättar för oss allt vi vet om världshändelser. Kod gör miraklet i din ficka (ursäkta killar, jag menade smarttelefonen) möjligt. Kod möjliggör den oförbehållsamma personliga uttrycksfriheten vi kallar en rättighet. Kod är vapnet som kommer att vinna framtidens krig. Kod är mediet för framtidens konstverk. Kod är ledningen för frihet.</p>
+
+      <p>Nu, eftersom du läst så långt, har du uppenbarligen mycket tid. Så kom igen -- varför inte göra lite kod? Här är några platser att börja:</p>
+
+      <ul>
+        <li><a href="http://tryruby.org">Prova Ruby</a>
+        </li>
+        <li><a href="http://www.codecademy.com/">Codecademy</a>
+        </li>
+        <li><a href="http://www.khanacademy.org/cs/tutorials/programming-basics">Khan Academy</a>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/you-should-learn-to-code">😩, jag 🖤 ^det här!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/om<a>
+          </li>
+          <li>
+            <a href="/contact">/kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

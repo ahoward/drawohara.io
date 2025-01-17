@@ -1,0 +1,259 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <base href="/langs/nl" />
+
+  <!-- meta -->
+    <title>niets te zien hier.</title>
+
+<meta property="og:title" content="niets te zien hier."/>
+<meta property="og:description" content="ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"}">
+    <meta property="site:path_info" content=""/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">ik ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik hier 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2013-02-21</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>ref: https://github.com/ahoward/sekrets</p>
+
+<pre>
+
+NAAM
+  sekrets.rb
+
+SYNOPSIS
+  sekrets is een opdrachtregeltool en bibliotheek die wordt gebruikt om versleutelde
+  bestanden en instellingen in uw rails-toepassingen en git-repositories veilig te beheren.
+
+INSTALLATIE
+  gem install sekrets
+  gem 'sekrets'
+
+BESCHRIJVING
+  TL;DR
+    # maak een versleuteld configuratiebestand
+
+      ruby -r yaml -e'puts({:api_key =&gt; 1234}.to_yaml)' | sekrets write config/settings.yml.enc --key 42
+
+    # toon het
+
+      sekrets read config/settings.yml.enc --key 42
+
+    # bewerk het
+
+      sekrets edit config/settings.yml.enc --key 42
+
+    # zie dat het versleuteld is
+
+      cat config/settings.yml.enc
+
+    # commit het
+
+      git add config/settings.yml.enc
+
+    # zet de decryptiesleutel in een bestand
+
+      echo 42 &gt; .sekrets.key
+
+    # negeer dit bestand in git
+
+      echo .sekrets.key &gt;&gt; .gitgnore
+
+    # je hoeft nu niet langer het --key-argument aan opdrachten te geven
+
+      sekrets read config/settings.yml.enc
+
+      sekrets edit config/settings.yml.enc
+
+    # zorg ervoor dat dit bestand op uw server wordt geïmplementeerd
+
+      echo " require 'sekrets/capistrano' " &gt;&gt; Capfile
+
+    # commit en implementeer
+
+      git add config/settings.yml.enc
+      git commit -am'versleutelde instellingen yo'
+      git pull &amp;&amp; git push &amp;&amp; cap staging deploy
+
+    # toegang tot deze instellingen in uw toepassingscode
+
+      settings = Sekrets.settings_for('./config/settings.yml.enc')
+
+
+  BESCHRIJVING
+    sekrets biedt opdrachtregeltools en een bibliotheek om versleutelde bestanden in uw codebase te beheren en toegang te krijgen.
+
+    het stelt u in staat om versleutelde informatie in een repository te controleren en deze te beheren naast de rest van de codebase. het elimineert de behoefte om onversleutelde informatie, sleutels of andere gevoelige informatie in te checken.
+
+    sekrets biedt zowel een algemeen mechanisme voor het beheren van willekeurige versleutelde
+    bestanden als een specifiek mechanisme voor het beheren van versleutelde configuratiebestanden.
+
+
+  SLEUTELZOEKEN
+    voor *alle* operaties, vanaf de opdrachtregel of anderszins, gebruikt sekrets het
+    volgende algoritme om te zoeken naar een decryptiesleutel:
+
+    - elke sleutel die direct als parameter wordt doorgegeven aan een bibliotheekaanroep wordt voorkeur gegeven
+
+    - anders zoekt de code naar een begeleidende sleutelbestand. bijvoorbeeld, gegeven het
+      bestand 'config/sekrets.yml.enc' zal sekrets naar een sleutel kijken op
+
+        config/.sekrets.yml.enc.key
+
+      als een van deze wordt gevonden als niet-leeg, wordt de inhoud van het bestand gebruikt als de decryptiesleutel voor dat bestand. je zou *nooit* deze sleutelbestanden moeten committen en ze ook toevoegen aan je .gitignore - of gelijkaardig.
+
+    - daarna wordt er gezocht naar een project-sleutelbestand. het pad van dit bestand is
+
+        ./.sekrets.key
+
+      normaal en, in een rails-toepassing
+
+        RAILS_ROOT/.sekrets.key
+
+    - als dat niet wordt gevonden, zoekt sekrets naar de sleutel in de omgeving onder
+      de omgevingsvariabele
+
+        SEKRETS_KEY
+
+      de gebruikte omgevingsvariabele is configureerbaar in de bibliotheek
+
+    - daarna wordt naar het globale sleutelbestand gezocht, het pad van dit bestand is
+
+        ~/.sekrets.key
+
+    - ten slotte, als er nog geen sleutel is gespecificeerd of gevonden, wordt de gebruiker gevraagd
+      de sleutel in te voeren. prompt treedt alleen op als de gebruiker is verbonden met een tty.
+      dus, bijvoorbeeld, geen prompt zal hangen en een toepassing die op de achtergrond wordt gestart
+      zoals een rails-toepassing die wordt beheerd door passenger.
+
+    zie Sekrets.key_for voor meer details
+
+  SLEUTELDISTRIBUTIE
+    sekrets probeert *niet* het sleuteldistributieprobleem voor u op te lossen,
+    met één uitzondering:
+
+    als je capistrano gebruikt om een 'vanilla' ssh-gebaseerde implementatie te doen, wordt een eenvoudig
+    recept aanboden dat een lokaal sleutelbestand detecteert en het op de
+    externe server(s) scpt bij implementatie.
+
+    sekrets neemt aan dat het lokale sleutelbestand, als het bestaat, correct is.
+
+    in het gewone engels zegt het capistrano-recept:
+
+      scp ./sekrets.key deploy@remote.host.com:/rails_root/current/sekrets.key
+
+    het gaat zonder meer dat het lokale sleutelbestand *nooit* gecontroleerd moet worden
+    en dat het ook in .gitignore moet staan
+
+    distributie van deze sleutel onder ontwikkelaars valt buiten het bereik van de
+    bibliotheek. waarschijnlijk is onversleutelde e-mail de beste mechanism voor distributie
+    ;-/
+
+</pre>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">😩, ik 🖤 ^dit!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/over<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; uitgaan</a>
+    </footer>
+  </body>
+</html>

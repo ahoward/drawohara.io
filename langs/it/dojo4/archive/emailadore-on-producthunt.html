@@ -1,0 +1,171 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/langs/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niente da vedere qui.</title>
+
+    <meta property="og:title" content="niente da vedere qui."/>
+    <meta property="og:description" content="continua." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"emailadore-on-producthunt"}">
+    <meta property="site:path_info" content=""/emailadore-on-producthunt"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/emailadore-on-producthunt">io ❤️ questo!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bevimi'>&lt;&lt; clicca qui 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/emailadore-on-producthunt</strong>
+    </header>
+
+    <main>
+      <em>pubblicato il: 2014-11-18</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Emailadore: È adorabile, <em>e</em> utile.</p>
+
+        <p>Di recente abbiamo pubblicato uno dei nostri strumenti interni, <a href="http://emailadore.com">Emailadore</a>, su <a href="http://www.producthunt.com/posts/emailadore">ProductHunt</a>. Ha ottenuto alcuni voti positivi e ~500 visitatori in 2 giorni. Fantastico!</p>
+
+        <p>Un feedback che abbiamo ricevuto è stato che la pagina di destinazione non offriva molte informazioni sul perché è utile. Sì, è quello che ottieni quando è uno strumento interno! Aggiorniamo la pagina di destinazione a un certo punto con qualche <del>spiegazione migliore</del> unicorni danzanti, ma nel frattempo, ecco una breve descrizione del perché lo troviamo utile e alcuni casi d'uso.</p>
+
+        <p>I sistemi di ticketing sono molto utili per avere un unico posto dove tutti nell'organizzazione possono vedere le attività passate, correnti e future sui progetti. Se non è registrato in un ticket, non è successo.</p>
+
+        <p>Tuttavia, non tutti sono a proprio agio nell'utilizzare un sistema di ticketing per comunicare, o semplicemente se ne dimenticano. I clienti ci invieranno un'email direttamente invece di utilizzare il sistema di ticketing e vorremmo registrare quella conversazione nel ticket. O invieremo un'email a un potenziale cliente prima che abbiano ticket nel nostro sistema, e quando iniziamo a creare ticket per loro, vorremmo avere la cronologia della nostra conversazione email nel ticket. La maggior parte dei sistemi di ticketing ti consente di inoltrare una conversazione email al sistema di ticketing per creare un nuovo ticket, ma cosa succede se vuoi aggiungere la conversazione email a un ticket esistente?</p>
+
+        <p>Prima cliccavamo su "Stampa" in una conversazione email e invece di selezionare una stampante, sceglievamo "Salva in PDF", il che scaricava una rappresentazione PDF della conversazione email che potevamo poi allegare al ticket. Era una soluzione scomoda, quindi abbiamo cercato di pensare a un modo migliore.</p>
+
+        <p>Così abbiamo creato <a href="http://emailadore.com">Emailadore</a>. Invece di stampare la conversazione email in PDF e poi caricare un allegato di file, inoltriamo semplicemente l'email a email [at] emailadore [dot] com, e emailadore ci invia un'email con un link diretto all'email ricevuta.</p>
+
+        <p>Ora invece di caricare PDF di email nei ticket, inseriamo semplicemente l'URL dell'email in un ticket. Ecco uno screenshot di un ticket in cui invece di caricare un file della conversazione email, abbiamo semplicemente incollato un link per fare riferimento al thread email:</p>
+
+        <p><img src='/ro/dojo4/emailadore-on-producthunt/assets/b.png' alt="L85BF.png" /></p>
+
+        <p>FAQ:</p>
+
+        <ul>
+          <li>Perché non mettere in CC qualcuno in un'email per mostrargli il thread dell'email?</li>
+        </ul>
+
+        <p>Il nostro team non ha accesso alla tua casella di posta - condividiamo tutti il nostro sistema di ticketing come posto centralizzato di registrazione. Inoltre, l'email viene utilizzata come posto per archiviare le cose, ma non è davvero quello per cui è progettata. Hai mai provato a cercare un'email specifica tra le centinaia di migliaia di email nella tua casella di posta? Sì, fa schifo.</p>
+
+        <ul>
+          <li>E gli allegati?</li>
+        </ul>
+
+        <p>Ci saranno anche loro!</p>
+
+        <ul>
+          <li>Devo registrarmi?</li>
+        </ul>
+
+        <p>Solo se lo desideri. L'email che ricevi da Emailadore non solo fornisce l'URL della tua email, ma ti dà istruzioni per creare un account utente. Vorrai farlo se desideri elencare tutte le email che hai mai inoltrato a emailadore per riferimento.</p>
+
+        <ul>
+          <li>Le mie email verranno eliminate?</li>
+        </ul>
+
+        <p>No - sono archiviate in sicurezza su uno dei nostri server di produzione. Se mai decidessimo di interrompere il servizio, ci assicureremo di dare a tutti un ampio preavviso, insieme a una strategia di migrazione.</p>
+
+        <ul>
+          <li>È gratuito?</li>
+        </ul>
+
+        <p>Sì! Al momento non abbiamo piani per monetizzare Emailadore, ma ti daremo un ampio preavviso se lo faremo in futuro. Al momento, abbiamo semplicemente pensato che è uno strumento interno fantastico che usiamo frequentemente, quindi tutti gli altri potrebbero volerlo usare anche!</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; vai a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/emailadore-on-producthunt">😩, io 🖤 ^questo!<a>
+          </li>
+          <li>
+            <a href="/now">/ora<a>
+          </li>
+          <li>
+            <a href="/about">/chi-siamo<a>
+          </li>
+          <li>
+            <a href="/contact">/contatti<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

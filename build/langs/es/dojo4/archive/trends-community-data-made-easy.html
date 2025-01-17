@@ -1,0 +1,131 @@
+<html color-mode="user" lang="es">
+  <head>
+  <base href='/langs/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+<meta property="og:title" content="nada que ver aquí."/>
+<meta property="og:description" content="siga adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"trends-community-data-made-easy"}">
+    <meta property="site:path_info" content=""/trends-community-data-made-easy"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/trends-community-data-made-easy">¡me encanta esto!</a>
+<small>
+  <small>
+    <small>
+      <span title='bébelo'>&lt;&lt; haz clic aquí 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/datos-comunitarios-facilitados</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2016-10-12</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/trends-community-data-made-easy/assets/b.png' alt="Captura de pantalla 2016-10-12 a las 11.44.54 AM.png" /></p>
+
+<p>El informe anual <em><a href="http://www.commfound.org/">Community Foundation Boulder County</a></em> <a href="http://trends.commfound.org/"><em>Trends</em></a> proporciona “un conjunto común de datos medibles para ayudar a mejorar la calidad de vida en la comunidad.” Y <a href="http://dojo4.com/work/code-for-america">Code for America</a> recientemente se asoció con la Fundación para hacer que estos datos comunitarios sean más accesibles. La asociación, llamada <a href="https://github.com/CodeForBoulder/trends-online">Code for Boulder</a>, invitó a dojo4 a participar. Después de una sesión de ideación comunitaria utilizada para descubrir los posibles métodos que podrían utilizarse para exponer el valioso contenido de datos en el informe <a href="http://trends.commfound.org/"><em>Trends</em></a>, dojo4 trabajó con la asociación para implementar un micrositio independiente y totalmente adaptable que la Community Foundation pudiera mantener fácilmente. El sitio web principal de la Community Foundation estaba siendo rediseñado por <a href="https://www.vermilion.com/">Vermillion Design</a>, por lo que dojo4 destiló los patrones de diseño de sus maquetas de escritorio.</p>
+
+<p>Comenzamos nuestro trabajo construyendo un sitio estático "temporal" para determinar qué piezas de contenido necesitarían actualizarse regularmente y qué partes eran más permanentes. En última instancia, esto hizo que el trabajo de integrar el backend administrativo del sitio fuera mucho más rápido.</p>
+
+<p>Inicialmente, no estábamos seguros de cómo se actualizaría el sitio: 1) usando nuestro generador de sitios estáticos favorito <a href="https://middlemanapp.com/">Middleman</a> o 2) usando nuestro CMS basado en rails de desarrollo propio. Pero dado que era una condición del proyecto que el sitio fuera fácilmente actualizado por voluntarios de Code for Boulder, elegimos una opción que priorizara la mantenibilidad por un personal rotatorio, de corta duración y con diversas habilidades técnicas. Elegimos una nueva herramienta CMS llamada <a href="https://www.datocms.com/">DatoCMS</a>, “un área administrativa totalmente personalizable para sitios web estáticos”. De hecho, <a href="https://github.com/stefanoverna">Stefano Verna</a>, fundador de Dato, se puso en contacto con nosotros y nos explicó lo sencillo que era integrar DatoCMS y, lo que es más importante, lo fácil que era para los usuarios no técnicos administrarlo. Fue un momento perfecto y todos pueden interactuar más efectivamente con el recurso web que informa sobre los indicadores clave de la calidad de vida en la comunidad de Boulder.</p>
+
+<p><em>Escrito con <a href="http://dojo4.com/team/steve-bailey">Steve Bailey</a>, quien hizo la mayor parte del trabajo en este proyecto.</em></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/trends-community-data-made-easy">😩, i 🖤 ^esto!<a>
+  </li>
+  <li>
+    <a href="/ahora">/ahora<a>
+  </li>
+  <li>
+    <a href="/sobre">/sobre<a>
+  </li>
+  <li>
+    <a href="/contacto">/contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

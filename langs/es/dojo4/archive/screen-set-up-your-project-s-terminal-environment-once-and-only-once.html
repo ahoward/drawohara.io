@@ -1,0 +1,162 @@
+<html color-mode="user" lang="es">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+<meta property="og:title" content="nada que ver aquí."/>
+<meta property="og:description" content="sigue adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"configura-el-entorno-de-terminal-de-tu-proyecto-una-sola-vez"}">
+    <meta property="site:path_info" content=""/configura-el-entorno-de-terminal-de-tu-proyecto-una-sola-vez"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+
+    <base href='/langs/es' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/configura-el-entorno-de-terminal-de-tu-proyecto-una-sola-vez">i ❤️  esto!</a>
+<small>
+  <small>
+    <small>
+      <span title='bebeme'>&lt;&lt; haz clic en mí 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/configura-el-entorno-de-terminal-de-tu-proyecto-una-sola-vez</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2013-11-01</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Con cualquier proyecto, estoy ejecutando varios programas al mismo tiempo durante el proceso de desarrollo. Esto generalmente resulta en varias pestañas en la aplicación Terminal: una para mi servidor local, una para mi base de datos, una para mi aplicación cliente y una para git. (Actualmente uso un editor GUI (ST2), pero es posible que vuelva a usar vim pronto...) Esta configuración de múltiples pestañas se repite para cada proyecto en el que estoy trabajando, y generalmente cambio entre múltiples proyectos varias veces al día.</p>
+
+<p>Con esta configuración de múltiples pestañas, cuando tengo que cambiar el proyecto en el que estoy trabajando, tengo que abrir una nueva ventana de Terminal con sus propias pestañas para ese proyecto y lidiar con tener más ventanas abiertas de las necesarias (no es una opción para un minimalista como yo) o cerrar todas las pestañas que tengo abiertas, solo para volver a abrirlas todas cuando vuelva a cambiar a ese proyecto.</p>
+
+<p>Bueno, como la mayoría de los días, aprendí una solución inteligente a este problema del sabio y todopoderoso líder de dojo4, <a href="http://dojo4.com/team/ara-t-howard">Ara</a>. Él usa el programa GNU <a href="https://www.gnu.org/software/screen/">Screen</a>. Dentro de una sola pestaña de Terminal, Screen te permite abrir múltiples "ventanas" (es decir, pestañas) dentro de la misma pestaña de Terminal. Aquí tienes cómo usarlo:</p>
+
+<pre><code class="language-text"># creando y reanudando una sesión
+screen -S [nombre] = crea una pantalla con nombre
+screen -D -R [nombre] = reanuda una pantalla con nombre y desconecta a otras personas si es necesario
+screen -list = lista de pantallas
+
+# (salir de todas las ventanas en una sesión de pantalla saldrá de esa sesión. Sin embargo, una sesión de pantalla es un proceso en ejecución, por lo que puedes matarlo manualmente.)
+
+# dentro de una sesión de pantalla:
+ctrl-A + ? = ayuda
+ctrl-A + " = lista de ventanas
+ctrl-A + c = crear nueva ventana
+ctrl-A + n = siguiente ventana
+ctrl-A + p = ventana anterior
+ctrl-A + A = renombrar una ventana
+
+# alias que usamos
+alias sl='screen -list '
+alias sdr='screen -d -r '
+alias s='screen -D -R '
+alias ss='screen -S'
+
+sdr [nombre] = reanuda una pantalla con nombre y desconecta a otras personas si es necesario
+ss [nombre] = crea una pantalla con nombre
+sl = lista de pantallas
+</code></pre>
+
+<p>Otra característica realmente genial de screen es que cuando te desconectas de una sesión de pantalla, todas tus ventanas siguen funcionando, y cuando vuelves a conectarte a la sesión de pantalla, tienes todas tus ventanas a tu disposición nuevamente.</p>
+
+<p>Cuando discutimos esto en nuestra oficina, <a href="http://dojo4.com/team/ryan-cook">Ryan Cook</a> creó un <a href="https://gist.github.com/cookrn/2711966">pequeño ayudante de Ruby</a> para crear sesiones de pantalla que se llaman como tu directorio actual.</p>
+
+<p>Entonces, mi flujo de trabajo ha cambiado de tener múltiples pestañas en Terminal abiertas a una sola pestaña en Terminal donde me vuelvo a conectar a una sesión de pantalla para cada proyecto en el que estoy trabajando. Eso me permite cambiar de proyecto extremadamente rápido y dejar de perder tiempo volviendo a configurar y desmontar todas las pestañas de Terminal que estoy usando para un proyecto.</p>
+
+<p>Ahora solo tengo que convertir más cosas al uso de la terminal (como mi editor) para realmente aprovechar al máximo screen...</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/configura-el-entorno-de-terminal-de-tu-proyecto-una-sola-vez">😩, i 🖤 ^esto!<a>
+  </li>
+  <li>
+    <a href="/now">/ahora<a>
+  </li>
+  <li>
+    <a href="/about">/sobre<a>
+  </li>
+  <li>
+    <a href="/contact">/contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

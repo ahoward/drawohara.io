@@ -1,0 +1,240 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niets om te zien.</title>
+
+    <meta property="og:title" content="niets om te zien."/>
+    <meta property="og:description" content="ga verder." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archief/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"slechte-developers-vrees-mongo-en-aanbidt-de-rdbms"}">
+    <meta property="site:path_info" content=""/slechte-developers-vrees-mongo-en-aanbidt-de-rdbms"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/slechte-developers-vrees-mongo-en-aanbidt-de-rdbms">ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/slechte-developers-vrees-mongo-en-aanbidt-de-rdbms</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2015-04-22</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <h3 id="tl-dr">TL; DR;</h3>
+
+        <blockquote>
+          <p>99,9% van de webdevelopersgeloof dat het correct gebruik van een RDBMS, samen met transacties, hun toepassingen beschermt tegen slechte data en ernstige datafouten. Ze hebben <em>SCHRIJNEND</em> <em>ONGERECHT</em>.</p>
+        </blockquote>
+
+        <p>Ik las met grote belangstelling het uitstekende artikel van <a href="https://github.com/aphyr">Kyle Kingsbury</a> over het consistentiemodel van Mongo op <a href="https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads">https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads</a></p>
+
+        <p>Dit is duidelijk een zeer scherpzinnige man die zijn ding kent. Hij doet het werk en alles aan dit artikel is inzichtelijk en goed samengesteld.</p>
+
+        <p>Wat ik echter verbazingwekkend vond, waren de reacties en wat ze vertellen over de gemiddelde professionele ontwikkelaar:</p>
+
+        <blockquote>
+          <p>Ontwikkelaars denken dat het gebruik van een RDBMS hun data veilig maakt en ze hebben <em>volkomen ongelijk</em></p>
+        </blockquote>
+
+        <p>Ik kan je niet vertellen hoe vaak ik in discussie ben gegaan met 'professionele' ontwikkelaars en vooral domme systeembeheerders die echt geloven dat, door eenvoudigweg het woord RDBMS te zeggen, een kip drie keer rond je hoofd te draaien en verbinding te maken met de magische eenhoorn van DBs, hun data veilig en betrouwbaar zal zijn, je weet al, ... (iets iets over) ... banktransacties en al die (nonsens) klets over transacties en fsync. En een heleboel andere dingen die geen enkele ontwikkelaar die ik ooit heb ontmoet echt begrijpt of heeft overwogen in de context van een HTTP-toepassing (tip: stateless).</p>
+
+        <p>Voor ik verderga, wil ik een uitdaging uitbrengen:</p>
+
+        <ul>
+          <li>Stuur me je GitHub-naam</li>
+          <li>Laat me een MySQL- of PostgreSQL-toepassing kiezen die je hebt geschreven (zodat je het niet kunt voorbereiden)</li>
+          <li>En ik zal binnen één dag codepaden vinden die zowel read-uncommitted als dirty-reads leveren in je app</li>
+          <li>Als er geen zijn, betaal ik je <em>$1000 dollar</em></li>
+          <li>Als er enige zijn, mag ik elke foto van jou die ik kies als bijlage aan dit artikel posten. Photoshop <em>is</em> toegestaan.</li>
+        </ul>
+
+        <p>Vind me @ <a href="/contact">/contact</a> of <a href="/team/ara-t-howard">/team/ara-t-howard</a>. Nu verder...</p>
+
+        <p>Raad eens ontwikkelaar: wat is er mis met deze code:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+        </div><div class='code-line code-line-5'>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-10'>
+        </div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-12'>
+        </div><div class='code-line code-line-13'>
+        </div></code></div>
+
+        <p>Laat me iets aardschokkends aan je onthullen:</p>
+
+        <p><strong>DEZE CODE IS TOTAAL KAPOT OP ELKE BELANGRIJKE <em>RDBMS</em>, EN VIRTUEEL ELKE<br />
+        TOEPASSING IN DE WERELD</strong></p>
+
+        <p>Ik verzeker je dat de e-mail <em>twee keer</em> wordt verzonden.</p>
+
+        <p>Het uitleggen van transacties valt buiten het bereik van dit artikel, maar laat me je voorstellen aan 'phantom reads'</p>
+
+        <p><a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Phantom_reads">http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Phantom_reads</a></p>
+
+        <p>In de bovenstaande code kan een tweede, gelijktijdige transactie het volgende veroorzaken:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+        </div><div class='code-line code-line-5'>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># ondertussen heeft een 2e transactie een dubbele gebruiker gemaakt...</span>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># het volgende zal slagen in __beide__ transacties</span>
+        </div><div class='code-line code-line-9'>
+        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+        </div><div class='code-line code-line-11'>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># beide transacties zullen de e-mail verzenden</span>
+        </div><div class='code-line code-line-13'>
+        </div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-16'>
+        </div><div class='code-line code-line-17'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-18'>
+        </div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #6e7781"># een van de transacties zal mislukken om te committen en met een *BOEM* te ontploffen, maar dan is het</span>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #6e7781"># te laat: de e-mail is tweemaal verzonden en de fout is gemaakt</span>
+        </div><div class='code-line code-line-21'>
+        </div><div class='code-line code-line-22'>
+        </div></code></div>
+
+        <p>Ik weet, ik weet, je kunt het niet geloven. Maar dat is alleen omdat je nooit je hebt bekommerd om de RTFM te lezen als het gaat om wat 'transactie' betekent. Begin hier:</p>
+
+        <p><a href="http://www.postgresql.org/docs/9.1/static/transaction-iso.html">http://www.postgresql.org/docs/9.1/static/transaction-iso.html</a></p>
+
+        <p>Let op dat kleine tabel. Laat me het voor je vertalen:</p>
+
+        <ul>
+          <li>
+            <p>Omdat <em>jij</em> niet <em>elke</em> enkele reeks van <em>lees&schrijf</em> in een transactie hebt verpakt, en soms gewoon code tegen je ORM-objecten gooit, lijdt u onder de 'schrikwekkende' realiteit van 'read-uncommitted' genoemd in het artikel</p>
+          </li>
+          <li>
+            <p>Omdat <em>jij</em> vertrouwt op het standaardisolatieniveau, lijdt u aan zowel non-repeatable-reads als phantom reads. (Weet jij zelfs wat het standaard isolatieniveau voor je db is en wat dat betekent????)</p>
+          </li>
+          <li>
+            <p>Omdat <em>jij</em> je transactieniveau niet hebt ingesteld op 'serialiseerbaar', gelooft u ten onrechte dat uw database snel en veilig is. Je hebt ten onrechte op de database vertrouwd om data-integriteit te bieden als een abstractie die geen kritisch denken en toepassingscode vereist die ten minste 10 keer beter is dan de jouwe. Je hebt alle angstaanjagende functies uit het artikel van Kyle in je RDBMS-apps - en, niet alleen weet je dit <em>niet</em>, je bent <em>vrijwel zeker dat je data 'veilig' is</em></p>
+          </li>
+        </ul>
+
+        <p>En ik vraag je dan welke een slechtere technische keuze is:</p>
+
+        <ul>
+          <li>
+            <p>Kies een op standaarden gebaseerd hulpmiddel dat iedereen <em>zeer</em> zeker van is dat ze begrijpen en weten hoe ze het veilig kunnen gebruiken, maar waarvan in de algemene toepassing bijna nooit wordt gegarandeerd wat ze denken dat het belooft, en verder is het breed <a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Default_isolation_level">bekritiseerd als ambigu en onnauwkeurige semantiek</a> te hebben?</p>
+          </li>
+          <li>
+            <p>Of om toe te geven wat altijd waar is geweest: dat databases op zichzelf geen abstracties kunnen bieden die betekenen dat niet-extreem-slimme ontwikkelaars geen triviale dingen kunnen verzuilen. En dat data-integriteit een domeinspecifiek concept is dat op de toepassingslaag moet worden geïmplementeerd, waarbij slechts een klein deel van die integriteit wordt ondersteund door de keuze van de database.</p>
+          </li>
+        </ul>
+
+        <p>ps. Ik heb gewerkt aan grote financiële, realtime en HA-systemen die zowel Mongo als PostgreSQL gebruiken. Het is verdomd moeilijk op beide manieren.</p>
+
+        <p>pss. Ik probeerde te reageren op je blog, Kyle, maar de reacties bliezen op ;-)</p>
+
+        <p><img src="https://s3.amazonaws.com/ss.dojo4.com/JKeSPdp46a4R3paZkp6oo7X1b7QNhI6hQN4kp1QPx3ZYqn3exRzqht0.png" style="max-width:200px;" /></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/slechte-developers-vrees-mongo-en-aanbidt-de-rdbms">😩, ik 🖤 ^dit!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/over<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

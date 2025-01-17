@@ -1,0 +1,280 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Niets te zien hier.</title>
+
+    <meta property="og:title" content="Niets te zien hier."/>
+    <meta property="og:description" content="Ga verder." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb"}">
+    <meta property="site:path_info" content=""/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">Ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</span>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2014-04-16</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Soms heb je een saaie, herhaalbare online taak of je moet een bepaalde workflow op een website automatiseren. Het scripten van deze interacties kan voorkomen dat we onze tijd verspillen door steeds dezelfde pagina's op een site te klikken.</p>
+
+        <p>Veel van ons zullen direct naar <a href="http://mechanize.rubyforge.org/">Mechanize</a> grijpen. Dan ontdek je dat de UI van de site die je probeert te automatiseren zwaar is met JavaScript of AJAX. Wat nu?</p>
+
+        <p><a href="http://http://phantomjs.org/">Phantomjs</a> komt te hulp. Phantomjs is een snelle, eenvoudig te scripten, headless WebKit browser. Wanneer de taak voor welke reden dan ook mislukt, kun je een screenshot maken om te controleren. Voor ons betekende dit dat we deze naar een beheerder verstuurden aangezien de taken op servers draaien en niet lokaal. We gebruiken ook <a href="https://github.com/westoque/phantomjs.rb">Phantomjs.rb</a> om het pad en de uitvoer van Phantomjs te verwerken.</p>
+
+        <p>Hier is een stukje code van wat we doen.</p>
+
+        <pre><code>class InvitationAcceptor
+  attr_accessor :invitation, :tmpdir
+
+  def initialize(invitation)
+    self.invitation = invitation
+  end
+
+  def accept!
+    fail_image_path = false
+
+    Dir.mktmpdir(invitation.id.to_s) do |tmpdir|
+      self.tmpdir = tmpdir
+
+      Phantomjs.inline(js) do |line|
+        puts line
+        fail_image_path = line.gsub('FAIL:', '').chomp if line.starts_with?('FAIL')
+      end
+
+      if fail_image_path
+        Mailer.invitaion_failed(invitation, fail_image_path).deliver
+      else
+        invitation.invitation_accepted!
+      end
+    end
+  end
+
+  private
+
+    def js
+      fail_image = "#{tmpdir}/failed.png"
+
+      &lt;&lt;-JS
+        // https://github.com/ariya/phantomjs/blob/master/examples/waitfor.js
+        function waitFor(testFx, onReady, timeOutMillis) {
+          var maxtimeOutMillis = timeOutMillis ? timeOutMillis : 10000,
+            start = new Date().getTime(),
+            condition = false
+          var interval = setInterval(function() {
+            if ((new Date().getTime() - start &lt; maxtimeOutMillis) &amp;&amp; !condition) {
+              condition = (typeof(testFx) === "string" ? eval(testFx) : testFx());
+            } else {
+              if (! condition) {
+                fail()
+              } else {
+                console.log("'waitFor()' waited " + (new Date().getTime() - start) + "ms.");
+                typeof(onReady) === "string" ? eval(onReady) : onReady();
+                clearInterval(interval);
+              }
+            }
+          }, 250);
+        };
+
+        var page = require('webpage').create(),
+          testindex = 0,
+          loadInProgress = false,
+          tries = 0;
+
+        // dit is belangrijk voor onze app omdat de site die we automatiseren probeert automatisering te blokkeren.
+        page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36'
+
+        var fail = function() {
+          // stuur het mislukbericht en het pad van de afbeelding naar het Ruby-script
+          console.log("FAIL:#{fail_image}");
+          // sla de screenshot op naar het bestandssysteem zodat deze verzonden kan worden
+          page.render("#{fail_image}");
+          phantom.exit()
+        }
+
+        page.onConsoleMessage = function(msg) {
+          console.log(msg);
+        };
+
+        page.onLoadStarted = function() {
+          loadInProgress = true;
+          console.log("laden gestart");
+        };
+
+        page.onLoadFinished = function(status) {
+          loadInProgress = false;
+          console.log("laden voltooid");
+        };
+
+        var steps = [
+          function() {
+            console.log("Laad Login Pagina");
+
+            page.open("#{invitation.invitation_received.subject}")
+          },
+          function() {
+            console.log("Controleer of de uitnodiging nog geldig is");
+
+            success = page.evaluate(function() {
+              if (null == document.getElementById('hasSomeElement')) {
+                return false;
+              }
+
+              return true;
+            })
+
+            if (! success) {
+              fail();
+            }
+
+          },
+          function() {
+            console.log("Voer Credentials In");
+
+            page.evaluate(function() {
+              document.getElementById('hasSomeElement').checked;
+              document.getElementById('hasSomeElement').checked;
+              document.getElementById('email').value = '#{invitation.email}';
+              document.getElementById('password').value = '#{invitation.password}';
+              document.getElementById('login').click();
+            });
+          },
+          function() {
+            console.log("Accepteer de voorwaarden");
+
+            page.evaluate(function() {
+              document.getElementById('accept').click()
+            });
+          },
+          function() {
+            console.log("Wachten op het voltooien van de JS-gekte");
+
+            waitFor(function() {
+              return page.evaluate(function() {
+                return document.getElementsByClassName('someExpectedContent').length != 0
+              });
+            }, function() {
+              phantom.exit();
+            });
+          }
+        ]
+
+        interval = setInterval(function() {
+          if (!loadInProgress &amp;&amp; typeof steps[testindex] == "function") {
+            steps[testindex]();
+            // nuttig voor debuggen
+            page.render("#{tmpdir}/step" + (testindex + 1) + ".png");
+            testindex++;
+          }
+        }, 250);
+      JS
+    end
+
+end
+</code></pre>
+
+        <p>Je kunt ook scripts in de pagina injecteren, met <a href="http://phantomjs.org/api/webpage/method/inject-js.html">injectJs</a> of <a href="http://phantomjs.org/api/webpage/method/include-js.html">includeJs</a> maar ik verkies om te blijven bij wat er al is of gewoon de basis te gebruiken om clashes te voorkomen met wat er al in de pagina is.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">😩, ik 🖤 ^dit!</a>
+          </li>
+          <li>
+            <a href="/now">/nu</a>
+          </li>
+          <li>
+            <a href="/about">/over</a>
+          </li>
+          <li>
+            <a href="/contact">/contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; uitstappen</a>
+    </footer>
+  </body>
+</html>

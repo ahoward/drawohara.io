@@ -1,0 +1,164 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <base href='/langs/nl' />
+
+  <!-- meta -->
+    <title>hier is niets te zien.</title>
+
+<meta property="og:title" content="hier is niets te zien."/>
+<meta property="og:description" content="ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archief/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"stel-uw-project-terminal-omgeving-in-een-en-alleen-maar-een-keer"}">
+    <meta property="site:path_info" content=""/stel-uw-project-terminal-omgeving-in-een-en-alleen-maar-een-keer"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/stel-uw-project-terminal-omgeving-in-een-en-alleen-maar-een-keer">ik ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik op me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/stel-uw-project-terminal-omgeving-in-een-en-alleen-maar-een-keer</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2013-11-01</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Bij elk project dat ik doe, gebruik ik meerdere programma's tegelijkertijd tijdens het ontwikkelen. Dit resulteert meestal in meerdere tabbladen in de Terminal-app - een voor mijn lokale server, een voor mijn database, een voor mijn client-applicatie en een voor git. (Op dit moment gebruik ik een GUI-editor (ST2), maar ik zal misschien snel terugkeren naar vim...) Deze setup met meerdere tabbladen herhaalt zich voor elk project waar ik aan werk, en ik wissel meestal meerdere malen per dag tussen verschillende projecten.</p>
+
+<p>Met deze setup met meerdere tabbladen moet ik, als ik van project verander, ofwel een nieuw Terminal-venster openen met zijn eigen tabbladen voor dat project en omgaan met meer vensters dan nodig (geen optie voor een minimalist als ik) of alle tabbladen die ik open heb sluiten, om ze vervolgens allemaal weer te openen wanneer ik terugkeer naar dat project.</p>
+
+<p>Nu, zoals de meeste dagen, heb ik een slimme oplossing voor dit probleem geleerd van de wijze en almachtige leider van dojo4, <a href="http://dojo4.com/team/ara-t-howard">Ara</a>. Hij gebruikt het GNU <a href="https://www.gnu.org/software/screen/">Screen</a>-programma. Binnen één Terminal-tabblad laat Screen je meerdere "vensters" (aka tabbladen) openen binnen hetzelfde Terminal-tabblad. Dit is hoe je het kunt gebruiken:</p>
+
+<pre><code class="language-text"># een sessie maken en opnieuw verbinden
+screen -S [naam] = maak een benoemd scherm
+screen -D -R [naam] = verbind opnieuw met een benoemd scherm en ontkoppel andere personen indien nodig
+screen -list = lijst van schermen
+
+# (alle vensters in een schermsessie sluiten zal die sessie beëindigen. Echter, een schermsessie is een actief proces, dus je kunt het handmatig stoppen.)
+
+# binnen een schermsessie:
+ctrl-A + ? = help
+ctrl-A + " = lijst van vensters
+ctrl-A + c = nieuw venster maken
+ctrl-A + n = volgend venster
+ctrl-A + p = vorige venster
+ctrl-A + A = hernoem een venster
+
+# aliassen die we gebruiken
+alias sl='screen -list '
+alias sdr='screen -d -r '
+alias s='screen -D -R '
+alias ss='screen -S'
+
+sdr [naam] = verbind opnieuw met een benoemd scherm en ontkoppel andere personen indien nodig
+ss [naam] = maak een benoemd scherm
+sl = lijst van schermen
+</code></pre>
+
+<p>Een echt geweldige functie van screen is dat wanneer je je afkoppelt van een schermsessie, alle je vensters blijven draaien, en wanneer je je opnieuw verbindt met de schermsessie, heb je al je vensters weer ter beschikking.</p>
+
+<p>Toen we dit in ons kantoor bespraken, maakte <a href="http://dojo4.com/team/ryan-cook">Ryan Cook</a> een <a href="https://gist.github.com/cookrn/2711966">mooi klein Ruby-hulpprogramma</a> om schermsessies te maken die zijn genoemd naar je huidige map.</p>
+
+<p>Mijn werkstroom is veranderd van het hebben van meerdere tabbladen in Terminal open naar één tabblad in Terminal waar ik me opnieuw verbind met een schermsessie voor elk project waar ik aan werk. Dat laat mij snel van project wisselen en stopt het verliezen van tijd met het opnieuw instellen en opnieuw afbreken van alle Terminal-tabbladen die ik gebruik voor een project.</p>
+
+<p>Nu moet ik alleen nog meer dingen overzetten naar terminalgebruik (zoals mijn editor) om echt het meeste uit screen te halen...</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/stel-uw-project-terminal-omgeving-in-een-en-alleen-maar-een-keer">😩, ik 🖤 ^dit!<a>
+  </li>
+  <li>
+    <a href="/nu">/nu<a>
+  </li>
+  <li>
+    <a href="/over">/over<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; uitwerpen</a>
+    </footer>
+  </body>
+</html>

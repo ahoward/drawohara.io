@@ -1,0 +1,244 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <base href='/langs/fr' />
+    <title>Rien à voir ici.</title>
+
+<meta property="og:title" content="Rien à voir ici."/>
+<meta property="og:description" content="Passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"}">
+    <meta property="site:path_info" content=""/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a> &mdash;
+<a href="mailto:j-aime-ca@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">J'❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='buvez-moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2013-02-21</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>réf: https://github.com/ahoward/sekrets</p>
+
+<pre>
+
+NOM
+  sekrets.rb
+
+SYNOPSIS
+  sekrets est un outil en ligne de commande et une bibliothèque utilisés pour gérer de manière sécurisée les fichiers et les paramètres chiffrés dans vos applications rails et dépôts git.
+
+INSTALL
+  gem install sekrets
+  gem 'sekrets'
+
+DESCRIPTION
+  TL;DR
+    # créer un fichier de configuration chiffré
+
+      ruby -r yaml -e'puts({:api_key => 1234}.to_yaml)' | sekrets write config/settings.yml.enc --key 42
+
+    # l'afficher
+
+      sekrets read config/settings.yml.enc --key 42
+
+    # l'éditer
+
+      sekrets edit config/settings.yml.enc --key 42
+
+    # voir qu'il est chiffré
+
+      cat config/settings.yml.enc
+
+    # le commiter
+
+      git add config/settings.yml.enc
+
+    # mettre la clé de déchiffrement dans un fichier
+
+      echo 42 > .sekrets.key
+
+    # ignorer ce fichier dans git
+
+      echo .sekrets.key >> .gitgnore
+
+    # vous n'avez plus besoin de fournir l'argument --key aux commandes
+
+      sekrets read config/settings.yml.enc
+
+      sekrets edit config/settings.yml.enc
+
+    # assurez-vous que ce fichier est déployé sur votre serveur
+
+      echo " require 'sekrets/capistrano' " >> Capfile
+
+    # commiter et déployer
+
+      git add config/settings.yml.enc
+      git commit -am'paramètres chiffrés yo'
+      git pull && git push && cap staging deploy
+
+    # accéder à ces paramètres dans le code de votre application
+
+      settings = Sekrets.settings_for('./config/settings.yml.enc')
+
+
+  DESCRIPTION
+    sekrets fournit des outils en ligne de commande et une bibliothèque pour gérer et accéder aux fichiers chiffrés dans votre base de code.
+
+    il permet de vérifier les informations chiffrées dans un dépôt et de les gérer avec le reste de la base de code. il élimine le besoin de vérifier les informations non chiffrées, les clés ou autres informations sensibles.
+
+    sekrets fournit à la fois un mécanisme général pour gérer les fichiers chiffrés arbitraires et un mécanisme spécifique pour gérer les fichiers de configuration chiffrés.
+
+
+  RECHERCHE DE CLÉ
+    pour *toutes* les opérations, depuis la ligne de commande ou autrement, sekrets utilise l'algorithme suivant pour rechercher une clé de déchiffrement :
+
+    - toute clé passée directement en tant que paramètre à un appel de bibliothèque sera préférée
+
+    - sinon le code recherche un fichier de clé compagnon. par exemple, pour le fichier 'config/sekrets.yml.enc' sekrets recherchera une clé à
+
+        config/.sekrets.yml.enc.key
+
+      si l'un de ceux-ci est trouvé non vide, le contenu du fichier sera utilisé comme clé de déchiffrement pour ce fichier. vous ne devriez *jamais* commiter ces fichiers de clé et également les ajouter à votre .gitignore - ou similaire.
+
+    - ensuite un fichier de clé de projet est recherché. le chemin de ce fichier est
+
+        ./.sekrets.key
+
+      normalement et, dans une application rails
+
+        RAILS_ROOT/.sekrets.key
+
+    - si cela n'est pas trouvé, sekrets recherche la clé dans l'environnement sous la var env
+
+        SEKRETS_KEY
+
+      la var env utilisée est configurable dans la bibliothèque
+
+    - ensuite le fichier de clé global est recherché, le chemin de ce fichier est
+
+        ~/.sekrets.key
+
+    - enfin, si aucune clé n'a encore été spécifiée ou trouvée, l'utilisateur est invité à entrer la clé. l'invite ne se produit que si l'utilisateur est attaché à un tty. donc, par exemple, aucune invite ne suspendra une application démarrée en arrière-plan comme une application rails gérée par passenger.
+
+    voir Sekrets.key_for pour plus de détails
+
+  DISTRIBUTION DE CLÉ
+    sekrets ne *tente* pas de résoudre le problème de distribution de clé pour vous, avec une exception :
+
+    si vous utilisez capistrano pour faire un déploiement 'vanille' basé sur ssh, une recette simple est fournie qui détectera un fichier de clé local et le scp sur le(s) serveur(s) distant(s) lors du déploiement.
+
+    sekrets suppose que le fichier de clé local, s'il existe, est correct.
+
+    en anglais simple, la recette capistrano fait :
+
+      scp ./sekrets.key deploy@remote.host.com:/rails_root/current/sekrets.key
+
+    il va sans dire que le fichier de clé local ne devrait *jamais* être commité et devrait également être dans .gitignore
+
+    la distribution de cette clé parmi les développeurs est hors du cadre de la bibliothèque. l'email non chiffré est probablement le meilleur mécanisme de distribution ;-/
+
+</pre>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/aller-vers" name="aller-vers">&mdash;&gt; aller vers</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:j-deteste-ca@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">😩, j'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/maintenant">/maintenant<a>
+  </li>
+  <li>
+    <a href="/à-propos">/à-propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

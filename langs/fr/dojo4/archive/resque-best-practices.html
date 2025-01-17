@@ -1,0 +1,174 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Il n'y a rien à voir ici.</title>
+    <meta property="og:title" content="Il n'y a rien à voir ici."/>
+    <meta property="og:description" content="Circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"resque-best-practices"}">
+    <meta property="site:path_info" content=""/resque-best-practices"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:j-adore-ca@drawohara.io?subject=/resque-best-practices">j'❤️ ça!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bois ça'>&lt;&lt; cliquez ici 🐛 🫖 🧚</span>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/resque-best-practices</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2012-07-16</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+
+        <h2 id="introduction">Introduction</h2>
+
+        <p>Resque ( https://github.com/defunkt/resque ) est une solution vraiment sympa, robuste et de qualité production pour les tâches de fond pour Rails. Cependant, il laisse beaucoup de réflexion au développeur concernant les meilleures pratiques pour modéliser vos tâches, gérer les déploiements et gérer les processus des travailleurs. Voici un ensemble de meilleures pratiques pour utiliser resque/redis comme système de tâches de fond.</p>
+
+        <h2 id="gestion-des-processus-en-arrière-plan">Gestion des processus en arrière-plan</h2>
+
+        <p>Resque dispose de certaines installations pour gérer les processus en arrière-plan, mais elles sont rudimentaires et boguées. Nous utilisons ce script d'enveloppe simple pour gérer une seule instance du démon de tâches en arrière-plan:</p>
+
+        <p><br /><br />
+        <br /></p>
+
+        <script src="https://gist.github.com/3123756.js?file=jobs.rb"></script>
+
+        <p><br /><br />
+        <br /></p>
+
+        <h2 id="modélisation-de-vos-tâches">Modélisation de vos tâches</h2>
+
+        <p>L'une des premières choses à faire est de déterminer comment modéliser vos tâches. Resque rend assez simple la soumission de méthodes arbitraires sur des modules, mais nous préférons faire quelque chose de plus propre. En particulier, nous aimons avoir des identifiants sur les tâches, pouvoir les interroger facilement et les rendre ultra-durables face aux échecs du système ou des processus. En consolidant simplement toute la logique des tâches dans un seul modèle qui fait office de tâche resque, cela est tout à fait possible. Voici notre classe de tâche de base.</p>
+
+        <p><br /><br />
+        <br /></p>
+
+        <script src="https://gist.github.com/3123839.js?file=job.rb"></script>
+
+        <p><br /><br />
+        <br /></p>
+
+        <p>Comme vous pouvez probablement le voir, cette classe (qui pourrait facilement être portée sur ActiveRecord) permet la soumission de tâches arbitraires, par mail ou autre, et chaque tâche laisse une trace dans la base de données principale qui la lie à l'entrée resque/redis. Cela rend le travail avec les objets de tâches extrêmement naturel - par exemple, avoir une boucle de sondage vérifiant le statut d'une tâche particulière par identifiant, ou obtenir un compte rapide du nombre de tâches qui ont réussi au cours de la semaine dernière. Cela garde notre installation resque super vanille - nous n'utilisons aucun plugin - et permet de remplacer un autre système de traitement en arrière-plan en quelques minutes.<br />
+        La seule gestion dont il a besoin est une tâche périodique pour nettoyer la collection/table de tâches. Nous utilisons whenever ( https://github.com/javan/whenever/ ) plus une tâche rake pour y parvenir:</p>
+
+        <p><br /><br />
+        <br /></p>
+
+        <script src="https://gist.github.com/3123860.js?file=jobs.rake"></script>
+
+        <p><br /><br />
+        <br /></p>
+
+        <script src="https://gist.github.com/3123860.js?file=schedule.rb"></script>
+
+        <p><br /><br />
+        <br /></p>
+
+        <h2 id="déploiement">Déploiement</h2>
+
+        <p>Enfin, votre déploiement doit maintenir les choses en cours:</p>
+
+        <p><br /><br />
+        <br /></p>
+
+        <script src="https://gist.github.com/3123860.js?file=Capfile.rb"></script>
+
+        <p><br /></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:j-deteste-ca@drawohara.io?subject=/resque-best-practices">😩, j'🖤 ^ça!</a>
+          </li>
+          <li>
+            <a href="/now">/maintenant</a>
+          </li>
+          <li>
+            <a href="/about">/à propos</a>
+          </li>
+          <li>
+            <a href="/contact">/contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

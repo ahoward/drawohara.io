@@ -1,0 +1,146 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Niets te zien hier.</title>
+
+<meta property="og:title" content="Niets te zien hier."/>
+<meta property="og:description" content="Verder gaan." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id"/>
+    <meta property="site:params" content="{"ext":null,"id":"announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"}">
+    <meta property="site:path_info" content="/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app"/>
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/nl' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">I ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app</strong>
+    </header>
+
+    <main>
+      <em>Gepubliceerd op: 2013-10-24</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Vaak maakt het zin om ontwikkeling te doen in HTML, JS en CSS en die inhoud vervolgens te gebruiken in een native app. Phonegap beweert de beste oplossing te zijn voor dit geval, maar uit <a href="http://dojo4.com/blog/why-phonegap-sucks">mijn ervaring</a> is het een van de slechtste.</p>
+
+<p>Als reactie op Phonegap heb ik de start-repo van ons bedrijf voor iOS-apps die webinhoud in een UIWebView moeten gebruiken, open source gemaakt en Imbed genoemd.</p>
+
+<p>Kenmerken:</p>
+
+<ul>
+  <li>
+    <p><strong>Klein & Open Source.</strong> Een UIViewController, een HTML-bestand en het super kleine, 1 klasse, open source <a href="https://github.com/marcuswestin/WebViewJavascriptBridge">WebViewJavascriptBridge</a> project.</p>
+  </li>
+  <li>
+    <p><strong>Ondersteun elke iOS-functie onmiddellijk.</strong> Geen wachten tot een derde partij ontwikkelaar een plugin maakt. Je schrijft zelf natieve Objective-C code. Dus zodra Apple het uitbrengt, kun je het ondersteunen.</p>
+  </li>
+  <li>
+    <p><strong>Volg de gidsen van Apple, niet die van iemand anders.</strong> Apple doet een geweldig werk bij het documenteren van het gebruik van de functies van iOS. De meeste derde partij ontwikkelaars doen dat niet. Welke zou je liever volgen?</p>
+  </li>
+  <li>
+    <p><strong>Automatiseer alles met Rake.</strong> Concentreer je op het schrijven van je code, test deze in de browser en automatiseer vervolgens alles in een duidelijke, open source Rakefile. Heck, zelfs archiveren, verzenden naar Testflight en melden bij Campfire.</p>
+  </li>
+</ul>
+
+<p>Het is jouw app. Vertrouw niet op een derde partij tool om functies te ondersteunen die iOS al biedt. Pak je code bij de horens.</p>
+
+<p><a href="https://github.com/dojo4/imbed/archive/master.zip">Download Imbed</a> nu.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">😩, ik 🖤 ^dit!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/over<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; uitgang</a>
+    </footer>
+  </body>
+</html>

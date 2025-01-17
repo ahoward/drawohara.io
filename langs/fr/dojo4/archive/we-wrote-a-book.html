@@ -1,0 +1,162 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+    <meta property="og:title" content="Rien à voir ici."/>
+    <meta property="og:description" content="Circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"nous-avons-écrit-un-livre"}">
+    <meta property="site:path_info" content=""/nous-avons-écrit-un-livre"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:j-adore-cela@drawohara.io?subject=/nous-avons-écrit-un-livre">j'❤️ ça !</a>
+      <small>
+        <small>
+          <small>
+            <span title='bois-moi'>&lt;&lt; cliquez sur moi 🐛 🫖 🧚</span>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/nous-avons-écrit-un-livre</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2014-01-21</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Pendant les vacances, je réfléchissais à mon introduction à Ruby on Rails au dojo. En tant que développeur full stack qui se concentre principalement sur le front-end, il était accablant de rejoindre un projet rails existant avec une petite tâche JavaScript. Quels fichiers éditer ? Comment mes scripts sont-ils inclus dans la page ? Comment une requête est-elle traitée dans rails ? Ahh !!</p>
+
+        <p>J'ai donc écrit un livre à ce sujet. Mes incroyables coéquipiers de dojo4 m'ont aidé à le réviser pour sa rigueur technique et je pense qu'il est à un excellent point pour être publié dans le monde. Espérons qu'il aide les autres développeurs front-end qui se lancent dans un projet rails et réalisent qu'ils sont perdus. Que ce livre soit votre boussole !</p>
+
+        <p><img src='/ro/dojo4/nous-avons-écrit-un-livre/assets/cover-idea-2.png' alt="img" /></p>
+
+        <p>Consultez le livre :</p>
+
+        <ul>
+          <li><a href="https://leanpub.com/rorfrontend">En plusieurs formats de livre électronique (PDF, MOBI, EPUB)</a></li>
+          <li><a href="http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/">Dans la boutique Kindle</a></li>
+          <li><a href="http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html">En version brochée !</a></li>
+        </ul>
+
+        <p>Description :</p>
+
+        <pre><code class="language-text">Ruby on Rails est un framework de développement web full-stack extrêmement puissant, mais avec sa puissance vient la complexité. Pour les développeurs front-end qui doivent simplement éditer du HTML, du CSS et du JS dans une application Ruby on Rails, cela peut être une tâche ardue. Ce livre explique ce que les développeurs front-end doivent savoir sur Ruby on Rails afin de travailler efficacement dans une application rails.
+
+        À la fin du livre, vous serez capable de :
+
+        * savoir où placer votre html, css et js dans la structure d'une application ruby on rails
+
+        * comment rails achemine les requêtes vers les contrôleurs
+
+        * utiliser les vues, les mises en page et les partials dans les contrôleurs
+
+        * ce qu'est le pipeline d'actifs et comment l'utiliser
+
+        * comment les contrôleurs et les vues dans rails fonctionnent ensemble pour générer une réponse dans le navigateur
+
+        * comment les données sont ajoutées aux vues et comment les lier dans votre html
+        </code></pre>
+
+        <p>Vous allez l'adorer :</p>
+
+        <ul>
+          <li><a href="https://leanpub.com/rorfrontend">En plusieurs formats de livre électronique (PDF, MOBI, EPUB)</a></li>
+          <li><a href="http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/">Dans la boutique Kindle</a></li>
+          <li><a href="http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html">En version brochée !</a></li>
+        </ul>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:j-déteste-cela@drawohara.io?subject=/nous-avons-écrit-un-livre">😩, j'🖤 ^ceci!</a>
+          </li>
+          <li>
+            <a href="/now">/maintenant</a>
+          </li>
+          <li>
+            <a href="/about">/à-propos</a>
+          </li>
+          <li>
+            <a href="/contact">/contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

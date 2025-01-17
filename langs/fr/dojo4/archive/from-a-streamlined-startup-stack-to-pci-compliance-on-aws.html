@@ -1,0 +1,167 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rien à voir ici.</title>
+
+<meta property="og:title" content="rien à voir ici."/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"from-a-streamlined-startup-stack-to-pci-compliance-on-aws"}">
+    <meta property="site:path_info" content=""/from-a-streamlined-startup-stack-to-pci-compliance-on-aws"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/fr' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">j'❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/from-a-streamlined-startup-stack-to-pci-compliance-on-aws</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2012-09-10</em>
+<br>
+<br>
+<div class="ro markdown">
+  <h2 id="intro">Intro</h2>
+
+<p>En travaillant sur des projets chez <a href="http://dojo4.com">Dojo4</a>, je suis souvent surpris de voir comment de petites augmentations de complexité technique <a href="http://fr.wikipedia.org/wiki/Explosion_combinatoire">s'accumulent</a> en des gouffres significatifs d'attention et de ressources. Par conséquent, lorsque les projets démarrent, nous avons tendance à favoriser une pile d'hébergement et d'application simplifiée qui partage de nombreuses fonctionnalités couramment vues dans les services d'hébergement partagé. Cela inclut des choix comme l'hébergement de l'application et de la base de données ensemble, l'utilisation d'un seul utilisateur de déploiement sur le système d'hébergement, et une simple <a href="http://uptimerobot.com">surveillance du temps de fonctionnement</a>.</p>
+
+<p>Récemment, notre client de longue date, <a href="http://www.inspirecommerce.com/">Inspire Commerce</a>, a développé un nouveau plan d'affaires nécessitant que leur application réponde aux exigences strictes de <a href="https://www.pcisecuritystandards.org/">l'industrie des cartes de paiement</a> (PCI) de niveau 1 en matière de sécurité pour le traitement, la transmission et le stockage des informations de carte de crédit. De nombreuses exigences de sécurité détaillées dans la norme de sécurité des données PCI (DSS) motivent un changement significatif de la pile centrée sur la simplification mentionnée ci-dessus. Cet article énumérera brièvement certains de ces détails et décrira nos solutions.</p>
+
+<p>La norme PCI DSS est divisée en 12 sections couvrant tout, des configurations de pare-feu aux politiques de sécurité du personnel. Je vais passer en revue quelques-unes des sections pertinentes pour la pile d'hébergement.</p>
+
+<h2 id="1-installer-et-maintenir-une-configuration-de-pare-feu-pour-protéger-les-données-des-titulaires-de-carte">1. Installer et maintenir une configuration de pare-feu pour protéger les données des titulaires de carte</h2>
+
+<p>Cette section détaillée de la DSS impose l'installation et la configuration des services de <a href="http://fr.wikipedia.org/wiki/Pare-feu_%28informatique%29">pare-feu</a> sur tous les appareils de mise en réseau, des postes de travail aux routeurs en passant par les serveurs. En utilisant les services <a href="http://aws.amazon.com/">Amazon Web Services</a> (AWS) <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud</a> (EC2) comme base de notre pile d'hébergement, de nombreux appareils de mise en réseau sont abstraits de notre vue ou contrôle. Heureusement, <a href="http://aws.amazon.com/security/#certifications">AWS est lui-même conforme au niveau 1 de la norme PCI</a>, laissant de nombreux détails aux ingénieurs d'Amazon.</p>
+
+<p>Cependant, les pare-feu pour les nœuds EC2 nécessitent une certaine considération. Les nœuds EC2 sont protégés par un pare-feu implémenté au niveau de l'<a href="www.xen.org/products/xenhyp.html">hyperviseur</a> et configuré par les <a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-network-security.html">Groupes de sécurité AWS</a>. Notre groupe de sécurité de base refuse tous les paquets pour tous les ports, sauf les ports 22, 80 et 443 acceptant des sources. Nous utilisons <a href="www.ubuntu.com/">Ubuntu Linux</a> sur nos nœuds et, par défaut, le <a href="www.netfilter.org/projects/iptables/">pare-feu IP Tables</a> est configuré avec une politique ouverte.</p>
+
+<p>La norme PCI DSS met l'accent sur l'utilisation des pare-feu pour créer des réseaux privés sécurisés, ou des <a href="http://fr.wikipedia.org/wiki/Zone_démilitarisée_%28informatique%29">Zones Démilitarisées</a> (DMZ) pour les systèmes hébergeant des applications qui traitent les données de carte de paiement. Les Groupes de sécurité AWS fournissent un mécanisme utile pour créer des réseaux privés sécurisés entre les différents composants de la pile d'application. Par exemple, en créant un groupe de sécurité WEB et un groupe de sécurité DB, et en ouvrant le port de la base de données dans le groupe de sécurité DB uniquement aux sources du groupe de sécurité WEB, le pare-feu de l'hyperviseur EC2 exécuté sur un serveur de base de données n'autorisera l'accès à la base de données qu'à partir des serveurs web se connectant sur l'interface du réseau privé interne.</p>
+
+<p>Pour la redondance, nous dupliquons la configuration des Groupes de sécurité AWS pour le pare-feu de l'hyperviseur EC2 avec le service <a href="http://www.cloudpassage.com/">CloudPassage</a> qui est capable de gérer le pare-feu IP Tables au niveau du système d'exploitation des systèmes hébergeant les composants de l'application de traitement de carte. CloudPassage organise les politiques de pare-feu en <a href="http://www.cloudpassage.com/features/halo-firewall.html">Groupes de serveurs</a> qui sont quelque peu analogues aux Groupes de sécurité AWS. Une autre fonctionnalité intéressante de CloudPassage est le service <a href="http://www.cloudpassage.com/features/multifactor-authentication.html">GhostPorts</a>. Nous configurons la politique de port ssh dans CloudPassage pour accepter les connexions des sources GhostPort. Pour qu'une machine client devienne une source GhostPort, un utilisateur de cette machine doit s'authentifier auprès du portail CloudPassage, être autorisé à ouvrir des GhostPorts pour un groupe de serveurs, et s'authentifier avec un dongle Yubikey enregistré, ou répondre à un défi SMS avec un téléphone portable enregistré. Après une authentification et une autorisation réussies, CloudPassage configure IP Tables pour accepter les connexions depuis l'adresse IP source de la machine client. C'est un moyen pratique, sécurisé, temporaire et auditable de gérer l'accès aux hôtes sensibles.</p>
+
+<h2 id="2-ne-pas-utiliser-les-paramètres-par-défaut-du-fournisseur-pour-les-mots-de-passe-du-système-et-autres-paramètres-de-sécurité">2. Ne pas utiliser les paramètres par défaut du fournisseur pour les mots de passe du système et autres paramètres de sécurité</h2>
+
+<p>Cette section semble assez évidente. Un bon exemple de l'importance de changer le mot de passe par défaut fourni par le fournisseur est le mot de passe par défaut <a href="http://www.splunk.com/">Splunk</a> <a href="http://docs.splunk.com/Documentation/Splunk/latest/Deploy/Introducingtheuniversalforwarder">Universal Forwarder</a> de changeme.</p>
+
+<p>Cependant, enfouie dans cette section se trouve une exigence d'hébergement quelque peu sans rapport avec le titre de la section. « 2.2.1 Implémentez une seule fonction principale par serveur pour empêcher les fonctions nécessitant différents niveaux de sécurité de coexister sur le même serveur. (Par exemple, les serveurs web, les serveurs de bases de données et le DNS doivent être implémentés sur des serveurs séparés). »</p>
+
+<p>Comme mentionné ci-dessus, les groupes de sécurité AWS facilitent la tâche de séparer de manière sécurisée les services tels que les serveurs web et les serveurs de bases de données sur des hôtes distincts.</p>
+
+<h2 id="5-utiliser-et-mettre-à-jour-régulièrement-un-logiciel-ou-des-programmes-antivirus">5. Utiliser et mettre à jour régulièrement un logiciel ou des programmes antivirus</h2>
+
+<p><a href="http://clamav.com">ClamAV</a> facilite cette exigence sur Ubuntu Linux.</p>
+
+<h2 id="8-attribuer-un-identifiant-unique-à-chaque-personne-ayant-accès-à-un-ordinateur">8. Attribuer un identifiant unique à chaque personne ayant accès à un ordinateur</h2>
+
+<p>L'objectif de cette section est de faciliter l'auditabilité et la responsabilité en supprimant les comptes d'utilisateurs partagés. Puisque nous utilisons un mécanisme d'authentification basé sur des <a href="http://fr.wikipedia.org/wiki/Ssh-keygen">clés</a> pour l'accès <a href="http://fr.wikipedia.org/wiki/Secure_Shell">secure shell</a>, il y a trois préoccupations principales pour savoir qui a fait quoi. Premièrement, il est nécessaire d'empêcher les utilisateurs de pouvoir passer à un autre compte utilisateur avec la commande <a href="http://fr.wikipedia.org/wiki/Su_%28Unix%29">su</a>. Cela se fait facilement en supprimant la <a href="http://fr.wikipedia.org/wiki/Permissions_des_fichiers_systèmes#Permissions_traditionnelles_Unix">permission d'exécution</a> sur le binaire su et de modifier <a href="http://aplawrence.com/Basics/understandingpam.html">/etc/pam.d</a> pour empêcher toute autorisation su. Deuxièmement, assurez-vous que les fichiers <a href="http://www.eng.cam.ac.uk/help/jpmg/ssh/authorized_keys_howto.html">authorized_keys</a> pour tous les comptes utilisateur ne contiennent qu'une seule entrée. Enfin, assurez-vous que toutes les clés utilisées pour l'accès secure shell sont protégées par mot de passe et qu'une politique est en place pour interdire le partage des clés entre les utilisateurs.</p>
+
+<p>Maintenant, le <a href="http://www.cyberciti.biz/tips/linux-audit-files-to-see-who-made-changes-to-a-file.html">Démon d'audit Linux</a> (AuditD) peut être utilisé pour suivre l'activité du système vers des utilisateurs spécifiques.</p>
+
+<h2 id="9-restreindre-l'accès-physique-aux-données-des-titulaires-de-carte">9. Restreindre l'accès physique aux données des titulaires de carte</h2>
+
+<p>Le titre de cette section est assez explicite. Essentiellement, cette section couvre les sujets de restriction de l'accès physique au centre de données aux personnes autorisées. Similaire à la discussion sur la configuration des pare-feu des appareils réseau ci-dessus, cela est couvert par la certification PCI de niveau 1 d'AWS et les détails peuvent être laissés à Amazon.</p>
+
+<h2 id="10-suivre-et-surveiller-tous-les-accès-aux-ressources-réseau-et-aux-données-des-titulaires-de-carte">10. suivre et surveiller tous les accès aux ressources réseau et aux données des titulaires de carte</h2>
+
+<p>La motivation de cette section est « prévenir, détecter ou minimiser l'impact d'une compromission de données ». Cela implique des sujets tels que la journalisation, la gestion de l'intégrité des fichiers et la détection d'intrusion. Notre stratégie commence par l'utilisation d'un service de journalisation pour prendre en charge l'agrégation des journaux, la rétention des journaux, ainsi que la recherche des enregistrements de journaux. Nous utilisons l'application <a href="http://splunk.com">Splunk</a> pour cette fonctionnalité. Nous avons configuré une instance EC2 pour un serveur de journalisation et installé Splunk. Nous avons configuré les Groupes de sécurité AWS et les Groupes de serveurs CloudPassage pour le nouveau serveur qui a le port d'écoute Splunk acceptant les connexions des sources des serveurs web et de la base de données sur l'interface du réseau privé. Ensuite, nous avons configuré le Splunk Universal Forwarder sur les serveurs web et de la base de données et configuré les transmetteurs pour surveiller les journaux de l'application, apache, mongodb, sys, audit et auth.</p>
+
+<p>Pour la surveillance de l'intégrité des fichiers et la détection d'intrusion, nous avons installé l'application <a href="http://www.ossec.net/?page_id=165">OSSEC</a> sur tous nos serveurs et ajouté tous les journaux qu'OSSEC écrit aux transmetteurs Splunk.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/from-a-streamlined-startup-stack-to-pci-compliance-on-aws">😩, j'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

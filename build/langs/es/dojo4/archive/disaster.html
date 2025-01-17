@@ -1,0 +1,178 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/langs/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>no hay nada que ver aquí.</title>
+
+    <meta property="og:title" content="no hay nada que ver aquí."/>
+    <meta property="og:description" content="siga adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{'ext':null,'id':'disaster'}">
+    <meta property="site:path_info" content="/disaster">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/disaster">¡me encanta esto!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bébelo'>&lt;&lt; haz clic aquí 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/disaster</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2013-01-18</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Encendí una máquina hoy.</p>
+
+        <p>Trabajé hasta casi las 2 am, la máquina zumbaba cálidamente, y me encontré con una caja lenta e irresponsiva.</p>
+
+        <p>El disco se hizo añicos.</p>
+
+        <p>http://dojo4.com está bajo presión en <em>muchos</em> proyectos este mes, así que, por supuesto, tiene sentido que algunas máquinas decidieran dejar de funcionar <em>hoy</em>…. #feck.</p>
+
+        <p>Cada vez que recupero una máquina estropeada, se vuelve más fácil, y hoy no fue una excepción:</p>
+
+        <p>Desde la última fusión de cajas, he trabajado duro para poner la mayoría de mis datos en la nube.</p>
+
+        <p>Así que me alegró tener muy poco de qué preocuparme después de darme cuenta de que la Apple Store tardaría unas <strong>72 horas en pedir un disco</strong> para mi MacBook Pro de 17” al final de su vida útil. En cambio, simplemente gasté 4k en una nueva MacBook Pro de 15” súper rápida y me lancé a la recuperación…</p>
+
+        <p>Aquí tienes un breve esquema de mi estrategia de copia de seguridad actual, mezclada con algunos pensamientos sobre cómo la gestión de datos está cambiando rápidamente:</p>
+
+        <ul>
+          <li>
+            <p>las aplicaciones gestionan tus datos más que nunca. Usa esto a tu favor.</p>
+          </li>
+          <li>
+            <p>las copias de seguridad completas son estúpidas. Necesitas ser selectivo para restaurar rápidamente. Esto requiere poder cerebral. ¿Qué es más rápido de restaurar después de un accidente vs. reinstalar? ¿Qué es más sencillo de reinstalar vs. reconfigurar? pista: datos no código y configuración.</p>
+          </li>
+          <li>
+            <p>los sistemas operativos se mueven más rápido que tu software de copia de seguridad: solo deberías hacer copias de seguridad de los datos y no de la configuración o, peor aún, de la información binaria. ¡los archivos de puntos son una excepción, por supuesto!</p>
+          </li>
+          <li>
+            <p>google es el rey del correo electrónico, contactos y calendario. Deja cualquier otra solución.</p>
+          </li>
+          <li>
+            <p>usa git para tu código. No lo respaldes. Sigue adelante.</p>
+          </li>
+          <li>
+            <p>usa things.app o algo basado en la nube para tu productividad. Las listas de tareas pendientes que no se sincronizan están muertas.</p>
+          </li>
+          <li>
+            <p>poseer música es una idea anticuada. Usa rdio, spotify o, como último recurso, iCloud. Pero asegúrate de no tener ninguna razón para hacer copias de seguridad de tu música.</p>
+          </li>
+          <li>
+            <p>las fotos son una lata. Esto es una solicitud de propuestas para sugerencias.</p>
+          </li>
+          <li>
+            <p>películas. Las películas no deberían estar en la máquina de un desarrollador. Ahí lo dije.</p>
+          </li>
+          <li>
+            <p>dropbox. Usa esto para todo lo demás y evita los mecanismos integrados tontos de tu sistema operativo.</p>
+          </li>
+        </ul>
+
+        <p>Resumen:</p>
+
+        <p>1) usa aplicaciones basadas en la nube</p>
+
+        <p>2) poseer música y películas es un concepto tonto. Déjalo.</p>
+
+        <p>3) pon todo lo demás en dropbox</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir a</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/disaster">😩, 🖤 ^esto!</a>
+          </li>
+          <li>
+            <a href="/now">/ahora</a>
+          </li>
+          <li>
+            <a href="/about">/sobre</a>
+          </li>
+          <li>
+            <a href="/contact">/contacto</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eyectar</a>
+    </footer>
+  </body>
+</html>

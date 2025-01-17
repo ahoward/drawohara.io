@@ -1,0 +1,177 @@
+<html color-mode="user" lang="es">
+  <head>
+  <base href='/langs/es' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+<meta property="og:title" content="nada que ver aquí."/>
+<meta property="og:description" content="siga adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"digital-ocean-rapido-y-barato-pero-bueno"}">
+    <meta property="site:path_info" content=""/digital-ocean-rapido-y-barato-pero-bueno"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:me-encanta-esto@drawohara.io?subject=/digital-ocean-rapido-y-barato-pero-bueno">me ❤️ esto!</a>
+<small>
+  <small>
+    <small>
+      <span title='bébelo'>&lt;&lt; haz clic en mí 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/digital-ocean-rapido-y-barato-pero-bueno</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2013-12-30</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Como CTO de una agencia de tecnología, constantemente estoy evaluando nuevas herramientas, procesos y servicios.</p>
+
+<p>Recientemente he estado mirando la plataforma DigitalOcean como parte de una estrategia de ultra-alta disponibilidad que hemos estado desarrollando para aquellos momentos en los que AWS/S3 no es suficiente: cuando quieres resistir una falla masiva de un proveedor de servicios en la nube completa.</p>
+
+<p>Todos los despliegues de Dojo4 comienzan como despliegues de AWS por la razón obvia: es el estándar por el cual se juzgan todos los demás servicios en la nube. Tiene el beneficio adicional para una agencia en que podemos señalarlo como una 'opción predeterminada sensata' para el software que entregamos a los clientes; como el gorila de 800 libras, su uso es defendible. Sin embargo, algunos clientes raros han expresado su preocupación de que las fallas de AWS afecten sus sitios y aplicaciones, en particular las aplicaciones de monitoreo que se supone que deben reportar errores sobre dichas fallas: un problema recursivo. Para estos casos, hemos estado mirando despliegues estáticos equilibrados entre proveedores de nube con DNS, y DigitalOcean ha estado en la lista corta de contendientes para crear y desplegar sitios estáticos simples alojados por Apache con este propósito como una medida de seguridad para nuestros sitios alojados normalmente en AWS.</p>
+
+<p>Recientemente DigitalOcean (DO) tuvo un pequeño problema relacionado con sus prácticas de seguridad: https://github.com/fog/fog/issues/2525.</p>
+
+<p>Se podría resumir este problema como: cuando inicias una nueva caja en la nube, puede o no tener datos sensibles de algún usuario anterior en el disco y, cuando apagas tu propia caja en la nube, puedes exponer tus propios datos sensibles a algún tercero aleatorio. Su servicio proporciona una forma de limpiar todo, pero no es la opción predeterminada - la opción predeterminada es dejar cualquier cosa que estuviera en el disco expuesta para que el próximo cliente la explore.</p>
+
+<p><em>Esta es una estrategia predeterminada realmente mala.</em></p>
+
+<p>En Twitter sugerí que no me sorprendió esta estrategia laxa, pero que me decepcionó la forma en que DO manejó la situación durante la revelación. Durante un breve intercambio en Twitter, me preguntaron que resumiera la fuente de mi falta de sorpresa:</p>
+
+<blockquote class="twitter-tweet" lang="es"><p><a href="https://twitter.com/drawohara">@drawohara</a> Si quisieras tomarte el tiempo de ponerlo en un correo electrónico, lo leería y lo compartiría con todo el equipo, y lo apreciaría mucho. :)</p>&mdash; John Edgar (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">30 de diciembre de 2013</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Entonces, con una visión retrospectiva de 20/20 y tratando de ser útil, estoy cumpliendo mi promesa y explicando por qué he estado retrasando el traslado de cualquiera de nuestras cosas a la plataforma de DigitalOcean. (Tenga en cuenta que esta lista compromete sentimientos e impresiones solamente, pero que han sido validados y fortalecidos en cierta medida por el reciente fiasco de limpieza de discos):</p>
+
+<ul>
+  <li>Al visitar la página de inicio de DO, uno se encuentra con un claro mensaje de marketing que grita 'barato y rápido'</li>
+</ul>
+
+<p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
+
+<p>dado que la plataforma está 'construida para desarrolladores', personalmente encuentro extraño que el equipo aparentemente no anticipara que los desarrolladores recibieran el claro mensaje de 'bueno, rápido y barato' uno está eligiendo los últimos <em>dos</em> con DO.</p>
+
+<ul>
+  <li>Luego, uno recibe un bonito mensaje de confirmación de que, como startup, DO está motivado para demostrar un crecimiento muy, muy rápido</li>
+</ul>
+
+<p><img src="http://cl.ly/T8pL/Screen%20Shot%202013-12-30%20at%201.05.20%20PM.png" alt="" /></p>
+
+<p>esto debería darle a cualquier ingeniero de operaciones una sensación de enfermedad en el estómago.</p>
+
+<ul>
+  <li>Al explorar el sitio, uno encuentra un constante golpeteo del tambor 'rápido y barato', por ejemplo, en el programa de referidos</li>
+</ul>
+
+<p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
+
+<p>que martilla el mensaje y sugiere a los desarrolladores que vendan a sus amigos lo rápido y barato sin siquiera un ápice de información sobre la robustez, consistencia o seguridad.</p>
+
+<ul>
+  <li>Al leer el blog, quedó muy claro que DO sigue un ciclo de desarrollo ágil, impulsado por el usuario:</li>
+</ul>
+
+<p>https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</p>
+
+<p>y aunque admiro, apruebo y recomiendo este tipo de enfoque para el software en general, construir la seguridad y la robustez de manera iterativa no parece ser el punto ideal para este tipo de negocio, a pesar de lo genial que deben pensar que es para los VC (que nunca han luchado contra una violación de seguridad en la naturaleza). Algunas cosas requieren una experiencia masiva y una planificación de arriba hacia abajo: una pila que permite a sus usuarios almacenar datos y ejecutar código, ya sea un navegador o una nube, entran en la categoría de 'Quiero que alguien extraiga código real de sistemas reales con un historial de ataques' y no 'Escuchamos a los usuarios e iteramos rápidamente, aprendiendo sobre la marcha.'</p>
+
+<p>Entonces, no me malinterpreten, todavía estoy evaluando DigitalOcean como una buena pila programable en la que desplegar sitios estáticos simples y, por supuesto, quiero verlos triunfar, pero tengo preocupaciones sobre su cultura y si es el tipo de cultura que practica prácticas de seguridad defensivas frente a reactivas y si podrán mantener su crecimiento, punto de precio y, en última instancia, financiación cuando, y si, alcanzan a los otros actores de la nube en este aspecto. Leer sus actitudes y creencias en el contexto del reciente debacle (https://github.com/fog/fog/issues/2525) me da alguna razón para dudarlo.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ir a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:odio-esto@drawohara.io?subject=/digital-ocean-rapido-y-barato-pero-bueno">😩, yo 🖤 ^esto!<a>
+  </li>
+  <li>
+    <a href="/now">/ahora<a>
+  </li>
+  <li>
+    <a href="/about">/acerca de<a>
+  </li>
+  <li>
+    <a href="/contact">/contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

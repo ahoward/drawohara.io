@@ -1,0 +1,160 @@
+<html color-mode="user" lang="it">
+  <head>
+    <base href='/langs/it' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niente da vedere qui.</title>
+
+    <meta property="og:title" content="niente da vedere qui."/>
+    <meta property="og:description" content="proseguire." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"mobile-detection-behind-a-cdn"}">
+    <meta property="site:path_info" content=""/mobile-detection-behind-a-cdn"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/mobile-detection-behind-a-cdn">i ❤️  questo!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bevimi'>&lt;&lt; clicca qui 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/mobile-detection-behind-a-cdn</strong>
+    </header>
+
+    <main>
+      <em>pubblicato il: 2014-07-23</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>In un recente progetto, ci è stato affidato il compito di costruire la versione mobile di un sito web esistente. Il sito web esistente non era un buon candidato per un design reattivo, quindi abbiamo deciso di creare una versione completamente nuova del sito per dispositivi mobili.</p>
+
+        <p>![5547851770<em>3598506559_z.jpg](assets/b.jpeg)<br />
+        _(foto di <a href="https://www.flickr.com/photos/johanl/5547851770/in/photolist-9sfc3J-63nmeT-3BAAy-dWUBhB-pAZUn-ccjB1w-st5Gc-7B2UEE-bbLNKX-8yTj9M-9e6jeJ-72jTj6-8RU8QS-5TNHyH-8FkSqy-5r7dgL-5A6ymJ-atHdpQ-7BbKMK-8P8X2-7bD7t6-2ViX1A-5E6qqL-6NDF76-9hBh7m-4bSRnn-sZomP-6VbEE-buapa2-5Kw5si-85KrwR-5kpSzg-bjEUUE-bV9J19-5GXRmg-6zbLPt-8yWpiA-akq64F-5n4ciA-9hmSj5-msHvhK-hZpPt-bFe25b-Bjwzo-mFYCVT-d3v8y-6wRQrs-f1p7uv-f8rrUJ-ebxiKS">Johan Larsson</a>)</em></p>
+
+        <p>Inizialmente stavamo pensando di utilizzare il modello m.example.com, dove i siti sono domini completamente separati. Tuttavia, poiché non gestiamo l'infrastruttura per questo sito, volevamo adottare un approccio che richiedesse il minor numero possibile di modifiche all'infrastruttura. Supportare un altro dominio sugli stessi server non è molto difficile, ma è solo un altro compito che è facile sbagliare e non necessario nel nostro caso.</p>
+
+        <p>Ho anche rilasciato questa tecnica per chiunque possa utilizzarla facilmente in un'app rails tramite un motore rails:</p>
+
+        <ul>
+          <li>https://github.com/milesmatthias/cdddn</li>
+          <li>http://rubygems.org/gems/cdddn</li>
+        </ul>
+
+        <h2 id="intro-a-cloudfront">Intro a CloudFront</h2>
+
+        <p>Un enorme vantaggio di questo particolare sito web è che utilizza <a href="http://aws.amazon.com/cloudfront/">CloudFront</a>. CloudFront è una rete di distribuzione dei contenuti (CDN), dove le pagine web statiche sono ospitate in <a href="http://aws.amazon.com/cloudfront/details/">52 centri dati in tutto il mondo</a>. Questo consente alla pagina di essere servita al browser il più rapidamente possibile perché, indipendentemente da dove ti trovi nel mondo, non sarai lontano da uno dei nodi di CloudFront, quindi ci vorrà meno tempo per la consegna del sito web al tuo dispositivo. CloudFront fa parte dell'offerta AWS di Amazon e, oltre a garantire la velocità, garantisce anche l'uptime. (A differenza di <a href="http://aws.amazon.com/s3/">S3</a>, dove è garantito solo l'uptime.)</p>
+
+        <p>Quando usi CloudFront, gli dici dove si trova il tuo server web in modo che CloudFront possa ottenere l'ultima versione delle pagine web che sta servendo per te. CloudFront chiede anche al tuo server web nuove versioni delle tue pagine web ogni pochi minuti, o qualunque intervallo di tempo tu configuri nel tuo pannello di controllo CloudFront. Normalmente, è da qualche parte intorno alle 24 ore. Questo consente a CloudFront di concentrarsi sulla disponibilità e la velocità, riducendo notevolmente il carico sul tuo server web. (Ci vuole anche del tempo per CloudFront per prendere una nuova versione di una pagina e aggiornare tutti i 52 centri dati.)</p>
+
+        <p>Tuttavia, questo introduce il problema del tracciamento dello stato. Ad esempio, se il tuo sito è interamente servito da CloudFront, come fai a supportare gli utenti che accedono al tuo sito? Se sono un utente di nome Bob e la pagina in <code>/my/account</code> dice "Ciao Bob!", CloudFront penserà che tutti coloro che richiedono la pagina in <code>/my/account</code> debbano vedere la versione della pagina che dice "Ciao Bob!". Gli utenti (tranne forse le persone di nome Bob...) saranno molto confusi. Non solo, ma cosa succede se un utente aggiorna un valore nel suo account e si aspetta che quella modifica venga visualizzata istantaneamente? CloudFront non ottiene una nuova versione della pagina a ogni richiesta (ciò annullerebbe in parte lo scopo di CloudFront), aspetta qualche minuto per ottenere una nuova versione. CloudFront ha affrontato diverse di queste domande con <a href="http://aws.amazon.com/cloudfront/dynamic-content/">nuove funzionalità</a>, ma devi essere consapevole di queste implicazioni quando usi CloudFront.</p>
+
+        <p>Nel nostro caso, il sito su cui stiamo lavorando non ha il concetto di "utenti" e nessuno può accedere al sistema. Tuttavia, vogliamo comunque che CloudFront mostri versioni diverse del sito a seconda del dispositivo da cui viene richiesto il sito (mobile vs desktop).</p>
+
+        <p>CloudFront può eseguire il rilevamento del dispositivo per te e quindi inviare un'intestazione speciale al tuo server web per dire "Dammi la versione della pagina per un telefono", tuttavia volevamo avere il controllo sul metodo di rilevamento del dispositivo (rispondendo alla domanda - è un telefono o un desktop?) e volevamo la possibilità per gli utenti finali e gli sviluppatori di sovrascrivere il dispositivo scelto per loro. Ad esempio, gli utenti finali su un tablet potrebbero voler vedere la versione desktop anche se inizialmente mostriamo loro la versione mobile. Anche i nostri sviluppatori troverebbero fastidioso dover cambiare dispositivo ogni volta che vogliono passare tra le versioni durante la costruzione del sito.</p>
+
+        <h2 id="la-nostra-soluzione">La nostra soluzione</h2>
+
+        <p>Quindi ecco il metodo che abbiamo escogitato per avere sia una versione desktop che mobile di un sito sullo stesso dominio e servita da CloudFront. Una nota richiesta è che CloudFront disabilita normalmente tutti i cookie per il tuo dominio, ma puoi configurarlo per consentire i cookie che nomini. Nel nostro caso, abbiamo detto a CloudFront di consentire un cookie chiamato 'device'. Nota anche che siamo nel contesto di un'app rails 4, ma questa architettura può essere replicata in qualsiasi stack. Il punto principale qui è che il client deve capire su quale dispositivo si trova l'utente, permettergli di sovrascriverlo e mantenere il server informato del tipo di dispositivo in modo che il server possa servire le pagine giuste (questo viene fatto tramite cookie).</p>
+
+        <h3 id="su-ogni-pagina-è-necessario-fare-qualcosa-di-simile-a-questo-snippet-da-appviewslayoutapplicationhtmlerb">Su ogni pagina è necessario fare qualcosa di simile a questo (snippet da app/views/layout/application.html.erb)</h3>
+
+        <pre><code class="language-html+erb">&lt;%= javascript_include_tag "mobile_detection" %&gt;
+
+&lt;script&gt;
+
+  if (!window.location.href.match(/get_device|set_device/)){
+    console.log('logging the window.location.href = ' + window.location.href);
+    localStorage.setItem('referrer_href', window.location.href);
+  }
+
+  var device_cookie  = cookie.get('device'),
+      cookiesEnabled = cookie.enabled();
+
+  if (cookiesEnabled &amp;&amp; device_cookie == undefined) {
+    window.location = '/get_device.html'
+  }
+
+&lt;/script&gt;
+</code></pre>
+
+        <p>Il codice sopra ricorda semplicemente quale pagina hai visitato (di solito la home page, ma vogliamo che il client possa condividere link e che funzioni anche su mobile), e poi ti reindirizza alla pagina <code>/get_device</code> per rilevare il tuo dispositivo se non l'abbiamo ancora fatto. Nota l'uso di <code>localStorage</code>, il che significa che funzionerà solo su IE8+ e non funzionerà su Opera Mini.</p>
+
+        <p>Nota inoltre che lo snippet sopra è posizionato nel <code>&lt;head&gt;</code> del layout in modo che venga eseguito il prima possibile e prima di eventuali script che la versione desktop potrebbe avere. In questo caso, la versione desktop utilizza pesantemente javascript per caricare moltissimi contenuti, quindi non volevamo che tutto ciò accadesse su un telefono prima che il sito riconoscesse che l'utente dovrebbe vedere la versione mobile del sito.</p>
+
+        <h3 id="su-ogni-pagina-mobile-è-necessario-fare-questo-da-appviewslayoutapplicationmobileerb">Su ogni pagina mobile è necessario fare questo (da `app/views/layout/application.mobile.erb):</h3>
+
+        <div class="language-js highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">script</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">device_cookie</span>&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookie</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">get</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">device</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">),</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookiesEnabled</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookie</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">enabled</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-4'>&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if </span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">cookiesEnabled</span>&nbsp;<span style="color: #0550ae">&amp;&amp;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">device_cookie</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">desktop</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">reload</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">true</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #

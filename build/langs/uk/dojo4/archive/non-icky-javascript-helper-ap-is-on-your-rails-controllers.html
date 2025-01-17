@@ -1,0 +1,163 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/langs/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Тут нічого немає.</title>
+
+    <meta property="og:title" content="Тут нічого немає."/>
+    <meta property="og:description" content="продовжуйте рухатися." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content="/dojo4/archive/:id"/>
+    <meta property="site:params" content="{&quot;ext&quot;:null,&quot;id&quot;:&quot;non-icky-javascript-helper-ap-is-on-your-rails-controllers&quot;}">
+    <meta property="site:path_info" content="/non-icky-javascript-helper-ap-is-on-your-rails-controllers"/>
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/non-icky-javascript-helper-ap-is-on-your-rails-controllers">я ❤️ це!</a>
+      <small>
+        <small>
+          <small>
+            <span title="випий мене">&lt;&lt; натисни мене 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/non-icky-javascript-helper-ap-is-on-your-rails-controllers</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2013-06-10</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>див. https://gist.github.com/ahoward/5752290</p>
+
+        <p>Веб-додатки майже завжди потребують великої кількості невеликих JavaScript-допоміжних методів: ви знаєте, автозаповнення форм, заповнення значень за замовчуванням, валідації тощо. Це не справжні API-виклики, а просто невеликі шматочки функціональності, необхідні для роботи представлень.</p>
+
+        <p>Завжди виникає питання, до якого контролера підвісити ці методи. Створити загальний допоміжний контролер для всього цього? Підвісити їх до контролера, що наразі? Як поділитися бекендом JavaScript-допоміжних методів між контролерами?</p>
+
+        <h2>Крок перший</h2>
+
+        <p>включіть модуль RPC у ваш ApplicationController</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">ApplicationController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #0550ae">::</span><span style="color: #953800">ActionController</span><span style="color: #0550ae">::</span><span style="color: #953800">Base</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">include</span>&nbsp;<span style="color: #953800">RPC</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-5'>
+        </div></code></div>
+
+        <h2>Крок другий</h2>
+
+        <p>у контролерах оголосіть RPC-допоміжні методи</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">PostsController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ApplicationController</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rpc</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:defaults</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #0550ae">|</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">post</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Post</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">post</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">set_defaults!</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">post</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">as_json</span>
+        </div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-9'>
+        </div></code></div>
+
+        <h2>Крок третій</h2>
+
+        <p>налаштуйте JS для виклику RPC-методів <em>відносно</em> поточного контролера</p>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781">// у файлі: app/views/layouts/application.html.erb</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #6e7781">// помітка, що URL RPC-кінцева точка відносна</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+        </div><div class='code-line code-line-6'>
+        </div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #6e7781">// &lt;script&gt;</span>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+        </div><div class='code-line code-line-10'>
+        </div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rpc</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// аналіз аргументів</span>
+        </div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">//</span>
+        </div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Array</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">prototype</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">slice</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">call</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">arguments</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ajax</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">method</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-17'>
+        </div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0550ae">1</span>&nbsp;<span style="color: #0550ae">&amp;&amp;</span>&nbsp;<span style="color: #cf222e">typeof</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">])</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">object</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+        </div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ajax</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">shift</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #cf222e">else</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ajax</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{};</span>
+        </div><div class='code-line code-line-22'>
+        </div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">for</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">0</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">length</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">i</span><span style="color: #0550ae">++</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+        </div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">arg</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">i</span><span style="color: #24292f;background-color: #f6f8fa">];</span>
+        </div><div class='code-line code-line-25'>
+        </div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">switch </span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">typeof</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">arg</span><span style="color: #24292f;background-color: #f6f8fa">))</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">case</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">object</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">:</span>
+        </div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ajax</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">data</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">arg</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">break</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">case</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">function</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">:</span>
+        </div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ajax</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">success</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">arg</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">break</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">case</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">string</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">:</span>
+        </div><div class='code-line code-line-34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">method</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">arg</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">break</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+        </div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>

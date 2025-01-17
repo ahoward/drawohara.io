@@ -1,0 +1,176 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niets te zien hier.</title>
+
+    <meta property="og:title" content="niets te zien hier."/>
+    <meta property="og:description" content="ga verder." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"controlling-html5-audio-on-mobile-devices"}">
+    <meta property="site:path_info" content=""/controlling-html5-audio-on-mobile-devices"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/controlling-html5-audio-on-mobile-devices">ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/controlling-html5-audio-on-mobile-devices</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2015-01-12</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>(Dit verscheen oorspronkelijk op Spike's <a href="http://stuff-things.net/">Stuff… And Things…</a> blog)</p>
+
+        <p>HTML5 <code>&lt;audio&gt;</code> tags is vrij eenvoudig. Gegeven:</p>
+
+        <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;audio</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"player"</span><span style="color: #116329">&gt;&lt;/audio&gt;</span>
+        </div></code></div>
+
+        <p>dit stukje Javascript:</p>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">some-audio-file-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">()</span>
+        </div></code></div>
+
+        <p>zal beginnen met het afspelen van wat de src aangeeft. (Pro-tip: Als je jQuery gebruikt, heb je het echte HTML-element nodig met <code>player = $('#player')[0]</code> of <code>player = $('#player').get(0)</code>)</p>
+
+        <p>Echter, als de gebruiker zich op een iOS- of Android-mobiel apparaat bevindt, zal het bovenstaande niet echt iets afspelen. Geen van die besturingssystemen staat web-audio (of video) toe om te streamen zonder gebruikersinteractie. Het rationeel is dat het streamen van gegevens over het mobiele netwerk geld kan kosten en niet zonder dat de gebruiker echt op een knop drukt mag gebeuren.</p>
+
+        <p>Alles goed en goed, maar wat als je een geluid wilt afspelen als reactie op een gebeurtenis, zeg eens per minuut de browser laten piepen:</p>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">beep-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+        </div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">beeper</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">setInterval</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0550ae">1000</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #0550ae">60</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div></code></div>
+
+        <p>Dit werkt prima in desktopbrowsers, maar op mobiel wordt de oproep naar <code>play()</code> niets doen.</p>
+
+        <p>Gelukkig zijn er drie dingen die de omzeiling eenvoudig maken:</p>
+
+        <ol>
+          <li>De gebruiker hoeft slechts één keer op afspelen te drukken per audio-element.</li>
+          <li>“Op afspelen drukken” kan ook betekenen dat <code>play()</code> wordt geactiveerd via een klikgebeurtenis.</li>
+          <li>Het afspelen van een audio-element zonder bron is een wettige no-op.</li>
+        </ol>
+
+        <p>Kortom, alles wat we nodig hebben is dat de gebruiker op een knop drukt die een leeg audio-element afspeelt om er de controle over te krijgen:</p>
+
+        <div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;audio</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"player"</span><span style="color: #116329">&gt;&lt;/audio&gt;</span>
+        </div><div class='code-line code-line-2'><span style="color: #116329">&lt;button</span>&nbsp;<span style="color: #116329">id=</span><span style="color: #0a3069">"ok"</span><span style="color: #116329">&gt;</span>OK&nbsp;om&nbsp;te&nbsp;piepen<span style="color: #116329">&lt;/button&gt;</span>
+        </div></code></div>
+
+        <div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">// Vermoedt jQuery</span>
+        </div><div class='code-line code-line-2'><span style="color: #8250df">$</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">"</span><span style="color: #0a3069">#ok</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">click</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+        </div><div class='code-line code-line-3'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">document</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getElementById</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">player</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-4'>&nbsp;<span style="color: #8250df">$</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #cf222e">this</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">slideUp</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+        </div><div class='code-line code-line-5'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #6e7781">// Speel het lege element af om de controle te krijgen</span>
+        </div><div class='code-line code-line-6'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">src</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">beep-url</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>&nbsp;<span style="color: #6e7781">// Stel de echte audio-bron in</span>
+        </div><div class='code-line code-line-7'>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">beeper</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">setInterval</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">player</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">play</span><span style="color: #24292f;background-color: #f6f8fa">();</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0550ae">1000</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #0550ae">60</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+        </div><div class='code-line code-line-8'><span style="color: #24292f;background-color: #f6f8fa">});</span>
+        </div></code></div>
+
+        <p>De klik kan alles zijn, een subtielere versie zou zijn om het te koppelen aan de <em>sluit</em> knop van een instructiemodal aan het begin van een spel.</p>
+
+        <p>Deze techniek vervaagt de grens misschien een beetje tussen de geest en de letter van de wet, maar het doet de baan en maakt het mogelijk om een consistente ervaring te creëren voor zowel desktop- als mobiele gebruikers.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/controlling-html5-audio-on-mobile-devices">😩, ik 🖤 ^dit!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/over<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; uitstappen</a>
+    </footer>
+  </body>
+</html>

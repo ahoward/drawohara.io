@@ -1,0 +1,408 @@
+<html color-mode="user" lang="it">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <base href='/langs/it' />
+
+  <!-- meta -->
+    <title>non c'è niente da vedere qui.</title>
+
+<meta property="og:title" content="non c'è niente da vedere qui."/>
+<meta property="og:description" content="continua a camminare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-shadow-world-of-css-tables"}">
+    <meta property="site:path_info" content=""/the-shadow-world-of-css-tables"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/the-shadow-world-of-css-tables">io ❤️ questo!</a>
+<small>
+  <small>
+    <small>
+      <span title='bevimi'>&lt;&lt; clicca qui 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/il-mondo-ombra-delle-tabelle-css</strong>
+    </header>
+
+    <main>
+      <em>pubblicato il: 2014-04-08</em>
+<br>
+<br>
+
+<p>
+  Il futuro dei layout web è <a href="http://dev.w3.org/csswg/css-flexbox/" target="_blank">promettente</a>, specialmente per lo sviluppatore web esperto le cui tabelle profondamente annidate <a href="http://www.isse.ucar.edu/water_climate/index.html" target="_blank">infestano ancora Internet</a>. Ma fino a quando flexbox non sarà pronto per il prime time, i float CSS—il meccanismo di layout principale per framework CSS come Twitter Bootstrap e Zurb Foundation—dovranno essere sufficienti.
+</p>
+
+<p>
+  O lo saranno?
+</p>
+
+<img src='/ro/dojo4/the-shadow-world-of-css-tables/assets/display-table.gif' />
+
+<p>
+  Alcuni dei brillanti giovani web designer di oggi potrebbero non essere consapevoli che si è creato un vuoto quando i layout basati su TABELLA sono stati detronizzati. <a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a>, che ha mostrato la promessa dei layout CSS e ha messo un pugnale nel cuore di quelli basati su TABELLA, non ha necessariamente incoronato un successore.
+</p>
+
+<p>
+  C'era la tecnica Holy Grail, il Posizionamento Assoluto Finto e molte altre fette di <a href="http://www.positioniseverything.net/" target="_blank">PIE</a>. Era un periodo di sperimentazione, il cui spirito si è un po' affievolito alla luce di tutti i bei framework là fuori (anche se alcune persone <a href="https://github.com/necolas/suit-grid-layouts" target="_blank">sperimentano</a> di tanto in tanto).
+</p>
+
+<p>
+  Una tecnica che non ha guadagnato terreno è stata quella dei layout CSS a tabelle. Diverse cose hanno cospirato contro di essa:
+</p>
+
+<ol>
+  <li>
+    il titolo del libro che la promuoveva, <a href="http://www.amazon.co.uk/dp/0980455227" target="_blank">Tutto quello che sai sul CSS è sbagliato</a>, era, diciamocelo, un po' alienante
+  </li>
+  <li>
+    il nome stesso della tecnica ha evocato demoni dei tempi passati (layout TABELLA!)
+  </li>
+  <li>
+    era avanti rispetto al suo tempo—prima che due importanti browser dell'epoca lo supportassero (IE6/IE7)
+  </li>
+</ol>
+
+<p>
+  Ma recentemente, diverse persone hanno rivisitato la tecnica perché, con una o due righe di codice, consente un posizionamento che altre tecniche non possono fare senza hack o JS. Inoltre, offre trucchi di riordino della sorgente che tornano utili nei contesti responsive.
+</p>
+
+<h2 id="centratura-verticale">
+  Centratura verticale
+</h2>
+
+<p>
+  Gli sviluppatori frontend sono familiari con la sfida di allineare gli elementi verticalmente in una riga quando le altezze sono sconosciute. Infatti, di solito è il primo problema che si deve risolvere nel <code>HEADER</code> di qualsiasi sito (logo e navigazione).
+</p>
+
+<p>
+  Le <code>TABELLA</code> hanno reso la centratura verticale facile con l'attributo <code>VALIGN</code>. Nei layout basati su float, le cose sono <a href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/" target="_blank">molto più complesse</a>, richiedendo molti trucchi (posizionamento, padding o altezze di linea solitamente).
+</p>
+
+<p>
+  Entrano in gioco le tabelle CSS, che rendono la centratura verticale banale con la proprietà <code>vertical-align: middle</code>. Per illustrare, prendiamo il seguente markup:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"riga-tabella"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cella"</span><span class="nt">&gt;</span>
+        foo
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cella"</span><span class="nt">&gt;</span>
+        bar
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cella"</span><span class="nt">&gt;</span>
+        baz
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cella"</span><span class="nt">&gt;</span>
+        foo<span class="nt">&lt;br&gt;</span>bar<span class="nt">&lt;br&gt;</span>baz<span class="nt">&lt;br&gt;</span>qux
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  </pre>
+</div>
+
+<p>
+  Combinatelo con il seguente CSS:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nc">.riga-tabella</span> {
+      <span class="nl">display</span>: <span class="m">table</span>;
+      <span class="nl">table-layout</span>: <span class="m">fixed</span>;
+      <span class="nl">width</span>: <span class="m">100%</span>;
+    }
+
+    <span class="nc">.cella</span> {
+      <span class="nl">display</span>: <span class="m">table-cell</span>;
+      <span class="nl">width</span>: <span class="m">25%</span>;
+      <span class="nl">vertical-align</span>: <span class="m">middle</span>;
+    }
+  </pre>
+</div>
+
+<p>
+  E ottieni il seguente layout centrato verticalmente, nonostante il contenuto più alto dell'ultima colonna:
+</p>
+
+<div class="riga-tabella" style="margin-bottom: 25px;">
+
+
+    <div class="cella">
+      foo
+    </div>
+
+
+    <div class="cella">
+      bar
+    </div>
+
+
+    <div class="cella">
+      baz
+    </div>
+
+
+    <div class="cella">
+      foo<br>bar<br>baz<br>qux
+    </div>
+
+</div>
+
+<p>
+  Un vantaggio aggiuntivo di questo metodo è che la maggior parte degli sviluppatori backend <em>capisce</em> le <code>TABELLA</code> (sto guardando te, <a href="/team/ara-t-howard" target="_blank">Ara</a>). Quindi, se scrivi stili per gli altri da usare, puoi creare un sistema di griglia OOCSS con classi e sottoclassi intuitive (".col", ".col-valign-middle", ".col-valign-top", ecc.) per facilitare loro la vita.
+</p>
+
+<h2 id="colonne-di-altezza-uguale">
+  Colonne di altezza uguale
+</h2>
+
+<p>
+  Con lo stesso markup di cui sopra, è piuttosto facile creare colonne di altezza uguale; aggiungeremo solo alcuni colori di sfondo per dimostrarlo:
+</p>
+
+<div class="riga-tabella" style="margin-bottom: 25px;">
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B">
+      foo
+    </div>
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7">
+      bar
+    </div>
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#777777">
+      baz
+    </div>
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA">
+      foo<br>bar<br>baz<br>qux
+    </div>
+
+</div>
+
+<p>
+  Certo, ci sono librerie JS che fanno sì che le colonne fluttuanti facciano questo, ma ci sono tutti i tipi di stranezze nel ridimensionamento delle finestre che si devono fare in un contesto responsive per impedire che le altezze delle colonne (calcolate da JS) si riversino su viewport più piccoli.
+</p>
+
+<p>
+  Invece, con una semplice media query, posso far sì che le tabelle CSS si trasformino in blocchi (<code>display: block</code>) o gruppi di tabelle (<code>display: table-header-group</code>) a seconda di ciò che è appropriato per il contesto dato.
+</p>
+
+<h2 id="trucchi-di-riordino-della-sorgente">
+  Trucchi di riordino della sorgente
+</h2>
+
+<p>
+  Le proprietà delle tabelle CSS possono tornare utili quando si desidera rimescolare le carte che sono state distribuite dall'ordine della sorgente HTML. Nei layout basati su float, è possibile spingere e tirare gli elementi in viewport più grandi, ma le cose si impileranno nello stesso ordine della sorgente HTML in quelli più piccoli.
+</p>
+
+<p>
+  Le tabelle CSS ti permettono di riordinare significativamente le cose, in particolare su viewport più piccoli. Prendiamo il nostro esempio precedente, ad esempio:
+</p>
+
+<div class="riga-tabella" style="margin-bottom: 25px;">
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B;">
+      0
+    </div>
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7;">
+      1
+    </div>
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#777777;">
+      2
+    </div>
+
+
+    <div class="cella" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA;">
+      3
+    </div>
+
+</div>
+
+<p>
+  Cambiando l'impostazione del display su una delle proprietà dei gruppi di tabelle (<code>display: table-caption</code>, <code>display: table-header-group</code>, <code>display: table-row-group</code>, o <code>display: table-footer-group</code>), possiamo impilare gli elementi in modo piuttosto diverso rispetto a come appaiono nel layout a riga su viewport più grandi (rispetto all'ordine della sorgente).
+</p>
+
+<p>
+  Ad esempio, se volessimo che le colonne sopra si impilassero nel seguente ordine (2,3,1,0), applicheremmo le seguenti proprietà di visualizzazione alle celle (da sinistra a destra): <code>display: table-footer-group</code> (0), <code>display: table-row-group</code> (1), <code>display: table-caption</code> (2), <code>display: table-header-group</code> (3). E le celle si impilerebbero così:
+</p>
+
+<div class="riga-tabella" style="margin-bottom: 25px;">
+
+
+    <div class="cella" style="width:100%;display:table-footer-group;color:rgba(0,0,0, 0.6);background-color:#F05F3B;">
+      0
+    </div>
+
+
+    <div class="cella" style="width:100%;display:table-row-group;color:rgba(0,0,0, 0.6);background-color:#E7E5D7;">
+      1
+    </div>
+
+
+    <div class="cella" style="width:100%;display:table-caption;color:rgba(0,0,0, 0.6);background-color:#777777;">
+      2
+    </div>
+
+
+    <div class="cella" style="width:100%;display:table-header-group;color:rgba(0,0,0, 0.6);background-color:#55ACAA;">
+      3
+    </div>
+
+</div>
+
+<p>
+  Nota: ho dovuto aggiungere una regola <code>width: 100%</code> all'elemento <code>display: table-caption</code> perché altrimenti non avrebbe riempito lo spazio disponibile.
+</p>
+
+<p>
+  Perché diavolo dovresti voler fare questo?! Beh, potresti fare uno di quei trucchi di <a href="http://bradfrostweb.com/blog/web/responsive-nav-patterns/#footer-anchor" target="_blank">navigazione nel footer</a> per piccoli viewport e vuoi che tutta la navigazione che è nel tuo <code>HEADER</code> scenda in fondo alla pagina.
+</p>
+
+<p>
+  O forse hai semplicemente una colonna in una riga che dovrebbe essere vista per prima su viewport piccoli ma è visualizzata al centro di una riga su viewport più grandi.
+</p>
+
+<p>
+  Le possibilità non sono <strong>INFINITE</strong> o robuste quasi come quelle di flexbox, ma è qualcosa da tenere nel retro del tuo kit di strumenti.
+</p>
+
+<h2 id="note">
+  Note
+</h2>
+
+<p>
+  Le tabelle CSS erano supportate in Internet Explorer a partire da IE8. Altrimenti, il supporto è <a href="http://caniuse.com/css-table" target="_blank">abbastanza robusto</a>.
+</p>
+
+<p>
+  Anche se <a href="http://www.amazon.co.uk/dp/0980455227" target="_blank">Tutto quello che sai sul CSS è sbagliato</a> potrebbe sembrare un titolo di libro scoraggiante, in realtà è una buona lettura—e alcuni dei commenti su Amazon sono divertenti.
+</p>
+
+<p>
+  Se stai prendendo in considerazione l'idea di mettere qualcosa come una carosello scorrevole all'interno di una cella di una tabella CSS, studia la proprietà <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout" target="_blank">table-layout</a>, in particolare il valore "fixed". Questo impedisce alla cella di crescere per contenere il suo contenuto e incidentalmente può diminuire i tempi di rendering perché i browser non devono calcolare tutte le varie larghezze di tutti i vari contenuti delle tue celle.
+</p>
+
+<p>
+  Mi sono imbattuto in un curioso bug in Firefox riguardo al posizionamento degli elementi all'interno delle celle delle tabelle HTML e CSS. La soluzione "percorso del markup minimo", scoperta da un attuale dipendente di Mozilla, è dare sia alla riga che alla cella <a href="http://davidwalsh.name/table-cell-position-absolute" target="_blank">un'altezza del 100%</a>. Un'altra soluzione ben documentata è utilizzare un elemento all'interno della cella per stabilire un contesto di posizionamento.
+</p>
+
+<p>
+  Ian Yates ha scritto un eccellente <a href="http://webdesign.tutsplus.com/tutorials/the-role-of-table-layouts-in-responsive-web-design--webdesign-10294" target="_blank">articolo Tuts+</a> sull'uso delle tabelle CSS per i blocchi di annunci, che tendono a rappresentare componenti fissi in un layout fluido.
+</p>
+
+<p>
+  Ben Frain ha fatto alcuni test di performance davvero interessanti <a href="http://benfrain.com/css-performance-test-flexbox-v-css-table-fight/" target="_blank">confrontando flexbox con le tabelle CSS</a>. Le sue riserve sulla dimensione del campione e la mancanza di vere specifiche per flexbox dovrebbero essere notate.
+</p>
+
+<p>
+  Roger Johansson <a href="http://www.456bereastreet.com/archive/201110/using_displaytable_has_semantic_effects_in_some_screen_readers/" target="_blank">ha notato nell'ottobre 2011</a> che alcuni lettori di schermo trattano le tabelle CSS come tabelle HTML, il che è un problema. Forse questo è cambiato negli ultimi due anni e mezzo?
+</p>
+
+<p>
+  Come chiunque lavori su Internet, commetto molti errori. Per favore, urla su Twitter se ne ho fatto qualcuno qui o se hai interessanti intuizioni o se hai birra gratis.
+</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; vai a</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/the-shadow-world-of-css-tables">😩, io 🖤 ^questo!<a>
+  </li>
+  <li>
+    <a href="/now">/ora<a>
+  </li>
+  <li>
+    <a href="/about">/chi-siamo<a>
+  </li>
+  <li>
+    <a href="/contact">/contatti<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

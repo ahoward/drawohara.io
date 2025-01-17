@@ -1,0 +1,167 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Inget att se här.</title>
+
+<meta property="og:title" content="Inget att se här."/>
+<meta property="og:description" content="Fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"beginner-tutorial-i-os-certificates-provisioning-profiles"}">
+    <meta property="site:path_info" content=""/beginner-tutorial-i-os-certificates-provisioning-profiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">Jag älskar det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klick på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/beginner-tutorial-i-os-certificates-provisioning-profiles</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2013-10-24</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>För en ny iOS-utvecklare kan det vara ganska förvirrande. Du har en app som du bara vill att andra ska kunna testa på sin enhet, och du får skickas till Apples utvecklarportal med certifikat, enheter och distributionsprofiler. Innan din kropp går i chock, läs resten av det här inlägget för en enkel förklaring av alltihop.</p>
+
+<p><img src="https://draftin.com:443/images/2623?token=JlOjG8C7kRhUxTp9Bba_TPBP4jRCn0dL-2ugH03kEATD52BLmxZYEnY4Vynx55mzHS9ub3I5QR29W1MVWjkBA0k" alt="" /></p>
+
+<p>Kombinationen av certifikat, enheter och distributionsprofiler är Apples svar på några svåra frågor:</p>
+
+<p>F: Hur kan du garantera att den app du laddar ner inte har ändrats av någon hackare och att den verkligen kommer från utvecklaren/företaget som den påstår sig komma ifrån?</p>
+
+<p>S: <strong>Certifikat.</strong> Någonsin läst om PGP-krypterad e-post? Den där grejen med en offentlig nyckel och en privat nyckel? Det är det som händer här, men du är avstraherad från att behöva oroa dig för det på grund av Mac-appen "Nyckelringåtkomst". När du lägger till ett nytt certifikat på portalen och följer instruktionerna för att använda "Nyckelringåtkomst" för att ladda upp en certifikatförfrågan använder "Nyckelringåtkomst" din privata nyckel för att skapa en offentlig nyckel, som sedan bäddas in i certifikatförfrågan som skickas till Apple. Apple ger dig tillbaka ett certifikat som du sedan kan lägga i din nyckelring (nu kan du ladda ner och lägga till det automatiskt via Xcode).</p>
+
+<p><em>(Uppdatering: Det verkar som att du kan låta Xcode hantera dina certifikat/"Signeringsidentiteter" i inställningarna också.)</em></p>
+
+<p><img src="https://draftin.com:443/images/2624?token=w3b1zrNeBBqC2WRMbEvt7BKrWA0U5A_FhTLXE9Uvex6mYA5pxwSfYG5M1GGWhYd0TkzxxiD8UUIyN7GA34d8NHQ" alt="" /></p>
+
+<p>Observera att det finns olika certifikat för olika scenarier också. Utvecklargertifikat används när du bara vill få en vanlig app (app-id: *) att fungera och du utvecklar lokalt och på din utvecklingsenhet som är kopplad till din dator. Ett AdHoc-certifikat används när du vill tillåta några få testare att installera din app på sin enhet innan den offentliga lanseringen i App Store. App Store- och AdHoc-certifikat är kopplade till en specifik app (app-id), och de brukar använda en organisations certifikat, eftersom certifikatet är hur Apple vet vad som ska visas på raden "Utvecklat av" i App Store-listningen.</p>
+
+<p>F: Hur kan vi tillåta ett fåtal testare att installera appen på sin mobil och prova den innan vi släpper den till hela världen via App Store?</p>
+
+<p>S: <strong>Enheter & Distributionsprofiler.</strong> Apple tillåter endast sina användare att installera appar via App Store. Men när du är en utvecklare och vill att några personer ska testa den innan den går till App Store behöver du använda distributionsprofiler och enheter.</p>
+
+<p>Först får du någon att ge dig sin enhets UUID (universellt unikt identifieringsnummer), vilket vanligtvis görs via en tjänst som <a href="http://www.testflight.com">Testflight</a> eller <a href="http://hockeyapp.net/">HockeyApp</a> där en person kan anmäla sig för att bli en av dina testare och tjänsten automatiskt kommer att mejla dig deras UUID. För att hindra dig från att kringgå App Store begränsar Apple dig till att bara lägga till 100 enheter per år till ditt iOS-utvecklarkonto.</p>
+
+<p><img src="https://draftin.com:443/images/2625?token=vjMPdsPjLmPKBD1DOANNeAD_QkMIQO7y8jE7HvP0sZCej5dwCQjQYVwVdReo7bJE6iZX53ZFBOeVrd5jtElccdU" alt="" /></p>
+
+<p>Sedan skapar du en distributionsprofil. Varje distributionsprofil inkluderar ett certifikat för att signera appen säkert från en specifik person/organisation. Distributionsprofilerna deklarerar också vem som har rätt att installera byggversionen av appen. I fallet med en App Store-distributionsprofil säger den att den byggversionen av appen kan installeras av vem som helst så länge den laddas ner via App Store.</p>
+
+<p><img src="https://draftin.com:443/images/2626?token=9C_AJjhMWZQw2pe-0cdxMSUfRssZ-8gogKWU21qGyDaXl7G41hC7-eD8eCQ6rjq6oUtrZqdN_Yo-LvXyI13txqg" alt="" /></p>
+
+<p>När du får några testare ombord vill du använda en Ad Hoc-distributionsprofil (och certifikat). På "Redigera"-skärmen för distributionsprofilen kan du välja någon av enheterna som listas under "Enheter" i din utvecklarportal. Markera rutan bredvid de som du vill inkludera (Obs: du kan alltid markera eller avmarkera fler eller färre senare).</p>
+
+<p>Generera den här profilen, ladda ner den manuellt eller via Xcode-inställningarna, välj den när du arkiverar din app, och då kommer du att kunna ladda upp den .ipa-filen till en tjänst som Testflight för dina testare att installera.</p>
+
+<p>Några fler guidade bilder:</p>
+
+<ul>
+  <li>Låta Xcode automatiskt ladda ner distributionsprofiler och certifikat åt dig:</li>
+</ul>
+
+<p><img src="https://draftin.com:443/images/2627?token=0uiybrTmNZrs-1G5S3pUkV_02FcnA2PPVTNOPkIa7ugiQP8QMHhfk6swlm_kFIBOIUyv8GpmP3bATsCZylUkf20" alt="" /></p>
+
+<ul>
+  <li>Uppdatera certifikat ("Signeringsidentitet") som valts i projektets bygginställningar i Xcode:</li>
+</ul>
+
+<p><img src="https://draftin.com:443/images/2628?token=_yRFxLYAdihsFQWVEXwJVQi1JRH16YWIS-BHD0_NmLxyPzqnFg2HwgZknb_DDSBh93Bk1mHAOaOm3ZS5ug4r5bM" alt="" /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/om<a>
+  </li>
+  <li>
+    <a href="/contact">/kontakta<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

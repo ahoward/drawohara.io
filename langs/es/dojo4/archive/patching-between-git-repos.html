@@ -1,0 +1,184 @@
+<html color-mode="user" lang="es">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <base href='/langs/es' />
+
+  <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+<meta property="og:title" content="nada que ver aquí."/>
+<meta property="og:description" content="siga adelante." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"patching-between-git-repos"}">
+    <meta property="site:path_info" content=""/patching-between-git-repos"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/inicio">@drawohara</a> &mdash;
+<a href="mailto:me-encanta-esto@drawohara.io?subject=/patching-between-git-repos">¡me ❤️ esto!</a>
+<small>
+  <small>
+    <small>
+      <span title='bébelo'>&lt;&lt; haz clic aquí 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/patching-between-git-repos</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2015-03-30</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>(Esta publicación aparece originalmente en el blog <a href="http://stuff-things.net/">Stuff… And Things… de Spike</a>)</p>
+
+<p>Aunque la fama y los autos gratis son agradables, la razón por la que blogueo es para aprender, o, como en este caso, para ayudarme a recordar las cosas.</p>
+
+<p>Trabajo en varios proyectos distintos de Rails que comparten un ancestro común. A menudo, una corrección de errores o una nueva característica en uno debe ser portada a (algunos de) los otros.</p>
+
+<p>Dado que los proyectos viven en sus propios repositorios, los cambios no se pueden fusionar usando Git. No, este es un trabajo para parches. Y cuando se trata de parchear con Git, hay dos publicaciones sobre el proceso que no puedo vivir sin.</p>
+
+<p>Al parchear, tres comandos de Git entran en juego, <a href="http://git-scm.com/docs/git-format-patch">git format-patch</a>, <a href="http://git-scm.com/docs/git-apply]">git apply</a>, y el algo oscuro <a href="http://git-scm.com/docs/git-am">git am</a>.</p>
+
+<p><code>git patch</code> es bastante directo, da una lista de commits, genera un diff en <a href="http://en.wikipedia.org/wiki/Patch_%28Unix%29">formato de parche</a> que luego puede ser aplicado por Git o por el comando de parche. Lo que siempre tengo que buscar es el atajo para obtener un parche del último commit.</p>
+
+<p>La forma no abreviada es obtener el SHA del penúltimo commit y pasarlo a format-patch. ¿Por qué el penúltimo? El SHA representa el estado del repo después de que se haya realizado el commit, por lo tanto, el SHA final es donde estamos ahora, y el penúltimo donde estábamos antes de nuestros cambios.</p>
+
+<p>Generamos el parche de la siguiente manera:</p>
+
+<pre><code>git log --oneline
+975d4dc CHANGELOG.md generado automáticamente
+ca1216d Incremento para la corrección de validación
+git format-patch ca1216d
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p>(También puedes crear múltiples parches usando un SHA más atrás en el historial.)</p>
+
+<p>Sin embargo, hay un atajo para obtener el penúltimo commit que encontré hace mucho tiempo en esta publicación:</p>
+
+<p><a href="http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit">http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit</a> y es:</p>
+
+<pre><code>git format-patch HEAD^
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p><code>HEAD^</code> es la abreviatura de <code>HEAD^1</code>, el <em>^1</em> significa el primer padre del commit, en este caso el commit antes de <em>HEAD</em>, que es, por supuesto, el penúltimo commit.</p>
+
+<p>Ahora que tienes tu parche, necesitas aplicarlo. Para eso, recurro al consejo encontrado en <a href="https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/">https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/</a></p>
+
+<p>Primero puedes usar:</p>
+
+<pre><code>git apply --stat archivo-parche
+</code></pre>
+
+<p>para ver qué cambios están realmente en el parche. Luego puedes usar</p>
+
+<pre><code>git apply --check archivo-parche
+</code></pre>
+
+<p>para ver si realmente funcionará.</p>
+
+<p>Sin embargo, según el artículo de Ariejan, no uso realmente <code>git apply</code> para aplicar el parche. ¿Por qué no? Atribución.</p>
+
+<p>La alternativa a <em>apply</em> es <code>git am</code>, que está diseñado para aplicar parches de correo(s). Lo que lo hace diferente es que el committer en el commit se toma de la dirección <em>From</em> en el parche. Para los parches creados por <code>git format-patch</code> este es el committer del código original. Con <code>git apply</code> eres el committer. Por lo tanto, si usas <code>git am</code>, obtienes un registro de quién escribió el código y con <code>git apply</code> un registro de quién aplicó el parche.</p>
+
+<p>Lo que nos lleva a la opción <code>--signoff</code>. Pasada a <code>git am</code> agrega <em>Signed-off-by</em> que contiene el nombre de la persona que aplicó el parche al <code>git log</code>.</p>
+
+<pre><code>git am --signoff &lt; archivo-parche
+</code></pre>
+
+<p>Con eso obtenemos ambos, un commit que muestra quién escribió el código y quién lo aplicó a este repo.</p>
+
+<p>¡Y ahora tal vez pueda recordarlo!</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/ir" name="goto">&mdash;&gt; ir</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:odio-esto@drawohara.io?subject=/patching-between-git-repos">😩, 🖤 ^¡esto!<a>
+  </li>
+  <li>
+    <a href="/ahora">/ahora<a>
+  </li>
+  <li>
+    <a href="/sobre">/sobre<a>
+  </li>
+  <li>
+    <a href="/contacto">/contacto<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

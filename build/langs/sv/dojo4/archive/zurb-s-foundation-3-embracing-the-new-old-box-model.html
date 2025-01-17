@@ -1,0 +1,131 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Inget att se här.</title>
+
+<meta property="og:title" content="Inget att se här."/>
+<meta property="og:description" content="Rör på dig." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"zurb-s-foundation-3-embracing-the-new-old-box-model"}">
+    <meta property="site:path_info" content=""/zurb-s-foundation-3-embracing-the-new-old-box-model"">
+    <base href='/langs/sv' />
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/zurb-s-foundation-3-embracing-the-new-old-box-model">jag ❤️ det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/zurb-s-foundation-3-embracing-the-new-old-box-model</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2012-07-05</em>
+<br>
+<br>
+<figure class="pal lightestgrayBg mbl mrl">
+<a href="http://foundation.zurb.com/" style="border-bottom: none;" target="_blank"><img src='/ro/dojo4/zurb-s-foundation-3-embracing-the-new-old-box-model/assets/foundation.jpg' title="Foundation" alt="Foundation" style="max-width: 100%" /></a>
+<figcaption class="mtm fontItalic" style="text-align:center;">ZURBs <a href="http://foundation.zurb.com/" target="_blank">Foundation 3</a> går modigt dit där webbläsare tidigare gick</figcaption>
+</figure>
+<p>Förra veckan lanserade de smarta killarna på ZURB version 3.0 av deras <a href="http://foundation.zurb.com/" target="_blank">Foundation</a> CSS-ramverk, en konkurrent till Twitters <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>.</p>
+<p>Vad som slog mig genast med ZURBs senaste utgåva är att den globalt återställer W3Cs box-modell, en strategi som <a href="http://paulirish.com/2012/box-sizing-border-box-ftw/" target="_blank">Paul Irish föreslog i ett nyligen blogginlägg</a>. Detta innebär att Foundation 3 inte stöder <strong>IE7</strong>.</p>
+<p>Bootstrap återgår också till den traditionella box-modellen för sina <code class="lightestgrayBg">row-fluid</code> layouts, justerar bredder och marginaler med hjälp av en <a href="http://en.wikipedia.org/wiki/CSS_filter#Star_hack" target="_blank">star hack</a> för att tillåta stöd för IE7. Men dess fasta layouts använder fortfarande W3C-modellen.</p>
+<p>Personligen är jag ett stort fan av box-modell återställningsstrategin, och jag vet att vårt backend-team skulle vara tacksamma—när de lägger in innehåll i vyer, använder de tabeller bara för att undvika all mystik kring W3C-modellen. Den <a href="http://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug#Background" target="_blank">traditionella box-modellen</a> gör bara mening.</p>
+<p>Dessutom är jag entusiastisk över möjligheten för utvecklare—specifikt de som bidrar till CSS-ramverk—att ha ett inflytande över den stödda webbläsarlandskapet. Så trevligt det har varit att ha <a href="http://googleenterprise.blogspot.com/2011/06/our-plans-to-support-modern-browsers.html" target="_blank">stora teknologiföretag</a> som har intresserat sig för detta landskap, är det ännu bättre för oss att ta ansvar för det.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/zurb-s-foundation-3-embracing-the-new-old-box-model">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/om<a>
+  </li>
+  <li>
+    <a href="/contact">/kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

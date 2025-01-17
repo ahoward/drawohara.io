@@ -1,0 +1,186 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Inget att se här.</title>
+
+<meta property="og:title" content="Inget att se här."/>
+<meta property="og:description" content="Gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"patching-between-git-repos"}">
+    <meta property="site:path_info" content=""/patching-between-git-repos"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/patching-between-git-repos">jag ❤️ det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/patching-between-git-repos</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2015-03-30</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>(Det här inlägget finns ursprungligen på Spike’s <a href="http://stuff-things.net/">Saker… Och Grejer… blogg</a>)</p>
+
+<p>Även om berömmelsen och gratis bilar är trevligt, så är anledningen till att jag bloggar för att lära, eller, som i det här fallet, för att hjälpa mig att komma ihåg saker.</p>
+
+<p>Jag arbetar över ett antal distinkta Rails-projekt som delar ett gemensamt ursprung. Ofta måste en buggfix eller en ny funktion i ett portas till (några av) de andra.</p>
+
+<p>Eftersom projekten alla finns i sina egna repos, så kan ändringarna inte sammanfogas med Git. Nej, det här är ett jobb för patchar. Och när det gäller att patcha med Git, så finns det två inlägg om processen som jag inte kan leva utan.</p>
+
+<p>När man patchar, så kommer tre Git-kommandon in i bilden, <a href="http://git-scm.com/docs/git-format-patch">git format-patch</a>, <a href="http://git-scm.com/docs/git-apply]">git apply</a>, och det något obskura <a href="http://git-scm.com/docs/git-am">git am</a>.</p>
+
+<p><code>git patch</code> är ganska rakt på sak, ge en lista med commits, den genererar en diff i <a href="http://en.wikipedia.org/wiki/Patch_%28Unix%29">patchformat</a> som sedan kan appliceras av Git eller av patch-kommandot. Det som jag alltid måste slå upp är genvägen för att få en patch från den senaste committen.</p>
+
+<p>Den icke-genvägsmetoden är att få SHA:n från den näst sista committen och skicka den till format-patch. Varför den näst sista? SHA:n representerar tillståndet i repo efter committen, alltså är den slutgiltiga SHA:n där vi är nu, och den näst sista där vi var innan våra ändringar.</p>
+
+<p>Vi genererar patchen på följande sätt:</p>
+
+<pre><code>git log --oneline
+975d4dc Auto-generated CHANGELOG.md
+ca1216d Bump for validation fix
+git format-patch ca1216d
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p>(Du kan också skapa flera patchar genom att använda en SHA längre bak i historien.)</p>
+
+<p>Dock finns det en genväg för att få den näst sista committen som jag hittade för länge sedan i det här inlägget:</p>
+
+<p><a href="http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit">http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit</a> och den är:</p>
+
+<pre><code>git format-patch HEAD^
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p><code>HEAD^</code> är en förkortning för <code>HEAD^1</code>, <em>^1</em> betyder den första föräldern till committen, i det här fallet committen före <em>HEAD</em>, som naturligtvis är den näst sista committen.</p>
+
+<p>Nu när du har din patch måste du applicera den. För det söker jag råd från <a href="https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/">https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/</a></p>
+
+<p>Först kan du använda:</p>
+
+<pre><code>git apply --stat patch-file
+</code></pre>
+
+<p>för att se vilka ändringar som egentligen finns i patchen. Sedan kan du använda</p>
+
+<pre><code>git apply --check patch-file
+</code></pre>
+
+<p>för att se om den kommer att fungera.</p>
+
+<p>Dock, enligt Ariejans artikel, använder jag egentligen inte <code>git apply</code> för att applicera patchen. Varför inte? Attribution.</p>
+
+<p>Alternativet till <em>apply</em> är <code>git am</code>, som är utformat för att applicera patchar från e-post(er). Vad som skiljer det är att committer på committen tas från <em>Från</em> adressen i patchen. För patchar som skapats av <code>git format-patch</code> är det committer av den ursprungliga koden. Med <code>git apply</code> är du committer. Så om du använder <code>git am</code> får du en rapport över vem som skrev koden och med <code>git apply</code> en rapport över vem som applicerade patchen.</p>
+
+<p>Som bringar oss till <code>--signoff</code> alternativet. Skickat till <code>git am</code> lägger det till <em>Signed-off-by</em> som innehåller namnet på personen som applicerade patchen till <code>git log</code>.</p>
+
+<pre><code>git am --signoff &lt; patch file
+</code></pre>
+
+<p>Med det får vi båda, en commit som visar vem som skrev koden och vem som applicerade den till det här repo.</p>
+
+<p>Och nu kanske jag kommer ihåg det!</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/patching-between-git-repos">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/om<a>
+  </li>
+  <li>
+    <a href="/contact">/kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

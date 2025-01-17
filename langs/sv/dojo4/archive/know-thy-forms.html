@@ -1,0 +1,310 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Inget att se här.</title>
+
+<meta property="og:title" content="Inget att se här."/>
+<meta property="og:description" content="Fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"know-thy-forms"}">
+    <meta property="site:path_info" content=""/know-thy-forms"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/know-thy-forms">jag ❤️ det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/know-thy-forms</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2013-06-17</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Jag satte upp en liten quiz om HTML-formulär idag.</p>
+
+<p>ref: https://gist.github.com/ahoward/98591ebc9113bea1cf02</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781">&lt;!--</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">    fork this. do not use the internet. take &lt; 10 minutes to find at least 10</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781">    distinct errors on this form. submit your answer in the comments field of</span>
+</div><div class='code-line code-line-6'><span style="color: #6e7781">    your fork and email me (ara[at]dojo4.com) the url.</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'><span style="color: #6e7781">  --&gt;</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;<span style="color: #116329">&lt;form</span>&nbsp;<span style="color: #116329">method=</span><span style="color: #0a3069">'DELETE'</span>&nbsp;<span style="color: #116329">ACTION=</span><span style="color: #0a3069">'./'</span>&nbsp;<span style="color: #116329">enctype=</span><span style="color: #0a3069">"multipart/file-upload"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>&nbsp;tags&nbsp;<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-15'>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'bar'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+</div><div class='code-line code-line-19'>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;label</span>&nbsp;<span style="color: #116329">for=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>Foo:&nbsp;<span style="color: #116329">&lt;/label&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;label&gt;</span>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bar:&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'bar'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/label&gt;</span>
+</div><div class='code-line code-line-25'>
+</div><div class='code-line code-line-26'>
+</div><div class='code-line code-line-27'>
+</div><div class='code-line code-line-28'>
+</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'email'</span>&nbsp;<span style="color: #116329">readonly</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'password'</span>&nbsp;<span style="color: #116329">disabled=</span><span style="color: #0a3069">disabled/</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-31'>
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'.bashrc'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-33'>
+</div><div class='code-line code-line-34'>
+</div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Sex<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"radio"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"sex"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'male'</span><span style="color: #116329">&gt;</span>Male<span style="color: #116329">&lt;/option&gt;</span>
+</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'female'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/input&gt;</span>
+</div><div class='code-line code-line-41'>
+</div><div class='code-line code-line-42'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+</div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Transportation<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Bike"</span><span style="color: #116329">&gt;</span>I&nbsp;have&nbsp;a&nbsp;bike<span style="color: #116329">&lt;br&gt;</span>
+</div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Car"</span><span style="color: #116329">&gt;</span>I&nbsp;have&nbsp;a&nbsp;car&nbsp;
+</div><div class='code-line code-line-46'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+</div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+</div><div class='code-line code-line-48'>
+</div><div class='code-line code-line-49'>
+</div><div class='code-line code-line-50'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;select</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'web-develop-skilz'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-51'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'A'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-52'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'B'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-53'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'C'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-54'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'D'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-55'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'F'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-56'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/select&gt;</span>
+</div><div class='code-line code-line-57'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-58'>
+</div><div class='code-line code-line-59'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;hr&gt;</span>
+</div><div class='code-line code-line-60'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;button</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'submit'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-61'>&nbsp;&nbsp;<span style="color: #116329">&lt;/form&gt;</span>
+</div><div class='code-line code-line-62'>
+</div></code></div>
+
+<p>målet med att få människor att skanna detta totalt trasiga HTML-formuläret var bara att<br />
+se människors tänkesätt med detta: grunden för HTML-gränssnitt</p>
+
+<p>följande är några exempelsvar, grupperade ungefär efter kategori, och kommentarer om varje av dem</p>
+
+<hr />
+<h3 id="fubar-doctype">fubar doctype</h3>
+<hr />
+
+<ul>
+  <li>Ingen doctype. Det gör det svårt att avgöra vilken variant av HTML den är, vilket bör leda till intressanta svar...</li>
+  <li>Blandar xhtml-stil tomma taggar med HTML-taggar.</li>
+</ul>
+
+<p>för säker många missade att många fel berodde på doctype<br />
+deklarationen. vilken stil av taggar du får använda beror helt och hållet på doctypen.</p>
+
+<hr />
+<h3 id="methoddelete">method=delete</h3>
+<hr />
+
+<ul>
+  <li>rad 1: DELETE är inte en åtgärd som stöds i HTML-formulär:</li>
+  <li>method=delete stöds inte direkt i de flesta/alla? webbläsare.o</li>
+  <li>formulär stöder inte delete i äldre webbläsare</li>
+  <li>Metod delete</li>
+  <li>form method='DELETE' – det är inte tillåtet</li>
+</ul>
+
+<p>fastän vi tänker på http-verb med klient-API:er, inklusive javascript.<br />
+för en majoritet av webbläsare får du GET och POST. Detta är viktigt om du har<br />
+övervägt ett xhtml-baserat api.</p>
+
+<hr />
+<h3 id="enctypebunk">enctype=bunk</h3>
+<hr />
+
+<ul>
+  <li>enctype="multipart/form-data" inte enctype="multipart/file-upload"</li>
+  <li>enc-type="multipart/file-upload gör ingen mening om vår avsikt är att RADERA</li>
+</ul>
+
+<p>enctype-fel tar alltid en dag. få det fel och du kommer att slösa bort dagen<br />
+med att posta namnet på din fil som en sträng, istället för den faktiska kodade fil<br />
+innehållet. Det är också viktigt att notera att enctypen enbart dikterar hur<br />
+formuläret kodas och är fullständigt ortogonalt till det använda http-verbet.</p>
+
+<hr />
+<h3 id="inputfoo--inputfoo">input=foo &amp;&amp; input=foo</h3>
+<hr />
+
+<ul>
+  <li>text input-taggar i det första fieldset har namnet</li>
+  <li>dubbla "tags"-taggar. Eller två taggar med samma namn igen</li>
+  <li>2 textfält med namnet "tags" endast det sista kommer att användas.</li>
+  <li>Två inmatningar med samma namn 'tags'. Den andra skulle skriva över värdet av den första.</li>
+  <li>Två inmatningar med namnet 'foo' (inte självstängda)</li>
+  <li>textinmatningar med samma namn skulle ersätta re: inmatningar w/ namn tags</li>
+  <li>dubbla tilldelningar till inmatningsnamn='tags'</li>
+  <li>dubbla tilldelningar till inmatningsnamn='vehicle'</li>
+</ul>
+
+<p>mycket missförstånd kring detta. det är <em>helt legitimt</em> att posta samma<br />
+parameter &gt; 1 gånger i ett formulär. specifikationen stöder det och till och med antika cgi<br />
+stöder konceptet med att posta flera värden under samma nyckel. det är<br />
+enbart konvention att många kontroller dumpa dessa i en hash där 'sista in vinner'</p>
+
+<p>du kan bevisa detta lätt för dig själv. posta detta från ett formulär</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'answer'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'40'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'answer'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'2'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;
+</div></code></div>
+
+<p>och du kommer att se följande i webbläsarkonsolen</p>
+
+<p>&lt;img<br />
+style ='max-height:420px;' src='http://cl.ly/image/3I2Q2v0D1B1G/Screen%20Shot%202013-06-17%20at%204.09.23%20PM.png'</p>
+<blockquote>
+
+</blockquote>
+
+<p>om du hanterar formulärposten så här</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">form</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">return</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">request</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">get?</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">parsed</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Parser</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">env</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">parse</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">render</span>&nbsp;<span style="color: #0a3069">:json</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">parsed</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">as_json</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:layout</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>
+</div><div class='code-line code-line-11'><span style="color: #6e7781"># hack the rack parser to show that http DOES post multiple values</span>
+</div><div class='code-line code-line-12'><span style="color: #6e7781"># and that, if we want, we could accumulate them</span>
+</div><div class='code-line code-line-13'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">Parser</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">Rack</span><span style="color: #0550ae">::</span><span style="color: #953800">Multipart</span><span style="color: #0550ae">::</span><span style="color: #953800">Parser</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">setup_parse</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">super</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">ensure</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@params</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">KeyList</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-20'>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">KeyList</span>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">initialize</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">*</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@params</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{}</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-25'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">[]</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">[]=</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">value</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[]).</span><span style="color: #8250df">push</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">value</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">key?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@params</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">key?</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">key</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">to_params_hash</span><span style="color: #24292f;background-color: #f6f8fa">()</span>
+</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">self</span>
+</div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-41'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-42'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-43'>
+</div><div class='code-line code-line-44'>
+</div></code></div>
+
+<p>då får du ett svar som ser ut som</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">"</span><span style="color: #0a3069">params</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">:{</span><span style="color: #0a3069">"</span><span style="color: #0a3069">answer</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">:[</span><span style="color: #0a3069">"</span><span style="color: #0a3069">40</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">"</span><span style="color: #0a3069">2</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">]}}</span>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>
+</div></code></div>
+
+<h4 id="tldr">TL:DR;</h4>
+
+<p>din webbstack kan kasta flera värden på golvet genom att ladda en hash,<br />
+men ruby's cgi.rb-bibliotek, och http gör <em>inte</em>. detta gäller<br />
+inmatningar, checkboxar, etc -
