@@ -182,6 +182,14 @@ https://drawohara.io/langs/fr/purls/public-sentiment-towards-the-fortune-500-in-
 https://drawohara.io/langs/es/purls/public-sentiment-towards-the-fortune-500-in-america
 https://drawohara.io/langs/it/purls/public-sentiment-towards-the-fortune-500-in-america
 https://drawohara.io/langs/nl/purls/public-sentiment-towards-the-fortune-500-in-america
+https://drawohara.io/purls/replace-your-ceo
+https://drawohara.io/langs/en/purls/replace-your-ceo
+https://drawohara.io/langs/uk/purls/replace-your-ceo
+https://drawohara.io/langs/sv/purls/replace-your-ceo
+https://drawohara.io/langs/fr/purls/replace-your-ceo
+https://drawohara.io/langs/es/purls/replace-your-ceo
+https://drawohara.io/langs/it/purls/replace-your-ceo
+https://drawohara.io/langs/nl/purls/replace-your-ceo
 https://drawohara.io/purls/software-developer-vs-startup-developer
 https://drawohara.io/langs/en/purls/software-developer-vs-startup-developer
 https://drawohara.io/langs/uk/purls/software-developer-vs-startup-developer
