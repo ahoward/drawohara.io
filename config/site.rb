@@ -101,8 +101,7 @@ Site.for 'drawohara.io' do |site|
       page = site.ro.get("dojo4/#{ id }")
 
       if page
-        data = {page:}
-        ctx.render 'views/dojo4-archive.erb', data:
+        ctx.render 'views/dojo4-archive.erb', data:page
       end
     end
 
