@@ -118,6 +118,10 @@ Site.for 'drawohara.io' do |site|
       data = {ara:, dojo4:}
       ctx.render 'views/dojo4.erb', data:
     end
+
+    route.urls do
+      %w[ /dojo4 ] # FIXME
+    end
   end
 
 # /goto

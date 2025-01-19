@@ -1,0 +1,143 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"our-remote-working-setup"}">
+    <meta property="site:path_info" content=""/our-remote-working-setup"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2014-01-02</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Here at dojo4 we’ve been trying to be more flexible with remote working lately. We love the concept and have been gradually working it into our normal routine with different experiments. Our latest experiment was banishing Steve to a horrible and desolate place called “New Hampshire”. After 3 months of not seeing Steve in person and working completely remote (while the rest of us had a combination of remote/in person), we don’t hate Steve and Steve doesn’t hate us. So win! He’ll post his own blog post soon about his take on the experience, but in the meantime I thought I’d share the tools we use to collaborate remotely and give a few tips on each one.</p>
+
+<ul>
+  <li>
+    <p><strong><a href="https://campfirenow.com/">campfire</a></strong> This is the main tool that contributes to our ability to work remotely. On the surface campfire is just a group messaging service that doesn’t have very a ton of true messaging features (like individual messaging), but the real power of this tool comes when you hook up the other services you use to notify campfire of activity on those services. We have our github and redmine accounts set up notify campfire anytime anyone does any code or issue editing. We also use the very nice <a href="https://github.com/collectiveidea/tinder">tinder</a> gem to notify campfire when someone deploys an application. Combine this with the below tool, fbomb, and the fact that we can get apps for our phone, it’s extremely easy to keep a finger on the pulse of the company’s day to day activities and interact with our coworkers no matter how far away from the office we are.</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/ahoward/fbomb">fbomb</a></strong> fbomb is a bot for campfire that responds to commands. We named ours ‘mr roboto’ and have our own private, customized version of fbomb that we use. It’s fun to do things like <code>/lolcat</code>, but the best commands we have in ‘mr roboto’ are <code>/directory</code> (spits out names, emails, and cell numbers of everyone on our team), <code>/txt [person name] [message]</code> (texts the person you name your message along with your cell number), and <code>/need [person name] [message]</code> (emails and texts the person your message along with big urgent text, “MILES NEEDS YOU”). These commands have solved the issue of people being in campfire, but not being at their computer when we need them. If we really need someone and they’re not responding to mentioning their name in campfire, then we can get their attention with a text and email.</p>
+  </li>
+  <li>
+    <p><strong><a href="http://github.com">github</a></strong> we love this tool obviously. The two things we love about it most - service hooks into campfire and the unlimited private repos we negotiated for a price (they’re some of our best homies).</p>
+  </li>
+  <li>
+    <p><strong><a href="http://www.redmine.org/">redmine</a></strong> we have our own custom version of the open source ticket tracker, redmine, running on one of our servers. We love getting emails every time someone edits a ticket we’re watching or adds a new one on a project we’re watching. We also love its integration with campfire and the fact that it’s open source so we can tweak it for our needs.</p>
+  </li>
+  <li>
+    <p><strong><a href="http://www.google.com/+/learnmore/hangouts/">google hangouts</a></strong> I’m sure you’ve seen this on other people’s lists of remote tools, because it’s awesome. We have a daily standup meeting where we use hangout to make sure everyone is in on the check in. My one <strong>extremely important tip</strong> that has worked wonders for us: create a google calendar event, click “Add Hangout”, and invite everyone to the event. Then everyone that’s invited to the event will be able to click on the same hangout link that everyone else has, preventing you from emailing/messaging a new hangout link around every day. Our daily hangout used to have an additional 10 minutes of setup for hangout, now we just click the button on our calendar event, and everyone’s already there. Super handy.</p>
+  </li>
+  <li>
+    <p><strong>email lists</strong> We have special email accounts setup (that only someone from dojo4 can email to) to share our daily plans and progress from the day before, and to simply email something to everyone on the team. The first account allows us to find out what anyone else on the team is doing that day, which simply keeps us all in the loop of each others’ plans. The second account allows a sort of “water cooler” environment where we can send each other articles and pictures and have a conversation. We often have “water cooler” sessions randomly in campfire throughout the day, but having email as a secondary place for that is a nice option to separate our goofing around from our stream of work activities.</p>
+  </li>
+</ul>
+
+<p>So that’s our run down that we use and love every day. Tweet us with yours; we’d love to hear it.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-love-this@drawohara.io?subject=/our-remote-working-setup">i ❤️  this^</a>
+  </li>
+  <li>
+    <a href="mailto:i-hate-that@drawohara.io?subject=/our-remote-working-setup">i 🖤 ^that<a>
+  </li>
+  <li>
+    <a href="/about">narcissism<a>
+  </li>
+  <li>
+    <a href="/now">tl;dr;<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
