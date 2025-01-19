@@ -79,6 +79,10 @@ Site.for 'drawohara.io' do |site|
         ctx.render 'views/nerd.erb', data:nerd
       end
     end
+
+    route.urls do
+      site.ro.nerd.map{|nerd| "/nerd/#{ nerd.id }"}
+    end
   end
 
 # /stream
