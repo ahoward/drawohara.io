@@ -1,0 +1,18 @@
+<%= data.nerd.body %>
+
+<hr>
+
+<h5>
+  this is a work-in-progress but, more nerdy stuff will being to appear like `magic`
+</h5>
+<br>
+
+<ul>
+  <% data.index.each do |nerd|
+      next if nerd.id == 'index'
+  %>
+    <li>
+      <a href='<%= nerd.url %>'><%= nerd.url %></a>
+    </li>
+  <% end %>
+</ul>

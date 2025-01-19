@@ -4,8 +4,7 @@ Site.for 'drawohara.io' do |site|
   site.route '/' do |route|
     route.call do |ctx|
       page = Page.index
-      data = page
-      ctx.render 'views/index.erb', data:
+      ctx.render 'views/index.erb', data:page
     end
   end
 
@@ -27,40 +26,13 @@ Site.for 'drawohara.io' do |site|
 
 # /langs
 #
-# site.route '/langs' do |route|
-#   route.call do |ctx|
-#     langs = site.dato.fetch(:langs)
-#     data = {langs:}
-#     ctx.render 'views/langs.erb', data:
-#   end
-# end
-#
-# /io/story
-#
-=begin
-  site.route '/io/story/:id' do |route|
+  site.route '/langs' do |route|
     route.call do |ctx|
-      id = ctx.params.fetch(:id)
-      page = site.ro.get("story/#{ id }")
-
-      if page
-        ctx.render string: page.body.html_safe, data: page
-      end
-    end
-
-    route.urls do
-      site.ro.io.map{|post| "/io/story/#{ post.id }"}
+      langs = site.dato.fetch(:langs)
+      data = {langs:}
+      ctx.render 'views/langs.erb', data:
     end
   end
-
-  site.route '/io/story' do |route|
-    route.call do |ctx|
-      index = site.ro.story
-      data = {index:}
-      ctx.render 'views/story.erb', data:
-    end
-  end
-=end
 
 # /io
 #
@@ -91,10 +63,21 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/nerd' do |route|
     route.call do |ctx|
-      index = site.ro.nerd
-      nerd = site.ro.nerd.get(:index)
-      data = {nerd:, index:}.update(nerd) #FIXME og:
-      ctx.render 'views/nerd.erb', data:
+      nerd = Nerd.index
+      index = Nerd.all - [nerd]
+      data = {nerd:, index:}.update(nerd) #FIXME cuz og:
+      ctx.render 'views/nerds.erb', data:
+    end
+  end
+
+  site.route '/nerd/:id' do |route|
+    route.call do |ctx|
+      id = ctx.params.fetch(:id)
+      nerd = Nerd.find(id)
+
+      if nerd
+        ctx.render 'views/nerd.erb', data:nerd
+      end
     end
   end
 

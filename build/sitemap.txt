@@ -62,6 +62,14 @@ https://drawohara.io/langs/fr/io
 https://drawohara.io/langs/es/io
 https://drawohara.io/langs/it/io
 https://drawohara.io/langs/nl/io
+https://drawohara.io/langs
+https://drawohara.io/langs/en/langs
+https://drawohara.io/langs/uk/langs
+https://drawohara.io/langs/sv/langs
+https://drawohara.io/langs/fr/langs
+https://drawohara.io/langs/es/langs
+https://drawohara.io/langs/it/langs
+https://drawohara.io/langs/nl/langs
 https://drawohara.io/nerd
 https://drawohara.io/langs/en/nerd
 https://drawohara.io/langs/uk/nerd

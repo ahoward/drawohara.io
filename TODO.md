@@ -1,6 +1,17 @@
 todo
 ----
 
+- download messages!
+  - simple sampling technique.  use max:
+  - https://api.boardreader.com/v1/Boards/Search?key=e02b37349c97f10578cd09d40db735cf&query=@metadata_filters%20metalanguage-en&mode=full&group_by=domain&sort_mode=relevance&limit=1000&rt=json
+
+
+- /io/tik-tok-the-kid-killer
+  - https://pmc.ncbi.nlm.nih.gov/articles/PMC6278213/#sec1-5
+  - https://www.npr.org/2023/02/16/1157180971/10-things-to-know-about-how-social-media-affects-teens-brains
+
+  - themes 
+
 - /io/still-rubying
   - translation script
   - babe-lit

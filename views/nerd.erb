@@ -1,1 +1,14 @@
-<%= data.nerd.body %>
+<%= data.body %>
+
+<br>
+<% data.srcs.each do |path, asset| %>
+  <ul>
+    <li>
+      <a href='<%= asset.url %>'><%= path %></a>
+      <details>
+        <summary><small><a name='<%= path %>'>&mdash;&gt; view source</a></small></summary>
+        <%= asset.src.html_safe %>
+      </details>
+    </li>
+  </ul>
+<% end %>
