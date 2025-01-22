@@ -32,8 +32,7 @@ script do
   #
     dir = './build'
     tmp = tmpdir!
-    #dojo4 = !!params.has_key?(:dojo4)
-    dojo4 = true #!!params.has_key?(:dojo4) # FIXME
+    dojo4 = true #params.has_key?(:dojo4)
     translate = !!params.has_key?(:translate)
 
   #

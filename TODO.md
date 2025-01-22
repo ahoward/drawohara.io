@@ -1,16 +1,29 @@
 todo
 ----
 
+
+```ruby
+
+  @rag_content
+    id, data, raw, tldr, search, themes, topics, keywords, hopes, fears, dreams, source, identifier, published_at
+
+  @rag_embeddings
+    id, field, embedding
+
+```
+
+
 - download messages!
-  - simple sampling technique.  use max:
+  - simple sampling technique + use max:
   - https://api.boardreader.com/v1/Boards/Search?key=e02b37349c97f10578cd09d40db735cf&query=@metadata_filters%20metalanguage-en&mode=full&group_by=domain&sort_mode=relevance&limit=1000&rt=json
+  - get recent subs
+  - new rag
 
-
-- /io/tik-tok-the-kid-killer
+- /io/tik-tok-eats-little-girls-alive
   - https://pmc.ncbi.nlm.nih.gov/articles/PMC6278213/#sec1-5
   - https://www.npr.org/2023/02/16/1157180971/10-things-to-know-about-how-social-media-affects-teens-brains
 
-  - themes 
+  - themes
 
 - /io/still-rubying
   - translation script
@@ -366,6 +379,7 @@ next
 
 done
 ----
+- /nerd/fastest-possible-embeddings
 - site build does not build dojo4 by default....
 - https://search.google.com/search-console/sitemaps?resource_id=sc-domain%3Adrawohara.io
 - nothing but ctx + data in views...
