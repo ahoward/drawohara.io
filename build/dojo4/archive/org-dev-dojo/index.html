@@ -71,7 +71,8 @@
 
     </style>
 
-    <script>
+    <script defer src="/assets/js/email.js"></script>
+    <script defer>
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -129,5 +130,13 @@ No blog post is complete without a candid of a team member.<br><br><img src='/ro
 </blockquote>
 <a href="/">&lt;&mdash; eject</a>
     </footer>
+
+    
+      <script defer>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          askForEmail();
+        });
+      </script>
+    
   </body>
 </html>

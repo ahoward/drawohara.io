@@ -71,7 +71,8 @@
 
     </style>
 
-    <script>
+    <script defer src="/assets/js/email.js"></script>
+    <script defer>
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -142,5 +143,13 @@ Today, there is a growing community of more than 1,000 Certified B Corps from 33
 </blockquote>
 <a href="/">&lt;&mdash; eject</a>
     </footer>
+
+    
+      <script defer>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          askForEmail();
+        });
+      </script>
+    
   </body>
 </html>

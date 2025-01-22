@@ -71,7 +71,8 @@
 
     </style>
 
-    <script>
+    <script defer src="/assets/js/email.js"></script>
+    <script defer>
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -170,5 +171,13 @@ avoid new and shiny, but a deep understanding of technical flaws
 </blockquote>
 <a href="/">&lt;&mdash; eject</a>
     </footer>
+
+    
+      <script defer>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          askForEmail();
+        });
+      </script>
+    
   </body>
 </html>

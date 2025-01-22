@@ -71,7 +71,8 @@
 
     </style>
 
-    <script>
+    <script defer src="/assets/js/email.js"></script>
+    <script defer>
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -175,5 +176,13 @@ By 2017, the non-PC share of Internet traffic will grow to 46% from 26% in 2012.
 </blockquote>
 <a href="/">&lt;&mdash; eject</a>
     </footer>
+
+    
+      <script defer>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          askForEmail();
+        });
+      </script>
+    
   </body>
 </html>
