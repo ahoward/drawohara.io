@@ -77,13 +77,5 @@
     <footer>
       <%= exports.fetch(:footer){ render('views/footer.erb') } %>
     </footer>
-
-    <% if data.get(:_, :email) || true %>
-      <script defer>
-        document.addEventListener("DOMContentLoaded", (event) => {
-          askForEmail();
-        });
-      </script>
-    <% end %>
   </body>
 </html>

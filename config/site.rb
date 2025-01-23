@@ -16,6 +16,22 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
+# /signup
+#
+  site.route '/subscribe' do |route|
+    route.call do |ctx|
+      ctx.render 'views/subscribe.erb'
+    end
+  end
+
+# /disco
+#
+  site.route '/disco' do |route|
+    route.call do |ctx|
+      ctx.render 'views/disco.erb'
+    end
+  end
+
 # /rubygems
 #
   site.route '/rubygems' do |route|

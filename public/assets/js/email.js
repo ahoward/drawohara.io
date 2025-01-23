@@ -1,10 +1,9 @@
 function askForEmail() {
   // Check if email is already in local storage
-  let storedEmail = localStorage.getItem('userEmail');
-  if (storedEmail) {
-    // Email already exists, no need to ask
-    return;
-  }
+  //let storedEmail = localStorage.getItem('email');
+  //if (storedEmail) {
+    //return;
+  //}
 
   // Jokes array
   const jokes = [
@@ -27,27 +26,48 @@ function askForEmail() {
   let annoyUser = joke + optOut + " : \n\n";
 
   // Prompt for email
-  let userInput = prompt(annoyUser);
+  let value = prompt(annoyUser);
 
-  if (userInput) {
-    localStorage.setItem('userEmail', userInput);
-    // Basic email validation regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-    if (emailRegex.test(userInput)) {
-      // Send email provided event to Google Analytics
+  captureEmail(value);
+};
+
+function captureEmail(value){
+  if (value) {
+    localStorage.setItem('email', value);
+
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    console.log('captureEmail', value);
+
+    if (re.test(value)) {
       gtag('event', 'email_provided', {
         'event_category': 'engagement',
-        'event_label': userInput
+        'event_label': value
       });
+      alert(`🙏 - got it '${value}'! chat soon!`);
     } else {
-      // Send email refused event to Google Analytics
       gtag('event', 'email_refused', {
         'event_category': 'engagement',
-        'event_label': userInput
+        'event_label': value
       });
+      alert(`'${value}'!? - 🫡 - go it!`);
     }
+
   }
+};
+
+const emailValue = document.getElementById('emailValue');
+const emailSubmit = document.getElementById('emailSubmit'); // Replace 'submitButton' with your button's ID
+
+if(emailSubmit){
+  emailSubmit.addEventListener('click', function() {
+    if (emailValue.value.trim() !== '') {
+      captureEmail(emailValue.value.trim());
+      emailValue.value = '';
+    }
+  });
 }
+
 
 // Call the function to ask for email
 //askForEmail();
