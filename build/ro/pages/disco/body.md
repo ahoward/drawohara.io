@@ -6,7 +6,9 @@ as i’ve hinted on some of my socials, i’ve been working at [synthetic echo](
 
 > _what do you mean by that?_
 
-we’ve built a unique system that utilizes AI and a **curated, distilled, and augmented dataset** of over a million high-quality, organic social conversations from across the internet to _bring the social voice to AI_.
+[take a look at this example](https://gist.github.com/ahoward/ae562567579a3e936d9b9bb7e4ffde88):
+
+as you can probably see, we’ve built a unique system that utilizes AI and a **curated, distilled, and augmented dataset** of over a million high-quality, organic social conversations from across the internet to _bring the social voice to AI_.
 
 from these conversations, we extracted insights into people’s **hopes**, **fears**, **dreams**, and more.  these conversations were then organized into **audiences**, to whom you can literally ask *any question*.
 
@@ -63,4 +65,4 @@ but if you are:
 
 [reach out](/contact) if this sounds like your kind of thing.
 
-and for the curious, [here’s the audience configuration used in this example.](https://gist.github.com/ahoward/95092a816c9a3f752f9d8ec421f24be5)
+and for the curious, [here’s the audience configuration used in this example.](https://gist.github.com/ahoward/95093a816c9a3f752f9d8ec421f24be5)
