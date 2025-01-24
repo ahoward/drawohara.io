@@ -6,7 +6,7 @@ as i’ve hinted on some of my socials, i’ve been working at [synthetic echo](
 
 > _what do you mean by that?_
 
-[take a look at this example](https://gist.github.com/ahoward/ae562567579a3e936d9b9bb7e4ffde88):
+take a look at [this example!](https://gist.github.com/ahoward/ae562567579a3e936d9b9bb7e4ffde88)
 
 as you can probably see, we’ve built a unique system that utilizes AI and a **curated, distilled, and augmented dataset** of over a million high-quality, organic social conversations from across the internet to _bring the social voice to AI_.
 
