@@ -52,7 +52,7 @@ every entreprenuer understands the difference.
 
 `disco` started out as an RHLF process but, since, has evolved into what amounts to two unique approaches from an IP perspetive:
 
-- it uses and clever process to discover not _what is commonly accepted and said_ about _anything_ but, instead, is able to identify _significant clusterthe s of outliers_.   in otherwords, it helps find the conversations that are most relevant to consider.  this is _vastly_ different than most AI approaches which aim to give you vanilla, book reporish, correct, and non-controversial answers.  `disco` does the opposite: it gives you are _real_ answer, and backs it up with proof.  you be the judge.
+- it uses a clever process to discover not _what is commonly accepted and said_ about _anything_ but, instead, is able to identify _significant clusterthe s of outliers_.   in otherwords, it helps find the conversations that are most relevant to consider.  this is _vastly_ different than most AI approaches which aim to give you vanilla, book reporish, correct, and non-controversial answers.  `disco` does the opposite: it gives you are _real_ answer, and backs it up with proof.  you be the judge.
 
 - it uses a clever way of pre-indexing this information so reteriving it is a simple query and scales quite well
 
@@ -69,3 +69,5 @@ but if you are:
 - i am working to indroduce the bluesky firehose.  goal is to be the authority on 'the real voice' when it comes to the RLHF training data set wars which are about to ensue.  crytpgraphic guarantees about authorship and all.
 
 [reach out](/contact) if that didn't sound like gibberish ;-)
+
+and, for good measure, [here are the audience configurations i used for this run](https://gist.github.com/ahoward/95092a816c9a3f752f9d8ec421f24be5)
