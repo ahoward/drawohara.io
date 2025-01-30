@@ -12,7 +12,10 @@ as you can probably see, `disco` is a unique system that utilizes AI and a **cur
 
 from the authentic conversations, `disco` extracts people’s **hopes**, **fears**, **dreams**, and more.  then the conversations are organized into **audiences**, to which you can literally ask *any question*.
 
-but here’s the kicker: unlike google’s gemini, which informs you in ways optimized to sell ads, or openAI, which informs you… for reasons we can only guess.
+but here’s the kicker: unlike google’s gemini, which informs you in ways
+optimized to sell ads.
+
+or openAI, which informs you… for reasons we can only guess...
 
 `disco` informs you with **real conversations from real people.**
 
@@ -22,16 +25,16 @@ and it gives **citations to those conversations**, so that you can guage the rea
 
 > what would you do if you could ask your audience _anything_?
 
-
-the **audiences** in this particular example were built from subreddits. [you can see the configurations i used here.](https://gist.github.com/ahoward/95092a816c9a3f752f9d8ec421f24be5) other sources are possible, of course, including thousands of message boards, threads, and, comign soon, bluesky.
+the **audiences** in this particular example were built from subreddits. [you can see the configurations i used here.](https://gist.github.com/ahoward/95092a816c9a3f752f9d8ec421f24be5) other sources are possible, of course, including thousands of message boards, threads, and, coming soon, bluesky.
 
 > _i’m lost..._
 
 let’s clarify. [in the example ==>>](https://gist.github.com/ahoward/ae562567579a3e936d9b9bb7e4ffde88):
 
 * we gave `disco` the prompt: *"what keeps you up at night?"*.
-* it ran this prompt by **42 distinct audiences**.  
-* for each audience, it provided a sample of citations, alongside it's answer, so you can verify the sources yourself.
+* it ran this prompt by **42 distinct audiences**.
+* for each audience, it provided a sample of citations, alongside the answer, so you can verify the sources yourself.
+* the year, and sentiment, was selected in a randomized way to show 'answers based on "negative" 2024 commentary', etc.
 
 this entire process took about five minutes to run.
 
