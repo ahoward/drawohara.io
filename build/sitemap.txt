@@ -118,14 +118,6 @@ https://drawohara.io/langs/fr/sitemap
 https://drawohara.io/langs/es/sitemap
 https://drawohara.io/langs/it/sitemap
 https://drawohara.io/langs/nl/sitemap
-https://drawohara.io/stream
-https://drawohara.io/langs/en/stream
-https://drawohara.io/langs/uk/stream
-https://drawohara.io/langs/sv/stream
-https://drawohara.io/langs/fr/stream
-https://drawohara.io/langs/es/stream
-https://drawohara.io/langs/it/stream
-https://drawohara.io/langs/nl/stream
 https://drawohara.io/subscribe
 https://drawohara.io/langs/en/subscribe
 https://drawohara.io/langs/uk/subscribe

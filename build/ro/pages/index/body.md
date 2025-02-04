@@ -1,10 +1,14 @@
 👋 --
 
-this is my website.
+> in a hurry?
 
-[-- tl;dr; --](/now)
+see what i am doing 👉 [now](/now) 👈
 
-you might have been expecting [more](/home) but this is it.
+_otherwise_
+
+> [welcome!](/home)
+
+please allow me to take your [time...](/home)
 
 -- a
 

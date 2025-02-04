@@ -1,6 +1,6 @@
-as i’ve hinted on some of my socials, i’ve been working at [synthetic echo](https://syntheticecho.com/) on a system i’ve named **`disco`**.
+as i’ve hinted on some of my socials, i’ve been working, since mid-2024, at [synthetic echo](https://syntheticecho.com/) on a system i’ve named **`disco`**.
 
-`disco` stands for **"discovery"**, and it brings a unique, important, and beneficial aspect to **many** AI applications:
+`disco` stands for **"discovery"**, and it brings a unique, critical, and hopefully beneficial aspect to **many** AI applications:
 
 ### **"the social voice"**
 

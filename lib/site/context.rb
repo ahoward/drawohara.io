@@ -42,8 +42,8 @@ class Context
     super(*args, **kws, &block)
   end
 
-  def push(data:)
-    @stack.push(data: Map.for(data))
+  def push(data:, front_matter: {})
+    @stack.push(data: Map.for(data), front_matter: Map.for(front_matter))
   end
 
   def pop
@@ -52,6 +52,10 @@ class Context
 
   def data
     @stack.last.fetch(:data)
+  end
+
+  def front_matter
+    @stack.last.fetch(:front_matter)
   end
 
   def h(...)

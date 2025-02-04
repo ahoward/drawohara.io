@@ -95,11 +95,11 @@ Site.for 'drawohara.io' do |site|
 
 # /stream
 #
-  site.route '/stream' do |route|
-    route.call do |ctx|
-      ctx.render string: 'coming soon? i dunno... perhaps there is enough ;-/'
-    end
-  end
+# site.route '/stream' do |route|
+#   route.call do |ctx|
+#     ctx.render 'views/stream.erb.md'
+#   end
+# end
 
 # dojo4 archives
 #
