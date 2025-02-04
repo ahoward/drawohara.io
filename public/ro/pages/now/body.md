@@ -8,4 +8,6 @@
 
 - [jess](https://photos.app.goo.gl/MpSigk5BJwqeouiUA) and i are working likes sons-of-bitches to move back to colorado
 
+- [super digging this](https://youtu.be/VFEZOjtrwls?si=POEz_yU44DYrkH-l&t=48)
+
 - started a new [company](https://syntheticecho.com) about 8 months back.  doing it all [live](/disco)
