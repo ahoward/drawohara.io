@@ -1,14 +1,12 @@
 👋 --
 
-> in a hurry?
+> _in a hurry?_
 
 see what i am doing 👉 [now](/now) 👈
 
-_otherwise_
+> _otherwise_
 
-> [welcome!](/home)
-
-please allow me to take your [time...](/home)
+[🌬️ c'mon in and have a seat](/home)
 
 -- a
 

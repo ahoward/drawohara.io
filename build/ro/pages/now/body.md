@@ -1,13 +1,11 @@
-- in [SF](https://photos.app.goo.gl/pTrzdPZMpaust4jx6) raising money for a [new company](/disco) that focues on bringing real human voices to AI
+- currently [raising money](https://photos.app.goo.gl/pTrzdPZMpaust4jx6) for a [a new company](https://syntheticecho.com) i founded whose mission is to bring the 'the voice of humans' into AI
 
-- [new nerd blog](/nerd) is nerdy
+- working very hard its main product, [disco](/disco).  w.i.p. is around adding substack, bluesky, and getting a developer preview (API only)
 
-- got some info my busted legs: 1 broken in 4 spots and needs a new meniscus.
-  the other, minor injury that is painful AF but will heal in time w/o
-  surgery.  looking at a 9-12 month recovery.  sigh ;-/
+- the [new nerd blog](/nerd) is nerdy
+
+- nursing some fairly complex injuries, the [result of a few stupid moves](https://photos.app.goo.gl/xbRt9Waj8583Bzvd7)
 
 - [jess](https://photos.app.goo.gl/MpSigk5BJwqeouiUA) and i are working likes sons-of-bitches to move back to colorado
 
 - [super digging this](https://youtu.be/VFEZOjtrwls?si=POEz_yU44DYrkH-l&t=48)
-
-- started a new [company](https://syntheticecho.com) about 8 months back.  doing it all [live](/disco)

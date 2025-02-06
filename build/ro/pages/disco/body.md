@@ -1,83 +1,95 @@
-as i’ve hinted on some of my socials, i’ve been working, since mid-2024, at [synthetic echo](https://syntheticecho.com/) on a system i’ve named **`disco`**.
+as i’ve hinted on some of my socials, i’ve been working, since mid-2024, at
+[synthetic echo](https://syntheticecho.com/) on a system i’ve named
+**`disco`**.
 
-`disco` stands for **"discovery"**, and it brings a unique, critical, and hopefully beneficial aspect to **many** AI applications:
+`disco` stands for _discovery_, and it brings a unique, critical, and beneficial aspect to _many_ AI applications:
 
-### **"the social voice"**
+> **the social voice**
 
-> _what do you mean by that?_
+below are three examples of running some questions by `disco`.
 
-take a look at [this example =>](https://gist.github.com/ahoward/ae562567579a3e936d9b9bb7e4ffde88)
+in each case, the answers were informed by bringing millions of *real
+conversations* had by *real humans* to bear on the question at hand.
 
-as you can probably see, `disco` is a unique system that utilizes AI and a **curated, distilled, and augmented dataset** of over a million high-quality, organic social conversations from across the internet to _bring the social voice to AI_.
+this is in stark contrast to 'normal' AI, which instead presents the user with
+an amortized, book reportish, standard, and non-controversial answer to your
+query.
 
-from the authentic conversations, `disco` extracts people’s **hopes**, **fears**, **dreams**, and more.  then the conversations are organized into **audiences**, to which you can literally ask *any question*.
+and that, my dear reader, with the personality of a toaster oven.
 
-but here’s the kicker: unlike google’s gemini, which informs you in ways
-optimized to sell ads.
+`disco` isn't about being being _objectively correct_, it's not trying to
+_tell you what to think_.
 
-or openAI, which informs you… for reasons we can only guess...
+instead.  it uses the power of AI to tell you _what people think_.
 
-`disco` informs you with **real conversations from real people.**
+this way, you can make an informed decision for yourself, after examinging the
+multitude of opinions out there.
 
-and it gives **citations to those conversations**, so that you can guage the reality of the answers it gives _for yourself_.
+`disco`'s goal is to be _subjectively correct_: to accurately reflect the
+voices of people.
 
-`disco` does not give you some sanitized, middle-of-the-bell-curve, socially correct, book report style answer to your questions.  it gives you back answers that **real people** could, and would give.
+this is in stark contract to commerical AI, which aims to give you the most
+vanilla answer, with a bias towards those that motivate you to purchase, or,
+at minimum, to stay on the platforms of thier affiliate companies.
 
-> what would you do if you could ask your audience _anything_?
+`disco` pulls no punches.
 
-the **audiences** in this particular example were built from subreddits. [you can see the configurations i used here.](https://gist.github.com/ahoward/95092a816c9a3f752f9d8ec421f24be5) other sources are possible, of course, including thousands of message boards, threads, and, coming soon, bluesky.
+because most questions have a _variety_ of correct answers, _depending on who
+you ask_.  `disco` shows you this variety, and it reveals _who_ would have
+been likely to provide that type of answer, with _references_ to the source
+material it used to form that conclusion.
 
-> _i’m lost..._
+in this way, you can just _read it and weep_ ;-)
 
-let’s clarify. [in the example ==>>](https://gist.github.com/ahoward/ae562567579a3e936d9b9bb7e4ffde88):
+technically, and as astute readers will have no doubt noticied, it is through
+these citations that `disco` provides _verficiation of non-hallucination_.
 
-* we gave `disco` the prompt: *"what keeps you up at night?"*.
-* it ran this prompt by **42 distinct audiences**.
-* for each audience, it provided a sample of citations, alongside the answer, so you can verify the sources yourself.
-* the year, and sentiment, was selected in a randomized way to show 'answers based on "negative" 2024 commentary', etc.
+without further ado, here are those examples.
 
-this entire process took about five minutes to run.
+please take some time to review the output, which provides the answers of *42
+discrete audiences*.
 
-so, this is how using `disco`, you can leverage AI to inform any task that could benefit from contextualizing the subject of inquiry in **the authentic social voice**.
+pay careful attention not only to the citations provided which, as you shall
+see, provide support for the answers given.
 
-applications include:
+> 1. [What keeps you up at night?](https://gist.github.com/ahoward/4779d5df4799bb9c2eb1622e00fa8ab0)
+> 2. [What is your biggest concern about the environment?](https://gist.github.com/ahoward/6ac03564a43f6b49428659b93da74de3)
+> 3. [What is your feeling towards the fortune 500?](https://gist.github.com/ahoward/59b525a24807ba2caf4f921471015ffb)
 
-* running dynamic real-time surveys on audiences before making decisions.
-* having specific audiences review proposals or content and give honest feedback, in their own words.
-* mocking elections.
-* understanding unfiltered thoughts about your company, practice, or brand.
+
+as you've hopefully realized, after reviewing the above, `disco` is not your
+mother's AI.
+
+it's a lot more honest, a lot more realitic, and it's grounded in real human
+conversation.
+
+disco has many applications.  essentially, _any_ AI application that could,
+would, or should benefit from consideration of the _social voice_.
+
+this includes, but is not limited to:
+
+* running dynamic, real-time, surveys across audiences before making business decisions.
+* having specific audiences review proposals or generated content and give honest feedback, in their own words.
+* mocking national elections.
+* understanding unfiltered thoughts about your company, practice, or brand, including dangerous or otherwise censored information (we have 4chan...)
+* _actually_ understanding the nuances of the social conversation, instead of counting clicks, keywords, and search terms.
 * and much, much more.
 
-### **why `disco`?**
+the above was simply a simple demonstration.  the technology can be brought to
+bear on any problem a general purpose AI can be.  which is to say, almost all
+of them.
 
-this project started with a focus on sales and marketing but has evolved towards much broader applicability: politics, social issues, product development... you name it.
+as present, i am working hard to:
 
-anytime you think, *"what would people think about this?"* you can stop wondering: with `disco`, you can find out **now**.
+* add substack content to `disco`
+* add bluesky content to `disco`
+* release an API that developers can use to integrate `disco`s RAG context in thier own AI applications
+* release a basic UI for non-technical people to leverage `disco`
+* produce a threat index of the fortune 500 using 4chan, and other 'gray' sources
+* raising a round
 
-`disco` isn’t about getting "the right" answer; it’s about getting **the answer real humans would actually give**.
+[reach out](/contact) if you wanna stay in touch regarding the project.
 
-every entrepreneur understands the difference between these two styles of answers and, the good ones want the unbiased truth.
+ps. for the curious, [here’s the audience configuration used in these examples.](https://gist.github.com/ahoward/95093a816c9a3f752f9d8ec421f24be5)
 
-with some marketing tools, you could discover, that people really want 'dark mode' or 'a bookmark feature' in the app you're building.  with `disco`, you might discover that no one even wants another app - the one question your research company forgot to ask.
-
-### **how `disco` works**
-
-from an ip perspective, `disco` has several unique strengths:
-
-1. it doesn’t just show you what’s commonly accepted or said. instead, it identifies **clusters of outliers**: the conversations most relevant to consider. while other AI approaches aim for safe, generic answers, `disco` delivers **real answers backed by evidence.**
-
-2. it uses an innovative pre-indexing system, making information retrieval fast and scalable.
-
-> _wut?_
-
-it’s fine if this sounds technical\! if you’re not a developer or vc, you can stop reading here.
-
-but if you are:
-
-* we’re releasing an API with a single, simple endpoint. you’ll be able to add "the social voice" to your rag pipelines with about 3–5 lines of code, no matter what AI you use. [contact me](/contact) for a beta API key—priority goes to devs willing to share their use cases.  
-* a demo app will be out in 7–10 days.  
-* we’re working to integrate the bluesky firehose, with the goal of becoming the authority on "the real voice" for RLHF training data wars. cryptographic guarantees of authorship included ;-).
-
-[reach out](/contact) if this sounds like your kind of thing.
-
-and for the curious, [here’s the audience configuration used in this example.](https://gist.github.com/ahoward/95093a816c9a3f752f9d8ec421f24be5)
+pss. yes, i support custom audiences of arbitrary data sources and authors.  segments #ftw
