@@ -75,7 +75,7 @@ this includes, but is not limited to:
 * _actually_ understanding the nuances of the social conversation, instead of counting clicks, keywords, and search terms.
 * and much, much more.
 
-the above was simply a simple demonstration.  the technology can be brought to
+the above was a simple demonstration.  the technology can be brought to
 bear on any problem a general purpose AI can be.  which is to say, almost all
 of them.
 
