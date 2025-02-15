@@ -16,11 +16,11 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
-# /signup
+# /quotes
 #
-  site.route '/subscribe' do |route|
+  site.route '/quotes' do |route|
     route.call do |ctx|
-      ctx.render 'views/subscribe.erb'
+      ctx.render 'views/quotes.erb'
     end
   end
 
@@ -135,7 +135,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = %w[ /now /about /io /nerd /purls /dojo4 /sitemap ]
+      urls = %w[ /now /about /io /nerd /purls /quotes /dojo4 /sitemap ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
     end

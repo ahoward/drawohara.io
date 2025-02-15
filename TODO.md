@@ -1,15 +1,33 @@
 todo
 ----
-- clean up drawohara.io
+
+- tighten up!
+
+install ai summary action
+
+nerb blogs are tagz...
+
+/io lists nerd + dojo4 stuff...
+
+/io/ai-has-shot-its-wad
+
+/io/speak-it-alan
+
 - disco is live
 - resume
 - mhc
 
 
 
+done
+----
+- clean up drawohara.io
+
+
+
 - /io
   - /veterans-and-mdma
-  - include dj4 posts
+
 
 - /disco
   - **wip** section

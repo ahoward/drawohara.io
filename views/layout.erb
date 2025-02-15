@@ -63,8 +63,8 @@
       .code { background: white !important; }
     </style>
 
-    <script defer src="/assets/js/email.js"></script>
     <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }

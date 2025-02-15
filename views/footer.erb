@@ -2,10 +2,11 @@
 <a href="/goto" name="goto">&mdash;&gt; goto</a>
 <blockquote>
 <%
-  quotes = YAML.load(IO.binread('./config/quotes.yml'))
+  quotes = site.dato.fetch(:quotes)
   author = quotes.keys.sample
-  quote = quotes[author].sample
+  url = quotes[author].fetch(:url)
+  quote = quotes[author].fetch(:quotes).sample
 %>
-<%= quote %> <br> <br> &nbsp;&mdash; <%= author %>
+<%= quote %> <br> <br> &nbsp;&mdash; <a href="<%= url %>" target="_blank"><%= author %></a>
 </blockquote>
 <a href="/">&lt;&mdash; eject</a>

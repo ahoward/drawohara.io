@@ -1,0 +1,33 @@
+<%
+  quotes = site.dato.fetch(:quotes)
+%>
+
+<p>
+i struggle with words, and writing.  being somewhat dislexic and more that a
+little adhd.  but i like to listen the words of some people.  these are some
+of my favorites.
+</p>
+
+<% quotes.each do |author, config|
+  slug = author.gsub(/\s/, '-')
+  name = slug.split('-').first
+  url = config.fetch(:url)
+  list = config.fetch(:quotes)
+%>
+  <hr>
+  <h3>
+    <a href="#<%= slug %>" name="<%= slug %>"><%= author %></a>
+  </h3>
+
+  <blockquote>
+    <ul>
+      <% list.each do |quote| %>
+        <li>
+          <%= quote %>
+        </li>
+      <% end %>
+    <ul>
+  </blockquote>
+
+  <a href="<%= url %>" target="_blank">about <%= name %> &rarr;</a>
+<% end %>
