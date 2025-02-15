@@ -60,6 +60,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -68,9 +75,9 @@
       html { margin: 1em; }
       img { display: block; text-align: center; }
 
+      /* markdown shit */
       .highlighter-rouge { background: white !important; }
       .code { background: white !important; }
-
     </style>
 
     <script defer src="/assets/js/email.js"></script>
@@ -84,7 +91,13 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/index">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/index">🖤</a>
+</small>
 <hr>
     </header>
 
@@ -92,11 +105,11 @@
       <div class="ro markdown">
   <h3 id="they-say-i-am-a-big-fat---and-they-are-right">they say i am a big fat 🤓 – and they are right!</h3>
 
-<p>for some strange reason, this makes me happy</p>
+<p>for some strange reason, this makes me happy:</p>
 
 <p><img src='/ro/nerd/index/assets/terminal.jpg' alt="" title="image of terminal" /></p>
 
-<p>as you can read on my <a href="/about">about</a> page, i have written <a href="/rubygems">too much software</a></p>
+<p>as you can read on my <a href="/about">about</a> page, i have written <a href="/rubygems">way too much software</a>.</p>
 
 <p>i got my start researching <em>in</em> <a href="https://www.boulder.noaa.gov/">NOAA</a></p>
 
@@ -121,35 +134,41 @@ what <em>‘not to do’</em> or market signals that design your product for you
 don’t have to actually think and be bold - just raw <em>instinct</em> about what
 should be studied, how, and <em>why</em>.</p>
 
-<p>that, and fundraising… ;-)</p>
+<p>that, and fundraising… nothing like buildig stuff and figuring out how to
+pay for it at the same time  ;-)</p>
 
-<p>the first project i did at CIRES, is still one of my favorites: we wrote a
-system, designed to run on old-skool linux field computers, that forest fire
-fighters would use, tactically, in the field, to decide weather/whether or not
-(pun intended), sending a crew up a canyon to battle the blaze would result in
-them dying.  mainly it was a wind analysis tool, hyper local weather,
-delivered to a device, long before iphones became a thing.</p>
+<p>the first project i did at CIRES, is still one of my favorite projects of all
+time: we wrote a system, designed to run on old-skool linux field computers,
+that forest fire fighters would use, tactically, in the field, to decide
+weather/whether or not (pun intended), sending a crew up a canyon to battle
+the blaze would result in them dying.  mainly it was a wind analysis tool,
+hyper local weather, delivered to a device, long before iphones became a
+thing.</p>
+
+<p>(this is my explanation for why, when the <a href="https://photos.app.goo.gl/Kjipk8eKT88CtSRSA">los angeles fires</a>
+ erupted i hopped right on my bike and went to check them out… fires and the jobs responders
+are required to do, for $26/hr, astounds me)</p>
 
 <p>subsequently, i went to work at FSL (Forecast Systems Lab) doing
 hyper-high-availability (5 9s ((99.999 % uptime))) for operational satellite
 ingest systems.</p>
 
-<p>we designed cutting edge systems and novel… brutal… methods of ensuring
-consistency of data such as STONITH, which stands for “Stone The Other In The
-Head”, in this way we could ensure, unambiguously, that  a single lead system
-would have control over each of its subordinate systems.  these days, we take
-highly available databases for granted but, at that time, it was a novelty and
-the reason that many a c++ or fortran programming perferred the file system
-and its almost perfectly uniform hierarchical database format.</p>
+<p>we designed cutting edge systems. and novel… brutal… methods of ensuring
+consistency of classified data such as STONITH, which stands for “Stone The
+Other In The Head”, a method used in what were then cutting edge
+high-availibilty clusters that would manage taking over as ‘master’ (a term
+since banished from software, probably for the best…) by literally toggling
+the power of the other node, to be damn sure it was off.  things we simpler
+then, but also very complex.  there was a lot to invent on every project.
+sass wasn’t even a word.</p>
 
-<p>i also did a lot of work in model verification.</p>
-
-<p>geophysical models take hundreds, or thousands, or even hundreds of thousands,
-of configurations to run.  people talk about how neat 12-factor configuration
-is now, and i just shake my head… what if you had to manage millions of
-configuration values?  the next trick is version them, so we know how they
-change over time because, as scientists, if we make a change to say, a cloud
-physics model, we need to ‘test it’.  but</p>
+<p>i also did a lot of work in model verification: geophysical models take
+hundreds, or thousands, or even hundreds of thousands, of configurations to
+run.  people talk about how neat 12-factor configuration is now, and i just
+shake my head… what if you had to manage millions of configuration values?
+the next trick is version them, so we know how they change over time because,
+as scientists, if we make a change to say, a cloud physics model, we need to
+‘test it’.  but</p>
 
 <blockquote>
   <p>how <em>do</em> you test software, when you don’t now the ‘right answer’?</p>
@@ -163,8 +182,9 @@ case of weather models, this could be mean that a change to a cloud physics
 model resulted in predicting 8/9 historical storms with accuracy, vs. the 7/9
 a previous iteration would have predicted.</p>
 
-<p>this type of analysis, foreign to many engineers, is back with vengance,
-thanks to AI…</p>
+<p>this type of analysis, foreign to many engineers, is back with vengance,</p>
+
+<p>thanks to <a href="/disco">AI</a>…</p>
 
 <p>my next stint was at <a href="https://www.ngdc.noaa.gov/">The National Geophysical Data Center</a>, where i was able to participate in a bunch of super cool research:</p>
 
@@ -176,7 +196,7 @@ thanks to AI…</p>
   <li><a href="/purls/global-distribution-and-density-of-constructed-impervious-surfaces">/purls/global-distribution-and-density-of-constructed-impervious-surfaces</a></li>
 </ul>
 
-<p>there, we built very, very <a href="https://www.linuxjournal.com/article/7922">large super-compute</a>,
+<p>and built very, very <a href="https://www.linuxjournal.com/article/7922">large super-compute</a>,
 essentially big fat map-reduce style computing but, at the time, neither of
 those terms existed.  we had to invent novel ways, of moving our code of off
 big-endian (not spelled wrong) cray (also not spelled wrong) machines and onto
@@ -188,18 +208,25 @@ via a process similar to the <a href="https://en.wikipedia.org/wiki/Watershed_(i
  but…  at scale.</p>
 
 <p>throughout my tenure at NGDC, i was allowed to release piles of open source
-software and, i am very grateful for that.</p>
+software and, i am very, very grateful for this.  eventually i was able to
+share, through oss, over 200 open source projects enjoyed by many.  i think
+this was foundational to my eventually winning a ‘ruby hero’ award and wish
+that more young engineers had creative time to just build things.   this, is
+where true innovation comes from i believe.  not board rooms or from mining
+the data to just give people what they want.  which, is probably potato chips.</p>
 
 <hr />
 
 <p><strong>coffee break…</strong></p>
 <hr />
 
-<p>next, <a href="https://www.linkedin.com/in/gregory-greenstreet-082635/">this crazy mofo</a> hired me.  to compile the <a href="https://www.gnu.org/software/gsl/">GNU scientific library</a> on.. wait for it…</p>
+<p>next, <a href="https://www.linkedin.com/in/gregory-greenstreet-082635/">this cowboy</a>
+hired me: to compile the <a href="https://www.gnu.org/software/gsl/">GNU scientific library</a> on.. wait for it…  <strong>windows</strong>!</p>
 
-<p><strong>windows</strong>!</p>
+<p>yep, i am <em>that</em> old!</p>
 
-<p>wowza i am <em>that</em> old!</p>
+<p>(strange that, for the first time ever, i would actually now consider owning a
+micro$oft computer but… only because they run linux ;-)</p>
 
 <p>anyhow, Greg worked for <a href="https://www.linkedin.com/in/dospringer/">Don Springer</a>, at company called <a href="https://www.oracle.com/corporate/pressrelease/oracle-buys-collective-intellect-060512.html">Collective Intellect</a>.  which, at the time, was the “Mobius Group” (which would eventually become <a href="https://foundry.vc/">The Foundry Group</a> and… <strong>#BOOM</strong> .. start-ups in Boulder, Colorado, were a thing.</p>
 
@@ -210,9 +237,9 @@ software and, i am very grateful for that.</p>
 <p>until then, i will say, as i always do that:</p>
 
 <ul>
-  <li>this is a work in progress.</li>
+  <li>this is all, always, a work in progress.</li>
   <li>i am doing it live.</li>
-  <li>i cannot spell, so fucking sue me.</li>
+  <li>i cannot spell, so sue me.  (a little dislexic, in fact.)</li>
 </ul>
 
 </div>
@@ -225,20 +252,9 @@ software and, i am very grateful for that.</p>
       <hr>
 <a href="/goto" name="goto">&mdash;&gt; goto</a>
 <blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/index">i ❤️  this^</a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-that@drawohara.io?subject=/index">i 🖤 ^that<a>
-  </li>
-  <li>
-    <a href="/about">narcissism<a>
-  </li>
-  <li>
-    <a href="/now">tl;dr;<a>
-  </li>
-</ul>
+
+great men are like eagles, and build their nest on some lofty solitude
+ <br> <br> &nbsp;&mdash; arthur schopenhauer
 </blockquote>
 <a href="/">&lt;&mdash; eject</a>
     </footer>

@@ -2,14 +2,18 @@ as i’ve hinted on some of my socials, i’ve been working, since mid-2024, at
 [synthetic echo](https://syntheticecho.com/) on a system i’ve named
 **`disco`**.
 
-`disco` stands for _discovery_, and it brings a unique, critical, and beneficial aspect to _many_ AI applications:
+`disco`
+
+stands for _discovery_.
+
+and it brings a unique, _critical_, and beneficial aspect to _many_ AI applications:
 
 > **the social voice**
 
 below are three examples of running some questions by `disco`.
 
-in each case, the answers were informed by bringing millions of *real
-conversations* had by *real humans* to bear on the question at hand.
+in each case, the answers you'll see were informed by bringing millions of
+*real conversations* had by *real humans* to bear on the question at hand.
 
 this is in stark contrast to 'normal' AI, which instead presents the user with
 an amortized, book reportish, standard, and non-controversial answer to your

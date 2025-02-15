@@ -1,6 +1,7 @@
-- currently [raising money](https://photos.app.goo.gl/pTrzdPZMpaust4jx6) for a [a new company](https://syntheticecho.com) i founded whose mission is to bring the 'the voice of humans' into AI
-
-- working very hard its main product, [disco](/disco).  w.i.p. is around adding substack, bluesky, and getting a developer preview (API only)
+- working on a product that brings millions of real social conversations to
+  bear on ai, i am calling it [disco](/disco). its mission, is to show how
+people think and feel about questions, rather than simply answering them.
+although it does that too, in thier own words.
 
 - the [new nerd blog](/nerd) is nerdy
 

@@ -6,8 +6,8 @@ see what i am doing 👉 [now](/now) 👈
 
 > _otherwise_
 
-[🌬️ c'mon in and have a seat](/home)
+🌬️ **welcome**, this is my pretty home page.
 
--- a
+here, you will find a little [narcissism](/about), a [lotta code](/nerd), some [writing](/io), and [other random drivel](/goto).
 
-p.s. <a href="/ai"> are you a 🤖 ?</a>.
+_thanks for playing_.

@@ -1,16 +1,67 @@
 todo
 ----
+- clean up drawohara.io
+- disco is live
+- resume
+- mhc
 
 
-```ruby
 
-  @rag_content
-    id, data, raw, tldr, search, themes, topics, keywords, hopes, fears, dreams, source, identifier, published_at
+- /io
+  - /veterans-and-mdma
+  - include dj4 posts
 
-  @rag_embeddings
-    id, field, embedding
+- /disco
+  - **wip** section
+  - **studies** section
+  - **demos** section
 
-```
+- /nerd
+  - include dj4 posts
+  - cv
+  - disco
+
+- /fubar
+
+- /halp
+
+- /about // /io
+  - /io/almost-died-in-an-ice-cave
+  - /io/mexico-to-alaska
+  - /io/jess
+  - /io/skiing-the-alaska-range
+  - /io/living-in-a-greenhouse
+
+
+
+
+
+- disco.syntheticecho.com
+  - re-index with rust
+  - figure out a free AI solution
+  - add 1 src
+    - substack scraper?
+      - https://stackoverflow.com/questions/72586708/using-python-to-get-substack-posts-without-scraping
+  - signup for api key or.. auto?
+
+??
+- db/posts/hello-world.md
+- db/posts/hello-world/
+- /ro/posts/hello-world.md
+- /ro/posts/hello-world.md.erb
+- /ro/posts/hello-world.yml
+- /ro/posts/hello-world.yaml
+- /ro/posts/hello-world.json
+
+- /help
+  - /io/almost-died-in-an-ice-cave
+  - /io/mexico-to-alaska
+  - /io/skiing-the-alaska-range
+  - /io/living-in-a-greenhouse
+
+- /kickstarter
+
+
 
 
 - download messages!
@@ -35,10 +86,6 @@ todo
 
 front-matter.. ro!
 
-- ro rendering improvments
-  - front-matter
-  - hard vs soft wrapping...
-  - autolink option?
 
 - svc
   - supabase
@@ -379,6 +426,24 @@ next
 
 done
 ----
+x support markdown template via Ro::Template.render_markdown
+x front_matter is data
+x ro rendering improvments
+  x front-matter
+  x hard vs soft wrapping...
+  x autolink option?
+
+
+
+```ruby
+
+  @rag_content
+    id, data, raw, tldr, search, themes, topics, keywords, hopes, fears, dreams, source, identifier, published_at
+
+  @rag_embeddings
+    id, field, embedding
+
+```
 - /nerd/fastest-possible-embeddings
 - site build does not build dojo4 by default....
 - https://search.google.com/search-console/sitemaps?resource_id=sc-domain%3Adrawohara.io

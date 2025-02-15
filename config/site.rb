@@ -135,7 +135,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = %w[ /io /nerd /purls /dojo4 /sitemap /home ]
+      urls = %w[ /now /about /io /nerd /purls /dojo4 /sitemap ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
     end

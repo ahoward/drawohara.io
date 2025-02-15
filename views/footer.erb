@@ -1,19 +1,11 @@
 <hr>
 <a href="/goto" name="goto">&mdash;&gt; goto</a>
 <blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=<%= ctx.path_info %>">i ❤️  this^</a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-that@drawohara.io?subject=<%= ctx.path_info %>">i 🖤 ^that<a>
-  </li>
-  <li>
-    <a href="/about">narcissism<a>
-  </li>
-  <li>
-    <a href="/now">tl;dr;<a>
-  </li>
-</ul>
+<%
+  quotes = YAML.load(IO.binread('./config/quotes.yml'))
+  author = quotes.keys.sample
+  quote = quotes[author].sample
+%>
+<%= quote %> <br> <br> &nbsp;&mdash; <%= author %>
 </blockquote>
 <a href="/">&lt;&mdash; eject</a>

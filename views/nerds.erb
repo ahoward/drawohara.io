@@ -4,13 +4,22 @@
 <hr>
 
 <em>
-  the `nerd blog` is definitely a work in progress but, here's a little more
-of what's to come...  check back soon for more geek.
+  this all new `nerd blog` is definitely a work in progress, but you might
+enjoy the <a href="/dojo4">dojo4</a> archive, which contains some of my
+previously nerdly writing.  and, for a peek and what i am working on now see
+<a href="/disco">disco</a>...
+<br>
+<br>
+i'll be adding to the below list of articles and plan to be doing quite a bit
+of writing about ai, ruby, embedding models, groq and vespa to name a few...
+one thing i do enjoy about the ai revolution... so much to do!
 </em>
+
+
 <br>
 <br>
 
-<ul>
+<ol>
   <% data.index.each do |nerd|
       next if nerd.id == 'index'
   %>
@@ -18,4 +27,4 @@ of what's to come...  check back soon for more geek.
       <a href='<%= nerd.url %>'><%= nerd.url %></a>
     </li>
   <% end %>
-</ul>
+</ol>
