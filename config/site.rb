@@ -12,7 +12,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/ai' do |route|
     route.call do |ctx|
-      ctx.render 'views/ai.erb'
+      ctx.render 'views/ai.erb.md'
     end
   end
 
