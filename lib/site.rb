@@ -47,6 +47,7 @@ class Site
   attr_reader :ro
   attr_reader :dato
   attr_reader :server
+  attr_reader :utils
 
   attr_accessor :layout
 
@@ -65,7 +66,13 @@ class Site
 
     @server = Server.new(site: self)
 
+    @utils = Module.new{ def self.<<(m); include(m); end; extend self }
+
     block.call(self) if block
+  end
+
+  def utils=(m)
+    @utils.include(m)
   end
 
   def path_for(...)

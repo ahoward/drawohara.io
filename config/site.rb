@@ -1,5 +1,5 @@
 Site.for 'drawohara.io' do |site|
-# /home
+# /
 #
   site.route '/' do |route|
     route.call do |ctx|
@@ -231,4 +231,9 @@ Site.for 'drawohara.io' do |site|
       end
     end
   end
+
+# site.helpers
+#
+  require_relative '../lib/helpers'
+  site.utils << Helpers
 end

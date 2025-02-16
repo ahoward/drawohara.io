@@ -1,17 +1,29 @@
 todo
 ----
 
-- tighten up!
+- add site.helpers cleanly....
 
-install ai summary action
+- unify io
+  - ro.content type=post|nerd|purl|rando
 
-nerb blogs are tagz...
+- tighten up io!
 
-/io lists nerd + dojo4 stuff...
+- oss
+  - write about ro
+  - senv2
+  - - https://dotenvx.com/
 
-/io/ai-has-shot-its-wad
+writing
+-------
+  - **io**
+  - /io/ai-has-shot-its-wad
+  - /io/speak-it-alan-turing
+  - /io/almost-died-in-an-ice-cave
+  - /io/mexico-to-alaska
+  - /io/jess
+  - /io/skiing-the-alaska-range
+  - /io/living-in-a-greenhouse
 
-/io/speak-it-alan
 
 - disco is live
 - resume

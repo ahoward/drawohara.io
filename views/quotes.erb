@@ -15,9 +15,9 @@ of my favorites.
   list = config.fetch(:quotes)
 %>
   <hr>
-  <h3>
+  <h5>
     <a href="#<%= slug %>" name="<%= slug %>"><%= author %></a>
-  </h3>
+  </h5>
 
   <blockquote>
     <ul>
@@ -29,5 +29,7 @@ of my favorites.
     <ul>
   </blockquote>
 
-  <a href="<%= url %>" target="_blank">about <%= name %> &rarr;</a>
+  <small>
+    <a href="<%= url %>" target="_blank">about <%= name %> &rarr;</a>
+  </small>
 <% end %>
