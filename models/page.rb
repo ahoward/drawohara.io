@@ -3,8 +3,28 @@ require_relative '../config/boot.rb'
 class Page < Site::Model
   collection_name :pages
 
-  def Page.index
-    Page.find('index')
+  Routes = {
+    '/'        => :index,
+    '/about'   => :about,
+    '/contact' => :contact,
+    '/disco'   => :disco,
+    '/now'     => :now,
+  }
+
+  def Page.routes
+    Routes
+  end
+
+  def Page.route(path_info)
+    name = Page.routes.fetch(path_info)
+
+    Page.find(name)
+  end
+
+  Routes.each do |path_info, name|
+    define_singleton_method(name) do
+      Page.route(path_info)
+    end
   end
 
   def Page.top_level

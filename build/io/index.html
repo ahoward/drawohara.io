@@ -100,13 +100,100 @@
     </header>
 
     <main>
-      <i>non sequitor at best, annoying at worst...</i>
-<br>
-<br>
+      <p>
+  <em>
+    non sequitor at best, annoying at worst...  these are some things that i made
+  </em>
+</p>
 
+<dl>
+  
+      <dt>
+        <a href="/io">/io</a>
+        <hr>
+      </dt>
 
-  <a href="/io/facebook-and-global-extremism">/io/facebook-and-global-extremism</a>
-  <br>
+      <dd>
+        <ul>
+          
+            <li>
+              <a href="/io/facebook-and-global-extremism">/io/facebook-and-global-extremism</a>
+            </li>
+          
+        </ul>
+      </dd>
+  
+      <dt>
+        <a href="/nerd">/nerd</a>
+        <hr>
+      </dt>
+
+      <dd>
+        <ul>
+          
+            <li>
+              <a href="/nerd/fastest-possible-embeddings">/nerd/fastest-possible-embeddings</a>
+            </li>
+          
+        </ul>
+      </dd>
+  
+      <dt>
+        <a href="/purls">/purls</a>
+        <hr>
+      </dt>
+
+      <dd>
+        <ul>
+          
+            <li>
+              <a href="/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights">/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights</a>
+            </li>
+          
+            <li>
+              <a href="/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data">/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data</a>
+            </li>
+          
+            <li>
+              <a href="/purls/can-poverty-rates-be-estimated-using-satellite-data">/purls/can-poverty-rates-be-estimated-using-satellite-data</a>
+            </li>
+          
+            <li>
+              <a href="/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003">/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003</a>
+            </li>
+          
+            <li>
+              <a href="/purls/global-distribution-and-density-of-constructed-impervious-surfaces">/purls/global-distribution-and-density-of-constructed-impervious-surfaces</a>
+            </li>
+          
+            <li>
+              <a href="/purls/paulsboutiqueisthegreatestalbumofalltime">/purls/paulsboutiqueisthegreatestalbumofalltime</a>
+            </li>
+          
+            <li>
+              <a href="/purls/public-sentiment-towards-the-fortune-500-in-america">/purls/public-sentiment-towards-the-fortune-500-in-america</a>
+            </li>
+          
+            <li>
+              <a href="/purls/replace-your-ceo">/purls/replace-your-ceo</a>
+            </li>
+          
+            <li>
+              <a href="/purls/software-developer-vs-startup-developer">/purls/software-developer-vs-startup-developer</a>
+            </li>
+          
+        </ul>
+      </dd>
+  
+
+  <dt>
+    <a href="#dojo4" name="dojo4">/dojo4</a>
+    <hr>
+  </dt>
+  <dd>
+    &rarr; <a href="/dojo4">enter the dojo4 archives</a> 🥷
+  </dd>
+</dl>
     </main>
 
     <footer>
@@ -122,6 +209,45 @@
 </blockquote>
 
 <a href="/">&lt;&mdash; eject</a>
+
+<script>
+  function scroll() {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+
+    if (scrollPosition) {
+      window.scrollTo(0, scrollPosition);
+    }
+  }
+
+  function reload() {
+    const href = window.location.href + '?' + crypto.randomUUID();
+
+    fetch(href, { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          location.reload();
+        }
+      }); // Added closing parenthesis here
+  }
+
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+      reload();
+    }
+  });
+
+  function setScroll() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  }
+
+  window.addEventListener('beforeunload', function() {
+    setScroll();
+  });
+
+  scroll();
+
+  setTimeout(reload, 1000 * 10);
+</script>
     </footer>
   </body>
 </html>

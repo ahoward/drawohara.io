@@ -131,10 +131,6 @@
   </li>
 
   <li>
-    <a href="/home">/home</a>
-  </li>
-
-  <li>
     <a href="/io">/io</a>
   </li>
 
@@ -192,10 +188,6 @@
 
   <li>
     <a href="/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003">/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003</a>
-  </li>
-
-  <li>
-    <a href="/purls/disco">/purls/disco</a>
   </li>
 
   <li>
@@ -1622,6 +1614,45 @@
 </blockquote>
 
 <a href="/">&lt;&mdash; eject</a>
+
+<script>
+  function scroll() {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+
+    if (scrollPosition) {
+      window.scrollTo(0, scrollPosition);
+    }
+  }
+
+  function reload() {
+    const href = window.location.href + '?' + crypto.randomUUID();
+
+    fetch(href, { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          location.reload();
+        }
+      }); // Added closing parenthesis here
+  }
+
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+      reload();
+    }
+  });
+
+  function setScroll() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  }
+
+  window.addEventListener('beforeunload', function() {
+    setScroll();
+  });
+
+  scroll();
+
+  setTimeout(reload, 1000 * 10);
+</script>
     </footer>
   </body>
 </html>

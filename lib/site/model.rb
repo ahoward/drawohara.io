@@ -6,6 +6,8 @@ require_relative 'pagination'
 class Site
   class Model
     class << Model
+      include Enumerable
+
       def root
         @root ||= Ro.root
       end
@@ -28,64 +30,88 @@ class Site
         root.collections[collection_name]
       end
 
-      def nodes
-        collection.to_a
+      def each(offset: nil, limit: nil, &block)
+        if block_given?
+          collection.each(offset:, limit:) do |node|
+            yield new(node)
+          end
+        else
+          Enumerator.new do |yielder|
+            collection.each(offset:, limit:) do |node|
+              yielder << new(node)
+            end
+          end
+        end
       end
 
       def all
-        models_for(nodes)
+        if block_given?
+          each do |model|
+            yield model
+          end
+        else
+          list
+        end
+      end
+
+      def list
+        List.for to_a
+      end
+
+      def paginate(size:10, &block)
+        if block_given?
+          collection.paginate(size:) do |nodes|
+            page = nodes.map { |node| new(node) }
+            yield page
+          end
+        else
+          Enumerator.new do |yielder|
+            collection.paginate(size:) do |nodes|
+              page = nodes.map { |node| new(node) }
+              yield page
+              yielder << page
+            end
+          end
+        end
       end
 
       def select(*args, &block)
-        all.select(*args, &block)
+        to_a.select(*args, &block)
       end
 
       def detect(*args, &block)
-        all.detect(*args, &block)
+        to_a.detect(*args, &block)
       end
 
       def count(*args, &block)
         if args.empty? and block.nil?
-          all.size
+          collection.size
         else
           where(*args, &block).size
         end
       end
 
       def where(*_args, &block)
-        all.select do |model|
+        to_a.select do |model|
           !!model.instance_eval(&block)
         end
       end
 
       def first
-        all.first
+        new(collection.first)
       end
 
       def last
-        all.last
+        new(collection.last)
       end
 
       def find(id)
         id = id.to_s
-        all.detect { |model| model.id == id }
+        to_a.detect { |model| model.id == id }
       end
 
       def [](id)
         find(id)
-      end
-
-      def models_for(result)
-        case result
-          when Array
-            List.for(Array(result).flatten.compact.map { |element| new(element) })
-          else
-            new(result)
-        end
-      end
-
-      def paginate(*args, &block)
-        all.paginate(*args, &block)
       end
     end
 
@@ -104,6 +130,10 @@ class Site
 
       def detect(*args, &block)
         super
+      end
+
+      def slice(*args, &block)
+        List.for super
       end
     end
 

@@ -6,8 +6,8 @@ see what i am doing 👉 [now](/now) 👈
 
 > _otherwise_
 
-🌬️ **welcome**, this is my pretty home page.
+ **welcome to my** 🛖️, please make yourself at hme.
 
-here, you will find a little [narcissism](/about), a [lotta code](/nerd), some [writing](/io), and [other random drivel](/goto).
+here, you will find a [lotta code](/nerd), a little [narcissism](/about), and some bad [writing](/io).
 
-_thanks for playing_.
+i'd love to [/contact](hear from you).

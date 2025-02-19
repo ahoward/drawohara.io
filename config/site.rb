@@ -3,8 +3,8 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/' do |route|
     route.call do |ctx|
-      page = Page.index
-      ctx.render 'views/index.erb', data:page
+      data = Page.index
+      ctx.render string: data.body, data:
     end
   end
 
@@ -61,9 +61,8 @@ Site.for 'drawohara.io' do |site|
 
   site.route '/io' do |route|
     route.call do |ctx|
-      index = site.ro.io
-      data = {index:}
-      ctx.render 'views/io.erb', data:
+      data = Content.index
+      ctx.render 'views/io/index.erb', data:
     end
   end
 
@@ -92,14 +91,6 @@ Site.for 'drawohara.io' do |site|
       site.ro.nerd.map{|nerd| "/nerd/#{ nerd.id }"}
     end
   end
-
-# /stream
-#
-# site.route '/stream' do |route|
-#   route.call do |ctx|
-#     ctx.render 'views/stream.erb.md'
-#   end
-# end
 
 # dojo4 archives
 #
@@ -135,7 +126,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = %w[ /now /about /io /nerd /purls /quotes /dojo4 /sitemap ]
+      urls = %w[ /now /io /nerd /about /purls /quotes /dojo4 /sitemap ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
     end
@@ -207,7 +198,7 @@ Site.for 'drawohara.io' do |site|
       page = site.ro.get("pages/#{ id }")
 
       if page
-        ctx.render string: page.body.html_safe, data: page
+        ctx.render string: page.body, data: page
       end
     end
 

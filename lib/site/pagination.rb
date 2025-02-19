@@ -1,13 +1,19 @@
 module Pagination
-  def paginate(*args)
+  def paginate(*args, page:nil, per:nil, size:nil, **kws)
     options = Map.for(args.last.is_a?(Hash) ? args.pop : {})
+
+    options[:page] = page if page
+    options[:per] = per if per
+    options[:size] = size if size
+
+    options.merge!(kws)
 
     page = Integer(args.shift || options[:page] || 1)
     per = Integer(args.shift || options[:per] || options[:size] || 10)
 
     page = [page.abs, 1].max
     per = [per.abs, 1].max
-d
+
     offset = (page - 1) * per
     length = per
 

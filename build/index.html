@@ -113,11 +113,11 @@
   <p><em>otherwise</em></p>
 </blockquote>
 
-<p>🌬️ <strong>welcome</strong>, this is my pretty home page.</p>
+<p><strong>welcome to my</strong> 🛖️, please make yourself at hme.</p>
 
-<p>here, you will find a little <a href="/about">narcissism</a>, a <a href="/nerd">lotta code</a>, some <a href="/io">writing</a>, and <a href="/goto">other random drivel</a>.</p>
+<p>here, you will find a <a href="/nerd">lotta code</a>, a little <a href="/about">narcissism</a>, and some bad <a href="/io">writing</a>.</p>
 
-<p><em>thanks for playing</em>.</p>
+<p>i’d love to <a href="hear from you">/contact</a>.</p>
 
 </div>
     </main>
@@ -135,6 +135,45 @@
 </blockquote>
 
 <a href="/">&lt;&mdash; eject</a>
+
+<script>
+  function scroll() {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+
+    if (scrollPosition) {
+      window.scrollTo(0, scrollPosition);
+    }
+  }
+
+  function reload() {
+    const href = window.location.href + '?' + crypto.randomUUID();
+
+    fetch(href, { method: 'HEAD' })
+      .then(response => {
+        if (response.ok) {
+          location.reload();
+        }
+      }); // Added closing parenthesis here
+  }
+
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+      reload();
+    }
+  });
+
+  function setScroll() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  }
+
+  window.addEventListener('beforeunload', function() {
+    setScroll();
+  });
+
+  scroll();
+
+  setTimeout(reload, 1000 * 10);
+</script>
     </footer>
   </body>
 </html>

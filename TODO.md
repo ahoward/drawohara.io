@@ -1,10 +1,49 @@
 todo
 ----
+0. shopify application
+1. /about for christa
+  1.a podcast outline
+  1.b podcast bio
+  1.c listen to episode
+2. /disco update
+3. /fabula
+4. /laozi (lao tzu)
+4. update syntheticecho.com
+5. update mhc
+6. update mtf-trek.com 
 
-- add site.helpers cleanly....
+
+- lanuch fabula write up for james
+  - /fabula
+  - /kickstarter
+  - sponsorship model
+    - free
+  - https://opencollective.com/
+
+- disco
+
+- justin/kaylin
+- ces
+- insurance claim
+- knee follow up
+
+- bio 4 christa
+
+
+- rando // is // stream
+  - render using site
+  - push to s3
+  - ultra simple site
+  - https://www.roadsareforwimps.com/the-5-frame-bag/
+
 
 - unify io
   - ro.content type=post|nerd|purl|rando
+
+- enable caching at build time for ro
+
+- /music
+- /books
 
 - tighten up io!
 
@@ -23,6 +62,7 @@ writing
   - /io/jess
   - /io/skiing-the-alaska-range
   - /io/living-in-a-greenhouse
+  - /io/veterans-and-mdma
 
 
 - disco is live
@@ -33,13 +73,9 @@ writing
 
 done
 ----
+- add site.helpers cleanly....
 - clean up drawohara.io
-
-
-
-- /io
-  - /veterans-and-mdma
-
+- /io - /veterans-and-mdma
 
 - /disco
   - **wip** section
