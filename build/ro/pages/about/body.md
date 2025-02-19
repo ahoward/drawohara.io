@@ -1,3 +1,10 @@
+---
+og:
+  title: ara.t.howard
+  description: my insides are made out of outsides.  i bite.
+  image:
+    url: /ro/pages/about/assets/og.jpeg
+---
 this is the part i hate.  writing about myself.
 
 i'll start at the beginning:
