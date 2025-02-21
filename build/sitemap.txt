@@ -126,6 +126,14 @@ https://drawohara.io/langs/fr/io/facebook-and-global-extremism
 https://drawohara.io/langs/es/io/facebook-and-global-extremism
 https://drawohara.io/langs/it/io/facebook-and-global-extremism
 https://drawohara.io/langs/nl/io/facebook-and-global-extremism
+https://drawohara.io/io/return-your-laptop
+https://drawohara.io/langs/en/io/return-your-laptop
+https://drawohara.io/langs/uk/io/return-your-laptop
+https://drawohara.io/langs/sv/io/return-your-laptop
+https://drawohara.io/langs/fr/io/return-your-laptop
+https://drawohara.io/langs/es/io/return-your-laptop
+https://drawohara.io/langs/it/io/return-your-laptop
+https://drawohara.io/langs/nl/io/return-your-laptop
 https://drawohara.io/nerd/fastest-possible-embeddings
 https://drawohara.io/langs/en/nerd/fastest-possible-embeddings
 https://drawohara.io/langs/uk/nerd/fastest-possible-embeddings
