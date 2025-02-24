@@ -3,6 +3,15 @@
 > today i figured out the fasest possible way to generate embeddings locally with open source tools avaiable today
 
 
+---
+**update 2025-02-24**
+
+@kris (https://github.com/khasinski) helped me with this -> https://gist.github.com/ahoward/2a1d45499ac9e755d802dbcbaf401b71
+
+it.  is fast #af.
+
+
+---
 i tried 4 approaches, based on *extensive* research and lots and lots of testing in my work from the past 8 mos.
 
 i've been busy building 'socially informed AI'.   essentially, a giant,
