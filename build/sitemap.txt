@@ -142,6 +142,14 @@ https://drawohara.io/langs/fr/nerd/fastest-possible-embeddings
 https://drawohara.io/langs/es/nerd/fastest-possible-embeddings
 https://drawohara.io/langs/it/nerd/fastest-possible-embeddings
 https://drawohara.io/langs/nl/nerd/fastest-possible-embeddings
+https://drawohara.io/nerd/ima
+https://drawohara.io/langs/en/nerd/ima
+https://drawohara.io/langs/uk/nerd/ima
+https://drawohara.io/langs/sv/nerd/ima
+https://drawohara.io/langs/fr/nerd/ima
+https://drawohara.io/langs/es/nerd/ima
+https://drawohara.io/langs/it/nerd/ima
+https://drawohara.io/langs/nl/nerd/ima
 https://drawohara.io/nerd/index
 https://drawohara.io/langs/en/nerd/index
 https://drawohara.io/langs/uk/nerd/index
