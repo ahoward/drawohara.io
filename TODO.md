@@ -1,11 +1,14 @@
 todo
 ----
+
 0. shopify application
 
 x1. /about for christa
   1.a podcast outline
   1.b podcast bio
   1.c listen to episode
+
+/nerd/rag-on-ruby
 
 2. /disco update
 3. /fabula

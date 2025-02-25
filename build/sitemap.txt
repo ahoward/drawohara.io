@@ -30,6 +30,14 @@ https://drawohara.io/langs/fr/contact
 https://drawohara.io/langs/es/contact
 https://drawohara.io/langs/it/contact
 https://drawohara.io/langs/nl/contact
+https://drawohara.io/cv
+https://drawohara.io/langs/en/cv
+https://drawohara.io/langs/uk/cv
+https://drawohara.io/langs/sv/cv
+https://drawohara.io/langs/fr/cv
+https://drawohara.io/langs/es/cv
+https://drawohara.io/langs/it/cv
+https://drawohara.io/langs/nl/cv
 https://drawohara.io/disco
 https://drawohara.io/langs/en/disco
 https://drawohara.io/langs/uk/disco
