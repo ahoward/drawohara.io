@@ -1,23 +1,22 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
-  <!-- ga -->
+  <!-- га -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
-  <!-- deps -->
+  <!-- залежності -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
+  <!-- мови -->
   <!--
     https://developers.google.com/search/docs/specialty/international/localized-versions#html
   -->
@@ -28,22 +27,25 @@
    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+  <!-- базові налаштування -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+  <!-- база сайту -->
+  <base href='/langs/uk' />
+
+  <!-- фавікон -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- мета -->
+    <title>Керування поведінкою користувача за допомогою ґеймдизайну</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="переходимо." />
+<meta property="og:title" content="Керування поведінкою користувача за допомогою ґеймдизайну"/>
+<meta property="og:description" content="рухайся далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -56,19 +58,31 @@
     <meta property="site:path_info" content=""/driving-user-behavior-with-game-dynamics"">
 
     <style>
-      /* anti pico */
+      /* анти піко */
       a {text-decoration: none !important; }
 
-      /* anti turbo */
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* анти турбо */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
 
-      /* anti progressive */
+      /* анти прогресив */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown шлак */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* анти турбо */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -78,45 +92,15 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/driving-user-behavior-with-game-dynamics">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/driving-user-behavior-with-game-dynamics">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/driving-user-behavior-with-game-dynamics">🖤</a>
+</small>
 <hr>
-<strong>/driving-user-behavior-with-game-dynamics</strong>
     </header>
 
     <main>
-      <em>опубліковано: 2010-11-08</em>
-<br>
-<br>
-<div class="flex-video youtube">
-  <iframe width="640" height="480" src="http://www.youtube.com/embed/MCfUFpZUk6s" frameborder="0"></iframe>
-</div>
-<p>Від наших друзів з Leviathan Games</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/driving-user-behavior-with-game-dynamics">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+      <em>опубліковано: 2010-11-08</

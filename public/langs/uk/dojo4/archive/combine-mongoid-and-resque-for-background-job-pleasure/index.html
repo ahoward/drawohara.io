@@ -1,22 +1,22 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+  <!-- га -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
-  <!-- deps -->
+  <!-- залежності -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
+  <!-- мови -->
   <!--
     https://developers.google.com/search/docs/specialty/international/localized-versions#html
   -->
@@ -27,23 +27,23 @@
    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+  <!-- базові налаштування -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
     <base href='/langs/uk' />
 
-  <!-- favicon -->
+  <!-- фавіконка -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- мета-теги -->
+    <title>об'єднайте mongoid і resque для задоволення фонових завдань</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="проїжджайте." />
+<meta property="og:title" content="об'єднайте mongoid і resque для задоволення фонових завдань"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -52,12 +52,19 @@
   <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"combine-mongoid-and-resque-for-background-job-pleasure"}">
-    <meta property="site:path_info" content=""/combine-mongoid-and-resque-for-background-job-pleasure"">
+    <meta property="site:params" content="{"ext":null,"id":"об'єднайте-mongoid-і-resque-для-задоволення-фонових-завдань"}">
+    <meta property="site:path_info" content=""/об'єднайте-mongoid-і-resque-для-задоволення-фонових-завдань"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -66,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -78,46 +90,9 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/combine-mongoid-and-resque-for-background-job-pleasure">я ❤️ це!</a>
-<hr>
-<strong>/combine-mongoid-and-resque-for-background-job-pleasure</strong>
-    </header>
-
-    <main>
-      <em>опубліковано: 2012-06-27</em>
-<br>
-<br>
-<div class="ro markdown">
-  <script src="https://gist.github.com/3005861.js?file=job.rb"></script>
-
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/combine-mongoid-and-resque-for-background-job-pleasure">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/об'єднайте-mongoid-і-resque-для-задоволення-фонових-завдань">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/об'єднайте-mongoid-і-resque-для-з

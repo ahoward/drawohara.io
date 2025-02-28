@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Тут нічого немає.</title>
+    <title>спільнота.dojo4.com</title>
 
-<meta property="og:title" content="Тут нічого немає."/>
-<meta property="og:description" content="Продовжуйте рух." />
+<meta property="og:title" content="спільнота.dojo4.com"/>
+<meta property="og:description" content="рухайся далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,23 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
+     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/community--dojo4--com">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:я-люблю-це@drawohara.io?subject=/community--dojo4--com">❤️ </a>
+    ||
+  <a href="mailto:я-ненавиджу-це@drawohara.io?subject=/community--dojo4--com">🖤</a>
+</small>
 <hr>
-<strong>/community--dojo4--com</strong>
     </header>
 
     <main>
@@ -89,59 +105,5 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p><img src='/ro/dojo4/community--dojo4--com/assets/b.png' alt="Logo_large_transparent.png" /> <br />
-Щось чудове протягом останніх 5+ років сталося в dojo4: ми побудували спільноту. Безліч людей пройшло через наші двері. Ми ділилися їжею, напоями, плейлистами, радістями, трагедіями, ідеями, практичними жартами, знаннями, відгуками та зв'язками. dojo4 виник як місце, яке є домом для багатьох людей, місце, де ми робимо бізнес по-новому, і місце, де ми досліджуємо, що означає робити значущу роботу.</p>
-
-<p>Це було досить дивовижно побудувати місце, де будь-хто може зайти в двері і побачити, де вони можуть підійти, і нещодавно ми почали розмовляти про те, як ми можемо відкрити нашу спільноту за межами наших стін у Боулдері, Колорадо. У дусі робити <em>щось</em> і не дозволяти досконалості бути ворогом доброго, ми запустили <a href="http://community.dojo4.com/">community.dojo4.com</a>: dojo4 community, відкритий код.</p>
-
-<p>Це відкрите. Його можна використовувати так, як це найкорисніше для вас. Ми сподіваємося, що його будуть використовувати для об'єднання людей навколо розмов про:</p>
-
-<ul>
-  <li>цільову роботу</li>
-  <li>нові способи ведення бізнесу</li>
-  <li>поділ технічних та дизайнерських навичок</li>
-  <li>поділ новин, інновацій та рекомендацій</li>
-  <li>можливості (робота, інвестиції, зв'язки)</li>
-  <li>речі, які ми любимо: подорожі, їжа, музика, приховані перлини</li>
-</ul>
-
-<p>Ми також сподіваємося, що його будуть використовувати для обговорення блог-постів.</p>
-
-<p><img src='/ro/dojo4/community--dojo4--com/assets/c.png' alt="blog_talk.png" /></p>
-
-<p>Ми створили кілька категорій, які можуть (або не можуть) бути виразними, і розмістили там кілька тем. Але натхнення та практичність перемагають концепцію, тож використовуйте її так, як це найкраще підходить.</p>
-
-<blockquote>
-  <p><a href="http://little-startup-handbook.dojo4.com/call-on-community">Ніхто з нас не такий розумний, як всі ми разом. ~Японська приказка</a></p>
-</blockquote>
-
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/community--dojo4--com">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p><img src='/ro/dojo4/community--dojo4--com/assets/b.png' alt="Logo_large_transparent.png" /> 
+Сталось щось красиве в dojo4 за останні 5+

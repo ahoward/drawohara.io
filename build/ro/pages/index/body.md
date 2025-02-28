@@ -10,4 +10,4 @@ see what i am doing 👉 [now](/now) 👈
 
 here, you will find a [lotta code](/nerd), a little [narcissism](/about), and some bad [writing](/io).
 
-i'd love to [/contact](hear from you).
+i'd love to [hear from you](/contact).

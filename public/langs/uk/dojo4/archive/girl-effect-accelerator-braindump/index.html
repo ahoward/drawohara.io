@@ -1,51 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <!-- meta -->
+    <title>Ефект прискорення Girl Effect: Дамп мозку</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Ефект прискорення Girl Effect: Дамп мозку"/>
+    <meta property="og:description" content="Йдіть далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"girl-effect-accelerator-braindump"}">
@@ -55,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,24 +70,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/girl-effect-accelerator-braindump">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/girl-effect-accelerator-braindump">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/girl-effect-accelerator-braindump">🖤</a>
+</small>
 <hr>
-<strong>/girl-effect-accelerator-braindump</strong>
     </header>
 
     <main>
@@ -87,159 +102,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>я щойно провів останні 10 днів у Сан-Франциско та навколо нього для інавгураційного акселератора Girl Effect: першої програми Unreasonable Institute, спрямованої на допомогу компаніям, які позитивно впливають на життя мільйонів підлітків, робити це краще та швидше через соціальне підприємництво.</p>
-
-<p>Є так багато дивовижних знань, які з’явилися під час цієї події, і у мене є довгий чернетка посту, але я вирішив записати попередній погляд під час польоту, де я так само щасливий повертатися додому до своєї родини в Колорадо, як і сумую за своєю новою нерозумною родиною ;-) === ;-(</p>
-
-<p>готуйтеся до злиття розумів Вулкана; ось моя підбірка найкращих моментів у довільному порядку:</p>
-
-<ul>
-  <li>
-    <p>у аеропорту, використовуючи Chrome Debugger, щоб підробити просрочені водійські права в компанії з оренди автомобілів…</p>
-  </li>
-  <li>
-    <p>раптово усвідомивши, що цей смішний дбайливий хлопець створив компанію вартістю в мільярди доларів. кілька разів…</p>
-  </li>
-  <li>
-    <p>стоячи в колі, сміючись так сильно з абсолютно найсмішнішою групою людей, яка коли-небудь стояла в такому колі, або, можливо, стояла взагалі…</p>
-  </li>
-  <li>
-    <p>соціальний вплив означає вирішення проблем, які справді мають реальні люди, і обмін вашого рішення на ціну, яка є справедливою для них і для вас…</p>
-  </li>
-  <li>
-    <p>бути враженим глибокою особистою зацікавленістю, яку Сес Годін, здається, виявляє до кожної людини, з якою він спілкується…</p>
-  </li>
-  <li>
-    <p>компанії справді можуть робити краще, ніж уряди…</p>
-  </li>
-  <li>
-    <p>уау. персонал кухні має більше справжніх підприємницьких навичок, ніж 80% технічних стартапів у світі…</p>
-  </li>
-  <li>
-    <p><em>багато</em> людей навіть не мають їбаного світла…</p>
-  </li>
-  <li>
-    <p>так, деякі люди справді свідомо використовують своє життя, щоб покращити життя мільйонів інших</p>
-  </li>
-  <li>
-    <p>на виноградниках так багато вина…</p>
-  </li>
-  <li>
-    <p>дівочки справді кидають школу, тому що у них немає прокладок. вони продають свої тіла, щоб купити прокладки та залишитися в школі. це надзвичайно відібране.</p>
-  </li>
-  <li>
-    <p>усі проблеми обертаються навколо розуміння людей…</p>
-  </li>
-  <li>
-    <p>відео Die Antwoord найкраще споживати на свіжому повітрі вночі з африканцями та класичним музикантом…</p>
-  </li>
-  <li>
-    <p>найсміливіші люди слухають себе…</p>
-  </li>
-  <li>
-    <p>люди та політика роблять кожну компанію важкою…</p>
-  </li>
-  <li>
-    <p>дівочкам потрібні голоси в 10 000 разів гучніші, які говорять від їхнього імені…</p>
-  </li>
-  <li>
-    <p>Рахул — це справжній живий садху агхорі та дуже приємна людина…</p>
-  </li>
-  <li>
-    <p>проблеми першого та третього світу потребують нових назв, таких як «марнування вашого життя» та «термінове завдання»…</p>
-  </li>
-  <li>
-    <p>Крістен Ліен — це новий тип суперістоти, чиї нащадки покинуть Землю, щоб колонізувати нові планети, зроблені з чистого звуку…</p>
-  </li>
-  <li>
-    <p>якщо ваш власний стартап справді тільки створює проблеми…</p>
-  </li>
-  <li>
-    <p>великі групи впевнених жінок надзвичайно весело бути поруч…</p>
-  </li>
-  <li>
-    <p>якщо вам потрібні гроші, і ви абсолютно не знаєте, який пін-код на вашій єдиній кредитній картці, купіть групі незнайомців кружку й попросіть у них гроші в обмін</p>
-  </li>
-  <li>
-    <p>як турист, я, здається, класифікуюсь як «дуже білий»…</p>
-  </li>
-  <li>
-    <p>дуже впевнена юристка-дівчина може весело провести час!</p>
-  </li>
-  <li>
-    <p>надія, чесність та вразливість можуть стиснути все життя дружби в перші 42 секунди кожної розмови, коли спільнота дозволяє це статися…</p>
-  </li>
-  <li>
-    <p>бути масово непідготовленим до подорожі — це надзвичайно весело…</p>
-  </li>
-  <li>
-    <p>Institut Unreasonable працює на крові, поті та новому шаблоні мозкових хвиль, який відштовхує потребу в сні…</p>
-  </li>
-  <li>
-    <p>мій спин більше не болить…</p>
-  </li>
-  <li>
-    <p>мобільний зв’язок є абсолютно <strong>величезним</strong> на нових ринках…</p>
-  </li>
-  <li>
-    <p>«наан і каррі» готує найкращу індійську їжу та техно у світі…</p>
-  </li>
-  <li>
-    <p>технології — це найкорисніший інструмент для скорочення відстані між багатими та бідними…</p>
-  </li>
-  <li>
-    <p>обіймати Майкла Фіцпатрика після того, як його віолончель перенесла мене в космос…</p>
-  </li>
-  <li>
-    <p>ноги, вкриті кров’ю від пухирів від надто багатої ходьби вздовж затоки…</p>
-  </li>
-  <li>
-    <p>люди, які залишаються, щоб продовжувати курс, повертаються, коли вони збилися з нього…</p>
-  </li>
-  <li>
-    <p>кожна людина в цьому таборі працює принаймні вдвічі більше, ніж будь-яка інша людина, яку я знаю…</p>
-  </li>
-  <li>
-    <p>7 людей і багаж дійсно містяться в Prius…</p>
-  </li>
-</ul>
-
-<p>я не повинен не згадати щиру подяку фонду Nike за допомогу в організації цієї події, але й 1/2 дюжини людей з Nike, які допомогли створити багато згаданих спогадів і трансформацій.</p>
-
-<p>чекайте більше інформації про це та те, що це означає для dojo4.</p>
-
-<p>і остання думка:</p>
-
-<ul>
-  <li>дякую.</li>
-</ul>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/girl-effect-accelerator-braindump">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Я тільки що провів останні 10 днів у Сан-Франциско на

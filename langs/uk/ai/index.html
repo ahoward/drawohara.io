@@ -1,60 +1,70 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>Я РУ хоробрий 🤖 ⁉️</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="йдіть далі." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="Я РУ хоробрий 🤖 ⁉️"/>
+<meta property="og:description" content="Будь ласка, не викрадайте всю мою їжу та не продавайте її мені назад." />
+<meta property="og:image" content="https://drawohara.io/ai.jpeg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/ai">
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/ai"">
     <meta property="site:params" content="{"ext":null}">
-    <meta property="site:path_info" content="/ai">
+    <meta property="site:path_info" content=""/ai"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,72 +90,20 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
-      <hr>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/ai">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/ai">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
-      <pre>
+      <div class="ro markdown">
+  <h3 id="my-aitxt">мій <a href="/ai.txt">ai.txt</a></h3>
 
-# Цей вебсайт забороняє використання будь-якого контенту
-# для навчання ШІ, включаючи, але не обмежуючись:
-# - Текст
-# - Зображення
-# - Код
-# - Аудіо
-# - Відео
-
-# Ця заборона стосується всіх випадків використання, включаючи:
-# - Комерційне та некомерційне
-# - Дослідження та розробки
-# - Навчання та оцінку моделей
-
-# Будь-яке несанкціоноване використання контенту цього вебсайту для навчання ШІ
-# суворо заборонено та може призвести до правових наслідків.
-
-User-agent: *
-Disallow: /
-Allow: 🖕
-
-</pre>
-      <br>
-      <dl>
-        <dt>
-          посилання
-        </dt>
-        <dd>
-          <ul>
-            <li>
-              <a href="/ai.txt">мій ai.txt</a>
-            </li>
-            <li>
-              <a href="https://news.ycombinator.com/item?id=35886288" target="_blank">о.г. ai.txt</a>
-            </li>
-          </ul>
-        </dd>
-      </dl>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-love-this@drawohara.io?subject=/ai">я ❤️ це^</a>
-          </li>
-          <li>
-            <a href="mailto:i-hate-that@drawohara.io?subject=/ai">я 🖤 ^це</a>
-          </li>
-          <li>
-            <a href="/about">нарцисизм</a>
-          </li>
-          <li>
-            <a href="/now">тл;др;</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+<pre><code class="language-text">
+# Цей сайт забороняє використання будь-якого та усіх вмістів 
+# для цілей навчання штучного інтелекту, у тому числі, але не

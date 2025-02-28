@@ -1,49 +1,54 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>AWS, DNS &amp; HTTPS @ Doj4 Хостинг</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="AWS, DNS &amp; HTTPS @ Doj4 Хостинг"/>
+<meta property="og:description" content=" продовжуй рух." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"aws-dns-https-doj4-hosting"}">
@@ -53,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -60,84 +72,37 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">я ❤️ це!</a>
-      <hr>
-      <strong>/aws-dns-https-doj4-hosting</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/aws-dns-https-doj4-hosting">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2014-04-07</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p>Хостинг, DNS та HTTPS часто вимагають взаємодії більш ніж кількох провайдерів. Часто це стає незручним, якщо не керувати цим ефективно.</p>
-
-        <p>DNS вимагає як управління записами, так і реєстрації доменів. Для обох Dojo4 використовував <a href="http://dyn.com/dns">DyDNS</a> протягом багатьох років.</p>
-
-        <p>Dojo4 зазвичай використовує <a href="http://aws.amazon.com/ec2">Amazon AWS EC2 хмарні комп'ютери</a> для хостингу і тому тенденційно використовує <a href="http://aws.amazon.com/elasticloadbalancing">AWS ELB балансувальники навантаження</a> перед цими веб-хостами. На жаль, Amazon не надає вам постійних IP-адрес для екземплярів ELB, і тому єдиний спосіб створити записи доменів другого рівня, що вказують на екземпляри ELB, - це використовувати <a href="http://aws.amazon.com/route53">Amazon AWS Route53</a> для управління записами, який має спеціальний запис псевдоніма для цієї мети. Тому ми тенденційно використовуємо Route53 для управління записами DNS.</p>
-
-        <p>Через спосіб, яким TLS-рукостискування узгоджуються linux/apache, ви обмежені кількістю SSL-сертифікатів, які можуть бути надані кількістю IP-адрес на хості. З EC2 це фактично один сертифікат, якщо ви не використовуєте <a href="http://aws.amazon.com/vpc">VPC</a>. Dojo4 часто використовує ELB для надання SSL як засіб для обходу цього.</p>
-
-        <p>DNS та HTTPS тісно пов'язані, оскільки домени та субдомени, які потрібно захистити, повинні бути перераховані до надання сертифіката. Часто найзручнішою та гнучкою стратегією є отримати сертифікат підстановок. Зверніть увагу, що не всі видавці сертифікатів підстановок включають базовий домен у сертифікат (тобто ви можете використовувати сертифікат лише для захисту *.somedomain.com, а не somedomain.com). Щорічний сертифікат підстановок за $100 від <a href="dnsimple.com">dnsimple.com</a>, виданий <a href="http://comodo.com">Comodo</a> і включаючи базовий домен, є хорошою вартістю навіть із витратами на хостинг dnsimple dns у $96 ($8/місяць * 12 місяців).</p>
-
-        <p>dnsimple має інші зручні функції, такі як можливість делегування управління наборами записів іншим обліковим записам користувачів dnsimple. Оскільки ми перенесли управління наборами записів від DynDNS до Route53 і маємо обліковий запис на dnsimple для надання SSL, ми перенесли реєстрацію доменів від DynDNS до dnsimple для консолідації послуг.</p>
-
-        <p>Корисні команди командного рядка:</p>
-
-        <p>Знайти Початок Авторитету для запису DNS</p>
-        <blockquote>
-          <p>dig SOA dojo4.com</p>
-        </blockquote>
-
-        <p>Переглянути сертифікат, який надає хост</p>
-        <blockquote>
-          <p>openssl s_client -showcerts -connect dojo4.com:443 &lt; /dev/null</p>
-        </blockquote>
-
-        <p>Доступ до веб-сервера за IP, ігноруючи перевірку SSL</p>
-        <blockquote>
-          <p>curl -k <a href="https://184.72.61.241" target="_blank">https://184.72.61.241</a> -H “Host: projects.dojo4.com”</p>
-        </blockquote>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Хостинг, DNS та HTTPS часто вимагають взаємодії більше ніж одного постачальника

@@ -1,54 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <!-- meta -->
+    <title>День народження, dojo4!</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуй рухатись." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="День народження, dojo4!"/>
+    <meta property="og:description" content="їди далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-
-
-
-  <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"happy-birthday-dojo4"}">
@@ -58,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,68 +70,35 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/happy-birthday-dojo4">я ❤️ це!</a>
-<hr>
-<strong>/happy-birthday-dojo4</strong>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/happy-birthday-dojo4">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/happy-birthday-dojo4">🖤</a>
+      </small>
+      <hr>
     </header>
 
     <main>
       <em>опубліковано: 2011-10-01</em>
-<br>
-<br>
-<p>Сьогодні dojo4 виповнюється два роки! Але замість того, щоб святкувати з тортами та капелюшками, ми просто зробили те, що завжди робимо: Запустили щось нове. У цьому випадку це <strong>новий вебсайт dojo4</strong>, що працює на <strong>новій технології</strong>, з <strong>новим брендингом</strong> та <strong>новим контентом</strong>. З днем народження, dojo4!</p>
-<h2>Що ми хотіли зробити</h2>
-<p>Ми хотіли вебсайт, який би пояснював з першого погляду, хто такий dojo4, що ми робимо та як з нами можна зв'язатись. Ми хотіли продемонструвати наші технічні навички, наше дизайнерське майстерство та нашу особистість. Ми хотіли практикувати методи lean-дизайну та розробки. І ми хотіли, щоб це був живий проект — щось, над чим ми могли б постійно працювати, експериментувати та поліпшувати з часом.</p>
-<h2>Брендинг</h2>
-<p><img src='/ro/dojo4/happy-birthday-dojo4/assets/card.jpg' title="Картка" alt="Картка" rel="225x255" width="225" height="151" /></p>
-<p>Ми працювали з Джеєм з <a href="http://angrybovine.com/" title="http://angrybovine.com/">AngryBovine</a> для визначення характеристик dojo4, які ми хотіли б підкреслити. Джей допоміг нам зрозуміти, як наш бренд може впливати на наш бізнес — не лише на наші повідомлення. Потім, використовуючи дані, зібрані з Джеєм, dojo4 разом працювали в офісі над уточненням нашого основного повідомлення та його потужного вираження. Цей сайт розповідає цю історію словами, але також стилем та практикою. У dojo4 ми завжди прагнемо до практичного втілення нових ідей — і ми чудово проводимо час під час цього процесу.</p>
-<h2>Технології</h2>
-<p>Я є прихильником <a href="http://expressionengine.com/" title="http://expressionengine.com/">ExpressionEngine CMS</a>. Це дуже потужний інструмент, і я люблю думати, що я справжній EE баддес. Я створив десятки сайтів на EE, включаючи попередній сайт dojo4.com. Але я відмовився від усього цього для цього сайту. У dojo4 ми вирішили писати більшість нашого коду на Ruby, часто в Rails, тому що мова та фреймворк радують нас та наших клієнтів. На жаль, EE не написана на Ruby. Отже, ми побудували цей сайт на <a href="http://refinerycms.com/" title="http://refinerycms.com/">RefineryCMS</a>, гнучкій молодій Rails CMS. Тепер уся наша команда може працювати над ним. Ми розповімо більше про RefineryCMS у наступному пості!</p>
-<h2>Дизайн</h2>
-<p>Інженерія — це практика роботи над тим, що є можливим та практичним. Дизайн — це практика роботи над тим, що є чудовим та красивим. Збалансувати ці конкуруючі пріоритети може бути складно, м'яко кажучи. Багато фірм просто уникають цієї проблеми, зосереджуючись на одному чи іншому. Але ми вважаємо, що найбільш надихаючі та трансформаційні продукти та послуги є як практичними, так і чудовими. Це вимагає співпраці між експертами з дизайну та експертами з технологій, а цей сайт є прикладом цього. Спробуйте його на маленькому екрані. Спробуйте його на великому екрані. Він виглядає гарно на обох, і лише тому, що ми працювали разом, збалансували наші зусилля та створили простір для краси та можливостей для співіснування.</p>
-<h2>Контент</h2>
-<p>Ми перенесли ряд улюблених постів у блозі на новий сайт — ви знайдете їх у зручному розташуванні в <a href="/blog" title="Блог">блозі</a>. Але ми також додали <a href="/clients" title="Клієнти">розділ клієнтів</a>, де ми розповімо про деякі наші проекти та пояснимо наші можливості більш детально. На сьогодні ми створили кейси для <a href="http://dojo4.com/clients/boxcar-coffee-roasters" title="http://dojo4.com/clients/boxcar-coffee-roasters">Boxcar Coffee Roasters</a> (якщо ви там ніколи не були, ви програєте), <a href="http://dojo4.com/clients/snugg-home" title="http://dojo4.com/clients/snugg-home">Snugg Home</a> та <a href="http://dojo4.com/clients/lokalite" title="http://dojo4.com/clients/lokalite">lokalite</a>. Буде ще більше!</p>
-<p>Ми закохані в цей новий сайт. Він відповідає великій прагненні, яку ми ділимо з нашими клієнтами: <em>Уявляти великі речі та робити їх реальними</em>. Ми сподіваємося, що він вам сподобається.</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/happy-birthday-dojo4">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <br>
+      <br>
+      <p>Від сьогодні dojo4 відзначає 2 роки! Але замість того, щоб святкувати особливий день з тортом і капелюхами, ми робимо

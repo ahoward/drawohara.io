@@ -1,60 +1,70 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>уклін і оплески</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="уклін і оплески"/>
+<meta property="og:description" content="мовчіть вперед." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"a-bow-and-a-clap"}">
     <meta property="site:path_info" content=""/a-bow-and-a-clap"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,68 +90,18 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/a-bow-and-a-clap">я ❤️ це!</a>
-      <hr>
-      <strong>/a-bow-and-a-clap</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/a-bow-and-a-clap">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/a-bow-and-a-clap">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2011-05-04</em>
-      <br>
-      <br>
-      <p class="text-align-center"><img src='/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload' title="Dilbert Stand Up.Png" alt="Dilbert Stand Up.Png" rel="225x255" width="600" height="202" /></p>
-      <p>Це було схоже на витягування зубів, щоб змусити всіх зустрічатися раз на тиждень, щоб перевірити один одного. Тільки слово "зустріч" змусило людей уникати зі мною зорового контакту, і це відчувалося як покарання, а не просто спосіб дізнатися, чого роблять інші та як ми можемо найкраще допомогти один одному. Тож я вирішив структурувати зустрічі якомога простіше і обіцяти, що вони ніколи не займуть більше 15 хвилин раз на тиждень. Усі стоятимуть у колі та будуть просити відповісти на базові питання: "Над чим ви працюєте?", "У чому ви потребуєте допомоги?", "Над чим ви будете працювати далі?" Але почуття не змінилося. Тема покарання залишалася, і хоча це не було таким поганим, це було безперечно нудним, монотонним і, чесно кажучи, безглуздим. Ми отримали сухий огляд того, чим займаються інші люди в dojo4, але не більше, ніж ми могли б дізнатися, просто звертаючи увагу один на одного протягом дня. І ми не зв'язувалися один з одним більше, ніж ми б це зробили випадково на роботі, і насправді значно менше.</p>
-      <p>Але потреба все ще відчувалася: як ми могли б регулярно зв'язуватися один з одним, забезпечуючи певний ритм і згуртованість у нашій групі?</p>
-      <p>Одного разу Ара підходить до мене з думкою, яку він мав. Він розмірковував над тим, як ми пропонуємо нашим клієнтам та їхнім проєктам набагато більше, ніж послуги з дизайну та технологій; ми пропонуємо нашим клієнтам розуміння. Ми базуємо наші стосунки з клієнтами на розвитку міцних, інноваційних і задовільних технологічних та дизайнерських продуктів, і для цього потрібно справжнє слухання. Потрібно слухати та розуміти, щоб зрозуміти, що є унікальним у кожного клієнта та кожного продукту, які є нюанси ринку, на який продукт увійде, що вимагає особливий контекст? Ми розробляємо технології не для користувачів, а для людей, і для цього основою має бути розуміння. Оскільки це одне з головних речей, які ми пропонуємо як бізнес, логіка підказує, що ми повинні розвивати це та дозволяти йому процвітати в компанії. З цим на увазі Ара запропонував і я погодився провести інший тип тижневого чек-іну.</p>
-      <p>Наші тижневі стендапи тепер виглядають так:</p>
-      <ul>
-        <li>Ми зустрічаємося в один і той же день, в одну і ту ж годину раз на тиждень.</li>
-        <li>Стендап починається з того, що всі роблять поклон і аплодують, і закінчується навпаки (аплодують, потім кланяються). (Я запитав, як люди хотіли б відкрити та закрити стендап. Я виріс як частина буддистської спільноти, тому поклон взаємної поваги для мене є природним маркером відкриття та закриття будь-чого. І хтось інший запропонував аплодисменти. Тож ми робимо і те, й інше!)</li>
-        <li>Ми починаємо з хвилини або двох тиші, дозволяючи кожному трохи сповільнитися і прибути.</li>
-        <li>Кожного тижня різні люди задають питання, на яке кожна людина має можливість відповісти. Наприклад, минулого тижня Дейв запитав (я розкриваю конфіденційність тут з його дозволу!): "Що найважливіше для вас, що вам спадає на думку, що ви, ймовірно, помиляєтеся?" Оскільки це було досить важке питання, він дав приклад, відповівши першим і сказавши: "Я, ймовірно, помиляюсь, коли думаю, що у мене немає достатньо часу, щоб створити життя, яке я хочу, я, ймовірно, помиляюсь, коли не можу покладатися на інших, я, ймовірно, помиляюсь, коли інші люди пам'ятають найбільш соромні моменти мого життя." В інші тижні ми мали питання, такі як: "Що було чимсь, що ви зробили минулого тижня, що викликало задоволення або досягнення?" або "Якщо dojo4 був би повітряною кулею, і кожен з нас мав би кинути щось за борт, щоб куля могла піднятися вище, що б ви викинули?"</li>
-        <li>Правила для стендапу:
-          <ul>
-            <li>говорити від серця</li>
-            <li>слухати повністю</li>
-            <li>не думати або вирішувати, що ви скажете, коли хтось інший говорить</li>
-            <li>говорити лише те, що потрібно сказати</li>
-            <li>не утримуватися від слів, які потрібно сказати</li>
-            <li>не говорити, коли хтось інший говорить</li>
-            <li>все, що сказано під час стендапу, є конфіденційним</li>
-          </ul>
-        </li>
-        <li>Є "говоріння" посередині, яке кожна людина може взяти та тримати, якщо її надихає щось сказати.</li>
-        <li>Коли всі встигли висловитися, я запитую, хто хоче задати питання на наступний тиждень.</li>
-        <li>Потім ми закінчуємо аплодисментами та поклоном.</li>
-        <li>Все це ніколи не займає більше 10-15 хвилин.</li>
-      </ul>
-      <p>Атмосфера покарання майже зникла. Наш тижневий стендап тепер викликає багато сміху і часто є дуже зворушливим. Він дозволив мені краще зрозуміти людей, з якими я працюю, і що для них важливо. Ми проводимо безліч годин і листів, повідомляючи один одному практичні деталі наших робочих проєктів, але рідко ми отримуємо шанс поговорити один з одним щиро та відверто про те, що може (або не може) бути для нас важливим. Надання часу для розвитку цього розуміння один з одним відчувається незрівнянно кориснішим один для одного та здоров'я нашого бізнесу, ніж будь-який інший спосіб, яким ми могли б провести 15 хвилин "зустрічі".</p>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/a-bow-and-a-clap">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<p class="text-align-center"><img src='/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload' title="Dilbert Stand Up.Png" alt="Dilbert Stand Up.Png" rel="

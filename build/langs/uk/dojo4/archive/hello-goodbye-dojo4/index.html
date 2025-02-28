@@ -1,51 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>нічого дивитися тут.</title>
+    <!-- meta -->
+    <title>Привіт прощай dojo4</title>
 
-<meta property="og:title" content="нічого дивитися тут."/>
-<meta property="og:description" content="продовжуй рухатися." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Привіт прощай dojo4"/>
+    <meta property="og:description" content="Рухайте далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"hello-goodbye-dojo4"}">
@@ -55,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,23 +70,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/hello-goodbye-dojo4">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/hello-goodbye-dojo4">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/hello-goodbye-dojo4">🖤</a>
+</small>
 <hr>
-<strong>/hello-goodbye-dojo4</strong>
     </header>
 
     <main>
@@ -90,70 +106,4 @@
 <div class="row">
 
   <article class="span7">
-<p>Я пам'ятаю ту першу зустріч. Це був <a title="http://twitter.com/okayjeffrey" href="http://twitter.com/okayjeffrey">Джеф</a>, <a title="http://twitter.com/digidigo" href="http://twitter.com/digidigo">Дейв</a>, <a title="http://twitter.com/hoosteeno" href="http://twitter.com/hoosteeno">я</a> і <a title="http://twitter.com/drawohara" href="http://twitter.com/drawohara">Ара</a>. Ми були на даху бару в Боулдері. Це була осінь. Листя змінювало колір, а сонце садилося. Ми всі були готові до чогось нового. Не роботи: чогось іншого. Ми б зробили це разом. Спочатку ми б назвали це, а потім би зробили. Це не могло провалитися. Ми були розумні та сильні. </p>
-
-<p>Ара знайшов місце, крохотний бар за Ted's Montana Grill. Це було зруйновано: без підлоги, жахливий фарбування, жахливий брудний недружній туалет. Природно, ми орендували його, і я думаю, що Джеф почав там спати одразу. Він був прокинутий всю ніч, фарбуючи протягом тижня. Усі четверо з нас допомагали, коли могли, але Джеф був там кожного дня. І протягом кількох тижнів скромний простір став dojo4. </p>
-
-<p>dojo4 було першою назвою, яку ніхто не протестував. Це було коротко і легко запам'ятати; це містило таємну таємницю, щось захоплююче і, можливо, небезпечне. Або навпаки. dojo4 виграв у "Death Ninja Squad", я протестував, тому що я не хотів намагатися продавати смерть своїм прямолінійним клієнтам. dojo4 також виграв у "The Mulberry Club" -- я не маю уявлення, чому я вважав, що цей був хороший. </p>
-<p>dojo4 мав стати коворкінг-простором. Тільки за запрошенням, як спейк-іззи з Macbooks. Ми б брали плату за вступ до клубу. Вони б отримали код дверей. Одного разу ми вирішили це, я зайнявся написанням регламентів та політик, тоді як Ара та Джеф сперечалися про декор, а Дейв працював над мобільними додатками. Дивовижно, за перший місяць ми переконали деяких людей стати членами!</p>
-<p>Ну, не пройшло багато часу, перш ніж ми зрозуміли, що наша 3-квадратна ванна кімната/кухня ніколи не буде достатньо обслуговувати переповнений коворкінг-простір. І, крім того, ми не бачили, як коворкінг коли-небудь окупиться. А тим часом люди продовжували заходити в двері і просити нас будувати для них речі. Веб-сайти. Індивідуальні додатки. Таке інше. Тому ми швидко змінили курс і стали dojo4, "one chop shop".</p>
-<p>З того моменту все відбувалося дуже швидко. Ми найняли людей; ми залучили ще одного партнера, <a title="http://twitter.com/coreykohn" href="http://twitter.com/coreykohn">Коурі</a>; ми втратили Джефа до Сан-Франциско та Дейва до <a title="http://splickit.com" href="http://splickit.com">Splick*It</a>; ми найняли ще більше людей. У цей час ми виробляли ексклюзивні веб-додатки та сайти для зацікавлених підприємців. Ми створювали достатній попит на каву, щоб запалити два нових кав'ярні на східній стороні. Природа нашої роботи, нашого бренду та нашої команди постійно змінювалася. Це було надзвичайно динамічно. </p>
-<p>Це було сказано багато разів, тому я просто повторю: спільнота Боулдера зробила наш бізнес можливим. Люди заходили в будь-які години, від першого дня до сьогодні, просто бажаючи поділитися радістю та запропонувати допомогу. Вони приносили пиво; самурайські мечі; ідолів родючості; робочі місця; друзів; поради; можливості. Боулдер чудовий. Разом ми є опікунами чогось особливого.</p>
-<p>Один із ранніх веб-сайтів dojo4 був побудований навколо одного загадкового заяви: "Те, що ми робимо і як ми це робимо, - це хто ми є". Це жахливий маркетинг, але це правда. dojo4 завжди в першу чергу був колекцією розумних людей, готових присвятити свою увагу та енергію цікавим проектам, незалежно від характеру роботи. Одного разу я отримав запит від когось, хто хотів, щоб побудували курятник. Я намагався отримати роботу, але ми програли. Їхня втрата.</p>
-<p>Мені подобається це про dojo4. Я універсал, однаково комфортно себе почуваю в нічному циклі vi-git-cap, як і навчаючи натовп нетехнічних людей про пошукові системи; так само щасливий пишу маркетинговий текст (нещодавно на <a title="http://www.collectiveintellect.com/" href="http://www.collectiveintellect.com/">новому сайті Collective Intellect</a>) як і пишу Javascript (нещодавно для ультрамарафонця <a title="http://scottjurek.com/" href="http://scottjurek.com/">Скотта Джурека</a> <a title="https://github.com/Hoosteeno/inject_tumblr" href="https://github.com/Hoosteeno/inject_tumblr">блог</a> та <a title="https://github.com/Hoosteeno/inject_plancast" href="https://github.com/Hoosteeno/inject_plancast">календар</a>). Працюючи на dojo4, я міг робити будь-яку з цих речей у будь-який день тижня.</p>
-<p>Бути універсалом часто означає робити те, що потрібно робити. А в малому бізнесі це часто означає бути генеральним директором. Тому з 2011 року я став першим генеральним директором dojo4, працюючи з Коурі та Арою, щоб створити жвавий маленький бізнес, яким ми всі дуже пишаємося. У мене ніколи не було більш складного або нагороджувального робочого життя. У цій ролі я зустрічався з підприємцями з усього світу; я будував і запускав речі далеко за межами технологічних новинок; і я працював з чудовою командою людей, занадто багато чудових людей, щоб назвати їх тут. Це було чудово.</p>
-<p>Але <strong>сьогодні я залишаю dojo4</strong>. Це час року для змін: небо змінюється, листя змінюється, dojo4 змінюється, і я змінююся. Моя мила дружина скоро матиме народжувати. Одразу я збираюся провести деякий час, дізнаючись, що означає бути батьком. А після цього я також буду шукати нову цікаву роботу, щось, що потребує такого універсала, як я. </p>
-
-<p>До хороших людей, яких я зустрів у доджо: давайте зустрінемося знову. Серйозно. Надішліть електронний лист <a title="justin@dojo4.com" href="mailto:justin@dojo4.com?subject=Let's meet!">justin@dojo4.com</a> прямо зараз; давайте випити кави або пива (я заплачу) і давайте поговоримо про те, що буде далі. Дякую всім.</p>
-</article>
-
-<figure class="span5">
-<img rel="225x255" alt="Img 2642" title="Img 2642" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-2642.JPG' />
-
-<img alt="Img 2831" title="Img 2831" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-2831.JPG' />
-
-<img alt="Img 2750" title="Img 2750" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-2750.JPG' />
-
-<img alt="Img 2700" title="Img 2700" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-2700.JPG' />
-
-<img alt="Img 2701" title="Img 2701" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-2701.JPG' />
-
-<img rel="225x255" alt="Img 20101217 200955" title="Img 20101217 200955" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-20101217-200955.jpg' />
-
-<img alt="Img 20110202 154457" title="Img 20110202 154457" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-20110202-154457.jpg' />
-
-<img alt="Img 2828" title="Img 2828" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-2828.JPG' />
-
-<img rel="225x255" alt="2010 02 23 16.07.43" title="2010 02 23 16.07.43" src='/ro/dojo4/hello-goodbye-dojo4/assets/2010-02-23-16.07.43.jpg' height="249" width="249" />
-
-<img rel="225x255" alt="Img 2832" title="Img 2832" src='/ro/dojo4/hello-goodbye-dojo4/assets/img-2832.JPG' height="249" width="249" />
-</figure>
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/hello-goodbye-dojo4">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>

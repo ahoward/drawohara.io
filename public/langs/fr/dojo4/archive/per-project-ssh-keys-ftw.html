@@ -1,0 +1,112 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>rien à voir ici.</title>
+
+    <meta property="og:title" content="rien à voir ici."/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"per-project-ssh-keys-ftw"}">
+    <meta property="site:path_info" content=""/per-project-ssh-keys-ftw"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/per-project-ssh-keys-ftw">j'❤️ ça!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bois-moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/per-project-ssh-keys-ftw</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2014-05-14</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Avec les déploiements Rails + Capistrano, ce paramètre</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'></div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">ssh_options</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:forward_agent</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">true</span></div><div class='code-line code-line-3'></div></code></div>
+
+        <p>est pratiquement le paramètre par défaut et sain. Il utilise toutes vos clés ssh pour toutes les commandes, rendant la plupart des actions à distance ‘Just Work ™’</p>
+
+        <p>Cependant, il y a des moments où cela peut être confus, par exemple, lorsque vous avez deux clés chargées dans ssh-agent qui mappent à différents comptes github ou bitbucket. Quel compte vous obtenez sera un petit jeu amusant à découvrir ;-/</p>
+
+        <p>La stratégie très simple suivante vous permet de vérifier les clés ssh <em>par projet</em> de manière très naturelle, puis de faire respecter ces clés par capistrano pour toutes les opérations ‘cap XXX’.</p>
+
+        <p>Tout d'abord, vous voudrez créer un répertoire .ssh/ dans votre projet, puis y déposer les clés pertinentes. Vous pouvez avoir plusieurs paires, assurez-vous simplement qu'elles sont nommées en utilisant la convention *.id_rsa.</p>
+
+        <div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'></div><div class='code-line code-line-2'>a:~/git/dojo4/rails_app_m&nbsp;<span style="color: #0550ae">$ </span><span style="color: #953800">ls</span>&nbsp;.ssh</div><div class='code-line code-line-3'>id_rsa.dojo4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id_rsa.dojo4.pub</div><div class='code-line code-line-4'></div></code></div>
+
+        <p>Ensuite, vous voudrez quelque chose comme ceci dans votre Capfile, qui détecte ces clés locales, si présentes, et les utilise via un agent ssh-agent temporaire - sinon, revient à vos clés globales chargées par ssh-agent.</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'></div><div class='code-line code-line-2'><span style="color: #6e7781"># si ce projet a un répertoire .ssh/, utilisez ces clés pour le déploiement.</span></div><div class='code-line code-line-3'><span style="color: #6e7781"># sinon utilisez les clés globales.  les clés locales sont utilisées en lançant</span></div><div class='code-line code-line-4'><span style="color: #6e7781"># un agent ssh-agent temporaire et en ajoutant ces clés locales à celui-ci.</span></div><div class='code-line code-line-5'><span style="color: #6e7781">#</span></div><div class='code-line code-line-6'><span style="color: #6e7781"># il est probable que vous ayez une clé (ou des clés) permettant l'accès à un hôte et à un dépôt particulier</span></div><div class='code-line code-line-7'><span style="color: #6e7781"># (github, bitbucket, etc) dans votre répertoire .ssh local.</span></div><div class='code-line code-line-8'><span style="color: #6e7781">#</span></div><div class='code-line code-line-9'><span style="color: #6e7781"># vous voudrez probablement .gitignore .ssh/ !</span></div><div class='code-line code-line-10'><span style="color: #6e7781">#</span></div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">dot_ssh</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">expand_path</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">"</span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rails_root</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069">/.ssh"</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">)</span></div><div class='code-line code-line-12'></div><div class='code-line code-line-13'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">globs</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span></div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">dot_ssh</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"*id_rsa"</span><span style="color: #24292f;background-color: #f6f8fa">),</span></div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">File</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">dot_ssh</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"id_rsa*"</span><span style="color: #24292f;background-color: #f6f8fa">),</span></div><div class='code-line code-line-16'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">]</span></div><div class='code-line code-line-17'></div><div class='code-line code-line-18'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ssh_keys</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[</span></div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">ENV</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'SSH_KEYS'</span><span style="color: #24292f;background-color: #f6f8fa">],</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">globs</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">map</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">glob</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #953800">Dir</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">glob</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">glob</span><span style="color: #24292f;background-color: #f6f8fa">)}</span></div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">join</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">' '</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">scan</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #116329">/[^\s]+/</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">delete_if</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">ssh_key</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ssh_key</span>&nbsp;<span style="color: #0550ae">=~</span>&nbsp;<span style="color: #116329">/\.pub$/</span><span style="color: #24292f;background-color: #f6f8fa">}</span></div><div class='code-line code-line-21'></div><div class='code-line code-line-22'>&nbsp;&nbsp;<span style="color: #cf222e">unless</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">ssh_keys</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">empty?</span></div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'session'</span></div><div class='code-line code-line-24'></div><div class='code-line code-line-25'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">sh</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Session</span><span style="color: #0550ae">::</span><span style="color: #953800">Sh</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span></div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">at_exit</span><span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">sh</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">close</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span></div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">sh</span><span style="

@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
-  <!-- ga -->
+  <!--.ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,21 +39,31 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>! &#39;[ANN] sekrets.rb - легко керованим шифрованими даними в вашому rails&#39;&#39; застосунках&#39;</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="йди далі." />
+<meta property="og:title" content="! &#39;[ANN] sekrets.rb - легко керованим шифрованими даними в вашому rails&#39;&#39; застосунках&#39;"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"}">
-    <meta property="site:path_info" content=""/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"">
+    <meta property="site:params" content="{"ext":null,"id":"ann-sekrets-rb-легко-керованим-шифрованими-даними-в-вашому-rails-застосунках"}">
+    <meta property="site:path_info" content=""/ann-sekrets-rb-легко-керованим-шифрованими-даними-в-вашому-rails-застосунках"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,188 +72,25 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">я ❤️ це!</a>
-<hr>
-<strong>/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications</strong>
-    </header>
-
-    <main>
-      <em>опубліковано: 2013-02-21</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p>посилання: <a href="https://github.com/ahoward/sekrets" target="_blank">https://github.com/ahoward/sekrets</a></p>
-
-<pre>
-
-НАЗВА
-  sekrets.rb
-
-СИНОПСИС
-  sekrets це інструмент командного рядка та бібліотека, що використовується для безпечного управління зашифрованими
-  файлами та налаштуваннями в ваших rails додатках та git репозиторіях.
-
-ІНСТАЛЯЦІЯ
-  gem install sekrets
-  gem 'sekrets'
-
-ОПИС
-  TL;DR
-    # створіть зашифрований конфігураційний файл
-
-      ruby -r yaml -e'puts({:api_key =&gt; 1234}.to_yaml)' | sekrets write config/settings.yml.enc --key 42
-
-    # покажіть його
-
-      sekrets read config/settings.yml.enc --key 42
-
-    # відредагуйте його
-
-      sekrets edit config/settings.yml.enc --key 42
-
-    # переконайтесь, що він зашифрований
-
-      cat config/settings.yml.enc
-
-    # зробіть commit
-
-      git add config/settings.yml.enc
-
-    # помістіть ключ дешифрування в файл
-
-      echo 42 &gt; .sekrets.key
-
-    # ігноруйте цей файл в git
-
-      echo .sekrets.key &gt;&gt; .gitgnore
-
-    # тепер вам більше не потрібно вказувати аргумент --key для команд
-
-      sekrets read config/settings.yml.enc
-
-      sekrets edit config/settings.yml.enc
-
-    # переконайтесь, що цей файл розгортається на вашому сервері
-
-      echo " require 'sekrets/capistrano' " &gt;&gt; Capfile
-
-    # зробіть commit і розгортайте
-
-      git add config/settings.yml.enc
-      git commit -am'зашифровані налаштування йо'
-      git pull &amp;&amp; git push &amp;&amp; cap staging deploy
-
-    # отримайте доступ до цих налаштувань у вашому коді додатку
-
-      settings = Sekrets.settings_for('./config/settings.yml.enc')
-
-
-  ОПИС
-    sekrets надає інструменти командного рядка та бібліотеку для управління та доступу
-    до зашифрованих файлів у вашому кодовій базі.
-
-    він дозволяє зберігати зашифровану інформацію в репозиторії та керувати нею разом з іншим кодом. він усуває необхідність зберігання
-    незашифрованої інформації, ключів або іншої чутливої інформації.
-
-    sekrets надає загальний механізм для управління довільними зашифрованими
-    файлами та спеціальний механізм для управління зашифрованими конфігураційними файлами.
-
-
-  ПОШУК КЛЮЧА
-    для *усіх* операцій, з командного рядка або іншим чином, sekrets використовує
-    наступний алгоритм для пошуку ключа дешифрування:
-
-    - будь-який ключ, переданий безпосередньо як параметр у виклику бібліотеки, буде пріоритетним
-
-    - інакше код шукає супровідний файл ключа. наприклад, для файлу 'config/sekrets.yml.enc' sekrets буде шукати ключ у
-
-        config/.sekrets.yml.enc.key
-
-      якщо один з них знайдено та не порожній, вміст файлу буде використано як ключ дешифрування для цього файлу. ви ніколи не повинні робити commit
-      цих файлів ключів та також додавати їх до вашого .gitignore - або подібного.
-
-    - далі шукається файл ключа проекту. шлях до цього файлу
-
-        ./.sekrets.key
-
-      зазвичай, а в rails додатку
-
-        RAILS_ROOT/.sekrets.key
-
-    - якщо це не знайдено, sekrets шукає ключ у середовищі під змінною середовища
-
-        SEKRETS_KEY
-
-      використана змінна середовища налаштовується в бібліотеці
-
-    - далі шукається глобальний файл ключа, шлях до цього файлу
-
-        ~/.sekrets.key
-
-    - нарешті, якщо ключ ще не вказано або знайдено, користувача запитують ввести ключ. запит відбувається лише якщо користувач підключений до tty.
-      отже, наприклад, жоден запит не затримує додаток, який запускається в фоновому режимі, таким як rails додаток, яким керує passenger.
-
-    див. Sekrets.key_for для більш детальної інформації
-
-  РОЗПОДІЛ КЛЮЧА
-    sekrets *не* намагається вирішити проблему розподілу ключів для вас,
-    з одним винятком:
-
-    якщо ви використовуєте capistrano для виконання 'vanilla' ssh-розгортання, надається простий рецепт, який виявляє локальний файл ключа та scp його на
-    віддалений сервер(и) при розгортанні.
-
-    sekrets припускає, що локальний файл ключа, якщо він існує, правильний.
-
-    простими словами capistrano рецепт виконує:
-
-      scp ./sekrets.key deploy@remote.host.com:/rails_root/current/sekrets.key
-
-    зрозуміло, що локальний файл ключа *ніколи* не повинен бути закомічений та також повинен бути в .gitignore
-
-    розподіл цього ключа серед розробників виходить за межі бібліотеки. ймовірно, незашифрований електронний лист є найкращим механізмом для розподілу
-    ;-/
-
-</pre>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/ann-sekrets-rb-легко-керованим-шифрованими-даними-в-вашому-rails-застосунках">❤️

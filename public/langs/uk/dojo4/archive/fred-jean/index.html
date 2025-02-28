@@ -1,54 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <!-- meta -->
+    <title>Фред Жан!</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="йдіть далі." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Фред Жан!"/>
+    <meta property="og:description" content="їдьте далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-
-
-
-  <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"fred-jean"}">
@@ -58,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -77,63 +87,18 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/fred-jean">я люблю це!</a>
-<hr>
-<strong>/fred-jean</strong>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/fred-jean">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/fred-jean">🖤</a>
+      </small>
+      <hr>
     </header>
 
     <main>
       <em>опубліковано: 2012-09-02</em>
-<br>
-<br>
-<p><img rel="450x450" alt="Обнімання Фреда в П'ятницю" title="Обнімання Фреда в П'ятницю" src='/ro/dojo4/fred-jean/assets/fredfridayhug.jpg' height="300" width="450" /></p>
-<p>Ми в захваті, що Фред Жан <a target="_blank" title="https://github.com/fredjean" href="https://github.com/fredjean">приєднався</a> до нашої команди доджо4 цього місяця як старший розробник і допомагає нам керувати нашим маленьким кораблем у бурхливих і впорядкованих морях коду.&#160;</p>
-<p>Для тих, хто ще не знає Фреда, він відповів на кілька запитань про те, як він прийшов до нас з прекрасного Провансу з пам'ятною аварією та більшістю ступеня з теології:</p>
-<p><em>Звідки ви і як ви тут опинилися?</em>
-</p>
-<p>"Я виріс у Монреалі і повернувся додому після коледжу. Я працював у офісах IBM, коли хтось, хто знав когось, хто знав когось, хто потребував франкомовного канадця для роботи на стільці допомоги, порекомендував мене. Незабаром я опинився в аеропорту Денвера під час снігової бурі і залишаюся тут з тих пір."</p>
-<p><em>Який ви технолог?</em>
-</p>
-<p>"Мені бракувало 3 кредитів, щоб отримати ступінь з теології. Це точно сформувало мій мисленнєвий підхід до технологій і проєктів. Іронія вивчення (і пізніше відмови) від догми допомогла мені уникнути догматичного підходу до програмування, архітектури та технологій загалом."</p>
-<p><em>Що вам найбільше подобається в тому, що ви робите на життя?</em>
-</p>
-
-<p>"Ми переходимо від вагітної, ледве визначеної ідеї до продукту або послуги, що може мати вплив на багатьох людей і навіть змінити їхнє життя. Небагато кар'єр дозволяють це без надзвичайних зусиль або капіталу. Є також проста радість робити речі, які часто ніколи не робилися раніше, слідуючи добре протореними шляхами."</p>
-<p><em>Розповідайте трохи про свою сім'ю та ваше життя тут в Колорадо...</em>
-</p>
-<p>"Ми живемо тихим життям тут у Колорадо. Більшість мого сімейного часу проходить за грою в Angry Birds і World of Goo з моїм 2-річним сином і спостеріганням за тим, як його близнючка співає і танцює під свою власну пісню. Це чудове тихе життя!"</p>
-<p><em>Чим ви будете відомі через 100 років?</em>
-</p>
-<p>"Недолік роботи з технологіями полягає в тому, що вони дуже минущі. Я підозрюю, що я зникну з нашої колективної пам'яті задовго до 100 років. Але мене можуть пам'ятати мої праправнуки як цього божевільного старого, якого ніхто не міг зрозуміти через його сильний акцент."</p>
-<p><em>Якщо доджо4 був би безлюдним островом, і ви опинилися на ньому, що б ви хотіли мати з собою?</em>
-</p>
-<p>"Усі книги, які я хочу прочитати, але не можу до них дістатися..."</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/fred-jean">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про</a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <br>
+      <br>
+      <p><img rel="450x450" alt="Фред п'ятничний обійм" title="Фред п'ятничний обійм" src='/ro/dojo4/fred-jean/assets/fredfriday

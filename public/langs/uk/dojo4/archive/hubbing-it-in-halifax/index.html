@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,21 +39,31 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Хаб у Галіфаксі</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Хаб у Галіфаксі"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/dojo4/archive/:id">
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"hubbing-it-in-halifax"}">
-    <meta property="site:path_info" content="/hubbing-it-in-halifax">
+    <meta property="site:path_info" content=""/hubbing-it-in-halifax"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,22 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/hubbing-it-in-halifax">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/hubbing-it-in-halifax">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/hubbing-it-in-halifax">🖤</a>
+</small>
 <hr>
-<strong>/hubbing-it-in-halifax</strong>
     </header>
 
     <main>
@@ -86,39 +105,4 @@
 <br>
 <br>
 <p>
-<img rel="450x450" alt="Hub Halifax" title="Hub Halifax" src='/ro/dojo4/hubbing-it-in-halifax/assets/hubhalifax.JPG' height="450" width="450" /></p>
-<p>Одна з причин, чому ми так збуджені в dojo4 бути одними із співзасновників <a target="_blank" title="http://www.hubboulder.com/" href="http://www.hubboulder.com/">Hub Boulder</a>, полягає в тому, що він є частиною міжнародної мережі людей та просторів, присвячених стійкому впливу, яка охоплює від Мадрида до Мельбурна та Гельсінкі до, так, <a title="http://thehubhalifax.ca/" href="http://thehubhalifax.ca/">Галіфаксу</a>. </p>
-<p>Як колишній мешканець джентільних диких місць канадських марітім, я захоплений літньою поїздкою сюди й вважаю це чудовою можливістю відчути атмосферу Хаба тут, у Галіфаксі, після кількох років його роботи. По всьому світу програмування та атмосфера кожного Хаба визначаються його учасниками, а тут, в Галіфаксі, головною темою є пристрасна любов до громадської участі, яка об'єднує всіх людей для обговорення того, як поліпшити це місце для проживання. За останні кілька днів я зустрівся з продюсерами музики, програмістами, дизайнерами, фахівцями з організаційного розвитку, студентами та підприємцями всіх мастей, яких надихало те, що вони вважали себе частиною набагато більшого руху. Вони всі були захоплені тим, що тут хтось із Hub Boulder, і були раді бачити мене серед них.*</p>
-<p>З підписаною орендою, початком ремонту та відкриттям Хаба в Боулдері на осінь, я нетерпляче чекаю, щоб побачити, чим надихається наша унікальна спільнота, і пишаюся тим, що ми маємо що пропонувати цій глобальній мережі...</p>
-<p><img rel="450x450" alt="Kohn At Hub" title="Kohn At Hub" src='/ro/dojo4/hubbing-it-in-halifax/assets/kohnathub.JPG' height="450" width="450" /></p>
-<p>* Коли програміст Hub Halifax запитав, якою роботою займається dojo4 та яка у нас команда, я був здивований, почувши, як він сказав: "Ви працюєте з <a target="_blank" title="https://github.com/ahoward/" href="https://github.com/ahoward/">ahoward</a>?! Дуже круто." Я так само вважаю!&#160;</p>
-<p><img rel="450x450" alt="Halifax Harbor" title="Halifax Harbor" src='/ro/dojo4/hubbing-it-in-halifax/assets/halifaxharbor.JPG' height="450" width="450" />&#160;<em>(Галіфакська гавань знаходиться за два квартали від Хаба в центрі Галіфакса)</em>
-</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; перейти</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/hubbing-it-in-halifax">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вихід</a>
-    </footer>
-  </body>
-</html>
+<img rel="450x450" alt="Хаб Галіфакс" title="Хаб Галіфакс" src='/ro/dojo4/hubbing-it-in-halifax/assets/hubhalifax.JPG' height="450" width="

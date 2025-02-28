@@ -1,13 +1,13 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
+    <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,13 +40,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Емпатія у вільному та відкритому програмному забезпеченні</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Емпатія у вільному та відкритому програмному забезпеченні"/>
+<meta property="og:description" content="йди далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"empathy-in-f-oss"}">
@@ -56,6 +59,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,10 +90,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/empathy-in-f-oss">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/empathy-in-f-oss">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/empathy-in-f-oss">🖤</a>
+</small>
 <hr>
-<strong>/empathy-in-f-oss</strong>
     </header>
 
     <main>
@@ -86,56 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Нещодавно я натрапив на твіт, який був <em>справді</em> здивував мене. Щоб надати деякий контекст, твіт був написаний тим, хто підтримує популярну бібліотеку JavaScript на GitHub. Він з тих пір був видалений, але ось текст:</p>
-
-<blockquote>
-  <p>Більшість людей - сміття. Деякі з них - чудові. Вважайте
-себе надзвичайно щасливим, якщо ви дружите з деякими<br />
-з чудових.</p>
-</blockquote>
-
-<p>Боже мій. Навіть якщо це твердження стосується всіх людей, які витрачають час на вивчення та використання їхнього програмного забезпечення? Даючи їм певну користь сумніву, я сподіваюся, що це був просто результат поганого дня. Я обертався навколо чогось, що, на мою думку, важливо: Серед іншого, ви повинні бути емпатичним, щоб бути <em>чудовим</em> учасником або підтримувачем відкритого програмного забезпечення.</p>
-
-<p>Чому? Якщо ви не цінуєте людей, які використовують ваше програмне забезпечення (F)OSS, як ви створите якісну атмосферу та спільноту навколо нього? Ви відчували той самий біль, що й ваші користувачі, тому, швидше за все, ви турбуєтеся про них хоча б трохи, якщо ви випустили код для їхнього використання. Ось кілька інших позитивних, емпатичних мотивів для внеску, випуску або підтримки програмного забезпечення (F)OSS:</p>
-
-<ul>
-  <li>Допомагайте іншим вчитися</li>
-  <li>Допомагайте іншим виконувати свою роботу</li>
-  <li>Покращуйте спільноти</li>
-</ul>
-
-<p>Зверніть увагу, що я використав слово “чудовий” як прикметник вище. Я вважаю, що можливо бути хорошим учасником, не бувши надто емпатичним. Наприклад, люди можуть вносити свій внесок з метою продемонструвати здібності чи створити репутацію, що є цілком нормально.</p>
-
-<p>Керування та робота в спільноті (F)OSS є дуже складним завданням, впевнений. Здається, це дуже важливо зробити зусилля, щоб відноситися до своїх користувачів, якщо мета - створити найбільш відповідне програмне забезпечення для ситуації. Тримання цього на увазі вже є або, сподіваюся, стане хорошою базовою лінією для більшої кількості щасливих людей у нашій галузі.</p>
-
-<p><strong>Примітка:</strong> Я сподіваюсь, що зрозуміло, що я не розрізняю вільне та програмне забезпечення з відкритим кодом. Вони дуже різні, і цей пост є узагальненням у цьому відношенні.</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/empathy-in-f-oss">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Нещодавно я наткнувся на твіт, який був <em>дійсно</em> дивним для мене. Щоб

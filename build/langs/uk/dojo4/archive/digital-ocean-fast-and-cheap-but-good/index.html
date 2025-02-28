@@ -1,51 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>нічого не побачиш.</title>
+    <!-- meta -->
+    <title>! &#39;ЦИФРОВИЙ ОКЕАН: ШВИДКО І ДЕШЕВО. АЛЕ ЯКІСНИЙ?&#39;</title>
 
-<meta property="og:title" content="нічого не побачиш."/>
-<meta property="og:description" content="продовжуй." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="! &#39;ЦИФРОВИЙ ОКЕАН: ШВИДКО І ДЕШЕВО. АЛЕ ЯКІСНИЙ?&#39;"/>
+    <meta property="og:description" content="перейдіть далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"digital-ocean-fast-and-cheap-but-good"}">
@@ -55,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,109 +70,28 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">🖤</a>
+</small>
 <hr>
-<strong>/digital-ocean-fast-and-cheap-but-good</strong>
-    </header>
-
-    <main>
-      <em>опубліковано: 2013-12-30</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p>Як CTO технологічної агенції я постійно оцінюю нові інструменти, процеси та послуги.</p>
-
-<p>Нещодавно я розглядав платформу DigitalOcean як частину стратегії надвисокої доступності, яку ми розробляємо для тих випадків, коли AWS/S3 недостатньо: коли ви хочете витримати масове відключення цілого хмарного провайдера.</p>
-
-<p>Усі розгортання Dojo4 починаються як AWS через очевидну причину: це стандарт, за яким оцінюють усі інші хмарні послуги. Він має додаткову перевагу для агенції в тому, що ми можемо вказувати на нього як на «розумну за замовчуванням» для програмного забезпечення, яке ми постачаємо клієнтам; як 800-фунтова горила його використання є обґрунтованим. Однак деякі рідкісні клієнти висловлювали занепокоєння щодо відключень AWS, які впливають на їхні сайти та застосунки, зокрема моніторингові застосунки, які повинні повідомляти про помилки такі відключення: рекурсивна проблема. Для цих випадків ми розглядали статичні розгортання, збалансовані між хмарними провайдерами за допомогою DNS, а DigitalOcean був у короткому списку претендентів на створення та розгортання простих статичних сайтів, розміщених Apache, з цією метою як захист для наших звичайних сайтів, розміщених на AWS.</p>
-
-<p>Нещодавно у DigitalOcean (DO) виникла невелика проблема, пов’язана з їхніми практиками безпеки: <a href="https://github.com/fog/fog/issues/2525" target="_blank">https://github.com/fog/fog/issues/2525</a>.</p>
-
-<p>Цю проблему можна узагальнити так: коли ви запускаєте новий хмарний бокс, на диску можуть залишитися конфіденційні дані попереднього користувача, а коли ви вимикаєте свій власний хмарний бокс, ви можете виставити напоказ свої власні конфіденційні дані будь-якому випадковому сторонньому. Їхня послуга дозволяє видалити все чисто, але це <em>не за замовчуванням</em> - за замовчуванням залишається <em>те, що було на диску</em>, доступним для наступного користувача для пошуку.</p>
-
-<p><em>Це дуже погана стратегія за замовчуванням.</em></p>
-
-<p>У Twitter я зазначив, що не здивувався цій недбалій стратегії, але що розчарувався тим, як DO поводили себе під час розкриття. Під час короткого обміну в Twitter мене попросили узагальнити джерело мого нездивування:</p>
-
-<blockquote class="twitter-tweet" lang="uk"><p><a href="https://twitter.com/drawohara">@drawohara</a> Якщо ви хочете витратити час і викласти це в електронному листі, я прочитаю його і поділюся ним з усією командою, і буду дуже вдячний. :)</p>&mdash; John Edgar (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">30 грудня 2013 р.</a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>Тож тут з 20/20 задньою мудрістю і справжнім бажанням бути корисним, я виконую свою обіцянку та пояснюю, чому я відкладав перенесення будь-яких наших речей на платформу DigitalOcean. (Будь ласка, зверніть увагу, що цей список складається лише з почуттів та вражень, але вони були дещо підтверджені та посилені нещодавнім скандалом з очищенням дисків):</p>
-
-<ul>
-  <li>Відвідуючи головну сторінку DO, ви бачите гучний маркетинговий повідомлення, яке кричить «дешево і швидко»</li>
-</ul>
-
-<p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
-
-<p>ураховуючи, що платформа «створена для розробників», особисто я вважаю дивним, що команда, здається, не передбачила, що розробники отримають чітке повідомлення про те, що з «хорошого, швидкого та дешевого» ви обираєте <em>два останні</em> з DO.</p>
-
-<ul>
-  <li>Потім ви отримуєте приємне повідомлення про підтвердження, що як стартап, DO мотивований продемонструвати дуже, дуже швидкий ріст</li>
-</ul>
-
-<p><img src="http://cl.ly/T8pL/Screen%20Shot%202013-12-30%20at%201.05.20%20PM.png" alt="" /></p>
-
-<p>це повинно викликати нудоту в будь-якого інженера з експлуатації.</p>
-
-<ul>
-  <li>Оглядаючи сайт, ви постійно бачите «дешево і швидко» барабан, наприклад, в програмі рефералів</li>
-</ul>
-
-<p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
-
-<p>що вбиває це повідомлення в голову та пропонує розробникам продавати своїм друзям дешево і швидко без навіть краплі інформації про міцність, послідовність або безпеку.</p>
-
-<ul>
-  <li>Читаючи блог, стало зрозуміло, що DO дотримується лінійного, керованого користувачем циклу розробки:</li>
-</ul>
-
-<p><a href="https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean" target="_blank">https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</a></p>
-
-<p>і хоча я захоплююся, схвалюю та рекомендую такий підхід до програмного забезпечення в загальному, побудова безпеки та міцності ітеративно, здається, не є ідеальним для такого бізнесу - незважаючи на те, як круто, на думку венчурних капіталістів (які ніколи не боролися з порушенням безпеки в дикій природі), це може здатися. Деякі речі вимагають великого досвіду та планування зверху вниз: стек, який дозволяє своїм користувачам зберігати дані та виконувати код, будь то браузер або хмара, потрапляють у категорію «я хочу, щоб хтось витягував реальний код з реальних систем з історією атак» і не «Ми слухаємо користувачів і швидко ітеративно вчимося на ходу».</p>
-
-<p>Тож не помиліться, я все ще оцінюю DigitalOcean як гарний програмований стек для розгортання простих статичних сайтів, і я звичайно хочу бачити їх успішними, але у мене є занепокоєння щодо їхньої культури та чи це та культура, яка практикує захисні, а не реактивні практики безпеки, і чи зможуть вони підтримувати свій ріст, цінову політику та, врешті-решт, фінансування, коли та якщо вони наздоженуть інших гравців хмари в цьому плані. Читання їхніх ставлень і переконань у контексті нещодавнього дебакля (<a href="https://github.com/fog/fog/issues/2525" target="_blank">https://github.com/fog/fog/issues/2525</a>) дає мені певні підстави сумніватися в цьому.</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>

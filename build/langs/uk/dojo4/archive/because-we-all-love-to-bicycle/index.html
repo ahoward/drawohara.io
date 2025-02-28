@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Бо всі ми любимо кататися на велосипеді</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Бо всі ми любимо кататися на велосипеді"/>
+<meta property="og:description" content="рушайте далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -59,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -66,22 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/because-we-all-love-to-bicycle">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/because-we-all-love-to-bicycle">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/because-we-all-love-to-bicycle">🖤</a>
+</small>
 <hr>
-<strong>/because-we-all-love-to-bicycle</strong>
     </header>
 
     <main>
@@ -90,35 +106,4 @@
 <br>
 <figure>
   <div class="flex-video youtube">
-    <iframe width="640" height="360" src="http://www.youtube.com/embed/xIe6hYAdw_I" frameborder="0"></iframe>
-  </div>
-<figcaption class="block mtm txtC">Ара буде робити цю гонку наступного року</figcaption>
-</figure>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/because-we-all-love-to-bicycle">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+    <iframe width="640" height="360" src="http://www.youtube.com/embed/xIe6

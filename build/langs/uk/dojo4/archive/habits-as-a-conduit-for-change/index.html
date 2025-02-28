@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -38,16 +38,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <base href='/langs/uk' />
-
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Навички як засіб для змін</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="йди далі." />
+<meta property="og:title" content="Навички як засіб для змін"/>
+<meta property="og:description" content="Йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"habits-as-a-conduit-for-change"}">
@@ -57,6 +55,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -64,22 +69,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/habits-as-a-conduit-for-change">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/habits-as-a-conduit-for-change">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/habits-as-a-conduit-for-change">🖤</a>
+</small>
 <hr>
-<strong>/habits-as-a-conduit-for-change</strong>
     </header>
 
     <main>
@@ -87,59 +102,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Я часто думав, що звички - це найкращий механізм для впровадження змін. Хочете щось зробити по-іншому? Створіть нову звичку або позбудьтеся старої, і ось ви вже зовсім інша людина.</p>
-
-<p>Оскільки це щось, про що я багато думав, я вирішив втілити це в життя. Мені було менше цікаво змінювати звички надовго, і більше цікаво:</p>
-
-<ol>
-  <li>подивитися, чи можу я краще змінювати звички.</li>
-  <li>практикувати дисципліну - щось, в чому я часто відчував, що не дуже вмію.</li>
-</ol>
-
-<p>Ця ідея не нова. Я вперше почув про неї в блозі під назвою <a href="http://zenhabits.net/without/">Zen Habits</a>. Лео Бабаута вирішив раз на місяць відмовлятися від чогось протягом року.</p>
-
-<p>Це був початковий план, доки я не поговорив зі Стівом, який вважав, що я занадто негативно налаштований, зосереджуючись лише на відмові від чогось. Тому я вирішив, що буду додавати щось окрім того, що відмовляюся. І таким чином народилася гра Плюс/Мінус.</p>
-
-<p>Протягом одного місяця я щодня додавав: 64 унції води, чищення зубів ниткою, 1 годину дослідницького часу, написання (1 мікро-історії) та йогу.</p>
-
-<p>Я відмовився від: надто гарячих душів (жахливо для шкіри, якщо запитаєте), телебачення, алкоголю, відеоігор та солодощів/десертів.</p>
-
-<p>З деякими змінами я впорався краще, ніж з іншими, але навчився корисному з кожної. Нічого не залишилося назавжди, але кожне змінило мої подальші взірці поведінки. Я все ще в основному чищу зуби ниткою, п'ю більше води, дивлюсь менше телебачення та п'ю менше алкоголю.</p>
-
-<p>Зріс моя впевненість у здатності змінюватися, а також використання щоденних звичок як інструменту для сприяння змінам. Раніше я витрачав багато часу на роздуми над тим, <strong>як</strong> змінитися (читай: прокрастинація). Зараз я просто знаходжу звичку, яку можу додати або відняти, щоб почати шлях до змін.</p>
-
-<p>Загалом, я намагаюся тримати Плюс/Мінус приватним, але змушений розповідати людям, коли не п'ю, не їм десерти або не дивлюся телебачення. Я був здивований реакцією багатьох. Більшість були надзвичайно зацікавлені, а деякі навіть сказали, що спробують це на себе.</p>
-
-<p>Тож, спробуйте. Виберіть одну річ, від якої відмовитеся на місяць, і одну річ, яку почнете робити. Подивіться, що це вам дасть.</p>
-
-<p>п.с. моя дружина приєдналася до "без десертів", що призвело до її рішення, що Плюс/Мінус - це не для неї. ;)</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/habits-as-a-conduit-for-change">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Я часто думав, що звички - це найкращий механізм для впровадження змін. Хочете зробити щось по-іншому? Створіть нову

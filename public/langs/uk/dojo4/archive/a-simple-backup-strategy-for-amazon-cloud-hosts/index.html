@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Проста стратегія резервного копіювання для хостів Amazon Cloud</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Проста стратегія резервного копіювання для хостів Amazon Cloud"/>
+<meta property="og:description" content="продовжуйте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,9 +72,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -78,43 +90,18 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">🖤</a>
+</small>
 <hr>
-<strong>/a-simple-backup-strategy-for-amazon-cloud-hosts</strong>
     </header>
 
     <main>
       <em>опубліковано: 2012-03-01</em>
 <br>
 <br>
-<p>Протягом багатьох років Dojo4 створила дійсно гарний стек розробки та хостингу веб-додатків. Хмара Amazon Web Services (AWS) є основою цього стеку. Гнучкість і зручність тому Elastic Block Store (EBS) є переконливими, і ми використовуємо їх для системних томів, а також для томів даних для розгортання додатків та збереження баз даних на наших хмарних комп'ютерах Elastic Compute Cloud (EC2). Деякий час тому, наприкінці розмови про архітектуру хостингу, Ара побіжно зазначив: "О, і періодичні резервні копії дисків повинні відбуватися автоматично кожного разу, коли ми запускаємо новий екземпляр EC2". Тому я почав працювати над невеликим скриптом під назвою DREBS (Відновлення даних для Elastic Block Store). DREBS можна вбудувати в ваш Amazon Machine Image (AMI) або налаштувати в ваших механізмах хмарного провізіонінгу Chef або інших. DREBS можна налаштувати для створення періодичних знімків EBS томів, прикріплених до екземпляра EC2, на якому він працює. Він підтримує гнучкі стратегії зберігання знімків, а також завдання перед і після знімків для таких речей, як збереження баз даних на диск для послідовних резервних копій баз даних. <a href="https://github.com/dojo4/DREBS" title="https://github.com/dojo4/DREBS">Подивіться на DREBS</a> і дайте нам знати, що ви думаєте.</p>
-<br />
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/a-simple-backup-strategy-for-amazon-cloud-hosts">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>За роки Dojo4 змогли створитиจร

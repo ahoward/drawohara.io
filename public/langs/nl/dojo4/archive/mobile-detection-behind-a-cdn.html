@@ -1,0 +1,192 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Hier is niets te zien.</title>
+
+    <meta property="og:title" content="Hier is niets te zien."/>
+    <meta property="og:description" content="Ga verder." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archief/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"mobile-detection-behind-a-cdn"}">
+    <meta property="site:path_info" content=""/mobile-detection-behind-a-cdn"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/mobile-detection-behind-a-cdn">Ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink me'>&lt;&lt; klik me 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/mobile-detection-behind-a-cdn</strong>
+    </header>
+
+    <main>
+      <em>Gepubliceerd op: 2014-07-23</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>In een recent project kregen we de opdracht om de mobiele versie van een bestaande website te bouwen. De bestaande website was eigenlijk geen goede kandidaat voor een responsive ontwerp, dus we besloten een compleet nieuwe versie van de site te maken voor mobiele apparaten.</p>
+
+        <p>![5547851770<em>3598506559_z.jpg</em>](assets/b.jpeg)<br />
+        _(foto door <a href="https://www.flickr.com/photos/johanl/5547851770/in/photolist-9sfc3J-63nmeT-3BAAy-dWUBhB-pAZUn-ccjB1w-st5Gc-7B2UEE-bbLNKX-8yTj9M-9e6jeJ-72jTj6-8RU8QS-5TNHyH-8FkSqy-5r7dgL-5A6ymJ-atHdpQ-7BbKMK-8P8X2-7bD7t6-2ViX1A-5E6qqL-6NDF76-9hBh7m-4bSRnn-sZomP-6VbEE-buapa2-5Kw5si-85KrwR-5kpSzg-bjEUUE-bV9J19-5GXRmg-6zbLPt-8yWpiA-akq64F-5n4ciA-9hmSj5-msHvhK-hZpPt-bFe25b-Bjwzo-mFYCVT-d3v8y-6wRQrs-f1p7uv-f8rrUJ-ebxiKS">Johan Larsson</a>)</em></p>
+
+        <p>Eerst dachten we aan het m.example.com-patroon, waarbij de sites volledig aparte domeinen zijn. Echter, aangezien we de infrastructuur voor deze site niet beheren, wilden we een aanpak kiezen die zo min mogelijk infrastructuurwijzigingen vereist. Het ondersteunen van een ander domein op dezelfde servers is niet erg moeilijk, maar het is nog een taak die makkelijk mis kan gaan en in ons geval niet nodig is.</p>
+
+        <p>Ik heb deze techniek ook vrijgegeven voor iedereen die hem gemakkelijk in een rails-app wil gebruiken via een rails-engine:</p>
+
+        <ul>
+          <li>https://github.com/milesmatthias/cdddn</li>
+          <li>http://rubygems.org/gems/cdddn</li>
+        </ul>
+
+        <h2 id="intro-to-cloudfront">Inleiding tot CloudFront</h2>
+
+        <p>Een groot voordeel van deze website is dat het <a href="http://aws.amazon.com/cloudfront/">CloudFront</a> gebruikt. CloudFront is een content delivery network (ook wel CDN genoemd), waar statische webpagina's worden gehost op <a href="http://aws.amazon.com/cloudfront/details/">52 datacenters over de hele wereld</a>. Dit maakt het mogelijk om de pagina zo snel mogelijk aan de browser te leveren, omdat je ongeacht waar je in de wereld bent, niet ver weg bent van een van de knooppunten van CloudFront, zodat het minder tijd kost om de website aan je apparaat te leveren. CloudFront is onderdeel van het AWS-aanbod van Amazon en garandeert naast snelheid ook beschikbaarheid. (In tegenstelling tot <a href="http://aws.amazon.com/s3/">S3</a>, waar alleen beschikbaarheid wordt gegarandeerd.)</p>
+
+        <p>Als je CloudFront gebruikt, vertel je het waar je webserver zich bevindt, zodat CloudFront de nieuwste versie van de webpagina's kan ophalen die het voor je serveert. CloudFront vraagt je webserver ook alleen om nieuwe versies van je webpagina's om de paar minuten, of welke tijdinterval je configureert in je CloudFront-dashboard. Normaal gesproken is dat ergens rond de 24 uur. Dit maakt het mogelijk voor CloudFront om zich te concentreren op beschikbaarheid en snelheid, terwijl de belasting op je webserver aanzienlijk wordt verminderd. (Het duurt ook tijd voor CloudFront om een nieuwe versie van een pagina op te halen en alle 52 datacenters bij te werken.)</p>
+
+        <p>Echter, dit brengt het probleem van het bijhouden van de status met zich mee. Bijvoorbeeld, als je site volledig door CloudFront wordt geleverd, hoe ondersteun je dat gebruikers inloggen op je site? Als ik een gebruiker ben die Bob heet en de pagina op <code>/mijn/account</code> zegt "Hallo Bob!", zal CloudFront denken dat iedereen die de pagina op <code>/mijn/account</code> aanvraagt, de versie van de pagina moet zien die "Hallo Bob!" zegt. Gebruikers (behalve misschien mensen die Bob heten...) zullen erg verward zijn. Niet alleen dat, maar wat als een gebruiker een waarde in hun account bijwerkt en verwacht dat die verandering onmiddellijk wordt weergegeven? CloudFront haalt niet bij elke aanvraag een nieuwe versie van de pagina op (dat zou het doel van CloudFront erg tegenspreken), het wacht elke paar minuten op een nieuwe versie. CloudFront heeft verschillende van deze vragen aangepakt met <a href="http://aws.amazon.com/cloudfront/dynamic-content/">nieuwe functies</a>, maar je moet je bewust zijn van deze implicaties bij het gebruik van CloudFront.</p>
+
+        <p>In ons geval heeft de site waar we aan werken geen concept van "gebruikers" en kan niemand in het systeem inloggen. Toch willen we dat CloudFront verschillende versies van de site toont afhankelijk van het apparaat waarmee je de site aanvraagt (mobiel vs. desktop).</p>
+
+        <p>CloudFront kan voor je apparatuurdetectie uitvoeren en vervolgens een speciale header versturen naar je webserver om te zeggen "Geef me de versie van de pagina voor een telefoon", maar we wilden controle over de methode van apparatuurdetectie (het beantwoorden van de vraag - is dit een telefoon of een desktop?) en we wilden de mogelijkheid voor eindgebruikers en ontwikkelaars om het apparaat dat voor hen is gekozen te wijzigen. Bijvoorbeeld, eindgebruikers op een tablet willen misschien gewoon de desktopversie zien, ook al tonen we hun aanvankelijk de mobiele versie. Onze ontwikkelaars zullen het ook lastig vinden om elke keer van apparaat te wisselen wanneer ze tussen de versies willen wisselen bij het bouwen van de site.</p>
+
+        <h2 id="onze-oplossing">Onze oplossing</h2>
+
+        <p>Dus hier is de methode die we hebben bedacht om zowel een desktop- als een mobiele versie van een site op hetzelfde domein te hebben en geleverd door CloudFront. Een vereiste opmerking is dat CloudFront normaal gesproken alle cookies voor je domein uitschakelt, maar je kunt het configureren om cookies die je noemt toe te staan. In ons geval vertelden we CloudFront om een cookie genaamd 'apparaat' toe te staan. Let ook op dat we in de context van een rails 4-app zijn, maar deze architectuur kan in elke stack worden gerepliceerd. Het belangrijkste punt hier is dat de client moet uitzoeken welk apparaat de gebruiker gebruikt, hen in staat stellen om dat te wijzigen, en de server op de hoogte houden van het type apparaat zodat de server de juiste pagina's kan leveren (dit gebeurt via cookies).</p>
+
+        <h3 id="op-elke-pagina-moeten-we-iets-zoals-dit-doen-snippet-van-appviewslayoutapplicationhtmlerb">Op elke pagina moeten we iets zoals dit doen (snippet van app/views/layout/application.html.erb)</h3>
+
+        <pre><code class="language-html+erb">&lt;%= javascript_include_tag "mobile_detection" %&gt;
+
+&lt;script&gt;
+
+  if (!window.location.href.match(/get_device|set_device/)){
+    console.log('logging the window.location.href = ' + window.location.href);
+    localStorage.setItem('referrer_href', window.location.href);
+  }
+
+  var device_cookie  = cookie.get('device'),
+      cookiesEnabled = cookie.enabled();
+
+  if (cookiesEnabled &amp;&amp; device_cookie == undefined) {
+    window.location = '/get_device.html'
+  }
+
+&lt;/script&gt;
+</code></pre>
+
+        <p>De bovenstaande code onthoudt eenvoudig welke pagina je bent beland (meestal de homepage, maar we willen dat de client in staat is om links te delen en dat het ook op mobiel werkt), en vervolgens leidt je door naar de pagina <code>/get_device</code> om je apparaat te detecteren als we dat nog niet hebben gedaan. Let op het gebruik van <code>localStorage</code>, wat betekent dat dit alleen werkt op IE8+ en niet werkt op Opera Mini.</p>
+
+        <p>Let ook op dat de bovenstaande code zich in de <code>&lt;head&gt;</code> van de lay-out bevindt zodat het zo snel mogelijk wordt uitgevoerd en voordat enige scripts die de desktopversie mogelijk heeft. In dit geval maakt de desktopversie zwaar gebruik van javascript om veel inhoud te laden, dus we wilden echt niet dat al dat gebeurde op een telefoon voordat de site erkende dat de gebruiker de mobiele versie van de site moest zien.</p>
+
+        <h3 id="op-elke-mobiele-pagina-moeten-we-dit-doen-van-appviewslayoutapplicationmobileerb">Op elke mobiele pagina moeten we dit doen (van `app/views/layout/application.mobile.erb):</h3>
+
+        <div class="language-js highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">script</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">device_cookie</span>&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookie</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">get</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">device</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">),</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookiesEnabled</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookie</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">enabled</span><span style="color: #24292f;background-color: #f6f8fa">();</span>
+</div><div class='code-line code-line-4'>&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if </span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">cookiesEnabled</span>&nbsp;<span style="color: #0550ae">&amp;&amp;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">device_cookie</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">desktop</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">reload</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">true</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/script</span><span style="color: #f6f8fa;background-color: #82071e">&gt;</span>
+</div></code></div>
+
+        <p>Dit komt omdat mobiele apparaten de pagina's zwaar cachen (wat zinvol is) dus als de gebruiker het apparaat heeft gewijzigd, moeten we ervoor zorgen dat we die bijgewerkte cookie naar de server sturen, zelfs al is de url niet gewijzigd (en dus denkt de cache dat het dezelfde pagina is die geleverd moet worden). Het <code>true</code> in de <code>reload</code>-functieaanroep vertelt de browser om te negeren wat er in de cache staat.</p>
+
+        <p>Let op dat we exact hetzelfde doen op elke desktop-pagina, behalve dat we controleren of de gebruiker hun apparaat naar <code>'mobiel'</code> heeft gewijzigd.</p>
+
+        <h3 id="apparaatdetectie-op-get_device-appviewshomeget_devicehtml">Apparaatdetectie op <code>/get_device</code> (app/views/home/get_device.html)</h3>
+
+        <div class="language-js highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">script</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-2'>&nbsp;
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">function</span>&nbsp;<span style="color: #8250df">isMobile</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">MOBILE_USER_AGENTS</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">pdxgw|netfront|xiino|vodafone|portalmmm|sagem|mot-|sie-|ipod|up</span><span style="color: #0a3069">\\</span><span style="color: #0a3069">.b|</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">webos|amoi|novarra|cdm|alcatel|pocket|ipad|iphone|mobileexplorer|</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #0550ae">+</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">mobile|zune</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">mobile_regex</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #953800">RegExp</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">MOBILE_USER_AGENTS</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #0a3069">i</span><span style="color: #0a3069">"</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-11'>&nbsp;
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">return</span>&nbsp;<span style="color: #953800">navigator</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">userAgent</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">match</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">mobile_regex</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-14'>&nbsp;
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// de apparaatcookie instellen op wat we detecteren</span>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">detected_device</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #8250df">isMobile</span><span style="color: #24292f;background-color: #f6f8fa">()</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">?</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">mobiel</span><span style="color: #0a3069">'</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">desktop</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">;</span>
+</div><div class='code-line code-line-17'>&nbsp;
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">cookie</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">set</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">device</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">detected_device</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">domain</span><span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">&lt;%= Rails.env.development? ? </span><span style="color: #0a3069">''</span><span style="color: #0a3069"> : Settings.host %&gt;</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">path</span>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">:</span>&nbsp;<span style="color: #0a3069">'</span><span style="color: #0a3069">/</span><span style="color: #0a3069">'</span>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-22'>&nbsp;
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">// window.location naar waar je vandaan kwam</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">window</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #24292f;background-color: #f6f8fa">location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">assign</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">localStorage</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">getItem</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">referrer_href</span><span style="color: #0a3069">'</span><span style="color: #24

@@ -7,12 +7,15 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
 
     <!-- langs -->
     <!--
@@ -37,18 +40,26 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>Нічого не бачити тут.</title>
-    <meta property="og:title" content="Нічого не бачити тут."/>
-    <meta property="og:description" content="Продовжуйте йти." />
+    <title>dojo4 допомагає Big Boulder засяяти у маленькому Боулдері</title>
+    <meta property="og:title" content="dojo4 допомагає Big Boulder засяяти у маленькому Боулдері"/>
+    <meta property="og:description" content=" Підтримуй тренд." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"dojo4-helps-big-boulder-shine-in-lil-ol-boulder"}">
-    <meta property="site:path_info" content=""/dojo4-helps-big-boulder-shine-in-lil-ol-boulder"">
+
+    <meta property="site:route" content="/dojo4/archive/:id"">
+    <meta property="site:params" content="{'ext':null,'id':'dojo4 допоможе Big Boulder засяяти у маленькому Боулдері'}">
+    <meta property="site:path_info" content="/dojo4 допоможе Big Boulder засяяти у маленькому Боулдері">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -57,9 +68,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -69,79 +85,10 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-helps-big-boulder-shine-in-lil-ol-boulder">я ❤️ це!</a>
-      <hr>
-      <strong>/dojo4-helps-big-boulder-shine-in-lil-ol-boulder</strong>
-    </header>
-
-    <main>
-      <em>опубліковано: 2013-06-06</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p><img src='/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/screen-shot-2013-06-05-at-4.22.51_PM.png' alt="img" /></p>
-
-        <p>Починаючи з сьогодні, маленький містечко Боулдер приймає <a href="http://bigboulderconf.com">Big Boulder 2013</a>, другу щорічну, зіркову конференцію, присвячену соціальним даним, від <a href="http://gnip.com/">Gnip</a>. Ми з задоволенням працюємо з Gnip протягом року як з клієнтом, але підтримка цього проекту завжди особливо весела.</p>
-
-        <p>Щодо дизайну, ми оновили іконічний логотип Flatirons для цієї конференції, переробили брошуру та бейджи для преси. Ми також були ради допомогти з логотипом і дизайном макета для <a href="http://bigboulderconf.com/initiative">Ініціативи Big Boulder</a>, яка була запущена сьогодні.</p>
-
-        <p><img src="assets/bigboulderbrosh.png" alt="img" /></p>
-
-        <p>Щоб дозволити вбивчі, адаптивні естетичні якості конференції (так, ми вважаємо, що вона виглядає чудово, як в реалії, так і на телефоні) безперешкодно блищати, ми перевірили, щоб всі технічні компоненти були належним чином на місці:</p>
-
-        <ul>
-          <li>
-            <p>ми перенесли хостинг на S3</p>
-          </li>
-          <li>
-            <p>ми впровадили нові <a href="https://github.com/fredjean/middleman-s3_sync">Middleman гем для синхронізації S3</a>, гзипінг, та інші типи оптимізації сайту</p>
-          </li>
-          <li>
-            <p>розробили стратегію для <a href="http://2012.bigboulderconf.com/">старої конференції</a> / нової конференції архівування</p>
-          </li>
-          <li>
-            <p>замінили <a href="http://dojo4.com/blog/zurbs-foundation-3-embracing-the-new-old-box-model">Zurb CSS фреймворк</a> з Twitter Bootstrap для узгодженості між веб-властивостями Gnip</p>
-          </li>
-          <li>
-            <p>розробили брендинг і побудували <a href="http://bigboulderconf.com/initiative">Мікро-сайт Ініціативи Big Boulder</a></p>
-          </li>
-          <li>
-            <p>допомогли автоматизувати створення іменних бейджів, завантажуючи CSV файл в InDesign (простий туторіал по цьому з'явиться в цьому пості незабаром...)</p>
-          </li>
-        </ul>
-
-        <p><img src="assets/bigboulderresponsive.png" alt="img" /></p>
-
-        <p>dojo4 радіє можливості підтримати команду Gnip та внести свій вклад в це важливе зібрання!</p>
-
-        <p><em>цей блоговий пост був створений <a href="http://dojo4.com/team/steve-bailey">Стівом</a> та <a href="http://dojo4.com/team/anthony-dimitre">Ентоні</a></em></p>
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-helps-big-boulder-shine-in-lil-ol-boulder">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/зараз<a>
-          </li>
-          <li>
-            <a href="/about">/про нас<a>
-          </li>
-          <li>
-            <a href="/contact">/контакти<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-допоможе-Big-Boulder-зяяти-у-маленькому-Боулдері">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-допоможе-Big-Boulder-зяяти-у-маленькому-Боулдері">🖤</a>
+      </

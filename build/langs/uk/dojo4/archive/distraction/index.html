@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,12 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="іди далі." />
+    <title>Відволікання</title>
+
+<meta property="og:title" content="Відволікання"/>
+<meta property="og:description" content="продовжуйте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"distraction"}">
@@ -54,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -61,24 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/distraction">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/distraction">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/distraction">🖤</a>
+</small>
 <hr>
-<strong>/відволікання</strong>
     </header>
 
     <main>
@@ -86,88 +105,8 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Це повідомлення нещодавно було надіслано нашій команді. Як ви керуєте відволіканням?</p>
+  <p>Цей повідомлення недавно було надіслано нашій команді.  Як ви управляєте відволіканням?</p>
 
 <hr />
 
-<p>Робота в цифровій сфері - це надзвичайно потужне джерело відволікання, яке спонукає нас споживати, не створюючи. ось деякі ідеї для боротьби з цим</p>
-
-<ul>
-  <li>
-    <p>вимкніть електронну пошту</p>
-  </li>
-  <li>
-    <p>відповідайте на електронні листи один або два рази на день</p>
-  </li>
-  <li>
-    <p>вимкніть твіттер, фейсбук та інші соціальні мережі</p>
-  </li>
-  <li>
-    <p>вимкніть пропан. ми знайдемо вас, якщо це необхідно</p>
-  </li>
-  <li>
-    <p>робіть одну справу за раз. багатозадачність - це саме відволікання.</p>
-  </li>
-  <li>
-    <p>виділіть час. це вранці. те вдень.</p>
-  </li>
-  <li>
-    <p>заверште щось. Зупинка на 90% коштує часу, грошей та створює відкритий цикл у вашому розумі</p>
-  </li>
-  <li>
-    <p>зосередьтесь на методах, які дозволяють створювати без споживання: ви можете опублікувати зображення без входу до твіттера/фейсбука/тамблера, просто поділившись зображенням по електронній пошті на свій обліковий запис. ви можете створювати пости, гісти або інший контент за допомогою скриптів або інструментів, які дозволяють це робити без читання/споживання інших конусів. ви можете зробити "git commit", навіть коли інтернет повністю вимкнений.</p>
-  </li>
-  <li>
-    <p>створюйте власне. звичайно, ви можете знайти це в гуглі - разом з 45-хвилинним відволіканням в безодню</p>
-  </li>
-  <li>
-    <p>IM - це диявол</p>
-  </li>
-  <li>
-    <p>налаштуйте телефон так, щоб, якщо він дзвеніть, ви знали, що вам потрібно відповісти</p>
-  </li>
-  <li>
-    <p>витрачайте час і агресивно фільтруйте свій поштовий скриньку з Gmail. якщо він потрапляє в ваш поштовий скриньку, він повинен бути важливим за замовчуванням. все інше повинно бути фільтрами або автоматично видалено.</p>
-  </li>
-</ul>
-
-<p>ОНОВЛЕННЯ від <a href="http://dojo4.com/#Corey" target="_blank">http://dojo4.com/#Corey</a></p>
-
-<hr />
-
-<ul>
-  <li>коли ви помічаєте, що ви відволікаєтесь, пройдіть навколо кварталу</li>
-  <li>розмова особисто (особливо коли інша особа знаходиться в тій самій кімнаті) імовірно, буде більш ефективною, швидшою та менш заплутаною опцією, ніж електронна пошта</li>
-  <li>не завжди довіряйте імпульсу відповідати на всі електронні листи / тексти негайно - трохи простору, навіть кілька хвилин, ймовірно, зробить спілкування більш ефективним</li>
-  <li>регулярна йога для очей <a href="http://www.youtube.com/watch?v=00XqvNwYMoc" target="_blank">http://www.youtube.com/watch?v=00XqvNwYMoc</a> !</li>
-</ul>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/distraction">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>робота в цифровій сфері є надзвичайно потужним джерелом відволікання, яке змушує нас споживати без створення.

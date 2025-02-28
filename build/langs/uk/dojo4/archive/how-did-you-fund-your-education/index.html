@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,21 +39,32 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Як ви знайшли кошти на освіту?</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Як ви знайшли кошти на освіту?"/>
+<meta property="og:description" content="вигадай щось." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"how-did-you-fund-your-education"}">
     <meta property="site:path_info" content=""/how-did-you-fund-your-education"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,10 +90,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/how-did-you-fund-your-education">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/how-did-you-fund-your-education">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/how-did-you-fund-your-education">🖤</a>
+</small>
 <hr>
-<strong>/як-ви-фінансували-свою-освіту</strong>
     </header>
 
     <main>
@@ -86,40 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Одна з моїх молодших кузенів переїжджає до Фронт-Рейндж, щоб навчатися в CSU Форт-Коллінс. Майєле (моя кузина) вирішила іншим способом фінансувати свою освіту. <a href="https://www.gofundme.com/s54zfk">Вона збирає кошти через краудфандинг</a>.</p>
-
-<p>Минуло 15 років з мого навчання в університеті, і якби не <a href="http://www.oracle.com/us/corporate/acquisitions/collectiveintellect/index.html">Collective Intellect</a>, я все ще б виплачував студентські кредити.</p>
-
-<p>Сьогодні в Доджо4 сидять п'ять осіб віком від 7 до 15 років після закінчення університету, 8 ступенів, 2 з яких (обидва MS Computer Science) використовуються щодня. Джерела фінансування: Кредити, Батьки, Стипендії та Канада. Один з цих людей все ще виплачує студентські кредити.</p>
-
-<p>Мені приємно, що <a href="https://www.gofundme.com/s54zfk">Майєле</a> використовує <a href="http://maiart.weebly.com/">свої навички</a> і знаходить креативні способи фінансування своєї освіти.</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/how-did-you-fund-your-education">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про_нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+  <p>Одна з моїх молодших кузин переїздить у Фронт Рендж, щоб відвідувати Університет штату Колорад

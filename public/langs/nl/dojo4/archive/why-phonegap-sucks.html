@@ -1,0 +1,161 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <base href='/langs/nl' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Niets om te zien.</title>
+
+<meta property="og:title" content="Niets om te zien."/>
+<meta property="og:description" content="Ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"why-phonegap-sucks"}">
+    <meta property="site:path_info" content=""/why-phonegap-sucks"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/why-phonegap-sucks">i ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik op me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/why-phonegap-sucks</strong>
+    </header>
+
+    <main>
+      <em>Geplaatst op: 2013-10-24</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Net als elke ontwikkelingswerkplaats krijgen we veel mensen die naar ons komen en een app willen maken voor zowel iOS als Android. Ze willen een manier vinden om tijd en geld te besparen door niet volledig hetzelfde werk te doen voor hun app voor elk besturingssysteem. Dus praten we natuurlijk met deze potentiële klanten over architectuuropties met HTML-inhoud en webviews. (Onze meest recente klant wilde functionaliteit delen tussen een iOS-app en een website, dus werden we speciaal gericht op het gebruik van HTML in de mobiele app.) Op dit pad komt het idee om Phonegap te gebruiken altijd ter sprake. We zijn deze weg al een paar keer afgegaan en hier zijn onze conclusies.</p>
+
+<p>Phonegap is slecht. Hierom:</p>
+
+<ul>
+  <li>
+    <p>Een hele nieuwe framework leren terwijl je eigenlijk Obj-C of Java zou moeten leren.</p>
+  </li>
+  <li>
+    <p>Afhankelijk zijn van hun ondersteuning van OS-functies (kruis je vingers dat het bestaat en werkt! kruis je vingers dat ze nieuwe dingen snel ondersteunen!)</p>
+  </li>
+  <li>
+    <p>Chaotische organisatie—Phonegap? Cordova? Wat nu?!?!?! (Gebruik gewoon Phonegap en je zult er goed vanaf komen—Oké… oh wacht, ik moet de cordova CLI gebruiken om plugins toe te voegen?!)</p>
+  </li>
+  <li>
+    <p>Verouderde, incorrecte en verwarrende documentatie (deels door het bovenstaande punt)</p>
+  </li>
+  <li>
+    <p>De gemeenschap rondom is meer bezorgd om elk apparaat op de planeet te ondersteunen in plaats van een ontwikkelaar te helpen om eenvoudig HTML-inhoud te publiceren in een van de belangrijkste 2 besturingssystemen. (Dat is waar Phonegap Cloud voor is—heb geprobeerd het 3 keer te gebruiken, het is kapot.)</p>
+  </li>
+</ul>
+
+<p>Kortom, Phonegap is gericht op het maken van je 10% tevreden op 100% van de apparaten in de wereld. Uit onze ervaring gaat het klanten erom 100% tevreden te zijn op slechts 2 van de apparaten in de wereld—iOS en Android.</p>
+
+<p>Wat is onze oplossing? Omarm Obj-C en Java! HTML-inhoud in een app is een geweldige manier voor eenvoudige apps om een enkele codebasis te hebben op meerdere platformen, maar je hebt fijnmazige controle nodig over de hele app en je moet de instructies van Apple en Google volgen over hoe je het beste gebruik kunt maken van hun OS-functies. Dus hebben we frameworks (iOS bijna klaar voor open sourcen &amp; Android nog in een vroeg stadium) die één webview bevatten en vervolgens kleine, open source bibliotheken gebruiken om een brug te maken tussen die webview en de native applicatie. Dit stelt ons in staat om onze eigen Javascript API te schrijven om elke native code aan te roepen die we schrijven. (Voor iOS gebruiken we de geweldige WebViewJavascriptBridge van Marcus Westin)</p>
+
+<p>Bijvoorbeeld, als we HTML-inhoud hebben die een link naar Facebook of Twitter wil delen, hebben we onze eigen Javascript API geschreven om te zeggen:</p>
+
+<p>bridge.callHandler(‘facebookShare’, ‘http://ducksarethebest.com’);<br />
+en vervolgens in Objective-C hebben we de handler geschreven om die URL te nemen en de officiële Facebook iOS SDK te gebruiken om die link te delen:</p>
+
+<p>[_bridge registerHandler:@”facebook_share” handler:^(id data, WVJBResponseCallback responseCallback) {<br />
+FBAppCall *appCall = [FBDialogs presentShareDialogWithLink:[NSURL URLWithString:data] handler:fbHandler];<br />
+}];<br />
+Dit is een dramatisch betere ervaring dan het laten dat de webview die link deelt, want als de gebruiker al de Facebook-app heeft en erin is aangemeld, hoeft de Facebook SDK hem niet opnieuw te laten inloggen, terwijl de webview-delingsmethode dat wel zal doen.</p>
+
+<p>Het is zelfs beter voor oplossingen waar geen webalternatief is, zoals in-app aankopen. En met name iets wat zo belangrijk is voor het succes van je app—gebruikers die je geld betalen—je wilt ervoor zorgen dat het correct wordt gedaan op de meest up-to-date en aanbevolen manier. De enige manier om dat te doen is door de richtlijnen van Apple of Google te volgen in hun officiële SDK.</p>
+
+<p>Deze benadering geeft ons de flexibiliteit om elke JS API te schrijven die het beste voor ons werkt, de onmiddellijkheid van elke functie in de iOS- of Android-SDK's te benutten en het verbeteren van onze ontwikkelvaardigheden in een taal en SDK die echt van belang zijn voor onze langetermijncarrières. Het belangrijkst is dat de klant blij is dat we volledige controle hebben over de app, we zijn niet afhankelijk van een derde partijgroep om functies te ondersteunen die Apple of Google maanden geleden hebben uitgebracht, en de app kan zo echt natief of web-gebaseerd zijn als nodig is om de beste gebruikerservaring te creëren.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/why-phonegap-sucks">😩, i 🖤 ^dit!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/over<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; uitvoeren</a>
+    </footer>
+  </body>
+</html>

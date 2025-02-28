@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,11 +39,14 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>хакерспейси - нас。</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="хакерспейси - нас."/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
 
   <meta property="og:image:type" content="image/jpeg" />
 
@@ -51,9 +54,17 @@
     <meta property="site:params" content="{"ext":null,"id":"hackerspaces-r-us"}">
     <meta property="site:path_info" content=""/hackerspaces-r-us"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,23 +73,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/hackerspaces-r-us">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/hackerspaces-r-us">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/hackerspaces-r-us">🖤</a>
+</small>
 <hr>
-<strong>/hackerspaces-r-us</strong>
     </header>
 
     <main>
@@ -86,32 +105,4 @@
 <br>
 <br>
 <p><img src='/ro/dojo4/hackerspaces-r-us/assets/dojo41.JPG' title="Dojo41" alt="Dojo41" rel="225x255" width="225" height="168" /></p>
-<p>Є нещодавня історія від KQED про хакерські простори, "<a href="https://hackerspaces.org/wiki/" title="https://hackerspaces.org/wiki/">спільноти, які керують фізичними місцями, де люди можуть зустрічатися і працювати над своїми проектами</a>," зазвичай технологічні або медійні підприємства. Читаючи історію, я подумав: "о, круто, ми повинні це зробити!" А потім я подумав: "о, круто, ми це робимо!" Хоча ми є бізнесом, який підтримує наше життя, створюючи проекти для клієнтів, ми також є спільнотою, яка керує фізичним простором, де люди зустрічаються, щоб працювати над своїми проектами. Головна різниця полягає в тому, що проекти, над якими люди приходять працювати в наш простір, частіше є проектами, пов'язаними з роботою або роботою, а не чисто працями любові, творчістю та нав'язливою уявою. Що якщо ми виділимо кожного місяця деякий час для чистого хакерського простору dojo4 і подивимося, що ми побудуємо разом (або індивідуально). Ми говорили про це деякий час. Чи не час це зробити?</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/hackerspaces-r-us">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>Є недавня історія від

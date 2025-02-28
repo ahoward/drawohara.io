@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -32,6 +31,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
+    <base href='/langs/uk' />
 
   <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -40,13 +40,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Хабба Хабба</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Хабба Хабба"/>
+<meta property="og:description" content="перейдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"hubba-hubba"}">
@@ -56,6 +59,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,10 +90,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/hubba-hubba">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/hubba-hubba">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/hubba-hubba">🖤</a>
+</small>
 <hr>
-<strong>/hubba-hubba</strong>
     </header>
 
     <main>
@@ -86,36 +105,4 @@
 <br>
 <br>
 <p><img class="text-align-center" rel="450x450" alt="Подія Хаб" title="Подія Хаб" src='/ro/dojo4/hubba-hubba/assets/hubevent.jpg' height="301" width="450" /></p>
-<p><a title="http://www.hubboulder.com/" href="http://www.hubboulder.com/">Hub Boulder</a> провів свою першу публічну подію цього тижня в <a title="http://303vodka.com/" href="http://303vodka.com/">303 Vodka</a>. Спочатку він мав відбутися в центрі міста, але коли кількість RSVP зросла майже до 300, ми вирішили перенести його до району <a title="http://assets.flavorwire.com/wp-content/uploads/2012/03/Mad_Max_Beyond_Thunderdome_1985-image-497780-1024x687.jpg" href="http://assets.flavorwire.com/wp-content/uploads/2012/03/Mad_Max_Beyond_Thunderdome_1985-image-497780-1024x687.jpg">Bartertown</a> Боулдера. Незважаючи (або, можливо, саме тому) на переїзд, відвідуваність була феноменальною та включала широкий спектр людей, від тих, хто вже є завзятими членами Хаба, до тих, хто прийшов лише дізнатися більше. <span><a title="http://www.impactassets.org/about-us/team/timothy-freundlich/" href="http://www.impactassets.org/about-us/team/timothy-freundlich/">Тім Фройндліх</a>
-</span> був присутній, щоб розповісти про підтримку <a title="hhttp://hub-ventures.com/" href="hhttp://hub-ventures.com/">Hub Ventures</a> для Hub Boulder та видіння на наступні десять років мати <a title="http://www.the-hub.net/" href="http://www.the-hub.net/">Хаби</a> в кожному <a title="http://www.the-hub.net/network" href="http://www.the-hub.net/network">великому місті світу</a> з членством понад 2 мільйони змінювачів, соціальних інноваторів та підприємців, що культивують загальне благо. Hub Boulder є динамічною частиною цього руху, і dojo4 раді бути одним з його засновників та головних прихильників. </p>
-<p>Щоб стати членом або отримати більше інформації: <a title="http://www.hubboulder.com/memberships/" href="http://www.hubboulder.com/memberships/">http://www.hubboulder.com/memberships/</a>
-<a title="http://www.hubboulder.com/memberships/" href="http://www.hubboulder.com/memberships/"></a>
-</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/hubba-hubba">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p><a title="http://

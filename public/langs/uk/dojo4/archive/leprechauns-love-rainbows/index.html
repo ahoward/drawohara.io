@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Тут немає нічого цікавого.</title>
+    <title>Лепрекони люблять веселки.</title>
 
-<meta property="og:title" content="Тут немає нічого цікавого."/>
-<meta property="og:description" content="Йдіть далі." />
+<meta property="og:title" content="Лепрекони люблять веселки."/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,24 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/leprechauns-love-rainbows">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/leprechauns-love-rainbows">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/leprechauns-love-rainbows">🖤</a>
+</small>
 <hr>
-<strong>/leprechauns-love-rainbows</strong>
     </header>
 
     <main>
@@ -90,44 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Ми тут у доджо любимо свята. На честь багатьох свят ми підтримуємо нашому сайті швидку зміну колірної схеми. День Святого Патрика був першим таким випадком, щоб спробувати це. Ми додали зелений колір і були задоволені собою, коли пили величезні кружки Guinness.</p>
-
-<p>Потім сталася катастрофа. Ми дізналися про жалюгідні <a href="http://www.washingtonpost.com/news/morning-mix/wp/2014/03/17/no-brewers-and-no-mayor-in-new-yorks-st-patricks-day-parade/">ситуації</a> в Нью-Йорку та Бостоні, де ЛГБТК+ людей (зокрема гей-ветеранів) не допускали до участі в параді. Це призвело до бойкоту парадів мерами та пивоварами. Ми теж були такими, "не на моїй землі, придурки". Ми прибрали зелений колір. Спокій повернувся.</p>
-
-<p>Не минуло багато часу, перш ніж ми почали сумувати за зеленим, як лепрекон за своїм горщиком золота. Ми хотіли його повернути, але не хотіли виглядати так, ніби ми здалися.</p>
-
-<p>Ми переоцінили ситуацію і вирішили, що в цьому конкретному випадку вчинити щось буде краще, ніж нічого не робити.</p>
-
-<p>У результаті зелений повернувся і став кращим, ніж коли-небудь. І щоб упевнитися, що нас не порозуміють, ми додали до логотипу трохи веселки... знаєте, бо лепрекони люблять веселки.</p>
-
-<p>Щасливого дня Святого Патрика!!</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/leprechauns-love-rainbows">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Ми у докованні любимо свята. На честь багатьох свят ми включили на нашому сайті швидку зміну кольорової схеми. Д

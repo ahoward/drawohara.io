@@ -1,0 +1,305 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rien à voir ici.</title>
+
+<meta property="og:title" content="rien à voir ici."/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"le-monde-obscur-des-tableaux-css"}">
+    <meta property="site:path_info" content=""/le-monde-obscur-des-tableaux-css"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a> &mdash;
+<a href="mailto:j-aime-ca@drawohara.io?subject=/le-monde-obscur-des-tableaux-css">j'❤️ ça!</a>
+<small>
+  <small>
+    <small>
+      <span title='buvez-moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/le-monde-obscur-des-tableaux-css</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2014-04-08</em>
+<br>
+<br>
+
+<p>
+  L'avenir des mises en page web est <a href="http://dev.w3.org/csswg/css-flexbox/" target="_blank">prometteur</a>, en particulier pour les développeurs web chevronnés dont les tableaux profondément imbriqués <a href="http://www.isse.ucar.edu/water_climate/index.html" target="_blank">hantent encore internet</a>. Mais, jusqu'à ce que flexbox soit prêt pour le grand public, les flottants CSS&mdash;le mécanisme de mise en page de base pour les frameworks CSS comme Twitter Bootstrap et Zurb Foundation&mdash;devront suffire.
+</p>
+
+<p>
+  Ou le feront-ils?
+</p>
+
+<img src='/ro/dojo4/le-monde-obscur-des-tableaux-css/assets/display-table.gif' />
+
+<p>
+  Certains jeunes développeurs web d'aujourd'hui pourraient ne pas être conscients qu'il y a eu un vide créé lorsque les mises en page basées sur TABLE ont été détrônées. <a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a>, qui a montré la promesse des mises en page CSS et a mis un poignard dans le cœur des mises en page basées sur TABLE, n'a pas nécessairement couronné un successeur.
+</p>
+
+<p>
+  Il y avait la technique du Saint Graal, le positionnement absolu fictif, et de nombreuses autres tranches de <a href="http://www.positioniseverything.net/" target="_blank">PIE</a>. C'était une période d'expérimentation, dont l'esprit s'est quelque peu estompé à la lumière de tous les cadres adorables qui existent (bien que certaines personnes <a href="https://github.com/necolas/suit-grid-layouts" target="_blank">expérimentent</a> de temps en temps).
+</p>
+
+<p>
+  Une technique qui n'a pas réussi à gagner en popularité était les mises en page CSS en tableaux. Plusieurs choses ont conspiré contre elle:
+</p>
+
+<ol>
+  <li>
+    le titre du livre qui la défendait, <a href="http://www.amazon.co.uk/dp/0980455227" target="_blank">Tout ce que vous savez sur CSS est faux</a>, était, avouons-le, un peu repoussant
+  </li>
+  <li>
+    le nom même de la technique évoquait des démons du passé (mises en page TABLE!)
+  </li>
+  <li>
+    elle était en avance sur son temps&mdash;avant que deux navigateurs importants de l'époque ne la supportent (IE6/IE7)
+  </li>
+</ol>
+
+<p>
+  Mais récemment, plusieurs personnes ont revisité la technique car, en une ou deux lignes de code, elle permet un positionnement que d'autres techniques ne peuvent pas faire sans astuces ou JS. De plus, elle offre des tours de passe-passe de l'ordre des sources qui sont utiles dans les contextes réactifs.
+</p>
+
+<h2 id="centrage-vertical">
+  Centrage vertical
+</h2>
+
+<p>
+  Les développeurs frontend sont familiers avec le défi d'aligner les éléments verticalement dans une rangée lorsque les hauteurs sont inconnues. En effet, c'est généralement le premier problème à résoudre dans l'<code>EN-TÊTE</code> de tout site (logo et navigation).
+</p>
+
+<p>
+  Les <code>TABLE</code>s ont rendu le centrage vertical facile avec l'attribut <code>VALIGN</code>. Dans les mises en page basées sur les flottants, les choses sont <a href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/" target="_blank">beaucoup plus floues</a>, nécessitant beaucoup de ruses (positionnement, rembourrage ou hauteurs de ligne généralement).
+</p>
+
+<p>
+  Entrent les tables CSS, qui rendent le centrage vertical trivial avec la propriété <code>vertical-align: middle</code>. Pour illustrer, prenez le balisage suivant:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-table"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        foo
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        bar
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        baz
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"cell"</span><span class="nt">&gt;</span>
+        foo<span class="nt">&lt;br&gt;</span>bar<span class="nt">&lt;br&gt;</span>baz<span class="nt">&lt;br&gt;</span>qux
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  </pre>
+</div>
+
+<p>
+  Combinez-le avec le CSS suivant:
+</p>
+
+<div class="highlight">
+  <pre>
+    <span class="nc">.row-table</span> {
+      <span class="nl">display</span>: <span class="m">table</span>;
+      <span class="nl">table-layout</span>: <span class="m">fixed</span>;
+      <span class="nl">width</span>: <span class="m">100%</span>;
+    }
+
+    <span class="nc">.cell</span> {
+      <span class="nl">display</span>: <span class="m">table-cell</span>;
+      <span class="nl">width</span>: <span class="m">25%</span>;
+      <span class="nl">vertical-align</span>: <span class="m">middle</span>;
+    }
+  </pre>
+</div>
+
+<p>
+  Et vous obtenez la mise en page centrée verticalement suivante, malgré le contenu plus haut de la dernière colonne:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+
+
+    <div class="cell">
+      foo
+    </div>
+
+
+    <div class="cell">
+      bar
+    </div>
+
+
+    <div class="cell">
+      baz
+    </div>
+
+
+    <div class="cell">
+      foo<br>bar<br>baz<br>qux
+    </div>
+
+</div>
+
+<p>
+  Un avantage supplémentaire de cette méthode est que la plupart des développeurs back-end <em>comprennent tout simplement</em> les <code>TABLE</code>s (Je vous regarde, <a href="/equipe/ara-t-howard" target="_blank">Ara</a>). Donc, si vous écrivez des styles pour que d'autres les utilisent, vous pouvez créer un système de grille OOCSS avec des classes et sous-classes intuitives (".col", ".col-valign-middle", ".col-valign-top", etc) pour faciliter leur vie.
+</p>
+
+<h2 id="colonnes-de-hauteur-égale">
+  Colonnes de hauteur égale
+</h2>
+
+<p>
+  Avec le même balisage que ci-dessus, il est assez facile de créer des colonnes de hauteur égale; nous allons simplement ajouter quelques couleurs de fond pour démontrer:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B">
+      foo
+    </div>
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7">
+      bar
+    </div>
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#777777">
+      baz
+    </div>
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA">
+      foo<br>bar<br>baz<br>qux
+    </div>
+
+</div>
+
+<p>
+  Bien sûr, il existe des bibliothèques JS qui permettent aux colonnes flottantes de le faire, mais il y a toutes sortes de choses amusantes de redimensionnement de fenêtre à faire dans un contexte réactif pour empêcher les hauteurs (calculées par JS) des colonnes de se répercuter sur les vues plus petites.
+</p>
+
+<p>
+  Au lieu de cela, avec une simple requête média, je peux faire en sorte que les tables CSS se transforment en blocs (<code>display: block</code>) ou en groupes de tables (<code>display: table-header-group</code>) en fonction de ce qui est approprié pour le contexte donné.
+</p>
+
+<h2 id="astuces-dordre-des-sources">
+  Astuces d'ordre des sources
+</h2>
+
+<p>
+  Les propriétés des tables CSS peuvent être utiles lorsque vous souhaitez remélanger la main qui vous a été distribuée par l'ordre des sources HTML. Dans les mises en page basées sur les flottants, vous pouvez pousser et tirer des éléments dans des vues plus grandes, mais les choses s'empileront de la même manière que l'ordre des sources HTML dans les plus petites.
+</p>
+
+<p>
+  Les tables CSS vous permettent de réorganiser considérablement les choses, en particulier sur les vues plus petites. Prenons notre exemple précédent, par exemple:
+</p>
+
+<div class="row-table" style="margin-bottom: 25px;">
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#F05F3B;">
+      0
+    </div>
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#E7E5D7;">
+      1
+    </div>
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#777777;">
+      2
+    </div>
+
+
+    <div class="cell" style="color:rgba(0,0,0, 0.6);background-color:#55ACAA;">
+      3
+    </div>
+
+</div>
+
+<p>
+  En changeant le paramètre d'affichage en l'une des propriétés de groupe de table (<code>display: table-caption</code>, <code>display: table-header-group</code>, <code>display: table-row-group</code>, ou <code>display: table-footer-group</code>), nous pouvons empiler les éléments de manière très différente de ce qu'ils apparaissent dans la mise en page en ligne sur les vues plus grandes (que l'ordre des sources).
+</p>
+
+<p>
+  Par exemple, si nous voulions que les colonnes ci-dessus s'empilent dans le

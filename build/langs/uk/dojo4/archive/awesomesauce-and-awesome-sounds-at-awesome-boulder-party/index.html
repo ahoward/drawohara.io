@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>нічого немає тут.</title>
+    <title>Супер сік і супер звуки @ Супер вечірка в Боулдері</title>
 
-<meta property="og:title" content="нічого немає тут."/>
-<meta property="og:description" content="іди далі." />
+<meta property="og:title" content="Супер сік і супер звуки @ Супер вечірка в Боулдері"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,80 +72,35 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/awesomesauce-and-awesome-sounds-at-awesome-boulder-party">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/awesomesauce-and-awesome-sounds-at-awesome-boulder-party">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/awesomesauce-and-awesome-sounds-at-awesome-boulder-party">🖤</a>
+</small>
 <hr>
-<strong>/awesomesauce-and-awesome-sounds-at-awesome-boulder-party</strong>
     </header>
 
     <main>
       <em>опубліковано: 2015-10-21</em>
 <br>
 <br>
-<div class="ro markdown">
-  <p><img src='/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/b.jpeg' alt="awesome.jpg" /></p>
-
-<p>Одне з найкращих у перебуванні в Раді <a href="http://www.awesomeboulder.org/">Фонду Awesome Boulder</a> - це щорічне святкування, під час якого ми:</p>
-
-<ul>
-  <li>спілкуємося</li>
-  <li>їмо смачну їжу</li>
-  <li>пиємо пиво</li>
-  <li>відвідуємо деяких <a href="http://www.awesomefoundation.org/en/chapters/boulder">грантоотримувачів минулого року</a></li>
-  <li>пиємо пиво</li>
-</ul>
-
-<p>Цьогорічна вечірка була особливо смачною завдяки нашій улюбленій піцерії, <a href="http://localeboulder.com/">Pizzeria Locale</a>, яка змогла пожертвувати 30 піц на наш захід під час їхньої п'ятничної вечірньої метушні. Дякуємо, боги піци!</p>
-
-<p><img src='/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/c.jpeg' alt="pizzerialocale.jpg" /></p>
-
-<p>Особливе подяку Джоелу з <a href="http://www.blackswansounds.com/">Black Swan Sounds</a>, який викликав у нас всіх бажання потрусити танго.</p>
-
-<p><img src='/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/d.jpeg' alt="blackswan.jpg" /></p>
-
-<p>Якщо ви хтось, хто робить круті речі в Боулдері, дуже легко <a href="http://www.awesomefoundation.org//submissions/new">подати</a> заявку на грант Awesome Boulder. $1,000. Дедлайн подачі заявок раз на місяць. Зробіть Боулдер ще кращим, і тоді ви зможете прийти на наступну річну вечірку! : )</p>
-
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/awesomesauce-and-awesome-sounds-at-awesome-boulder-party">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про</a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>

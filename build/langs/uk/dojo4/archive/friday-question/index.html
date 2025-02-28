@@ -1,60 +1,69 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>Тут нічого немає.</title>
+  <!-- meta -->
+    <title>П'ятничне питання</title>
 
-    <meta property="og:title" content="Тут нічого немає."/>
-    <meta property="og:description" content="Продовжуйте рух." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="П'ятничне питання"/>
+<meta property="og:description" content="мов затим чиїхось увагу." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/dojo4/archive/:id">
-    <meta property="site:params" content="{'ext':null,'id':'friday-question'}">
-    <meta property="site:path_info" content="/friday-question">
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"friday-question"}">
+    <meta property="site:path_info" content=""/friday-question"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,126 +72,37 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/friday-question">я ❤️ це!</a>
-      <hr>
-      <strong>/pytannya-po-pyatnytsyakh</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/friday-question">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/friday-question">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2017-06-09</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p>Ось деякі питання, які ми задаємо одне одному в dojo4. <a href="http://dojo4.com/blog/a-bow-and-a-clap">Ми задаємо одне таке питання кожної п'ятниці протягом останніх 6+ років</a> - отже, очевидно, було багато більше питань, ніж наступні, але ось вибірка з 52, на випадок, якщо ви надихаєтесь зробити щось подібне протягом року та потребуєте підказок:</p>
-
-        <ol>
-          <li>Якби ви не були обмежені часом і простором, і могли досліджувати будь-що у всесвіті, що ви б досліджували?</li>
-          <li>Що найбільш несподіване, про що ніхто не знає про вас?</li>
-          <li>Яка одна з ваших улюблених сімейних традицій?</li>
-          <li>Якби ви могли взяти з собою лише одну річ у подорож, що це було б?</li>
-          <li>Який навик з рук ви б хотіли розвинути?</li>
-          <li>Як ви справляєтеся з відволіканням?</li>
-          <li>Який найкращий концерт, на якому ви були?</li>
-          <li>Хто був вашою першою особою, яку ви цілували?</li>
-          <li>Що останнє ви зробили, щоб допомогти випадковому незнайомцю?</li>
-          <li>За що ви подячні сьогодні, але ще не мали можливості подякувати?</li>
-          <li>Яке одне з ваших улюблених місць у світі?</li>
-          <li>Якщо б ваше життя було повітряною кулею, і ви могли кинути щось за борт, щоб вона пливла успішніше, що б ви викинули?</li>
-          <li>Яким був ваш перший альбом?</li>
-          <li>Яке одне з ваших улюблених творів мистецтва та чому?</li>
-          <li>Яка звичка у вас є, від якої ви б хотіли позбутися або змінити?</li>
-          <li>Що найнебезпечніше ви робите?</li>
-          <li>Що допомагає вам увійти в стан потоку?</li>
-          <li>Яка ваша найперша спогад?</li>
-          <li>Що вам найбільше подобається в цьому сезоні?</li>
-          <li>Що ви хотіли б зробити до кінця цього року?</li>
-          <li>Як ви справляєтеся з розчаруванням?</li>
-          <li>Який у вас незвичайний навик або талант?</li>
-          <li>Що ви любите готувати та робити добре?</li>
-          <li>Що ви б хотіли вміти готувати?</li>
-          <li>Якби ви не були тут зараз, де ви б були замість цього?</li>
-          <li>Яка ваша найцінніша порада щодо подорожей?</li>
-          <li>Яке одне з ваших улюблених місць у світі?</li>
-          <li>Що найбільш винагороджувальне або складне для вас у житті в громаді?</li>
-          <li>Як ви переживаєте магію в своєму житті?</li>
-          <li>Ігноруючи всі практичні обмеження, якби ви могли провести рік, займаючись будь-якою благодійною діяльністю, що це було б?</li>
-          <li>Що найбільш несподіване/неочікуване в вашому житті?</li>
-          <li>Чи маєте ви хороший детектор лайна, і якщо так, як він працює?</li>
-          <li>Яка фраза, яку ви б хотіли чути частіше? І яка фраза, яку ви б хотіли казати частіше?</li>
-          <li>Який з органів чуття ви найбільше прив'язані та чому?</li>
-          <li>Що ви сказали занадто пізно?</li>
-          <li>Як виглядала типова п'ятниця чи субота ввечері для вас, коли вам було близько 16 років?</li>
-          <li>Де ви стоїте в лінії братів і сестер (старший, молодший, середній, єдиний тощо) і як ви вважаєте, що це вплинуло на вас як на людину?</li>
-          <li>Якби ви мали дати лекцію TED, про що б це було?</li>
-          <li>Якби ви могли прожити один рік свого життя знову, який рік (вік) це був би?</li>
-          <li>Який навик, якого ви зараз не маєте, ви б хотіли розвинути для життя після апокаліпсису?</li>
-          <li>З навичками, які ви маєте зараз, якою б була ваша кар'єра після апокаліпсису?</li>
-          <li>Який виконавчий наказ ви б дали, якби ви були президентом країни?</li>
-          <li>Коли ви стрес, тривога, депресія тощо, чи ви відволікаєте себе, чи це робить гірше? Якщо ви відволікаєте себе, що ви робите, що працює?</li>
-          <li>Який найдовший час ви коли-небудь проводили без розмови? Який був контекст?</li>
-          <li>Чи плануєте ви найгірші сценарії? Якщо так, то як?</li>
-          <li>Яка ваша улюблена поверхня для ходьби босиком?</li>
-          <li>Як ви виправдовуєте свої найгірші звички?</li>
-          <li>Що спровокувало ваш останній сміх?</li>
-          <li>Як близько ви коли-небудь були до смерті?</li>
-          <li>Що ви знаєте зараз, чого б ви хотіли знати, коли були підлітком?</li>
-          <li>З усіх ваших матеріальних благ, від чого б вам було найважче відмовитися?</li>
-          <li>На честь кого ви названі?</li>
-        </ol>
-
-        <p>Ось контекст… Це п'ятниця опівдні. Ми стоїмо в колі. Ми <a href="https://media.giphy.com/media/MUeQeEQaDCjE4/giphy.gif">кланяємося</a>. Ми <a href="http://clap.resn.co.nz/">плескаємо</a>. Ми робимо хвилину <a href="http://sitillustrated.com/images/snore-top-meditator-meditation-cartoon.gif">тихої медитації</a>. Один хтось задає питання, яке допомагає нам краще пізнати та зрозуміти одне одного. Були легкі питання та важкі питання, зворушливі питання та смішні питання. Ми використовуємо вказівки <a href="http://www.centerforcouncil.org/what-is-council.html">ради</a> як каркас для відповіді на питання:</p>
-
-        <ul>
-          <li>говоріть від серця</li>
-          <li>слухайте повністю</li>
-          <li>будьте спонтанні</li>
-          <li>будьте короткі</li>
-          <li>все конфіденційно</li>
-        </ul>
-
-        <p>І ми сигналізуємо кінець плесканням і поклоном, а потім ми всі разом обідаємо.</p>
-
-        <p>Ми робимо це кожен тиждень, чи нас двоє, чи дванадцятеро. Ми робимо це з гостями. Ми робимо це, коли ми зайняті, чи ні. Це частина того, як ми подолали неминучу морську хворобу, яка йде разом із хвилями та спадами малого бізнесу. Без сумніву, це зробило нас кращим бізнесом.</p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/friday-question">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; ежект</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Ось деякі питання, які ми ставили один одному в dojo4. <a href="http://dojo4.com/blog/a-bow-and-a-clap">Ми ставили один одному одне таке питання кожну п'ятницю протягом останніх 6+ років</a> -

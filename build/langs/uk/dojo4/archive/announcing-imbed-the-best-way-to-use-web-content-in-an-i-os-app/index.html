@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Анонсуємо Imbed - найкращий спосіб використовувати веб-контент в iOS-додатку</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуй йти" />
+<meta property="og:title" content="Анонсуємо Imbed - найкращий спосіб використовувати веб-контент в iOS-додатку"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,9 +72,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -78,68 +90,15 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">🖤</a>
+</small>
 <hr>
-<strong>/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app</strong>
     </header>
 
     <main>
-      <em>опубліковано: 2013-10-24</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p>Багато разів має сенс виконувати деяку розробку в HTML, JS та CSS, а потім використовувати цей контент у нативному додатку. Phonegap стверджує, що є найкращим рішенням для цього випадку, але з <a href="http://dojo4.com/blog/why-phonegap-sucks">мого досвіду</a> це одне з найгірших.</p>
-
-<p>У відповідь на Phonegap я відкрив код нашого стартового репозиторію для iOS-додатків, які потребують використання веб-контенту в UIWebView, назвавши його <a href="https://github.com/dojo4/imbed">Imbed</a>.</p>
-
-<p>Особливості:</p>
-
-<ul>
-  <li>
-    <p><strong>Малий та відкритий код.</strong> Один UIViewController, один HTML-файл та супер малий, 1 клас, проект з відкритим кодом <a href="https://github.com/marcuswestin/WebViewJavascriptBridge">WebViewJavascriptBridge</a>.</p>
-  </li>
-  <li>
-    <p><strong>Підтримка будь-якої функції iOS одразу.</strong> Не потрібно чекати, поки якийсь сторонній розробник створить плагін. Ви пишете нативний код Objective-C самостійно. Тому, як тільки Apple випустить щось нове, ви зможете його підтримувати.</p>
-  </li>
-  <li>
-    <p><strong>Слідуйте порадам Apple, а не комусь іншому.</strong> Apple чудово документує, як використовувати функції iOS. Більшість сторонніх розробників цього не роблять. Кого ви хотіли б слухати?</p>
-  </li>
-  <li>
-    <p><strong>Автоматизуйте все з Rake.</strong> Зосередьтеся на написанні свого коду, тестуванні його в браузері, а потім автоматизуйте все інше в чіткому файлі Rake з відкритим кодом. Навіть архівуйте, відправте на Testflight та сповіщте Campfire.</p>
-  </li>
-</ul>
-
-<p>Це ваш додаток. Не покладайтеся на інструмент стороннього розробника для підтримки функцій, які вже пропонує iOS. Візьміть свій код за роги.</p>
-
-<p><a href="https://github.com/dojo4/imbed/archive/master.zip">Завантажте Imbed</a> зараз.</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <em>опубліков

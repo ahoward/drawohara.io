@@ -7,7 +7,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
@@ -40,11 +40,11 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>ара.т.ховард</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="йдіть далі." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="ара.т.ховард"/>
+    <meta property="og:description" content="моє внутрішнє складається з зовнішнього. я кусую." />
+    <meta property="og:image" content="https://drawohara.io/ro/pages/about/assets/og.jpeg" />
 
     <meta property="og:image:type" content="image/jpeg" />
 
@@ -56,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,7 +87,13 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/about">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/about">🖤</a>
+      </small>
       <hr>
     </header>
 
@@ -83,64 +101,7 @@
       <div class="ro markdown">
         <p>це та частина, яку я ненавиджу. писати про себе.</p>
 
-        <p>я почну з початку:</p>
+        <p>почну з початку:</p>
 
         <ul>
-          <li>виріс у <a href="https://photos.app.goo.gl/3aa3Fkwe9EyQg7kf6">Алясці</a>, 4-те покоління ірландських людей, був <em>тут і там</a> останні кілька років</li>
-          <li>мандрував планетою, змагаючись на велосипедах та лижах. це було до появи телефонів, GPS або цифрових камер.</li>
-          <li>заснував сім'ю у Боулдері</li>
-          <li>досліджував <a href="https://independent.academia.edu/arahoward">життя на Землі з космосу</a> протягом приблизно десятиліття</li>
-          <li>написав <a href="https://github.com/ahoward">тонну програмного забезпечення</a>, деяке з якого <a href="https://www.linuxjournal.com/article/7922">я навіть пишаюся</a></li>
-          <li>заснував, побудував та керував <a href="/dojo4">dojo4</a> майже рівно десятиліття</li>
-          <li>виступав про небезпеку великих технологій та відповідальність розробників програмного забезпечення в <a href="https://www.youtube.com/watch?v=sKNENzPpSrA">Києві 2015 року</a></li>
-          <li>наставляв десятки стартапів, працював із та для більш ніж сотні</li>
-          <li>2020 // COVID // масові зміни в житті. як і всіх інших.</li>
-          <li>відповідно, багато <a href="https://photos.app.goo.gl/ZLLWKpux5jns3JUH9">гори</a></li>
-          <li>як-небудь вдалося загубитися на <a href="https://photos.app.goo.gl/rnSLBr9MoWMHv1zx6">Південному Заході в 42-й раз у моєму житті</a></li>
-          <li>почав <a href="https://photos.app.goo.gl/wMDwwuFamRWWgZiu6">їздити на велосипеді до Аляски</a></li>
-          <li>познайомився з дівчиною в <a href="https://photos.app.goo.gl/MpSigk5BJwqeouiUA">LA</a></li>
-          <li><a href="https://photos.app.goo.gl/F2Tsji1aHHzKRnVF8">майже помер у льодовій печері</a></li>
-          <li>працюю над <a href="https://syntheticecho.com">новою компанією</a> та <a href="https://photos.app.goo.gl/ikwjrYWBXEvFbwbx7">їзжу на велосипеді з ламаною ногою</a> з того часу</li>
-        </ul>
-
-        <p>цей сайт <em>абсолютно</em> у роботі…, тому заходьте знову або просто <a href="contact">зв'яжіться</a> зі мною, якщо ви запитуєте <em>що за чорт</em>?</p>
-
-        <blockquote>
-          <p>нудьгуєш: 🐼 ?</p>
-        </blockquote>
-
-        <p><a href="https://letmegooglethat.com/?q=what+does+iff+mean">якщо</a> ви схильні, ви можете стежити за божевіллям тут -&gt;</p>
-
-        <ul>
-          <li><a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward/drawohara.io</a></li>
-          <li>тут <a href="https://bsky.app/profile/drawohara.io">https://bsky.app/profile/drawohara.io</a></li>
-          <li>або тут -&gt; <a href="https://www.instagram.com/drawohara">https://www.instagram.com/drawohara</a></li>
-          <li>або навіть тут (ssssshhhhhhh) -&gt; <a href="https://syntheticecho.com">https://syntheticecho.com</a></li>
-        </ul>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-love-this@drawohara.io?subject=/about">i ❤️  this^</a>
-          </li>
-          <li>
-            <a href="mailto:i-hate-that@drawohara.io?subject=/about">i 🖤 ^that</a>
-          </li>
-          <li>
-            <a href="/about">нарцисизм</a>
-          </li>
-          <li>
-            <a href="/now">tl;dr;</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+          <li>виріс у <a href="https://photos.app.goo.gl/3aa3Fkwe9EyQg

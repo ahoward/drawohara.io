@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -38,13 +38,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <base href='/langs/uk' />
-
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Проста стратегія управления складними розгортуваннями веб-додатків</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Проста стратегія управления складними розгортуваннями веб-додатків"/>
+<meta property="og:description" content="переходьте далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -60,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -67,68 +72,34 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">🖤</a>
+</small>
 <hr>
-<strong>/a-simple-strategy-for-managing-complex-deployments-of-web-applications</strong>
     </header>
 
     <main>
       <em>опубліковано: 2012-08-09</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p>Розгортання веб-додатків є складним з самого початку. Зазвичай починають хоча б з етапів тестування та виробництва. Додайте до цього багатокористувацькі конфігурації, конфігурації для інтеграції зі сторонніми сервісами, такими як аутентифікація Facebook або Salesforce, конфігурації для хмарного сховища та мереж постачання контенту, середовища для безперервної інтеграції, багатоклієнтське темування, конфігурації SSL, конфігурації віртуальних хостів, конфігурації збірки для фронтендів JS, конфігурації фонових завдань, конфігурації обробки завантажень, список можна продовжувати... комбінаторний вибух.</p>
-
-<p>У dojo4 ми маємо стек веб-додатків на основі Rails і використовуємо Multistage Capistrano для розгортання на вузлах AWS EC2. Ми знайшли просту стратегію для управління великою різноманітністю конфігураційних та вимог до розгортання, з якими нас зіткнули наші клієнти. Стратегія включає завдання rake, яке використовує змінну середовища RAILS_STAGE на основі етапу Capistrano Multistage. Ми налаштовуємо структуру файлів для конфігурацій, специфічних для розгортання, у repo_root/config/deploy/files/RAILS_STAGE, яка структурована ідентично файловій системі вихідного репозиторію. Під час розгортання cap, до посилань або процесів збірки, завдання rake рекурсивно копіює repo_root/config/deploy/files/RAILS_STAGE у repo_root.</p>
-
-<p>Ми виявили, що ця стратегія дуже ефективно допомагає утримувати складні конфігурації розгортання організованими в такий спосіб, який легко зрозуміти та не додає багато додаткової складності до вже складної архітектури.</p>
-
-<p>Гліст нижче демонструє цю ідею. Спочатку це завдання використовувало різні бібліотеки Rails. Однак мені вдалося виділити залежності Rails, зберігши функціональність завдання, тому ви можете використовувати його з будь-яким стеком додатків.</p>
-
-<p><br /></p>
-
-<script src="https://gist.github.com/3286971.js?file=jobs.rb"></script>
-
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/a-simple-strategy-for-managing-complex-deployments-of-web-applications">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br

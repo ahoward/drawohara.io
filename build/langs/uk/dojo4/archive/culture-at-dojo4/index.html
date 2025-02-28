@@ -7,7 +7,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
@@ -36,14 +36,14 @@
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Культура в dojo4</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
+    <meta property="og:title" content="Культура в dojo4"/>
+    <meta property="og:description" content="їдьмо далі." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
     <meta property="og:image:type" content="image/jpeg" />
@@ -56,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,10 +87,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/culture-at-dojo4">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/culture-at-dojo4">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/culture-at-dojo4">🖤</a>
+      </small>
       <hr>
-      <strong>/culture-at-dojo4</strong>
     </header>
 
     <main>
@@ -88,52 +104,4 @@
       <div class="ro markdown">
         <p>Культура в dojo4</p>
 
-        <p>TLDR; культура в dojo4 надзвичайно схожа на культуру Swift, цифрового рекламного агентства з Портленда, OR, яке нещодавно отримало похвалу за свою культуру в статті <a href="http://www.forbes.com/sites/ekaterinawalter/2014/02/11/revenue-is-this-quarter-culture-is-the-future/">Forbes.</a></p>
-
-        <p>Вертикально проводячи пальцем по екрану свого iPhone у сталому бездумному ритмі, дивлячись на безкінечний скрол (тобто пролистуючи свій Twitter після того, як моя 7-місячна дочка нарешті заснула), я натрапив на статтю, яка хвалила корпоративну культуру цифрового рекламного агентства в Портленді, Орегон, <strong><em>Swift</em></strong>, яка порушила мою гіпнотичну транс. Мене вразили дві речі: (1) культура в Swift здавалася свіжою, органічною, що виникла з реального життєвого досвіду засновників та їхніх співробітників, а не з чужої моделі, яка виникла в теоретичному вакуумі, і (2) багато речей, які вони визначили як життєво важливі для їхньої культури, є тими, що dojo4 робить природно. Такі як...</p>
-
-        <p><strong>Створіть фізичне середовище, що сприяє співпраці</strong></p>
-
-        <p>dojo4 спочатку задумувався як спільний офіс та бізнес. Після того, як вони переорієнтувалися на консалтингову/сервісну компанію з кодування та дизайну, вони зберегли співпрацю, залишивши: політику відкритих дверей, створюючи та проводячи заходи для спільноти, і не маючи призначених місць в офісі.</p>
-
-        <p><strong>Встановіть традиції</strong></p>
-
-        <p>Крім регулярних заходів, які dojo4 проводить для спільноти, вони також обідають разом по п'ятницях, проводять медитацію уважності/свідомості та йогу. Вони починають і закінчують свої стоячі зустрічі та інші зустрічі з поклоном і оплесками, наслідуючи тему бойових мистецтв доджо та вводячи практику з медитаційного досвіду співвласника/COO Корі Коун (прочитайте її <a href="http://dojo4.com/blog/a-bow-and-a-clap">блог</a>, та блог Бреда Фельда <a href="http://www.feld.com/wp/archives/2014/02/bow-bow.html">на ту саму тему</a>).</p>
-
-        <p><strong>Усвідомте, що робоча сім'я - не єдина сім'я</strong></p>
-
-        <p>У статті згадується, що можна приводити собак на роботу, що члени сімей співробітників можуть приходити і йти протягом дня, і що Swift покриває 100% витрат на медичне страхування кожного співробітника. dojo4 також робить все це та більше. У них є щомісячні масажі крісел, відкритий рахунок у <a href="http://www.boxcarcoffeeroasters.com">Boxcar Coffee Roasters</a>, чудова політика щодо відпусток по материнству <strong><em>та</em></strong> батьківству, серед інших пільг.</p>
-
-        <p>У статті згадувалися ще чотири практики: (1) визначте свої цінності та поставте їх на перше місце, (2) робіт без обману, (3) включіть тренінг лідерства та зворотний зв'язок, і (4) дозвольте собі бути вибагливими, коли берете нову роботу. Усі ці речі відбуваються в менш визначених способах і в dojo4, і разом з моїм бізнес-партнером Семом Елмором (тсс... оголошення очікується) ми зараз співпрацюємо з командою, щоб допомогти надати їм більше форми.</p>
-
-        <p>Такі компанії мене дуже надихають. Вони грають у довгу гру; усвідомлюючи, що те, що добре для всієї людини, добре для бізнесу та добре для світу.</p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/culture-at-dojo4">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/зараз<a>
-          </li>
-          <li>
-            <a href="/about">/про нас<a>
-          </li>
-          <li>
-            <a href="/contact">/контакти<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+        <p>TLDR; культура в dojo4 замічно схожа на Swift,

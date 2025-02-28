@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,13 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>нічого немає тут.</title>
+    <title>CSS3 Горизонтальні лінії</title>
 
-<meta property="og:title" content="нічого немає тут."/>
-<meta property="og:description" content="йди далі." />
+<meta property="og:title" content="CSS3 Горизонтальні лінії"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"css3-horizontal-rules"}">
@@ -55,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,60 +72,37 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/css3-horizontal-rules">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/css3-horizontal-rules">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/css3-horizontal-rules">🖤</a>
+</small>
 <hr>
-<strong>/css3-horizontal-rules</strong>
     </header>
 
     <main>
       <em>опубліковано: 2012-01-18</em>
 <br>
 <br>
-<p>Нещодавно я займався стилями для "коротких історій" на моєму особистому сайті, який я вирішив переробити, перейшовши з WordPress на Octopress і GitHub—пост про цей досвід скоро!</p>
-<p>В будь-якому випадку, короткі історії зазвичай довгі (як блогові записи), тож я хотів надати авторам легкий спосіб включити наголошені, семантичні розділи розділів. Проста горизонтальна лінія <code>&lt;hr&gt;</code> здається правильним рішенням, особливо тому, що <a href="http://daringfireball.net/projects/markdown/syntax" class="darkTxt" target="_blank">Markdown</a> робить їх такими легкими для включення—просто додайте <code>***</code> на новому рядку.</p>
-<p>Більшість браузерів відображають тег <code>&lt;hr&gt;</code> як вставну рамку—фактично темну лінію, поєднану безпосередньо з більш світлою лінією. Але це не набагато цікавіше, ніж одна з <a href="/#Ara" class="darkTxt" target="_blank">Ариних</a> двохгодинних лекцій про історію та переваги вітряних трусиків у сільській Алясці.</p>
-<p>Тож я розшукав інтернет у пошуках сексуальніших рішень і натрапив на надто знайомий сайт: <a href="http://css-tricks.com/simple-styles-for-horizontal-rules/" class="darkTxt" target="_blank">CSS Tricks від Кріса Койєра</a>.</p>
-<p>Попередження: оскільки ці стилі використовують псевдоелементи <code>:after</code> і <code>:before</code>, IE7 і нижче не дуже добре їх відображають. Тож вам, можливо, доведеться трохи попрацювати над специфічними для IE стилями. Або ви можете вирішити зайнятися чимось більш цінним своїм часом.</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/css3-horizontal-rules">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>Нещодавно я розробляв стилі для постів "короткої історії" на своєму особистому сайті, який вирішив переробити, перейшовши з WordPress на Octopress і GitHub - про це досвід буде написано згодом!</p>
+<p>У

@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,23 +39,32 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Схема процесу лінгвеїстичного розвитку</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Схема процесу лінгвеїстичного розвитку"/>
+<meta property="og:description" content="рухайте вперед." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
 
-<meta property="og:image:type" content="image/jpeg" />
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"lean-development-process-sketch"}">
     <meta property="site:path_info" content=""/lean-development-process-sketch"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -65,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -77,42 +90,18 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/lean-development-process-sketch">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/lean-development-process-sketch">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/lean-development-process-sketch">🖤</a>
+</small>
 <hr>
-<strong>/lean-development-process-sketch</strong>
     </header>
 
     <main>
       <em>опубліковано: 2011-08-22</em>
 <br>
 <br>
-<p><img src='/ro/dojo4/lean-development-process-sketch/assets/leandevelopment-.png' title="Lean Development " alt="Lean Development " rel="450x450" width="450" height="342" /></p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/lean-development-process-sketch">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p><img src='/ro/dojo4/lean-development-process-sketch/assets/leandevelopment-.png' title="Процес лінгвеїстичного розвитку " alt="Процес лінгвеїстичного розвитку " rel="450x450" width="450

@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>нічого не побачити тут.</title>
+    <title>привіт привіт! moshimoshico все про будівництво продуктів</title>
 
-<meta property="og:title" content="нічого не побачити тут."/>
-<meta property="og:description" content="іди далі." />
+<meta property="og:title" content="привіт привіт! moshimoshico все про будівництво продуктів"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,9 +72,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -78,60 +90,17 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/hello-hello-moshimoshico-is-all-about-building-broducts">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/hello-hello-moshimoshico-is-all-about-building-broducts">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/hello-hello-moshimoshico-is-all-about-building-broducts">🖤</a>
+</small>
 <hr>
-<strong>/hello-hello-moshimoshico-is-all-about-building-broducts</strong>
     </header>
 
     <main>
       <em>опубліковано: 2014-05-07</em>
 <br>
 <br>
-<div class="ro markdown">
-  <p>І <a href="http://dojo4.com/fun/moshi-moshi-co">експеримент</a> продовжується!</p>
-
-<p>Ідея полягає в тому:</p>
-<ul>
-  <li>будувати багато продуктів швидко та ітеративно</li>
-  <li>не прив'язуватися до одного продукту, а рухатися плавно та швидко закривати проєкти, якщо вони не є міцними</li>
-  <li>оптимізувати технічні надмірності в різних продуктах</li>
-  <li>будувати продукти, які справді корисні та не завдають шкоди</li>
-  <li>будувати продукти для реальних, живих людей</li>
-  <li>тяжіти до простих та прибуткових бізнес-моделей</li>
-  <li>єдинороги</li>
-</ul>
-
-<p>Ми збираємося випустити <a href="http://gomoshimoshi.com/">ще один продукт</a> цього тижня – чекайте на оголошення про запуск. Після цього ми виберемо наш наступний проєкт, щоб розпочати наступного тижня. Частина нашого процесу – <a href="http://gomoshimoshi.com/ideas.html">збирати ідеї</a> від вас, читачів. Це не крадіжка, тому що ви даєте їх нам і бачите, як ми їх реалізуємо. (Якщо ви хочете бути більш залученими, ніж просто давати нам свою блискучу ідею, дайте нам знати, і ми вас почуємо.)</p>
-
-<p>Наразі процес moshimoshico йде добре. Ми будуємо продукти. Ми веселимося. І ми скоро почнемо публікувати про це більше (і регулярніше)...</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/hello-hello-moshimoshico-is-all-about-building-broducts">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>

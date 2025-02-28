@@ -1,0 +1,270 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <base href='/langs/sv' />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>inget att se här.</title>
+
+<meta property="og:title" content="inget att se här."/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"another-quiz"}">
+    <meta property="site:path_info" content=""/another-quiz"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/another-quiz">jag ❤️ det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/another-quiz</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2013-06-17</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Jag ställde upp en liten quiz om HTML-formulär idag.</p>
+
+<p>ref: https://gist.github.com/ahoward/98591ebc9113bea1cf02</p>
+
+<div class="language-html highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #6e7781">&lt;!--</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">    fork detta. Använd inte internet. Ta &lt; 10 minuter för att hitta minst 10</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781">    distinkta fel på detta formulär. Skicka ditt svar i kommentarsfältet i</span>
+</div><div class='code-line code-line-6'><span style="color: #6e7781">    din fork och maila mig (ara[at]dojo4.com) URL:en.</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'><span style="color: #6e7781">  --&gt;</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;<span style="color: #116329">&lt;form</span>&nbsp;<span style="color: #116329">method=</span><span style="color: #0a3069">'DELETE'</span>&nbsp;<span style="color: #116329">ACTION=</span><span style="color: #0a3069">'./'</span>&nbsp;<span style="color: #116329">enctype=</span><span style="color: #0a3069">"multipart/file-upload"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>&nbsp;tags&nbsp;<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-15'>
+</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'text'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'tags'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'bar'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+</div><div class='code-line code-line-19'>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;label</span>&nbsp;<span style="color: #116329">for=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>Foo:&nbsp;<span style="color: #116329">&lt;/label&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'foo'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;label&gt;</span>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bar:&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'bar'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/label&gt;</span>
+</div><div class='code-line code-line-25'>
+</div><div class='code-line code-line-26'>
+</div><div class='code-line code-line-27'>
+</div><div class='code-line code-line-28'>
+</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'email'</span>&nbsp;<span style="color: #116329">readonly</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'password'</span>&nbsp;<span style="color: #116329">disabled=</span><span style="color: #0a3069">disabled/</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-31'>
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'file'</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'.bashrc'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-33'>
+</div><div class='code-line code-line-34'>
+</div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Kön<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"radio"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"sex"</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'male'</span><span style="color: #116329">&gt;</span>Male<span style="color: #116329">&lt;/option&gt;</span>
+</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'female'</span><span style="color: #116329">/&gt;</span>
+</div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/input&gt;</span>
+</div><div class='code-line code-line-41'>
+</div><div class='code-line code-line-42'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;fieldset&gt;</span>
+</div><div class='code-line code-line-43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;legend&gt;</span>Transport<span style="color: #116329">&lt;/legend&gt;</span>
+</div><div class='code-line code-line-44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Bike"</span><span style="color: #116329">&gt;</span>Jag&nbsp;har&nbsp;en&nbsp;cykel<span style="color: #116329">&lt;br&gt;</span>
+</div><div class='code-line code-line-45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;input</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">"checkbox"</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">"vehicle"</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">"Car"</span><span style="color: #116329">&gt;</span>Jag&nbsp;har&nbsp;en&nbsp;bil&nbsp;
+</div><div class='code-line code-line-46'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+</div><div class='code-line code-line-47'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/fieldset&gt;</span>
+</div><div class='code-line code-line-48'>
+</div><div class='code-line code-line-49'>
+</div><div class='code-line code-line-50'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;select</span>&nbsp;<span style="color: #116329">name=</span><span style="color: #0a3069">'web-develop-skilz'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-51'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'A'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-52'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'B'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-53'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'C'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-54'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'D'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-55'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;option</span>&nbsp;<span style="color: #116329">value=</span><span style="color: #0a3069">'F'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-56'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;/select&gt;</span>
+</div><div class='code-line code-line-57'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-58'>
+</div><div class='code-line code-line-59'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;hr&gt;</span>
+</div><div class='code-line code-line-60'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #116329">&lt;button</span>&nbsp;<span style="color: #116329">type=</span><span style="color: #0a3069">'submit'</span><span style="color: #116329">&gt;</span>
+</div><div class='code-line code-line-61'>&nbsp;&nbsp;<span style="color: #116329">&lt;/form&gt;</span>
+</div><div class='code-line code-line-62'>
+</div></code></div>
+
+<p>Målet med att få människor att skimma detta helt trasiga HTML-formulär var bara att<br />
+se människors tänkgångar med detta: grunden i HTML-gränssnitt</p>
+
+<p>Nedan följer några exempelsvar, grovt grupperade efter kategori, och feedback till dem</p>
+
+<h2 id="fubar-doctype">fubar doctype</h2>
+
+<p>exempelsvar</p>
+
+<ul>
+  <li>Ingen doctype. Det gör det svårt att avgöra vilken variant av HTML det är, vilket bör leda till intressanta svar…</li>
+  <li>
+    <p>Blandar xhtml-stil tomma taggar med HTML-taggar.</p>
+  </li>
+  <li>
+    <p>Ojämn citering. Båda fungerar, välj en gång…</p>
+  </li>
+  <li>rad 1: DELETE är inte en åtgärd som stöds i HTML-formulär:</li>
+  <li>method=delete stöds inte direkt i de flesta/alla? webbläsare.</li>
+  <li>formulär stöder inte delete i äldre webbläsare</li>
+  <li>Metod delete</li>
+  <li>
+    <p>form method=’DELETE’ – det är inte tillåtet</p>
+  </li>
+  <li>enctype=”multipart/form-data” inte enctype=”multipart/file-upload”</li>
+  <li>
+    <p>enc-type=”multipart/file-upload gör ingen mening om vår avsikt är att RADERA</p>
+  </li>
+  <li>textinmatningstaggar i den första fieldset har namnet</li>
+  <li>dubbla “” taggar. Eller två taggar med samma namn igen</li>
+  <li>2 textfält med namnet “tags” endast det sista kommer att användas.</li>
+  <li>Två inmatningar med samma namn ‘tags’. Den andra skulle skriva över värdet för den första.</li>
+  <li>Två inmatningar med namnet ‘foo’ (inte självstängda)</li>
+  <li>textinmatningar med samma namn skulle överskriva re: inmatningar w/ namnet tags</li>
+  <li>dubbla tilldelningar till inmatningsnamnet=’tags’</li>
+  <li>
+    <p>dubbla tilldelningar till inmatningsnamnet=’vehicle’</p>
+  </li>
+  <li>Ingen för på ‘Bar:’ etiketten.</li>
+  <li>
+    <p>obunden etikett: <label>Bar:…</label> (etikett för vad?)</p>
+  </li>
+  <li>
+    <p>readonly inmatning utan värde är meningslöst</p>
+  </li>
+  <li>action=”./” verkar vara dålig praxis för mig</li>
+  <li>
+    <p>formuläraction är ogiltig som en unix filvägsbeskrivning – för att skicka till den aktuella URL:n ta bort åtgärden helt och hållet eftersom det är standard</p>
+  </li>
+  <li>filuppladdning kan inte ha ett värdeattribut (dålig säkerhet)</li>
+  <li>Fieldset nesting</li>
+  <li>filinmatningar tar inte standardvärden – användaren måste välja</li>
+  <li>
+    <p>den väljer automatiskt din ~/.bashrc fil för uppladdning</p>
+  </li>
+  <li>inaktiverad bör ha citattecken runt den (och en dålig blandning av enkla och dubbla citattecken genom hela)</li>
+  <li>Oslutna alternativ för select nedrullningsbar menad och ingen inkluderad text</li>
+  <li>
+    <p>saknade citattecken runt inaktiverade attribut i felaktig lösenordsinmatningsdeklaration</p>
+  </li>
+  <li>Ingen typ på lösenordsfältet (inte heller på e-postfältet, men mindre viktigt där)</li>
+  <li>lösenordsinmatning bör vara av typen lösenord</li>
+  <li>
+    <p>det bör vara &lt;input type=’email’ name=’email’ …&gt;</p>
+  </li>
+  <li>
+    <p>inaktiverad=inaktiverad bör vara inaktiverad</p>
+  </li>
+  <li>Ingen text för kvinnligt alternativ, eller radioknapp för ‘Kön’ radioknappar, radioknappar inte uppställda korrekt för värdesubmission / växling i grupp. Det är bara allt dåligt i det området.</li>
+  <li>fieldset “sex” radioknappar är inte konstruerade korrekt. bör vara Male – taggar används med select listor inte radioknappar. Alla radioknappar i en grupp behöver samma namnattribut</li>
+  <li>
+    <p>radioknappar tar inte alternativ, men bör i stället ha samma namn w/ olika värden</p>
+  </li>
+  <li>knappar måste öppnas och stängas – submit bör vara en inmatning i stället</li>
+  <li>kryssrutor med samma namn skulle överskriva re: kryssrutainmatningar w/ namnet vehicle</li>
+</ul>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/another-quiz">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/om<a>
+  </li>
+  <li>
+    <a href="/contact">/kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

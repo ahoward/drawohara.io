@@ -1,14 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
-
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -41,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>&#39;лідерство: ми зробили це самі&#39;</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="рухайтесь далі." />
+<meta property="og:title" content="&#39;лідерство: ми зробили це самі&#39;"/>
+<meta property="og:description" content="MOVE ALONG." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -53,12 +51,19 @@
   <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"leadership-we-did-it-ourselves"}">
-    <meta property="site:path_info" content=""/leadership-we-did-it-ourselves"">
+    <meta property="site:params" content="{"ext":null,"id":"лідерство-ми-зробили-це-сами"}">
+    <meta property="site:path_info" content=""/лідерство-ми-зробили-це-сами"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -67,22 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/leadership-we-did-it-ourselves">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/лідерство-ми-зробили-це-сами">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/лідерство-ми-зробили-це-сами">🖤</a>
+</small>
 <hr>
-<strong>/leadership-we-did-it-ourselves</strong>
     </header>
 
     <main>
@@ -90,53 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p><em>Поганий лідер: люди бояться.<br />
-Хороший лідер: люди люблять.<br />
-Великий лідер: люди кажуть, “ми зробили це самі.”<br />
--Сун Цзи</em></p>
-
-<p><img src='/ro/dojo4/leadership-we-did-it-ourselves/assets/b.png' alt="SunTzu.png" /></p>
-
-<p>Ми <a href="http://dojo4.com/blog/friday-question">задаємо один одному питання кожної п'ятниці в dojo4</a>. Це допомагає нам краще розуміти себе та один одного. Нещодавно питання було: що робить лідера зразковим? Це питання починає досліджувати суть того, що таке лідерство. Що означає бути лідером? Як ми можемо ефективно керувати не тільки іншими, але й собою. Я вважаю, що відповіді, зібрані для нашої різноманітної команди, варті уваги:</p>
-
-<p>Зразковий лідер…</p>
-
-<ul>
-  <li>має бездоганну етику.</li>
-  <li>випромінює спокій в центрі бурі.</li>
-  <li>це той, хто не мотивований бажанням бути полюбленим або страхом бути ненависним.</li>
-  <li>розуміє, що є одна гора, але багато шляхів.</li>
-  <li>має цілісність і здатність тримати курс перед обличчям труднощів.</li>
-  <li>може ефективно пояснити причини прийнятого рішення.</li>
-  <li>зробить найбруднішу роботу.</li>
-</ul>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/leadership-we-did-it-ourselves">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p><em>Поганий лідер: люди

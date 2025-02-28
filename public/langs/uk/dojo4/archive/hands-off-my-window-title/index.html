@@ -1,12 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+  <!--.ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,11 +39,14 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Від鑛иjte моїй вікні!</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="йди далі." />
+<meta property="og:title" content="Від鑛иjte моїй вікні!"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
 
   <meta property="og:image:type" content="image/jpeg" />
 
@@ -55,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,70 +72,36 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/hands-off-my-window-title">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/hands-off-my-window-title">🖤</a>
+</small>
 <hr>
-<strong>/hands-off-my-window-title</strong>
     </header>
 
     <main>
       <em>опубліковано: 2011-11-29</em>
 <br>
 <br>
-<p>Тож я нещодавно зайшов по ssh на новий блискучий сервер Ubuntu 11.10 на EC2 і помітив кілька нових речей. По-перше, Ubuntu, здається, увімкнула конфігурацію мультиплексора терміналу <a href="https://help.ubuntu.com/11.10/serverguide/C/byobu.html">byobu</a> за замовчуванням. Це виглядає потенційно корисно, але, як і у випадку з <a href="https://github.com/robbyrussell/oh-my-zsh">Oh my zsh</a>, я не відчуваю мотивації опановувати це зараз. Вимкнути byobu можна за допомогою простої команди <code>byobu-disable</code>, що, досить несподівано, повністю завершить ваш сеанс, вийде з системи та закриє ваш ssh сеанс. Але в наступний раз ви отримаєте звичайний сеанс замість byobu/screen сеансу.</p>
-
-<p>Тепер одне, що я помітив і нарешті вирішив "дослідити" (а це означає запитати більш розумних людей у твітер) і виправити, було те, що коли я підключався по ssh, назва вікна в моїй вкладці iTerm2 динамічно змінювалася з того, що я ретельно встановив ("asset pipeline") на надзвичайно некорисне "ubuntu@ip-10-11-12-13". В деяких нехмарних ситуаціях, коли сервер має зрозуміле ім'я хоста, це може бути корисно, але розрізняти десятки серверів за їх внутрішнім IP-адресою EC2 мені не подобається. Початкове дослідження вказувало на мої змінні середовища <code>PROMPT</code> або <code>PROMPT_COMMAND</code>, але жодна з них не була встановлена. Я прочитав <a href="http://www.ibm.com/developerworks/linux/library/l-tip-prompt/">цю статтю DeveloperWorks</a> і знайшов відповідальний код у файлі <code>~/.bashrc</code>. Ось відповідний уривок.</p>
-
-<pre><code># Якщо це xterm встановіть назву на user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-</code></pre>
-
-<p>Тож ви можете закоментувати той рядок, який змінює <code>PS1</code>, якщо вам подобається власна вручну встановлена назва вікна.</p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/hands-off-my-window-title">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>Останнім часом я під'єднався до нового сервера Ubuntu 11.10 на EC2 і помітив декілька нових речей. По-перше, Ubuntu включив конфігурацію термінального мультиплексера <a href

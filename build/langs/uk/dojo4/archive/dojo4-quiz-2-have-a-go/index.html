@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,21 +39,32 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>! &#39;додзьо4 квіз #2.  спробуйте.&#39;</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="пройдіть далі." />
+<meta property="og:title" content="! &#39;додзьо4 квіз #2.  спробуйте.&#39;"/>
+<meta property="og:description" content="рушайте далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"dojo4-quiz-2-have-a-go"}">
     <meta property="site:path_info" content=""/dojo4-quiz-2-have-a-go"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,23 +73,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/dojo4-quiz-2-have-a-go">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-quiz-2-have-a-go">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-quiz-2-have-a-go">🖤</a>
+</small>
 <hr>
-<strong>/dojo4-quiz-2-have-a-go</strong>
     </header>
 
     <main>
@@ -86,34 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <script src="https://gist.github.com/1959341.js?file=quiz-2.txt"></script>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-quiz-2-have-a-go">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <script src="https://gist.github.com/1959341.js?

@@ -1,53 +1,57 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- base -->
+  <base href='/langs/uk' />
+
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>dojo4 стоїть проти раку</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="dojo4 стоїть проти раку"/>
+<meta property="og:description" content="Йди далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"dojo4-stands-up-to-cancer"}">
@@ -57,6 +61,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -64,9 +75,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -76,71 +92,21 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-stands-up-to-cancer">я ❤️ це!</a>
-      <hr>
-      <strong>/dojo4-stands-up-to-cancer</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-stands-up-to-cancer">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-stands-up-to-cancer">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2014-09-03</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p>Ми дзвонимо вам! Dojo4 створює високодоступне, масштабоване та красиве рішення для живого телемарафону Stand Up To Cancer.</p>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Ми викликаємо тебе! Dojo4 створює вдохновляюче рішення для телетону Stand Up To Cancer.</p>
 
-        <p><a href="http://www.standup2cancer.org/">Stand Up To Cancer</a> - це некомерційна організація, яка має на меті збирати кошти та підвищувати обізнаність про дослідження раку. Вона фінансується Фондом розважальної індустрії, тому багато знаменитостей беруть активну участь. Кожні два роки вони проводять телемарафон у прайм-тайм на телебаченні та на кількох мережах у США та Канаді, який збирає сотні мільйонів доларів. У цьому році <a href="http://su2c.standup2cancer.org/press_release/view/hollywood_stars_align_for_su2c_telecast_new_were_calling_you_campaign">їхній телемарафон відбудеться 5 вересня 2014 року о 20:00 за східним та тихоокеанським часом / 19:00 за центральним часом</a> практично на кожному каналі!</p>
-
-        <p><img src='/ro/dojo4/dojo4-stands-up-to-cancer/assets/b.png' alt="Скріншот 2014-09-03 15.01.12.png" /></p>
-
-        <p>Природно, коли Stand Up To Cancer звернулися до нас за допомогою з одним із їхніх сайтів для великого телемарафону, ми з радістю взялися за роботу.</p>
-
-        <h2 id="реєстрація-для-зірки-щоб-зв'язатися-з-вами">Реєстрація для зірки, щоб зв'язатися з вами!</h2>
-
-        <p>Зазвичай на їхньому телемарафоні SU2C має зірок, які відповідають на дзвінки, тому коли люди дзвонять, щоб пожертвувати на дослідження раку, вони мають шанс поговорити зі знаменитістю. У цьому році у них з'явилася ідея дозволити людям зареєструватися, щоб <strong>отримати</strong> дзвінок від зірки.</p>
-
-        <p>Ми розробили та створили для них унікальний додаток, який дозволяє тисячам людей з США та Канади зареєструватися, щоб можливо бути контактованими через телефон, Twitter, Facebook та Instagram їхніми улюбленими зірками. Оскільки це важливий та широко відомий сайт, він просто не може впасти. dojo4 вклала значні зусилля, щоб забезпечити його стабільну роботу, швидке завантаження та гарний вигляд.</p>
-
-        <p>Сайт доступний за адресою <a href="http://werecallingyou.org">werecallingyou.org</a>, і люди дуже збуджені! Подивіться живий розмову у Twitter, використовуючи хештег <a href="https://twitter.com/search?q=%23werecallingyou">#werecallingyou</a>.</p>
-
-        <h2 id="допомога-зіркам-зв'язатися-з-реєстрантами-у-живому-шоу">Допомога зіркам зв'язатися з реєстрантами в живому шоу!</h2>
-
-        <p>Під час їх <a href="http://su2c.standup2cancer.org/press_release/view/hollywood_stars_align_for_su2c_telecast_new_were_calling_you_campaign">живого шоу</a> Кеті Курід вестиме "Цифрову вітальню", де зірки будуть зв'язуватися з людьми, які зареєструвалися, щоб отримати дзвінок, твіт, інстаграм або пост у Facebook. Для цього SU2C попросили dojo4 розробити додаток типу "індексної картки", який дозволив би зіркам отримувати інформацію про людей, до яких вони дзвонять під час шоу, та позначати цих людей як "зв'язалися" після того, як вони подзвонили, написали твіт або інстаграм учасникам. Щоб залишитися у межах просування заходу, ми розширили брендинг шоу на адмін-додаток без ускладнення його завдяки брендингу, який фактично був простим списком "справ".</p>
-
-        <p>"Цифрова вітальня" спонсорується <a href="http://www.samsung.com/">Samsung</a>, тому тестування додатка на останніх пристроях Samsung було обов'язковим. Навчання персоналу SU2C та, в свою чергу, зірок, як користуватися пристроями Samsung, було важливим для плавного проведення живого шоу, тому ми взяли час, щоб написати для них детальний посібник з інструкціями, який містив скріншоти та зображення пристроїв.</p>
-
-        <p>Щоб швидко ітеративно розвиватися, ми зробили додаток "панель управління" статичним сайтом, який можна додати на головний екран через мобільний Chrome. У такому вигляді сайт веде себе як додаток, але дозволяє нам ітеративно та швидко розповсюджувати його, ніж рідний додаток. Це стало критично важливим, оскільки тижні, що передували живому шоу, природно містили багато коригувань. Оскільки це сайт, ми повинні були переконатися, що сайт буде завжди доступним під час живого шоу. Ми використовували CloudFront та підписані URL-адреси S3 (згенеровані додатком на rails), щоб розгорнути приватний контент високодоступним способом. І для початкової фази швидкої ітерації ми використовували функцію захисту паролем на <a href="bitballoon.com">bitballoon</a>.</p>
-
-        <h2 id="підсумок">Підсумок</h2>
-
-        <p>Хоча ми це робили раніше, все ще збудливо та викликово знати, що наша робота буде використовуватися у невідмовному режимі на живих міжнародних телевізійних трансляціях. Stand Up to Cancer - це привілей та радість працювати з ними. Ми дуже пишаємося тим, що можемо допомогти їм у їхній місії лікування раку.</p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-stands-up-to-cancer">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p><a href="

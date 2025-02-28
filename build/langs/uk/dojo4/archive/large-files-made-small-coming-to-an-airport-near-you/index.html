@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,11 +39,14 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>! &#39;Л 킥ки Великі файли стали малими... Зкоро в аеропорту біля вас! &#39;</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="! &#39;Л 킥ки Великі файли стали малими... Зкоро в аеропорту біля вас! &#39;"/>
+<meta property="og:description" content=" продовжуйте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
 
   <meta property="og:image:type" content="image/jpeg" />
 
@@ -51,9 +54,17 @@
     <meta property="site:params" content="{"ext":null,"id":"large-files-made-small-coming-to-an-airport-near-you"}">
     <meta property="site:path_info" content=""/large-files-made-small-coming-to-an-airport-near-you"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,73 +73,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">🖤</a>
+</small>
 <hr>
-<strong>/large-files-made-small-coming-to-an-airport-near-you</strong>
     </header>
 
     <main>
-      <em>опубліковано: 2013-05-31</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p><img src="assets/airplane1980bq30x40in195.jpg" alt="img" /></p>
-
-<p>Останні кілька місяців dojo4 працювала над дуже крутим новим продуктом для нашого клієнта: <a href="http://www.movime.com">MoviMe Networks</a>, який дозволяє авіапасажирам швидко орендувати та завантажувати повнометражні фільми на свої iPad з воріт аеропорту, очікуючи на посадку на свій рейс. Ми раді повідомити, що продукт перейшов у живий бета-тестування в міжнародному аеропорту Чикаго О'Хара!</p>
-
-<p>Ми сподіваємося, що ви запустите свій iPad і спробуєте це під час наступного польоту з або через ORD. Поки ви чекаєте на завантаження свого фільму, ви, можливо, захочете розмірковувати над усіма різними компонентами, які працюють разом, щоб полегшити ваше перегляд фільмів та швидке завантаження. Спочатку система автоматизації завантаження студії отримує гігантські сирі файли фільмів від кіностудій і перекодує їх для ідеального перегляду на iPad. Потім централізована система управління створює продукти в MoviMe Store для цих нових фільмів, які ви можете переглядати та придбати. Також файли фільмів розподіляються до внутрішньої мережі постачання контенту (CDN) в аеропорту, щоб їх можна було завантажити миттєво, перш ніж вам доведеться сідати на свій рейс. Це багато на що звернути увагу за короткий час, який знадобився для завантаження вашого фільму. Можливо, вам слід орендувати ще один, поки ми розповімо про деякі цікаві технічні деталі...</p>
-
-<p>Відеофайли великі. Повнометражна HD-версія фільму займає близько 10GB. Файли, які люди завантажують з iTunes, мають розмір 1-2GB. Відеофайли, які ми використовували для MoviMe, мають розмір близько 1GB.</p>
-
-<p>Розмір цих файлів створив кілька цікавих викликів. Більшість HTTP-бібліотек не призначені для роботи з такими великими файлами. Вони не підходять для пам'яті iPad. Їх важко перемістити. Нам довелося по-іншому думати про роботу з такими файлами, ніж звичайно ми думаємо про зображення та інші медіа. Наше рішення полягало в тому, щоб завантажувати та завантажувати файли фрагментами. Ми закодували плеєр iPad для використання діапазонів байтів при завантаженні файлів фільмів, а потім збирали їх у готові до відтворення файли. Це також вимагало від нас додати підтримку діапазонів байтів до нашого контролера завантажень, а також у <a href="https://github.com/ahoward/mongoid-grid_fs">Mongo gridFs драйвер</a>, щоб ми могли ефективно отримувати частини файлів. Ми використовували багаточастинні завантаження для поштовхування файлів з серверів, які готували фільми для відповідних бакета S3.</p>
-
-<p>Ще однією перевагою роботи з фрагментами файлів було те, що ми могли паралелізувати як завантаження, так і завантаження, щоб зменшити час, необхідний для переміщення файлів. Плеєр iPad може завантажувати до 4 фрагментів паралельно, зменшуючи час, необхідний для завантаження цілого файлу. Ми виявили, що можемо використовувати до 5 одночасних багаточастинних завантажень у бакет S3, щоб зменшити час завантаження для передачі медіафайлів до S3.</p>
-
-<p>Все це, щоб ви могли знайти та завантажити <a href="http://www.youtube.com/watch?v=ZqtNxNRCcGg">ваші улюблені фільми</a> в аеропорту зі швидкістю блискавки та дивитися їх у своєму наступному польоті! Незабаром у <a href="http://www.movime.com/#!airports/c13f3">аеропорту поблизу вас</a>...</p>
-
-<p><strong>цей блог-пост від <a href="http://dojo4.com/team/fred-jean">Фреда Жана</a> та <a href="http://dojo4.com/team/garett-shulman">Гаретта Шульмана</a> та <a href="http://dojo4.com/team/corey-kohn">Корі Кона</a></strong></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/large-files-made-small-coming-to-an-airport-near-you">😩, я 🖤 ^ce!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <em>опубліковано: 2013

@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,21 +39,32 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Я РУ хоробрий 🤖 ⁉️</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте йти." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="Я РУ хоробрий 🤖 ⁉️"/>
+<meta property="og:description" content="Будь ласка, не викрадайте всю мою їжу та не продавайте її мені назад." />
+<meta property="og:image" content="https://drawohara.io/ai.jpeg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/ai"">
     <meta property="site:params" content="{"ext":null}">
     <meta property="site:path_info" content=""/ai"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,90 +73,37 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/ai">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/ai">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/ai">🖤</a>
+</small>
 <hr>
-<strong>/ai</strong>
     </header>
 
     <main>
-      <pre>
+      <div class="ro markdown">
+  <h3 id="my-aitxt">мій <a href="/ai.txt">ai.txt</a></h3>
 
-# Цей веб-сайт забороняє використання будь-якого контенту
-# для цілей навчання AI, включаючи, але не обмежуючись:
-# - Текст
-# - Зображення
-# - Код
-# - Аудіо
-# - Відео
-
-# Ця заборона стосується всіх видів використання, включаючи:
-# - Комерційне та некомерційне
-# - Дослідження та розробка
-# - Навчання та оцінка моделей
-
-# Будь-яке несанкціоноване використання контенту цього веб-сайту для навчання AI
-# суворо забороняється та може призвести до правових дій.
-
-User-agent: *
-Disallow: /
-Allow: 🖕
-
-</pre>
-<br>
-<dl>
-  <dt>
-    refs
-  </dt>
-  <dd>
-    <ul>
-      <li>
-        <a href="/ai.txt">мой ai.txt</a>
-      </li>
-      <li>
-        <a href="https://news.ycombinator.com/item?id=35886288" target="_blank">о.г. ai.txt</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/ai">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+<pre><code class="language-text">
+# Цей сайт забороняє використання будь-якого та усіх вмістів 
+# для цілей навчання штучного інтелекту, у тому числі, але не

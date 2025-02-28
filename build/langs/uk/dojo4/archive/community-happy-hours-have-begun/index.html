@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -38,24 +38,34 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <base href='/langs/uk' />
-
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Розпочалися Щасливі Годіни Спільноти!</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Розпочалися Щасливі Годіни Спільноти!"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"community-happy-hours-have-begun"}">
     <meta property="site:path_info" content=""/community-happy-hours-have-begun"">
 
+    <base href='/langs/uk' />
+
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -64,9 +74,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -76,10 +91,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/community-happy-hours-have-begun">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/community-happy-hours-have-begun">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/community-happy-hours-have-begun">🖤</a>
+</small>
 <hr>
-<strong>/community-happy-hours-have-begun</strong>
     </header>
 
     <main>
@@ -87,41 +106,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Вчора ми провели першу доджу4 Вечірку Щастя Спільноти, щомісячну серію з короткою промовою від представника нашої спільноти, оточеною пивом, вином та смачними ласощами.</p>
-
-<p><strong>З 17:00 до 18:30 кожного третього четверга приходить на 2030 17th Street.</strong> Приведи друга, принеси пляшку для ділення та зігрій зимові вечори, беручи участь у цікавих темах, насолоджуючись компанією один одного та збагачуючи свій світ.</p>
-
-<p>Велике подяку <a href="http://www.boulderdowntown.com/uk/">Downtown Boulder, Inc.</a> за спонсорство цих зборів! Слідкуйте за <a href="https://www.facebook.com/pages/dojo4/109134865775715?sk=events">сторінкою подій dojo4 у Facebook</a> для майбутніх тем. Сподіваємося побачити вас там!</p>
-
-<p><img src='/ro/dojo4/community-happy-hours-have-begun/assets/b.jpeg' alt="image1.JPG" /> <br />
-<em>Сол Галперн з <a href="http://www.highlanderwealth.com/uk/">Highlander Wealth: A Mindful Finance Company</a>, який вчора розповідав нам про основи пробудження щодо нашого фінансового життя.</em></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/community-happy-hours-have-begun">😢, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now</a>
-  </li>
-  <li>
-    <a href="/about">/about</a>
-  </li>
-  <li>
-    <a href="/contact">/contact</a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Минулої ночі ми провели перший Щасливий годину спільноти dojo4, щомісячну серію з корот

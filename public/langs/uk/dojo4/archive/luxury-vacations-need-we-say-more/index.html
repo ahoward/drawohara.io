@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>нічого не потрібно тут бачити.</title>
+    <title>Люкс запілля, треба казати ще?</title>
 
-<meta property="og:title" content="нічого не потрібно тут бачити."/>
-<meta property="og:description" content="переходьте." />
+<meta property="og:title" content="Люкс запілля, треба казати ще?"/>
+<meta property="og:description" content="Йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,9 +72,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -78,10 +90,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/luxury-vacations-need-we-say-more">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/luxury-vacations-need-we-say-more">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/luxury-vacations-need-we-say-more">🖤</a>
+</small>
 <hr>
-<strong>/luxury-vacations-need-we-say-more</strong>
     </header>
 
     <main>
@@ -89,38 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Quintess, елітний клуб оренди відпочинку, запустив блискучий новий сайт/додаток цієї неділі, і ми не могли бути щасливішими. dojo4 працювала поруч із надзвичайно талановитим внутрішнім персоналом Quintess, щоб допомогти у розробці та впровадженні їхнього нового дому в мережі. Це чудове, як візуально, так і функціонально. Хоча ми можемо бути трохи упередженими, ось подивіться самі та не забудьте позирати на їхні пропозиції, поки ви там:</p>
-
-<p><a href="http://quintess.com/" target="_blank">http://quintess.com/</a></p>
-
-<p><img src='/ro/dojo4/luxury-vacations-need-we-say-more/assets/b.jpeg' alt="" /></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/luxury-vacations-need-we-say-more">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Quintess, клуб люкс-вакансій, запустив новий сайт/заст

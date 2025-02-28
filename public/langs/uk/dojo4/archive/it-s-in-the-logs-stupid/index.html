@@ -1,52 +1,54 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>Все в логах, глупець...</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рухатись." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="Все в логах, глупець..."/>
+<meta property="og:description" content="ідуть далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"it-s-in-the-logs-stupid"}">
@@ -56,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,72 +72,37 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/it-s-in-the-logs-stupid">я ❤️ це!</a>
-      <hr>
-      <strong>/it-s-in-the-logs-stupid</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/it-s-in-the-logs-stupid">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/it-s-in-the-logs-stupid">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2014-09-12</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p>(Цей пост спочатку з'явився у блозі Спайка <a href="http://www.stuff-things.net/">Речі... І ще речі...</a>)</p>
-
-        <p>Вчора я брав участь у пожежній тревозі щодо запуску нового сайту на Rails у дуже обмежений термін. Сайт працював добре в розробці/стейджингу, але індексна сторінка в продакшені завантажувалася більше 10 секунд.</p>
-
-        <p>Тому що він працював поза продакшеном, ми дійшли висновку, що це пов'язано з інфраструктурою хостингу. Ми перевіряли Apache, Passenger, навантаження на сервер, мережеву конфігурацію тощо. Нічого.</p>
-
-        <p>Нарешті, я вирішив перевірити <code>log/production.log</code>, і ось воно:</p>
-
-        <pre><code>Processing by BlahController#index as */*
-  Rendered blah/_carousel.html.erb (5795.2ms)
-  Rendered blah/index.html.erb within layouts/site (5801.5ms)
-</code></pre>
-
-        <p>Ми швидко виявили це в обробці зображень, яка не кешувалася. Це не проявлялося поза продакшеном, тому що зображення були різними. Я не буду нудити вас деталями.</p>
-
-        <p>Однак, я <del>нудитиму</del> просвічу вас щодо моєї думки. Під час налагодження проблеми починайте з простих речей. Логи Rails не дуже детальні, але вони надають достатньо інформації, щоб швидко дізнатися про проблеми в вашому коді.</p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/it-s-in-the-logs-stupid">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<div class="ro markdown">
+  <p>(Ця публікація спочатку з'явилася на блозі <a href="http://www.stuff-things.net/">Stuff… And Things…</a

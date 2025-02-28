@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,13 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Виконання доброї роботи</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рухатись." />
+<meta property="og:title" content="Виконання доброї роботи"/>
+<meta property="og:description" content="їди далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"doing-a-good-job"}">
@@ -56,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,22 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/doing-a-good-job">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/doing-a-good-job">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/doing-a-good-job">🖤</a>
+</small>
 <hr>
-<strong>/добре-робити-роботу</strong>
     </header>
 
     <main>
@@ -86,46 +105,6 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Іноді я стаю повністю міопічним щодо списків справ. Особливо тих, які на роботі, де я хочу добре виконувати свою роботу та бути командним гравцем (мій колектив робить справді хорошу роботу).</p>
+  <p>Іноді я стаю абсолютно короткозорим щодо списків справ. Особливо тих, які є на роботі, де я хочу добре виконувати свою роботу і бути командним гравцем (моя команда виконує свою роботу дуже, дуже добро).</p>
 
-<p>Мені потрібно періодично нагадувати собі, що не можна добре виконувати роботу, якщо вона є єдиним, що ви робите, тому нещодавно я відклав усі обов’язки на полицю та відвідав деякі улюблені місця - Моаб, Сан-Франциско, Карбондейл.</p>
-
-<p>Тепер я повернувся, вдячний за хорошу роботу, яку треба виконати, а список справ знову на передньому плані. Щасливого понеділка, хлопці!</p>
-
-<p><img src='/ro/dojo4/doing-a-good-job/assets/b.jpeg' alt="Скріншот 2015-11-30 о 9:56:22 ранку.jpg" /></p>
-
-<p><img src='/ro/dojo4/doing-a-good-job/assets/c.jpeg' alt="Скріншот 2015-11-30 о 9:56:12 ранку.jpg" /></p>
-
-<p><img src='/ro/dojo4/doing-a-good-job/assets/d.jpeg' alt="Скріншот 2015-11-30 о 10:07:47 ранку.jpg" /></p>
-
-<p><img src='/ro/dojo4/doing-a-good-job/assets/e.jpeg' alt="Скріншот 2015-11-30 о 9:55:11 ранку.jpg" /></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/doing-a-good-job">😩, я 🖤 ^це!</a>
-  </li>
-  <li>
-    <a href="/now">/тепер</a>
-  </li>
-  <li>
-    <a href="/about">/про</a>
-  </li>
-  <li>
-    <a href="/contact">/контакти</a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p

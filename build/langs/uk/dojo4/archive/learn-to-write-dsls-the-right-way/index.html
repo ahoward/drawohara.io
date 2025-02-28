@@ -1,60 +1,71 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>Навчіться писати DSL правильним способом</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="Навчіться писати DSL правильним способом"/>
+<meta property="og:description" content="пройдіть далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"learn-to-write-dsls-the-right-way"}">
     <meta property="site:path_info" content=""/learn-to-write-dsls-the-right-way"">
 
+    <base href='/langs/uk' />
+
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +74,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,67 +91,19 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/learn-to-write-dsls-the-right-way">я ❤️ це!</a>
-      <hr>
-      <strong>/learn-to-write-dsls-the-right-way</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/learn-to-write-dsls-the-right-way">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/learn-to-write-dsls-the-right-way">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2012-11-08</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p>Сьогодні я працював з певною популярною бібліотекою тестування на Ruby, щоб підготувати pull request, і зіткнувся з питанням, з яким стикався багато разів: проходження та/або невдача тестів через те, що сам тестовий фреймворк забруднює глобальні простори імен. Не вірите? Ось це:</p>
-
-        <p><br /><br />
-        <script src="https://gist.github.com/4039805.js?file=polluted.rb.txt"></script><br />
-        <br /></p>
-
-        <p>результати були отримані за допомогою цього скрипта</p>
-
-        <p><br /><br />
-        <script src="https://gist.github.com/4039805.js?file=polluted.rb"></script><br />
-        <br /></p>
-
-        <p>дехто стверджував, що це завжди буде побічним ефектом наявності гарних DSL, але це просто не так:</p>
-
-        <p><br /><br />
-        <script src="https://gist.github.com/4040698.js?file=dsl.rb"></script><br />
-        <br /></p>
-
-        <p>тож, навчіться писати DSL правильним способом, люди. Правильний спосіб - це будь-який спосіб, який не кидає методи по всьому об'єкту та простору імен без <em>дуже</em> хорошої причини.</p>
-
-        <p><br /><br />
-        <br /><br />
-        “це повинно читатися гарно” - <em>не</em> хороша причина.</p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/learn-to-write-dsls-the-right-way">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Сьогодні я працював з популярною бібліотекою тестування на Ruby для підготовки запиту на зміну та потрапив на

@@ -1,51 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <!-- meta -->
+    <title>Чи дбає ваша компанія про довкілля?</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="йдіть далі." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Чи дбає ваша компанія про довкілля?"/>
+    <meta property="og:description" content="йдіть далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"does-your-company-care-about-the-environment"}">
@@ -55,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,23 +70,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/does-your-company-care-about-the-environment">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/does-your-company-care-about-the-environment">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/does-your-company-care-about-the-environment">🖤</a>
+</small>
 <hr>
-<strong>/чи-ваша-компанія-турбується-про-навколишнє-середовище</strong>
     </header>
 
     <main>
@@ -86,58 +102,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Тоді запишіть це! Включення екологічної політики до підручника вашої компанії справді має значення. Можливо, ваші засновники та/або поточні співробітники вже їздять на роботу на велосипеді, носять з собою багаторазові кружки та релігійно переробляють відходи, але, витрачаючи час на розробку екологічної політики, специфічної для вашої організації, та включаючи її до підручника, ви поглиблюєте цю зобов'язання, надаєте етичну основу для фінансових рішень, спрямованих на збереження Землі, і забезпечуєте її тривалість після вас та ваших особистих зобов'язань перед навколишнім середовищем.</p>
-
-<p><img src='/ro/dojo4/does-your-company-care-about-the-environment/assets/b.jpeg' alt="FullSizeRender.jpg" /></p>
-
-<p>Ми живемо в захоплюючий час, коли щороку з'являються нові способи пом'якшення впливу на навколишнє середовище, тому знайдіть час, щоб бути в курсі всього, що ваша компанія може і має робити для збереження природи, запишіть це та поділіться, щоб надихати інших.</p>
-
-<p>Партнери за чисте середовище - це ресурс у Боулдері, штат Колорадо, для бізнесу в будь-якому секторі, який прагне бути більш екологічно відповідальним. Їхній сайт перебуває на стадії переробки, але <a href="http://www.pacepartners.com/resource-sheet-library/80-resource-sheets">багато інформаційних листків все ще доступні</a>, якщо вам потрібні поради щодо зменшення вашого впливу.</p>
-
-<p>Ось що robe dojo4 зараз:</p>
-
-<p><strong>Екологічна політика dojo4</strong></p>
-
-<p><em>dojo4 вважає екологічно розумні практики організаційним пріоритетом. Просто тому, що dojo4 займається віртуальним виробництвом, не означає, що наш вплив на навколишнє середовище є лише віртуальною реальністю. Ми визнаємо, що виробництво комп'ютерного обладнання на сьогоднішній день є токсичною та ресурсоємною галуззю, а також те, що дата-центри є одними з найбільших споживачів енергії сьогодні. Згідно з <a href="http://www.nytimes.com/2012/09/23/technology/data-centers-waste-vast-amounts-of-energy-belying-industry-image.html?pagewanted=all&amp;_r=0">розслідуванням New York Times</a>, “Цифрові склади по всьому світу споживають близько 30 мільярдів ват електроенергії, що приблизно еквівалентно виходу 30 атомних електростанцій....Дата-центри в США складають від однієї чверті до однієї третини цього навантаження.”</em></p>
-
-<p><em>dojo4 зобов'язана бути обізнаною щодо масштабу нашого впливу на навколишнє середовище та мінімізувати його всіма можливими способами, як через те, як ми ведемо свій бізнес тут, в Боулдері, Колорадо, так і через те, як ми захищаємо галузеві екологічні зміни.</em></p>
-
-<p><em>- Ми добровільно платимо вищі тарифи за електроенергію, щоб наш офіс був на 100% забезпечений енергією вітру.</em><br />
-<em>- Ми працюємо з мінімальною кількістю комп'ютерного обладнання.</em><br />
-<em>- Ми не друкуємо речі, якщо це необов'язково.</em> <br />
-<em>- Ми робимо пріоритет навколишньому середовищу в наших покупках (канцелярських товарів, кексів тощо).</em><br />
-<em>- Ми не використовуємо токсичні хімікати для прибирання в нашому офісі або в нашому саду.</em><br />
-<em>- Ми знаходимося в центрі Боулдера, що дозволяє більшості наших співробітників ходити або їздити на роботу на велосипеді цілий рік, що вони і роблять. Ми також можемо уникнути авіаперельотів більшу частину часу.</em><br />
-<em>- Ми в основному п'ємо пиво, тому що розуміємо, що вода - це цінний ресурс, який не повинен марнуватися.</em></p>
-
-<p><img src='/ro/dojo4/does-your-company-care-about-the-environment/assets/c.jpeg' alt="x354.jpg" /></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/does-your-company-care-about-the-environment">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/тепер<a>
-  </li>
-  <li>
-    <a href="/about">/про-нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Тоді пишіть про це!  Включення політики охорони довкілля до

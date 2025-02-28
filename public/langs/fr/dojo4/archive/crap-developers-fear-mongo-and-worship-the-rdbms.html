@@ -1,0 +1,240 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+<meta property="og:title" content="Rien à voir ici."/>
+<meta property="og:description" content="Circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"crap-developers-fear-mongo-and-worship-the-rdbms"}">
+    <meta property="site:path_info" content=""/crap-developers-fear-mongo-and-worship-the-rdbms"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/crap-developers-fear-mongo-and-worship-the-rdbms">J'❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/crap-developers-fear-mongo-and-worship-the-rdbms</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2015-04-22</em>
+<br>
+<br>
+<div class="ro markdown">
+  <h3 id="tl-dr">TL; DR;</h3>
+
+<blockquote>
+  <p>99,9% des développeurs web pensent que l'utilisation correcte d'un SGBDR, avec des transactions, empêche leurs applications de voir des données incorrectes et d'introduire des erreurs graves de qualité des données. Ils ont <em>TOTALEMENT TORT</em>.</p>
+</blockquote>
+
+<p>J'ai lu avec grand intérêt l'excellent article de <a href="https://github.com/aphyr">Kyle Kingsbury</a> sur le modèle de cohérence de Mongo à l'adresse suivante <a href="https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads">https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads</a></p>
+
+<p>Évidemment, ce type est très compétent et connaît son sujet. Il fait le travail et tout dans cet article est perspicace et bien organisé.</p>
+
+<p>Ce que j'ai trouvé étonnant, cependant, ce sont les commentaires et ce qu'ils révèlent sur le développeur professionnel moyen :</p>
+
+<blockquote>
+  <p>Les développeurs pensent que l'utilisation d'un SGBDR rend leurs données sûres et ils ont <em>absolument tort</em></p>
+</blockquote>
+
+<p>Je ne peux pas vous dire combien de fois je me suis disputé avec des "développeurs professionnels" et surtout des administrateurs système stupides qui croient vraiment que, simplement en disant le mot SGBDR, en faisant tourner un poulet autour de leur tête 3 fois, et en se connectant à la licorne magique des bases de données, leurs données seront en sécurité et à l'abri, vous savez, ... (quelque chose quelque chose à propos de) ... les transactions bancaires et tout ce (non-sens) bavardage sur les transactions et fsync. Et un tas d'autres choses qu'aucun développeur que j'ai rencontré ne comprend vraiment ou n'a considéré dans le contexte d'une application HTTP (indice : sans état).</p>
+
+<p>Avant de continuer, je vais lancer un défi :</p>
+
+<ul>
+  <li>Envoyez-moi votre identifiant GitHub</li>
+  <li>Laissez-moi choisir une application basée sur MySQL ou PostgreSQL que vous avez écrite (afin que vous ne puissiez pas la préparer)</li>
+  <li>Et je trouverai des chemins de code qui fournissent à la fois des lectures non validées et des lectures sales dans votre application en moins d'un jour</li>
+  <li>S'il n'y en a pas, je vous paierai <em>1000 dollars</em></li>
+  <li>S'il y en a, je pourrai publier n'importe quelle photo de vous que je choisis en annexe de cet article. Photoshop <em>est</em> autorisé.</li>
+</ul>
+
+<p>Trouvez-moi à <a href="/contact">/contact</a> ou <a href="/team/ara-t-howard">/team/ara-t-howard</a>. Maintenant, continuons...</p>
+
+<p>Devinez, développeur : qu'est-ce qui ne va pas avec ce chemin de code :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-10'>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-12'>
+</div><div class='code-line code-line-13'>
+</div></code></div>
+
+<p>Laissez-moi vous révéler quelque chose d'époustouflant :</p>
+
+<p><strong>CE CODE EST COMPLÈTEMENT CASSÉ SUR TOUS LES PRINCIPAUX <em>SGBDR</em>, ET VIRTUELLEMENT TOUTES<br />
+LES APPLICATIONS, DANS LE MONDE</strong></p>
+
+<p>Je vous assure que l'email sera envoyé <em>deux fois</em>.</p>
+
+<p>Expliquer les transactions dépasse le cadre de cet article, mais laissez-moi vous présenter les "lectures fantômes"</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Phantom_reads">http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Phantom_reads</a></p>
+
+<p>Dans le code ci-dessus, une 2ème transaction concurrente peut provoquer ce qui suit :</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #0550ae">@db</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">transaction</span>&nbsp;<span style="color: #cf222e">do</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">no_user_exists_with_conditions?</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># entre-temps, une 2ème transaction a créé un utilisateur en double...</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># ce qui suit réussira, dans __les deux__ transactions</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@user</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">make_that_user_exists_with_those_conditions!</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># les deux transactions enverront l'email</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">deliver_an_activation_email_to!</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">@user</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #6e7781"># l'une des transactions échouera à valider, et explosera *BOOM* mais, à ce moment-là,</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;<span style="color: #6e7781"># il est trop tard : l'email a été envoyé deux fois et l'erreur a été commise</span>
+</div><div class='code-line code-line-21'>
+</div><div class='code-line code-line-22'>
+</div></code></div>
+
+<p>Je sais, je sais, vous ne pouvez pas y croire. Mais c'est juste parce que vous ne vous êtes jamais donné la peine de RTFM quand il s'agit de ce que signifie "transaction". Commencez ici :</p>
+
+<p><a href="http://www.postgresql.org/docs/9.1/static/transaction-iso.html">http://www.postgresql.org/docs/9.1/static/transaction-iso.html</a></p>
+
+<p>Notez ce petit tableau. Laissez-moi vous le traduire :</p>
+
+<ul>
+  <li>
+    <p>Parce que <em>vous</em> n'avez pas chaque <em>séquence unique</em> de <em>lecture et écriture</em> enveloppée dans une transaction, et que parfois vous lancez simplement du code contre vos objets ORM directement, vous souffrez de la réalité "effrayante" des "lectures non validées" mentionnées dans l'article</p>
+  </li>
+  <li>
+    <p>Parce que <em>vous</em> vous reposez sur le niveau d'isolation par défaut, vous souffrez à la fois des lectures non répétables et des lectures fantômes. (Savez-vous même ce qu'est l'isolation par défaut pour votre base de données et ce que cela signifie ????)</p>
+  </li>
+  <li>
+    <p>Parce que <em>vous</em> n'avez pas défini votre niveau de transaction sur "sérialisable", vous croyez à tort que votre base de données est rapide et sûre. Vous vous êtes trompé en vous basant sur la base de données pour fournir l'intégrité des données comme une abstraction qui ne nécessite pas de réflexion critique et un code d'application au moins 10 fois meilleur que le vôtre. Vous avez toutes les fonctionnalités effrayantes de l'article de Kyle dans vos applications basées sur SGBDR - et, non seulement vous <em>ne le savez pas</em>, mais vous êtes <em>assez sûr que vos données sont "sûres"</em></p>
+  </li>
+</ul>
+
+<p>Je vous demande donc quelle est la pire décision d'ingénierie :</p>
+
+<ul>
+  <li>
+    <p>Choisir un outil basé sur des normes que tout le monde est <em>très</em> confiant de comprendre et de savoir utiliser en toute sécurité mais qui, dans son utilisation courante, ne garantit pratiquement jamais ce que vous croyez qu'il promet et, en outre, a été largement <a href="http://en.wikipedia.org/wiki/Isolation_%28database_systems%29#Default_isolation_level">critiqué comme ayant des sémantiques ambiguës et inexactes</a> ?</p>
+  </li>
+  <li>
+    <p>Ou accepter ce qui a toujours été vrai : que par elles-mêmes, les bases de données ne peuvent pas fournir des abstractions qui signifient que des développeurs non extrêmement intelligents ne peuvent pas facilement tout gâcher. Et que l'intégrité des données est un concept spécifique au domaine qui doit être implémenté au niveau de l'application, avec seulement une petite partie de cette intégrité étant aidée par le choix de la base de données.</p>
+  </li>
+</ul>
+
+<p>ps. J'ai travaillé sur des systèmes financiers, en temps réel et à haute disponibilité de grande envergure qui utilisent à la fois Mongo et PostgreSQL. C'est sacrément difficile dans les deux cas.</p>
+
+<p>pss. J'ai essayé de commenter votre blog, Kyle, mais les commentaires explosaient ;-)</p>
+
+<p><img src="https://s3.amazonaws.com/ss.dojo4.com/JKeSPdp46a4R3paZkp6oo7X1b7QNhI6hQN4kp1QPx3ZYqn3exRzqht0.png" style="max-width:200px;" /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; aller à</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/crap-developers-fear-mongo-and-worship-the-rdbms">😩, j'🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/now">/maintenant<a>
+  </li>
+  <li>
+    <a href="/about">/à propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>

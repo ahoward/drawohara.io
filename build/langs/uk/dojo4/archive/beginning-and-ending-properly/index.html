@@ -1,64 +1,67 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <base href='/langs/uk' />
+    <!-- meta -->
+    <title>початок і кінець, правильно</title>
 
-  <!-- meta -->
-    <title>Тут нічого немає.</title>
+    <meta property="og:title" content="початок і кінець, правильно"/>
+    <meta property="og:description" content="іти далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:title" content="Тут нічого немає."/>
-<meta property="og:description" content="Продовжуйте рухатися." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-
-
-
-
-  <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"beginning-and-ending-properly"}">
-    <meta property="site:path_info" content=""/beginning-and-ending-properly"">
+    <meta property="site:params" content="{"ext":null,"id":"початок-і-кінець-правильно"}">
+    <meta property="site:path_info" content=""/початок-і-кінець-правильно"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -67,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -79,59 +87,19 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/beginning-and-ending-properly">я ❤️ це!</a>
-<hr>
-<strong>/beginning-and-ending-properly</strong>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/початок-і-кінець-правильно">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/початок-і-кінець-правільно">🖤</a>
+      </small>
+      <hr>
     </header>
 
     <main>
       <em>опубліковано: 2013-01-21</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p>Зустрічі можуть здаватися справжнім виснаженням часу. Вони часто здаються занадто довгими і блукають без відчуття напрямку чи досягнення. І те, що робить цю безцільність ще більшим марнуванням часу, полягає в тому, що ми часто не знаємо, коли зустріч фактично почалася. І коли вона нарешті закінчилася, це також неочевидно, оскільки вона закінчується непомітним скітом, і люди просто починають виходити. Фактично проблема полягає в тому, що ми рідко добре починаємо та закінчуємо речі.</p>
-
-<p>Наш розум і тіло потребують чіткого та легко розпізнаваного індикатора, де і коли бути. Коли ми не починаємо та не закінчуємо речі добре, незрозуміло, що вони відбуваються, і ми не знаємо, коли слід бути там або йти. Саме тому ми зазвичай починаємо та закінчуємо розмови з впізнаваними сигналами, такими як "привіт" і "до побачення". І оскільки ми часто не робимо це на зустрічах, це, мабуть, одна з причин, чому ми проводимо багато часу на зустрічах, думаючи про щось інше. І насправді, ми ледве чекаємо, коли насправді будемо деінде, тому що ми не знаємо, коли зустріч фактично закінчиться.</p>
-
-<p>Через це в dojo4 ми чітко починаємо та закінчуємо більшість наших зустрічей. Ми використовуємо або <a href="http://dojo4.com/blog/a-bow-and-a-clap">поклон та хлопок</a> чи ключове слово ('брош!' - цю історію ми залишимо на пізніше). Чітко визначаючи, коли зустріч починається та закінчується, ми робимо зусилля, щоб поважати час та увагу один одного. Коли вона починається, ми всі отримали сигнал бути в кімнаті. І коли вона закінчується, вона не просто витікає, як помираючий пацієнт - люди знають, що можуть піти та повернутися до того, що їм потрібно робити.</p>
-
-<p><img src="http://owwls.files.wordpress.com/2011/05/bowing.png" alt="зображення" /></p>
-
-<p>Я виявив, що бути точним у відкритті та закритті наших регулярних зустрічей тут - це одне з тих, що робить їх чіткими, радісними та, в основному, досить ефективними.</p>
-
-<p>Насправді, це такий корисний інструмент, що я недавно виступив з презентацією про цей робочий "хак" як частина серії LifeHacks 2.0, разом з іншими презентаціями від чудових людей із <a href="http://www.hubboulder.com/">Hub Boulder</a>, <a href="http://integralcenter.org/">Integral Center</a>, <a href="http://www.buddhistgeeks.com/">Buddhist Geeks</a> та <a href="https://www.facebook.com/pages/Mandala-Integrative-Medicine-Clinic/380267731433">Mandala Integrative Medicine Clinic</a>.</p>
-
-<div class="flex-video youtube">
-<iframe width="560" height="315" src="http://www.youtube.com/embed/164mUrcouOw" frameborder="0" allowfullscreen=""></iframe>
-</div>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/beginning-and-ending-properly">😢, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вихід</a>
-    </footer>
-  </body>
-</html>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Зустріч

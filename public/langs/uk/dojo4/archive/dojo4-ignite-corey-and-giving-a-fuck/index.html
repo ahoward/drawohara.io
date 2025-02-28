@@ -7,7 +7,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
@@ -40,9 +40,9 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>нічого не потрібно бачити.</title>
+    <title>Dojo4, Ignite, Corey і надання чертової ласки</title>
 
-    <meta property="og:title" content="нічого не потрібно бачити."/>
+    <meta property="og:title" content="Dojo4, Ignite, Corey і надання чертової ласки"/>
     <meta property="og:description" content="продовжуйте." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
@@ -56,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,108 +87,17 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-ignite-corey-and-giving-a-fuck">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-ignite-corey-and-giving-a-fuck">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-ignite-corey-and-giving-a-fuck">🖤</a>
+      </small>
       <hr>
-      <strong>/dojo4-ignite-corey-and-giving-a-fuck</strong>
     </header>
 
     <main>
       <em>опубліковано: 2015-05-26</em>
       <br>
-      <br>
-      <div class="ro markdown">
-        <p>Якщо ви не були там і хочете подивитися недавню <a href="http://dojo4.com/team/corey-kohn">Коурі</a> виступ на <a href="http://igniteboulder.com/">Ignite</a>, тепер він <a href="https://www.youtube.com/watch?v=06v2Imhm5aQ&amp;feature=youtu.be&amp;list=PLs77-lcVm76FlTt2vPe9waVku29V5DQUS">опублікований</a></p>
-
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/06v2Imhm5aQ?list=PLs77-lcVm76FlTt2vPe9waVku29V5DQUS" frameborder="0" allowfullscreen=""></iframe>
-
-        <p>Є великий шанс, що ви побачите обличчя члена сім’ї dojo4 принаймні на одному зі слайдів!</p>
-
-        <p>Крім того, інший виступаючий того вечора, <a href="https://twitter.com/boonrs">Беккі Бун</a>, тепер зіткнулася з вимогами звільнити її від роботи з <a href="https://twitter.com/bouldercolorado">містом Боулдер</a> на підставі того, що вона кілька разів сказала "fuck" у своїй промові.</p>
-
-        <p>Вона працює з <a href="https://bouldercolorado.gov/planning/code-for-america">містом Боулдер через партнерство з Code for America</a> і закликала до більшої громадської участі від недопредставлених громадян Боулдера.</p>
-
-        <p>Подивіться її виступ: <a href="https://www.youtube.com/watch?v=Mme2iqk1IYU">Чому вам варто турбуватися про місцевий уряд</a>.</p>
-
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/Mme2iqk1IYU?list=PLs77-lcVm76FlTt2vPe9waVku29V5DQUS" frameborder="0" allowfullscreen=""></iframe>
-
-        <p>Якщо ви хочете підтримати роботу <a href="https://twitter.com/codeforamerica">Code for America</a> з метою сприяння більш представницькій громадській участі в уряді Боулдера, будь ласка, надішліть електронний лист: <a mailto="Council@BoulderColorado.gov">Council@BoulderColorado.gov</a>, <a mailto="brautigamj@bouldercolorado.gov">brautigamj@BoulderColorado.gov</a>, <a mailto="HousingCommittee@BoulderColorado.gov">HousingCommittee@BoulderColorado.gov</a> сьогодні, щоб висловити свою думку та/або підтримати Беккі Бун та Code for America.</p>
-
-        <p>###Ще більше людей говорять про це (у приблизній хронологічній послідовності):###</p>
-
-        <ul>
-          <li><a href="http://boulderneighbors.blogspot.com/2015/05/becky-boones-favorite-word-begins-with-f.html">Улюблене слово Беккі Бун починається з F</a> - Сусіди Боулдера</li>
-          <li><a href="http://amateurearthling.org/2015/05/22/give-a-fuck-about-local-government/">Говоріть про місцевий уряд</a> - Зейн Селванс</li>
-          <li><a href="http://virtuallybing.com/blog/city-of-boulder-i-want-my-fucking-voice-heard">Місто Боулдер - Я хочу, щоб мій голос був почутий</a> - Бінг Чоу</li>
-          <li><a href="https://medium.com/@nottil/five-minutes-of-i-give-a-fuck-f9583a9c20e4?source=tw-807c91674a49-1432327707103">П’ять хвилин, коли я турбуюся</a> - Джессі Літтон</li>
-          <li><a href="http://virtuallybing.com/blog/boulder-renters-under-40-dont-be-silenced">Орендатори Боулдера молодше 40 років не будьте замовклими</a> - Бінг Чоу</li>
-          <li><a href="http://www.dailycamera.com/editorials/ci_28182923/editorial-we-give-two-f-words">Редакційне: Ми кажемо два слова на F</a> - Дейв Крігер</li>
-          <li><a href="http://amateurearthling.org/2015/05/26/on-the-politics-of-civic-engagement/">Про політику громадської участі</a> - Зейн Селванс</li>
-          <li><a href="http://www.dailycamera.com/news/boulder/ci_28192485/boulder-complete-project-code-america">Боулдер завершує проєкт з Code for America</a></li>
-          <li><a href="http://www.dailycamera.com/news/boulder/ci_28210233/boulder-looking-at-possible-contract-violations-housing-speech">Боулдер розглядає можливі порушення контракту в житловій промові<br />
-        </a></li>
-        </ul>
-
-        <p>###Інші способи залучитися:###</p>
-
-        <p><strong>1. Засідання міської ради</strong></p>
-
-        <ul>
-          <li><a href="https://bouldercolorado.gov/city-council/city-council-meetings">Відвідування засідань міської ради</a></li>
-          <li><a href="https://bouldercolorado.gov/city-council/speaking-at-council-meetings">Виступ на засіданнях міської ради</a></li>
-        </ul>
-
-        <p><strong>2. Підпишіться на оновлення електронною поштою планування Боулдера</strong></p>
-
-        <ul>
-          <li><a href="https://bouldercolorado.gov/planning/boulder-planning">Планування Боулдера (форму електронної пошти можна знайти вгорі в правому стовпці)</a></li>
-        </ul>
-
-        <p><strong>3. Надішліть електронний лист міській раді Боулдера:</strong></p>
-
-        <ul>
-          <li><a href="mailto:council@bouldercolorado.gov">council@bouldercolorado.gov</a></li>
-          <li><a href="mailto:brautigamj@bouldercolorado.gov">brautigamj@bouldercolorado.gov</a></li>
-          <li><a href="mailto:HousingCommittee@BoulderColorado.gov">HousingCommittee@BoulderColorado.gov</a></li>
-        </ul>
-
-        <p><strong>4. Напишіть пост у блозі про ситуацію</strong></p>
-
-        <p><strong>5. Твіти з хештегами:</strong></p>
-
-        <ul>
-          <li>#BoulderCouncil</li>
-          <li>#IGiveAFuck</li>
-        </ul>
-
-        <p><strong>6. Залучіться до розмови!</strong></p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-ignite-corey-and-giving-a-fuck">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <

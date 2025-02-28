@@ -1,0 +1,214 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <base href='/langs/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rien à voir ici.</title>
+
+<meta property="og:title" content="rien à voir ici."/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"yak-shaving-at-tax-time"}">
+    <meta property="site:path_info" content="/yak-shaving-at-tax-time">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a> &mdash;
+<a href="mailto:j-adore-ca@drawohara.io?subject=/yak-shaving-at-tax-time">j ❤️  ça!</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez moi 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/yak-shaving-at-tax-time</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2013-03-04</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>j'ai écrit ce script pendant que je faisais mes impôts parce que, comme tous les bons programmeurs, je préfère écrire un outil plutôt que d'utiliser un fichu tableur</p>
+
+<p>il me sauve de</p>
+
+<ul>
+  <li>devoir utiliser un tableur pour catégoriser mes impôts</li>
+</ul>
+
+<p>et, en plus il me sauve de devoir utiliser un tableur pour catégoriser mes impôts</p>
+
+<p>sans plus attendre (c'est pour toi @steve)</p>
+
+<p><br /><br />
+<br /></p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">#! /usr/bin/env ruby</span>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'csv'</span>
+</div><div class='code-line code-line-4'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'pp'</span>
+</div><div class='code-line code-line-5'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'readline'</span>
+</div><div class='code-line code-line-6'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'fileutils'</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'main'</span>
+</div><div class='code-line code-line-11'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'coerce'</span>
+</div><div class='code-line code-line-12'><span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'arrayfields'</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'><span style="color: #953800">Main</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">synopsis</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">__</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'><span style="color: #0a3069">    ruby categorize.rb transactions.csv</span>
+</div><div class='code-line code-line-18'>
+</div><div class='code-line code-line-19'><span style="color: #0a3069">    ruby categorize.rb transactions.csv --continue # où je me suis arrêté...</span>
+</div><div class='code-line code-line-20'>
+</div><div class='code-line code-line-21'><span style="color: #953800">  __</span>
+</div><div class='code-line code-line-22'>
+</div><div class='code-line code-line-23'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">description</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">__</span>
+</div><div class='code-line code-line-24'>
+</div><div class='code-line code-line-25'><span style="color: #0a3069">    categorize est un script de catégorisation de transactions que j'ai écrit en faisant mes impôts</span>
+</div><div class='code-line code-line-26'>
+</div><div class='code-line code-line-27'><span style="color: #0a3069">    il fonctionne sur un csv qui ressemble à</span>
+</div><div class='code-line code-line-28'>
+</div><div class='code-line code-line-29'><span style="color: #0a3069">      Transaction Number,Date,Description,Memo,Amount Debit,Amount Credit ,Balance,Check Number,Fees  </span>
+</div><div class='code-line code-line-30'><span style="color: #0a3069">      "20121231000000[-7:MST]*-9.99*42**Withdrawal",12/31/2012,"Withdrawal","Amazon Video On Demand 866-216-1072 WA Date 12/29/12 000031828826 5735",-9.99, ,"492.93",,</span>
+</div><div class='code-line code-line-31'><span style="color: #0a3069">      "20121231000000[-7:MST]*-4000.00*12**Withdrawal Home Banking",12/31/2012,"Withdrawal Home Banking","Transfer To HOWARD,ARA T 0000133543 Share 0008 Online Banking Transfer Dec. 31, 2012 09:37 Ref: 325989",-4000.00, ,"502.92",,</span>
+</div><div class='code-line code-line-32'><span style="color: #0a3069">      "20121231000000[-7:MST]*4393.89*501**Deposit DOJO4 LLC",12/31/2012,"Deposit DOJO4 LLC","TYPE: QUICKBOOKS ID: 1722616653 CO: DOJO4 LLC",,4393.89 ,"4502.92",,</span>
+</div><div class='code-line code-line-33'><span style="color: #0a3069">      "20121227000000[-7:MST]*-17.99*42**Withdrawal",12/27/2012,"Withdrawal","WWW.RDIOCHARGE.COM 877-7346843 CA Date 12/26/12 900017146258 8699",-17.99, ,"122.02",,</span>
+</div><div class='code-line code-line-34'><span style="color: #0a3069">      ...</span>
+</div><div class='code-line code-line-35'>
+</div><div class='code-line code-line-36'><span style="color: #0a3069">    beaucoup de banques peuvent exporter celles-ci</span>
+</div><div class='code-line code-line-37'>
+</div><div class='code-line code-line-38'><span style="color: #0a3069">    après utilisation, le fichier ressemblera à ceci</span>
+</div><div class='code-line code-line-39'>
+</div><div class='code-line code-line-40'><span style="color: #0a3069">      TRANSACTION_NUMBER,DATE,DESCRIPTION,MEMO,AMOUNT_DEBIT,AMOUNT_CREDIT,BALANCE,CHECK_NUMBER,FEES,CATEGORY</span>
+</div><div class='code-line code-line-41'><span style="color: #0a3069">      20121015000000[-7:MST]*-3.00*21**Transfer fee,10/15/2012,Transfer fee,"",-3.00,"",9.99,,,fee</span>
+</div><div class='code-line code-line-42'><span style="color: #0a3069">      ...</span>
+</div><div class='code-line code-line-43'>
+</div><div class='code-line code-line-44'><span style="color: #0a3069">    ce qui veut dire qu'il aura une colonne CATEGORY et toutes les lignes catégorisées</span>
+</div><div class='code-line code-line-45'>
+</div><div class='code-line code-line-46'><span style="color: #0a3069">    il ne se soucie pas vraiment des données, n'ayant besoin que d'un champ pour</span>
+</div><div class='code-line code-line-47'><span style="color: #0a3069">    trier.  par défaut, il s'agit du champ 'Memo' mais le script</span>
+</div><div class='code-line code-line-48'><span style="color: #0a3069">    ne se soucie pas vraiment s'il est manquant.  en plus, vous pouvez spécifier le champ de tri avec</span>
+</div><div class='code-line code-line-49'><span style="color: #0a3069">    '--sort' et vous voudrez probablement le faire car le mode par défaut se souvient</span>
+</div><div class='code-line code-line-50'><span style="color: #0a3069">    de votre dernière sélection et la fournit comme valeur par défaut lors de la modification</span>
+</div><div class='code-line code-line-51'><span style="color: #0a3069">    des catégories.</span>
+</div><div class='code-line code-line-52'>
+</div><div class='code-line code-line-53'><span style="color: #0a3069">    notez que le script écrase le fichier d'entrée de manière destructive, faites donc une sauvegarde si vous y tenez vraiment.  bien que ce soit le cas, sachez qu'il</span>
+</div><div class='code-line code-line-54'><span style="color: #0a3069">    écrase pour permettre de continuer une session d'édition.</span>
+</div><div class='code-line code-line-55'>
+</div><div class='code-line code-line-56'><span style="color: #953800">  __</span>
+</div><div class='code-line code-line-57'>
+</div><div class='code-line code-line-58'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">argument</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:transactions</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-59'>
+</div><div class='code-line code-line-60'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">option</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:continue</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:c</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-61'>
+</div><div class='code-line code-line-62'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">option</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:sort</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:s</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-63'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">default</span>&nbsp;<span style="color: #0a3069">'MEMO'</span>
+</div><div class='code-line code-line-64'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-65'>
+</div><div class='code-line code-line-66'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">option</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:categories</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-67'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">default</span>&nbsp;<span style="color: #0550ae">&lt;&lt;-</span><span style="color: #953800">__</span>
+</div><div class='code-line code-line-68'>
+</div><div class='code-line code-line-69'><span style="color: #0a3069">      expense/client</span>
+</div><div class='code-line code-line-70'><span style="color: #0a3069">      expense/client/meals</span>
+</div><div class='code-line code-line-71'><span style="color: #0a3069">      expense/client/entertainment</span>
+</div><div class='code-line code-line-72'>
+</div><div class='code-line code-line-73'><span style="color: #0a3069">      expense/office</span>
+</div><div class='code-line code-line-74'><span style="color: #0a3069">      expense/office/internet</span>
+</div><div class='code-line code-line-75'><span style="color: #0a3069">      expense/office/phone</span>
+</div><div class='code-line code-line-76'><span style="color: #0a3069">      expense/office/supplies</span>
+</div><div class='code-line code-line-77'><span style="color: #0a3069">      expense/office/maintenance</span>
+</div><div class='code-line code-line-78'>
+</div><div class='code-line code-line-79'><span style="color: #0a3069">      expense/software</span>
+</div><div class='code-line code-line-80'><span style="color: #0a3069">      expense/software/service</span>
+</div><div class='code-line code-line-81'><span style="color: #0a3069">      expense/software/license</span>
+</div><div class='code-line code-line-82'>
+</div><div class='code-line code-line-83'><span style="color: #0a3069">      expense/hardware</span>
+</div><div class='code-line code-line-84'>
+</div><div class='code-line code-line-85'><span style="color: #0a3069">      income</span>
+</div><div class='code-line code-line-86'><span style="color: #0a3069">      payroll</span>
+</div><div class='code-line code-line-87'><span style="color: #0a3069">      transfer</span>
+</div><div class='code-line code-line-88'><span style="color: #0a3069">      loan</span>
+</div><div class='code-line code-line-89'><span style="color: #0a3069">      fee</span>
+</div><div class='code-line code-line-90'>
+</div><div class='code-line code-line-91'><span style="color: #0a3069">      beer</span>
+</div><div class='code-line code-line-92'>
+</div><div class='code-line code-line-93'><span style="color: #0a3069">      uncategorized</span>
+</div><div class='code-line code-line-94'><span style="color: #953800">    __</span>
+</div><div class='code-line code-line-95'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-96'>
+</div><div class='code-line code-line-97'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">run</span>
+</div><div class='code-line code-line-98'>&nbsp;&nbsp;<span style="color: #6e7781"># setup</span>
+</div><div class='code-line code-line-99'>&nbsp;&nbsp;<span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-100'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@categories</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Coerce</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">list_of_strings</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:categories</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">values</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-101'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@transactions</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:transactions</span><span style="color: #24292f;background-color: #f6f8fa">].</span><span style="color: #8250df">value</span>
+</div><div class='code-line code-line-102'>
+</div><div class='code-line code-line-103'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@fields</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[]</span>&nbsp;
+</div><div class='code-line code-line-1

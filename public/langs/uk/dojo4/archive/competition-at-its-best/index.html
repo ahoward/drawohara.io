@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,13 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>конкуренція на найвищому рівні</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="конкуренція на найвищому рівні"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"competition-at-its-best"}">
@@ -55,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,24 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/competition-at-its-best">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/competition-at-its-best">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/competition-at-its-best">🖤</a>
+</small>
 <hr>
-<strong>/competition-at-its-best</strong>
     </header>
 
     <main>
@@ -87,40 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Є справжня стратегічна перевага у визнанні наших конкурентів. Це робить нашу роботу цікавішою, підвищує її якість та створює більш впливову та інноваційну економічну картину. Ось короткий уривок відео, де я розповідаю про це для проєкту, створеного <a href="http://www.hubboulder.com/">Hub Boulder</a> про створення змін:</p>
-
-<figure class="flex-video vimeo">
-  <iframe src="http://player.vimeo.com/video/59594264?api=1" width="400" height="300" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-</figure>
-
-<p>Є й інші чудові “короткі інсайти від спільноти соціальних підприємців, стартапів, впливових інвесторів, лідерів неприбуткових організацій та інших професіоналів, які бродять коридорами та спільними просторами у HUB Boulder”, створені <a href="http://takeonecreative.com">TakeOne Creative</a> на <a href="http://takeonecreative.com/change-in-60-seconds">http://takeonecreative.com/change-in-60-seconds</a>, з друзями, такими як Praful Shah та <a href="http://emilydavisconsulting.com/">Emily Davis</a>.</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; перейти</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/competition-at-its-best">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+  <p>Фактично є справжній стратегічний перевага в прийнятті наших конкуретів. Це робить нашу роботу більш цікавою, підвищує якість我们的 роботи і будує більш впливаючий і ін

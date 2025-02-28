@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,21 +39,32 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>! &#39;Мавріціо: міні-сайт&#39;</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="! &#39;Мавріціо: міні-сайт&#39;"/>
+<meta property="og:description" content=" йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"maurizio-the-microsite"}">
     <meta property="site:path_info" content=""/maurizio-the-microsite"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,24 +73,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/maurizio-the-microsite">я ❤️  це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/maurizio-the-microsite">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/maurizio-the-microsite">🖤</a>
+</small>
 <hr>
-<strong>/maurizio-the-microsite</strong>
     </header>
 
     <main>
@@ -87,40 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Протягом кількох днів минулого місяця dojo4 створив простий, гарний <a href="http://www.mauriziocattelanmovie.com/">мікросайт</a> для режисера/продюсера <a href="http://mauraaxelrod.com/">Маури Аксельрод</a> про її майбутній документальний фільм, <em><a href="http://vimeo.com/110854034">Мaurizio Cattelan: The Movie</a></em>.</p>
-
-<p>Якщо ви не знайомі з роботами Каттелана, рекомендую зразу ж перейти до пошуку зображень у Google для <a href="https://www.google.com/search?q=maurizio+cattelan&amp;es_sm=91&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=vbSIVLLgCYqYyQTuvoLYDg&amp;ved=0CAgQ_AUoAQ&amp;biw=1440&amp;bih=697">знайомства</a> з творчістю цього сучасного італійського художника. Блог <em>New York Times’</em> Artsbeat <a href="http://artsbeat.blogs.nytimes.com/2014/11/04/a-documentary-follows-the-curious-career-of-maurizio-cattelan/?_r=1">розповідав</a> про документальний фільм Маури минулого місяця, доречно описавши Каттелана як суміш, “сюрреалістичної фантазії з темно-комічним поглядом на життя у 21 столітті.”</p>
-
-<p><img src='/ro/dojo4/maurizio-the-microsite/assets/b.jpeg' alt="arte_dissacrante_maurizio_cattelan_g.jpg" /></p>
-
-<p>Дивіться <a href="http://vimeo.com/110854034">трейлер</a> і готуйтеся до <em>Maurizio Cattelan: The Movie</em> у 2015 році!</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/maurizio-the-microsite">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>За останні beberapa днів минулого місяця dojo4 створила простий, красивий <a href="http://www.maur

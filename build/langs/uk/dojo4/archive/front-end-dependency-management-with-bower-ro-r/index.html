@@ -1,52 +1,57 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- base -->
+  <base href="/langs/uk" />
+
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>Управління залежностями фронт-ендом за допомогою Bower і RoR</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="йдіть далі." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="Управління залежностями фронт-ендом за допомогою Bower і RoR"/>
+<meta property="og:description" content="продовжуйте." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"front-end-dependency-management-with-bower-ro-r"}">
@@ -56,6 +61,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,9 +75,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,52 +92,20 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">я ❤️ це!</a>
-      <hr>
-      <strong>/front-end-dependency-management-with-bower-ro-r</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2013-07-12</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-
-        <p>Керування залежностями може бути складним. Коли я приєднався до dojo4 кілька тижнів тому, це було чудово - клонувати репозиторій проекту ruby on rails, виконати <code>bundle install</code> та запустити додаток за допомогою <code>rails s</code>. Для тих, хто не знайомий з керуванням залежностями в ruby on rails, гемми, необхідні для запуску додатку, перелічені в файлі <code>Gemfile</code>. Програма bundle читає цей gemfile та завантажує й встановлює будь-які гемми, яких ще немає на вашому комп’ютері. Це не тільки робить легким швидке та безперешкодне запуск додатку, але й полегшує оновлення залежних гемів при виході нової версії. Виконання <code>bundle update</code> або оновлення gemfile та повторне виконання <code>bundle install</code> робить цей процес легким і гарантує, що всі інші користувачі додатку також будуть використовувати нову версію (при умові, що ми поділимося змінами через систему контролю версій). Це чудовий робочий процес для серверної частини, але що з клієнтською частиною?</p>
-
-        <p>Оскільки клієнтські додатки стають все складнішими, нам часто потрібна допомога бібліотек та фреймворків і на клієнті. У dojo4 ми зараз завантажуємо необхідні файли та вручну додаємо їх до системи контролю версій. Файли знаходяться під контролем версій, тож принаймні всі отримають ці файли, і ми можемо відкотити оновлення версій, але це трохи хаотично. Щоб оновити бібліотечні файли, потрібно повторити ручний процес. На серверній стороні також дуже зручно, що завдання керування залежностями менш тісно пов’язані з кодом додатку, що полегшує оновлення та відкочування версій. На жаль, не було хорошого способу керувати залежностями для фронтенду. До недавнього часу.</p>
-
-        <p>У вересні минулого року Twitter випустив <a href="http://bower.io">Bower</a>, який пропонує “універсальне, неупереджене рішення проблеми керування пакетами фронтенду”. Bower надає ті ж можливості для фронтенд-додатку, що й bundle для бекенду: централізований перелік залежностей у одному файлі, легкі команди встановлення та оновлення, а також деяке відокремлення від коду додатку та комітів. Досліджуючи, як ми можемо скористатися цим у нашому стандартному додатку ruby on rails, творці Bower порадили мені гем <a href="https://github.com/42dev/bower-rails/">bower-rails</a>, який інтегрує bower у структуру директорій ruby on rails та додає деякі команди <code>rake</code> для виконання команд bower. Тепер замість того, щоб вручну комітити бібліотечні файли до репозиторію додатку, розробник може виконати <code>rake bower:install [назва пакета]</code>, і остання версія цього пакета буде встановлена в конвеєр ресурсів та додана до переліку необхідних пакетів. Новий розробник може завантажити код додатку, і після виконання <code>bundle install</code> може виконати <code>rake bower:install</code>, і всі залежності фронтенду будуть встановлені в правильну директорію в конвеєрі ресурсів ruby on rails для негайного використання.</p>
-
-        <p>Особисто мені дуже подобається цей підхід, і я сподіваюся, що ми зможемо перевести бібліотеки фронтенду, які додаються вручну, на підхід bower. Ми все ще обговорюємо переваги та недоліки всередині та незабаром приймемо рішення. Що ви думаєте? Як ви керуєте залежностями фронтенду в розподіленій команді?</p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/front-end-dependency-management-with-bower-ro-r">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/зараз<a>
-          </li>
-          <li>
-            <a href="/about">/про нас<a>
-          </li>
-          <li>
-            <a href="/contact">/контакти<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<div class="ro markdown">
+  
+<p>Управління залежностями може

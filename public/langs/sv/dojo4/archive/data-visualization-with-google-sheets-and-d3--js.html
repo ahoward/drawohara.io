@@ -1,0 +1,144 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Inget att se här.</title>
+
+<meta property="og:title" content="Inget att se här."/>
+<meta property="og:description" content="Fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"data-visualization-with-google-sheets-and-d3--js"}">
+    <meta property="site:path_info" content=""/data-visualization-with-google-sheets-and-d3--js"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+
+    <base href='/langs/sv' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">jag ❤️ det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/data-visualization-with-google-sheets-and-d3--js</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2018-10-11</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Det finns människor som ser magi i ett kalkylblad. Det finns andra som ser ett kalkylblad och deras ögon blir oskarpa och de känner en stark drifts att ta en tupplur. Inga domar över någon av typerna, men ibland behöver man göra det lättare att smälta.</p>
+
+<p>Att placera rader och kolumner med data i ett format som hjälper människor att förstå "vad det handlar om" kallas vanligtvis <em>datavisualisering</em>. Det finns många verktyg för att skapa diagram och grafik från kalkylblad - inklusive de som är inbyggda i Excel eller Google Sheets. Ibland behöver man dock något mer robust - och det bästa verktyget för uppgiften är <a href="http://d3js.org">D3</a>.</p>
+
+<p>Till exempel: dojo4 slutförde nyligen ett jobb för <a href="https://350.org">350.org</a> - en organisation som fokuserar på att minska fossila bränslen och övergå till 100% förnybara energikällor. Vi använde konceptet med ett korddiagram för att representera insatserna från flera grupper och organisationer som riktar in sig på internationella banker som finansierar fossila bränsleprojekt runt om i världen. Färgkodningen ger en snabb överblick över grupperna och deras specifika fossila bränslefokus.</p>
+
+<p><img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg' alt="350-chord-diagram-base.jpg" /></p>
+
+<p>Användarna kan hålla muspekaren över en organisation och se vilka banker de riktar in sig på:<br />
+<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg' alt="350-d3-chord-diagram-hover1.jpg" /></p>
+
+<p>Eller hålla muspekaren över en bank och se vilka grupper som riktar in sig på den specifika banken.<br />
+<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg' alt="350-d3-chord-diagram-hover2.jpg" /></p>
+
+<p><sup><em>(observera att namnen på banker och organisationer har tagits bort för integritetsskydd)</em></sup></p>
+
+<p>Det här korddiagrammet genererades dynamiskt från ett delat Google Sheet med hjälp av Google App Script och anpassad JavaScript som är kopplad till bladet. Detta självständiga förhållande hjälper till att säkerställa att källdata och koden för att generera diagrammet inte förlorar sin relation, och alla uppdateringar av det delade bladet kommer automatiskt att uppdatera diagrammet.</p>
+
+<blockquote>
+  <p><em>Jag tyckte det var roligt att arbeta med dojo4. Teamet ville verkligen förstå hur en visualisering av mina data skulle vara värdefullt och de verkar ha arbetat från den punkten. Jag har nu en tillgänglig och engagerande grafik som berättar en historia om var det finns luckor, redundanser och möjligheter för mer samordning. Jag uppskattade hur de tog sig tid att lära sig organisationens estetik och arbetade för att matcha vår stil.</em>    –Senior Global Analyst, <a href="https://350.org/">350.org</a></p>
+</blockquote>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/om<a>
+  </li>
+  <li>
+    <a href="/contact">/kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

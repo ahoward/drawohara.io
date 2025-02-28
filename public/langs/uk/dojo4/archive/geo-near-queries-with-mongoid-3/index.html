@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,11 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <base href='/langs/uk' />
-    <title>тут нічого немає.</title>
+    <title>Запити geoNear з mongoid 3</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="Запити geoNear з mongoid 3"/>
+<meta property="og:description" content="рушно." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -59,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -66,22 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/geo-near-queries-with-mongoid-3">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/geo-near-queries-with-mongoid-3">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/geo-near-queries-with-mongoid-3">🖤</a>
+</small>
 <hr>
-<strong>/geo-near-queries-with-mongoid-3</strong>
     </header>
 
     <main>
@@ -89,82 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>сьогодні я впроваджував новий функціонал пошуку і дійсно потребував функціонал ‘geoNear’ від mongo</p>
-
-<p><a href="http://docs.mongodb.org/manual/reference/command/geoNear/" target="_blank">http://docs.mongodb.org/manual/reference/command/geoNear/</a></p>
-
-<p>на жаль, гем mongoid (3) безпосередньо не підтримує це.</p>
-
-<p>на щастя, код durran’s (<a href="https://twitter.com/modetojoy" target="_blank">https://twitter.com/modetojoy</a>) настільки чіткий, що кілька хвилин пошуку вирішили проблему, що призвело до наступного коду:</p>
-
-<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
-</div><div class='code-line code-line-2'><span style="color: #6e7781"># http://stackoverflow.com/questions/5319988/how-is-maxdistance-measured-in-mongodb</span>
-</div><div class='code-line code-line-3'><span style="color: #6e7781">#   1° широти = 69.047 миль = 111.12 кілометри</span>
-</div><div class='code-line code-line-4'><span style="color: #6e7781">#</span>
-</div><div class='code-line code-line-5'>
-</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #953800">ГРАДУСИ_НА_МИЛЮ</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">1</span>&nbsp;<span style="color: #0550ae">/</span>&nbsp;<span style="color: #0550ae">69.047</span>
-</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #953800">МИЛІ_НА_ГРАДУС</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">1</span>&nbsp;<span style="color: #0550ae">/</span>&nbsp;<span style="color: #953800">ГРАДУСИ_НА_МИЛЮ</span>
-</div><div class='code-line code-line-8'>
-</div><div class='code-line code-line-9'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #953800">Магазин</span><span style="color: #0550ae">.</span><span style="color: #8250df">знайти_всі_за_широтою_та_довготою</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">шир</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">довг</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">опції</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{})</span>
-</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">опції</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">до_опцій!</span>
-</div><div class='code-line code-line-11'>
-</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">милі</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">опції</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">:милі</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">||</span>&nbsp;<span style="color: #0550ae">100</span>
-</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">макс_відстань</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">милі</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #953800">ГРАДУСИ_НА_МИЛЮ</span>
-</div><div class='code-line code-line-14'>
-</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">док</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;
-</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Mongoid</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">сесія</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:за_замовчуванням</span><span style="color: #24292f;background-color: #f6f8fa">).</span>
-</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">команда</span><span style="color: #24292f;background-color: #f6f8fa">(</span>
-</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:geoNear</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #953800">Магазин</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">ім_я_колекції</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
-</div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:поруч</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">:шир</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">шир</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:довг</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">довг</span><span style="color: #24292f;background-color: #f6f8fa">},</span>
-</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:maxDistance</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">макс_відстань</span>
-</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">)</span>
-</div><div class='code-line code-line-22'>
-</div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">магазини</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">[]</span>
-</div><div class='code-line code-line-24'>
-</div><div class='code-line code-line-25'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">якщо</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">док</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'ok'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">==</span>&nbsp;<span style="color: #0550ae">1.0</span>
-</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">результати</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Масив</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">док</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'результати'</span><span style="color: #24292f;background-color: #f6f8fa">])</span>
-</div><div class='code-line code-line-27'>
-</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">результати</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">для_кожного</span>&nbsp;<span style="color: #cf222e">зроби</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">результат</span><span style="color: #0550ae">|</span>
-</div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">відстань_у_градусах</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">результат</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'dis'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
-</div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">об</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">результат</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'ob'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
-</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">магазин</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Магазин</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">створити_екземпляр</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">об</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
-</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">магазин</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'відстань'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Float</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">відстань_у_градусах</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #0550ae">*</span>&nbsp;<span style="color: #953800">МИЛІ_НА_ГРАДУС</span>
-</div><div class='code-line code-line-33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">магазини</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">додати</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">магазин</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
-</div><div class='code-line code-line-34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">кінець</span>
-</div><div class='code-line code-line-35'>&nbsp;&nbsp;<span style="color: #cf222e">кінець</span>
-</div><div class='code-line code-line-36'>
-</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">магазини</span>
-</div><div class='code-line code-line-38'>&nbsp;&nbsp;<span style="color: #cf222e">кінець</span>
-</div><div class='code-line code-line-39'>
-</div><div class='code-line code-line-40'>
-</div></code></div>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/geo-near-queries-with-mongoid-3">😭, я 🖤 ^це!</a>
-  </li>
-  <li>
-    <a href="/now">/зараз</a>
-  </li>
-  <li>
-    <a href="/about">/про_нас</a>
-  </li>
-  <li>
-    <a href="/contact">/контакти</a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌍</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+  <p>сьогодні я розгортав нову функціональність пошуку і дуже потребував функціонал ‘

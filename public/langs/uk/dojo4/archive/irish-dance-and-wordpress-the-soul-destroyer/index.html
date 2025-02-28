@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -32,6 +32,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
+  <!-- base -->
+  <base href='/langs/uk' />
+
   <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -39,21 +42,31 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Ірландський танець і Wordpress - душевний руйнівник</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="йди далі." />
+<meta property="og:title" content="Ірландський танець і Wordpress - душевний руйнівник"/>
+<meta property="og:description" content="продовжуйте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/dojo4/archive/:id">
-    <meta property="site:params" content='{"ext":null,"id":"irish-dance-and-wordpress-the-soul-destroyer"}'>
-    <meta property="site:path_info" content="/irish-dance-and-wordpress-the-soul-destroyer">
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"irish-dance-and-wordpress-the-soul-destroyer"}">
+    <meta property="site:path_info" content=""/irish-dance-and-wordpress-the-soul-destroyer"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,24 +75,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/irish-dance-and-wordpress-the-soul-destroyer">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/irish-dance-and-wordpress-the-soul-destroyer">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/irish-dance-and-wordpress-the-soul-destroyer">🖤</a>
+</small>
 <hr>
-<strong>/irish-dance-and-wordpress-the-soul-destroyer</strong>
     </header>
 
     <main>
@@ -87,84 +107,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Мій рідний виїхав вечором дивитися як моя дочка виступає на своєму першому ірландському танцювальному фестивалі - це було дуже весело</p>
-
-<p><img src='/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/b.jpeg' alt="" /></p>
-
-<p>Під час шоу я зустрів свого старого друга з часів велосипедних перегонів: “Кіта”. Кіт має чудову родину і ми завжди насолоджуємося їхнім товариством. Ми розмовляли про старі часи і про його майбутню поїздку до Лондона на чемпіонат світу з ірландських танців - його дочка 16 років і буде представляти Колорадо на цьому заході!</p>
-
-<p>Кіт завжди був людиною, якою я захоплююсь. Він їздив професійно на Motorola і до сьогодні є одним із найбільш страждаючих, талановитих та безстрашних велосипедистів, яких я коли-небудь знав. Я пам'ятаю, як він розповідав про йогу за 10 років до того, як хто-небудь у Боулдері вважав це модним, і він був присвяченим чоловіком і батьком довше, ніж я. Він, здається, насолоджується цим!</p>
-
-<p>Кіт також дизайнер і розробник; він займається цим довше, ніж я, і він той, на кого можна розраховувати, щоб прийти на вечірку в найкращих черевиках. Коротше кажучи, він саме та людина, яку ви хочете бачити над вашим проектом.</p>
-
-<p>Під час нашої розмови за обідом я запитав Кіта про роботу.</p>
-
-<p>Він сказав, що це відстой, і що йому потрібно знайти щось нове.</p>
-
-<p>Я запитав чому?</p>
-
-<p>“Wordpress”</p>
-
-<p>У короткому вигляді, була його відповідь. Я трохи поглибився у це питання і ось що він сказав:</p>
-
-<p>“Це просто те саме і те саме. Це сплачує рахунки, але я просто занепадаю.”</p>
-
-<p>Він показав руками, як літак падає, коли сказав це.</p>
-
-<p>Я повністю розумію: я, разом з багатьма (всіма?) розробниками, ненавижу працювати з Wordpress і PHP.</p>
-
-<p>Ось так, я це сказав.</p>
-
-<p>Чому, можливо, ви запитаєте, вам це небайдуже?</p>
-
-<p>Вам небайдуже, тому що ви <em>хочете</em> творчих людей працювати над вашим чудовим сайтом.</p>
-
-<p>Вам небайдуже, тому що ви <em>хочете</em> талановитих розробників будувати ваш чудовий додаток.</p>
-
-<p>Вам небайдуже, тому що <em>ми так</em>.</p>
-
-<p>Коли ви обираєте платформу, ви не обираєте її за технологію (слухайте мене, я CTO, який це говорить), радше ви обираєте її за культуру людей, приваблених до неї. Ви обираєте платформу через всіх тих чудових людей, як Кіт, котрі йдуть разом з нею.</p>
-
-<p>Тому, коли ви щось будуєте наступного разу, не запитуйте себе</p>
-
-<p>“на чому я маю це побудувати”</p>
-
-<p>запитайте себе</p>
-
-<p>“<em>хто</em> має це побудувати”</p>
-
-<p>і платформа піде за результатом.</p>
-
-<p>Врешті-решт, це <em>люди</em> на танцях, які дійсно роблять це.</p>
-
-<p>п.с. вам також може сподобатися <a href="/blog/static-is-the-new-black">Статичний - це новий чорний</a> ;-)</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; перейти</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/irish-dance-and-wordpress-the-soul-destroyer">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+  <p>

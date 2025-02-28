@@ -1,0 +1,185 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>niets te zien hier.</title>
+
+<meta property="og:title" content="niets te zien hier."/>
+<meta property="og:description" content="ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<base href='/langs/nl' />
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aws-ebs-backups-we-rewrote-drebs"}">
+    <meta property="site:path_info" content=""/aws-ebs-backups-we-rewrote-drebs"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/aws-ebs-backups-we-rewrote-drebs">ik ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik op me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/aws-ebs-backups-we-rewrote-drebs</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2014-06-23</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Vorige week hebben we versie 0.1.0 van <a href="https://rubygems.org/gems/drebs">DREBS</a>, ons script voor herstel van elastische blokopslag, uitgebracht. We gebruiken het elk uur op al onze 3 EC2-instanties, waarbij we back-ups maken van 6 verschillende EBS-volumes. Dit script is cruciaal voor ons en de AWS-gemeenschap in het algemeen, omdat Amazon geen officiële ondersteuning biedt voor dergelijke scripts of tools voor back-ups. Er zijn verschillende SaaS-producten die deze functionaliteit bieden, maar open-source scripts voor hackers zoals ons zijn schaars. De nieuw geschreven versie is productieklaar en we hopen dat jullie het evenveel genieten als wij.</p>
+
+<p>Vorig jaar bracht voormalig dojo4-medewerker en eeuwige vriend van de dojo <a href="https://twitter.com/shulmang">Garett Shulman</a> de <a href="http://dojo4.com/blog/a-simple-backup-strategy-for-amazon-cloud-hosts">eerste versie van DREBS</a> uit. Het had het eenvoudige doel om een beheerder in staat te stellen om back-upstrategieën en pre/post-back-uptaken (mysqldump, enz.) te definiëren voor elk EBS-volume dat is gekoppeld aan een EC2-instantie. Een eenvoudige cron-taak voert DREBS elk uur uit, die elke back-upstrategie van de EBS-instantie doorloopt en als de strategie aangeeft dat een back-up moet plaatsvinden, gebruikt DREBS de <a href="https://github.com/rightscale/right_aws">right_aws</a> gem om het volume te back-uppen en te uploaden naar het AWS-account als een EBS-snapshot.</p>
+
+<p>De nieuwe versie van DREBS biedt dezelfde functionaliteit, maar met enkele verbeteringen:</p>
+
+<ul>
+  <li>Status wordt nu opgeslagen in een kleine sqlite-database in plaats van een json-bestand.</li>
+  <li>Robuust als strategieën veranderen.</li>
+  <li>Robuust als snapshots worden verwijderd in de AWS-console.</li>
+  <li>Een DREBS-shell die je in staat stelt om je configuratie eenvoudig en snel te testen.</li>
+</ul>
+
+<p>Als voorbeeld van een installatie, hier is DREBS in onze crontab op al onze machines:</p>
+
+<pre><code>0 * * * * /home/dojo4/git/drebs/bin/drebs execute /usr/local/var/drebs_config.yml &amp;&gt; /usr/local/var/drebs_cron.out
+</code></pre>
+
+<p>en hier is ons configuratiebestand voor een van onze EC2-instanties:</p>
+
+<pre><code>---
+aws_access_key_id: XXXX
+aws_secret_access_key: XXX
+region: us-west-1
+strategies:
+- hours_between: 6
+  num_to_keep: 12
+  mount_point: /dev/sdh
+  pre_snapshot_tasks:
+  - pg_dump -U postgres -f /ebs/databases/postgresql/backups/project_name_production.sql project_name_production
+  post_snapshot_tasks:
+- hours_between: 1
+  num_to_keep: 2
+  mount_point: /dev/sda1
+  pre_snapshot_tasks:
+  post_snapshot_tasks:
+- hours_between: 24
+  num_to_keep: 4
+  mount_point: /dev/sda1
+- hours_between: 96
+  num_to_keep: 4
+  mount_point: /dev/sda1
+log_path: /usr/local/var/drebs.log
+email_on_exception: miles@dojo4.com
+email_host: smtp.gmail.com
+email_port: 587
+email_domain: gmail.com
+email_user: xxx
+email_password: xxx
+</code></pre>
+
+<p>Zoals altijd, hebben we meer ideeën om dit script te verbeteren en als dit script je net zoveel helpt als ons, nodigen we je uit om de <a href="https://github.com/dojo4/drebs">repo</a> te forken en ons een pull request te sturen:</p>
+
+<ul>
+  <li>Verbeter testdekking</li>
+  <li>Gebruik whenever gem voor eenvoudigere crontab-installatie</li>
+  <li>Willekeurige uitvoeringsintervallen (snapshots elke 5 minuten in plaats van elk uur)</li>
+  <li>AWS API-sleutels en andere configuratiewaarden van AWS Instance Data</li>
+  <li>Voeg voorbeeldconfiguratie voor AWS-gebruikerstoegang toe</li>
+</ul>
+
+<p>We denken dat DREBS een geweldige bijdrage is aan de AWS-gemeenschap die ons heeft geholpen om een geweldige implementatiearchitectuur te bouwen die geweldige websites en producten heeft gehost in de loop der jaren. Als je het eens bent en het gebruikt, zouden we graag je feedback horen op Twitter op <a href="https://twitter.com/intent/tweet?text=@dojo4">@dojo4</a>!</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/aws-ebs-backups-we-rewrote-drebs">😩, ik 🖤 ^dit!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/over<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; uitwerpen</a>
+    </footer>
+  </body>
+</html>

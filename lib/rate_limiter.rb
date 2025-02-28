@@ -7,8 +7,9 @@ class RateLimiter
   attr_reader :timing
   attr_reader :limiting
 
-  def initialize(rps: 8, pad: 0.042, name: 'RateLimiter', limiting: nil)
-    @rps = rps.to_i
+  def initialize(rps: 8, rpm: nil, pad: 0.042, name: 'RateLimiter', limiting: nil)
+    @rps = rps
+    @rpm = rpm
     @pad = pad.to_f
     @name = name.to_s
 
@@ -28,19 +29,22 @@ class RateLimiter
     sum = nil
     pending = Pending.new
 
+    max = [@rpm, @rps].detect
+    window = @rpm ? 60.0 : 1.0
+
     thread_safe do
       size = @timing.size
 
-      if size >= @rps
+      if size >= max
         known = @timing.select{|timing| timing.is_a?(Numeric)}
 
         seconds =
           if known.empty?
-            1.0
+            window
           else
             avg = known.sum / known.size
             total = size * avg
-            seconds = [1.0 - total + @pad, 0.0].min
+            seconds = [window - total + @pad, 0.0].min
           end
 
         if seconds > 0

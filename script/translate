@@ -43,8 +43,8 @@ script do
       end
     end
 
-    parallel =
-      AI::Mistral::RPS - 1
+    parallel = 10
+      #AI::Mistral::RPS - 1 #FIXME
 
     Parallel.each(jobs, in_threads: parallel) do |job|
       lang = job.fetch(:lang)
@@ -95,7 +95,20 @@ private
 
     a = Time.now.to_f
 
-    translated = ai.completion_for(prompt)
+    translated = nil
+    error = nil
+
+    11.times do
+      begin
+        translated = AI::Groq.completion_for(prompt)
+        break
+      rescue => e
+        error = e
+        sleep(rand * 11)
+      end
+    end
+
+    raise(error) if error
 
     string_bash!(translated)
 

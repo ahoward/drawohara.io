@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -31,6 +31,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
+    <base href='/langs/uk' />
 
   <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,17 +39,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- base -->
-    <base href='/langs/uk' />
-
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Ручна друга код і дизайн</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуй рух." />
+<meta property="og:title" content="Ручна друга код і дизайн"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"handcrafted-code-and-design"}">
@@ -58,6 +59,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -77,53 +90,18 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/handcrafted-code-and-design">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/handcrafted-code-and-design">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/handcrafted-code-and-design">🖤</a>
+</small>
 <hr>
-<strong>/вироби ручної роботи та дизайну</strong>
     </header>
 
     <main>
       <em>опубліковано: 2012-09-24</em>
 <br>
 <br>
-<p>Роздумуючи про редизайн нашого візуального іміджу тут у dojo4, я розмірковував про мистецькі гільдії епохи Відродження в Італії та інші моделі майстерні. Всі мистецькі вироби, що ми створюємо, є унікальними і призначені для задоволення потреб і амбіцій замовника. Наприклад, рекламний буклет Леонардо да Вінчі хвалився 36 послугами, які його майстерня могла запропонувати потенційному замовнику. Саме від цієї присвяченості різноманіттю та уваги до майстерності ми беремо свій приклад.</p>
-<p><img src='/ro/dojo4/handcrafted-code-and-design/assets/2012-08-31-15.51.42.jpg' title="2012 08 31 15.51.42" alt="2012 08 31 15.51.42" rel="450x450" width="450" height="338" /></p>
-<p>Під час епохи Відродження відбувся технологічний бум, безпрецедентний в історії Західної Європи. Я підозрюю, що Боулдер переживає такий технологічний та культурний бум. Однією з областей, які ми повинні постійно підтримувати, є прихильність до створення красивого та елегантного Боулдера. Багато уваги ЗМІ приділяється нашому розвиваючомуся технологічному співтовариству та спортивному співтовариству, яке виросло навколо нашого спадкового зовнішнього майданчика. Крім цих широко розголошених рис, Боулдер повинен продовжувати шлях до створення процвітаючої мистецької та дизайнерської сцени. З моєї сторони, я відчайдушно хочу взяти участь у постійному підтриманні мистецтва та дизайну в Боулдері. У цьому дусі я зайняв посаду креативного директора на dojo4.com.</p>
-<p>Я працював у різних технологічних та естетичних посадах у незвичайному діапазоні організацій. Я працював у <a href="http://vermilion.com" title="http://vermilion.com">Vermilion</a>,  <a href="http://www.pbs.org/kqed/oceanadventures/" title="http://www.pbs.org/kqed/oceanadventures/" target="_blank">Океанському товаристві майбутнього Жана-Мішеля Кусто</a>, очолюваному ООН антипроліфераційному аналітичному центрі, <a href="http://www.tendrilinc.com/" title="http://www.tendrilinc.com/">Tendril</a>, і знайшов новий дім у dojo4. Моє минуле в ілюстрації, музиці, технологіях та дизайні, сподіваюся, добре послужить нашій студії.</p>
-<p>Ми постійно прагнемо бути корисним ресурсом для громади та "однією майстернею", яка надає початкову консультацію аж до виконання. Я хочу, щоб офіс і бренд мали відчуття надійного ресурсу громади. Коли я ріс, ми часто відвідували місцеву станцію обслуговування, районну майстерню, продуктовий магазин. Робота з дизайном і програмним забезпеченням має для мене такий самий смак. Ми тут, щоб обслуговувати громаду Боулдера та допомогти прикрасити наше громадське середовище.</p>
-<p>Ми замовили нашу чудову фетрову дошку для управління проектами у <a href="https://twitter.com/mlkshkmlkshnk" title="https://twitter.com/mlkshkmlkshnk">@mlkshkmlkshnk</a> та нові візитні картки, виготовлені методом літерпресу, у <a href="http://www.flickr.com/photos/smokeproof/sets/72157615615208221/" title="http://www.flickr.com/photos/smokeproof/sets/72157615615208221/">Smokeproof Press</a>. Ми в захваті від мистецьких текстур друкованих матеріалів і відчуття стабільності, яке надають вироби ручної роботи. Верстаки, виготовлені <a href="http://mccordwoodandsteel.com/" title="http://mccordwoodandsteel.com/">McCord Wood + Steel </a>&#160;зараз прикрашають наш громадський простір. Їх позичено у надзвичайно талановитих людей з <a href="http://goodappl.es/" title="http://goodappl.es/">Goodapples</a>.
-</p>
-<p>Ми працюємо у відкритому офісі, тому, будь ласка, зайдіть і поздоровіться. Ми також часто проводимо дизайнерські зустрічі, тому, будь ласка, зв'яжіться зі мною, якщо ви хотіли б приєднатися до нас. Принесіть ідеї, які принесуть користь не тільки технологічній та дизайнерській сцені Боулдера, але і громаді в цілому.</p>
-
-<p><img src='/ro/dojo4/handcrafted-code-and-design/assets/2012-08-20-14.44.49.jpg' title="2012 08 20 14.44.49" alt="2012 08 20 14.44.49" rel="450x450" width="450" height="450" /></p>
-<p><img src='/ro/dojo4/handcrafted-code-and-design/assets/2012-08-31-15.49.46.jpg' title="2012 08 31 15.49.46" alt="2012 08 31 15.49.46" rel="450x450" width="450" height="401" /></p>
-<p><img src='/ro/dojo4/handcrafted-code-and-design/assets/2012-08-31-15.51.02.jpg' title="2012 08 31 15.51.02" alt="2012 08 31 15.51.02" rel="450x450" width="450" height="338" /></p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/handcrafted-code-and-design">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>Розмірковуючи про переробку нашої візуальної ідентичності тут у dojo4, я згадав про художні гільдії епохи Відродження Італії та інші майстерні ремесла

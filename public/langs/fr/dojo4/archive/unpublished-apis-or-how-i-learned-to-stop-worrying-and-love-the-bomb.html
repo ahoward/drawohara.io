@@ -1,0 +1,214 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>rien à voir ici.</title>
+    <meta property="og:title" content="rien à voir ici."/>
+    <meta property="og:description" content="circulez." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb"}">
+    <meta property="site:path_info" content=""/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb"">
+    <style>
+      a {text-decoration: none !important; }
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">j'❤️ ça !</a>
+      <small>
+        <small>
+          <small>
+            <span title='bois-moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb</strong>
+    </header>
+    <main>
+      <em>publié le : 2014-04-16</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Parfois, vous avez une tâche en ligne répétitive et ennuyeuse ou vous devez automatiser tout ou partie d'un flux de travail sur un site web. Scriptant ces interactions peut nous éviter de perdre des tonnes d'heures de travail à cliquer de manière monotone sur les mêmes pages d'un site.</p>
+        <p>Beaucoup d'entre nous vont utiliser <a href="http://mechanize.rubyforge.org/">Mechanize</a> d'emblée. Ensuite, vous découvrez que l'interface du site que vous essayez d'automatiser est lourde en JavaScript ou en AJAX. Que faire maintenant ?</p>
+        <p><a href="http://http://phantomjs.org/">Phantomjs</a> à la rescousse. Phantomjs est un navigateur WebKit rapide, facilement scriptable et sans interface graphique. Lorsque le travail échoue pour une raison quelconque, vous pouvez prendre une capture d'écran pour la réviser. Pour nous, cela signifiait l'envoyer par e-mail à un administrateur, car les travaux s'exécutent sur des serveurs et non localement. Nous utilisons également <a href="https://github.com/westoque/phantomjs.rb">Phantomjs.rb</a> pour gérer le chemin et la sortie de Phantomjs.</p>
+        <p>Voici un peu de code de ce que nous faisons.</p>
+        <pre><code>class InvitationAcceptor
+  attr_accessor :invitation, :tmpdir
+  def initialize(invitation)
+    self.invitation = invitation
+  end
+  def accept!
+    fail_image_path = false
+    Dir.mktmpdir(invitation.id.to_s) do |tmpdir|
+      self.tmpdir = tmpdir
+      Phantomjs.inline(js) do |line|
+        puts line
+        fail_image_path = line.gsub('FAIL:', '').chomp if line.starts_with?('FAIL')
+      end
+      if fail_image_path
+        Mailer.invitaion_failed(invitation, fail_image_path).deliver
+      else
+        invitation.invitation_accepted!
+      end
+    end
+  end
+  private
+    def js
+      fail_image = "#{tmpdir}/failed.png"
+      &lt;&lt;-JS
+        function waitFor(testFx, onReady, timeOutMillis) {
+          var maxtimeOutMillis = timeOutMillis ? timeOutMillis : 10000,
+            start = new Date().getTime(),
+            condition = false
+          var interval = setInterval(function() {
+            if ((new Date().getTime() - start &lt; maxtimeOutMillis) &amp;&amp; !condition) {
+              condition = (typeof(testFx) === "string" ? eval(testFx) : testFx());
+            } else {
+              if (! condition) {
+                fail()
+              } else {
+                console.log("'waitFor()' waited " + (new Date().getTime() - start) + "ms.");
+                typeof(onReady) === "string" ? eval(onReady) : onReady();
+                clearInterval(interval);
+              }
+            }
+          }, 250);
+        };
+        var page = require('webpage').create(),
+          testindex = 0,
+          loadInProgress = false,
+          tries = 0;
+        page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36'
+        var fail = function() {
+          console.log("FAIL:#{fail_image}");
+          page.render("#{fail_image}");
+          phantom.exit()
+        }
+        page.onConsoleMessage = function(msg) {
+          console.log(msg);
+        };
+        page.onLoadStarted = function() {
+          loadInProgress = true;
+          console.log("load started");
+        };
+        page.onLoadFinished = function(status) {
+          loadInProgress = false;
+          console.log("load finished");
+        };
+        var steps = [
+          function() {
+            console.log("Load Login Page");
+            page.open("#{invitation.invitation_received.subject}")
+          },
+          function() {
+            console.log("Verify the invitation is still valid");
+            success = page.evaluate(function() {
+              if (null == document.getElementById('hasSomeElement')) {
+                return false;
+              }
+              return true;
+            })
+            if (! success) {
+              fail();
+            }
+          },
+          function() {
+            console.log("Enter Credentials");
+            page.evaluate(function() {
+              document.getElementById('hasSomeElement').checked;
+              document.getElementById('hasSomeElement').checked;
+              document.getElementById('email').value = '#{invitation.email}';
+              document.getElementById('password').value = '#{invitation.password}';
+              document.getElementById('login').click();
+            });
+          },
+          function() {
+            console.log("Accepting the terms");
+            page.evaluate(function() {
+              document.getElementById('accept').click()
+            });
+          },
+          function() {
+            console.log("Waiting for the JS craziness to complete");
+            waitFor(function() {
+              return page.evaluate(function() {
+                return document.getElementsByClassName('someExpectedContent').length != 0
+              });
+            }, function() {
+              phantom.exit();
+            });
+          }
+        ]
+        interval = setInterval(function() {
+          if (!loadInProgress &amp;&amp; typeof steps[testindex] == "function") {
+            steps[testindex]();
+            page.render("#{tmpdir}/step" + (testindex + 1) + ".png");
+            testindex++;
+          }
+        }, 250);
+      JS
+    end
+end
+</code></pre>
+        <p>Vous pouvez également injecter des scripts dans la page, avec <a href="http://phantomjs.org/api/webpage/method/inject-js.html">injectJs</a> ou <a href="http://phantomjs.org/api/webpage/method/include-js.html">includeJs</a> mais je préfère m'en tenir à ce qui est déjà là ou simplement utiliser les bases pour éviter tout conflit avec ce qui peut déjà être dans la page.</p>
+      </div>
+    </main>
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; aller à</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb">😩, je 🖤 ^ça!<a>
+          </li>
+          <li>
+            <a href="/now">/maintenant<a>
+          </li>
+          <li>
+            <a href="/about">/à propos<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; quitter</a>
+    </footer>
+  </body>
+</html>

@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -37,13 +37,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <base href='/langs/uk' />
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>стаємо сильнішими</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="проходьте далі." />
+<meta property="og:title" content="стаємо сильнішими"/>
+<meta property="og:description" content="рухаємося далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -55,9 +54,18 @@
     <meta property="site:params" content="{"ext":null,"id":"getting-stronger"}">
     <meta property="site:path_info" content=""/getting-stronger"">
 
+    <base href='/langs/uk' />
+
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -66,9 +74,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -78,10 +91,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/getting-stronger">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/getting-stronger">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/getting-stronger">🖤</a>
+</small>
 <hr>
-<strong>/ставати сильнішим</strong>
     </header>
 
     <main>
@@ -89,116 +106,12 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>я думаю, багато розробників вважають, що робота розробника полягає у створенні програмного забезпечення.</p>
+  <p>й думаю, багато розробників вважають роботу розробки про розвиток програмного забезпечення.</p>
 
-<p>зовісні, це так!</p>
+<p>це точно так!</p>
 
-<p>однак це також стосується розвитку самого розробника.</p>
+<p>однак, це також про розвиток розробника.</p>
 
-<p><em>ставати сильнішим.</em></p>
+<p><em>стаємо сильніші.</em></p>
 
-<p>ось простий алгоритм, який можна використовувати, щоб стати сильнішим розробником:</p>
-
-<ul>
-  <li>
-    <p>повністю зрозуміти проблему</p>
-  </li>
-  <li>
-    <p>спроектувати абстракцію</p>
-  </li>
-  <li>
-    <p>реалізувати абстракцію</p>
-  </li>
-  <li>
-    <p>випустити абстракцію</p>
-  </li>
-  <li>
-    <p>запитати зворотний зв'язок</p>
-  </li>
-  <li>
-    <p>використовувати зворотний зв'язок для побудови розуміння</p>
-  </li>
-</ul>
-
-<p>це досить абстрактно для деяких людей, тому давайте наведу конкретний приклад, щоб порівняти цього розробника</p>
-
-<p><img src='/ro/dojo4/getting-stronger/assets/weak.jpg' alt="img" /></p>
-
-<p>з цим</p>
-
-<p><img src='/ro/dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg' alt="img" /></p>
-
-<p>у розробці додатка, який повинен створювати рівнобедрені та прямокутні трикутники.</p>
-
-<p>розробник один використовує такий процес:</p>
-
-<ul>
-  <li>
-    <p>витягнути карточку 'рівнобедрений' з дошки. не турбуйтеся про читання 'прямокутний трикутник'.</p>
-  </li>
-  <li>
-    <p>отримати зразки рівнобедрених трикутників. написати код, який може надійно створювати саме ті рівнобедрені трикутники, які очікує код. оскільки робити більше - це YAGNI, зробити коміт, переконатися, що CI зелений. і йти додому.</p>
-  </li>
-</ul>
-
-<p>розробник два робить так:</p>
-
-<ul>
-  <li>
-    <p>переглянути дошку. прочитати останні коміти. зрозуміти 10,000 футіву карту, розробник зливає карточки 'рівнобедрений' та 'прямокутний трикутник' в одну нову карточку під назвою 'побудувати модель трикутника' (зрозуміти проблему)</p>
-  </li>
-  <li>
-    <p>розробник працює на папері, остаточно приходячи до (абстракція)</p>
-  </li>
-</ul>
-
-<p><img src='/ro/dojo4/getting-stronger/assets/pythagorean.png' alt="img" /></p>
-
-<ul>
-  <li>
-    <p>розробник реалізує код, який моделює загальні трикутники за допомогою теореми та спеціалізацій для кожного конкретного типу 'рівнобедрений' та 'прямокутний' (реалізувати абстракцію)</p>
-  </li>
-  <li>
-    <p>розробник відокремлює доменний код від недоменного коду та пуш бібліотеку до github. (випуск абстракції та запит зворотного зв'язку)</p>
-  </li>
-  <li>
-    <p>розробник зливає pull request для багу 'ділення на нуль' через кілька днів (використання зворотного зв'язку для подальшого розуміння)</p>
-  </li>
-</ul>
-
-<p>в кінцевому результаті розробник один відмічає чекбокс і зміцнює процес своєї команди. розробник два зміцнює код, команду та, перш за все, себе.</p>
-
-<p>повторюючи процес знову і знову, розробник один може перетворити себе на розробника два, постійно працюючи над зміцненням технічних та доменних м'язів. навпаки, розробник два може припинити тренування та стати м'яким, як розробник один.</p>
-
-<p>здатність розробника - це як м'яз: потрібно використовувати його або втратити.</p>
-
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/getting-stronger">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p> oto простий

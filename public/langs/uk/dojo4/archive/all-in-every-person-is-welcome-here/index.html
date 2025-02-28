@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -40,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>нічого не бачити тут.</title>
+    <title>! &#39;Усі ВКЛЮЧЕНО: кожна людина ласкова тут&#39;</title>
 
-<meta property="og:title" content="нічого не бачити тут."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="! &#39;Усі ВКЛЮЧЕНО: кожна людина ласкова тут&#39;"/>
+<meta property="og:description" content="Ｙдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -59,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -66,22 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
+    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/all-in-every-person-is-welcome-here">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/all-in-every-person-is-welcome-here">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/all-in-every-person-is-welcome-here">🖤</a>
+</small>
 <hr>
-<strong>/all-in-every-person-is-welcome-here</strong>
     </header>
 
     <main>
@@ -89,42 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Вибори відбулися. Ми оглянулися навколо і раптом зрозуміли, що інші люди можуть вважати нас можливими ненависниками; що наскільки вони можуть бачити, ми могли б таємно (або не так таємно) ховати злу волю до них, дивуючись, чи ми б воліли, щоб їх тут не було, і не поважали б їх як людей.</p>
-
-<p>Ксенофобія, расизм, мізогінія, гомофобія та упередженість усіх видів завжди існували в цій країні, але, можливо, ми більше ніж коли-небудь в небезпеці нормалізації таких видів насильства. Ми протистояємо і боремося з цим! І ми хочемо, щоб люди знали, що ми <a href="http://www.whiteaccomplices.org/uk">працюємо над звільненням себе</a> від цих фундаментальних непорозумінь істини взаємозалежності.</p>
-
-<p><em>Усі простори, великі чи малі, будь то громадський простір, бізнес, інституція чи країна, повинні бути гостинними та безпечними для всіх людей. Ми можемо не ділити переконання, зовнішність, привілеї, досвід чи засоби, але маємо спільну нескінченну здатність до людської доброти. Незалежно від статі, релігії, походження, раси, етнічної приналежності, здатності або економічного доступу, кожна людина має невгамовну цінність. Ми визнаємо це та проголошуємо.</em></p>
-
-<p><img src='/ro/dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg' alt="ALL-IN-3-1.jpg" /></p>
-
-<p>Тому ми створили <a href="http://dojo4.com/uk/all-in">зображення</a> (дякуємо, <a href="http://anthonydimitre.com/uk">Ентоні Дімітре</a>), щоб інші знали і нагадували нам, що ми вітаємо всіх людей, будь то в наших будинках, на наших вулицях, у нашому бізнесі, наших інституціях або в нашій країні. Якщо це тебе теж торкається, <a href="http://dojo4.com/uk/all-in">завантаж тут</a> і ділися далеко і широко…</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/all-in-every-person-is-welcome-here">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>В

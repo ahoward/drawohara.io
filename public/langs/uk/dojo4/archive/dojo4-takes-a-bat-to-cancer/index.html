@@ -7,7 +7,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
@@ -40,21 +40,28 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>dojo4 використовує бейсбол проти раку.</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
+    <meta property="og:title" content="dojo4 використовує бейсбол проти раку."/>
+    <meta property="og:description" content="продовжуйте." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
     <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/dojo4/archive/:id">
-    <meta property="site:params" content="{'ext':null,'id':'dojo4-takes-a-bat-to-cancer'}">
-    <meta property="site:path_info" content="/dojo4-takes-a-bat-to-cancer">
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"dojo4-використовує-бейсбол-проти-раку"}">
+    <meta property="site:path_info" content=""/dojo4-використовує-бейсбол-проти-раку"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,78 +87,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-takes-a-bat-to-cancer">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-використовує-бейсбол-проти-раку">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-використовує-бейсбол-проти-раку">🖤</a>
+      </small>
       <hr>
-      <strong>/dojo4-takes-a-bat-to-cancer</strong>
     </header>
 
     <main>
-      <em>опубліковано: 2014-10-23</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p><a href="http://dojo4.com/blog/dojo4-stands-up-to-cancer">Останній проект dojo4 з Stand Up to Cancer</a> (SU2C) <a href="http://dojo4.com/blog/su2c-live-telethon-rawked">допоміг їм зібрати понад 100 мільйонів доларів за один телемарафон</a>. Через місяць ми знову працюємо з SU2C; цього разу вони співпрацюють з Major League Baseball, щоб зібрати кошти на Світовій серії!</p>
-
-        <p>SU2C звернулися до нас з проблемою - MLB представляє SU2C і боротьбу з раком під час <a href="http://mlb.mlb.com/mlb/gameday/index.jsp?gid=2014_10_24_kcamlb_sfnmlb_1">Гри 3 Світової серії</a> (завтра - п'ятниця, 24 жовтня)! Вони хотіли покращити додаток, який ми створили їм кілька місяців тому, що дозволяє людям створювати присвяти близьким, які постраждали від раку: <a href="http://istandupfor.su2c.org">#istandupfor</a>.</p>
-
-        <p>Спочатку ми створили додаток як адаптивний веб-сайт, де люди могли завантажувати зображення, вводити присвяту, ділитися своєю присвятою в соціальних мережах та бути представленими в галереї SU2C. З новою видимістю Major League Baseball SU2C хотіли підняти додаток на новий рівень. Тому ми повернулися до креслярської дошки.</p>
-
-        <p>Ось вимоги:</p>
-
-        <ul>
-          <li><strong>обробляти тонни трафіку!</strong> Світова серія MLB - це міжнародна подія, за якою спостерігають мільйони людей. Коли вони згадують рух #istandupfor, ми побачимо значне збільшення трафіку.</li>
-          <li><strong>мати нативний додаток!</strong> Існувала стара версія #istandupfor в магазині додатків iOS, але її потрібно було оновити, і не було додатка для Android. Ми повинні були дозволити людям вшанувати близьких і ділитися своєю присвятою на своїх мобільних пристроях.</li>
-          <li><strong>зводити до мінімуму обслуговування</strong> Метою SU2C є збір коштів на дослідження раку, а не підтримка 3 різних додатків для одного руху #istandupfor.</li>
-        </ul>
-
-        <p>Ось що ми зробили:</p>
-
-        <h2 id="залишіть-скейлінг-експертам">залишіть скейлінг експертам</h2>
-
-        <p>Спроба обробляти величезну кількість трафіку безпосередньо на наших серверах - це прямий шлях до стресових розробників, які відчайдушно виправляють баги і залишають користувачів без відповіді, коли вони намагаються внести свій внесок у чудову спільноту SU2C. Хто добре вміє обробляти величезну кількість завантажень? Amazon S3.</p>
-
-        <p>Замість того, щоб вимагати, щоб один з наших веб-серверів EC2 працював і був доступним, додатки безпосередньо завантажують зображення та всю необхідну інформацію про присвяту (присвята, електронна пошта тощо у невеликому файлі json) до AWS S3. Веб-версія #istandupfor вже завантажувала зображення до S3, тому рефакторинг був мінімальним. Amazon також підтримує нативні мобільні додатки для завантаження до S3 з SDK для iOS та Android.</p>
-
-        <p>Потім наші сервери EC2 періодично перевіряють S3 на наявність нових завантажень присвят і обробляють їх у нашій центральній базі даних для перегляду окремих присвят онлайн (думайте про спільне використання в соціальних мережах) і для SU2C, щоб затвердити і додати до галереї. Наші користувачі завжди зможуть створювати присвяти незалежно від платформи, яку вони використовують (веб, iOS або Android), завдяки S3 та CloudFront.</p>
-
-        <p>Ми провели конференц-звонок з AWS (подяка Девід і Натаніель!) щоб переконатися, що наш план був надійним, і вони погодилися, що це найкращий підхід. Інженери в AWS точно знають, як обробляти тисячі запитів за секунду без порушення роботи, тому ми дозволили їм.</p>
-
-        <h2 id="гібридні-нативні-додатки">гібридні нативні додатки</h2>
-
-        <p>SU2C хотіли нативний додаток, але також дуже хотіли уникнути великої кількості обслуговування в майбутньому. Магазини додатків - це чудові механізми дистрибуції, але містять багато перешкод. Проходження через ці перешкоди один раз набагато легше зробити, ніж проходити через них кожного разу, коли потрібні зміни в додатках.</p>
-
-        <p>Тому ми використали мої стартові точки для iOS та Android, <a href="http://imbed.github.io/">Imbed</a>, щоб створити нативні додатки для iOS та Android, які використовують веб-перегляд для завантаження додатка. Нативні оболонки надають обробники JavaScript, які запускають нативний код, тому ми можемо створити будь-який нативний код, який нам потрібно (для цього випадку більшість нативного коду полягала у виборі зображення з пристрою та його завантаженні до AWS S3 через SDK AWS) і потім викликати цей нативний код через веб-сторінку, завантажену в додатку. Ця веб-сторінка все ще є веб-сторінкою, тому ми можемо вносити до неї оновлення, публікувати її та оновлювати додаток без необхідності знову проходити через перешкоди магазинів додатків.</p>
-
-        <p>Перегляньте <a href="https://play.google.com/store/apps/details?id=com.eifoundation.su2c">додаток для Android у Google Play</a> та <a href="https://itunes.apple.com/us/app/stand-up-to-cancer/id669692145?mt=8">додаток для iOS в App Store</a>!</p>
-
-        <p>Ми любимо працювати з SU2C. Не тільки вони збирають багато коштів на боротьбу з раком, вони також дуже милі та чудові в роботі. Ми не можемо дочекатися результатів завтрашньої гри - завантажте додаток і зробіть пожертву!</p>
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-takes-a-bat-to-cancer">😩, я 🖤 ^це!</a>
-          </li>
-          <li>
-            <a href="/now">/now</a>
-          </li>
-          <li>
-            <a href="/about">/about</a>
-          </li>
-          <li>
-            <a href="/contact">/contact</a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>

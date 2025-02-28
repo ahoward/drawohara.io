@@ -1,51 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <!-- meta -->
+    <title>Ідея проектуImpact</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="йдіть далі." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Ідея проектуImpact"/>
+    <meta property="og:description" content="йдіть далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"impact-project-example-idea"}">
@@ -55,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,75 +70,38 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/impact-project-example-idea">я ❤️ це!</a>
-<hr>
-<strong>/impact-project-example-idea</strong>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/impact-project-example-idea">❤️ </a>
+          ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/impact-project-example-idea">🖤</a>
+      </small>
+      <hr>
     </header>
 
     <main>
       <em>опубліковано: 2015-01-15</em>
-<br>
-<br>
-<div class="ro markdown">
-  <h1 id="impact-project-idea">Ідея соціального проекту</h1>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <h1 id="impact-project-idea">Ідея проектуImpact</h1>
 
-<h2 id="panhandling-app-for-bums">Додаток для жебраків</h2>
-
-<p><img src='/ro/dojo4/impact-project-example-idea/assets/b.gif' alt="Homeless_2D00_indiegogo.06012009.gif" /></p>
-
-<p>Сьогодні до мене на вулиці підійшов жебрак і попросив зайняти грошей. Я сказав, що у мене їх немає. Потім я побачив у нього в руках смартфон і запитав про нього. Він сказав, що це LG. Він був у гарному чохлі. Я запитав, чи він вміє користуватися своїм телефоном, і він сказав так. Я сказав, що всі мої гроші проходять через мобільний телефон, і якби у нього був додаток, який міг би легко прийняти невелику пожертву, я б дав йому декілька монет. Я сказав йому створити цей додаток, і він міг би заробити мільйон доларів замість того, щоб жебракувати. Він не відповів. Я пішов.</p>
-
-<p>Я задумався, чи хтось вже працює над цим. Здається, <a href="http://www.ctagroup.org/">ці хлопці</a> працюють над чимось подібним у Кремнієвій долині, але, на мою думку, вони трохи не вгадують, прагнучи бути “першим місцем в Америці, де безхатність не існує”. Насправді існує багато закритих громад, маленьких міст тощо, де безхатність не існує. І, на мою думку, це навіть не повинно бути ціллю. Метою повинен бути забезпечення вищої якості людського досвіду для тих, хто живе на межі завдяки технологіям смартфонів, період.</p>
-
-<p>Ці хлопці представляють цю інфографіку, яка показує багато можливостей для цілеспрямованих підприємців допомогти тим із нас, хто найбільше потребує. Давайте, людство, вирішуймо найбільші проблеми людської гідності як наше наступне велике діло.</p>
-
-<p><img src='/ro/dojo4/impact-project-example-idea/assets/c.png' alt="Homeless-Cell-Phone-Stats.png" /> <a href="http://forums.techsoup.org/cs/community/b/tsblog/archive/2014/12/09/can-mobile-phones-solve-homelessness.aspx">посилання на зображення</a></p>
-
-<p>Мій друг, з ким я гуляв, запропонував, що, можливо, я міг би просто покласти кілька доларів на його картку EBT. “Чудова ідея”</p>
-
-<p>Я б з радістю почув ваші думки і/або допоміг би вам створити це бачення для наших братів і сестер на вулиці.</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/impact-project-example-idea">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+        <h2 id="panhandling-app-for-bums">Захід для з

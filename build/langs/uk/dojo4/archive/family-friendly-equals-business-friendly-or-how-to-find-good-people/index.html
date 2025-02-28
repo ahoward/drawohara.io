@@ -1,60 +1,70 @@
 <html color-mode="user" lang="uk">
   <head>
-    <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>Тут нічого немає.</title>
+  <!-- meta -->
+    <title>родинні-pleasant = бізнес-pleasant або як знайти хороших людей</title>
 
-    <meta property="og:title" content="Тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте йти." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="родинні-pleasant = бізнес-pleasant або як знайти хороших людей"/>
+<meta property="og:description" content="рухайте далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"family-friendly-equals-business-friendly-or-how-to-find-good-people"}">
     <meta property="site:path_info" content=""/family-friendly-equals-business-friendly-or-how-to-find-good-people"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,98 +90,19 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/family-friendly-equals-business-friendly-or-how-to-find-good-people">я ❤️ це!</a>
-      <hr>
-      <strong>/family-friendly-equals-business-friendly-or-how-to-find-good-people</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/family-friendly-equals-business-friendly-or-how-to-find-good-people">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/family-friendly-equals-business-friendly-or-how-to-find-good-people">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2016-01-08</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p><img src='/ro/dojo4/family-friendly-equals-business-friendly-or-how-to-find-good-people/assets/b.jpeg' alt="blogLukeandFlo.jpg" /></p>
-
-        <p>Однією з найбільш винагороджуючих можливостей, які ми маємо як підприємці, є створення динамічної, надійної та стійкої команди. І все ж найм та утримання “правильних людей” також є однією з найбільших викликів у бізнесі. Протягом років керування dojo4, найважливіші уроки, які я дізнався про створення справді чудової команди, зводяться до цих трьох керівних принципів:</p>
-
-        <ul>
-          <li>
-            <p><em><a href="http://little-startup-handbook.dojo4.com/hire-people-you-like">найміть людей, з якими вам буде приємно проводити час;</a></em></p>
-          </li>
-          <li>
-            <p><em>щодо найму та звільнення, <a href="http://little-startup-handbook.dojo4.com/courageousness-conquers">довіряйте своїм інстинктам</a> - навіть якщо це незвичайно або незручно;</em></p>
-          </li>
-          <li>
-            <p><em>і найголовніше, життєвий досвід людей рівноцінний (або навіть більш цінний), ніж їх професійні навички.</em></p>
-          </li>
-        </ul>
-
-        <p>Багато людей, які ведуть повне та різноманітне життя, навіть якщо вони не мають відповідних навичок у резюме, часто мають кращі соціальні навички, більшу емоційну інтелегенцію, психологічну стійкість та пластичність, <a href="http://little-startup-handbook.dojo4.com/never-lose-sight-of-the-big-picture">ширшу перспективу</a> та <a href="http://little-startup-handbook.dojo4.com/call-on-community">ширшу мережу цінних зв'язків</a>. Мій бізнес побудований майже повністю на силі цих якостей у команді, з якою я працюю.</p>
-
-        <p>Хоча вони звичайно не мають монополії на багате та різноманітне життєве досвід, я зауважив, що батьки часто розвивають багато з цих цінних якостей у процесі народження та виховання дітей. Сім'ї були невимірно цінними для нашого бізнесу. У відкритому, dojo4 <a href="https://github.com/dojo4/policy/blob/master/family-friendly_workplace_manifesto">Маніфесті дружнього до сімей робочого місця</a> ми зазначаємо, що батьки часто є нашими найціннішими членами команди, тому що:</p>
-
-        <ul>
-          <li>
-            <p><em>вони навчені до важкої праці та безперервного графіка;</em></p>
-          </li>
-          <li>
-            <p><em>вони мають багато на кону та ймовірно працюють, думаючи про світ, який їхні діти успадкують;</em></p>
-          </li>
-          <li>
-            <p><em>їх домашнє життя підкреслює необхідність чіткого прийняття рішень, співпраці та цінної здатності добре взаємодіяти з іншими.</em></p>
-          </li>
-        </ul>
-
-        <p><a href="http://www.huffingtonpost.com/kiri-westby/a-mothers-resumebecause-i_b_8901326.html">Резюме батька</a> також зазвичай включає роки досвіду удосконалення відповідних навичок, таких як здатність виконувати багатозадачності, увага до деталей, переговори та дипломатія, скромність та емпатія. Конкурентні переваги роботи в дружньому до сімей робочому місці є <a href="http://images.huffingtonpost.com/2016-01-01-1451613159-9989301-AMothersResume1.png">переконливими</a>.</p>
-
-        <p>Підтримка сімей на робочому місці надає безпосередню фінансову вигоду вашій компанії за рахунок економії на утриманні працівників та їхньому корпоративному знанні. Цей погляд нещодавно став помітним, коли Vodaphone переглянув свою політику щодо батьківської відпустки, щоб запропонувати <a href="http://adage.com/article/agency-news/huge-investing-moms-good-business/298398/">принаймні 16 тижнів оплачуваної відпустки через народження дитини та повну зарплату за 30-годинний робочий тиждень протягом шести місяців після їхнього повернення</a>. Їхнє відео <a href="https://www.youtube.com/watch?v=FpxYpymkyt8">Матерноміка</a> стверджує, що компанії, які вважають відпустку через народження дитини втратою, дозволяють цінному ресурсу працюючих матерів вислизати з їхніх рук.</p>
-
-        <p>Як підприємці, щоб скористатися цим людським ресурсом батьків, ми повинні відстоювати два речі:</p>
-
-        <ul>
-          <li>найм та підтримка батьків</li>
-          <li>пропонування <strong><a href="http://www.lifehack.org/310307/why-companies-should-value-parental-leave-for-both-men-and-women">оплачуваної відпустки для батьків</a></strong></li>
-        </ul>
-
-        <p>Перш ніж ви скажете: “Це все чудово, але я фінансово відповідальний перед своїми акціонерами, і пільги, такі як оплачувана відпустка через народження дитини, ніколи не пройдуть”, вам може бути цікаво дізнатися, що все більше <a href="http://www.xconomy.com/national/2014/07/21/sexism-and-misogyny-in-tech-how-investors-can-help-drive-change/">досвідчених інвесторів</a> погоджуються з Vodaphone. У опитуванні майже 100 технологічних компаній <a href="http://women2.com/2014/05/05/establishing-maternity-leave-policies-help-startups-close-gender-gap/">одне дослідження</a> виявило, що хоча 0% компаній, які отримали фінансування на початковому етапі, мають політику щодо відпустки через народження дитини або відпустки через народження дитини, 50% фінансованих стартапів почали впроваджувати такі політики на етапі Серії A; і 100% стартапів впровадили обидва на етапі Серії D та пост-IPO.</p>
-
-        <p><a href="https://www.themuse.com/advice/hey-startups-why-you-should-think-about-your-maternity-leave-policy-now">Навіть невеликий бізнес, ймовірно, втратить гроші на витратах на утримання та зусиллях для підтримки здорової корпоративної культури</a> в довгостроковій перспективі, якщо вони не зможуть надати підтримку новим батькам. Розумні працівники та <a href="http://www.nytimes.com/2015/04/08/upshot/silicon-valley-perks-for-some-workers-struggles-for-parents.html?abt=0002&amp;abg=0">потенційні наймані</a> оцінять пільги для відпустки через народження дитини та жертви, які можуть бути необхідні для їх надання - і розумні, справедливі люди, такі як ці, саме такі, кого ви хочете бачити в своїй команді.</p>
-
-        <p>Створення дружнього до сімей робочого місця означає створення більш прибуткового, ефективного та ефективного робочого місця. <a href="http://dojo4.com/blog/family-friendly-workplace-manifesto">Робоче місце, яке цінує сім'ї, є щасливішим, реалістичнішим та більш стійким робочим місцем. Ймовірніше, що він утримає хороших працівників. Ймовірніше, що він створить добру волю, ресурс, на який можна покластися, коли це необхідно.</a> І чи це питання соціальної відповідальності, чи ні, це можливість, яку підприємці не можуть собі дозволити втратити.</p>
-
-        <p><img src='/ro/dojo4/family-friendly-equals-business-friendly-or-how-to-find-good-people/assets/c.jpeg' alt="blogNat-dojo-hat.jpeg" /></p>
-
-        <p><small><em>Зачекайте на нашу наступну публікацію про те, як виглядає робота в дружньому до сімей робочому місці, написану моїм співробітником та редактором, <a href="http://dojo4.com/team/emily-utz">Емілі Утц</a>.</em></small></p>
-
-        <p><img src='/ro/dojo4/family-friendly-equals-business-friendly-or-how-to-find-good-people/assets/d.png' alt="FamilyFriendlyWorkplaceManifesto.png" /></p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/family-friendly-equals-business-friendly-or-how-to-find-good-people">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img

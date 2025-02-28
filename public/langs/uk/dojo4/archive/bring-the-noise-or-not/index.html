@@ -1,59 +1,67 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
-    <script type="module" src="/langs/uk/assets/js/turbo.es2017-esm.js" defer></script>
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <!-- meta -->
+    <title>! &#39;приносите шум. або ні. &#39;</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте йти." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="! &#39;приносите шум. або ні. &#39;"/>
+    <meta property="og:description" content="проявіть себе." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/dojo4/archive/:id"">
+    <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"bring-the-noise-or-not"}">
-    <meta property="site:path_info" content="/bring-the-noise-or-not">
+    <meta property="site:path_info" content=""/bring-the-noise-or-not"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,75 +70,35 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/bring-the-noise-or-not">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/bring-the-noise-or-not">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/bring-the-noise-or-not">🖤</a>
+</small>
 <hr>
-<strong>/bring-the-noise-or-not</strong>
     </header>
 
     <main>
       <em>опубліковано: 2012-10-17</em>
 <br>
 <br>
-<p><img rel="450x450" alt="Я б радше був на роботі Smoothfluid" title="Я б радше був на роботі Smoothfluid" src='/langs/uk/ro/dojo4/bring-the-noise-or-not/assets/id-rather-be-at-work-smoothfluid.jpg' height="450" width="300" /></p>
-<p>Я рідко буваю на одному місці два дні поспіль. Я прихожу на роботу, витягую свій MacBook Air з велосипедної кошика та сідаю там, де мені сьогодні заманеться (або принаймні там, де є вільне місце). Бували періоди, коли я сидів на одному і тому ж столі кілька тижнів, але оскільки у нас відкритий офіс без призначених місць, ми не прив'язуємося до одного місця надовго. З короткими експериментальними винятками, доджо4 залишається таким з моменту відкриття майже три роки тому. Є стільці та стоячі стільці, є столи та дивани, і всі, хто тут працює (і часто багато хто не працює!), сидять у різних комбінаціях на цих різних "станціях" протягом дня та тижня. У кожного з нас є свій ноутбук, і це все. Найближче до особистих просторів ми підійшли з індивідуальними кошиками для білизни в шафі, які ми використовуємо для зберігання своїх речей, і ці кошики використовуються в різній мірі, залежно від людини.</p>
-<p>Це означає кілька речей:</p>
-<ul><li>Я не маю затишного, персоналізованого столу з його передбачуваною знайомістю</li>
-<li>Мені не потрібно мати затишний, персоналізований стіл із його передбачуваною знайомістю</li>
-<li>Я можу переміщуватися залежно від того, з ким я можу працювати цього дня, мій настрій, світло та рівень шуму/відволікання</li>
-</ul>
-<p>І саме тут полягає головний недолік: рівень шуму/відволікання. Більш "традиційне" офісне середовище може бути більш просторово диктаторським та екологічно регламентованим, але воно також часто дозволяє створювати більш сфокусовані простори та обмежені відволіканнями зони. Тут, у доджо4, дуже мало дверей, які можна зачинити. Щоб зробити телефонний дзвінок, щоб не заважати колегам, мені найчастіше доводиться вийти на вулицю та прогулятися кварталом під час розмови (що, однак, має свої власні антиседативні переваги). Це бурхливе місце. Це менше ніж 1000 кв. футів, і тут працюють сім осіб. Коли я пишу це, Стів, Фред і Гаретт сидять лише за кілька футів від мене, обговорюючи рамки для певної роботи та етимологію різних французьких слів. Пітер додає деякі потенційні санскритські лайливі слова. Двоє хлопців, які тут навіть не працюють, сидять прямо поруч зі мною, обговорюючи, як стежити за головою репозиторію GitHub. Здається, що щось схоже на турецьку танцювальну музику грає через динамік поруч зі мною. Відволікання, відволікання.</p>
-<p>"<a target="_blank" title="http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000" href="http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000">ми маємо дуже малу кількість пропускної здатності для обробки звукового входу</a>," тому робота в "відкритому офісі" може значно зменшити продуктивність. <a title="http://www.juliantreasure.com/" href="http://www.juliantreasure.com/">Джуліан Трежер</a>, експерт зі звуку, рекомендує <a title="http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000" href="http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000">взяти під контроль звук навколо нас</a> ради нашого здоров'я та продуктивності. Це рідкісний талант — вміти зосереджуватися на одному, відключаючи всі інші відволікання, хоча можливо <a title="http://pss.sagepub.com/content/early/2010/05/11/0956797610371339.abstract" href="http://pss.sagepub.com/content/early/2010/05/11/0956797610371339.abstract">розвинути цю корисну здібність через медитацію</a> та інші техніки. Більшість з нас одягають наушники як спосіб увійти в віртуальну клітку. У відкритих офісах "<a title="http://www.nytimes.com/2012/05/20/science/when-buzz-at-your-cubicle-is-too-loud-for-work.html" href="http://www.nytimes.com/2012/05/20/science/when-buzz-at-your-cubicle-is-too-loud-for-work.html">наушники — це нова стіна</a>." Багато хто з нас сидить тут разом у своїх власних звукових світах, намагаючись виконати роботу за день.</p>
-<p>Тим не менш, я не хочу мати своє особисте призначене місце, і більшість людей, з якими я працюю, також відкинули цю можливість. Наш простір — це приємне місце для проведення дня. Він комфортний, сприяє співпраці та часто лунає добрим гумором і загальною дружністю. Ми дійсно багато робимо, робимо клієнтів щасливими, добре працюємо разом і багато веселимося.</p>
-<p>Як же ми можемо знайти баланс між нашою прихильністю до гнучкості, відкритості, плинності та творчості, створеної хаосом, з нашим бажанням зосереджуватися, щоб нас залишили на самоті виконувати свою роботу та для творчості, створеної порядком? Ми придумали кілька ідей:</p>
-<ul><li>зробити частину кожного дня (наприклад, ранки) тихою — взаємно погодженим щоденним періодом "тільки функціональних розмов"</li>
-<li>виділити простори, які є тихими зонами, де можна зачинити двері, і визнати, що хто б не працював там, потрібна тиша</li>
-<li>знайти інше, позаміське місце, призначене як тиха робоча/творча зона</li>
-</ul>
-<p>Ми ще не знайшли рішення, яке нам підійде. Це робота в процесі, і ми продовжимо намагатися знайти баланс між хаосом і порядком — баланс, який тримає нас за милі від кубікулізації, але в безпеці межах сприятливого та невідволікаючого середовища. Очевидно, що <a title="http://www.thecoolhunter.com.au/article/detail/1373/offices" href="http://www.thecoolhunter.com.au/article/detail/1373/offices">творче середовище сприяє та приваблює творчі розуми</a>
-<span>— чи сприяють та приваблюють шумні середовища шумні розуми?</span>
-</p>
-<p><em>мистецтво завдяки <a title="http://smoothfluid.com/" href="http://smoothfluid.com/">Smoothfluid Ltd</a></em>
-</p>
-<p class="font-size-small"></p>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/bring-the-noise-or-not">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p><img rel="450x450" alt="Id Rather Be At Work Smoothfluid" title="Id Rather Be At Work Smoothfluid" src='/

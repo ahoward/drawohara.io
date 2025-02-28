@@ -7,7 +7,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
@@ -40,21 +40,28 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Експедиція в область освіти</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
+    <meta property="og:title" content="Експедиція в область освіти"/>
+    <meta property="og:description" content="продовжуйте." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
     <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/dojo4/archive/:id">
-    <meta property="site:params" content="{'ext':null,'id':'a-foray-into-the-edu-domain'}">
-    <meta property="site:path_info" content="/a-foray-into-the-edu-domain">
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"a-foray-into-the-edu-domain"}">
+    <meta property="site:path_info" content=""/a-foray-into-the-edu-domain"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,48 +87,18 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/a-foray-into-the-edu-domain">я ❤️ це!</a>
-      <hr>
-      <strong>/a-foray-into-the-edu-domain</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/a-foray-into-the-edu-domain">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/a-foray-into-the-edu-domain">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2011-08-05</em>
-      <br>
-      <br>
-      <p><img src='/ro/dojo4/a-foray-into-the-edu-domain/assets/pedagogy2.png' title="Pedagogy2" alt="Pedagogy2" rel="450x450" width="450" height="314" /></p>
-      <p>Брет Фунд, професор Бізнес-школи Лідса в CU-Boulder, зайшов до dojo4 з чудовою ідеєю, яку він описав у трьох реченнях. Після зустрічі з кількома ніндзя dojo, він покинув нас з десятками історій користувачів, чітким уявленням про масштаби проекту та впевненістю, що dojo4 може виконати проект у обмеженому бюджеті.</p>
-      <p>У короткому вигляді, Брет хотів побудувати застосунок для обміну слайдами, коментування та створення нотаток, який дозволив би вчителям ділитися презентаціями та нотатками з учнями, дозволяючи учням коментувати слайди та задавати питання або вчителям, або однокласникам.</p>
-      <p>Оскільки проект був скромним, дизайнер UI Alyssa, спеціаліст з backend Garett та гуру frontend Justin використали "Базовий Rails App" dojo4, щоб швидко ітеративно розвивати проект та ділитися цими ітераціями з Бретом. Alyssa створила натискні потоки та макети, які ще більше скоротили час розробки, направляючи Garett та Justin, коли вони адаптували базовий додаток до потреб Брета.</p>
-      <p>"Брет - чудовий клієнт, з яким працювати, тому що він дуже допомагає у визначенні вимог", - сміється Alyssa. Garett погоджується: "Брет був дуже відгукливим, коли ми ділилися ітераціями, але також надзвичайно терплячим під час процесу розробки, надаючи блискавичну зворотну реакцію, яка допомогла нам неймовірно."</p>
-      <p>З його боку, Брет радий, що його колеги тепер "можуть побачити, що веб-додаток робить, а не просто чути про це." Він планує використовувати його на заняттях цього наступного осіннього семестру.</p>
-      <p>Тут, у dojo4, ми з нетерпінням чекаємо на відгук Брета та на подальшу співпрацю з CU-Boulder.</p>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/a-foray-into-the-edu-domain">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<p><img src='/ro/dojo4/a-foray-into-the-edu-domain/assets/pedagogy2.png' title="Педагогіка2" alt="Педагог

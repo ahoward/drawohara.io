@@ -1,0 +1,167 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/langs/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+    <meta property="og:title" content="nada que ver aquí."/>
+    <meta property="og:description" content="siga adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"beginner-tutorial-i-os-certificates-provisioning-profiles"}">
+    <meta property="site:path_info" content=""/beginner-tutorial-i-os-certificates-provisioning-profiles"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">¡me ❤️  esto!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bébelo'>&lt;&lt; haz clic aquí 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/beginner-tutorial-i-os-certificates-provisioning-profiles</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2013-10-24</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Para un nuevo desarrollador de iOS, pueden ser realmente confusos. Tienes una aplicación que simplemente quieres que otras personas puedan probar en su dispositivo, y te diriges al portal del desarrollador de Apple con certificados, dispositivos y perfiles de provisionamiento. Antes de que tu cuerpo entre en shock, lee el resto de esta publicación para una explicación sencilla de todo.</p>
+
+        <p><img src="https://draftin.com:443/images/2623?token=JlOjG8C7kRhUxTp9Bba_TPBP4jRCn0dL-2ugH03kEATD52BLmxZYEnY4Vynx55mzHS9ub3I5QR29W1MVWjkBA0k" alt="" /></p>
+
+        <p>La combinación de certificados, dispositivos y perfiles de provisionamiento es la respuesta de Apple a algunas preguntas difíciles:</p>
+
+        <p>P: ¿Cómo garantizas que la aplicación que estás descargando no ha sido modificada por algún hacker y realmente es del desarrollador/empresa que dice ser?</p>
+
+        <p>R: <strong>Certificados.</strong> ¿Alguna vez has aprendido sobre el correo electrónico cifrado PGP? Ese asunto en el que hay una clave pública y una clave privada? Eso es lo que está sucediendo aquí, excepto que estás abstraído de tener que preocuparte por eso gracias a la aplicación de Mac “Keychain Access”. Cuando agregas un nuevo certificado en el portal y sigues las instrucciones para usar “Keychain Access” para cargar una solicitud de certificado, “Keychain Access” usa tu clave privada para crear una clave pública, que luego se incrusta en la solicitud de certificado que se envía a Apple. Apple te devuelve un certificado que luego pones en tu llavero (ahora puedes descargarlo e agregarlo automáticamente a través de Xcode).</p>
+
+        <p><em>(Actualización: parece que también puedes hacer que Xcode gestione tus certificados/"Identidades de firma" en las preferencias).</em></p>
+
+        <p><img src="https://draftin.com:443/images/2624?token=w3b1zrNeBBqC2WRMbEvt7BKrWA0U5A_FhTLXE9Uvex6mYA5pxwSfYG5M1GGWhYd0TkzxxiD8UUIyN7GA34d8NHQ" alt="" /></p>
+
+        <p>Ten en cuenta que también hay diferentes certificados para diferentes escenarios. Los certificados de desarrollador se utilizan cuando simplemente estás haciendo que cualquier aplicación (app id: *) funcione y estás desarrollando localmente y en tu dispositivo de desarrollo que está conectado a tu computadora. Un certificado AdHoc se utiliza cuando deseas permitir que algunos testers instalen tu aplicación en su dispositivo antes del lanzamiento público en la AppStore. Los certificados de AppStore y AdHoc están vinculados a una aplicación específica (app id), y generalmente utilizan el certificado de una organización, ya que el certificado es cómo Apple sabe qué mostrar en la línea “Desarrollado por” en la lista de la App Store.</p>
+
+        <p>P: ¿Cómo podemos permitir que un puñado de testers instalen la aplicación en su teléfono y la prueben antes de que la lancemos al mundo entero a través de la App Store?</p>
+
+        <p>R: <strong>Dispositivos y perfiles de provisionamiento.</strong> Apple solo permite a sus usuarios instalar aplicaciones a través de la App Store. Pero cuando eres un desarrollador y quieres que algunas personas la prueben antes de que vaya a la App Store, debes usar perfiles de provisionamiento y dispositivos.</p>
+
+        <p>Primero, consigues que alguien te dé su UUID de dispositivo (identificador único universal), que generalmente se hace a través de un servicio como <a href="http://www.testflight.com">Testflight</a> o <a href="http://hockeyapp.net/">HockeyApp</a> donde una persona puede registrarse para ser uno de tus testers y el servicio te enviará automáticamente por correo electrónico su UUID. Para evitar que eludas la App Store, Apple te limita a agregar solo 100 dispositivos en un año a tu cuenta de desarrollador de iOS.</p>
+
+        <p><img src="https://draftin.com:443/images/2625?token=vjMPdsPjLmPKBD1DOANNeAD_QkMIQO7y8jE7HvP0sZCej5dwCQjQYVwVdReo7bJE6iZX53ZFBOeVrd5jtElccdU" alt="" /></p>
+
+        <p>Luego creas un perfil de provisionamiento. Cada perfil de provisionamiento incorpora un certificado para firmar la aplicación de manera segura desde una persona/organización específica. Los perfiles de provisionamiento también declaran quién puede instalar la compilación de la aplicación. En el caso de un perfil de provisionamiento de App Store, está diciendo que esa compilación de la aplicación puede ser instalada por cualquier persona siempre que se descargue a través de la App Store.</p>
+
+        <p><img src="https://draftin.com:443/images/2626?token=9C_AJjhMWZQw2pe-0cdxMSUfRssZ-8gogKWU21qGyDaXl7G41hC7-eD8eCQ6rjq6oUtrZqdN_Yo-LvXyI13txqg" alt="" /></p>
+
+        <p>Cuando estás poniendo a algunos testers a bordo, querrás usar un perfil de provisionamiento Ad Hoc (y certificado). En la pantalla “Editar” del perfil de provisionamiento, podrás seleccionar cualquiera de los dispositivos listados en “Dispositivos” en tu portal de desarrollador. Marca la casilla junto a los que deseas incluir (Nota: puedes marcar o desmarcar más o menos más tarde).</p>
+
+        <p>Genera este perfil, descárgalo manualmente o a través de las preferencias de Xcode, selecciónalo al archivar tu aplicación, y luego podrás cargar ese archivo .ipa a un servicio como Testflight para que tus testers lo instalen.</p>
+
+        <p>Algunas imágenes guía más:</p>
+
+        <ul>
+          <li>Que Xcode descargue automáticamente los perfiles de provisionamiento y los certificados para ti:</li>
+        </ul>
+
+        <p><img src="https://draftin.com:443/images/2627?token=0uiybrTmNZrs-1G5S3pUkV_02FcnA2PPVTNOPkIa7ugiQP8QMHhfk6swlm_kFIBOIUyv8GpmP3bATsCZylUkf20" alt="" /></p>
+
+        <ul>
+          <li>Actualizar el certificado (“Identidad de firma”) seleccionado en la configuración de compilación del proyecto en Xcode:</li>
+        </ul>
+
+        <p><img src="https://draftin.com:443/images/2628?token=_yRFxLYAdihsFQWVEXwJVQi1JRH16YWIS-BHD0_NmLxyPzqnFg2HwgZknb_DDSBh93Bk1mHAOaOm3ZS5ug4r5bM" alt="" /></p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/beginner-tutorial-i-os-certificates-provisioning-profiles">😩, i 🖤 ^esto!<a>
+          </li>
+          <li>
+            <a href="/now">/ahora<a>
+          </li>
+          <li>
+            <a href="/about">/sobre<a>
+          </li>
+          <li>
+            <a href="/contact">/contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

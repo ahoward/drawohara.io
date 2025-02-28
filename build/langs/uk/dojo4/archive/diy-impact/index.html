@@ -1,52 +1,55 @@
 <html color-mode="user" lang="uk">
   <head>
     <base href='/langs/uk' />
-    <!-- ga -->
+  <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
-    </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
 
-    <!-- deps -->
+  <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-    <!-- langs -->
-    <!--
-      https://developers.google.com/search/docs/specialty/international/localized-versions#html
-    -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-    <!-- defaults -->
+  <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-    <!-- favicon -->
+  <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- meta -->
-    <title>тут нічого немає.</title>
+  <!-- meta -->
+    <title>Вплив DIY</title>
 
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте йти." />
-    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+<meta property="og:title" content="Вплив DIY"/>
+<meta property="og:description" content="рушмо далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"diy-impact"}">
@@ -56,6 +59,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,72 +90,20 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/diy-impact">я ❤️ це!</a>
-      <hr>
-      <strong>/diy-impact</strong>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/diy-impact">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/diy-impact">🖤</a>
+</small>
+<hr>
     </header>
 
     <main>
       <em>опубліковано: 2017-12-22</em>
-      <br>
-      <br>
-      <div class="ro markdown">
-        <p><a href="http://www.desicreative.com/sumedha-sah-interview-illustrator/"><img src='/ro/dojo4/diy-impact/assets/b.jpeg' alt="Самообнімання.jpg" /> </a><br />
-        Коли ми присвятили свій бізнес соціальному впливу, ми насправді не знали, що це означає.</p>
-
-        <p>Ось як ми визначили це <a href="http://dojo4.com/about">на нашому вебсайті</a>:</p>
-
-        <blockquote>
-          <p>Ми розуміємо організації, що мають вплив, як ті, які використовують винахідливість, щоб <a href="http://">активно допомагати людям та нашому середовищу, пропонуючи рішення реальних проблем</a>. Ми помітили, що ми робимо найкращу роботу, коли вона стосується реальних проблем, коли ми допомагаємо створювати <a href="http://dojo4.com/blog/program-like-you-give-a-damn">світ, де ніхто не обмежений своїми обставинами</a>.</p>
-        </blockquote>
-
-        <p>Розуміння того, що ефективний соціальний вплив прагне створити світ, де ніхто не обмежений своїми обставинами, є тим, що ми отримали від <a href="http://dojo4.com/blog/wanted-gnu-unreasonable-nerds">розмови</a> з співзасновником <a href="https://unreasonablegroup.com/">Unreasonable</a> <a href="http://danielepstein.me/">Daniel Epstein</a>. Це визначення мало для нас найбільше сенсу, оскільки воно надає чітке визначення і ілюструє потенціал для цього прагнення до «кращого світу», якщо його мешканці дійсно були б вільні від обмежень своїх обставин, щоб змогли щось покращити. Це визначення також визнає глибоку та нюансовану складність роботи на благо у цьому світі.</p>
-
-        <p>Однак моє початкове та наївне ставлення екстерналізувало відповідальність за те, що обмеження обставин нашого життя насправді означають. Я думав, що керування організацією, яка має соціальний вплив, було б так само просто, як працювати з однодумцями-клієнтами, які роблять «впливову» роботу. Ми б створювали технології для компаній, які вирішували б «реальні проблеми», такі як соціальна несправедливість, екологічна деградація, гендерна нерівність, бідність і голод. І опосередковано ми б створювали вплив. Але… це не так просто.</p>
-
-        <p>Як виявилося, створення впливу — це не те, що інші можуть зробити за вас, навіть якщо ви підтримуєте їхню впливову роботу. Нам пощастило працювати з <a href="http://dojo4.com/work">клієнтами</a>, які є лідерами у створенні впливу, але просто писати для них код не означає, що ми створюємо вплив самі. Це має бути глибше.</p>
-
-        <p>Одним із <a href="http://orapinmarketing.com/inspired-impact-dojo4/">наших найбільших викликів</a> було підтримання ясності щодо того, що означає вплив, і дотримання цього. Це не просто. Ми дізналися, що навіть якщо клієнт робив хорошу роботу, це не означало, що ми обов'язково підходили один одному і повинні були обов'язково працювати разом. Інші разы те, що виглядає як позитивний вплив, може бути не таким простим: як технологі, ми часто маємо можливість бачити, що те, що виглядає хорошо зовні, може не робити багато добра, якщо зазирнути під капот у технологію або ділові практики. Іноді просто існує різниця в підходах, для яких ми не могли б забезпечити найкращу підтримку. Також наша ідея працювати виключно з «впливовими клієнтами» означала, що ми не враховували можливість співпраці з більш традиційними клієнтами, щоб зробити їхні продукти більш впливовими.</p>
-
-        <p>Ми усвідомили, що для нас вплив справді означає виконання цілеспрямованої роботи, будь то технічно, культурно, соціально, екологічно чи особисто цілеспрямованої роботи. Виконання цілеспрямованої роботи означає, що ми оживлені та натхненні тим, що робимо, і приносимо це у наші відносини з нашими клієнтами та один з одним. Це означає створення довірчих відносин, які дозволяють хороші технології та дизайн впливати на те, яку роботу компанії та їхні продукти можуть створити. Це означає дотримуватися наших інтуїтивних почуттів, не бути спрощеними в ідеології та завжди практикуватися в нашій професії. Це означає, що ми ніколи не можемо бути лінивими.</p>
-
-        <p><a href="http://www.evolveandascend.com/2017/01/31/these-10-quotes-by-chogyam-trungpa-rinpoche-cut-through-spiritual-b-s/">Чог'ям Трунгпа</a> сказав це прямо:</p>
-
-        <blockquote>
-          <p>«Вам не потрібно поспішати стати мером вашого міста або президентом Сполучених Штатів, щоб допомогти іншим, але ви можете почати зі своїх родичів і друзів та людей навколо вас. Насправді, ви можете почати з себе. Важливо усвідомити, що ви ніколи не звільняєтеся від обов'язків.»</p>
-        </blockquote>
-
-        <p>Для dojo4 це означало почати з насіння власної компанії та створити місце, яке підтримує кожного з нас у нашому житті. Це означало створення середовища, яке прагне сприяти чесноті, доброті до себе та інших та підтримує хорошу роботу та хороший відпочинок. Може здатися, що це малий вплив — просто створити це всередині власної організації, але це насіння. Якщо кожна невелика компанія змогла б забезпечити таку внутрішню та громадську дружність, це мало б величезний вплив на людей і населення. І це насіння в нашому індивідуальному житті дозволяє більшу реальну можливість для великомасштабного впливу. Одним способом це сказати — ми не можемо ефективно допомагати іншим, поки не зможемо допомогти собі.</p>
-
-        <p>Це те, що може зробити будь-яка організація. Будь-який бізнес може бути компанією, що має вплив — магазин будівельних матеріалів, страхова компанія, компанія з прибирання, рекламне агентство тощо. Ми всі можемо прагнути створити світ, де ніхто не обмежений своїми обставинами, але для цього ми повинні думати близько до дому та інклюзивно про те, що це означає. Ми всі можемо працювати над вирішенням багатьох реальних проблем світу, але для ефективного виконання цього ми повинні починати з себе. Ми не можемо звільняти себе від обов'язків: повинні дивитися на себе та допомагати собі й створювати компанії, які є справжньо зацікавленими, добрими та радісними місцями, перш ніж ми зможемо бути корисними іншим. Це не просте або легке діло, але якщо ми зможемо це зробити, ефект буде справді впливовим.</p>
-
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-      <ul>
-        <li>
-          <a href="mailto:i-hate-this@drawohara.io?subject=/diy-impact">😩, я 🖤 ^це!<a>
-        </li>
-        <li>
-          <a href="/now">/now<a>
-        </li>
-        <li>
-          <a href="/about">/about<a>
-        </li>
-        <li>
-          <a href="/contact">/contact<a>
-        </li>
-        <li>
-          <a href='/langs' id='lang'>🌎</a>
-        </li>
-      </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<br>
+<br>
+<div class="ro markdown">
+  <p><a href="http://www.desicreative.com/sumedha-sah-interview-illustrator/"><img src='/ro/dojo4/diy-impact/assets/b.jpeg' alt="Self-Hug.jpg" /> </a>
+Когда мы посвятили свой бізнес соціальному впливу, ми не мали

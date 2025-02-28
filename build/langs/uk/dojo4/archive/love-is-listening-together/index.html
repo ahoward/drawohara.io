@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,10 +39,10 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Нічого дивитися.</title>
+    <title>! &#39;любов - це: спільне слухання&#39;</title>
 
-<meta property="og:title" content="Нічого дивитися."/>
-<meta property="og:description" content="Продовжуй." />
+<meta property="og:title" content="! &#39;любов - це: спільне слухання&#39;"/>
+<meta property="og:description" content="йди далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
 
@@ -58,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -65,24 +72,32 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
     <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/love-is-listening-together">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/love-is-listening-together">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/love-is-listening-together">🖤</a>
+</small>
 <hr>
-<strong>/love-is-listening-together</strong>
     </header>
 
     <main>
@@ -90,42 +105,6 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p><img src='/ro/dojo4/love-is-listening-together/assets/b.png' alt="08-навушники.png" /></p>
+  <p><img src='/ro/dojo4/love-is-listening-together/assets/b.png' alt="08-headphones.png" /></p>
 
-<p><a href="https://soundcloud.com/carparkrecords/montag-trip-the-light-1">Пісня</a> просто чудова. <a href="https://soundcloud.com/trndmusik/trndmusik-podcast-17-nico">Вона така чудова</a>, що я хочу, щоб ти її почув, зараз же! Я б почав пісню знову і дав тобі другий навушник, щоб ми могли слухати разом, але ти в іншому місті, країні або навіть світі. Занадто сумно!</p>
-
-<p>Ми допомогли <a href="https://www.linkedin.com/in/youngbrad">Бред Янг</a> вирішити эту проблему, створивши <a href="http://gosyncd.com/">GoSyncd</a>, музичну платформу для спільного прослуховування, яка дозволяє ділитися будь-яким треком з <a href="https://soundcloud.com">SoundCloud</a> в реальному часі з будь-ким і всіма. <a href="http://gosyncd.com/">GoSyncd</a> запустився цього тижня з обіцянкою: “Ви більше ніколи не будете ділитися навушниками. Та сама пісня. Те саме час. Всі ваші друзі.”</p>
-
-<p>Проєкт становив деякі цікаві виклики з синхронізації та надав нам можливість попрацювати з <a href="https://developers.soundcloud.com/docs/api/guide">SoundCloud API</a>. Це також був перший раз, коли ми використовували <a href="https://pusher.com/">Pusher</a> для проєкту. Сервіс спрощує надсилання сповіщень між серверами та браузерами та безпосередньо між браузерами. Є багато способів зробити це, але <a href="https://pusher.com/">Pusher</a> надає чистий API та відкатується для обробки браузерів, які не використовують сучасні техніки сповіщень</p>
-
-<p><a href="http://gosyncd.com/">GoSyncd</a> - це гарний інтерфейс для пошуку та відтворення музики з SoundCloud. Було весело створювати це, і це робить навіть солодше слухати разом!</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; перейти</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/love-is-listening-together">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+<p><a href="https

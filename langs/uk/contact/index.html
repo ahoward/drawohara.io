@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,13 +39,16 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>Зв'яжіться зі мною 🦒 йо!</title>
+    <title>Напишіть мені 🦒 йо!</title>
 
-<meta property="og:title" content="Зв'яжіться зі мною 🦒 йо!"/>
-<meta property="og:description" content="Я виріс так високо!" />
+<meta property="og:title" content="Напишіть мені 🦒 йо!"/>
+<meta property="og:description" content="Я дорос так високо!" />
 <meta property="og:image" content="https://drawohara.io/ro/pages/contact/assets/giraffe.jpeg" />
 
+
   <meta property="og:image:width" content="2048" />
+
+
 
   <meta property="og:image:type" content="image/jpeg" />
 
@@ -57,6 +60,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -64,9 +74,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -77,45 +92,18 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/contact">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/contact">🖤</a>
+</small>
 <hr>
     </header>
 
     <main>
       <div class="ro markdown">
-  <p>ну ось! жодної складної системи блокування спаму тут, що могло піти не так? 😂</p>
+  <p>вуп! немає складного спам-блокування тут, що може піти не так? 😂</p>
 
-<p>ви можете зв'язатися зі мною старим добрим способом, написавши мені на <a href="mailto:drawohara@drawohara.io?subject=йо+@drawohara"> drawohara@drawohara.io </a>.</p>
-
-<p>конкретні причини, чому ви мене ненавидіть, можна надіслати на <a href="mailto:i-hate-this@drawohara.io?subject=#HATEMAIL"> i-hate-this@drawohara.io </a>, а всі <a href="mailto:i-love-this@drawohara.io?subject=❤️ "> ❤️ </a> мають йти сюди.</p>
-
-<p>тому що я виріс так високо! 🦒</p>
-
-<p><img src='/ro/pages/contact/assets/giraffe.jpeg' alt="ara.t.howard як жирафа" /></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-love-this@drawohara.io?subject=/contact">я ❤️ це^</a>
-  </li>
-  <li>
-    <a href="mailto:i-hate-that@drawohara.io?subject=/contact">я 🖤 ^це</a>
-  </li>
-  <li>
-    <a href="/about">націоналізм</a>
-  </li>
-  <li>
-    <a href="/now">tl;dr;</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>ви можете зв'язатися зі мною старим способом, написавши мені на <a href="mailto:drawohara@drawohara.io?

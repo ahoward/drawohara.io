@@ -1,13 +1,12 @@
 <html color-mode="user" lang="uk">
   <head>
-  <base href='/langs/uk' />
   <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -32,6 +31,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
+    <base href='/langs/uk' />
 
   <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -40,21 +40,31 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>лідер</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рух." />
+<meta property="og:title" content="лідер"/>
+<meta property="og:description" content="іти далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"lead"}">
-    <meta property="site:path_info" content=""/lead"">
+    <meta property="site:params" content="{"ext":null,"id":"лідер"}">
+    <meta property="site:path_info" content=""/лідер"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +73,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,10 +90,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/lead">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/лідер">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/лідер">🖤</a>
+</small>
 <hr>
-<strong>/lead</strong>
     </header>
 
     <main>
@@ -87,120 +106,13 @@
 <br>
 <div class="ro markdown">
   <pre>
-  наступне є уривком із внутрішнього листа
-
-  відправленого членам команди dojo4
-
-  стосовно того, що означає бути лідером проекту в dojo4
+  наступний текст є витягом з внутрішньої пошти
+  
+  надісланої членам команди dojo4 
+  
+  щодо того, що означає бути лідером проекту в dojo4 
  </pre>
 
-<p>як дехто з вас можуть помітити, ми позначаємо ‘лід’ в оновленні [STATUS].</p>
+<p>можливо, деякі з вас вже помітили, що ми призначаємо ‘лідера’ у оновленні статусу.</p>
 
-<p>ймовірно, що це точно означає, не було досить зрозуміло в минулому.</p>
-
-<p>це повідомлення має на меті виправити будь-яку плутанину.</p>
-
-<p>без подальших слів:</p>
-
-<ul>
-  <li>
-    <p>бути лідером означає, що це доставляється.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що це доставляється.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що це доставляється.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що ви постійно стежите за бюджетом.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що у вас є ментальна карта всієї цієї справи.<br />
-уві сні. в неділю. о 22:31.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що ви плануєте свої вихідні та відпустки навколо<br />
-проекту. ви можете передати його. але ви не можете просто кинути.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що ви постійно продаєте. @dojo4 це просто означає<br />
-пошук того, що потрібно або має бути зроблено, що ми можемо відмінно зробити,<br />
-що клієнт не усвідомлює. продажі @dojo4 зазвичай це обмін<br />
-‘ми можемо зробити’ на ‘вам потрібно зробити’ в контексті поточного проекту. для<br />
-@dojo4 продажі мають завжди представляти “діяти в найкращих інтересах клієнта” щоб побачити <em>заздалегідь</em>, що дозволяє вашій особистій професійній<br />
-здатності побачити - що клієнт ще не бачить.</p>
-  </li>
-  <li>
-    <p>бути лідером означає вирізати всі внутрішні витрати. ви повинні<br />
-боротися, кричати і кричати, щоб зменшити внутрішні витрати. ми заробляємо гроші, будучи<br />
-відмінними та доставляючи код. шукайте витрати з точки зору клієнта<br />
-та вбивайте їх. якщо ви можете зменшити витрати проекту з 100к до 10к<br />
-просто зробіть це. вони повернуться з іншими чудовими проектами.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що ви <em>агресивно</em> делегуєте та наймаєте, коли ви<br />
-не можете зробити це самі. можливо, вам доведеться боротися за ресурси, які вам потрібні.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що ви втішаєтеся та заохочуєте спілкування з клієнтом, коли<br />
-клієнт відчуває це. або, коли і як ви погодилися і терпляче навчали клієнта спілкуватися.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що ви ідентифікуєтеся, дбаєте та співчуваєте<br />
-нашим клієнтам. їхні чеки годують наші родини. а їхні ідеї стимулюють<br />
-наші власні.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що коли все піде шкереберть, ви зробите все<br />
-самостійно.</p>
-  </li>
-  <li>
-    <p>бути лідером означає, що ви ставите все в перспективу: наші проекти<br />
-рідко мають життя, що висять на волосині - ви повинні керувати своїм власним<br />
-відношенням до криз, реальних чи уявних, які завжди - завжди -<br />
-відбуваються в життєвих циклах технологічного виробництва.</p>
-  </li>
-</ul>
-
-<p>не всі хочуть бути лідерами проекту.</p>
-
-<p>лідери проектів не хочуть керувати кожним проектом, в якому вони беруть участь.</p>
-
-<p>нам потрібні всі види @dojo4.</p>
-
-<p>якщо ви відчуваєте хоча б незручність, коли вас призначають на роль ‘лід’ у<br />
-проекті, або відчайдушно бажаєте цю роль в іншому проекті, поговоріть зі своєю<br />
-командою та скоригуйте.</p>
-
-<p>всі повинні бути чіткі, комфортні та здатні в своїх ролях.</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/lead">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про_нас<a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p

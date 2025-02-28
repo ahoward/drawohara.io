@@ -7,7 +7,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
@@ -40,21 +40,26 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>тут нічого немає.</title>
-
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="йди далі." />
+    <title>Imbed для Android</title>
+    <meta property="og:title" content="Imbed для Android"/>
+    <meta property="og:description" content="йдіть далі." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-
     <meta property="og:image:type" content="image/jpeg" />
 
-    <meta property="site:route" content="/dojo4/archive/:id">
-    <meta property="site:params" content="{'ext':null,'id':'imbed-for-android'}">
-    <meta property="site:path_info" content="/imbed-for-android">
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"imbed-for-android"}">
+    <meta property="site:path_info" content=""/imbed-for-android"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -63,9 +68,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,10 +85,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/imbed-for-android">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/imbed-for-android">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/imbed-for-android">🖤</a>
+      </small>
       <hr>
-      <strong>/imbed-for-android</strong>
     </header>
 
     <main>
@@ -86,41 +100,4 @@
       <br>
       <br>
       <div class="ro markdown">
-        <p>Щойно я писав про те, <a href="http://dojo4.com/blog/why-phonegap-sucks">чому phonegap невдалий</a> та як ми вирішили інтегрувати веб-контент у наші нативні додатки. Відкритий код, який з'явився внаслідок створення кількох нативних додатків з веб-контентом, став <a href="https://github.com/Imbed">проектом Imbed</a>. Ми випустили <a href="http://dojo4.com/blog/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app">версію для iOS</a>.</p>
-
-        <p>Проект має на меті бути стартовою точкою для того, що ми вважаємо найкращим способом інтеграції веб-контенту в нативний додаток - за допомогою нативного коду. У iOS це означає написання Objective-C для використання UIWebView, а в Android - написання Java для використання WebView. Так, це вимагає знання iOS/Objective-C та Android/Java для написання власних нативних функцій, коли ви хочете використовувати функції пристрою, але це означає можливість точно слідувати інструкціям Apple та Google і не залежати від сторонніх розробників для підтримки нової функції та підтримки її без власних помилок.</p>
-
-        <p>Недавно я поглибленіше досліджував Android і створив <a href="https://github.com/imbed/android">версію Imbed для Android</a>. Крім надання гарної стартової точки для включення веб-контенту, прикладний html-код демонструє деякі обмеження JavaScript у webview та забезпечує вбудовану підтримку надзвичайно важливої кнопки "назад" на телефонах Android, коли ви натискаєте посилання, яке потрібно відкрити в Chrome, а не у веб-контенті всередині вашого додатку.</p>
-
-        <p>Перегляньте <a href="https://github.com/imbed/android">версію для Android</a> та дайте знати свої думки у Twitter!</p>
-
-        <p>Як завжди, pull requests вітаються :)</p>
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/imbed-for-android">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+        <p>Колись я написав про те, <a href="http://dojo4.com/blog/why-phonegap-sucks">чому PHONEGAP не підходить</a> і як ми

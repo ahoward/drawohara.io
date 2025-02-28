@@ -1,0 +1,150 @@
+<html color-mode="user" lang="nl">
+  <head>
+    <base href='/langs/nl' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>niets te zien hier.</title>
+
+    <meta property="og:title" content="niets te zien hier."/>
+    <meta property="og:description" content="ga verder." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archief/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aws-dns-https-doj4-hosting"}">
+    <meta property="site:path_info" content=""/aws-dns-https-doj4-hosting"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">ik ❤️ dit!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drink mij'>&lt;&lt; klik op mij 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/aws-dns-https-doj4-hosting</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2014-04-07</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Hosting, DNS &amp; HTTPS vereisen vaak de interacties van meer dan een paar providers. Vaak wordt het onhandelbaar als het niet efficiënt wordt beheerd.</p>
+
+        <p>DNS vereist zowel recordbeheer als domeinregistratie. Voor beide heeft Dojo4 jarenlang <a href="http://dyn.com/dns">DyDNS</a> gebruikt.</p>
+
+        <p>Dojo4 gebruikt meestal <a href="http://aws.amazon.com/ec2">Amazon AWS EC2 cloud computers</a> voor hosting en neigt daarom tot het gebruik van <a href="http://aws.amazon.com/elasticloadbalancing">AWS ELB load balancers</a> voor deze webhosts. Helaas geeft Amazon geen consistente IP-adressen voor ELB-instanties en daarom is de enige manier om tweedeniveaudomeinrecords te maken die naar ELB-instanties wijzen, <a href="http://aws.amazon.com/route53">Amazon AWS Route53</a> te gebruiken voor recordbeheer, wat een speciale aliasrecord voor dit doel heeft. Dus neigen we ertoe Route53 voor DNS-recordbeheer te gebruiken.</p>
+
+        <p>Door de manier waarop TLS-handshakes worden onderhandeld door linux/apache, wordt het aantal SSL-certificaten dat kan worden geleverd, beperkt tot het aantal IP's op de host. Met EC2 is dit eigenlijk één certificaat als je geen <a href="http://aws.amazon.com/vpc">VPC</a> gebruikt. Dojo4 gebruikt vaak ELB's om SSL te bieden als een manier om dit te omzeilen.</p>
+
+        <p>DNS &amp; HTTPS zijn nauw verwant, aangezien de domeinen en subdomeinen die moeten worden beveiligd, moeten worden opgesomd voordat het certificaat wordt verstrekt. Vaak is de meest handige en flexibele strategie een wildcard-certificaat te krijgen. Let erop dat niet alle uitgevers van wildcardcertificaten het basisdomein in het certificaat opnemen (dus je kunt het certificaat alleen gebruiken om *.somedomain.com te beschermen en niet somedomain.com). Het $100/jaar wildcardcertificaat van <a href="dnsimple.com">dnsimple.com</a> uitgegeven door <a href="http://comodo.com">Comodo</a> en inclusief het basisdomein is een goede waarde, zelfs met de $96 ($8/maand * 12 maanden) dnsimple dns-hostingkosten.</p>
+
+        <p>dnsimple heeft nog enkele andere handige functies, zoals het kunnen delegeren van het beheer van recordsets naar andere dnsimple-gebruikersaccounts. Terwijl we het beheer van recordsets van DynDNS naar Route53 hebben verplaatst en een account op dnsimple hebben voor SSL-provisie, zijn we verdergegaan met het verplaatsen van domeinregistratie van DynDNS naar dnsimple om de diensten te consolideren.</p>
+
+        <p>Enkele handige command-liners:</p>
+
+        <p>Vind de Start Of Authority voor een DNS-record</p>
+        <blockquote>
+          <p>dig SOA dojo4.com</p>
+        </blockquote>
+
+        <p>Bekijk het certificaat dat een host serveert</p>
+        <blockquote>
+          <p>openssl s_client -showcerts -connect dojo4.com:443 &lt; /dev/null</p>
+        </blockquote>
+
+        <p>Toegang tot een webserver via IP, SSL-verificatie negeren</p>
+        <blockquote>
+          <p>curl -k https://184.72.61.241 -H “Host: projects.dojo4.com”</p>
+        </blockquote>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ga naar</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/aws-dns-https-doj4-hosting">😩, ik 🖤 ^dit!<a>
+          </li>
+          <li>
+            <a href="/now">/nu</a>
+          </li>
+          <li>
+            <a href="/about">/over</a>
+          </li>
+          <li>
+            <a href="/contact">/contact</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; uitvoeren</a>
+    </footer>
+  </body>
+</html>

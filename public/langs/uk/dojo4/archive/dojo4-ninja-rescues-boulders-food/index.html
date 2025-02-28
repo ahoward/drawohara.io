@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,21 +39,32 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>dojo4 ніндзя рятує їжу Булдера</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуй рух." />
+<meta property="og:title" content="dojo4 ніндзя рятує їжу Булдера"/>
+<meta property="og:description" content="йдіть далі." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"dojo4-ninja-rescues-boulders-food"}">
     <meta property="site:path_info" content=""/dojo4-ninja-rescues-boulders-food"">
 
+    <base href='/langs/uk' />
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,23 +73,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/dojo4-ninja-rescues-boulders-food">я ❤️  це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-ninja-rescues-boulders-food">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-ninja-rescues-boulders-food">🖤</a>
+</small>
 <hr>
-<strong>/dojo4-ninja-rescues-boulders-food</strong>
     </header>
 
     <main>
@@ -86,46 +105,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>У понеділок, по дорозі на роботу, розробник dojo4 Райлан Боверс підняв близько 500 фунтів продуктів, які мали бути викинуті, з Walmart і доставив їх до <a href="http://www.hopepantry.org/index.html">Harvest of Hope</a> <em>на велосипеді</em>.</p>
-
-<p><img src='/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/b.jpeg' alt="BoulderFoodRescue.jpg" /></p>
-
-<p>Райлан волонтерував майже кожен понеділок для <a href="http://www.boulderfoodrescue.org/">Boulder Food Rescue</a> протягом останніх двох років. Коли його запитали, чому, він поділився, що «Волонтерство своїм часом/енергією та віддача світові/спільноті дуже важливі для мене і були прищеплені мені з раннього віку моєю матір'ю. Виростаючи, ми волонтерили з Дитячого дому в Сан-Дієго, щоб допомогти тим, хто опинився в невигідному становищі в суспільстві. Коли я переїхав до Боулдера, я хотів продовжувати віддавати щось спільноті і знайшов Boulder Food Rescue. Проблема продовольчих відходів і неправильного розподілу ресурсів є серйозною проблемою по всьому світу, і для мене важливо брати участь у її вирішенні будь-яким способом. Це було способом, як я міг брати участь у волонтерстві, рятуючи продукти від сміттєвого бака та передаючи їх людям, які потребують, зберігаючи при цьому низький вуглецевий слід. Виграш у всьому!»</p>
-
-<p>У доброму старому США проблема продовольчих відходів, мабуть, набагато більша, ніж дефіцит продуктів. Згідно з доповіддю від <a href="http://endhunger.org/food-waste/">endhunger.org</a>, у 2010 році «31% з 430 мільярдів фунтів доступного продовольчого запасу на рівні роздрібної торгівлі та споживачів не було з'їдено». Переклад: понад половина добової рекомендованої калорійності для дорослих чоловіків, не кажучи вже про дітей, було викинуто в смітник. Тим часом <em>1 з 6</em> американців страждає від продовольчої небезпеки – іншими словами, голоду.</p>
-
-<p>Ураховуючи цю реальність, ми сподіваємося, що <em>кожне</em> містечко та місто в Америці заснує власний Food Rescue. BFR робить це можливим через адвокацію, менторство та використання технологій для добра. Ознайомтесь з їх відкритим кодом <a href="https://github.com/somerandomsequence/food-rescue-robot">Food Rescue Robot</a>, який вже використовується принаймні в 22 містах. Робот повідомляє, що Райлан здійснив близько 90 підіймань, 9000 фунтів врятованих продуктів і рахує.</p>
-
-<p>Якщо це викликає вашу цікавість до роботи з продовольчою справедливістю місцево – і ми сподіваємося, що так – йдіть на <a href="http://www.boulderfoodrescue.org/index.php/forward-food-summit/">Forward Food Summit</a> наступного місяця в <a href="http://www.impacthubboulder.com/">Impact Hub Boulder</a>.</p>
-
-<p><img src='/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/c.jpeg' alt="Forward-Food-Poster.jpg" /></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/dojo4-ninja-rescues-boulders-food">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>Розвитковий центр dojo4 розробник Rylan Bowers вит

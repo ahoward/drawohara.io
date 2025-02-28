@@ -3,7 +3,7 @@
   people think and feel about questions, rather than simply answering them.
   although it does that too, in thier own words.
 
-- my baby micro tiny universal coding/writing companion name `ima` is [live and under active development](/ima)
+- my baby micro tiny universal coding/writing companion name `ima` is [live and under active development](/nerd/ima)
 
 - building an open-source and free to run ai agenic framework called
   `sunwukong` for the resistance.  it's dope and requires zero infrastructue

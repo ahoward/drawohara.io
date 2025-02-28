@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -39,21 +39,33 @@
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Як змусити фронтенд-розробників виправляти речі</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рухатися." />
+<meta property="og:title" content="Як змусити фронтенд-розробників виправляти речі"/>
+<meta property="og:description" content="покидаюсь." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"як-змусити-ваших-розробників-фронтенду-виправити-проблеми"}">
-    <meta property="site:path_info" content=""/як-змусити-ваших-розробників-фронтенду-виправити-проблеми"">
+    <meta property="site:params" content="{"ext":null,"id":"how-to-get-your-front-end-developers-to-fix-things"}">
+    <meta property="site:path_info" content=""/how-to-get-your-front-end-developers-to-fix-things"">
+
+    <base href='/langs/uk' />
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -62,23 +74,31 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/як-змусити-ваших-розробників-фронтенду-виправити-проблеми">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/how-to-get-your-front-end-developers-to-fix-things">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/how-to-get-your-front-end-developers-to-fix-things">🖤</a>
+</small>
 <hr>
-<strong>/як-змусити-ваших-розробників-фронтенду-виправити-проблеми</strong>
     </header>
 
     <main>
@@ -86,85 +106,4 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>спочатку ви вносите код такого вигляду</p>
-
-<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
-</div><div class='code-line code-line-2'><span style="color: #0550ae">&lt;!--</span>&nbsp;<span style="color: #953800">FIXME</span>&nbsp;<span style="color: #953800">СТІВ</span>&nbsp;<span style="color: #0550ae">--&gt;</span>
-</div><div class='code-line code-line-3'><span style="color: #0550ae">&lt;!--</span>&nbsp;<span style="color: #953800">FIXME</span>&nbsp;<span style="color: #953800">СТІВ</span>&nbsp;<span style="color: #0550ae">--&gt;</span>
-</div><div class='code-line code-line-4'>
-</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">div</span>&nbsp;<span style="color: #cf222e">class</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'СТІВ'</span><span style="color: #0550ae">&gt;</span>
-</div><div class='code-line code-line-6'>
-</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% unless </span><span style="color: #953800">Rails</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">stage</span>&nbsp;<span style="color: #0550ae">and</span>&nbsp;<span style="color: #953800">Rails</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">stage</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">production?</span>&nbsp;<span style="color: #0a3069">%&gt;</span>
-</div><div class='code-line code-line-8'>
-</div><div class='code-line code-line-9'><span style="color: #0a3069">      &lt;%</span>
-</div><div class='code-line code-line-10'><span style="color: #0a3069">        @hero = Article.hero.limit(1).to_a</span>
-</div><div class='code-line code-line-11'><span style="color: #0a3069">        @featured = Article.featured.limit(3).to_a</span>
-</div><div class='code-line code-line-12'><span style="color: #0a3069">      %&gt;</span>
-</div><div class='code-line code-line-13'>
-</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">div</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">style</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'border:4px dotted orange;'</span><span style="color: #0550ae">&gt;</span>
-</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">h1</span><span style="color: #0550ae">&gt;</span>&nbsp;<span style="color: #953800">ГЕРОЙ</span>&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/h1&gt;</span>
-</div><div class='code-line code-line-16'><span style="color: #116329">        &lt;% @hero.each do |article| %&gt;</span>
-</div><div class='code-line code-line-17'><span style="color: #116329">          &lt;div style='height:12em;overflow:scroll;border:2px solid pink;'&gt;</span>
-</div><div class='code-line code-line-18'><span style="color: #116329">            title: &lt;%= link_to article.title, article %&gt;&lt;br&gt;</span>
-</div><div class='code-line code-line-19'><span style="color: #116329">            &lt;%= article.to_html %&gt;</span>
-</div><div class='code-line code-line-20'><span style="color: #116329">          &lt;/</span><span style="color: #24292f;background-color: #f6f8fa">div</span><span style="color: #0550ae">&gt;</span>
-</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% end </span><span style="color: #0550ae">%&gt;</span>
-</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/div&gt;</span>
-</div><div class='code-line code-line-23'>
-</div><div class='code-line code-line-24'><span style="color: #116329">      &lt;div style='border:4px dotted fuchsia;'&gt;</span>
-</div><div class='code-line code-line-25'><span style="color: #116329">        &lt;h1&gt; ОБРАНЕ &lt;/</span><span style="color: #24292f;background-color: #f6f8fa">h1</span><span style="color: #0550ae">&gt;</span>
-</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% @featured.each </span><span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">article</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #0a3069">%&gt;</span>
-</div><div class='code-line code-line-27'><span style="color: #0a3069">          &lt;div style='height:4em;overflow:hidden;border:2px solid purple;'&gt;</span>
-</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">title: </span><span style="color: #0550ae">&lt;</span><span style="color: #0a3069">%= link_to article.title, article %&gt;&lt;br&gt;</span>
-</div><div class='code-line code-line-29'><span style="color: #0a3069">            &lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">article</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_html</span>&nbsp;<span style="color: #0a3069">%&gt;</span>
-</div><div class='code-line code-line-30'><span style="color: #0a3069">          &lt;/div&gt;</span>
-</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% end </span><span style="color: #0550ae">%&gt;</span>
-</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/div&gt;</span>
-</div><div class='code-line code-line-33'>
-</div><div class='code-line code-line-34'>
-</div><div class='code-line code-line-35'><span style="color: #116329">    &lt;% end %&gt;</span>
-</div><div class='code-line code-line-36'>
-</div><div class='code-line code-line-37'><span style="color: #116329">    &lt;script&gt; $(function(){ App.blink('.СТІВ') }); &lt;/s</span><span style="color: #24292f;background-color: #f6f8fa">cript</span><span style="color: #0550ae">&gt;</span>
-</div><div class='code-line code-line-38'>&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/div&gt;</span>
-</div><div class='code-line code-line-39'>
-</div><div class='code-line code-line-40'><span style="color: #116329">&lt;!-- FIXME СТІВ --&gt;</span>
-</div><div class='code-line code-line-41'><span style="color: #116329">&lt;!-- FIXME СТІВ --&gt;</span>
-</div><div class='code-line code-line-42'>
-</div><div class='code-line code-line-43'>
-</div></code></div>
-
-<p>рендериться як</p>
-
-<p><img src='/ro/dojo4/як-змусити-ваших-розробників-фронтенду-виправити-проблеми/assets/screen-shot-2013-04-10-at-11.44.27_AM.png' alt="img" /></p>
-
-<p>а потім ви просто сідаєте та чекаєте ;-)</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/як-змусити-ваших-розробників-фронтенду-виправити-проблеми">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+  <p>спочатку ви перевіряєте код

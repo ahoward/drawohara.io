@@ -7,12 +7,15 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DQVD9T27V4');
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
     </script>
 
     <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
 
     <!-- langs -->
     <!--
@@ -37,11 +40,14 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- meta -->
-    <title>тут нічого немає.</title>
-    <meta property="og:title" content="тут нічого немає."/>
-    <meta property="og:description" content="продовжуйте рух." />
+    <title>Час збору вousse в Calgary Farmers Market</title>
+
+    <meta property="og:title" content="Час збору вousse в Calgary Farmers Market"/>
+    <meta property="og:description" content="йдіть далі." />
     <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
     <meta property="og:image:type" content="image/jpeg" />
+
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"harvest-time-calgary-farmers-market"}">
     <meta property="site:path_info" content=""/harvest-time-calgary-farmers-market"">
@@ -50,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -57,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -69,10 +87,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-      <a href="mailto:i-love-this@drawohara.io?subject=/harvest-time-calgary-farmers-market">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/harvest-time-calgary-farmers-market">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/harvest-time-calgary-farmers-market">🖤</a>
+      </small>
       <hr>
-      <strong>/harvest-time-calgary-farmers-market</strong>
     </header>
 
     <main>
@@ -80,45 +102,4 @@
       <br>
       <br>
       <div class="ro markdown">
-        <p>Це той час року, коли ваша CSA привозить останні баклажани та яблука до ваших дверей, і ви починаєте гуглити <em>бабаганоуш</em> та готувати сидр.</p>
-
-        <p>dojo4 нещодавно знову зв'язалася зі своїми улюбленими фермерами на Півночі на <a href="https://www.calgaryfarmersmarket.ca/">Калгарі Фермерському Ринок</a>. Протягом багатьох років dojo4 допомагала CFM у підтримці їхнього сайту на ExpressionEngine - того, який ми спроєктували та побудували для них багато років тому.</p>
-
-        <p>Ми допомагали у всьому: від невеликих коректів дизайну до повного оновлення сторінок, таких як зробити їх <a href="https://www.calgaryfarmersmarket.ca/vendors">“Досліджуйте Ринок” мапу</a> інтерактивною з ефектами наведення, підказками та легкими вікнами.</p>
-
-        <p>Кожен раз було задоволенням працювати з Марком Франссеном; здається, він ніколи не втомиться від питань Стіва “Як там погода?” Дякуємо за те, що ви такий чудовий клієнт, CFM!</p>
-
-        <p>А коли ви переглядаєте блоги, перегляньте <a href="https://www.calgaryfarmersmarket.ca/seasons">Смачний рецепт осіннього врожаю від CFM</a>.</p>
-
-        <p><img src='/ro/dojo4/harvest-time-calgary-farmers-market/assets/b.jpeg' alt="DSC_0761.jpg" /></p>
-
-        <p><img src='/ro/dojo4/harvest-time-calgary-farmers-market/assets/c.jpeg' alt="DSC_0799.jpg" /></p>
-      </div>
-    </main>
-
-    <footer>
-      <hr>
-      <a href="/goto" name="goto">&mdash;&gt; goto</a>
-      <blockquote>
-        <ul>
-          <li>
-            <a href="mailto:i-hate-this@drawohara.io?subject=/harvest-time-calgary-farmers-market">😩, я 🖤 ^це!<a>
-          </li>
-          <li>
-            <a href="/now">/now<a>
-          </li>
-          <li>
-            <a href="/about">/about<a>
-          </li>
-          <li>
-            <a href="/contact">/contact<a>
-          </li>
-          <li>
-            <a href='/langs' id='lang'>🌎</a>
-          </li>
-        </ul>
-      </blockquote>
-      <a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+        <p>Це час року, коли

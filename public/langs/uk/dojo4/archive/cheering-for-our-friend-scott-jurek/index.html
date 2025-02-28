@@ -1,61 +1,67 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <base href='/langs/uk' />
+    <!-- meta -->
+    <title>За нашого друга Скотта Джурека!</title>
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <meta property="og:title" content="За нашого друга Скотта Джурека!"/>
+    <meta property="og:description" content="йдіть далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="проїжджайте." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
-
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
-    <meta property="site:params" content="{"ext":null,"id":"cheering-for-our-friend-scott-jurek"}">
-    <meta property="site:path_info" content=""/cheering-for-our-friend-scott-jurek"">
+    <meta property="site:params" content="{"ext":null,"id":"за-нашого-друга-скотта-джурека"}">
+    <meta property="site:path_info" content=""/за-нашого-друга-скотта-джурека"">
 
     <style>
       /* anti pico */
       a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
 
       /* anti turbo */
       html { transition: none !important; }
@@ -64,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -76,61 +87,15 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/cheering-for-our-friend-scott-jurek">я ❤️ це!</a>
-<hr>
-<strong>/ми підтримуємо нашого друга Скотта Джурека</strong>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/за-нашого-друга-скотта-джурека">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/за-нашого-друга-скотта-джурека">🖤</a>
+      </small>
+      <hr>
     </header>
 
     <main>
-      <em>опубліковано: 2015-07-09</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p><em>«Встановлення рекорду на [Аппалачському] трейлі означає пробігати ультрамарафон щодня, кожен день, протягом приблизно шести тижнів. Загальний набір і втрата висоти становить майже 515 000 футів, і більша частина цього складається з важкопрохідних скель, які важко ідентифікувати як трейл.»</em></p>
-
-<p>Ми в доджо підтримуємо нашого старого друга та клієнта, <a href="http://scottjurek.com/">Скотта Джурека</a>, коли він <a href="http://www.outsideonline.com/1997316/will-scott-jurek-break-appalachian-trail-record-maybe">намагається побити рекорд швидкості на AT</a>.</p>
-
-<p>У 2012 році ми мали приємний досвід створення швидкозавантажувального <a href="http://dojo4.com/blog/static-is-the-new-black">статичного вебсайту</a> для Скотта, щоб збігтися з виходом його мемуарів, <a href="http://scottjurek.com/eatandrun/"><em>Їж і біжи</em></a>. Ми працювали разом, щоб створити візуально цілісний бренд, а також щоб включити блог і календарний плагін, який він міг би редагувати.</p>
-
-<p><img src='/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/b.jpeg' alt="Screen Shot 2015-07-09 at 3.19.19 PM.jpg" /></p>
-
-<p>Ми любимо сайт і ми любимо цю людину.  Ця цитата з <em>Їж і біжи</em> легко могла б бути від нашого CTO, Ари Говарда:</p>
-
-<p>«Є радість у дискомфорті та болі. Кожного разу, коли ви прориваєтеся крізь бар'єр дискомфорту, є легкість і легкість з іншого боку.» Хай ця філософія швидко приведе його до ще одного вражаючого рекорду в ультрамарафоні!</p>
-
-<p><img src='/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/c.jpeg' alt="Screen Shot 2015-07-09 at 3.19.55 PM.jpg" /></p>
-
-<h3 id="update">ОНОВЛЕННЯ</h3>
-
-<p><a href="http://www.runnersworld.com/trail-racing/scott-jurek-celebrates-a-new-appalachian-trail-thru-hike-speed-record">ВІН ЗРОБИВ ЦЕ!</a></p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/cheering-for-our-friend-scott-jurek">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <em>опубліковано: 2015-07-09</em

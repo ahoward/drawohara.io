@@ -1,51 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут немає нічого.</title>
+    <!-- meta -->
+    <title>Маніфест робочого місця, дружнього до сім'ї, jetzt більше ніж कभی</title>
 
-<meta property="og:title" content="тут немає нічого."/>
-<meta property="og:description" content="переходьте." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Маніфест робочого місця, дружнього до сім'ї, jetzt більше ніж कभі"/>
+    <meta property="og:description" content="рухайся далі." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"family-friendly-workplace-manifesto-now-more-than-ever"}">
@@ -55,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,9 +70,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -74,84 +87,15 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/family-friendly-workplace-manifesto-now-more-than-ever">я ❤️ це!</a>
-<hr>
-<strong>/family-friendly-workplace-manifesto-now-more-than-ever</strong>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/family-friendly-workplace-manifesto-now-more-than-ever">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/family-friendly-workplace-manifesto-now-more-than-ever">🖤</a>
+      </small>
+      <hr>
     </header>
 
     <main>
-      <em>опубліковано: 2017-06-30</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p><img src='/ro/dojo4/family-friendly-workplace-manifesto-now-more-than-ever/assets/b.jpeg' alt="dojo4_family.jpg" /></p>
-
-<p>Вимоги до робочого місця, здається, лише <a href="http://equitablegrowth.org/report/overworked-america/">зростають</a>. І здатності роботи розширюватися на всі області нашого життя <a href="https://www.nytimes.com/2015/05/31/upshot/the-24-7-work-cultures-toll-on-families-and-gender-equality.html">посилює гендерну нерівність</a>. Це, разом із <a href="https://www.worldpolicycenter.org/policies/is-paid-leave-available-to-mothers-and-fathers-of-infants/is-paid-leave-available-for-mothers-of-infants">відсутністю відпусток для сім'ї</a>, не лише спричиняє суспільний дефіцит, але й <a href="https://www.dol.gov/featured/paidleave/cost-of-doing-nothing-report.pdf">негативно впливає на прибуток нашого бізнесу</a>. <a href="https://unreasonable.is/why-family-friendly-is-business-friendly/">Як я вже говорив раніше</a>, це втрачена можливість. Батьки та сім’ї роблять міцні та прибуткові бізнеси. Замість того, щоб просити батьків і сімей жертвувати собою для підтримки <a href="https://www.newamerica.org/weekly/edition-144/beyond-inbox-zero/">виснажливої робочої культури</a>, ми можемо адаптувати наш бізнес. Це <a href="http://www.nationalpartnership.org/issues/work-family/paid-leave-resources.html#existing">підвищить наш моральний дух</a>, <a href="https://www.wsj.com/articles/feds-yellen-says-family-friendly-work-policies-can-boost-economy-1494005456">сприятиме економіці</a> та <a href="http://www.huffingtonpost.com/joe-keefe/familyfriendly-workplaces_b_13127872.html">зміцнить наші підприємства</a>.</p>
-
-<p>Оскільки це <a href="https://medium.com/mit-initiative-on-the-digital-economy/working-for-a-better-future-92cf96b1f0a9">стає все більш актуальним</a>, я вважаю, що це добрий час <a href="http://dojo4.com/blog/family-friendly-workplace-manifesto">перепостити</a> <strong>Маніфест сімейно-дружнього робочого місця</strong>. <a href="https://github.com/dojo4/policy/blob/master/family-friendly_workplace_manifesto">Використовуйте</a> цей маніфест <a href="https://creativecommons.org/licenses/by-sa/4.0/">у частках або повністю</a>, або створюйте свій власний:</p>
-
-<blockquote>
-  <p>Оскільки бути батьками або опікунами, мати сім’ю – це те, чим ми повинні пишатися на роботі, ми проголошуємо цей <strong>Маніфест сімейно-дружнього робочого місця</strong>. Мати сім’ю приносить радість та випробування. Це не повинно бути тим, що хтось повинен приховувати, виправдовувати, пояснювати або соромитися.</p>
-</blockquote>
-
-<blockquote>
-  <p>Батьки та інші опікуни мають всі підстави бути нашими найціннішими співробітниками, оскільки:</p>
-</blockquote>
-
-<blockquote>
-  <ul>
-    <li>вони не мають іншого вибору, окрім як звикати та налаштовуватися на важку працю та безперервний графік</li>
-    <li>у них багато на кону, і вони, імовірно, працюють необов’язково для себе, а для блага своєї сім’ї</li>
-    <li>їх домашнє життя підкреслює необхідність чіткого прийняття рішень, співпраці та невідворотної потреби вміти добре ладнати з іншими</li>
-  </ul>
-</blockquote>
-
-<blockquote>
-  <p>Через це сімейно-дружні робочі місця мають потенціал бути більш прибутковими, ефективними та ефективними робочими місцями. Робоче місце, яке цінує сім'ї, є щасливішим, реалістичнішим та більш стійким робочим місцем. Воно, імовірно, збереже хороших працівників. Воно, імовірно, створить добру волю, ресурс, на який можна звернутися, коли це необхідно.</p>
-</blockquote>
-
-<blockquote>
-  <p>Щоб створити сімейно-дружнє робоче місце, ми проголошуємо наступне…</p>
-</blockquote>
-
-<blockquote>
-  <ul>
-    <li>Ми визнаємо, що життя відбувається. Постійні хвороби, снігові дні, шкільні канікули, проблеми з доглядом за дітьми, шкільні та лікарські прийоми та надзвичайні ситуації всіх видів є частиною тканини життя і не можуть бути відмінені. Робота буде виконана в інший час.</li>
-    <li>Наявність дітей на робочому місці час від часу робить його багатшим місцем. Маленькі істоти можуть бути відволікаючими, але це добре для наших колег знати наші сім’ї та наші сім’ї знати наших колег. Це надає потенційних прикладів для наших дітей. Це надає потенційного гумору та ігровості для наших колег. І іноді просто краще, в загальному плані, мати наших дітей з нами, ніж виснажувати логістичні ресурси, щоб визначити, куди вони ще можуть бути.</li>
-    <li>Ми визнаємо, що є надмірний тягар на самотніх батьків, фінансово неспроможних батьків, батьків або опікунів дітей з особливими потребами, матерів, які годують груддю, та батьків маленьких дітей, які не дозволяють спати. Визнання цього не означає нижчого рівня очікувань, але дозволяє зрозуміти інший набір вимог.</li>
-    <li>Здорова сім’я вимагає особливого розкладу. Робота та зустрічі, заплановані в останню хвилину або в той час, коли потрібно відвезти дітей до дитячого садку/школи або під час обіду чи сну, необов’язково будуть виконуваними або продуктивними для батьків. Робоче місце, яке підтримує гнучкі розклади та можливість працювати віддалено, оптимізує та використовує хорошу роботу, яку можуть запропонувати батьки/опікуни. Тепер ми живемо в світі, який пропонує багато інструментів для продуктивної, асинхронної командної роботи - ми скористаємося ними для підтримки здоровішого, більш інклюзивного та більш генеративного робочого місця.</li>
-    <li>Надання оплачуваної відпустки для батьків є невід’ємною частиною структури сімейно-дружнього робочого місця.</li>
-  </ul>
-</blockquote>
-
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/family-friendly-workplace-manifesto-now-more-than-ever">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/зараз<a>
-  </li>
-  <li>
-    <a href="/about">/про</a>
-  </li>
-  <li>
-    <a href="/contact">/контакти<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; вийти</a>
-    </footer>
-  </body>
-</html>
+      <em>опубліковано: 2017-06-30

@@ -6,7 +6,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
 </script>
 
   <!-- deps -->
@@ -20,7 +20,7 @@
   <!--
     https://developers.google.com/search/docs/specialty/international/localized-versions#html
   -->
-   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="en" href="https://drawohara.io/" />
    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
@@ -35,17 +35,20 @@
   <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
   <!-- meta -->
-    <title>тут нічого немає.</title>
+    <title>Emailadore на ProductHunt</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рухатися." />
+<meta property="og:title" content="Emailadore на ProductHunt"/>
+<meta property="og:description" content="продовжуйте." />
 <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"emailadore-on-producthunt"}">
@@ -55,6 +58,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,9 +72,14 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
@@ -75,10 +90,14 @@
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/emailadore-on-producthunt">я ❤️ це!</a>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/emailadore-on-producthunt">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/emailadore-on-producthunt">🖤</a>
+</small>
 <hr>
-<strong>/emailadore-on-producthunt</strong>
     </header>
 
     <main>
@@ -86,82 +105,6 @@
 <br>
 <br>
 <div class="ro markdown">
-  <p>Emailadore: Це миле та корисне.</p>
+  <p>Emailadore: Це мило, <em>і</em> корисно.</p>
 
-<p>Нещодавно ми опублікували один із наших внутрішніх інструментів, <a href="http://emailadore.com">Emailadore</a>, на <a href="http://www.producthunt.com/posts/emailadore">ProductHunt</a>. Він отримав кілька голосів і близько 500 відвідувачів протягом 2 днів. Чудово!</p>
-
-<p>Одним із відгуків було те, що головна сторінка не надавала багато інформації про те, чому це корисно. Так, це те, що ви отримуєте, коли це внутрішній інструмент! Ми оновимо головну сторінку коли-небудь з деякими <del>кращими поясненнями</del> танцюючими єдинорогами, але наразі ось короткий опис, чому ми його вважаємо корисним і деякі варіанти використання.</p>
-
-<p>Системи квитанцій дуже корисні для наявності одного місця, де всі в організації можуть бачити минулу, поточну та майбутню діяльність щодо проектів. Якщо це не записано в квитанції, це не відбулося.</p>
-
-<p>Однак не всі почуваються комфортно, використовуючи систему квитанцій для спілкування, або просто забувають. Клієнти можуть написати нам безпосередньо замість використання системи квитанцій, і ми захочемо записати цю бесіду в квитанці. Або ми можемо написати потенційному клієнту, перш ніж у них з'являться будь-які квитанції в нашій системі, і коли ми почнемо створювати квитанції для них, ми захочемо історію нашого електронного листування в квитанції. Більшість систем квитанцій дозволяють вам переслати ланцюжок електронних листів до системи квитанцій для створення нової квитанції, але що, якщо ви хочете додати електронну бесіду до існуючої квитанції?</p>
-
-<p>Ми колись натискали "Друк" на ланцюжку електронних листів і замість вибору принтера ми вибирали "Зберегти як PDF", що завантажувало представлення PDF електронної бесіди, яке ми потім могли прикріпити до квитанції. Це був незручний варіант, тому ми намагалися придумати кращий спосіб.</p>
-
-<p>Так ми створили <a href="http://emailadore.com">Emailadore</a>. Замість того, щоб друкувати електронну бесіду в PDF і потім завантажувати файл вкладення, ми просто пересилаємо електронний лист на email [at] emailadore [dot] com, і emailadore відповідає з прямим посиланням на отриманий електронний лист.</p>
-
-<p>Тепер замість завантаження PDF електронних листів до квитанцій ми просто вставляємо URL електронного листа в квитанці. Ось знімок екрана квитанції, де замість завантаження файлу електронної бесіди ми просто вставили посилання для посилання на ланцюжок електронних листів:</p>
-
-<p><img src='/ro/dojo4/emailadore-on-producthunt/assets/b.png' alt="L85BF.png" /></p>
-
-<p>Часті запитання:</p>
-
-<ul>
-  <li>Чому просто не скопіювати когось на електронний лист, щоб показати ланцюжок електронних листів?</li>
-</ul>
-
-<p>Уся наша команда не має доступу до вашої скриньки - ми всі ділимося нашою системою квитанцій як централізованим місцем записів. Плюс, електронна пошта використовується як місце для зберігання речей, але це не те, для чого вона призначена. Колись пробували шукати конкретний електронний лист серед сотень тисяч електронних листів у вашій скриньці? Так, це погано.</p>
-
-<ul>
-  <li>А як на рахунок вкладень?</li>
-</ul>
-
-<p>Вони також будуть!</p>
-
-<ul>
-  <li>Чи потрібно мені реєструватися?</li>
-</ul>
-
-<p>Тільки якщо ви хочете. Електронний лист, який ви отримуєте від Emailadore, не тільки надає URL вашого електронного листа, але й інструкції щодо створення облікового запису користувача. Ви захочете це зробити, якщо хочете перерахувати всі електронні листи, які ви коли-небудь пересилали на emailadore для посилання.</p>
-
-<ul>
-  <li>Чи будуть видалені мої електронні листи?</li>
-</ul>
-
-<p>Ні - вони безпечно зберігаються на одному з наших виробничих серверів. Якщо ми коли-небудь вирішимо припинити роботу сервісу, ми обов'язково повідомимо всіх заздалегідь, разом із стратегією міграції.</p>
-
-<ul>
-  <li>Чи це безкоштовно?</li>
-</ul>
-
-<p>Так! У нас немає планів на монетизацію Emailadore наразі, але ми повідомимо вас заздалегідь, якщо це зміниться в майбутньому. Наразі ми просто вважаємо, що це класний внутрішній інструмент, який ми часто використовуємо, тому всі інші, можливо, теж захочуть його використовувати!</p>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/emailadore-on-producthunt">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+<p>Нещодавно ми розмістили одну зі своїх внутрішніх інструментів, <a href="http

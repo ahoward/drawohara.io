@@ -1,0 +1,143 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Inget att se här.</title>
+
+    <meta property="og:title" content="Inget att se här."/>
+    <meta property="og:description" content="Fortskaffa dig." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"spine-js-an-experience-a-review"}">
+    <meta property="site:path_info" content=""/spine-js-an-experience-a-review"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/spine-js-an-experience-a-review">jag ❤️ det här!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/spine-js-an-experience-a-review</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2013-10-24</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Så vi gillar att testa slumpmässiga frontend-ramverk här på dojo4 i projekt, och den senaste vi har testat är <a href="http://spinejs.com/">SpineJS</a>. Här är mina tankar efter att ha använt det i några projekt:</p>
+
+        <p><em>Fördelar:</em></p>
+
+        <p><strong>1. Kort, öppen källkod.</strong> Varje gång jag hade en fråga om hur ramverket tolkade min kod, var det otroligt enkelt att öppna källfilerna och läsa koden själv.</p>
+
+        <p><strong>2. Solid webbserververktyg i Hem</strong> Allt du behöver för att få igång en frontend-app ges dig med Hem och SpineJS. Tester ställs automatiskt in och är enkla att modifiera. Hem har också en trevlig <code>-d</code> flagga, som inte minimerar din applikation för att göra det enklare att felsöka under utveckling.</p>
+
+        <p><strong>3. Inbyggt datapersistenslager</strong> SpineJS levereras med Ajax och LocalStorage-anpassningar för dina modeller som är mycket enkla att använda och subklassa. Det är också enkelt att skriva dina egna eftersom du har källkoden för Ajax och LocalStorage-anpassningarna och de är ganska korta.</p>
+
+        <p><strong>4. Aktiv Google Group och github-community</strong> Varje gång jag hade frågor längs vägen fanns det alltid någon i samfundet som kunde ge ett förslag. De har en <a href="https://groups.google.com/forum/#!forum/spinejs">Google Group</a> och en aktiv <a href="https://github.com/spine">github organisation</a>.</p>
+
+        <p><strong>4. Coffeescript är fantastiskt.</strong> Den här punkten handlar mindre om SpineJS, men SpineJS var mitt första användande av Coffeescript och det är fantastiskt. Jag borde skriva ett blogginlägg helt och hållet om Coffeescript men det är fantastiskt för sin enkelhet att läsa utan alla dess skräpiga parenteser och semikolon, funktionsomfång med fet pil, och frågetecknet för att förhindra mig från att behöva göra massor av existentiella villkor. Och ja – klasser.</p>
+
+        <p><em>Nackdelar:</em></p>
+
+        <p><strong>Dokumentationen är inte helt fullständig.</strong> Jag vet att den här punkten inte är helt rättvis eftersom deras dokumentation mer liknar en samling av förklarade exempel än en sann API-dokumentation, men poängen är att det finns <a href="https://github.com/spine/spine.site/issues/52">funktioner</a> inom ramverket som inte behandlas i dokumentationen. Dock, med punkt #1 ovan, är det superenkelt att läsa källkoden själv.</p>
+
+        <p><em>Sammanfattning:</em></p>
+
+        <p>Sammanfattningsvis skulle jag rekommendera det här ramverket och är mycket sannolikt att använda det igen. Mellan enkelheten och användarvänligheten hos Coffeescript och SpineJS verkar de vara ett match gjort i webhimlen.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/spine-js-an-experience-a-review">😩, jag 🖤 ^det här!<a>
+          </li>
+          <li>
+            <a href="/now">/nu</a>
+          </li>
+          <li>
+            <a href="/about">/om</a>
+          </li>
+          <li>
+            <a href="/contact">/kontakt</a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

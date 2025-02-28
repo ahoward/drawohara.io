@@ -1,51 +1,52 @@
 <html color-mode="user" lang="uk">
   <head>
-  <!-- ga -->
+    <base href='/langs/uk' />
+    <!-- ga -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DQVD9T27V4');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+    </script>
 
-  <!-- deps -->
+    <!-- deps -->
     <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
     >
 
-  <!-- langs -->
-  <!--
-    https://developers.google.com/search/docs/specialty/international/localized-versions#html
-  -->
-   <link rel="alternate" hreflang="en" href="/" />
-   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
-   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
-   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
-   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
-   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
 
-  <!-- defaults -->
+    <!-- defaults -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
 
-  <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-  <!-- meta -->
-    <title>тут нічого немає.</title>
+    <!-- meta -->
+    <title>Візуалізація даних з використанням Google Sheets і D3.js</title>
 
-<meta property="og:title" content="тут нічого немає."/>
-<meta property="og:description" content="продовжуйте рухатися." />
-<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:title" content="Візуалізація даних з використанням Google Sheets і D3.js"/>
+    <meta property="og:description" content="продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
 
-<meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta property="site:route" content=""/dojo4/archive/:id"">
     <meta property="site:params" content="{"ext":null,"id":"data-visualization-with-google-sheets-and-d3--js"}">
@@ -55,6 +56,13 @@
       /* anti pico */
       a {text-decoration: none !important; }
 
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
       /* anti turbo */
       html { transition: none !important; }
       .turbo-progress-bar { visibility: hidden; }
@@ -62,79 +70,33 @@
       /* anti progressive */
       html { margin: 1em; }
       img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
     </style>
 
-    <script>
+    <script defer>
+      /* anti turbo */
       document.addEventListener("turbo:load", function() {
         const progressBar = document.querySelector('.turbo-progress-bar');
         if (progressBar) { progressBar.remove(); }
       });
     </script>
-
-    <base href='/langs/uk' />
   </head>
 
   <body>
     <header>
-      <a href="/home">@drawohara</a> &mdash;
-<a href="mailto:i-love-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">я ❤️ це!</a>
-<hr>
-<strong>/data-visualization-with-google-sheets-and-d3--js</strong>
+      <a href="/">@drawohara</a>
+      &nbsp;
+      <small>
+        <a href="mailto:i-love-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">❤️ </a>
+        ||
+        <a href="mailto:i-hate-that@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">🖤</a>
+      </small>
+      <hr>
     </header>
 
     <main>
       <em>опубліковано: 2018-10-11</em>
-<br>
-<br>
-<div class="ro markdown">
-  <p>Є люди, які дивляться на електронну таблицю та бачать магію. Інші ж, дивлячись на електронну таблицю, відчувають розмитість очей і сильне бажання заснути. Без суджень про будь-який тип, але іноді потрібно зробити це легше для сприйняття.</p>
-
-<p>Перетворення рядків та стовпців даних у формат, який допомагає людям зрозуміти, "у чому справа", зазвичай називають <em>візуалізацією даних</em>. Існує багато інструментів для створення діаграм та графіків з електронних таблиць, включаючи вбудовані в Excel або Google Sheets. Іноді, однак, потрібно щось більш потужне - і найкращий інструмент для цієї роботи - <a href="http://d3js.org">D3</a>.</p>
-
-<p>Наприклад: dojo4 нещодавно завершила роботу для <a href="https://350.org">350.org</a> - організації, яка зосереджена на скороченні використання викопного палива та переході на 100% відновлювані джерела енергії. Ми використали концепцію хордової діаграми, щоб представити зусилля кількох груп та організацій, які спрямовані на міжнародні банки, що фінансують проекти викопного палива по всьому світу. Кольорове кодування дає швидкий огляд груп та їх конкретного фокусу на викопному паливі.</p>
-
-<p><img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg' alt="350-chord-diagram-base.jpg" /></p>
-
-<p>Користувачі можуть навести курсор на організацію та побачити, на які банки вона спрямована:<br />
-<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg' alt="350-d3-chord-diagram-hover1.jpg" /></p>
-
-<p>Або навести курсор на банк і побачити, які групи спрямовані на конкретний банк.<br />
-<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg' alt="350-d3-chord-diagram-hover2.jpg" /></p>
-
-<p><sup><em>(зверніть увагу, що назви банків та організацій були видалені з міркувань конфіденційності)</em></sup></p>
-
-<p>Цю хордову діаграму було динамічно створено з загального Google Sheet за допомогою Google App Script та спеціального JavaScript, прикріпленого до Sheet. Ця самостійна взаємодія допомагає забезпечити, щоб вихідні дані та код для створення діаграми не втратили свого зв'язку, і будь-які оновлення загального аркуша автоматично оновлюватимуть діаграму.</p>
-
-<blockquote>
-  <p><em>Мені подобалося працювати з dojo4. Команда справді хотіла зрозуміти, як візуалізація моїх даних буде корисною, і вони, здається, працювали з цього. Тепер у мене є доступний та захоплюючий графік, який розповідає історію про те, де є прогалини, дублювання та можливості для більшої координації. Я оцінив, як вони взяли час, щоб вивчити естетику моєї організації та працювали, щоб відповідати нашому стилю.</em>    –Старший глобальний аналітик, <a href="https://350.org/">350.org</a></p>
-</blockquote>
-
-</div>
-    </main>
-
-    <footer>
-      <hr>
-<a href="/goto" name="goto">&mdash;&gt; goto</a>
-<blockquote>
-<ul>
-  <li>
-    <a href="mailto:i-hate-this@drawohara.io?subject=/data-visualization-with-google-sheets-and-d3--js">😩, я 🖤 ^це!<a>
-  </li>
-  <li>
-    <a href="/now">/now<a>
-  </li>
-  <li>
-    <a href="/about">/about<a>
-  </li>
-  <li>
-    <a href="/contact">/contact<a>
-  </li>
-  <li>
-    <a href='/langs' id='lang'>🌎</a>
-  </li>
-</ul>
-</blockquote>
-<a href="/">&lt;&mdash; eject</a>
-    </footer>
-  </body>
-</html>
+      <
