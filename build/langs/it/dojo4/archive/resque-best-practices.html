@@ -1,0 +1,191 @@
+<html color-mode="user" lang="it">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nulla da vedere qui.</title>
+
+<meta property="og:title" content="nulla da vedere qui."/>
+<meta property="og:description" content="circolare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"resque-best-practices"}">
+    <meta property="site:path_info" content=""/resque-best-practices"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+    <base href='/langs/it' />
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:io-amo-questo@drawohara.io?subject=/resque-best-practices">io ❤️ questo!</a>
+<small>
+  <small>
+    <small>
+      <span title='bevimi'>&lt;&lt; clicca su di me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/resque-best-practices</strong>
+    </header>
+
+    <main>
+      <em>pubblicato il: 2012-07-16</em>
+<br>
+<br>
+<div class="ro markdown">
+
+<h2 id="introduzione">Introduzione</h2>
+
+<p>Resque ( https://github.com/defunkt/resque ) è una soluzione davvero bella, robusta,<br />
+di qualità per i lavori in background per rails. Tuttavia, lascia molto<br />
+spazio al pensiero del developer riguardo alle migliori pratiche per la modellazione dei lavori, la gestione<br />
+delle distribuzioni e la gestione dei processi dei lavoratori. Segue un insieme di migliori<br />
+pratiche per l'utilizzo di resque/redis come sistema di lavori in background.</p>
+
+<h2 id="gestione-dei-processi-in-background">Gestione dei Processi in Background</h2>
+
+<p>Resque ha alcune funzionalità per la gestione dei processi in background, ma sono<br />
+cruftly e buggy. Utilizziamo questo semplice script wrapper per gestire una singola<br />
+istanza del demone di lavoro in background:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123756.js?file=jobs.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="modellazione-dei-tuoi-lavori">Modellazione dei Tuoi Lavori</h2>
+
+<p>Una delle prime cose da fare è determinare come modellare i tuoi lavori. Resque<br />
+rende abbastanza semplice inviare metodi arbitrari sui moduli, ma preferiamo<br />
+fare qualcosa di un po' più sano. In particolare ci piace avere id su<br />
+i lavori, essere in grado di interrogarli facilmente e renderli ultra duraturi in<br />
+faccia a guasti di sistema o di processo. Semplicemente consolidando tutta la logica dei lavori<br />
+in un singolo modello che ombreggia il lavoro di resque, questo è abbastanza possibile. Ecco<br />
+la nostra classe di lavoro di base.</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123839.js?file=job.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<p>Come probabilmente puoi vedere, questa classe (che potrebbe essere facilmente portata su ActiveRecord) consente la presentazione di lavori arbitrari,<br />
+mailer o altro, e ogni lavoro lascia una traccia nel database principale che lo collega<br />
+all'ingresso resque/redis. Rende il lavoro con gli oggetti dei lavori estremamente naturale - per esempio avere un loop di polling che controlla lo stato di un particolare lavoro per id, o ottenere un rapido conteggio di quanti lavori hanno avuto successo nell'ultima settimana. Rende anche il nostro resque install super vanilla - non utilizziamo alcun plugin - e rende possibile inserire un altro sistema di elaborazione in background in pochi minuti.<br />
+L'unica gestione di cui ha bisogno è un compito periodico per pulire la raccolta/tabella dei lavori. Utilizziamo whenever( https://github.com/javan/whenever/ ) più un compito rake per ottenere questo:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=jobs.rake"></script>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=schedule.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="distribuzione">Distribuzione</h2>
+
+<p>Infine, la tua distribuzione deve mantenere le cose in movimento:</p>
+
+<p><br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/3123860.js?file=Capfile.rb"></script>
+
+<p><br /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; vai</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:io-odio-questo@drawohara.io?subject=/resque-best-practices">😩, io 🖤 ^questo!<a>
+  </li>
+  <li>
+    <a href="/ora">/ora<a>
+  </li>
+  <li>
+    <a href="/chi-siamo">/chi-siamo<a>
+  </li>
+  <li>
+    <a href="/contatti">/contatti<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

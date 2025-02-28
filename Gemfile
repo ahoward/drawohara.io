@@ -34,5 +34,5 @@ gem "parallel"
 gem "mistral-ai"
 gem "groq"
 gem "anthropic"
-gem "ruby-limiter"
+gem "lockfile"
 

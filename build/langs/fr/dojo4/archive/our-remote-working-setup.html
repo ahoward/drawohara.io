@@ -1,0 +1,146 @@
+<html color-mode="user" lang="fr">
+  <head>
+    <base href='/langs/fr' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Rien à voir ici.</title>
+
+    <meta property="og:title" content="Rien à voir ici."/>
+    <meta property="og:description" content="Passez votre chemin." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"our-remote-working-setup"}">
+    <meta property="site:path_info" content=""/our-remote-working-setup"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/our-remote-working-setup">j'❤️ ça!</a>
+      <small>
+        <small>
+          <small>
+            <span title='buvez-moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/our-remote-working-setup</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2014-01-02</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Ici, chez dojo4, nous avons essayé d'être plus flexibles avec le télétravail récemment. Nous aimons le concept et l'avons progressivement intégré à notre routine normale avec différentes expériences. Notre dernière expérience consistait à bannir Steve dans un endroit horrible et désolé appelé "New Hampshire". Après 3 mois sans voir Steve en personne et en travaillant complètement à distance (tandis que le reste d'entre nous avait une combinaison de travail à distance/en présence), nous n'avons pas de haine pour Steve et Steve ne nous déteste pas. C'est gagné ! Il publiera bientôt son propre article de blog sur son expérience, mais en attendant, j'ai pensé partager les outils que nous utilisons pour collaborer à distance et donner quelques conseils sur chacun d'eux.</p>
+
+        <ul>
+          <li>
+            <p><strong><a href="https://campfirenow.com/">campfire</a></strong> C'est l'outil principal qui contribue à notre capacité à travailler à distance. À la surface, campfire est juste un service de messagerie de groupe qui n'a pas beaucoup de véritables fonctionnalités de messagerie (comme la messagerie individuelle), mais la véritable puissance de cet outil se manifeste lorsque vous connectez les autres services que vous utilisez pour notifier campfire de l'activité sur ces services. Nous avons configuré nos comptes github et redmine pour notifier campfire chaque fois que quelqu'un édite du code ou des problèmes. Nous utilisons également le très sympathique <a href="https://github.com/collectiveidea/tinder">tinder</a> gem pour notifier campfire lorsque quelqu'un déploie une application. Combiné avec l'outil ci-dessous, fbomb, et le fait que nous pouvons obtenir des applications pour notre téléphone, il est extrêmement facile de garder un doigt sur le pouls des activités quotidiennes de l'entreprise et d'interagir avec nos collègues, peu importe la distance par rapport au bureau.</p>
+          </li>
+          <li>
+            <p><strong><a href="https://github.com/ahoward/fbomb">fbomb</a></strong> fbomb est un bot pour campfire qui répond aux commandes. Nous avons appelé le nôtre "mr roboto" et avons notre propre version privée et personnalisée de fbomb que nous utilisons. C'est amusant de faire des choses comme <code>/lolcat</code>, mais les meilleures commandes que nous avons dans "mr roboto" sont <code>/directory</code> (affiche les noms, e-mails et numéros de téléphone portable de tous les membres de notre équipe), <code>/txt [nom de la personne] [message]</code> (envoie un SMS à la personne que vous nommez votre message ainsi que votre numéro de téléphone portable), et <code>/need [nom de la personne] [message]</code> (envoie un e-mail et un SMS à la personne votre message ainsi qu'un texte urgent, "MILES A BESOIN DE VOUS"). Ces commandes ont résolu le problème des personnes étant dans campfire, mais n'étant pas à leur ordinateur lorsque nous avons besoin d'elles. Si nous avons vraiment besoin de quelqu'un et qu'il ne répond pas à la mention de son nom dans campfire, nous pouvons alors attirer son attention avec un SMS et un e-mail.</p>
+          </li>
+          <li>
+            <p><strong><a href="http://github.com">github</a></strong> nous aimons évidemment cet outil. Les deux choses que nous aimons le plus - les hooks de service dans campfire et les dépôts privés illimités que nous avons négociés pour un prix (ce sont certains de nos meilleurs amis).</p>
+          </li>
+          <li>
+            <p><strong><a href="http://www.redmine.org/">redmine</a></strong> nous avons notre propre version personnalisée du tracker de tickets open source, redmine, fonctionnant sur l'un de nos serveurs. Nous aimons recevoir des e-mails chaque fois que quelqu'un modifie un ticket que nous surveillons ou en ajoute un nouveau sur un projet que nous surveillons. Nous aimons également son intégration avec campfire et le fait qu'il soit open source afin que nous puissions le personnaliser selon nos besoins.</p>
+          </li>
+          <li>
+            <p><strong><a href="http://www.google.com/+/learnmore/hangouts/">google hangouts</a></strong> Je suis sûr que vous avez vu cela sur les listes d'autres personnes d'outils à distance, car c'est génial. Nous avons une réunion quotidienne où nous utilisons hangout pour nous assurer que tout le monde est présent. Mon <strong>conseil extrêmement important</strong> qui a fait des merveilles pour nous : créez un événement Google Calendar, cliquez sur "Ajouter Hangout", et invitez tout le monde à l'événement. Ensuite, tous ceux qui sont invités à l'événement pourront cliquer sur le même lien de hangout que tout le monde, vous empêchant d'envoyer/de messager un nouveau lien de hangout chaque jour. Notre hangout quotidien nécessitait auparavant 10 minutes supplémentaires de configuration pour le hangout, maintenant nous cliquons simplement sur le bouton de notre événement de calendrier, et tout le monde est déjà là. Super pratique.</p>
+          </li>
+          <li>
+            <p><strong>listes de diffusion</strong> Nous avons des comptes e-mail spéciaux configurés (que seule une personne de dojo4 peut envoyer par e-mail) pour partager nos plans quotidiens et nos progrès de la veille, et pour envoyer simplement un e-mail à toute l'équipe. Le premier compte nous permet de savoir ce que fait n'importe qui d'autre dans l'équipe ce jour-là, ce qui nous maintient simplement tous informés des plans de chacun. Le deuxième compte permet un environnement de type "fontaine à eau" où nous pouvons nous envoyer des articles et des photos et avoir une conversation. Nous avons souvent des sessions "fontaine à eau" aléatoires dans campfire tout au long de la journée, mais avoir l'e-mail comme deuxième endroit pour cela est une option agréable pour séparer nos bêtises de notre flux d'activités de travail.</p>
+          </li>
+        </ul>
+
+        <p>Voici donc notre liste que nous utilisons et aimons tous les jours. Tweetez-nous avec la vôtre ; nous aimerions l'entendre.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; goto</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/our-remote-working-setup">😩, j'🖤 ^ça!<a>
+          </li>
+          <li>
+            <a href="/now">/now<a>
+          </li>
+          <li>
+            <a href="/about">/about<a>
+          </li>
+          <li>
+            <a href="/contact">/contact<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

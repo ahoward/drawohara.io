@@ -1,80 +1,130 @@
 require 'thread'
+require 'json'
+require 'time'
+require 'securerandom'
+require 'fileutils'
+
+require 'lockfile'
 
 class RateLimiter
-  attr_reader :rps
-  attr_reader :pad
-  attr_reader :mutex
-  attr_reader :timing
-  attr_reader :limiting
+  TLDR = <<~____
 
-  def initialize(rps: 8, rpm: nil, pad: 0.042, name: 'RateLimiter', limiting: nil)
-    @rps = rps
-    @rpm = rpm
-    @pad = pad.to_f
+    a simple, durable, stateful, multi-thread and multi-process safe rate_limiter
+
+  ____
+
+  BACKOFF = [0.42, 1, 2, 4, 8, 16, 32, 64]
+
+  TMP = "./tmp"
+
+  def initialize(name: 'default', rate: 20, interval: 60, rps: nil, rpm: nil, verbose: false)
     @name = name.to_s
 
+    @rate = rate.to_i
+    @interval = interval.to_i
+
+    if rps
+      @rps = rps.to_i
+      @rate = @rps
+      @interval = 1
+    end
+
+    if rpm
+      @rpm = rpm.to_i
+      @rate = @rpm
+      @interval = 60
+    end
+
+    @verbose = !!verbose
+
+    @id = "#{@name}-#{@rate}-#{@interval}"
+
     @mutex = Mutex.new
-    @timing = []
+    @state_file = "#{TMP}/rate_limiter/#{@id}.json"
+    @lock_file = Lockfile.new(@state_file + '.lock')
 
-    @limiting = (
-      limiting ||
-      proc{|seconds| $stderr.puts("#{ @name }: sleep(#{ seconds })") }
-    )
+    FileUtils.mkdir_p(File.dirname(@state_file))
+
+    @tokens = @rate
+    @last_check = Time.now
+    @backoff = BACKOFF.dup
   end
-
-  class Pending; end
 
   def limit(&block)
-    size = nil
-    sum = nil
-    pending = Pending.new
+    loop do
+      transaction do
+        now = Time.now
+        elapsed = now - @last_check
+        @last_check = now
+        @tokens = [@tokens + elapsed * @rate / @interval, @rate].min.to_i
+      end
 
-    max = [@rpm, @rps].detect
-    window = @rpm ? 60.0 : 1.0
-
-    thread_safe do
-      size = @timing.size
-
-      if size >= max
-        known = @timing.select{|timing| timing.is_a?(Numeric)}
-
-        seconds =
-          if known.empty?
-            window
-          else
-            avg = known.sum / known.size
-            total = size * avg
-            seconds = [window - total + @pad, 0.0].min
-          end
-
-        if seconds > 0
-          @limiting[seconds]
-          sleep(seconds)
+      if @tokens >= 1
+        transaction do
+          @tokens -= 1
         end
 
-        @timing.clear
+        return block.call
       else
-        @timing[size] = pending
-      end
-    end
+        backoff = nil
 
-    a = Time.now.to_f
+        transaction do
+          @backoff.push(backoff = @backoff.shift)
+        end
 
-    block.call
-  ensure
-    b = Time.now.to_f
-    s = b - a
+        warn("RateLimiter[#{@id}].sleep(#{ backoff })") if @verbose
 
-    thread_safe do
-      index = @timing.index(pending)
-
-      if index
-        @timing[index] = s
+        sleep(backoff)
       end
     end
   end
 
-  def thread_safe(&block)
-    @mutex.synchronize(&block)
+  def transaction(&block)
+    lock! do
+      load_state!
+
+      begin
+        block.call
+      ensure
+        save_state!
+      end
+    end
+  end
+
+  def lock!(&block)
+    @mutex.synchronize do
+      @lock_file.lock do
+        block.call
+      end
+    end
+  end
+
+  def load_state!
+    save_state! unless test(?s, @state_file)
+    state = JSON.parse(IO.binread(@state_file))
+
+    if %w[ tokens last_check backoff ].all?{|key| state.has_key?(key)}
+      @tokens = state.fetch('tokens')
+      @last_check = Time.parse(state.fetch('last_check'))
+      @backoff = state.fetch('backoff')
+    end
+  end
+
+  def save_state!
+    tmp = @state_file + ".tmp.#{ SecureRandom.uuid_v7 }"
+    FileUtils.mkdir_p(File.dirname(tmp))
+    json = JSON.generate(current_state)
+    IO.binwrite(tmp, json)
+    FileUtils.mv(tmp, @state_file)
+  ensure
+    FileUtils.rm_f(tmp)
+  end
+
+  def current_state
+    {
+      'tokens' => @tokens,
+      'last_check' => @last_check.iso8601(2),
+      'backoff' => @backoff
+    }
   end
 end

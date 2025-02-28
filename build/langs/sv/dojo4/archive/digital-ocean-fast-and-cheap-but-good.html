@@ -1,0 +1,174 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Inget att se här.</title>
+
+    <meta property="og:title" content="Inget att se här."/>
+    <meta property="og:description" content="Fortsätt." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"digital-ocean-fast-and-cheap-but-good"}">
+    <meta property="site:path_info" content=""/digital-ocean-fast-and-cheap-but-good"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">jag ❤️ det här!</a>
+      <small>
+        <small>
+          <small>
+            <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/digital-ocean-fast-and-cheap-but-good</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2013-12-30</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Som CTO för en teknologibyrå utvärderar jag konstant nya verktyg, processer och tjänster.</p>
+
+        <p>Nyligen har jag tittat på DigitalOcean-plattformen som en del av en ultra-hög-tillgänglighetsstrategi som vi utvecklar för de tillfällen när AWS/S3 inte räcker: när du vill överleva en massiv driftstörning hos en hel molnleverantör.</p>
+
+        <p>Alla Dojo4:s distributioner börjar som AWS-distributioner för uppenbara skäl: det är standarden som alla andra molntjänster jämförs med. Den har den ytterligare fördelen för en byrå att vi kan peka på den som ett "förnuftigt standardval" för programvara vi levererar till kunder; som den 800-punds gorillan är dess användning försvarbar. Dock har vissa sällsynta kunder uttryckt oro över AWS-avbrott som påverkar deras webbplatser och program, i synnerhet övervakningsprogram som ska rapportera fel vid sådana avbrott: ett rekursivt problem. För dessa fall har vi tittat på statiska distributioner balanserade över molnleverantörer med DNS, och DigitalOcean har varit på kortlistan över kandidater för att skapa och distribuera enkla statiska webbplatser som värd av Apache för detta ändamål som en säkerhet för våra vanliga AWS-värdade webbplatser.</p>
+
+        <p>Nyligen hade DigitalOcean (DO) ett litet problem relaterat till dess säkerhetspraktiker: https://github.com/fog/fog/issues/2525.</p>
+
+        <p>Man skulle kunna sammanfatta det här problemet som: när du startar en ny molnlåda kan den eller kan den inte ha någon tidigare användares känslig information liggande kvar på disken och när du stänger din egen molnlåda kan du exponera din egen känsliga information för någon slumpmässig tredje part. Deras tjänst erbjuder ett sätt att rensa saker och ting, men det är <em>inte standard</em> - standard är att lämna <em>vad som än fanns på disken</em> exponerat för nästa kund att gräva i.</p>
+
+        <p><em>Det här är en mycket dålig standardstrategi.</em></p>
+
+        <p>På Twitter föreslog jag att jag inte var förvånad över denna slappa strategi, men att jag var besviken över hur DO hanterade sig under avslöjandet. Under en kort utväxling på Twitter bad man mig att sammanfatta källan till min förvåning:</p>
+
+        <blockquote class="twitter-tweet" lang="sv"><p><a href="https://twitter.com/drawohara">@drawohara</a> Om du skulle ta dig tid att lägga det i ett e-postmeddelande skulle jag läsa och dela det med hela teamet, och uppskatta det mycket. :)</p>&mdash; John Edgar (@jedgar) <a href="https://twitter.com/jedgar/statuses/417579347302944768">den 30 december 2013</a></blockquote>
+        <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <p>Så här, med 20/20-syn och i ett försök att vara till hjälp, uppfyller jag mitt löfte och förklarar varför jag har dröjt med att flytta något av vårt material till DigitalOceans plattform. (Obs: denna lista innehåller endast känslor och intryck, men de har i viss mån bekräftats och förstärkts av den nyligen inträffade diskborttagningsfiaskon):</p>
+
+        <ul>
+          <li>Vid besök av DO:s hemsida möts man av ett skrikande marknadsföringsmeddelande som skriker 'billigt och snabbt'</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8K9/Screen%20Shot%202013-12-30%20at%201.00.09%20PM.png" alt="" /></p>
+
+        <p>med tanke på att plattformen är "byggd för utvecklare" tycker jag personligen att det är konstigt att teamet tydligen inte förutsåg att utvecklare skulle få klart meddelandet om 'bra, snabbt och billigt' man väljer de <em>senare två</em> med DO.</p>
+
+        <ul>
+          <li>Sedan får man en trevlig bekräftelse att, som startupp, är DO motiverat att visa mycket, mycket snabb tillväxt</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8pL/Screen%20Shot%202013-12-30%20at%201.05.20%20PM.png" alt="" /></p>
+
+        <p>detta bör ge alla driftansvariga en ångestkänsla.</p>
+
+        <ul>
+          <li>När man kollar runt på webbplatsen hittar man konsekvent slagordet 'snabbt och billigt', till exempel i rekommendationsprogrammet</li>
+        </ul>
+
+        <p><img src="http://cl.ly/T8ww/Screen%20Shot%202013-12-30%20at%201.09.52%20PM.png" alt="" /></p>
+
+        <p>som slår in meddelandet hem och föreslår att utvecklare ska sälja sina kompisar på snabbt och billigt utan ens en skymt av information om robusthet, konsistens eller säkerhet.</p>
+
+        <ul>
+          <li>När man läser igenom bloggen var det mycket tydligt att DO följer en smal, användardriven utvecklingscykel:</li>
+        </ul>
+
+        <p>https://www.digitalocean.com/blog_posts/a-lean-start-for-digital-ocean</p>
+
+        <p>och även om jag beundrar, godkänner och rekommenderar den här typen av tillväxt för programvara i allmänhet, verkar det inte vara den bästa lösningen för den här typen av verksamhet att bygga säkerhet och robusthet iterativt - trots hur fantastiskt VC:s (som aldrig har bekämpat ett säkerhetsbrott i det vilda) måste tycka att det är. Vissa saker kräver enorm erfarenhet och top-down planering: en stack som låter sina användare lagra data och köra kod på, vare sig det är en webbläsare eller moln, faller in i kategorin 'jag vill att någon extraherar riktig kod från riktiga system med en historik av attacker' och inte 'Vi lyssnar på användare och itererar snabbt, lär oss när vi går.'</p>
+
+        <p>Så, förstå mig inte fel, jag utvärderar fortfarande DigitalOcean som en bra programmerbar stack för att distribuera enkla statiska webbplatser och jag vill verkligen se dem lyckas, men jag har bekymmer om deras kultur och om det är den typ av kultur som utövar defensiv vs. reaktiv säkerhetspraxis och om de kommer att kunna upprätthålla sin tillväxt, prisnivå och i slutändan finansiering när, och om, de hinner ikapp de andra molnspelarna i det här avseendet. Att läsa igenom deras attityder och tro i kontexten av den nyligen inträffade fiaskon (https://github.com/fog/fog/issues/2525) ger mig någon anledning att tvivla.</p>
+
+      </div>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; gå till</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:i-hate-this@drawohara.io?subject=/digital-ocean-fast-and-cheap-but-good">😩, jag 🖤 ^det här!<a>
+          </li>
+          <li>
+            <a href="/now">/nu<a>
+          </li>
+          <li>
+            <a href="/about">/om<a>
+          </li>
+          <li>
+            <a href="/contact">/kontakt<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; avbryt</a>
+    </footer>
+  </body>
+</html>

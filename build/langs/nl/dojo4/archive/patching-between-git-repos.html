@@ -1,0 +1,183 @@
+<html color-mode="user" lang="nl">
+  <head>
+  <base href='/langs/nl' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>niets om hier te zien.</title>
+
+<meta property="og:title" content="niets om hier te zien."/>
+<meta property="og:description" content="ga verder." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archief/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"patchen-tussen-git-repos"}">
+    <meta property="site:path_info" content=""/patchen-tussen-git-repos"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/patchen-tussen-git-repos">ik ❤️ dit!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; klik op me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/patchen-tussen-git-repos</strong>
+    </header>
+
+    <main>
+      <em>gepubliceerd op: 2015-03-30</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>(Deze post verschijnt oorspronkelijk op Spikes <a href="http://stuff-things.net/">Stuff… And Things… blog</a>)</p>
+
+<p>Terwijl de roem en gratis auto's aardig zijn, is de reden dat ik blog om te leren, of, zoals in dit geval, om me dingen te helpen onthouden.</p>
+
+<p>Ik werk aan een aantal verschillende Rails-projecten die een gemeenschappelijke afstamming delen. Vaak moet een bugfix of een nieuwe functie in een project worden overgezet naar (sommige van) de anderen.</p>
+
+<p>Omdat projecten allemaal in hun eigen repos leven, kunnen de wijzigingen niet worden samengevoegd met Git. Nee, dit is een klus voor patches. En wanneer het gaat om patchen met Git, zijn er twee posts over het proces die ik niet zonder kan.</p>
+
+<p>Bij het patchen komen drie Git-commando's in beeld, <a href="http://git-scm.com/docs/git-format-patch">git format-patch</a>, <a href="http://git-scm.com/docs/git-apply]">git apply</a>, en de enigszins obscure <a href="http://git-scm.com/docs/git-am">git am</a>.</p>
+
+<p><code>git patch</code> is vrij eenvoudig, geef een lijst met commits, het genereert een diff in <a href="http://en.wikipedia.org/wiki/Patch_%28Unix%29">patch formaat</a> die vervolgens door Git of door de patch-commando kan worden toegepast. Het ding dat ik altijd moet opzoeken is de snelkoppeling om een patch van de laatste commit te krijgen.</p>
+
+<p>De niet-snelkoppeling manier is om de SHA van de op een na laatste commit te krijgen en deze door te geven aan format-patch. Waarom de op een na laatste? De SHA vertegenwoordigt de staat van de repo na de commit, dus de finale SHA is waar we nu zijn, en de op een na laatste waar we waren voordat we onze wijzigingen aanbrachten.</p>
+
+<p>We genereren de patch als volgt:</p>
+
+<pre><code>git log --oneline
+975d4dc Auto-generated CHANGELOG.md
+ca1216d Bump voor validatiefix
+git format-patch ca1216d
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p>(Je kunt ook meerdere patches maken door een SHA verder terug in de geschiedenis te gebruiken.)</p>
+
+<p>Er is echter een snelkoppeling om de op een na laatste commit te krijgen die ik lang geleden vond in deze post:</p>
+
+<p><a href="http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit">http://stackoverflow.com/questions/9396240/how-do-i-simply-create-a-patch-from-my-latest-git-commit</a> en is:</p>
+
+<pre><code>git format-patch HEAD^
+0001-Auto-generated-CHANGELOG.md.patch
+</code></pre>
+
+<p><code>HEAD^</code> is een afkorting voor <code>HEAD^1</code>, de <em>^1</em> betekent de eerste ouder van de commit, in dit geval de commit vóór <em>HEAD</em>, wat natuurlijk de op een na laatste commit is.</p>
+
+<p>Nu je je patch hebt, moet je deze toepassen. Voor dit raadpleeg ik het advies uit <a href="https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/">https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/</a></p>
+
+<p>Eerst kun je gebruiken:</p>
+
+<pre><code>git apply --stat patch-file
+</code></pre>
+
+<p>om te zien welke wijzigingen er echt in de patch zitten. Dan kun je gebruiken</p>
+
+<pre><code>git apply --check patch-file
+</code></pre>
+
+<p>om te zien of het echt werkt.</p>
+
+<p>Volgens Ariejan's artikel gebruik ik echter niet <code>git apply</code> om de patch toe te passen. Waarom niet? Attributie.</p>
+
+<p>Het alternatief voor <em>apply</em> is <code>git am</code>, dat ontworpen is om patches van e-mail(s) toe te passen. Wat het anders maakt is dat de committer van de commit wordt genomen van het <em>Van</em> adres in de patch. Voor patches die zijn gemaakt door <code>git format-patch</code> is dit de committer van de oorspronkelijke code. Met <code>git apply</code> ben jij de committer. Dus, als je <code>git am</code> gebruikt, krijg je een record van wie de code schreef en met <code>git apply</code> een record van wie de patch toegepast heeft.</p>
+
+<p>Wat ons brengt tot de <code>--signoff</code> optie. Doorgegeven aan <code>git am</code> voegt het <em>Signed-off-by</em> toe met de naam van de persoon die de patch toepast aan de <code>git log</code>.</p>
+
+<pre><code>git am --signoff &lt; patch file
+</code></pre>
+
+<p>Daarmee krijgen we beide, een commit die laat zien wie de code schreef en wie deze toegepast heeft aan deze repo.</p>
+
+<p>En misschien kan ik het nu onthouden!</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/patchen-tussen-git-repos">😩, ik 🖤 ^dit!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/over<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

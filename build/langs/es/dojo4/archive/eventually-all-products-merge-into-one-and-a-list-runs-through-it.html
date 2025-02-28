@@ -1,0 +1,197 @@
+<html color-mode="user" lang="es">
+  <head>
+    <base href='/langs/es' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>nada que ver aquí.</title>
+
+    <meta property="og:title" content="nada que ver aquí."/>
+    <meta property="og:description" content="siga adelante." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa"}">
+    <meta property="site:path_info" content=""/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:me-encanta-esto@drawohara.io?subject=/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa">¡me ❤️ esto!</a>
+      <small>
+        <small>
+          <small>
+            <span title='bébeme'>&lt;&lt; haga clic aquí 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa</strong>
+    </header>
+
+    <main>
+      <em>publicado el: 2012-07-10</em>
+      <br>
+      <br>
+      <p>Recientemente, mientras ayudaba a un cliente a marcar un tema de <a href="http://shopify.com" target="_blank">Shopify</a>, me encontré con un problema espinoso: cómo fusionar la salida de un bucle con la de otro de manera fluida. Permíteme explicar.
+      </p>
+      <p>
+        La mayoría de los temas de Shopify incluyen una "plantilla de colección" donde los productos se listan a través de un bucle <a href="http://wiki.shopify.com/UsingLiquid" target="_blank">Liquid</a>. La <a href="#figura1">Figura 1</a> muestra cómo suelen tomar forma estas listas.
+      </p>
+      <figure id="figura1" class="pal lightestgrayBg mvl" style="text-align: center;">
+        <img src='/ro/dojo4/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa/assets/mockup.png' title="Mockup" alt="Mockup" />
+        <figcaption class="mtm fontItalic">
+          <strong><em>Figura 1</em></strong>: Una típica lista de productos de Shopify
+        </figcaption>
+      </figure>
+      <p>
+        Si no te opones a usar <code>TABLEs</code> para estos diseños, Liquid te cubre con su etiqueta <code>TABLEROW</code> (<a href="http://wiki.shopify.com/UsingLiquid#Tables">referencia</a>). Si los sistemas de cuadrícula son más tu estilo, querrás emplear algún tipo de <a href="http://stackoverflow.com/questions/2245972/modulus-or-lack-thereof-in-rubys-liquid-templating-engine/8439160#8439160" target="_blank">hack de envoltura de filas</a>, ya que Liquid no tiene un enumerador <code>each_slice()</code> o un operador <code>modulus</code>.
+      </p>
+      <p>
+        Pero si, como yo, piensas que la marca semánticamente apropiada para una lista de productos es una lista no ordenada (<code>UL</code>), estás comprometido a trabajar con una corriente de <code>LIs</code>.
+      </p>
+      <p>
+        Como mencioné anteriormente, este diseño requería que una lista de colecciones de productos apareciera en línea con la lista de productos, pero no en cualquier lugar. Se suponía que debía ser el tercer elemento en la primera fila, como se muestra en la <a href="#figura2">Figura 2</a>.
+      </p>
+      <figure id="figura2" class="pal lightestgrayBg mvl" style="text-align: center;">
+        <img src='/ro/dojo4/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa/assets/desired-layout.png' title="Diseño deseado" alt="Diseño deseado" />
+        <figcaption class="mtm fontItalic" style="text-align: center;">
+          <strong><em>Figura 2</em></strong>: Un bucle de listado de productos al parecer interrumpido por una lista de navegación
+        </figcaption>
+      </figure>
+      <p>
+        Ahora, no quería comenzar un bucle, detenerlo, comenzar otro, detenerlo y luego comenzar el primero nuevamente con un desplazamiento apropiado. Eso parecía demasiado manual. De nuevo, quería que la salida fuera una corriente de <code>LIs</code> como esta:
+      </p>
+      <script src="https://gist.github.com/icegulch/8373741.js"></script>
+      <p>
+        Entonces, me quedé con dos opciones para diseñar esta corriente de <code>LIs</code>: flotarlos y despejarlos o bloquearlos en línea.
+      </p>
+      <p>
+        Es fácil imaginar cómo podrías lograr el diseño deseado con flotadores, flotando cada <code>LI</code> a la izquierda, excepto el primero, que se flotaría a la derecha. Pero la opción de flotación requiere un despeje cuidadoso: tanto el <code>UL</code> en sí como cada tercer <code>LI</code> (comenzando con el primero) deben despejarse para evitar el problema revelado en la <a href="#figura3">Figura 3</a>.
+      </p>
+      <figure id="figura3" class="pal lightestgrayBg mvl" style="text-align: center;">
+        <img src='/ro/dojo4/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa/assets/float-issue.png' title="Problema de flotación" alt="Problema de flotación" />
+        <figcaption class="mtm fontItalic" style="text-align: center;">
+          <strong><em>Figura 3</em></strong>: Cuando el primer LI en cada "fila" no se despeja...
+        </figcaption>
+      </figure>
+      <p>
+        La etiqueta <code>CYCLE</code> de Liquid (<a href="http://wiki.shopify.com/UsingLiquid#Cycle">referencia</a>) es una manera útil de hacer esto, al igual que los <a href="http://reference.sitepoint.com/css/pseudoclass-nthchild" target="_blank">selectores pseudo-posicionales de CSS3</a>. Pero, cuando se requiere soporte para IE7/IE8, el ciclo es la mejor opción.
+      </p>
+      <p>
+        Sin embargo, esta casa de cartas de despeje me parecía frágil, así que me esforcé por poner en práctica la técnica de listado en línea mencionada anteriormente.
+      </p>
+      <script src="https://gist.github.com/icegulch/8373784.js"></script>
+      <p>
+        Lo que me llevó la mayor parte del camino, como demuestra la <strong>Figura 4</strong>.
+      </p>
+      <figure id="figura4" class="pal lightestgrayBg mvl" style="text-align: center;">
+        <img src='/ro/dojo4/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa/assets/initial-inline-block.png' title="Bloque en línea inicial" alt="Bloque en línea inicial" />
+        <figcaption class="mtm fontItalic" style="text-align: center;">
+          <strong><em>Figura 4</em></strong>: Primer intento de diseño en bloque en línea
+        </figcaption>
+      </figure>
+      <p>
+        Aunque la técnica de bloque en línea me liberó de las preocupaciones de despeje, aún tuve que enfrentar el desafío de posicionamiento del diseño: la lista de navegación de productos debía estar al ras a la derecha en la primera fila. Flotarla a la derecha tampoco era la respuesta, ya que eso sometería nuestro diseño al mismo riesgo mostrado en la <a href="#figura3">Figura 3</a>.
+      </p>
+      <p>
+        Fue entonces cuando tuve una idea loca: ¿y si cambiaba la dirección del idioma del <code>UL</code> para que la lista se mostrara de derecha a izquierda? Animado por un <a href="http://css-tricks.com/star-ratings/" target="_blank">artículo reciente de Chris Coyier</a>, decidí intentarlo. Esto es lo que finalmente se me ocurrió:
+      </p>
+      <script src="https://gist.github.com/icegulch/8373820.js"></script>
+      <p>
+        Como puedes ver, tuve que cambiar la dirección del idioma en el <code>UL</code> contenedor, luego restablecerla en los elementos dentro de sus <code>LIs</code> (por alguna razón, restablecer la dirección del idioma en los <code>LIs</code> en sí no funcionó en Opera). También tuve que establecer el tamaño de la fuente en el <code>UL</code> en cero para <a href="http://css-tricks.com/fighting-the-space-between-inline-block-elements/" target="_blank">evitar esto</a>.
+      </p>
+      <p>
+        Dado que la lista de productos en esta tienda no requería un orden específico (alfabético, precio, etc.), estaba bien que la salida fluyera de derecha a izquierda, como se muestra en la <a href="#figura5">Figura 5</a>.
+      </p>
+      <figure id="figura5" class="pal lightestgrayBg mvl" style="text-align: center;">
+        <img src='/ro/dojo4/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa/assets/inline-block-final.png' title="Bloque en línea final" alt="Bloque en línea final" />
+        <figcaption class="mtm fontItalic" style="text-align: center;">
+          <strong><em>Figura 5</em></strong>: el cambio de dirección del idioma en acción
+        </figcaption>
+      </figure>
+      <p>
+        Aunque hay pros y contras en los diseños flotados e inline-block, pensé que este último era un poco más elegante en esta situación. ¿Alguno de ustedes se ha encontrado con esto? ¿Están <a href="http://youtu.be/ATKQLgi5Z2Y" target="_blank">obsesionados por</a> las listas?
+      </p>
+    </main>
+
+    <footer>
+      <hr>
+      <a href="/goto" name="goto">&mdash;&gt; ir</a>
+      <blockquote>
+        <ul>
+          <li>
+            <a href="mailto:odio-esto@drawohara.io?subject=/eventualmente-todos-los-productos-se-fusionan-en-uno-y-una-lista-lo-atraviesa">😩, odio ^esto!<a>
+          </li>
+          <li>
+            <a href="/ahora">/ahora<a>
+          </li>
+          <li>
+            <a href="/sobre">/sobre<a>
+          </li>
+          <li>
+            <a href="/contacto">/contacto<a>
+          </li>
+        </ul>
+      </blockquote>
+      <a href="/">&lt;&mdash; salir</a>
+    </footer>
+  </body>
+</html>

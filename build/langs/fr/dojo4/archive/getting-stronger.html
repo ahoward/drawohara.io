@@ -1,0 +1,207 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <base href='/langs/fr' />
+
+  <!-- meta -->
+    <title>rien à voir ici.</title>
+
+<meta property="og:title" content="rien à voir ici."/>
+<meta property="og:description" content="circulez." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content="/dojo4/archive/:id">
+    <meta property="site:params" content="{"ext":null,"id":"devenir-plus-fort}">
+    <meta property="site:path_info" content="/devenir-plus-fort">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:j-adore-ca@drawohara.io?subject=/devenir-plus-fort">j' ❤️  cela!</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez-moi 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/devenir-plus-fort</strong>
+    </header>
+
+    <main>
+      <em>publié le: 2013-02-19</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>je pense que beaucoup de développeurs considèrent le travail de développement comme étant uniquement le développement de logiciels.</p>
+
+<p>bien sûr, c'est à propos de cela!</p>
+
+<p>cependant, il s'agit aussi de développer le développeur.</p>
+
+<p><em>devenir plus fort.</em></p>
+
+<p>voici un simple algorithme que l'on peut utiliser pour devenir un développeur plus fort:</p>
+
+<ul>
+  <li>
+    <p>comprendre le problème complètement</p>
+  </li>
+  <li>
+    <p>concevoir une abstraction</p>
+  </li>
+  <li>
+    <p>implémenter l'abstraction</p>
+  </li>
+  <li>
+    <p>publier l'abstraction</p>
+  </li>
+  <li>
+    <p>solliciter des retours</p>
+  </li>
+  <li>
+    <p>utiliser les retours pour construire une compréhension</p>
+  </li>
+</ul>
+
+<p>c'est assez abstrait pour certaines personnes à comprendre, alors laissez-moi donner un exemple concret contrastant ce développeur</p>
+
+<p><img src='/ro/dojo4/getting-stronger/assets/weak.jpg' alt="img" /></p>
+
+<p>à celui-ci</p>
+
+<p><img src='/ro/dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg' alt="img" /></p>
+
+<p>dans le développement d'une application qui a besoin de créer des triangles isocèles et droits.</p>
+
+<p>le développeur un utilise le processus suivant:</p>
+
+<ul>
+  <li>
+    <p>prendre la carte 'isocèle' sur le tableau. ne pas se soucier de lire la carte 'triangle droit'.</p>
+  </li>
+  <li>
+    <p>obtenir des échantillons de triangles isocèles. écrire du code qui peut produire de manière fiable seulement ces types de triangles isocèles que le code attend. puisque faire plus est YAGNI, vérifier le code, s'assurer que l'intégration continue est verte. et rentrer à la maison.</p>
+  </li>
+</ul>
+
+<p>le développeur deux fait plutôt:</p>
+
+<ul>
+  <li>
+    <p>réviser le tableau. lire les derniers commits. comprendre la feuille de route à 10 000 pieds le développeur fusionne les cartes 'isocèle' et 'droit' en une seule nouvelle carte appelée 'construire un modèle de domaine de triangle' (comprendre le problème)</p>
+  </li>
+  <li>
+    <p>le développeur travaille sur papier, arrivant finalement à (l'abstraction)</p>
+  </li>
+</ul>
+
+<p><img src='/ro/dojo4/getting-stronger/assets/pythagorean.png' alt="img" /></p>
+
+<ul>
+  <li>
+    <p>le développeur implémente un code qui modélise des triangles génériques en utilisant le théorème et des spécialisations pour chacun des types spécifiques 'isocèle' et 'droit' (implémenter l'abstraction)</p>
+  </li>
+  <li>
+    <p>le développeur isole le code de domaine du code non-domaine et pousse une bibliothèque sur github. (publier l'abstraction et solliciter des retours)</p>
+  </li>
+  <li>
+    <p>le développeur fusionne la demande de tirage pour le bug 'division par zéro' plusieurs jours plus tard (utiliser les retours pour approfondir la compréhension)</p>
+  </li>
+</ul>
+
+<p>à la fin, le développeur un coche une case et renforce le processus de son équipe. le développeur deux renforce le code, l'équipe et, surtout, lui-même.</p>
+
+<p>en répétant le processus encore et encore, le développeur un peut se transformer en développeur deux en travaillant de manière répétée pour renforcer les muscles techniques et de domaine. inversement, le développeur deux peut arrêter de s'entraîner et devenir mou comme le développeur un.</p>
+
+<p>la capacité du développeur est comme un muscle: vous devez l'utiliser ou le perdre.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:je-deteste-ca@drawohara.io?subject=/devenir-plus-fort">😩, j' 🖤 ^cela!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

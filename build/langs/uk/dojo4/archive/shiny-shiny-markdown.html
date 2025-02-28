@@ -1,0 +1,169 @@
+<html color-mode="user" lang="uk">
+  <head>
+    <base href='/langs/uk' />
+    <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DQVD9T27V4');
+    </script>
+
+    <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+    <!-- langs -->
+    <!--
+      https://developers.google.com/search/docs/specialty/international/localized-versions#html
+    -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+    <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+    <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+    <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+    <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+    <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta -->
+    <title>Нічого немає тут.</title>
+
+    <meta property="og:title" content="Нічого немає тут."/>
+    <meta property="og:description" content="Продовжуйте." />
+    <meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"shiny-shiny-markdown"}">
+    <meta property="site:path_info" content=""/shiny-shiny-markdown"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+      <a href="mailto:i-love-this@drawohara.io?subject=/shiny-shiny-markdown">я люблю це!</a>
+      <small>
+        <small>
+          <small>
+            <span title='Випий мене'>&lt;&lt; натисніть мене 🐛 🫖 🧚</a>
+          </small>
+        </small>
+      </small>
+      <hr>
+      <strong>/shiny-shiny-markdown</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2013-02-08</em>
+      <br>
+      <br>
+      <div class="ro markdown">
+        <p>Усі додатки dojo4’s rails використовують markdown одним чи іншим чином. Наступний налаштування маємо для найблискучішої конфігурації markdown:</p>
+
+        <p>Перший крок - це втягнути необхідні гемми</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781"># Gemfile</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'redcarpet'</span>
+        </div><div class='code-line code-line-5'><span style="color: #24292f;background-color: #f6f8fa">gem</span>&nbsp;<span style="color: #0a3069">'pygments.rb'</span>
+        </div><div class='code-line code-line-6'>
+        </div><div class='code-line code-line-7'>
+        </div><div class='code-line code-line-8'>
+        </div></code></div>
+
+        <p>Далі, вам може знадобитися хороший утилітарний метод, який обгортає клас підсвітки синтаксису та загальні конвенції виклику</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'><span style="color: #6e7781"># file: lib/util.rb</span>
+        </div><div class='code-line code-line-3'>
+        </div><div class='code-line code-line-4'><span style="color: #cf222e">module</span>&nbsp;<span style="color: #953800">Util</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #6e7781"># підтримка markdown</span>
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;
+        </div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">SyntaxHighlighting</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">Redcarpet</span><span style="color: #0550ae">::</span><span style="color: #953800">Render</span><span style="color: #0550ae">::</span><span style="color: #953800">HTML</span>
+        </div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">block_code</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">code</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">language</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">language</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0a3069">'ruby'</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">language</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_s</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">strip</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">empty?</span>
+        </div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Pygments</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">highlight</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">code</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:lexer</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">language</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:options</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0a3069">:encoding</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'utf-8'</span><span style="color: #24292f;background-color: #f6f8fa">})</span>
+        </div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-12'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-13'>
+        </div><div class='code-line code-line-14'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">markdown</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">*</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@markdown</span>&nbsp;<span style="color: #0550ae">||=</span>
+        </div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Redcarpet</span><span style="color: #0550ae">::</span><span style="color: #953800">Markdown</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span><span style="color: #24292f;background-color: #f6f8fa">(</span>
+        </div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">SyntaxHighlighting</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-18'>
+        </div><div class='code-line code-line-19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:no_intra_emphasis</span>&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:tables</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:fenced_code_blocks</span>&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:autolink</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:strikethrough</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:lax_html_blocks</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-25'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:space_after_headers</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span><span style="color: #24292f;background-color: #f6f8fa">,</span>
+        </div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">:superscript</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #cf222e">true</span>
+        </div><div class='code-line code-line-27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-28'>
+        </div><div class='code-line code-line-29'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">empty?</span>&nbsp;<span style="color: #0550ae">and</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">nil?</span>
+        </div><div class='code-line code-line-30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@markdown</span>
+        </div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">else</span>
+        </div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">source</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">join</span>
+        </div><div class='code-line code-line-33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">return</span>&nbsp;<span style="color: #cf222e">nil</span>&nbsp;<span style="color: #cf222e">if</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">source</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">blank?</span>
+        </div><div class='code-line code-line-34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@markdown</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">render</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">source</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">strip</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">sub</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #116329">/\A&lt;p&gt;/</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">''</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">sub</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #116329">/&lt;\/p&gt;\Z/</span><span style="color: #24292f;background-color: #f6f8fa">,</span><span style="color: #0a3069">''</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">html_safe</span>
+        </div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-36'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-37'>
+        </div><div class='code-line code-line-38'>
+        </div><div class='code-line code-line-39'>&nbsp;&nbsp;<span style="color: #cf222e">extend</span>&nbsp;<span style="color: #953800">self</span>
+        </div><div class='code-line code-line-40'><span style="color: #cf222e">end</span>
+        </div><div class='code-line code-line-41'>
+        </div></code></div>
+
+        <p>Добре, непогано. Ви налаштовані на обробку markdown із підсвіткою синтаксису, як тут:</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+        </div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #953800">Util</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">markdown</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">" * це</span><span style="color: #0a3069">\n</span><span style="color: #0a3069">* це</span><span style="color: #0a3069">\n</span><span style="color: #0a3069"> * список "</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+        </div><div class='code-line code-line-3'>&nbsp;&nbsp;
+        </div></code></div>
+
+        <p>Але, ви знаєте, що це трохи дорого, і ми зазвичай уникаємо цього в переглядах. Замість цього ми кешуємо як сирий markdown, так і відформатований markdown на наших об'єктах. Не забувайте, що вам <em>доведеться</em> зберегти сирий markdown, якщо ви хочете дозволити користувачу перередагувати його...</p>
+
+        <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781"># file : app/models/post.rb</span>
+        </div><div class='code-line code-line-2'>
+        </div><div class='code-line code-line-3'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">Post</span>
+        </div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #cf222e">include</span>&nbsp;<span style="color: #953800">Mongoid</span><span style="color: #0550ae">::</span><span style="color: #953800">Document</span>
+        </div><div class='code-line code-line-5'>&nbsp;&nbsp;
+        </div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">field</span>&nbsp;<span style="color: #0a

@@ -1,0 +1,144 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>тут нічого немає.</title>
+
+<meta property="og:title" content="тут нічого немає."/>
+<meta property="og:description" content="продовжуй йти." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+<meta property="og:image:type" content="image/jpeg" />
+
+<meta property="site:route" content="/dojo4/archive/:id">
+<meta property="site:params" content="{'ext':null,'id':'nicer-whenver-for-yer-railzer'}">
+<meta property="site:path_info" content="/nicer-whenver-for-yer-railzer">
+
+<base href='/langs/uk' />
+
+<style>
+  /* anti pico */
+  a {text-decoration: none !important; }
+
+  /* anti turbo */
+  html { transition: none !important; }
+  .turbo-progress-bar { visibility: hidden; }
+
+  /* anti progressive */
+  html { margin: 1em; }
+  img { display: block; text-align: center; }
+</style>
+
+<script>
+  document.addEventListener("turbo:load", function() {
+    const progressBar = document.querySelector('.turbo-progress-bar');
+    if (progressBar) { progressBar.remove(); }
+  });
+</script>
+</head>
+
+<body>
+<header>
+  <a href="/home">@drawohara</a> &mdash;
+  <a href="mailto:i-love-this@drawohara.io?subject=/nicer-whenver-for-yer-railzer">я ❤️ це!</a>
+  <small>
+    <small>
+      <small>
+        <span title='випий мене'>&lt;&lt; натисни мене 🐛 🫖 🧚</a>
+      </small>
+    </small>
+  </small>
+  <hr>
+  <strong>/nicer-whenver-for-yer-railzer</strong>
+</header>
+
+<main>
+  <em>опубліковано: 2014-02-28</em>
+  <br>
+  <br>
+  <div class="ro markdown">
+    <p>whenever.rb - це чудовий DSL для налаштування cron-завдань у ruby ( https://github.com/javan/whenever )</p>
+
+    <p>однак, у нього є серйозний недолік: усі завдання, які він виконує під cron, використовують <em>одну і ту саму unix-пріоритетність</em>, і під 'пріоритетністю' ми маємо на увазі <em>ту, що знесилює ваші сервери</em></p>
+
+    <p>на щастя, це легко виправити</p>
+
+    <p>крок перший, замініть // налаштуйте шаблони завдань у вашому ./config/schedule.rb файлі, щоб вони виглядали приблизно так</p>
+
+    <div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+    </div><div class='code-line code-line-2'><span style="color: #6e7781"># Дізнайтесь більше: http://github.com/javan/whenever</span>
+    </div><div class='code-line code-line-3'>
+    </div><div class='code-line code-line-4'><span style="color: #24292f;background-color: #f6f8fa">job_type</span>&nbsp;<span style="color: #0a3069">:rake</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"cd :path &amp;&amp; RAILS_ENV=:environment :environment_variable=:environment nice -n 19 bundle exec rake :task --silent :output"</span>
+    </div><div class='code-line code-line-5'>
+    </div><div class='code-line code-line-6'><span style="color: #24292f;background-color: #f6f8fa">job_type</span>&nbsp;<span style="color: #0a3069">:runner</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">"cd :path &amp;&amp; nice -n 19 ./bin/rails runner -e :environment ':task' :output"</span>
+    </div><div class='code-line code-line-7'>
+    </div><div class='code-line code-line-8'>
+    </div></code></div>
+
+    <p>крок другий: <em>отримайте прибуток</em></p>
+
+    <p>для тих з вас, хто не знає, що таке unix 'nice', можливо, варто прочитати http://en.wikipedia.org/wiki/Nice_(Unix).  TL;DR: це робить ваші фонові процеси такими, щоб вони не поїдали всі CPU.</p>
+
+  </div>
+</main>
+
+<footer>
+  <hr>
+  <a href="/goto" name="goto">&mdash;&gt; goto</a>
+  <blockquote>
+    <ul>
+      <li>
+        <a href="mailto:i-hate-this@drawohara.io?subject=/nicer-whenver-for-yer-railzer">😩, я 🖤 ^це!<a>
+      </li>
+      <li>
+        <a href="/now">/now<a>
+      </li>
+      <li>
+        <a href="/about">/about<a>
+      </li>
+      <li>
+        <a href="/contact">/contact<a>
+      </li>
+    </ul>
+  </blockquote>
+  <a href="/">&lt;&mdash; eject</a>
+</footer>
+</body>
+</html>

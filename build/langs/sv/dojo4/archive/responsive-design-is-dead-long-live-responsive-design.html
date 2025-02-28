@@ -1,0 +1,143 @@
+<html color-mode="user" lang="sv">
+  <head>
+    <base href='/langs/sv' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Inget att se här.</title>
+
+<meta property="og:title" content="Inget att se här."/>
+<meta property="og:description" content="Fortsätt." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"responsive-design-is-dead-long-live-responsive-design"}">
+    <meta property="site:path_info" content=""/responsive-design-is-dead-long-live-responsive-design"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/responsive-design-is-dead-long-live-responsive-design">jag älskar det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/responsive-design-is-dead-long-live-responsive-design</strong>
+    </header>
+
+    <main>
+      <em>publicerad på: 2013-12-05</em>
+<br>
+<br>
+<p>Responsiva webbplatser är här för att stanna, och det med god anledning. Det finns för närvarande inget bättre sätt att anpassa innehåll till den växande mångfalden av enheter och enhetsstorlekar på marknaden. Dock har design- och utvecklingsprocessen varit ganska stagnant trots att tekniken har förändrats.</p>
+
+<p>Anledningen till detta är ganska enkel: De flesta byråer är fortfarande fast i föråldrade personalmodeller där det finns en skiljelinje mellan designers och front-end-utvecklare. För att nya responsiva designparadigmer ska fungera måste detta ändras.</p>
+
+<p>En metod för att lösa detta problem är att brottas med klyftan mellan designer och utvecklare. Vi har hittat att denna strategi är mindre än ideal. Utvecklare som jobbar tillsammans kan ha sina fördelar, men designers och utvecklare har så olika processer att det snabbt blir problematiskt och i slutändan hindrar projektet.</p>
+
+<p>Istället har vi här på dojo4 bestämt oss för att det är i vårt bästa intresse att ha mångsidiga anställda. Vi söker inte bara dessa anställda, utan vi uppmuntrar starkt kompetensutveckling. Som ett resultat har vi designers som kan koda och utvecklare som kan designa. Detta gör att vi kan starta och avsluta vår responsiva designprocess nästan helt i webbläsaren.</p>
+
+<p>Vår designprocess börjar med en snabb organisation av innehåll med hjälp av en webbplatskarta eller användarflödesdiagram. Detta gör att vi kan identifiera sidor och mallar som behöver wireframing när vi går in i nästa fas av vår process.</p>
+
+<p>Jag hoppas att du uppskattade den första fasen för dess enkelhet eftersom det är den enda fasen som tillbringas utanför vår älskade webbläsare.</p>
+
+<p>Innan vi börjar med wireframes ställer vi in våra miljöer och sorterar eventuella beroenden (t.ex. Bootstrap, jquery, fontawesome och Middleman). Det är också nu som vi tar hand om eventuella distributionsbehov (huvudsakligen att ställa in rake-uppgifter och S3-buckets). När vi är redo att bygga och distribuera börjar vi att rocka och/eller rulla.</p>
+
+<p>Från de nämnda leveranserna (webbplatskarta) börjar vi bygga upp gråskaleiga trådar. Även om trådarna är responsiva är de mycket enkla. Allt innehåll och javascript-komponenter (flikar/rullgardinsmenyer/verktygstips/&c.) har basstil och basfunktionalitet. Bilder och ikoner är antingen standard eller grå/rutiga med en beskrivning. Målet här är att cementera sidarkitekturen och responsiva brytpunktsbeslut utan att tänka på eller hänga sig på designbeslut - de kommer nästa.</p>
+
+<p>När trådarna är på plats kan vi gå in i designfasen av projektet. Vi genererar vanligtvis ett mönsterportfölj. I all rättvisa ligger våra mönsterportföljer någonstans mellan en levande stiltavel och ett mönsterportfölj. De visar färg- och typvals samt element- och komponentdesign: headrar, fotnoter, formulär, knappar, flikar, listor, stycken, rubriker, underrubriker och alla andra betydande delar som vi lärt oss från trådarna. Vi ser dessa som materialen i vårt lilla webbhus.</p>
+
+<p>När mönsterportföljen är godkänd börjar vi integrera de designerade elementen i våra HTML-trådar. Vi börjar också strömma in innehåll, mata in data, göra eventuell datamodellering och koppla upp CMS-komponenter om en sådan används. Även om mycket av arbetet är klart vid den här punkten är det vanligtvis denna fas som känns som den faktiska byggandet av webbplatsen.</p>
+
+<p>Vid den här tidpunkten har vi en utkastssida på staging och redo för granskning. Det brukar finnas en eller två omgångar med revisioner - små ändringar och justeringar. Och sedan kommer den roliga delen, att trycka på den lilla röda knappen som skickar webbplatsen ut i världen där den till slut får börja arbeta och visa sig vara den bästa och sämsta på nätet... tills nästa lansering, det vill säga.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/responsive-design-is-dead-long-live-responsive-design">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/om<a>
+  </li>
+  <li>
+    <a href="/contact">/kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; avsluta</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<html color-mode="user" lang="sv">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>inget att se här.</title>
+
+<meta property="og:title" content="inget att se här."/>
+<meta property="og:description" content="gå vidare." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"}">
+    <meta property="site:path_info" content=""/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+
+    <base href='/langs/sv' />
+
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">jag älskar det här!</a>
+<small>
+  <small>
+    <small>
+      <span title='drick mig'>&lt;&lt; klicka på mig 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view</strong>
+    </header>
+
+    <main>
+      <em>publicerad den: 2012-03-07</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>i våra rails-appar har vi alltid en '/su' eller 'superanvändare'-sektion. vi dumpar saker som rapporter i den backend. nyligen behövde jag tillåta superanvändare att se loggar i realtid från webbläsaren (för att hjälpa till att felsöka brandväggsproblem för en licensserver vi byggde). jag övervägde att göra något smart som websockets och sedan blev jag sån och bestämde mig för att göra det enklaste som kunde fungera - kom ihåg, det här är bara för superanvändare så den följande pollningsmetoden är <em>juuuust dandy</em>…<br />
+<br /><br />
+<br /></p>
+
+<p>steget ett var att ställa in en åtgärd och vy som kunde ta en logg, visa den, och sedan ajax poll uppdatera den. glassyret var att lägga till en fancy ui (aka <em>länk</em>) som kunde starta och stoppa pollningen<br />
+<br /><br />
+<br /></p>
+
+<p>här är en majoritet av den relevanta koden<br />
+<br /><br />
+<br /></p>
+
+<script src="https://gist.github.com/1994292.js?file=tail-f.rb"></script>
+
+<p><br /><br />
+<br /></p>
+
+<p>steget två, som visas i den gisten, var att tona ner den rekursiva loggerfunktionen jag av misstag lade till: aka - den ajax-pollningen själv skapade tonvis av loggerutdata.<br />
+<br /></p>
+
+<p>så där har du det. lågteknik. enkelt. k.i.s.s. loggtailing för administratörer.<br />
+<br /><br />
+<br /></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; gå till</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view">😩, jag 🖤 ^det här!<a>
+  </li>
+  <li>
+    <a href="/now">/nu<a>
+  </li>
+  <li>
+    <a href="/about">/om<a>
+  </li>
+  <li>
+    <a href="/contact">/kontakt<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

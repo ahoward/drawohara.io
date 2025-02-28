@@ -18,8 +18,8 @@ require_relative 'env.rb'
 
 module AI
   def AI.provider
-    #AI::Groq
-    AI::Mistral
+    AI::Groq
+    #AI::Mistral
     #AI::Anthropic
     #AI::DeepSeek
   end
@@ -50,95 +50,13 @@ module AI
   end
 
   class Groq
-    class RateLimiter
-      BACKOFF = [0.42, 1, 2, 4, 8, 16, 32, 64]
-
-      def initialize(name = :groq, rate: 20, interval: 60)
-        @name = name
-        @rate = rate
-        @interval = interval
-        @mutex = Mutex.new
-        @state_file = "./tmp/rl/#{name}.json"
-        @tokens = @rate
-        @last_check = Time.now
-        @backoff = BACKOFF.dup
-      end
-
-      def limit(&block)
-        loop do
-          @mutex.synchronize do
-            load_state
-            now = Time.now
-            elapsed = now - @last_check
-            @last_check = now
-            @tokens = [@tokens + elapsed * @rate / @interval, @rate].min
-          end
-
-          if @tokens >= 1
-            @mutex.synchronize do
-              @tokens -= 1
-              save_state
-            end
-            return block.call
-          else
-            backoff = nil
-            @mutex.synchronize do
-              backoff = @backoff.shift
-              @backoff.push(backoff)
-              save_state
-            end
-            warn("sleep(#{ backoff })")
-            sleep(backoff)
-          end
-        end
-      end
-
-      def load_state
-        state = json_load(@state_file)
-        if %w[ tokens last_check backoff ].all?{|key| state.has_key?(key)}
-          @tokens = state.fetch('tokens')
-          @last_check = Time.parse(state.fetch('last_check'))
-          @backoff = state.fetch('backoff')
-        end
-      end
-
-      def json_load(file)
-        raise unless test(?s, file)
-        JSON.parse(IO.binread(file))
-      rescue
-        current_state
-      end
-
-      def current_state
-        {
-          'tokens' => @tokens,
-          'last_check' => @last_check.iso8601(2),
-          'backoff' => @backoff
-        }
-      end
-
-      def save_state
-        json_save(@state_file, current_state)
-      end
-
-      def json_save(file, data)
-        tmp = file + ".tmp.#{ SecureRandom.uuid_v7 }"
-        FileUtils.mkdir_p(File.dirname(tmp))
-        json = JSON.generate(data)
-        IO.binwrite(tmp, json)
-        FileUtils.mv(tmp, file)
-      ensure
-        FileUtils.rm_rf(tmp)
-      end
-    end
-
     @@API_KEY = ENV.fetch('GROQ_API_KEY')
     @@MODEL = 'llama-3.3-70b-versatile'
     @@MAX_TOKENS = 128_000
     @@TIMEOUT = 420
 
-    @@RPM = 30
-    @@RATE_LIMTER = RateLimiter.new('groq', rate: 29, interval: 60)
+    @@RPM = 1000
+    @@RATE_LIMTER = RateLimiter.new(name: 'groq', rpm: 1000)
 
     attr_reader :client
 
@@ -165,25 +83,18 @@ module AI
       @@RATE_LIMTER.limit(&block)
     end
 
-    class << Groq
-      require 'ruby-limiter'
-      extend Limiter::Mixin
-      limit_method :rate_limit, rate: 29, interval: 60
-    end
-
     def Groq.try_hard(*args, &block)
       if @try_hard == false
         return block.call
       end
 
-      n = 7
+      n = 6
       errors = []
       fatal = [
         NameError,
         ArgumentError,
         Faraday::BadRequestError,
         Faraday::ClientError
-        #Faraday::TimeoutError
       ]
 
       n.times do |i|
@@ -213,7 +124,7 @@ module AI
     @@TIMEOUT = 420
 
     @@RPS = 1 # FIXME actually 50/min!
-    @@RATE_LIMTER = RateLimiter.new(rps: @@RPS)
+    @@RATE_LIMTER = RateLimiter.new(name: 'anthropic', rps: @@RPS)
 
     attr_reader :client
 
@@ -384,7 +295,7 @@ module AI
     @@TIMEOUT = 420
 
     @@RPS = 20
-    @@RATE_LIMTER = RateLimiter.new(rps: @@RPS - 1)
+    @@RATE_LIMTER = RateLimiter.new(name: 'mistral', rps: @@RPS - 1)
 
     attr_reader :client
 

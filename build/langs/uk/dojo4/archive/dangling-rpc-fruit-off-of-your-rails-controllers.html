@@ -1,0 +1,242 @@
+<html color-mode="user" lang="uk">
+  <head>
+  <base href='/langs/uk' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>тут немає нічого дивитися.</title>
+
+<meta property="og:title" content="тут немає нічого дивитися."/>
+<meta property="og:description" content="переходьте далі." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"dangling-rpc-fruit-off-of-your-rails-controllers"}">
+    <meta property="site:path_info" content=""/dangling-rpc-fruit-off-of-your-rails-controllers"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/dangling-rpc-fruit-off-of-your-rails-controllers">я ❤️ це!</a>
+<small>
+  <small>
+    <small>
+      <span title='випий мене'>&lt;&lt; клікни мене 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/dangling-rpc-fruit-off-of-your-rails-controllers</strong>
+    </header>
+
+    <main>
+      <em>опубліковано: 2013-11-05</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>при роботі з будь-яким додатком Rails, що не є "hello-world", неминуче потрібні невеликі AJAX-допоміжники для спілкування з сервером, щоб виконувати логіку на стороні клієнта. я не маю на увазі API як такий, а радше адхок утиліти, такі як ці:</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #24292f;background-color: #f6f8fa">markdown</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">change</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #8250df">generate_html_on_the_server</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">markdown</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">val</span><span style="color: #24292f;background-color: #f6f8fa">(),</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">html</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">preview</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">html</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">html</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-9'>
+</div><div class='code-line code-line-10'><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-11'>
+</div></code></div>
+
+<p>або</p>
+
+<div class="language-javascript highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #24292f;background-color: #f6f8fa">reservation</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">change</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #8250df">check_availibity_on_the_server</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">reservation</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">val</span><span style="color: #24292f;background-color: #f6f8fa">(),</span>&nbsp;<span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">){</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">if</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">!</span><span style="color: #24292f;background-color: #f6f8fa">data</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'</span><span style="color: #0a3069">available</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">]){</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8250df">alert</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'</span><span style="color: #0a3069">Цей час недоступний - виберіть інший!</span><span style="color: #0a3069">'</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">};</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">})</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'><span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'>
+</div></code></div>
+
+<p>і т.д.</p>
+
+<p>Ці типи функцій не є частиною серверно-серверного публічного API, це просто співпрацюючі JS/бекенд-ендпоінти, які потрібні для роботи відображення.</p>
+
+<p>Більшість додатків Rails накопичують багато таких функцій, і виникає питання:</p>
+
+<p>“Куди їх помістити?”</p>
+
+<p>У більшості команд буде три або чотири розробники, які називають та організовують ці функції по-різному, забезпечуючи, щоб кодова база перетворилася на безладну макаронинну суміш в найкоротші терміни.</p>
+
+<p>@dojo4 ми абстрагували це за допомогою невеликого шаблону проектування RPC: спочатку ми маємо невеликий DSL контролера, який включений до нашого ApplicationController, що дозволяє декларативні визначення допоміжників JS 'rpc' на основі кожного контролера.</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">ApplicationController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ActionController</span><span style="color: #0550ae">::</span><span style="color: #953800">Base</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #cf222e">include</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">RPC</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-5'>
+</div><div class='code-line code-line-6'><span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>
+</div></code></div>
+
+<p>ознайомтесь з реалізацією тут: https://gist.github.com/ahoward/7320900</p>
+
+<p>простою англійською мовою цей dsl просто визначив одну дію на контролері, яка мультиплексує, який метод використовувати на основі параметрів, і легкий спосіб визначити їх. він очікує, що всі дії rpc повернуть хеш і повернуть json.</p>
+
+<p>його реалізація зводиться до</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">rpc</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">which</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'method'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">action</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">@rpc</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">which</span><span style="color: #24292f;background-color: #f6f8fa">]</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">result</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">action</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">call</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">render</span>&nbsp;<span style="color: #0a3069">:json</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">result</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_json</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-11'>
+</div><div class='code-line code-line-12'>
+</div></code></div>
+
+<p>його використання має бути очевидним з коду</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">GeoLocationController</span>&nbsp;<span style="color: #0550ae">&lt;</span>&nbsp;<span style="color: #953800">ApplicationController</span>
+</div><div class='code-line code-line-3'>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rpc</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:geo_location</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">geo_location</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">GeoLocation</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">geo_locate</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'address'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">geo_location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">attributes</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rpc</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:lat_lng</span><span style="color: #24292f;background-color: #f6f8fa">)</span>&nbsp;<span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #0550ae">|</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">geo_location</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">GeoLocation</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">geo_locate</span><span style="color: #24292f;background-color: #f6f8fa">(</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">params</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #0a3069">'address'</span><span style="color: #24292f;background-color: #f6f8fa">]</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>&nbsp;<span style="color: #0a3069">'lat'</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">geo_location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">lat</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">'lng'</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">geo_location</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">lng</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-13'><span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'>
+</div></code></div>
+
+<p>використання з JS вимагає двох речей: маршруту та невеликого класу JS. спочатку маршрут:</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">match</span>&nbsp;<span style="color: #0a3069">':controller#rpc'</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0a3069">:action</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">'rpc'</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;
+</div><div class='code-line code-line-4'>
+</div></code></div>
+
+<p>далі, JS, також тут -&gt; https://gist.github.com/ahoward/7320900</p>
+
+<p>переглядаючи це, ви побачите, що використання бекенд-дій rpc з JS таке ж просте, як</p>
+
+<pre><code>
+  var rpc = new RPC(url);
+
+  rpc.call('geo_location', params, callback);
+
+
+</code></pre>
+
+<p>зазвичай, внизу перегляду ми просто створюємо об'єкт rpc для сторінки з відносним URL</p>
+
+<div class="language-erb highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #116329">&lt;script&gt;</span>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style="color: #8250df">jQuery</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">function</span><span style="color: #24292f;background-color: #f6f8fa">(){</span>
+</div><div class='code-line code-line-3'>&nbsp;
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">var</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">rpc</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #cf222e">new</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">RPC</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #6e7781">&lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">raw</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">url_for</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">:action</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0a3069">:rpc</span><span style="color: #24292f;background-color: #f6f8fa">).</span><span style="color: #8250df">to_json</span>&nbsp;<span style="color: #6e7781">%&gt;</span><span style="color: #24292f;background-color: #f6f8fa">);</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">});</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;
+</div><div class='code-line code-line-10'><span style="color: #116329">&lt;/script&gt;</span>
+</div><div class='code-line code-line-11'>
+</div></code></div>
+
+<p>і ми розпочинаємо.</p>
+
+<p>отже, ось воно - простий спосіб утримати ваші допоміжники JS rpc від забруднення ваших контролерів та переглядів різними стратегіями, і ще один приклад того, як наявність <em>брутально послідовних</em> інтерфейсів робить абстракцію можливою та простою.</p>
+
+<p>оновлення: весь підхід можна узагальнити так</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">BaseController</span>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;<span style="color: #953800">RPC</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Hash</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #953800">self</span><span style="color: #0550ae">.</span><span style="color: #8250df">rpc</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">method_name</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">RPC</span><span style="color: #24292f;background-color: #f6f8fa">[</span><span style="color: #24292f;background-color: #f6f8fa">method_name</span><span style="color: #24292f;background-color:

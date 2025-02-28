@@ -1,0 +1,132 @@
+<html color-mode="user" lang="fr">
+  <head>
+  <base href='/langs/fr' />
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>rien à voir ici.</title>
+
+<meta property="og:title" content="rien à voir ici."/>
+<meta property="og:description" content="passez votre chemin." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"web-developer-challenge"}">
+    <meta property="site:path_info" content=""/web-developer-challenge"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/accueil">@drawohara</a> &mdash;
+<a href="mailto:j-adore-ca@drawohara.io?subject=/web-developer-challenge">j' ❤️ ça !</a>
+<small>
+  <small>
+    <small>
+      <span title='bois-moi'>&lt;&lt; cliquez ici 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/web-developer-challenge</strong>
+    </header>
+
+    <main>
+      <em>publié le : 2011-01-29</em>
+<br>
+<br>
+<p>Aujourd'hui, je fais des tests multi-navigateurs sur un nouveau site avant de le lancer. Comme d'habitude, cela implique quelques acrobaties de style pour que le site ait l'air mieux que terrible dans Internet Explorer. Mais aujourd'hui, je suis tombé sur un problème dans Firefox que je ne pouvais pas expliquer.</p>
+<p>Le site que je construis fait la publicité d'un événement cycliste. Il contient quelques blocs comme celui-ci :</p>
+
+<p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>
+
+<p>Ils contiennent des informations sur les sponsors de l'événement. Étonnamment, même si ces blocs apparaissent dans <a href="https://fr.wikipedia.org/wiki/Internet_Explorer_6" title="https://fr.wikipedia.org/wiki/Internet_Explorer_6">le navigateur préféré de tout le monde, âgé de dix ans</a>, ils n'apparaissent dans aucune version de Firefox sur mon disque dur.</p>
+<p>Sérieusement ? Oui.</p>
+<p>Ces blocs sont <em>invisibles</em> dans Firefox. Le navigateur les modifie pour leur donner un attribut <code>display:none;</code>.</p>
+<p>Mais le meilleur, c'est que si je change la classe de la section en autre chose que "sponsor", les blocs apparaissent très bien. En fait, une fois que vous connaissez la cause, c'est la seule solution : Ne donnez pas aux éléments de votre page une classe CSS de "sponsor".</p>
+<p>Pensez-vous savoir ce qui l'a causé ? <a href="https://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845" title="https://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845">Découvrez-le</a>.</p>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/aller" name="aller">&mdash;&gt; aller</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:😩-je-déteste-ça@drawohara.io?subject=/web-developer-challenge">😩, j' 🖤 ^ça!<a>
+  </li>
+  <li>
+    <a href="/maintenant">/maintenant<a>
+  </li>
+  <li>
+    <a href="/à-propos">/à-propos<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; éjecter</a>
+    </footer>
+  </body>
+</html>
