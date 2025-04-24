@@ -1,0 +1,336 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Eventually, All Products Merge into One and A List Runs Through It</title>
+
+<meta property="og:title" content="Eventually, All Products Merge into One and A List Runs Through It"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"eventually-all-products-merge-into-one-and-a-list-runs-through-it"}">
+    <meta property="site:path_info" content=""/eventually-all-products-merge-into-one-and-a-list-runs-through-it"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/eventually-all-products-merge-into-one-and-a-list-runs-through-it">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/eventually-all-products-merge-into-one-and-a-list-runs-through-it">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2012-07-10</em>
+<br>
+<br>
+    <p>Recently, while helping a client mark up a <a href="http://shopify.com" target="_blank">Shopify</a> theme, I came across a thorny problem: how to merge the output of one loop with that of another in a seamless fashion. Allow me to explain.
+    </p>
+    <p>
+      Most Shopify themes include a "collection template" where products are listed via a <a href="http://wiki.shopify.com/UsingLiquid" target="_blank">Liquid</a> loop. <a href="#figure1">Figure 1</a> shows how such lists often take shape.
+    </p>
+    <figure id="figure1" class="pal lightestgrayBg mvl" style="text-align: center;"><img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/mockup.png' title="Mockup" alt="Mockup" /><figcaption class="mtm fontItalic">
+        <strong><em>Figure 1</em>
+</strong>: A typical Shopify product listing
+      </figcaption>
+    </figure>
+    <p>
+      If you're not averse to using <code>TABLEs</code> for such layouts, Liquid has you covered with its <code>TABLEROW</code> tag (<a href="http://wiki.shopify.com/UsingLiquid#Tables">reference</a>). If grid-systems are more your speed, you'll want to employ some kind of <a href="http://stackoverflow.com/questions/2245972/modulus-or-lack-thereof-in-rubys-liquid-templating-engine/8439160#8439160" target="_blank">row wrapping hack</a>, since Liquid doesn't have an <code>each_slice()</code> enumerator or <code>modulus</code> operator.
+    </p>
+    <p>
+      But if you, like me, think the semantically appropriate markup for a product <strong>list</strong> is an unordered list (<code>UL</code>), you're committed to working with a stream of <code>LIs</code>.
+    </p>
+    <p>
+      As I mentioned above, this design required that a list of product collections appear inline with the list of products, but not just anywhere. It was supposed to be the third item in the first row, as shown in <a href="#figure2">Figure 2</a>.
+    </p>
+    <figure id="figure2" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/desired-layout.png' title="Desired Layout" alt="Desired Layout" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Figure 2</em>
+</strong>: A product listing loop ostensibly interrupted by a navigation list
+      </figcaption>
+    </figure>
+    <p>
+      Now, I didn't want to start one loop, stop it, start another, stop it, then start the first one again with an appropriate offset. That seemed too manual. Again, I wanted the output to be a stream of <code>LIs</code> like so:
+    </p>
+      <script src="https://gist.github.com/icegulch/8373741.js"></script>
+    <p>
+      So, that left me with two choices for laying out this stream of <code>LIs</code>: floating and clearing them or inline-blocking them.
+    </p>
+    <p>
+      It's easy enough to imagine how you could achieve the desired layout with floats, floating each <code>LI</code> left, except for the first one, which would be floated right. But the floating option requires careful clearing—both the <code>UL</code> itself and every third <code>LI</code> (starting with the first) must be cleared in order to avoid the problem revealed in <a href="#figure3">Figure 3</a>.
+    </p>
+    <figure id="figure3" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/float-issue.png' title="Float Issue" alt="Float Issue" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Figure 3</em>
+</strong>: When the first LI in each "row" isn't cleared...
+      </figcaption>
+    </figure>
+    <p>
+      Liquid's <code>CYCLE</code> tag (<a href="http://wiki.shopify.com/UsingLiquid#Cycle">reference</a>) is a handy way of doing this, as is CSS3's <a href="http://reference.sitepoint.com/css/pseudoclass-nthchild" target="_blank">positional pseudo selectors</a>. But, when IE7/IE8 support is required, cycling's the better bet.
+    </p>
+    <p>
+      Still, this house of clearing cards felt brittle to me, so I endeavored to put the aforementioned inline-block listing techinque to work. 
+    </p>
+    <script src="https://gist.github.com/icegulch/8373784.js"></script>
+    <p>
+       Which got me most of the way there, as <strong>Figure 4</strong> demonstrates.
+    </p>
+    <figure id="figure4" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/initial-inline-block.png' title="Initial Inline Block" alt="Initial Inline Block" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Figure 4</em>
+</strong>: First crack at inline-block layout
+      </figcaption>
+    </figure>
+    <p>
+      Though the inline-block technique freed me of clearing concerns, I still had to contend with the positioning challenge of the design: the product navigation list was supposed to be flush right in the first row. Floating it to the right wasn't the answer either, as that would subject our layout to the same risk shown in <a href="#figure3">Figure 3</a>.
+    </p>
+    <p>
+      That's when I had a crazy idea: what if I changed the language direction of the <code>UL</code> so that the list would display right to left? Emboldened by a <a href="http://css-tricks.com/star-ratings/" target="_blank">recent Chris Coyier article</a>, I decided to give it a whirl. Here's what I ultimately came up with:
+    </p>
+<script src="https://gist.github.com/icegulch/8373820.js"></script>
+<p>
+      As you can see, I had to change the language direction on the containing <code>UL</code>, then reset it on elements within its <code>LIs</code> (for some reason, reseting the language direction on the <code>LIs</code> themselves didn't work in Opera). I also had to set the font size on the <code>UL</code> to zero in order <a href="http://css-tricks.com/fighting-the-space-between-inline-block-elements/" target="_blank">to avoid this</a>.
+    </p>
+    <p>
+      Since the listing of products in this store didn't require specific ordering (alphabetical, price, etc), it was okay for the output to flow right to left, as shown in <a href="#figure5">Figure 5</a>.
+    </p>
+    <figure id="figure5" class="pal lightestgrayBg mvl" style="text-align: center;">
+      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/inline-block-final.png' title="Inline Block Final" alt="Inline Block Final" />
+      <figcaption class="mtm fontItalic" style="text-align: center;">
+        <strong><em>Figure 5</em>
+</strong>: the language direction switch in action
+      </figcaption>
+    </figure>
+    <p>
+      While there are pros and cons to both floated and inline-blocked layouts, I thought the latter was a little more elegant in this situation. Have any of you run across this? Are you <a href="http://youtu.be/ATKQLgi5Z2Y" target="_blank">haunted by</a> lists?
+    </p>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  you’ve got to know your limitations. i don’t know what my limitations are.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Johnny_Cash" target="_blank">johnny cash</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

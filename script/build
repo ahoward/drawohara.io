@@ -1,0 +1,219 @@
+#! /usr/bin/env ruby
+
+script do
+  tldr <<~____
+
+    ./script/build
+
+  ____
+
+  param :dojo4
+  param :translate
+
+  run do
+    setup!
+
+    build!
+  end
+
+  def setup!
+    @site = Site.default
+  end
+
+  def site
+    @site
+  end
+
+  def ro
+    site.ro
+  end
+
+  def build!
+  #
+    dir = './build'
+    tmp = tmpdir!
+    dojo4 = true #params.has_key?(:dojo4)
+    translate = !!params.has_key?(:translate)
+
+  #
+    puts "=" * 42
+    puts "BUILD #{ tmp }"
+    puts "-" * 42
+
+    stats =
+      site_build!(dir: tmp, dojo4:) do |url:, file:|
+        puts("#{ url } -> #{ file }")
+      end
+
+    puts '---'
+    p(stats:)
+    puts
+
+  #
+    unless dojo4
+      puts "=" * 42
+      puts "RSYNC ./dojo4 -> #{ tmp }"
+      puts "-" * 42
+      system "rsync --archive --ignore-existing ./dojo4 #{ tmp }"
+      puts
+    end
+
+  #
+    if translate
+      puts "=" * 42
+      langs = site.dato.fetch(:langs)
+      puts "TRANSLATE #{ langs.join ' ' }"
+      puts "-" * 42
+      system "./script/translate #{ langs.join ' ' }"
+      puts
+    end
+
+  #
+    puts "=" * 42
+    puts "RSYNC ./public/ -> #{ tmp }"
+    puts "-" * 42
+    system "rsync --archive --ignore-existing ./public/ #{ tmp }"
+    puts
+
+
+  #
+    puts "=" * 42
+    puts "MV .#{ tmp } -> #{ dir }"
+    puts "-" * 42
+    mv!(tmp, dir)
+    puts
+  end
+
+  def site_build!(dir:, dojo4: false, parallel: 8, &block)
+    err = proc do |details|
+      $stderr.puts(JSON.pretty_generate(details))
+      exit(1)
+    end
+
+    build_url = proc do |url|
+      resp = @site.get(url)
+
+      unless resp.ok?
+        details = {url:, status: resp.status, headers: resp.headers, body: JSON.parse(resp.body.join)}
+        err[details]
+      end
+
+      file = url
+      ext = file[%r`\..*$`]
+
+      path =
+        if ext
+          File.join(dir, file)
+        else
+          File.join(dir, file, 'index.html')
+        end
+
+      if test(?e, path)
+        details = {url:, file:, path:, exists: true}
+        err[details]
+      end
+
+      binwrite!(path, resp)
+
+      block.call(url:, file:) if block
+    end
+
+    build_sitemap = proc do |urls|
+      base = 'https://drawohara.io'
+      langs = @site.dato.fetch(:langs)
+
+      links = []
+
+      urls.each do |url|
+        cannonical = base + url
+        links.push(cannonical)
+
+        langs.each do |lang|
+          translation = "#{ base }/langs/#{ lang }" + url
+          links.push(translation)
+        end
+      end
+
+      sitemap = links.join("\n")
+
+      path = File.join(dir, 'sitemap.txt')
+      binwrite!(path, sitemap)
+    end
+
+    a = Time.now.to_f
+    urls = @site.urls.uniq
+
+    build_urls =
+      if dojo4
+        urls
+      else
+        urls.select{|url| not url.start_with?('/dojo4') }
+      end
+
+    n = urls.size
+
+    if parallel
+      begin
+        Parallel.each(build_urls, in_processes: parallel) do |url|
+          build_url[url]
+        end
+      rescue Parallel::DeadWorker
+        exit(1)
+      end
+    else
+      urls.each do |url|
+        build[url]
+      end
+    end
+
+    build_sitemap[urls]
+
+    b = Time.now.to_f
+    e = (b - a).round(2)
+
+    stats = {n:, e:}
+  end
+
+  def clean!(dir)
+    if test(?d, dir)
+      trash = tmpdir!
+      FileUtils.mv(dir, trash)
+
+      fork do
+        FileUtils.rm_rf(trash)
+        `rm -rf #{ trash }`
+        exit!
+      end
+    end
+  end
+
+  def mkdir!(dir)
+    FileUtils.mkdir_p(dir)
+  end
+
+  def mv!(src, dst)
+    clean!(dst)
+    File.rename(src, dst)
+  end
+
+  def tmpdir!(&block)
+    uuid = SecureRandom.uuid_v7
+    dir = File.join('./tmp', uuid)
+    FileUtils.mkdir_p(dir)
+    dir
+  end
+
+  def binwrite!(path, data)
+    dirname = File.dirname(path)
+    FileUtils.mkdir_p(dirname) unless test(?e, dirname)
+    IO.binwrite(path, data)
+  end
+end
+
+
+BEGIN {
+  Dir.chdir(File.dirname(__dir__))
+
+  require './lib/script.rb'
+  require './config/boot.rb'
+}

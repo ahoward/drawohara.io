@@ -1,0 +1,426 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>&#39;dojo4 guide to a better year: 42 tips&#39;</title>
+
+<meta property="og:title" content="&#39;dojo4 guide to a better year: 42 tips&#39;"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"dojo4-guide-to-a-better-year-42-tips"}">
+    <meta property="site:path_info" content=""/dojo4-guide-to-a-better-year-42-tips"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-guide-to-a-better-year-42-tips">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-guide-to-a-better-year-42-tips">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2018-01-09</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>What does better mean? It might mean better than <a href="https://www.newyorker.com/culture/jia-tolentino/the-worst-year-ever-until-next-year">previous years</a>, or it might mean making the most of existing goodness, and transforming existing challenge. Relativity leaves it up to you, but here are some suggestions that are likely to help, possibly (but not likely) in some order:</p>
+
+<ol>
+  <li>
+    <p>listen to this year’s <a href="https://www.mixcloud.com/BlackSwanSounds/all-systems-are-dojo-the-2017-dojo4-songbook-mixtape-produced-by-joel-davis/">dojo4 songbook mixtape</a> while you read this post and while you do anything this year</p>
+  </li>
+  <li>
+    <p>discover more new music every week with on <a href="https://bandcamp.com/">Bandcamp</a> and <a href="https://blog.conduitmusic.co/">Conduit</a></p>
+  </li>
+  <li>
+    <p>get a full dose of nutritious funk from <a href="https://youtu.be/QKzobTCIRDw">Tank and the Bangas</a> and <a href="https://www.youtube.com/watch?v=mhyD2qchkEw">Sylvan Esso</a> and clean your plate with help from all the <a href="https://www.npr.org/series/tiny-desk-concerts/">Tiny Desk Concerts</a></p>
+  </li>
+  <li>
+    <p>be cheerful - despite the dismal state of things there are <a href="http://davidbyrne.com/news/reasons-to-be-cheerful-talk">“there are actually a LOT of encouraging things going on around the world”</a> and lots of reasons to be cheerful - <a href="https://www.instagram.com/p/BdaecgDlA1p/?taken-by=davidbyrneofficial">follow David Byrne</a>’s <em>Reasons To Be Cheerful</em> project and/or start your own complementary project</p>
+  </li>
+  <li>meditate - it’s the master skill that supports mastery of all other skills
+    <blockquote>
+      <p><em>“You should sit in meditation for twenty minutes every day — unless you’re too busy. Then you should sit for an hour.”</em> -Zen proverb</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>drink more water</p>
+  </li>
+  <li>
+    <p>join the future. the <a href="http://www.cnn.com/2017/12/14/opinions/2018-will-be-the-year-of-women-schnall/">future is now and it’s female</a>. read what <a href="http://rebeccasolnit.net/">our best minds</a> are writing about it.</p>
+  </li>
+  <li>
+    <p>keep it in your pants and do something useful instead, like <a href="https://www.mcsweeneys.net/articles/things-to-do-at-work-besides-showing-your-penis-to-coworkers">your fucking job</a></p>
+  </li>
+  <li>
+    <p>get to know your body- cast your vulva with <a href="https://www.vaginachina.org/">Vagina China</a>
+<img src='/ro/dojo4/dojo4-guide-to-a-better-year-42-tips/assets/b.jpeg' alt="Ij5lgxVW.jpg" /></p>
+  </li>
+  <li>dig <a href="https://www.shambhala.com/authors/o-t/shantideva.html">Shantideva</a>’s advice and wish happiness for others.
+    <blockquote>
+      <p>“<a href="https://www.youtube.com/watch?v=CJRiG3Ngbxs">If you want to be miserable think about yourself. If you want to be happy, think about others.</a>” - Sakyong Mipham Rinpoche</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>read about fashion - make sure <a href="http://www.joojooazad.com/">it’s a radical anti-capitalist, intersectional feminist, and body-positive political fashion blog</a> written by a sarcastic (&amp; angry) Muslim-Iranian creative and community organizer living in Chicago</p>
+  </li>
+  <li>
+    <p>enjoy <a href="http://carsondavisbrown.com/#/mass/">visual distruptions in places of mass</a>
+<img src='/ro/dojo4/dojo4-guide-to-a-better-year-42-tips/assets/c.png' alt="bluemass.png" /></p>
+  </li>
+  <li>
+    <p>boycott consumerist obsession 
+<img src='/ro/dojo4/dojo4-guide-to-a-better-year-42-tips/assets/d.png' alt="consumerism.png" /></p>
+  </li>
+  <li>
+    <p>resist - <a href="https://resist.bot/">Resistbot</a> will help you write to your Congresspersons every day</p>
+  </li>
+  <li>
+    <p>take action now - <a href="https://www.thenation.com/take-action/">sign up</a> to receive 3 actions you can take every week to help build a more civil society</p>
+  </li>
+  <li>don’t ‘other’ the need for liberation - be an <a href="https://www.whiteaccomplices.org/">accomplice</a>, not an <a href="http://www.codepink.org/be_accomplices_not_allies">ally</a>
+    <blockquote>
+      <p><em>“If you have come here to help me, you are wasting your time. But if you have come because your liberation is bound up with mine, then let us work together.”</em> -Lilla Watson</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>learn to build a fire and if you already know how, go build a fire
+<img src='/ro/dojo4/dojo4-guide-to-a-better-year-42-tips/assets/e.png' alt="firebuilding.png" /></p>
+  </li>
+  <li>
+    <p>watch <a href="http://www.bbc.co.uk/programmes/b06l51nr">The Detectorists</a>,  the best show on television (spoiler alert: it’s about <a href="http://www.dictionary.com/browse/detectorist">detectorists</a>)</p>
+  </li>
+  <li>
+    <p>think outside of the box (<a href="http://www.christenlien.com/about/">Pandora’s that is</a>) - hear <a href="http://www.christenlien.com/music/">Christen Lien</a></p>
+  </li>
+  <li>
+    <p>see the world through rose-colored glasses, or <a href="https://rainbowoptx.com/">yellow or blue or green or purple or orange ones</a>
+<img src='/ro/dojo4/dojo4-guide-to-a-better-year-42-tips/assets/f.jpeg' alt="rosecoloredglasses.jpg" /></p>
+  </li>
+  <li>
+    <p>explore what it means to <a href="https://www.goodreads.com/review/show/2226986126">write well</a></p>
+  </li>
+  <li>
+    <p>if you Twitter, follow <a href="https://twitter.com/danmayer">@danmayer</a>, a shining example of a person making the world a better place inside and outside the workplace through the practice of technology</p>
+  </li>
+  <li>
+    <p>know more about lots of things but especially <a href="https://waitbutwhy.com/2017/04/neuralink.html">brain-machine interface</a> and <a href="https://waitbutwhy.com/2016/09/spacexs-big-fking-rocket-the-full-story.html">colonizing Mars</a></p>
+  </li>
+  <li>
+    <p>get timely and regular insight into <a href="http://www.exponentialview.co/newsletter/">tech &amp; society</a></p>
+  </li>
+  <li>
+    <p>walk - move your body for at least a little while most days of the week- it <a href="https://www.theatlantic.com/health/archive/2014/03/for-depression-prescribing-exercise-before-medication/284587/">works better than medication</a> for treating the blues</p>
+  </li>
+  <li>fill your instagram feed with artists and their art, e.g.:
+    <ul>
+      <li><a href="https://www.instagram.com/okudart/" target="_blank">https://www.instagram.com/okudart/</a></li>
+      <li><a href="https://www.instagram.com/zioziegler/" target="_blank">https://www.instagram.com/zioziegler/</a></li>
+      <li><a href="https://www.instagram.com/raviamarzupa/" target="_blank">https://www.instagram.com/raviamarzupa/</a></li>
+      <li><a href="https://www.instagram.com/zoots/" target="_blank">https://www.instagram.com/zoots/</a></li>
+      <li><a href="https://www.instagram.com/kaws/" target="_blank">https://www.instagram.com/kaws/</a></li>
+      <li><a href="https://www.instagram.com/lucas_beaufort/" target="_blank">https://www.instagram.com/lucas_beaufort/</a></li>
+      <li><a href="https://www.instagram.com/sophie_roach/" target="_blank">https://www.instagram.com/sophie_roach/</a></li>
+      <li><a href="https://www.instagram.com/stuartsemple/" target="_blank">https://www.instagram.com/stuartsemple/</a></li>
+      <li><a href="https://www.instagram.com/mtnburo/" target="_blank">https://www.instagram.com/mtnburo/</a></li>
+      <li><a href="https://www.instagram.com/ogmikegiant/" target="_blank">https://www.instagram.com/ogmikegiant/</a></li>
+      <li><a href="https://www.instagram.com/earlatron/" target="_blank">https://www.instagram.com/earlatron/</a></li>
+      <li><a href="https://www.instagram.com/strangedirt/" target="_blank">https://www.instagram.com/strangedirt/</a></li>
+      <li><a href="https://www.instagram.com/lelashields/" target="_blank">https://www.instagram.com/lelashields/</a></li>
+      <li><a href="https://www.instagram.com/julilunkart/" target="_blank">https://www.instagram.com/julilunkart/</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>find your temple in your closest relationships and be prepared for “<a href="https://alovinghealingspace.blogspot.com/2017/12/the-temple-of-human-intimacy.html">holy dismemberment and reassembling</a>”</p>
+  </li>
+  <li>
+    <p>follow the <a href="http://www.velominati.com/the-rules/">Rules</a> and remember: it never gets easier, you just go faster (also: support your local bike shop)</p>
+  </li>
+  <li>
+    <p>also follow <a href="https://laelwilcox.com/">Lael’s adventure</a> - she is one of the strongest endurance athletes in the world and is shattering the mold on how to make this life worth living</p>
+  </li>
+  <li>master the art of getting your shit done, aka <a href="https://gyshido.com/">GYSHIDO</a>:
+    <ul>
+      <li>relentless focus</li>
+      <li>single task</li>
+      <li>boring consistency</li>
+      <li>no bullshit</li>
+      <li>no meetings</li>
+      <li>follow up</li>
+      <li>don’t be an asshole
+<img src='/ro/dojo4/dojo4-guide-to-a-better-year-42-tips/assets/g.png' alt="Gyshido_poster_final.png" /></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="http://little-startup-handbook.dojo4.com/be-generous">generosity</a> is the virtue that produces peace and we always need lots more of that
+<img src='/ro/dojo4/dojo4-guide-to-a-better-year-42-tips/assets/h.png' alt="generous.png" /></p>
+  </li>
+  <li>
+    <p>run with the [dazzle of Zebras]
+(<a href="https://www.zebrasunite.com/" target="_blank">https://www.zebrasunite.com/</a>)</p>
+  </li>
+  <li>
+    <p>spice it up with <a href="https://chuaochocolatier.com/firecracker.html">chiles pop rocks &amp; chocolate</a></p>
+  </li>
+  <li>listen to  <a href="https://www.brainpickings.org/2015/09/15/jane-kenyon-advice-on-writing/">Jane Kenyon</a>, who said:
+    <blockquote>
+      <p><em>“Be a good steward of your gifts. Protect your time. Feed your inner life. Avoid too much noise. Read good books, have good sentences in your ears. Be by yourself as often as you can. Walk. Take the phone off the hook. Work regular hours.”</em> - Jane Kenyon</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>be quiet and <a href="http://little-startup-handbook.dojo4.com/listen-up">listen</a></p>
+  </li>
+  <li>
+    <p>listen some more</p>
+  </li>
+  <li>
+    <p>listen even more</p>
+  </li>
+  <li>
+    <p>stop reading this blog post</p>
+  </li>
+  <li>
+    <p><a href="http://www.timewellspent.io/problem-solution/">step away from the computer</a></p>
+  </li>
+  <li>
+    <p>stop looking at your phone</p>
+  </li>
+  <li>
+    <p>go outside</p>
+  </li>
+  <li>stay outside for a while</li>
+</ol>
+
+<p>This was compiled as a collaborative effort by the <a href="http://dojo4.com/team">team</a> at dojo4.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  every individual matters. every individual has a role to play. every
+individual makes a difference.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Jane_Goodall" target="_blank">jane goodall</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

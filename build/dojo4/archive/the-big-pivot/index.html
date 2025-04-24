@@ -1,0 +1,295 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>The Big Pivot</title>
+
+<meta property="og:title" content="The Big Pivot"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-big-pivot"}">
+    <meta property="site:path_info" content=""/the-big-pivot"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/the-big-pivot">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/the-big-pivot">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-01-13</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>‘Pivoting’ is rarely a good thing in software, regardless of how people try
+to spin it to their investors.  It is generally made up of one part ‘we
+fucked up’ and one part ‘try something fast before we drop it!’</p>
+
+<p><img src='/ro/dojo4/the-big-pivot/assets/pivot.gif' alt="" /></p>
+
+<p>Fortunately we’re our own investors at DOJO4 so we don’t need to spin
+anything.  We just needed to <em>pivot</em>.</p>
+
+<p>I don’t like telling stories in order, and you’ve got things to do, so let me
+cut right to the chase:</p>
+
+<ul>
+  <li>DOJO4 is pivoting away from being nothing but a software agency.</li>
+  <li>DOJO4 is focusing all it’s energy on delivering technology to purpose-driven
+companies.</li>
+  <li>DOJO4 has made partnerships that enable it to bring development horsepower,
+&amp; financial horsepower, to bear on said selected purpose-driven companies.</li>
+</ul>
+
+<p>To our current customers, whom we value so much, please know that, we are
+continuing to support our current, excellent, crop of DOJO4 customers
+indefinitely; we take our all of our commitments seriously, especially those we’ve
+made to you, who’ve supported us these <a href="/blog/ity">past 5 years</a>. If you’d like to get involved or discuss this with us, please <a href="/contact">just let us know</a> and we can discuss it further.</p>
+
+<p>For those of you who want to be part of our next bumper crop of technically elegant, world-saving, profit-making ventures, step up to the plate, partner with us in changing the world 42 million bytes at a time.</p>
+
+<p><a href="/team/jesse-seavers">Jesse</a> has already begun discussions with some of the
+most exciting purpose driven companies, and impactful investors, in Colorado,
+but we’ll be reaching out to more of you internationally over the next three
+months in a campaign designed to produce a single result: to bring the
+best technologists, together with the best investors, into the service of the
+passionate social entrepreneurs that are already dedicating their lives to
+solving the world’s many endemic problems.</p>
+
+<p>For those of you that want to know more, please give <a href="/">our home page</a>, <a href="/manifesto">mission</a> and <a href="/about">about page</a> a scan.  We’d <a href="javascript:void(&quot;feedback&quot;)" class="feedback">love to know what you think!</a></p>
+
+<p>And if you’d like to start talking to us about this, please <a href="/contact">drop by or get in touch any time</a>.</p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  consciousness is all there is.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Bernardo_Kastrup" target="_blank">bernardo kastrop</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

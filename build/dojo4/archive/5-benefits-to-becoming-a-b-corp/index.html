@@ -1,0 +1,284 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>5 benefits to becoming a B Corp</title>
+
+<meta property="og:title" content="5 benefits to becoming a B Corp"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"5-benefits-to-becoming-a-b-corp"}">
+    <meta property="site:path_info" content=""/5-benefits-to-becoming-a-b-corp"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/5-benefits-to-becoming-a-b-corp">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/5-benefits-to-becoming-a-b-corp">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-02-18</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/5-benefits-to-becoming-a-b-corp/assets/b.jpeg' alt="25d5bb9.jpg" /></p>
+
+<p>What’s all the fuss about B Corps? What are they? Why do they matter? And why is there a great future in B Corps?</p>
+
+<p>B Lab, the nonprofit that provides the  certification to businesses, <a href="https://www.bcorporation.net/what-are-b-corps">describe B Corps thusly</a>:</p>
+
+<blockquote>
+  <p>B Corp is to business what Fair Trade certification is to coffee or USDA Organic certification is to milk. B Corps are certified by the nonprofit B Lab to meet rigorous standards of social and environmental performance, accountability, and transparency.)
+Today, there is a growing community of more than 1,000 Certified B Corps from 33 countries and over 60 industries working together toward 1 unifying goal: to redefine success in business</p>
+</blockquote>
+
+<p>dojo4 just went through the certification process and we are now proud to be a <a href="http://www.bcorporation.net/community/dojo4">bona fide B Corp</a>. Having worked on a farm in a former life, I thought of it very much like getting an organic certification. As a farmer you may already shun the use of pesticides and practice other environmentally sustainable farming methods, but an organic certification lets people know that you are sticking to a set of standards and gives you guidelines for ensuring the purity of the land you work and the food you produce. In our case, as a technology and design company, we already rejected being purely profit-driven and set out to do business with the recognition that we are all interdependent. By getting the B Corp certification, we are letting people know that we are backing up this understanding of interdependence with a standard of practice and are giving ourselves the support of guidelines to stick to (or aspire to).</p>
+
+<p><a href="http://bimpactassessment.net/">The assessment</a> is a real doozy (our application was 50+ pages long and took us a year to achieve), but the application process itself got us on our game and we are already seeing the benefits of being certified. There are lots of reasons to become certified, but here are at least 5 bennies that you can expect:</p>
+
+<ol>
+  <li><strong>It’s great marketing.</strong> It’s a brilliant way of proclaiming who you are, what’s meaningful for your company, and what you stand for. You are letting people know that care about human and environmental health and integrity. Like-minded clients, partners, <a href="http://www.wsj.com/articles/SB10001424052702304868404579193973525834320">prospective employees</a>, and customers are looking for you. This helps them find you.</li>
+  <li><strong>It makes you be even better.</strong> In order to become a B Corp, your organization has to get  score of at least 80 out of 200 on the stringent <a href="http://bimpactassessment.net/">Impact Assessment</a>. Even <a href="http://bestfortheworld.bcorporation.net/index.html">the highest scorers</a> tend to achieve a rating in the lower 100s (we scored 88.5- a pass!), which means that even the best of us can aspire to do better. A B Corp certification helps you stick to guidelines that you can feel good about adhering to. It provides a set of standards to make you better at what you are already setting out to do.</li>
+  <li><strong>It puts you in good company.</strong> Becoming a B Corp lets you <a href="http://www.greenbiz.com/blog/2014/10/14/how-small-company-can-join-ranks-etsy-and-patagonia">join the ranks for other companies doing great things</a>. This isn’t just good marketing, B Corps also respect and share with each other, which is good for business and good for the ecology of a socially responsible economy.</li>
+  <li><strong>It supports and includes you in a thriving movement.</strong> - <a href="https://www.youtube.com/watch?v=DHGCvJjat1E">Just one word(s)</a>: B Corps. Triple bottom line businesses, that set specific standards for social and environmental performance, are <a href="http://www.ssireview.org/blog/entry/supercharging_the_b_corp_movement">where it’s at</a>.</li>
+  <li><strong>It let’s you, rather than your shareholders, decide what’s best.</strong> By becoming a B corp, your company declares its dedication to valuing the interests of stakeholders as much as (or more than) the interests of its shareholders. In this way, being a B Corp provides a company with <a href="http://www.newyorker.com/magazine/2014/08/04/companies-benefits">some protection against pressure from investors</a>. It <a href="https://medium.com/@PlaceFuture/benefit-corp-b-corp-b-lab-b-impact-b-3cfd8528e1e6">makes it clear to your shareholders from the get go</a> that your bottom line will always include people, planet and profit.</li>
+</ol>
+
+<p>No time like the present to give your company the benefits of becoming a B Corp - don’t let <a href="https://www.youtube.com/watch?v=4_Pbx9mvWPY">the way of the future</a> pass you by.</p>
+
+<p>P.S. If your company is interested in becoming a B Corp check out the <a href="https://www.eventbrite.com/e/dojo4-community-happy-hour-b-the-change-b-come-a-b-corp-tickets-15381368086">event we are hosting</a> with Kara Peck of <a href="http://www.bcorporation.net/blog/announcing-b-lab-colorado">B Lab Colorado</a> this June!</p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  to me, punk rock is the freedom to create, freedom to be successful,
+freedom to not be successful, freedom to be who you are. it&#39;s freedom.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Patti_Smith" target="_blank">patti smith</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

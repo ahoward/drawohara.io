@@ -1,0 +1,280 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Let&#39;s Kill Altruism</title>
+
+<meta property="og:title" content="Let&#39;s Kill Altruism"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"lets-kill-altruism"}">
+    <meta property="site:path_info" content=""/lets-kill-altruism"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/lets-kill-altruism">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/lets-kill-altruism">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-12-01</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/lets-kill-altruism/assets/b.jpeg' alt="tumblr_mtseryqG701rpowflo1_540.jpg" /> 
+“A train has two great attributes of life… motion and purpose,” I said, reading a line from Atlas Shrugged to a friend this past weekend. There’s something wildly attractive about honest, confident movement. I was explaining to a friend why the search for it is what drew me into entrepreneurship, and Kenya. Like other recently graduated twenty-something year olds I want motion and purpose, or in other words, I want to do good through a meaningful career.</p>
+
+<p>A couple of months ago, my search for it led me to ask some DOJO4 co-conspirators, “How can we destroy altruism?” We were wondering why we don’t see more people choosing a career that makes them happy and benefits society—something many of us want, right? There’s nothing inherently wrong with altruism. I’m pinning it as the culprit though because it prioritizes doing good for society before doing what is good for the individual when creating a meaningful career, which is just backwards. Ironically, I’ve seen it hinder both individuals and businesses from doing good.</p>
+
+<p>I’m writing from a small blue-doored car garage in the hills of Central Kenya. It’s owned by Raji, a six-foot-three, 200-plus pound Indian mechanic with a camouflage bandana on his head. I’m here because of a startup called <a href="http://www.efkgroup.co.ke/">EFK Group</a>. Our truck broke down and he’s fixing it. He’s the best mechanic around. He gives me a Coca-Cola and asks me what I am writing about. I tell him and ask him what he thinks. “I’m good at fixing broken shit. So I do that.” “Do you like it?” “Yeah.” “Are you happy?” “Sure.”</p>
+
+<p>I caught a glimpse of motion and purpose in his demeanor and wished life was that simple. But it is. He helps people as a result of what he is good at, which led me to thinking, like Reid Hoffman in Startup of You explains, that a meaningful career is an entrepreneurial endeavor, and thus, altruism has nothing to do with it.</p>
+
+<p>Altruism is defined as “the belief in or practice of disinterested and selfless concern for the wellbeing of others.” (It’s not philanthropy or volunteering necessarily.) It’s giving without getting anything in return. It’s apathetic. There’s no desire for a feedback loop for learning, no mutual value exchanged. Creating a meaningful career is entrepreneurial and motivated by self interest, which is neither selfish nor altruistic.</p>
+
+<p>“I want,” in front of “to do good” is self interest before good. The real work for those looking for a meaningful career consists of asking hard questions, taking action, and defining a set of principles that will guide self interest—like a startup.</p>
+
+<p>Like a recycling plant pays people for collecting cans in cities, EFK Group, a locally owned and run startup in Kenya, pays people for collecting the fallen nuts from an indigenous tree called croton megalocarpus. They process the nut into three organic products that they sell back to local industry as a substitute for imported diesel oil, fertilizer, and animal feed.</p>
+
+<p>There’s a lack of funding for projects like these that the social impact space aims to fill. Since they’re in this space, they are often asked, “What problem are you solving? Who are your beneficiaries and how are you improving their lives? What impact metrics can you show?” Because the tree (and nut) has no previous economic value, it is traditionally cut down for firewood. But now people find economic value in it because they sell it to EFK Group. They are protecting existing trees and planting more. It is locally owned, employs local workers, and it also gives smallholder farmers, street kids, and housewives another source of income. It has a zero-waste manufacturing process because it uses every part of the nut.</p>
+
+<p>What problem are they not solving? Who are they not benefitting? They’re solving massive problems—from poverty to deforestation and climate change—but they didn’t start the business to solve any of those problems. They’re exploiting an opportunity and pursuing personal interests. Their efforts are guided by principles (i.e. don’t waste stuff, be honest, be kind, work hard, etc.) and logic, not good intentions or altruism.</p>
+
+<p>I don’t think impact metrics and goals harm businesses. If anything, they improve them because they encourage people to understand their customer more. But I can see how this could distract a high-performing business. If we were to say that EFK Group exists to improve the lives of farmers, that could limit potential avenues of growth that could positively affect other stakeholders more in the future.</p>
+
+<p>If I were a business, I’d go bankrupt because altruistic thinking had me prioritizing my search for what I thought would be good for society before what is good for me. Fact is, I neither understand what good is nor what it means—for myself or others—because as humans we have a limited capacity to fully grasp life, time and the systems in which we live. (Whenever we solve a problem, we create new ones—that’s progress, right?) Sure, I want to do good and help people, but just like a startup can’t scale impact without profits, I can’t do good without acquiring more and more knowledge and skills.</p>
+
+<p>Joan Didion said, “I write entirely to find out what I’m thinking, what I’m looking at, what I see and what it means.” That’s my purpose here. I think good is an externality of motion and purpose, which is a result of a principled pursuit of self interest.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  life is a constant process of dying.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Arthur_Schopenhauer" target="_blank">arthur schopenhauer</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

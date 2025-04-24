@@ -1,0 +1,332 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>marshal mongoid object like butter</title>
+
+<meta property="og:title" content="marshal mongoid object like butter"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"marshal-mongoid-object-like-butter"}">
+    <meta property="site:path_info" content=""/marshal-mongoid-object-like-butter"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/marshal-mongoid-object-like-butter">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/marshal-mongoid-object-like-butter">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2013-03-01</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>sticking your models into cache, or serializing them for other reasons shouldn’t be painful.  unfortunately it is with most ORMs, as they have a lame marshal strategy by default.  however this is easy to fix: they key lies in understanding that every ORM already knows how to take a hash of info from the db and instantiate a full blown instance.  knowing this, we can easily make any model serialize like butter.</p>
+
+<p><br /></p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'><span style="color: #6e7781">#! /usr/bin/env ruby</span>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #6e7781"># some models have whack shit that can't survive a marshal round-trip</span>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">Model</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">include</span>&nbsp;<span style="color: #953800">Mongoid</span><span style="color: #0550ae">::</span><span style="color: #953800">Document</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">initialize</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">*</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">super</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">ensure</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">@fail</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Class</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">new</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #953800">open</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #cf222e">__FILE__</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-14'>
+</div><div class='code-line code-line-15'><span style="color: #6e7781"># so this'll fail</span>
+</div><div class='code-line code-line-16'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-17'>&nbsp;&nbsp;<span style="color: #cf222e">begin</span>
+</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">p</span>&nbsp;<span style="color: #953800">Marshal</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">Marshal</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dump</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">Model</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">create</span><span style="color: #24292f;background-color: #f6f8fa">))</span>
+</div><div class='code-line code-line-19'>&nbsp;&nbsp;<span style="color: #cf222e">rescue</span>&nbsp;<span style="color: #953800">Object</span>&nbsp;<span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">o</span>
+</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">warn</span>&nbsp;<span style="color: #0a3069">"</span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">o</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">message</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069"> (</span><span style="color: #24292f">#{</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">o</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">class</span>&nbsp;<span style="color: #24292f">}</span><span style="color: #0a3069">)"</span>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-22'>
+</div><div class='code-line code-line-23'><span style="color: #6e7781"># but mongoid models simply need a hash of information from the mongo driver</span>
+</div><div class='code-line code-line-24'><span style="color: #6e7781"># to fully vivify themselves... ergo this is all we need persist when</span>
+</div><div class='code-line code-line-25'><span style="color: #6e7781"># marshaled.  this makes loading from marshaled data *just like* loading from</span>
+</div><div class='code-line code-line-26'><span style="color: #6e7781"># the db.</span>
+</div><div class='code-line code-line-27'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-28'><span style="color: #6e7781"># if you ask me this should be the default behavior!</span>
+</div><div class='code-line code-line-29'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-30'><span style="color: #6e7781"># hrm - i am on mongoid core... @durran, what do you think?</span>
+</div><div class='code-line code-line-31'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-32'><span style="color: #6e7781"># btw - this works just fine with active_record too...</span>
+</div><div class='code-line code-line-33'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-34'>&nbsp;&nbsp;<span style="color: #cf222e">class</span>&nbsp;<span style="color: #953800">Model</span>
+</div><div class='code-line code-line-35'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">_dump</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0550ae">*</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Marshal</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dump</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">raw_attributes</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">*</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-37'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-38'>
+</div><div class='code-line code-line-39'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #953800">Model</span><span style="color: #0550ae">.</span><span style="color: #8250df">_load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">string</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">*</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">raw_attributes</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #953800">Marshal</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">string</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">*</span><span style="color: #24292f;background-color: #f6f8fa">args</span><span style="color: #24292f;background-color: #f6f8fa">,</span>&nbsp;<span style="color: #0550ae">&amp;</span><span style="color: #24292f;background-color: #f6f8fa">block</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-41'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">instantiate</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">raw_attributes</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-42'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-43'>&nbsp;&nbsp;<span style="color: #cf222e">end</span>
+</div><div class='code-line code-line-44'>
+</div><div class='code-line code-line-45'><span style="color: #6e7781"># so now it just werks (TM)</span>
+</div><div class='code-line code-line-46'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-47'>&nbsp;&nbsp;<span style="color: #953800">p</span>&nbsp;<span style="color: #953800">Marshal</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">load</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">Marshal</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">dump</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #953800">Model</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">create</span><span style="color: #24292f;background-color: #f6f8fa">))</span>
+</div><div class='code-line code-line-48'>
+</div><div class='code-line code-line-49'>
+</div><div class='code-line code-line-50'>
+</div><div class='code-line code-line-51'>
+</div><div class='code-line code-line-52'>
+</div><div class='code-line code-line-53'><span style="color: #cf222e">BEGIN</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{</span>
+</div><div class='code-line code-line-54'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'rubygems'</span>
+</div><div class='code-line code-line-55'>&nbsp;&nbsp;<span style="color: #953800">require</span>&nbsp;<span style="color: #0a3069">'mongoid'</span>
+</div><div class='code-line code-line-56'>
+</div><div class='code-line code-line-57'>&nbsp;&nbsp;<span style="color: #953800">Mongoid</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">configure</span><span style="color: #24292f;background-color: #f6f8fa">{</span><span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">config</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">connect_to</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #0a3069">'mongoid-marshal'</span><span style="color: #24292f;background-color: #f6f8fa">)}</span>
+</div><div class='code-line code-line-58'><span style="color: #24292f;background-color: #f6f8fa">}</span>
+</div><div class='code-line code-line-59'>
+</div><div class='code-line code-line-60'><span style="color: #6e7781">__END__</span>
+</div><div class='code-line code-line-61'>
+</div><div class='code-line code-line-62'><span style="color: #6e7781">teh outputz:</span>
+</div><div class='code-line code-line-63'>
+</div><div class='code-line code-line-64'><span style="color: #6e7781">can't dump anonymous class #&lt;Class:0x007fa89dc23768&gt; (TypeError)</span>
+</div><div class='code-line code-line-65'>
+</div><div class='code-line code-line-66'><span style="color: #6e7781">#&lt;Model _id: 5130edd0af481ccd3d000002, &gt;</span>
+</div><div class='code-line code-line-67'><span style="color: #6e7781"> </span>
+</div></code></div>
+
+<p>ref: <a href="https://gist.github.com/ahoward/5066528" target="_blank">https://gist.github.com/ahoward/5066528</a></p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  to me, punk rock is the freedom to create, freedom to be successful,
+freedom to not be successful, freedom to be who you are. it&#39;s freedom.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Patti_Smith" target="_blank">patti smith</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

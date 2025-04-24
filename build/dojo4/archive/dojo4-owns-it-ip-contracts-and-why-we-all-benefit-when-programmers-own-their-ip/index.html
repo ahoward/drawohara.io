@@ -1,0 +1,317 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>! &#39;dojo4 owns it! IP, contracts and why we all benefit when programmers own</title>
+
+<meta property="og:title" content="! &#39;dojo4 owns it! IP, contracts and why we all benefit when programmers own"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip"}">
+    <meta property="site:path_info" content=""/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2014-09-11</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>dojo4’s general services agreement that we sign with every client includes a clause that describes our IP and what we reserve the right to do with it (see below and <a href="https://github.com/dojo4/dojo4/blob/master/docs/dojo4IP_legalese" target="_blank">https://github.com/dojo4/dojo4/blob/master/docs/dojo4IP_legalese</a>). It says that we absolutely own our IP and that we can use it again and again to do work for our clients. It says that we can release it as open source and that we can build upon what we’ve learned and developed in the past (including through client projects) to build more and even better things for ourselves and our clients.</p>
+
+<p>At first blush, this can sometimes be disconcerting for some clients. Our contracts also specify that dojo4 irrevocably and unconditionally assigns to the client all rights, titles, and interests worldwide to each and every deliverable that that client pays for. But this can sometimes cause misunderstanding since our IP is nested in most deliverables we produce.</p>
+
+<p>In a recent email exchange with a client, our CTO,<a href="http://http://dojo4.com/team/ara-t-howard">Ara Howard</a> explained his take on how this works:</p>
+
+<p><em>…it’s precisely because of the extreme expense of both development and testing of  critical web components that foundational tools like bootstrap (<a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com/</a>) and eric meyer’s reset
+(<a href="http://www.cssreset.com/scripts/eric-meyer-reset-css/" target="_blank">http://www.cssreset.com/scripts/eric-meyer-reset-css/</a>) are used on literally millions and millions of websites today.</em></p>
+
+<p><em>They are:</em></p>
+
+<p>*1. super expensive to create</p>
+<ol>
+  <li>super expensive to test</li>
+  <li>super expensive to maintain*</li>
+</ol>
+
+<p><em>This why technologists share, and share alike when we reach for off-the-shelf functionality needed across a broad spectrum of projects.</em></p>
+
+<p><em>Although we’re not a giant in the space, dojo4 has developed literally hundreds of tools that we’ve open sourced, shared, and rely on to execute in the most professional way for our clients: <a href="https://github.com/ahoward" target="_blank">https://github.com/ahoward</a>, <a href="http://dojo4.com/blog/imbed-for-android" target="_blank">http://dojo4.com/blog/imbed-for-android</a>, <a href="http://dojo4.com/blog/the-shadow-world-of-css-tables" target="_blank">http://dojo4.com/blog/the-shadow-world-of-css-tables</a>.</em></p>
+
+<p><em>etc.</em></p>
+
+<p><em>If we could not share these foundational tools between projects our estimates would need to increase by a factor of 5-10, and time to market by a similar amount.</em></p>
+
+<p><em>It’s because of this that we advise clients to let us use the mistakes and lessons from other difficult projects on theirs.</em></p>
+
+<p><em>We’re happy not to, but the expense and time increases required are simply not able to be saddled by a majority of projects.</em></p>
+
+<p>We believe that we all benefit from being able to own and share our IP freely.</p>
+
+<p><strong>Excerpted from our general services agreement (feel free to use in yours!):</strong></p>
+
+<p><em>dojo4 IP</em></p>
+
+<p>(a) Client acknowledges and agrees that (i) dojo4 shall retain all
+ownership and other rights in and to the dojo4 IP notwithstanding that
+any such dojo4 IP may become known to Client in connection with any
+Engagement Agreement or is integrated into or otherwise becomes a part
+of any of the Deliverables; (ii) Client shall have no ownership
+interest or title in or to dojo4 IP; and (iii) dojo4 shall be free to
+use any of the dojo4 IP in connection with performing services or
+producing deliverables for any third parties so long as it complies
+with its confidentiality obligations set forth elsewhere herein.</p>
+
+<p>(b) Client shall not (i) modify, create derivative works from,
+reverse‑­engi­neer, decompile, disassemble or otherwise translate
+dojo4 IP in any manner;  (ii) disclose or distribute copies of dojo4
+IP or any portion thereof to third parties except as permitted by the
+applicable Engagement Agreement; (iii) reproduce the dojo4 IP or any
+portion thereof in any form or medium, except as permitted by the
+applicable Engagement Agreement; (iv) use the dojo4 IP for any purpose
+not specifically authorized by the applicable Engagement Agreement or
+this Agreement; or (v) remove any copyright notices, trademarks or
+other proprietary legends appearing on or in the dojo4 IP.</p>
+
+<p>note: In summary, dojo4 may to select abstract parts of work performed
+to make open source when it makes sense, but will not make any part of
+any work performed for the Client open source without their
+permission. A significant amount of dojo4 projects, including work for
+hire, contain components of previously open sourced work.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  my religion is very simple. my religion is kindness.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Dalai_Lama" target="_blank">h.h. the 14th dalai lama</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

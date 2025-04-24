@@ -1,0 +1,313 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Saccharine Smiles and Fishnet Stockings</title>
+
+<meta property="og:title" content="Saccharine Smiles and Fishnet Stockings"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"saccharine-smiles-and-fishnet-stockings"}">
+    <meta property="site:path_info" content=""/saccharine-smiles-and-fishnet-stockings"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/saccharine-smiles-and-fishnet-stockings">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/saccharine-smiles-and-fishnet-stockings">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-10-27</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><small>“Sincerity - if you can fake that, you’ve got it made.” ― George Burns</small></p>
+
+<p><img src='/ro/dojo4/saccharine-smiles-and-fishnet-stockings/assets/b.jpeg' alt="IMG_2605.jpg" /> 
+When Shakespeare wrote “Merchant of Venice” more than five centuries ago, he knew well that what’s on the outside is rarely the whole story - and yes, he wrote “glisters” not “glitters”:</p>
+
+<p>All that glisters is not gold;</p>
+
+<p>Often have you heard that told:</p>
+
+<p>Many a man his life hath sold</p>
+
+<p>But my outside to behold:</p>
+
+<p>Gilded tombs do worms enfold.</p>
+
+<p>But for some reason we still seem obsessed with the external illusions in life - car, clothes, hairdos, zip code… And even as we challenge long standing social norms about race, sexual orientation, gender identification, discrimination, etc. we still spend a significant amount of time judging the proverbial book by its cover. And when I say “we,” I see myself in the picture.</p>
+
+<p>“Appearances matter.” “Never a second chance to make a first impression.”</p>
+
+<p>A couple of Fridays ago I got a chance to share personally with <a href="https://www.google.com/url?q=http://mindfullinvestors.com/who-we-are/&amp;sa=D&amp;usg=AFQjCNEH0EorUJ084k0Hh6q3VyO_8zEHoA">Stuart Rudick</a> of <a href="https://www.google.com/url?q=http://mindfullinvestors.com/&amp;sa=D&amp;usg=AFQjCNG6OIAhlbWlT7QRae7EoSpkTyBRCQ">Mindfull Investors</a>. He had taken a mountain bike ride with @drawohara and was in town to visit his daughter, a student at CU, where he too had graduated way back when bands still rocked Tulagis and alcohol flowed on the Hill.</p>
+
+<p>Not exactly sure where or how Ara and Stu first met, but Stu attended the <a href="https://www.google.com/url?q=http://en.wikipedia.org/wiki/Michael_Fitzpatrick_(musician)&amp;sa=D&amp;usg=AFQjCNHFNiYNY_fGXfe9SqJDmD1H3WeB1A">Michael Fitzpatrick</a> house concert, a burgeoning cultural aspect of @dojo4’s unique practice of business through meaningful work, doing cool shit that matters and honoring people in the process.</p>
+
+<p>I didn’t know who Stu was when I first met him, but he had two essential qualities I appreciate - he looked straight and clearly into my eyes when he spoke; he paid attention when he listened.</p>
+
+<p>Stu walked into dojo4 right before lunch on Friday; he had his dog with him, a cocker spaniel he “claimed” was his daughter’s. Friday lunch @dojo4 is the perfect time to be introduced to another evolving human. Before lunch, daily stand-up includes a community circle with a more personal question.</p>
+
+<p>This is a weekly acknowledgement - something that gives each of us a chance to pause and think about ourselves, our loved ones, each other, our work, our community. A clap and a bow. One minute of silent contemplation. For those who have never meditated (or like to talk like I do), one minute of silence gives a much fuller sense of the breadth of 60 seconds.</p>
+
+<p>Close your eyes and your mouth for a minute. Check it out. Notice your breath.</p>
+
+<p>@coreykohn had the question: what is the best/worst, easiest/hardest thing for you about community?</p>
+
+<p>“My selfishness.”</p>
+
+<p>I forget exactly what Stu said though I knew he felt at home, welcomed in our community.</p>
+
+<p>We ate middle eastern. We chatted. We knew some similar people, Miami transplants to SF, one a great friend who had recently moved back to Boulder. Something about who he was, what he projected gave me the sense that I wanted to know more. Ara had said he should check out my home invited him up to see my home and he came.</p>
+
+<p>I showed him around, immensely proud of what I have built, but open with him about how the parts “unfinished” greatly impact my love relationship, exacerbate some challenging feelings with neighbors not loving our shipping container meets recycled barn aesthetic.</p>
+
+<p><img src='/ro/dojo4/saccharine-smiles-and-fishnet-stockings/assets/c.jpeg' alt="10390265_10152283620719601_5530823275928211179_n.jpg" /> 
+In all fairness I’ve done no landscaping, scraps of cut out container, weeds and construction detritus litter the yard, and a 20’ Hyundai rusting shipping container graffitied with “Love Thy Neighbor” facing the street sits where a driveway once was. It’s waiting to become part of a garage/workshop.</p>
+
+<p>When I tell people about this, I say the outside still looks like West, West Virginia.</p>
+
+<p>Stu had another quality in the best longstanding relationships I’ve had and the ones I’ve created recently - no bullshit, self-effacing, direct and loving - even when that means honest feedback. He got close to me, looked straight into me and said: “Mark, your house is a metaphor. You don’t see it. You must.”</p>
+
+<p>“This place is so damn amazing on the inside. It’s you - creative and bold and beautiful. It’s what you clearly care the most about - what’s on the inside. But the outside is your shadow self. It’s this buffer you use to keep some from loving you in ways you want. Soften that a little. See what happens.” I don’t know about you, but this IS the communication I want.</p>
+
+<p>I told him it was a filter, a filter I’d used effectively throughout my life. That the people who were willing to get beyond my sometimes gruff exterior were the ones I would more likely want to engage with.</p>
+
+<p>“I get that,” he said. “But others who could really benefit from knowing you, might not be able to.”</p>
+
+<p>Thank you, Stu. I’m thinking about that pretty deeply, and I might even take a shave.</p>
+
+<p>If you’re interested in how fishnet stockings fit in this story, authentic communication, building with shipping containers, or building kindness, empathy and meaning in your organizations, get in touch <a href="mailto:mark@dojo4.com" target="_blank">mark@dojo4.com</a>.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  the only thing that you can do is do your best.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Iggy_Pop" target="_blank">iggy pop</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

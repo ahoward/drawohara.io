@@ -1,0 +1,297 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>grief as an entrepreneurial asset</title>
+
+<meta property="og:title" content="grief as an entrepreneurial asset"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"grief-as-an-entrepreneurial-asset"}">
+    <meta property="site:path_info" content=""/grief-as-an-entrepreneurial-asset"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/grief-as-an-entrepreneurial-asset">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/grief-as-an-entrepreneurial-asset">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-12-07</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/grief-as-an-entrepreneurial-asset/assets/b.jpeg' alt="goodgrief.jpg" /></p>
+
+<p>As entrepreneurs we are often expected to tell a seamless and aggressively positive story about the dauntless progress and profit that our businesses are making and the unparalleled “solutions” we’re offering. “We’re killing it!” There should be no chink in the armor, not a moment of visible doubt. And there certainly shouldn’t be any breakdown into utter despair and grief.</p>
+
+<p>Yet, we run in our businesses in a world where every day people are being gunned down, exploded in the street, spurring on destructive cycles of hatred and confusion. We hear about both specific and general instances of environmental degradation on an unfathomable and possibly irreversible scale; people living in such systemic and wretched poverty that they are reduced to animal conditions. The news brings us an unceasing narrative of illnesses, natural disaster, and social disfunction reaping inconceivable levels of societal and personal loss. Furthermore, we are living with our own personal ups and downs, transitions, heartbreaks and losses.</p>
+
+<p>Through all this we are working hard, either not letting ourselves feel anything as destabilizing as grief, or at least not showing it. Letting that much be felt, or be shown being felt, is too uncontrollable, too uncomfortable, too vast. It’s easier to convey confidence and accomplishment by projecting a sense of comfort and ease. In this way, <a href="http://www.theguardian.com/sustainable-business/2014/oct/02/grieving-pathway-destructive-economic-system">disassociation and numbness become the standard and we bury our grief deep within our subconscious</a>.</p>
+
+<p>However, that <strong>dissociation is the mark of a lost opportunity. We rob ourselves of the ability to see things clearly, to have insight and to act effectively with clear intention</strong>. By not feeling things we make ourselves numb to real risks and dangers, and cloud our awareness of what is really at stake. Rather than avoiding or hiding the raw grief that arises as part of living in our difficult world, going right into it may be the most helpful thing we can do - not only for ourselves but for <a href="http://dojo4
+com/blog/program-like-you-give-a-damn">ensuring that our businesses are providing solutions to real problems that truly matter</a>.</p>
+
+<blockquote>
+  <p><a href="http://www.yesmagazine.org/issues/climate-solutions/the-greatest-danger">“In our culture, despair is feared and resisted because it represents a loss of control. We’re ashamed of it and dodge it by demanding instant solutions to problems. We seek the quick fix. This cultural habit obscures our perceptions and fosters a dangerous innocence of the real world.”</a> ~<a href="http://www.joannamacy.net/aboutjoannamacy.html">Joanna Macy</a></p>
+</blockquote>
+
+<p>Here are a few reasons why good grieving is actually a powerful skill for entrepreneurs to cultivate:</p>
+
+<ol>
+  <li>
+    <p><strong>Connection</strong>. For entrepreneurs, relationships are everything and genuine connection is powerful. Allowing ourselves to feel grief enhances our ability to empathize with the suffering and circumstances of others, which is a precondition for deep connections - be they with family, team members, colleagues, clients or investors.</p>
+  </li>
+  <li>
+    <p><strong>Innovation</strong>. At its best our drive to innovate is fueled by real insight about what the world needs most and how we can best deliver that. From the acknowledgment of pain comes clear insight and a transformation in the way we see and understand the world around us.</p>
+
+    <blockquote>
+      <p><a href="https://www.brainpickings.org/2015/03/10/rilke-letters-to-a-young-poet-sadness/">Great sadnesses…they are the moments when     something new has entered into us.</a> ~ Rainer Maria Rilke</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>Purpose</strong>. When it feels like all is lost, whatever is most important rises to the top. How often do we hear the story of <a href="http://news.nationalgeographic.com/energy/2015/10/151006-energy-drink-billionaire-wants-to-power-homes-with-bikes/">the successful business mogul who gives it all up because they want to do something meaningful</a>? Many entrepreneurs go through their whole careers denying themselves the opportunity to actually feel the anguish in the world around them, and don’t get to do anything they actually care about until they reach some kind of crisis. By being available to that anguish we are empowering ourselves to lead purposeful organizations throughout our careers.</p>
+  </li>
+</ol>
+
+<p>There are, of course, many reasons why we don’t give ourselves up to grief - foremost of which is probably that it hurts. My own experience of heartbreak in its purest form is not lugubrious or depressive, but actually has a quality of cutting through distraction and superficiality. Clearly, we can’t very well walk around sobbing all the time, however we can acknowledge that this sadness is a sane reaction to a distressed world. We might be afraid that we’ll be overcome with the sheer force and vastness of our grief, but when we stop avoiding it we can actually receive its gifts. We <em>can</em> develop the capacity to grieve well, and to allow that grief to support us in our life’s work.</p>
+
+<blockquote>
+  <p><a href="http://peacethroughgrief.com/tag/thich-nhat-hanh/">“Once we understand the art of suffering, we will suffer less.”</a> ~Thich Nhat Hanh</p>
+</blockquote>
+
+<p><small><em>Many thanks for the inspiration for this post to <a href="http://workthatreconnects.org/">Joanna Macy</a>, the mistress of generative grief, and good, late night conversations with <a href="http://www.a-new-leaf.ca/New_Leaf/Bio.html">Sera Thompson</a>, <a href="http://www.mindful.org/about-mindful/">Claudia Chender</a> and <a href="http://www.goodworkcoaching.com/about-michael/">Michael Rich</a>. And thanks, always, to <a href="http://dojo4.com/team/emily-utz">Emily Utz</a> for her brilliant editing insights.</em></small></p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  life is a constant process of dying.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Arthur_Schopenhauer" target="_blank">arthur schopenhauer</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

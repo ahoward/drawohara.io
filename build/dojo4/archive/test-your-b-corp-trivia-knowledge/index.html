@@ -1,0 +1,349 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Test Your B Corp Trivia Knowledge</title>
+
+<meta property="og:title" content="Test Your B Corp Trivia Knowledge"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"test-your-b-corp-trivia-knowledge"}">
+    <meta property="site:path_info" content=""/test-your-b-corp-trivia-knowledge"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/test-your-b-corp-trivia-knowledge">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/test-your-b-corp-trivia-knowledge">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-06-25</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Last week DOJO4 hosted <a href="https://www.bcorporation.net/what-are-b-corps/the-non-profit-behind-b-corps">B Lab</a>’s community development maven, Kara Peck, to test our B Corp movement trivia knowledge.  How many can you get right? (More than Olive the Dog, we hope).</p>
+
+<p><img src='/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/b.jpeg' alt="BCorpTriviaNight.jpg" /></p>
+
+<p><strong>QUESTIONS</strong></p>
+
+<ol>
+  <li>
+    <p>How many B Corps are there around the world? In Colorado?</p>
+  </li>
+  <li>
+    <p>What is the difference between a Certified B Corp and Benefit Corporation?</p>
+  </li>
+  <li>
+    <p>What three things does a company have to do to get certified?</p>
+  </li>
+  <li>
+    <p>What are the main topics covered in the B Impact Assessment?</p>
+  </li>
+  <li>
+    <p>How often does a B Corp have to renew their certification?</p>
+  </li>
+  <li>
+    <p>This local spicy chai tea producer holds a yoga and music festival each year.</p>
+  </li>
+  <li>
+    <p>What Colorado B Corp celebrates their employee owners 5-year anniversary by giving them a paid trip to Belgium?</p>
+  </li>
+  <li>
+    <p>This B Corp is located in Boulder, on the corner of Broadway and Walnut.  They offer a co-working space for companies dedicated to having a positive social and environmental impact in the world, including B Labs Colorado. What is their name?</p>
+  </li>
+  <li>
+    <p>Which two Colorado B Corps just celebrated their 10 year anniversaries - hint, you might find one on your roof, and one on your doorstep.</p>
+  </li>
+  <li>
+    <p>What B Corp recently re-located to Colorado from California, and sells socks and t-shirts in Whole Foods?</p>
+  </li>
+  <li>
+    <p>Name one of the three Certified B Corp law firms in Colorado.</p>
+  </li>
+  <li>
+    <p>Name a Colorado B Corp that certified in 2015.</p>
+  </li>
+  <li>
+    <p>This B corp sells sturdy comfortable shoes that certain types of professionals swear by: nurses, hair stylists, waiters, chefs? What is the name of this company?</p>
+  </li>
+</ol>
+
+<p><img src='/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/c.jpeg' alt="b-the-change.jpg" /></p>
+
+<p><strong>ANSWERS</strong></p>
+
+<ol>
+  <li>
+    <p>1300 / 55.</p>
+  </li>
+  <li>
+    <p>Here’s <a href="http://www.nonprofitlawblog.com/what-it-means-to-be-a-b-b-corp-v-benefit-corporation/">a good explanation</a> of how the two differ.</p>
+  </li>
+  <li>
+    <p>Performance, Accountability (legal), Transparency.</p>
+  </li>
+  <li>
+    <p>Governance, Workers, Community, Environment, Impact Biz model.</p>
+  </li>
+  <li>
+    <p>Every 2 years.</p>
+  </li>
+  <li>
+    <p><a href="http://bhaktichai.com/">Bhakti Chai</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://www.newbelgium.com/">New Belgium Brewing</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://www.impacthubboulder.com/">Impact HUB Boulder</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://www.namastesolar.com/">Namaste Solar</a> and <a href="https://colorado.doortodoororganics.com/shop-good-food">Door to Door Organics</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://www.wearpact.com/">PACT Apparel</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://www.jrwiener.com/about-jason/">Jason Wiener PBC</a>, <a href="http://www.moyewhite.com/default.aspx">Moye White</a>, <a href="http://www.bluedotlaw.com/">Blue Dot Advocates</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://dojo4.com/">DOJO4</a>, <a href="http://conservationimpact.com/">Conservation Impact</a>, <a href="http://">Nava Real Estate</a>, <a href="http://purelyelizabeth.com/">Purely Elizabeth</a>, <a href="[http://www.jrwiener.com/about-jason/](http://)">Jason Wiener PBC</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.dansko.com/">Dansko</a>!</p>
+  </li>
+</ol>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  the universe can only know itself by expressing itself fully in a computationally irreducible way.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Bernardo_Kastrup" target="_blank">bernardo kastrop</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

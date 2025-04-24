@@ -1,0 +1,84 @@
+#!/usr/bin/env ruby
+
+require 'httparty'
+require 'uri' # Used for encoding
+
+# --- Configuration ---
+GITHUB_API_BASE = "https://api.github.com"
+EXPECTED_FORMAT = "owner/repo#issue_number"
+TOKEN_ENV_VAR = 'GITHUB_TOKEN'
+USER_AGENT = "Ruby-GitHub-Issue-Ripper-Script" # Good practice for GitHub API
+
+# --- Helper Functions ---
+def print_usage_and_exit
+  abort "Usage: #{$PROGRAM_NAME} #{EXPECTED_FORMAT} (e.g., octocat/Spoon-Knife#1)"
+end
+
+def print_error_and_exit(message)
+  abort "Error: #{message}"
+end
+
+# --- Argument Parsing ---
+print_usage_and_exit if ARGV.empty?
+
+issue_ref = ARGV[0]
+match = issue_ref.match(%r{^([^/]+)/([^#]+)#(\d+)$})
+
+unless match
+  print_error_and_exit "Invalid argument format. Expected: #{EXPECTED_FORMAT}"
+end
+
+owner, repo_name, issue_number = match.captures
+
+# --- Environment Variable Check ---
+github_token = ENV[TOKEN_ENV_VAR]
+unless github_token && !github_token.empty?
+  print_error_and_exit "#{TOKEN_ENV_VAR} environment variable not set or empty. Please export your GitHub Personal Access Token."
+end
+
+# --- API Request ---
+api_url = "#{GITHUB_API_BASE}/repos/#{URI.encode_www_form_component(owner)}/#{URI.encode_www_form_component(repo_name)}/issues/#{URI.encode_www_form_component(issue_number)}"
+
+headers = {
+  "Authorization" => "Bearer #{github_token}",
+  "Accept" => "application/vnd.github.v3+json", # Standard API version header
+  "User-Agent" => USER_AGENT
+}
+
+begin
+  response = HTTParty.get(api_url, headers: headers, format: :json) # Specify format for clarity
+
+  # --- Response Handling ---
+  unless response.success?
+    error_message = "Failed to fetch issue (HTTP #{response.code})."
+    if response.parsed_response && response.parsed_response['message']
+       # Append GitHub's error message if available
+      error_message += " GitHub API message: #{response.parsed_response['message']}"
+       # Check for documentation_url for more help
+       if response.parsed_response['documentation_url']
+          error_message += " See: #{response.parsed_response['documentation_url']}"
+       end
+    elsif response.body && !response.body.empty?
+        # Fallback to raw body if parsing failed or message wasn't present
+        error_message += " Response body: #{response.body.inspect}" # Inspect to handle potential non-string body
+    end
+    print_error_and_exit error_message
+  end
+
+  issue_data = response.parsed_response
+
+  # Check if the 'body' key exists
+  unless issue_data.key?('body')
+     print_error_and_exit "API response received successfully, but did not contain a 'body' field. Response: #{issue_data.inspect}"
+  end
+
+  # Print the markdown body (can be nil or empty string, which is valid)
+  puts issue_data['body']
+
+rescue HTTParty::Error => e
+  # Handle HTTParty-specific errors (like network issues, parsing errors)
+  print_error_and_exit "HTTParty request failed: #{e.message}"
+rescue StandardError => e
+  # Handle other potential errors during the request
+  print_error_and_exit "An unexpected error occurred: #{e.class} - #{e.message}\n#{e.backtrace.join("\n\t")}"
+end

@@ -1,0 +1,55 @@
+<%
+  site        = 'https://drawohara.io'
+  title       = '@drawohara'
+  description = 'my insides are made out of outside. i bite.'
+  image       = 'https://drawohara.io/media/tauntaun.jpg'
+  width       = nil
+  type        = nil
+
+  if data && data.respond_to?(:get)
+    title       = data.get(:og, :title) || data.get(:title) || 'nothing to see here.'
+    description = data.get(:og, :description) || data.get(:description) || 'move along.'
+
+    image       = data.get(:og, :image, :url) || data.get(:og, :image) || data.get(:image) || image
+
+    width = data.get(:og, :image, :width) rescue nil
+    type = data.get(:og, :image, :type) rescue nil
+  end
+
+  absolutify = proc{|url| url.index('://') ? url : "#{ site }#{ ('/' + url).squeeze('/') }"}
+
+  img = absolutify[image]
+
+  unless type
+    ext = img.split('.', 2).last
+
+    case ext
+      when /jpg|jpeg/
+        type = 'image/jpeg'
+      when /png/
+        type = 'image/png'
+      when /gif/
+        type = 'image/gif'
+    end
+  end
+
+  image =
+    Map.new(
+      url: img,
+      width: width,
+      type: type
+    )
+%>
+<title><%= title %></title>
+
+<meta property="og:title" content="<%= title %>"/>
+<meta property="og:description" content="<%= description %>" />
+<meta property="og:image" content="<%= image.url %>" />
+
+<% if image.width %>
+  <meta property="og:image:width" content="<%= image.width %>" />
+<% end %>
+
+<% if image.type %>
+  <meta property="og:image:type" content="<%= image.type %>" />
+<% end %>

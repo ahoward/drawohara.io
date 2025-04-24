@@ -1,0 +1,289 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Move To South Africa For The Great Tech Jobs</title>
+
+<meta property="og:title" content="Move To South Africa For The Great Tech Jobs"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"move-to-south-africa-for-the-great-tech-jobs"}">
+    <meta property="site:path_info" content=""/move-to-south-africa-for-the-great-tech-jobs"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/move-to-south-africa-for-the-great-tech-jobs">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/move-to-south-africa-for-the-great-tech-jobs">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-02-14</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>I had a super fun conversation last week with <a href="https://twitter.com/kdavies24">Keith Davies</a>, Head of Finance, Risk, and Analytics at <a href="http://www.ilovezoona.com/">Zoona Africa</a>, which is a mobile payments platform committed unlocking the full potential of the African continent.</p>
+
+<p><img src='/ro/dojo4/move-to-south-africa-for-the-great-tech-jobs/assets/home2.jpg' alt="" /></p>
+
+<p>I was extremely fortunate to get to know the CEO of Zoona, <a href="https://twitter.com/zoonamike">Mike Quinn</a>, and their Head of Talent, <a href="https://twitter.com/lelemba">Lelemba Phiri</a>, at the <a href="http://girleffectaccelerator.com/">the world’s first accelerator dedicated adolescent girls</a>, and I can say that their company represents a best-in-class effort to use technology and solid business principles to make a positive impact on a population that has real demand for it.</p>
+
+<p>Keith and I talked about all manner of things related to building teams, and hiring good people, which is what led me to write this post: they are looking for a top-notch individual to lead a unique opportunity to do data science on an exploding market in an exciting place, and I think DOJO4’s network might reach this person.</p>
+
+<p>So, as promised, here is Keith’s summary, verbatim, about an opportunity to do meaningful work with great people in Cape Town, South Africa.</p>
+
+<p><em>Please share with great people!</em></p>
+
+<hr />
+
+<p>Zoona (<a href="http://www.ilovezoona.com" target="_blank">www.ilovezoona.com</a>) is a growing African payments business with a passion for helping businesses grow by delivering solutions to Micro &amp; Small Enterprises (MSEs). In countries like Zambia, businesses of all sizes struggle to grow because of challenges transacting in cash, low access to affordable finance and poor and unreliable data. By combining a set of affordable and accessible working capital finance products with a real-time, electronic payments platform, customers are able to transact in an easy, quick and safe way.</p>
+
+<p>Zoona has a sustainable business model and is backed by quality, international investors. We have grown to process millions of dollars in payment value each month in pursuit of our vision of Cashless Growing Businesses…everywhere!</p>
+
+<p>Here are some videos to help make this more tangible</p>
+
+<ul>
+  <li><a href="http://vimeo.com/114721782" target="_blank">http://vimeo.com/114721782</a></li>
+  <li><a href="https://www.youtube.com/watch?v=IrpO-uGz_XE" target="_blank">https://www.youtube.com/watch?v=IrpO-uGz_XE</a></li>
+</ul>
+
+<p>From a data perspective, Zoona is in the enviable position of gathering data on sectors of society where there is very little formal data.  We can therefore use this data to improve our products and services and thereby build financial inclusion (which is considered to be one of the most impactful poverty relief interventions) in these communities.  We have built a data team and proved the value that data can bring to both our business and our customers.  We are now looking to add a strong data scientist to our team that will lead in taking data insights and predictive capabilities to the forefront of our business.  The right person will have deep technical skills and have a burning desire to leverage their skills in a new, socially impactful way.</p>
+
+<p>The position will be based in Cape Town at the tip of South Africa.  Cape Town is a beautiful, cosmopolitan city, with myriad activities to choose from, from great night life to hiking, surfing, sailing, kite-boarding, mountain biking trail running, golf etc and a climate to match.  That is not to even mention the world class (and cheap) food and wine in and around the city.  Cape Town is also emerging as a tech hub with a vibrant startup community. By way of example, Amazon AWS has emerged from and is based out of Cape Town.</p>
+
+<p>This is an incredibly exciting opportunity for anybody who is looking to utilise their cutting edge skills in an industry that is making great strides at sustainablly alleviating poverty.</p>
+
+<p>If this sounds interesting to you, please get in touch with me at <a href="mailto:keith@zoona.co.za" target="_blank">keith@zoona.co.za</a></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  every individual matters. every individual has a role to play. every
+individual makes a difference.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Jane_Goodall" target="_blank">jane goodall</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

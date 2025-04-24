@@ -1,0 +1,292 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Fancy Shops Harm Start Ups</title>
+
+<meta property="og:title" content="Fancy Shops Harm Start Ups"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"fancy-shops-harm-start-ups"}">
+    <meta property="site:path_info" content=""/fancy-shops-harm-start-ups"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/fancy-shops-harm-start-ups">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/fancy-shops-harm-start-ups">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2014-12-12</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>i wanted to share a little snippet from a client that landed in my inbox today:</p>
+
+<p><em>“after six months with our fancy engineering and design shops, I decided to cut them loose and build my own team through a trusted network of independent consultants. i’ve worked with them all in the past and just think we can build faster, with higher quality, and for less money. These fancy shops just had too much overhead. like we were paying for a “business relationship manager”, who essentially picked up the phone to give me updates. uh…”</em></p>
+
+<p>we at dojo4 hear this over, and over, and over.   and over.</p>
+
+<p>so many times we’ve talked with clients, given them a solid quote, and seen them get wooed by talk of fancy processes, doubling up on developers, or how test-driven scala makes unicorns poop rainbows out of which mobile apps sprout.  a year later they always come back.  despite a bid of 70-100k they have always spent 300k. this is a magic number in software and yes, it <em>always</em> at least 300k.  in return these clients have pile of software poop, not great products.</p>
+
+<p>it’s sad that this is normal in our industry: people are either drawn to the lowball bids because they don’t care about quality, or they are drawn to the the highball bids that decorate solid software with massive overhead on invoices because ‘it has to be better if i pay more, right?’  the middle path bids–the ones that can produce quality software for reasonable amounts of money–are simply ignored. this is a common consumer behavior in many markets and, although unfortunate in those domains, it’s not fatal. in software this kind of cost/benefit analysis is deadly to the consumer because:</p>
+
+<ul>
+  <li>
+    <p>software either works, or it doesn’t.  going cheap makes you risk buying a pile of nothing.</p>
+  </li>
+  <li>
+    <p>process doesn’t make better software.  going expensive funds many things, but making better software isn’t one of them.</p>
+  </li>
+</ul>
+
+<p>in case #1 the consumer pays money and has nothing.  in the second case the consumer pays way too much for what they needed and spends too long getting there.</p>
+
+<p>in engineering, constraints are <em>always</em> a good thing.</p>
+
+<p>constraints on money are no different, they are a good thing too. they let people focus on what matters and cut what doesn’t.  too much money wastes time: it let’s people sit around in meetings debating whether or not their pet feature should be in or out.  too much money let’s engineers build auxiliary code that adds nothing to the business value and detracts from the codebase’s agility.  the way to know the right price is simply to aim for a price that is:</p>
+
+<p>“the least amount possible, but no less.”</p>
+
+<p>if you have a good idea, enough great engineers, and just enough money you will hit your target sooner than people that have more of all three.</p>
+
+<hr />
+
+<p>p.s. if anyone would like direct evidence of this please contact me. i’m happy to connect you with entrepreneurs that can attest <em>personally</em> to this syndrome–and how dojo4 has bailed them out.  as you can imagine, no one is proud of having gone through this experience and so i’ve left the victims un-named ;-)</p>
+
+<p>p.s.s. i got some great comments about this post from facebook:</p>
+
+<p>“very insightful. i concur 100%.  one other thing to note…even if you do all these things and have built the software properly, things still have a high probability to not work out sadly. market fit, timing, macro trends, micro trends can get in the way. if you have bad software and your business is built around software you have 0 chance.” - <a href="https://twitter.com/kcbigring" target="_blank">https://twitter.com/kcbigring</a></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  i&#39;m not in this world to live up to your expectations and you&#39;re not in this world to live up to mine.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Iggy_Pop" target="_blank">iggy pop</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

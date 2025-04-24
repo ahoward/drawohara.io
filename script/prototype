@@ -1,0 +1,32 @@
+#! /usr/bin/env ruby
+
+script do
+  param :name, :n
+  param :type, :t
+
+  def run
+    name = @params.fetch(:name){ ARGV.shift || help! }
+    type = @params.fetch(:type){ ARGV.shift || 'io' }
+
+    slug = Slug.for(name)
+
+    src = "./public/ro/prototypes/#{ type }"
+    dst = "./public/ro/#{ type }/#{ slug }"
+
+    FileUtils.cp_r(src, dst)
+
+    exec "vim -p #{ dst }/*"
+  end
+end
+
+
+BEGIN {
+  require 'fileutils'
+  require_relative '../lib/script.rb'
+  require_relative '../lib/slug.rb'
+
+  bindir = File.expand_path(__dir__)
+  root = File.dirname(bindir)
+
+  Dir.chdir(root)
+}

@@ -1,0 +1,374 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Tips for MongoDB Migrations in Rails</title>
+
+<meta property="og:title" content="Tips for MongoDB Migrations in Rails"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"tips-for-mongodb-migrations-in-rails"}">
+    <meta property="site:path_info" content=""/tips-for-mongodb-migrations-in-rails"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/tips-for-mongodb-migrations-in-rails">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/tips-for-mongodb-migrations-in-rails">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2011-12-27</em>
+<br>
+<br>
+<p>I wanted to share a quick and easy method for testing Rails migrations when using the MongoDB database.  The flexibility of mongo and ruby makes this pretty straightforward. In this example, we'll be renaming a field in our example "books" collection from "isbn" to "book_number". This is a pretty common type of migration and once you get the hang of this simple case, more complex migrations follow the same pattern. First, lets generate our timestamped migration script boilerplate.</p>
+<pre><code>rails generate migration rename_isbn_to_book_number
+</code>
+</pre>
+<p>Then we'll edit the file that generated under <code>db/migrate</code>.  We'll split our code up into several sections as follows.</p>
+<ol>
+<li>Some class constants shared by all methods</li>
+<li>The <code>self.up</code> method that does the forward migration</li>
+<li>A helper method to set up some sample data to test forward migration</li>
+<li>The <code>self.down</code> method that does the rollback</li>
+<li>A helper method to set up some sample data (if needed) to test rollback</li>
+</ol>
+<p>First, just define some constants that our methods will use.  We store the mongo update options hash <code>MultiUpdate</code> for convenience since most migration update operations want upsert false (don't create any new documents), multi true (update all matching documents), and safe true.</p>
+<p>Then we also define a constant for the collection name.  For the real migration, the collection is "books", but for testing, we'll create a new collection called "test_books_migration" as we develop our code.</p>
+<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Final production code
+  Collection = db.collection("test_books_migration") #Just for testing on the console
+  def up
+  end
+
+  def down
+  end
+end
+</code>
+</pre>
+<p>OK, that's our initial boilerplate.  The next step is to take a backup of our development database if there's any data in there we don't want to accidentally wreck.  Then we start coding a little helper method to populate our test collection with fake documents resembling what we expect to see in production, but only focusing on the fields relevant to the migration. Add this method to your migration class.</p>
+<pre><code>def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+end
+
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+</code>
+</pre>
+<p>This will create 3 dummy documents we can use for testing.  We are putting this code in a method so it's easy to re-run as we tweak and test our migration code.  For complex migrations, many rounds of tweaking to get all the edge cases might be needed.</p>
+<p>We can now fire up a rails console and run this code by copying and pasting the 2 class constants and the mock_data_for_testing_up method into the console and then running mock_data_for_testing_up</p>
+<pre><code>$ bundle exec rails console
+Loading development environment (Rails 3.1.1)
+irb(main):001:0&gt; #Paste the following into the console
+MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+Collection = db.collection("test_books_migration") #Just for testing on the console
+def mock_data_for_testing_up
+  3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  Collection.find({}).each {|_| puts _}
+end
+def show_collection
+  Collection.find({}).each {|_| puts _}
+end
+irb(main):008:0&gt; mock_data_for_testing_up
+mock_data_for_testing_up
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"0", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000001')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"1", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000002')}])
+MONGODB app_development['test_books_migration'].insert([{"isbn"=&gt;"2", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000003')}])
+irb(main):009:0&gt; show_collection
+MONGODB app_development['test_books_migration'].find({})
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000001'), "isbn"=&gt;"0"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000002'), "isbn"=&gt;"1"}
+{"_id"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000003'), "isbn"=&gt;"2"}
+=&gt; nil
+</code>
+</pre>
+<p>So now we have a separate, well-understood test collection ready to test our simple migration.  Let's code up our <code>up</code> method. To do our migration.</p>
+<pre><code>def up
+  #We want to rename the book.isbn field to book.book_number
+  Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+    update_op = {
+      "$unset" =&gt; {"isbn" =&gt; 1},
+      "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+    }
+  Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+end
+</code>
+</pre>
+<p>We can paste that into the console and run it to test our migration.  We can verify the results with <code>show_colletion</code>.  If we want to test other records for the rollback, we can create a <code>mock_data_for_testing_down</code> method.</p>
+<p>This should give you a really quick way to experiment and get your migration code working.  Mongo has some advanced query and modify capabilities that can do amazing things, and an easy way to do some trial and error is handy.  If you make a mess of your test data, you can use <code>Collection.drop</code> to get a clean slate. Here's the final migration code for reference. <strong>Don't forget</strong> to remove the test collection constant and drop the test collection from your database when your ready to start running your code for real with <code>rake db:migrate</code>.</p>
+<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration
+  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}
+  Collection = db.collection("books") #Final production code
+
+  def up
+    #We want to rename the book.isbn field to book.book_number
+    Collection.find({"isbn" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"isbn" =&gt; 1},
+        "$set" =&gt; {"book_number" =&gt; book["isbn"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  def down
+    #We want to rename the book.book_number field to book.isbn
+    Collection.find({"book_number" =&gt; {"$exists" =&gt; 1}}).each do |book|
+      update_op = {
+        "$unset" =&gt; {"book_number" =&gt; 1},
+        "$set" =&gt; {"isbn" =&gt; book["book_number"]}
+      }
+      Collection.update({"_id" =&gt; book["_id"]}, update_op, MultiUpdate)
+    end
+  end
+
+  #These methods are not called by the migration.  Just for manual testing
+  #by copy/pasting into the console
+  #To test (by copy/pasting from here to the console)
+  #1. Set the MultiUpdate constant. Adjust "Collection" to be a test collection
+  #2. Copy/paste the 2 methods below
+  #2. Run mock_data_for_testing_up
+  #3. Run the body of self.up
+  #3b. Optionally run the body of self.up again to make sure it is idempotent
+  def mock_data_for_testing_up
+    3.times {|number| Collection.insert({"isbn" =&gt; "#{number}"})}
+  end
+
+  def show_collection
+    Collection.find({}).each {|_| puts _}
+  end
+end
+</code>
+</pre>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  life is rough so you gotta be tough.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Johnny_Cash" target="_blank">johnny cash</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

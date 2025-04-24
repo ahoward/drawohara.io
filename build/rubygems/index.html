@@ -1,0 +1,930 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>lotta rubygems...🦒</title>
+
+<meta property="og:title" content="lotta rubygems...🦒"/>
+<meta property="og:description" content="like a tall, code whacking giraffe" />
+<meta property="og:image" content="https://drawohara.io/media/giraffe.jpeg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/rubygems"">
+    <meta property="site:params" content="{"ext":null}">
+    <meta property="site:path_info" content=""/rubygems"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/rubygems">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/rubygems">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <p>
+i have written a bunch of software over the years.
+<p>
+
+<p>
+apparently, some of it <a href="https://github.com/ahoward">(there is a bunch more)</a> has been downloaded about <strong>336,139,892</strong> times.
+</p>
+
+<p>
+here's a quick summary:
+</p>
+
+<dl>
+
+  <dt>
+    <a href="https://rubygems.org/gems/open4">https://rubygems.org/gems/open4</a>
+  </dt>
+  <dd>
+    <strong>110,599,114</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/systemu">https://rubygems.org/gems/systemu</a>
+  </dt>
+  <dd>
+    <strong>89,923,675</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/macaddr">https://rubygems.org/gems/macaddr</a>
+  </dt>
+  <dd>
+    <strong>62,388,316</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/options">https://rubygems.org/gems/options</a>
+  </dt>
+  <dd>
+    <strong>15,099,834</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/fattr">https://rubygems.org/gems/fattr</a>
+  </dt>
+  <dd>
+    <strong>14,897,651</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/session">https://rubygems.org/gems/session</a>
+  </dt>
+  <dd>
+    <strong>10,795,336</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/map">https://rubygems.org/gems/map</a>
+  </dt>
+  <dd>
+    <strong>5,724,099</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/mongoid-grid_fs">https://rubygems.org/gems/mongoid-grid_fs</a>
+  </dt>
+  <dd>
+    <strong>4,601,112</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/main">https://rubygems.org/gems/main</a>
+  </dt>
+  <dd>
+    <strong>4,213,524</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/arrayfields">https://rubygems.org/gems/arrayfields</a>
+  </dt>
+  <dd>
+    <strong>4,156,441</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rubyforge">https://rubygems.org/gems/rubyforge</a>
+  </dt>
+  <dd>
+    <strong>3,022,654</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/lockfile">https://rubygems.org/gems/lockfile</a>
+  </dt>
+  <dd>
+    <strong>2,863,269</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/orderedhash">https://rubygems.org/gems/orderedhash</a>
+  </dt>
+  <dd>
+    <strong>2,516,801</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/configuration">https://rubygems.org/gems/configuration</a>
+  </dt>
+  <dd>
+    <strong>1,485,395</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/sekrets">https://rubygems.org/gems/sekrets</a>
+  </dt>
+  <dd>
+    <strong>578,562</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/coerce">https://rubygems.org/gems/coerce</a>
+  </dt>
+  <dd>
+    <strong>574,970</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/attributes">https://rubygems.org/gems/attributes</a>
+  </dt>
+  <dd>
+    <strong>359,308</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/dike">https://rubygems.org/gems/dike</a>
+  </dt>
+  <dd>
+    <strong>309,922</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rails_default_url_options">https://rubygems.org/gems/rails_default_url_options</a>
+  </dt>
+  <dd>
+    <strong>194,343</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rails_current">https://rubygems.org/gems/rails_current</a>
+  </dt>
+  <dd>
+    <strong>193,920</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rails_helper">https://rubygems.org/gems/rails_helper</a>
+  </dt>
+  <dd>
+    <strong>164,819</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/tagz">https://rubygems.org/gems/tagz</a>
+  </dt>
+  <dd>
+    <strong>128,028</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/dao">https://rubygems.org/gems/dao</a>
+  </dt>
+  <dd>
+    <strong>88,418</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/terminator">https://rubygems.org/gems/terminator</a>
+  </dt>
+  <dd>
+    <strong>69,516</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rails_nav">https://rubygems.org/gems/rails_nav</a>
+  </dt>
+  <dd>
+    <strong>68,548</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/nmap">https://rubygems.org/gems/nmap</a>
+  </dt>
+  <dd>
+    <strong>60,983</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/slave">https://rubygems.org/gems/slave</a>
+  </dt>
+  <dd>
+    <strong>58,649</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/ro">https://rubygems.org/gems/ro</a>
+  </dt>
+  <dd>
+    <strong>50,922</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/forkoff">https://rubygems.org/gems/forkoff</a>
+  </dt>
+  <dd>
+    <strong>47,009</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/bj">https://rubygems.org/gems/bj</a>
+  </dt>
+  <dd>
+    <strong>46,620</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/threadify">https://rubygems.org/gems/threadify</a>
+  </dt>
+  <dd>
+    <strong>43,583</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rego">https://rubygems.org/gems/rego</a>
+  </dt>
+  <dd>
+    <strong>38,733</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/wrap">https://rubygems.org/gems/wrap</a>
+  </dt>
+  <dd>
+    <strong>38,380</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/shared">https://rubygems.org/gems/shared</a>
+  </dt>
+  <dd>
+    <strong>31,893</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rq">https://rubygems.org/gems/rq</a>
+  </dt>
+  <dd>
+    <strong>27,204</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/prototype">https://rubygems.org/gems/prototype</a>
+  </dt>
+  <dd>
+    <strong>26,404</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/xx">https://rubygems.org/gems/xx</a>
+  </dt>
+  <dd>
+    <strong>26,196</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/mongoid-fts">https://rubygems.org/gems/mongoid-fts</a>
+  </dt>
+  <dd>
+    <strong>25,608</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rails_errors2html">https://rubygems.org/gems/rails_errors2html</a>
+  </dt>
+  <dd>
+    <strong>25,394</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/mongoid-haystack">https://rubygems.org/gems/mongoid-haystack</a>
+  </dt>
+  <dd>
+    <strong>24,251</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/fbomb">https://rubygems.org/gems/fbomb</a>
+  </dt>
+  <dd>
+    <strong>24,155</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/alib">https://rubygems.org/gems/alib</a>
+  </dt>
+  <dd>
+    <strong>22,792</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rails_view">https://rubygems.org/gems/rails_view</a>
+  </dt>
+  <dd>
+    <strong>22,611</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/upload_cache">https://rubygems.org/gems/upload_cache</a>
+  </dt>
+  <dd>
+    <strong>22,499</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/traits">https://rubygems.org/gems/traits</a>
+  </dt>
+  <dd>
+    <strong>21,645</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/ini">https://rubygems.org/gems/ini</a>
+  </dt>
+  <dd>
+    <strong>17,687</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/flatulent">https://rubygems.org/gems/flatulent</a>
+  </dt>
+  <dd>
+    <strong>17,217</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/tumblr">https://rubygems.org/gems/tumblr</a>
+  </dt>
+  <dd>
+    <strong>17,009</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/growltdf">https://rubygems.org/gems/growltdf</a>
+  </dt>
+  <dd>
+    <strong>16,752</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/asana2flowdock">https://rubygems.org/gems/asana2flowdock</a>
+  </dt>
+  <dd>
+    <strong>16,359</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/webpack">https://rubygems.org/gems/webpack</a>
+  </dt>
+  <dd>
+    <strong>15,998</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/fukung">https://rubygems.org/gems/fukung</a>
+  </dt>
+  <dd>
+    <strong>14,989</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/irbcp">https://rubygems.org/gems/irbcp</a>
+  </dt>
+  <dd>
+    <strong>14,879</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/middleman-gibberish">https://rubygems.org/gems/middleman-gibberish</a>
+  </dt>
+  <dd>
+    <strong>14,655</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/drebs">https://rubygems.org/gems/drebs</a>
+  </dt>
+  <dd>
+    <strong>12,923</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/id3rename">https://rubygems.org/gems/id3rename</a>
+  </dt>
+  <dd>
+    <strong>12,828</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/pervasives">https://rubygems.org/gems/pervasives</a>
+  </dt>
+  <dd>
+    <strong>12,673</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/ledis">https://rubygems.org/gems/ledis</a>
+  </dt>
+  <dd>
+    <strong>12,640</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/ggeocode">https://rubygems.org/gems/ggeocode</a>
+  </dt>
+  <dd>
+    <strong>12,534</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/fucking_favicons">https://rubygems.org/gems/fucking_favicons</a>
+  </dt>
+  <dd>
+    <strong>11,771</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/timeunits">https://rubygems.org/gems/timeunits</a>
+  </dt>
+  <dd>
+    <strong>11,531</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/forkhandle">https://rubygems.org/gems/forkhandle</a>
+  </dt>
+  <dd>
+    <strong>9,921</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/stable_match">https://rubygems.org/gems/stable_match</a>
+  </dt>
+  <dd>
+    <strong>9,648</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/redmine-client">https://rubygems.org/gems/redmine-client</a>
+  </dt>
+  <dd>
+    <strong>9,303</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/esrl">https://rubygems.org/gems/esrl</a>
+  </dt>
+  <dd>
+    <strong>9,261</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/load_glob">https://rubygems.org/gems/load_glob</a>
+  </dt>
+  <dd>
+    <strong>8,667</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/punch">https://rubygems.org/gems/punch</a>
+  </dt>
+  <dd>
+    <strong>8,633</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/parseargs">https://rubygems.org/gems/parseargs</a>
+  </dt>
+  <dd>
+    <strong>8,472</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/raptcha">https://rubygems.org/gems/raptcha</a>
+  </dt>
+  <dd>
+    <strong>8,399</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/widgetz">https://rubygems.org/gems/widgetz</a>
+  </dt>
+  <dd>
+    <strong>8,344</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/sldb">https://rubygems.org/gems/sldb</a>
+  </dt>
+  <dd>
+    <strong>8,171</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rememberthemilk">https://rubygems.org/gems/rememberthemilk</a>
+  </dt>
+  <dd>
+    <strong>7,927</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/mongoid-bolt">https://rubygems.org/gems/mongoid-bolt</a>
+  </dt>
+  <dd>
+    <strong>7,276</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/mongoid-store">https://rubygems.org/gems/mongoid-store</a>
+  </dt>
+  <dd>
+    <strong>6,954</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/assassin">https://rubygems.org/gems/assassin</a>
+  </dt>
+  <dd>
+    <strong>6,241</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/rails_build">https://rubygems.org/gems/rails_build</a>
+  </dt>
+  <dd>
+    <strong>5,362</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/fsm">https://rubygems.org/gems/fsm</a>
+  </dt>
+  <dd>
+    <strong>5,172</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/na_str">https://rubygems.org/gems/na_str</a>
+  </dt>
+  <dd>
+    <strong>5,071</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/hype">https://rubygems.org/gems/hype</a>
+  </dt>
+  <dd>
+    <strong>4,993</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/mp3scrape">https://rubygems.org/gems/mp3scrape</a>
+  </dt>
+  <dd>
+    <strong>4,970</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/state">https://rubygems.org/gems/state</a>
+  </dt>
+  <dd>
+    <strong>4,916</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/magnetic">https://rubygems.org/gems/magnetic</a>
+  </dt>
+  <dd>
+    <strong>4,888</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/testy">https://rubygems.org/gems/testy</a>
+  </dt>
+  <dd>
+    <strong>4,876</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/redef">https://rubygems.org/gems/redef</a>
+  </dt>
+  <dd>
+    <strong>4,803</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/openobject">https://rubygems.org/gems/openobject</a>
+  </dt>
+  <dd>
+    <strong>4,737</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/image_cache">https://rubygems.org/gems/image_cache</a>
+  </dt>
+  <dd>
+    <strong>4,627</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/tt">https://rubygems.org/gems/tt</a>
+  </dt>
+  <dd>
+    <strong>4,612</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/tmpdir_block">https://rubygems.org/gems/tmpdir_block</a>
+  </dt>
+  <dd>
+    <strong>4,496</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/ydb">https://rubygems.org/gems/ydb</a>
+  </dt>
+  <dd>
+    <strong>4,446</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/demon">https://rubygems.org/gems/demon</a>
+  </dt>
+  <dd>
+    <strong>4,278</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/tumblr2">https://rubygems.org/gems/tumblr2</a>
+  </dt>
+  <dd>
+    <strong>4,278</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/mob">https://rubygems.org/gems/mob</a>
+  </dt>
+  <dd>
+    <strong>4,211</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/cielli">https://rubygems.org/gems/cielli</a>
+  </dt>
+  <dd>
+    <strong>3,215</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/senv">https://rubygems.org/gems/senv</a>
+  </dt>
+  <dd>
+    <strong>3,027</strong>
+  </dd>
+
+  <dt>
+    <a href="https://rubygems.org/gems/fabula">https://rubygems.org/gems/fabula</a>
+  </dt>
+  <dd>
+    <strong>146</strong>
+  </dd>
+
+</dl>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  i am an anti-social human being. i prefer being left alone.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Henry_Rollins" target="_blank">henry rollins</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

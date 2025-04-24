@@ -1,0 +1,7 @@
+<%
+  page = data
+%>
+<em>published on: <%= Date.parse(page.published_at) %></em>
+<br>
+<br>
+<%= page.body %>

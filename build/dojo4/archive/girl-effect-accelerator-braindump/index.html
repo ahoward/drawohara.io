@@ -1,0 +1,383 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Girl Effect Accelerator Braindump</title>
+
+<meta property="og:title" content="Girl Effect Accelerator Braindump"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"girl-effect-accelerator-braindump"}">
+    <meta property="site:path_info" content=""/girl-effect-accelerator-braindump"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/girl-effect-accelerator-braindump">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/girl-effect-accelerator-braindump">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2014-11-14</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>i’ve just spent the last 10 days in and around san francisco for the inaugural girl effect accelerator: the first unreasonable institute program dedicated to helping companies that make a positive impact on the lives of millions adolescent girls do so better and faster through social entrepreneurship.</p>
+
+<p>there are so many totally amazing learnings that came out of this event, and i have a long form post drafted now, but i thought i’d jot down a sneak peak during a flight where i’m as happy to be flying home to my colorado family as i am sad to be leaving my new unreasonable one ;-) === ;-(</p>
+
+<p>get ready to vulcan mind meld; here’s my highlight reel in no particular order:</p>
+
+<ul>
+  <li>
+    <p>at the airport using the chrome debugger to forge an expired driver’s license at the rental car company…</p>
+  </li>
+  <li>
+    <p>suddenly realizing that this funny caring guy has built a multi-billion dollar company.  a couple times…</p>
+  </li>
+  <li>
+    <p>standing in circle laughing so hard with what is absolutely the funniest group of people ever to stand in such a circle, or possibly to stand period…</p>
+  </li>
+  <li>
+    <p>social impact means solving problems that real people actually have and exchanging your solution for a price that is fair to them and you…</p>
+  </li>
+  <li>
+    <p>being impressed by the deep personal interest that seth godin has in, apparently, every human being he is around…</p>
+  </li>
+  <li>
+    <p>companies actually can do better than governments…</p>
+  </li>
+  <li>
+    <p>wow.  the kitchen staff has more actual entrepreneurial skill than 80% of the tech startups in the world…</p>
+  </li>
+  <li>
+    <p><em>many</em> people just don’t even have fucking light…</p>
+  </li>
+  <li>
+    <p>yes, some people really do make deliberate use of their life to make millions of other peoples’ better</p>
+  </li>
+  <li>
+    <p>on vineyards there be so much wine…</p>
+  </li>
+  <li>
+    <p>girls actually drop out of school because they lack pads.  the sell their bodies to buy pads to stay in school.  this is incredibly fucked up.</p>
+  </li>
+  <li>
+    <p>all problems revolve around understanding people…</p>
+  </li>
+  <li>
+    <p>die antwoord videos are best consumed outside on the grass at night with africans and a classical musician…</p>
+  </li>
+  <li>
+    <p>the bravest people listen to themselves…</p>
+  </li>
+  <li>
+    <p>people and politics make every company hard…</p>
+  </li>
+  <li>
+    <p>girls need voices 10,000 times louder speaking on their behalf…</p>
+  </li>
+  <li>
+    <p>rahul is a real live sadhu aghori and a hell of a nice guy…</p>
+  </li>
+  <li>
+    <p>first world and third world problems need new names like ‘waste of your life’ and ‘hair on fucking fire urgent’…</p>
+  </li>
+  <li>
+    <p>christen lien is a new type of a super being whose descendants will leave earth to colonize new planets made of pure sound…</p>
+  </li>
+  <li>
+    <p>is your own startup is actually just making problems…</p>
+  </li>
+  <li>
+    <p>large groups of empowered women are extremely fun to be around…</p>
+  </li>
+  <li>
+    <p>if you need cash, and have absolutely no clue what the pin on your only credit card is, buy a group of strangers a round and ask ‘em for the dough in exchange</p>
+  </li>
+  <li>
+    <p>as a hiker i am apparently categorized as ‘very white’…</p>
+  </li>
+  <li>
+    <p>extremely-well-spoken-lawyer-girl can par-tay!</p>
+  </li>
+  <li>
+    <p>hope, honesty, and vulnerability can condense a lifetime of friendship into the first 42 seconds of every conversation when the community allows it to happen…</p>
+  </li>
+  <li>
+    <p>being massively unprepared for travel is so much fun…</p>
+  </li>
+  <li>
+    <p>the unreasonable institute runs on blood, sweat, and a new brain wave pattern that repels the need for sleep…</p>
+  </li>
+  <li>
+    <p>my back doesn’t hurt anymore…</p>
+  </li>
+  <li>
+    <p>mobile is absolutely <strong>massive</strong> in the new markets…</p>
+  </li>
+  <li>
+    <p>‘naan and curry’ makes the best indian food, and techno, in the world…</p>
+  </li>
+  <li>
+    <p>technology is the single most useful tool to close the gap between rich and poor…</p>
+  </li>
+  <li>
+    <p>hugging michael fitzpatrick after being transported into space by his cello…</p>
+  </li>
+  <li>
+    <p>feet covered with blood blisters from so much walking along the bay…</p>
+  </li>
+  <li>
+    <p>people who stay to stay the course turn back when they’ve gone off it…</p>
+  </li>
+  <li>
+    <p>every person at this camp works at least twice as hard as every other person i know…</p>
+  </li>
+  <li>
+    <p>7 people and luggage actually do fit in a prius…</p>
+  </li>
+</ul>
+
+<p>i’d be remiss not to make sincere shout out to the nike foundation for helping to make the event happen, but also to the 1/2 dozen nike people who helped create many of the aforementioned memories and transformations.</p>
+
+<p>stay tuned for more about this, and what it means to dojo4.</p>
+
+<p>and one, final, thought:</p>
+
+<ul>
+  <li>thank you.</li>
+</ul>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  life is a constant process of dying.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Arthur_Schopenhauer" target="_blank">arthur schopenhauer</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

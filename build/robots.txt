@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://drawohara.io/sitemap.txt

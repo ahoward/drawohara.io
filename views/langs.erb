@@ -1,0 +1,10 @@
+<%
+  iso_639_1 = ctx.dato.fetch('iso-639-1')
+%>
+<ul>
+  <% data.langs.each do |lang| %>
+    <li>
+      <%= iso_639_1.fetch(lang).downcase %> &rarr; <a href="/langs/<%= lang %>">/langs/<%= lang %></a>
+    </li>
+  <% end %>
+</ul>

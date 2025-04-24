@@ -1,0 +1,297 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>! &#39;less is more: busyness vs. effectiveness&#39;</title>
+
+<meta property="og:title" content="! &#39;less is more: busyness vs. effectiveness&#39;"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"less-is-more-busyness-vs--effectiveness"}">
+    <meta property="site:path_info" content=""/less-is-more-busyness-vs--effectiveness"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/less-is-more-busyness-vs--effectiveness">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/less-is-more-busyness-vs--effectiveness">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-04-28</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/less-is-more-busyness-vs--effectiveness/assets/b.png' alt="Busy.png" /></p>
+
+<p>There is a difference between having a lot to do and being busy. And there is an even bigger difference between being busy and getting things done, i.e. being effective.</p>
+
+<p>When asked “how are you?,” how often do many of us respond, with a bedraggled, hassled air, “Busy, so busy!” Our culture and our ever-connected, high-speed times have made ‘being busy’ one of the highest valued currencies in our social market. We use it to pad our egos- saying “I’m busy” is a proxy for saying “I’m important”, “I’m a valuable person” and “I’m living a full, engaged life.” And being or even just seeming, busy is considered a valid excuse for almost any of life’s demands. It’s considered a justification for not actually listening, not speaking genuinely, being late, being inconsiderate, and, perhaps most ironically, for not actually getting much done. Being “busy” is an excuse to ourselves and others for not doing the important things, the scary things, the difficult things.</p>
+
+<blockquote>
+  <p><a href="http://www.fastcompany.com/3008263/busy-new-lazy">Busy is the new lazy.</a></p>
+</blockquote>
+
+<p>There is a difference between having a lot to do and being busy. And there is an even bigger difference between being busy and getting things done, i.e. being effective.</p>
+
+<p><a href="http://www.eventsineveryoccasion.com/inspirations/"><img src='/ro/dojo4/less-is-more-busyness-vs--effectiveness/assets/c.png' alt="Screen Shot 2015-04-28 at 2.01.06 PM.png" /></a></p>
+
+<p>When asked “how are you?,” how often do many of us respond, with a bedraggled, hassled air, “Busy, so busy!” Our culture and our ever-connected, high-speed times have made ‘being busy’ one of the highest valued currencies in our social market. We use it to pad our egos- saying “I’m busy” is a proxy for saying “I’m important”, “I’m a valuable person” and “I’m living a full, engaged life.” And being, or even just seeming, busy is considered a valid excuse for almost any of life’s demands.</p>
+
+<p>It’s considered a justification for not actually listening, not speaking genuinely, being late, being inconsiderate, and, perhaps most ironically, for not actually getting much done. Being “busy” is an excuse to ourselves and others for not doing the important things, the scary things, the difficult things.</p>
+
+<blockquote>
+  <p><a href="http://fourhourworkweek.com/2013/11/03/productivity-hacks/">Being busy is most often used as a guise for avoiding the few critically important but uncomfortable actions.</a></p>
+</blockquote>
+
+<p>There are lots of reasons why so many of us feel so busy all the time, though. We don’t get a lot of support to breathe some space into our busy-ness and find a more effective approach. Some of the main culprits that get in the way are: interruption, distraction,  lack of clear priorities, and attachment to the idea of being busy. Interruption and distraction run so rampant that apparently the average IT worker is interrupted at the jobs as often once every 3 minutes- up to 20 times an hour. The <a href="https://www.yast.com/time_management/science-task-interruption-time-management/">same study</a> shows that 3/4 of all interruptions are handled immediately, whether they need to be or not. We are on a roll, filling every last moment with tasks, regardless of whether those tasks get us closer to our bigger goals. We are too busy (or lazy or intimidated) to prioritize and so we may not actually ever be getting anything important done. <strong>We are too busy to be effective.</strong></p>
+
+<p>The trick is, simultaneously, both the simplest and the most difficult hack there is: pausing our busy lives. Being effective means being <strong>deliberate</strong>, and
+in order to be deliberate we have to pause. We have to create a gap in the steady stream, <strong>we have to create openings for space to integrate and infiltrate our lives</strong>. As counter-intuitive as it may seem, the more we look up, go for a walk, and find other ways to create space in our hectic schedules and cluttered minds, the more we can accomplish. For example, <a href="http://www.inc.com/magazine/201304/issie-lapowsky/get-more-done-dont-multitask.html">brain-science is now showing</a> that the more we try to multi-task, the less productive we are.</p>
+
+<p>There are lots of tools in the box for breathing this kind of accomplishing space into our lives. And in our organizations we can support effectiveness through baking that space into our company cultures and systems.</p>
+
+<p><img src='/ro/dojo4/less-is-more-busyness-vs--effectiveness/assets/d.png' alt="Screen Shot 2015-04-28 at 2.56.35 PM.png" /></p>
+
+<p><img src='/ro/dojo4/less-is-more-busyness-vs--effectiveness/assets/e.png' alt="Screen Shot 2015-04-28 at 2.56.59 PM.png" /></p>
+
+<p>The more we are able to be deliberate about how we spend our time and energy, the less likely we’ll be to get bogged down in trivial tasks, and the more likely we’ll be to build successful, meaningful businesses and live accomplishing, engaged lives. The lineage of Zen meditators seem to have figured it out a while ago:</p>
+
+<blockquote>
+  <p><em>“You should sit in meditation for twenty minutes every day — unless you’re too busy. Then you should sit for an hour.” -Zen proverb</em></p>
+</blockquote>
+
+<p><sub>Thanks to <a href="http://www.bcorporation.net/blog/announcing-b-lab-colorado">B Lab Colorado</a> for the opportunity to offer this material as a workshop at the <a href="https://www.facebook.com/media/set/?set=a.1579907255613452.1073741847.1519708461633332&amp;type=1">B Corp Leadership Development Event</a>.<sub></sub></sub></p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  only if we understand, can we care. only if we care, will we help. only if
+we help shall they be saved.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Jane_Goodall" target="_blank">jane goodall</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

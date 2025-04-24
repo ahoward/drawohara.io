@@ -1,0 +1,293 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>hacking human suffering is the only real growth industry</title>
+
+<meta property="og:title" content="hacking human suffering is the only real growth industry"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"hacking-human-suffering-is-the-only-real-growth-industry"}">
+    <meta property="site:path_info" content=""/hacking-human-suffering-is-the-only-real-growth-industry"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/hacking-human-suffering-is-the-only-real-growth-industry">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/hacking-human-suffering-is-the-only-real-growth-industry">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-07-17</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/hacking-human-suffering-is-the-only-real-growth-industry/assets/b.jpeg' alt="AllanDeas.jpg" /></p>
+
+<p>When I first became a partner at DOJO4 in 2011, things were rocking steady, decent clients were finding us with little or no effort on our part, and a general sense of creamy, rich ease pervaded the business. Nevertheless, our then CEO, <a href="http://hoosteeno.com/">Justin Crawford</a>, and I spoke often about the longevity of the industry and the fact that DOJO4’s success was tied to the bubble-like nature of the tech industry.</p>
+
+<p>We talked a lot about business development and how to best insulate ourselves in the long term against an eventual downturn. At the time,  I could not foresee the tech “bubble” bursting any time soon, but the answer to where we should be putting our energy for long-term stability and success was crystal clear to me from the get go: human suffering.</p>
+
+<p>That’s right.  The painful truth is that solving the problems of human and environmental dis-ease is one of the only guaranteed growth industries. That may sound like a dismal pronouncement, but I also see it as the greatest opportunity of our time.  At DOJO4- and many, many other tech businesses- we have all the circumstances in place to apply our skills, talents, and ingenuity to solving real problems,  using the same technical and design innovations that we had been applying mostly just to commercial endeavors.</p>
+
+<p>Making that shift would allow us to engage our work in a genuinely meaningful way, and allow us to have a sustainable, impactful business at the same time. This line of thinking can run somewhat counter to conventional business-school wisdom. <em>Make money and help people at the same time? No way. Helping people and the environment is the domain of NGO’s, non-profits and philanthropies.</em></p>
+
+<p>This reaction is an unfortunate outcome of our cultural approach to altruism. Donating our time and money for the benefit of others can be a wonderful thing but it is not the only, and maybe <a href="http://dojo4.com/blog/the-problem-with-volunteerism">not even the best</a>, way to galvanize our best efforts for the benefit of ailing social and environmental systems. The relatively recent rise of social entrepreneurship has exposed this approach and solution- using the power of business to provide <a href="https://www.ashoka.org/social_entrepreneur">innovative solutions to society’s most pressing social problems, tackling major social and environmental issues, and offering new ideas for wide-scale change. Rather than leaving societal needs to the government or business sectors, social entrepreneurs find what is not working and solve the problem by changing the system, selling the solution, and persuading entire societies to move in different directions.</a></p>
+
+<p>At their best this is what technologists can do, too:</p>
+
+<blockquote>
+  <p>…<a href="https://www.ashoka.org/social_entrepreneur">solve the problem by changing the system, spreading the solution, and persuading entire societies to move in different directions</a>.</p>
+</blockquote>
+
+<p>With my outsider’s perspective on the tech industry (I was educated as a scientist and have spent most of my career in documentary film), I continue to marvel at the fact that the most inspired technologists have essentially the same <a href="http://unreasonableinstitute.org/blog/6-characteristics-of-successful-social-entrepreneurs/">qualities as social entrepreneurs,  (such as the willingness to self-correct, share credit, and break free of established structures)</a>.</p>
+
+<p>Unfortunately, <a href="https://www.youtube.com/watch?v=21Jj2ObZI9M">we’ve squandered a lot of our developer smarts and talent</a> on creating commercially self-fulfilling junk food for the mind and an intricate digital economy stickily entwined with proprietary software, profits and data appropriation. Many technologists feel like they are stuck with that as their only option. But, if you really want a better world, a successful career and a more meaningful life, writing code that directly alleviates human and environmental suffering is a real option and living, breathing opportunity.</p>
+
+<p><em>It is possible</em>. Several years after those initial conversations at DOJO4, we’ve committed to that triple bottom line of people, planet and profits. We see that the alleviation of human, social and environmental suffering is the best use of our energy because:</p>
+
+<ol>
+  <li>this ‘sector’ has essentially endless needs, and is thus a fertile, demand-full market;</li>
+  <li>it draws on the best qualities of developers innate approach to problem-solving and knowledge-building;</li>
+  <li>it allows us to feel more engaged in a meaningful life, and that means we do better work.</li>
+</ol>
+
+<p>So far, acknowledging that solving ‘real’ human and environmental problems is a valuable growth industry, and choosing to put all our eggs in that basket, is the best business decision we’ve ever made.</p>
+
+<p><img src='/ro/dojo4/hacking-human-suffering-is-the-only-real-growth-industry/assets/c.jpeg' alt="ProcessedWorld01.3_36.jpg" /></p>
+
+<p><em>Note: Illustrations without permission but thanks to <a href="http://www.allandeas.com/">Allan Deas</a> and <a href="http://www.thebaffler.com/salvos/world-processor">Processed World</a>.</em></p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  we have all known the long loneliness and we have learned that the only
+solution is love and that love comes with community.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Dorothy_Day" target="_blank">dorothy day</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

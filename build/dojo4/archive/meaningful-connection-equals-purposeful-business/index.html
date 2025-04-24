@@ -1,0 +1,282 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>meaningful connection = purposeful business</title>
+
+<meta property="og:title" content="meaningful connection = purposeful business"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"meaningful-connection-equals-purposeful-business"}">
+    <meta property="site:path_info" content=""/meaningful-connection-equals-purposeful-business"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/meaningful-connection-equals-purposeful-business">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/meaningful-connection-equals-purposeful-business">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2016-03-02</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/meaningful-connection-equals-purposeful-business/assets/b.jpeg' alt="51a1164c6e1021cf9c5c7ad78029c095.jpg" /> 
+So, what’s the point of business? For a long time I thought the point of <a href="http://dojo4.com/">my business</a> was simply to design and develop software for clients and make money in the process. That turned out not to be true.</p>
+
+<p><a href="http://www.stuartmcmillen.com/comics_en/war-on-drugs/">Milton Friedman</a>, practicalist and Nobel Prize winning economist, said the point of business maximizing profit for the shareholders. Management visionary, <a href="http://www.entrepreneur.com/article/237484">Peter Druker</a>, said the point of business is to 
+create a customer. And <a href="https://www.simpsonsworld.com/video/441732675508">Richard Branson</a>, says the whole point of business is to make a difference in the world.</p>
+
+<p>I believe that as entrepreneurs that our fundamental, core mission is to <strong>connect</strong>. Simplistically, that may mean connecting people with services, connecting people with products, connecting people with people, connecting people with information, etc. However, there’s a difference between connection and <em>meaningful connection</em>. That being the case, then there’s an important element to examine in our mission to connect- what is that difference? What is the difference between just plain ol’ connection and meaningful connection.</p>
+
+<p>In my experience, essentially what makes that point of connection <em>meaningful</em> is when it is based in <strong>purpose</strong>. But in order to know that purpose, we each have to do the work to find out what is deeply meaningful for each of us, personally. We have to connect with ourselves, our motivations, fears, personal challenges, advantages, strengths and weaknesses, aspirations and inspirations.</p>
+
+<p>What makes us feel that we are living a good life? What makes us come alive? What makes us feel grateful and appreciative of our day-to-day? What fuels our ambition, imagination, and desire to work hard? If we know that, then that sense of meaning and purpose will imbue every connection and carry outward.</p>
+
+<p>Doing this investigation into what our purpose is, and what the purpose of our business really is,  is an opportunity that we have as entrepreneurs. It’s an opportunity to take this fundamental mission to connect people with something they need (or something we think they need) in a more meaningful way. And people can tell the difference when these connections are meaningful. Meaningful connections are good for us, good for our colleagues and employees, good for our customers, and ultimately good for business!</p>
+
+<p>We have everything we need to investigate the real purpose of our businesses and make meaningful connections.  We have the ability to listen to ourselves and others. We have the ability to empathize, to acknowledge our own and each other’s obstacles, grief, humanness. And we have the ability to connect with our own authenticity.</p>
+
+<p>We have an opportunity to make each point of connection more meaningful, more lasting, more enriching. We have the opportunity to blow things open at that moment of connection and to change people’s minds about what that connection is. And we have the opportunity to change our own minds about what that connection is. By having a firm foundation in our own sense of purpose for our businesses, we will bring alive each connection, each sale, each service, each interaction with coworkers, clients, and competitors. I believe that if we want to have successful businesses, truly successful businesses, that this isn’t just preferable, but <em>necessary</em>.</p>
+
+<p>Peter Drucker said: <a href="http://www.druckerinstitute.com/2013/04/purpose-of-purpose/">“The number of people who are really motivated by money is very small. Most people need to feel that they are here for a purpose, and unless an organization can connect to this need to leave something behind that makes this a better world… it won’t be successful over time.”</a></p>
+
+<p>I found out that point of my business isn’t actually to make technology for clients - that’s just the vehicle. The purpose of my business is to cultivate meaningful relationships, it’s to support the people and the families that work within my business, it’s about creating community and expansive human environments.  I found out that <a href="http://dojo4.com/about">the mission of my business, dojo4</a>, is to apply rigorous minds to meaningful work, change the way business is done and cultivate purposeful projects, relationships and environments.</p>
+
+<p>We can all find ways to imbue our work, our businesses, and thus our communities with meaningful and powerful connections. We all do it in different ways because each of us is motivated by different purposes. We always have the opportunity to connect to ourselves and our sense of purpose. And that ability to connect to purpose makes our businesses create meaningful connections that do good for our colleagues, our clients, our competitors and, ultimately, our entire communities.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  but it isn&#39;t absence that causes sorrow. it is affection and love. without
+affection, without love, such absences would cause us no pain. for this
+reason, even the pain caused by absence is, in the end, something good and
+even beautiful, because it feeds on that which gives meaning to life.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Carlo_Rovelli" target="_blank">carlo rovelli</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

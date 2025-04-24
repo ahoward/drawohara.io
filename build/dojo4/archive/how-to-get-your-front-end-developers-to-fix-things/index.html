@@ -1,0 +1,308 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>How to Get Your Front End Developers to Fix Things</title>
+
+<meta property="og:title" content="How to Get Your Front End Developers to Fix Things"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"how-to-get-your-front-end-developers-to-fix-things"}">
+    <meta property="site:path_info" content=""/how-to-get-your-front-end-developers-to-fix-things"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/how-to-get-your-front-end-developers-to-fix-things">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/how-to-get-your-front-end-developers-to-fix-things">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2013-04-10</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>first you check in code like this</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #0550ae">&lt;!--</span>&nbsp;<span style="color: #953800">FIXME</span>&nbsp;<span style="color: #953800">STEVE</span>&nbsp;<span style="color: #0550ae">--&gt;</span>
+</div><div class='code-line code-line-3'><span style="color: #0550ae">&lt;!--</span>&nbsp;<span style="color: #953800">FIXME</span>&nbsp;<span style="color: #953800">STEVE</span>&nbsp;<span style="color: #0550ae">--&gt;</span>
+</div><div class='code-line code-line-4'>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">div</span>&nbsp;<span style="color: #cf222e">class</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'STEVE'</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-6'>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% unless </span><span style="color: #953800">Rails</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">stage</span>&nbsp;<span style="color: #0550ae">and</span>&nbsp;<span style="color: #953800">Rails</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">stage</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">production?</span>&nbsp;<span style="color: #0a3069">%&gt;</span>
+</div><div class='code-line code-line-8'>
+</div><div class='code-line code-line-9'><span style="color: #0a3069">      &lt;%</span>
+</div><div class='code-line code-line-10'><span style="color: #0a3069">        @hero = Article.hero.limit(1).to_a</span>
+</div><div class='code-line code-line-11'><span style="color: #0a3069">        @featured = Article.featured.limit(3).to_a</span>
+</div><div class='code-line code-line-12'><span style="color: #0a3069">      %&gt;</span>
+</div><div class='code-line code-line-13'>
+</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">div</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">style</span><span style="color: #0550ae">=</span><span style="color: #0a3069">'border:4px dotted orange;'</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #24292f;background-color: #f6f8fa">h1</span><span style="color: #0550ae">&gt;</span>&nbsp;<span style="color: #953800">HERO</span>&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/h1&gt;</span>
+</div><div class='code-line code-line-16'><span style="color: #116329">        &lt;% @hero.each do |article| %&gt;</span>
+</div><div class='code-line code-line-17'><span style="color: #116329">          &lt;div style='height:12em;overflow:scroll;border:2px solid pink;'&gt;</span>
+</div><div class='code-line code-line-18'><span style="color: #116329">            title: &lt;%= link_to article.title, article %&gt;&lt;br&gt;</span>
+</div><div class='code-line code-line-19'><span style="color: #116329">            &lt;%= article.to_html %&gt;</span>
+</div><div class='code-line code-line-20'><span style="color: #116329">          &lt;/</span><span style="color: #24292f;background-color: #f6f8fa">div</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% end </span><span style="color: #0550ae">%&gt;</span>
+</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/div&gt;</span>
+</div><div class='code-line code-line-23'>
+</div><div class='code-line code-line-24'><span style="color: #116329">      &lt;div style='border:4px dotted fuchsia;'&gt;</span>
+</div><div class='code-line code-line-25'><span style="color: #116329">        &lt;h1&gt; FEATURED &lt;/</span><span style="color: #24292f;background-color: #f6f8fa">h1</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% @featured.each </span><span style="color: #cf222e">do</span>&nbsp;<span style="color: #0550ae">|</span><span style="color: #24292f;background-color: #f6f8fa">article</span><span style="color: #0550ae">|</span>&nbsp;<span style="color: #0a3069">%&gt;</span>
+</div><div class='code-line code-line-27'><span style="color: #0a3069">          &lt;div style='height:4em;overflow:hidden;border:2px solid purple;'&gt;</span>
+</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0a3069">title: </span><span style="color: #0550ae">&lt;</span><span style="color: #0a3069">%= link_to article.title, article %&gt;&lt;br&gt;</span>
+</div><div class='code-line code-line-29'><span style="color: #0a3069">            &lt;%=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">article</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">to_html</span>&nbsp;<span style="color: #0a3069">%&gt;</span>
+</div><div class='code-line code-line-30'><span style="color: #0a3069">          &lt;/div&gt;</span>
+</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #0a3069">% end </span><span style="color: #0550ae">%&gt;</span>
+</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/div&gt;</span>
+</div><div class='code-line code-line-33'>
+</div><div class='code-line code-line-34'>
+</div><div class='code-line code-line-35'><span style="color: #116329">    &lt;% end %&gt;</span>
+</div><div class='code-line code-line-36'>
+</div><div class='code-line code-line-37'><span style="color: #116329">    &lt;script&gt; $(function(){ App.blink('.STEVE') }); &lt;/s</span><span style="color: #24292f;background-color: #f6f8fa">cript</span><span style="color: #0550ae">&gt;</span>
+</div><div class='code-line code-line-38'>&nbsp;&nbsp;<span style="color: #0550ae">&lt;</span><span style="color: #116329">/div&gt;</span>
+</div><div class='code-line code-line-39'>
+</div><div class='code-line code-line-40'><span style="color: #116329">&lt;!-- FIXME STEVE --&gt;</span>
+</div><div class='code-line code-line-41'><span style="color: #116329">&lt;!-- FIXME STEVE --&gt;</span>
+</div><div class='code-line code-line-42'>
+</div><div class='code-line code-line-43'>
+</div></code></div>
+
+<p>renders like</p>
+
+<p><img src='/ro/dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/screen-shot-2013-04-10-at-11.44.27_AM.png' alt="img" /></p>
+
+<p>and then you just sit back and wait ;-)</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  i see christ in you.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Dorothy_Day" target="_blank">dorothy day</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

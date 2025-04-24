@@ -1,0 +1,303 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>The Problem with Volunteerism</title>
+
+<meta property="og:title" content="The Problem with Volunteerism"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-problem-with-volunteerism"}">
+    <meta property="site:path_info" content=""/the-problem-with-volunteerism"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/the-problem-with-volunteerism">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/the-problem-with-volunteerism">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-06-24</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>The problem with volunteerism is that it doesn’t really work. Not over the long haul - and if you really care about impact, then you’d better be in it for the long haul. The simple truth is: <em>whenever we ask for work to be done for free, we diminish its inherent value.</em></p>
+
+<p>Before you disagree, let me clarify that I’m not talking about the kind of volunteer opportunities that were <em>made</em> for volunteers - like <a href="http://dojo4.com/blog/if-you-want-to-be-happy-think-of-others">natural disaster response</a>, Rylan’s <a href="http://dojo4.com/blog/dojo4-ninja-rescues-boulders-food">weekly gig with Boulder Food Rescue</a>, or B Lab Colorado’s recent <a href="https://www.facebook.com/bcorpcolorado/timeline/story?ut=43&amp;wstart=0&amp;wend=1435733999&amp;hash=2972421971526564280&amp;pagefilter=3">#BofService day</a>. These types of mutually enriching engagements are AWESOME win-wins, of course.</p>
+
+<p><img src='/ro/dojo4/the-problem-with-volunteerism/assets/b.jpeg' alt="6-3-76_volunteer-color.jpg" /></p>
+
+<p>There are many other time-tested organizational models that create volunteer opportunities as part of their mission. For example: missions.  I’m also not talking about when people volunteer for their own startup - that’s sweat equity (or just your own special brand of crazy, depending on who you ask).</p>
+
+<p>What I am talking about is trying to get people to do for free what they would (and should) otherwise get paid to do. Sometimes it’s called working pro bono, often it’s called activism.</p>
+
+<p>In the beginning of most worthy endeavors, a few core people arrange their entire lives to work mostly for free at least until “we get it off the ground.” What is accomplished in these initial sprints is often amazing, but it’s not sustainable.</p>
+
+<p>No one has examined the dilemma created by working our hearts out for free better than my friend, <a href="https://en.wikipedia.org/wiki/Jane_F._Barry">Jane Barry</a>, in her groundbreaking book on <a href="http://urgentactionfund.org/wp-content/uploads/downloads/2012/06/WTPR-Final-Book.pdf">sustaining activism</a>.  See if this sounds familiar:</p>
+
+<pre><code>*"At first, you use your own home as an office. You work every spare hour you can to organise, often after your ‘day job’ is finished and everyone else is in bed. Slowly, other activists join you. Usually, for little or no pay...And when you do find a way to bring in outside support and funding, you are so driven and passionate about getting the real work done, at first, you only ask for money to do more...*
+</code></pre>
+
+<p><em>This kind of organising is amazing. It is enormously powerful, flexible, responsive, grounded in real
+issues, and deeply connected to community. For many, it is also the beginning of a cycle that will eventually threaten their ability to work safely and sustainably.</em></p>
+
+<pre><code>*Because you have built everything yourself, those enormous contributions of time, energy, and resources — the true price of your work — are hidden. Since the real costs of activism aren’t factored into initial requests for support, it creates an artificial impression that an extraordinary amount of work can be accomplished with tiny amounts of money. It makes activism a bargain.*
+
+*Everyone loves a bargain. That sharp, sweet sense of satisfaction at finding something you really want, and getting it at a fraction of its real value. But here’s the thing: When you keep finding bargains, they start to lose that special something. That sense of value...* 
+
+*And that’s a big problem with activism. We set the bar too low...It comes down, once again, to what we truly value. What we recognise as important."*
+</code></pre>
+
+<p>So, before you “find a volunteer to do that,” consider that you might be better off in the long run using the resources it will take to recruit, train, supervise and retain volunteer(s) in fundraising for a paid position. Have the vision to think long-term, and build a foundation for your efforts that will <a href="http://dojo4.com/blog/so-you-want-to-change-the-world-we-do-too-by-building-better-businesses-aka-the-little-handbook-for-sturdy-startups">sustain the people who are core to its success</a>.</p>
+
+<p>If you do decide that volunteers are going to be an important part of your organization, train yourself to be (or hire) a kick-ass - and I mean <em>take-no-prisoners</em> - volunteer manager.  <a href="http://www.idealist.org/info/VolunteerMgmt/Developing">Create solid policies and use contracts</a> with your volunteers to ensure total alignment of expectations.  <a href="http://www.forbes.com/sites/michaellindenmayer/2012/10/15/fire-dangerous-volunteers-rid-your-charity-of-vampires-and-zombies/">Fire volunteers</a> who don’t follow through and find ways to <a href="http://www.forbes.com/sites/michaellindenmayer/2013/06/03/7-traits-of-amazing-volunteers/">worship those who do</a>.</p>
+
+<p>And, if you’re a professional who is considering volunteering your services, make sure you fit these three criteria first:</p>
+
+<ol>
+  <li>You have <em>extra</em> time that’s truly <em>extra</em> - beyond what you need to make a living, spend time with friends and family and take care of yourself.</li>
+  <li>You’re financially secure, meaning you won’t ditch your volunteer gig to take on paying work when it comes along.</li>
+  <li>You’re truly compatible with the organization you’ll be working with - both its mission and its team members.</li>
+</ol>
+
+<p>I’ve contemplated these dynamics for years from many angles - as the volunteer, as the volunteer manager, as the funder looking for a bargain.</p>
+
+<p>It’s fascinating to now look at this issue from within a technology organization.  Most people, including myself, <a href="http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/">don’t really understand tech</a>, and this contributes to not really valuing it.</p>
+
+<p>From what I’ve seen so far with both non-profit and for-profit clients: success is cheaper in the end if you prioritize paying for really high quality people and solid tech from a reliable firm, establishing long-term relationships to support the co-evolution of both.</p>
+
+<p>You get what you pay for, folks.  On that note, <a href="http://dojo4.com/contact">drop me a line</a> - I’m happy to help you explain to your funders and investors why you don’t want to skimp on good people or good tech!</p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  i am an anti-social human being. i prefer being left alone.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Henry_Rollins" target="_blank">henry rollins</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,429 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Big fat 🤓</title>
+
+<meta property="og:title" content="Big fat 🤓"/>
+<meta property="og:description" content="I have grown so tall!" />
+<meta property="og:image" content="https://drawohara.io/ro/nerd/index/assets/giraffe.jpeg" />
+
+
+  <meta property="og:image:width" content="2048" />
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/nerd"">
+    <meta property="site:params" content="{"ext":null}">
+    <meta property="site:path_info" content=""/nerd"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/nerd">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/nerd">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <h3 id="they-say-i-am-a-big-fat---and-they-are-right">they say i am a big fat 🤓 – and they are right!</h3>
+
+<p>for some strange reason, this makes me happy:</p>
+
+<p><img src='/ro/nerd/index/assets/terminal.jpg' alt="" title="image of terminal" /></p>
+
+<p>as you can read on my <a href="/about">about</a> page, i have written <a href="/rubygems">way too much software</a>.</p>
+
+<p>i got my start researching <em>in</em> <a href="https://www.boulder.noaa.gov/">NOAA</a></p>
+
+<p><em>for</em> <a href="https://cires.colorado.edu/">C.I.R.E.S</a></p>
+
+<p>while studying <em>at</em> <a href="https://www.colorado.edu/engineering/">CU’s College of Engineering &amp; Applied Science</a></p>
+
+<blockquote>
+  <p>wut?</p>
+</blockquote>
+
+<p>basically, the university has a program that donates young scientists to other
+research institutes, to help do science.</p>
+
+<p>its goal is getting the university’s name on papers which, if you know
+anything about science, is gold.  publish or perish… etc.  publishing ==
+funding.</p>
+
+<p><strong>30</strong> years later, i realize that this was a fantastic introduction to start-up
+culture.  no b.s., just, make shit that works, and <em>go</em>.  no one to tell you
+what <em>‘not to do’</em> or market signals that design your product for you so you
+don’t have to actually think and be bold - just raw <em>instinct</em> about what
+should be studied, how, and <em>why</em>.</p>
+
+<p>that, and fundraising… nothing like buildig stuff and figuring out how to
+pay for it at the same time  ;-)</p>
+
+<p>the first project i did at CIRES, is still one of my favorite projects of all
+time: we wrote a system, designed to run on old-skool linux field computers,
+that forest fire fighters would use, tactically, in the field, to decide
+weather/whether or not (pun intended), sending a crew up a canyon to battle
+the blaze would result in them dying.  mainly it was a wind analysis tool,
+hyper local weather, delivered to a device, long before iphones became a
+thing.</p>
+
+<p>(this is my explanation for why, when the <a href="https://photos.app.goo.gl/Kjipk8eKT88CtSRSA">los angeles fires</a>
+ erupted i hopped right on my bike and went to check them out… fires and the jobs responders
+are required to do, for $26/hr, astounds me)</p>
+
+<p>subsequently, i went to work at FSL (Forecast Systems Lab) doing
+hyper-high-availability (5 9s ((99.999 % uptime))) for operational satellite
+ingest systems.</p>
+
+<p>we designed cutting edge systems. and novel… brutal… methods of ensuring
+consistency of classified data such as STONITH, which stands for “Stone The
+Other In The Head”, a method used in what were then cutting edge
+high-availibilty clusters that would manage taking over as ‘master’ (a term
+since banished from software, probably for the best…) by literally toggling
+the power of the other node, to be damn sure it was off.  things we simpler
+then, but also very complex.  there was a lot to invent on every project.
+sass wasn’t even a word.</p>
+
+<p>i also did a lot of work in model verification: geophysical models take
+hundreds, or thousands, or even hundreds of thousands, of configurations to
+run.  people talk about how neat 12-factor configuration is now, and i just
+shake my head… what if you had to manage millions of configuration values?
+the next trick is version them, so we know how they change over time because,
+as scientists, if we make a change to say, a cloud physics model, we need to
+‘test it’.  but</p>
+
+<blockquote>
+  <p>how <em>do</em> you test software, when you don’t now the ‘right answer’?</p>
+</blockquote>
+
+<p>the approach is actually, theoretically, simple:</p>
+
+<p>you hold all variables, all the hundreds of thousands of them, constant, make
+changes to a few, and then look for patterns of changes in the output.  in the
+case of weather models, this could be mean that a change to a cloud physics
+model resulted in predicting 8/9 historical storms with accuracy, vs. the 7/9
+a previous iteration would have predicted.</p>
+
+<p>this type of analysis, foreign to many engineers, is back with vengance,</p>
+
+<p>thanks to <a href="/disco">AI</a>…</p>
+
+<p>my next stint was at <a href="https://www.ngdc.noaa.gov/">The National Geophysical Data Center</a>, where i was able to participate in a bunch of super cool research:</p>
+
+<ul>
+  <li><a href="/purls/can-poverty-rates-be-estimated-using-satellite-data">/purls/can-poverty-rates-be-estimated-using-satellite-data</a></li>
+  <li><a href="/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights">/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights</a></li>
+  <li><a href="/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003">/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003</a></li>
+  <li><a href="/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data">/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data</a></li>
+  <li><a href="/purls/global-distribution-and-density-of-constructed-impervious-surfaces">/purls/global-distribution-and-density-of-constructed-impervious-surfaces</a></li>
+</ul>
+
+<p>and built very, very <a href="https://www.linuxjournal.com/article/7922">large super-compute</a>,
+essentially big fat map-reduce style computing but, at the time, neither of
+those terms existed.  we had to invent novel ways, of moving our code of off
+big-endian (not spelled wrong) cray (also not spelled wrong) machines and onto
+tons of commodity hardware.  namely, hundreds of linux boxen.</p>
+
+<p>i also did a ton of work around clustering… very low level c/c++ code, using
+ideas from signal processing and computer vision, to detect the edges of cities
+via a process similar to the <a href="https://en.wikipedia.org/wiki/Watershed_(image_processing)">watershed algorithm</a>
+ but…  at scale.</p>
+
+<p>throughout my tenure at NGDC, i was allowed to release piles of open source
+software and, i am very, very grateful for this.  eventually i was able to
+share, through oss, over 200 open source projects enjoyed by many.  i think
+this was foundational to my eventually winning a ‘ruby hero’ award and wish
+that more young engineers had creative time to just build things.   this, is
+where true innovation comes from i believe.  not board rooms or from mining
+the data to just give people what they want.  which, is probably potato chips.</p>
+
+<hr />
+
+<p><strong>coffee break…</strong></p>
+<hr />
+
+<p>next, <a href="https://www.linkedin.com/in/gregory-greenstreet-082635/">this cowboy</a>
+hired me: to compile the <a href="https://www.gnu.org/software/gsl/">GNU scientific library</a> on.. wait for it…  <strong>windows</strong>!</p>
+
+<p>yep, i am <em>that</em> old!</p>
+
+<p>(strange that, for the first time ever, i would actually now consider owning a
+micro$oft computer but… only because they run linux ;-)</p>
+
+<p>anyhow, Greg worked for <a href="https://www.linkedin.com/in/dospringer/">Don Springer</a>, at company called <a href="https://www.oracle.com/corporate/pressrelease/oracle-buys-collective-intellect-060512.html">Collective Intellect</a>.  which, at the time, was the “Mobius Group” (which would eventually become <a href="https://foundry.vc/">The Foundry Group</a> and… <strong>#BOOM</strong> .. start-ups in Boulder, Colorado, were a thing.</p>
+
+<p>it was fun time.</p>
+
+<p>it was after this that i started <a href="/dojo4">dojo4</a>, which was the crown jewl in my life as a geek, for many reasons i hope to write about soon.  including close to ten years mentoring <a href="https://www.techstars.com/">techstars</a> companies where, i have made some super duper great friends.</p>
+
+<p>until then, i will say, as i always do that:</p>
+
+<ul>
+  <li>this is all, always, a work in progress.</li>
+  <li>i am doing it live.</li>
+  <li>i cannot spell, so sue me.  (a little dislexic, in fact.)</li>
+</ul>
+
+</div>
+
+
+<br>
+<hr>
+
+<em>
+  this all new `nerd blog` is definitely a work in progress, but you might
+enjoy the <a href="/dojo4">dojo4</a> archive, which contains some of my
+previously nerdly writing.  and, for a peek and what i am working on now see
+<a href="/disco">disco</a>...
+<br>
+<br>
+i'll be adding to the below list of articles and plan to be doing quite a bit
+of writing about ai, ruby, embedding models, groq and vespa to name a few...
+one thing i do enjoy about the ai revolution... so much to do!
+</em>
+
+
+<br>
+<br>
+
+<ol>
+  
+    <li>
+      <a href='/nerd/fastest-possible-embeddings'>/nerd/fastest-possible-embeddings</a>
+    </li>
+  
+    <li>
+      <a href='/nerd/ima'>/nerd/ima</a>
+    </li>
+  
+    <li>
+      <a href='/nerd/ro'>/nerd/ro</a>
+    </li>
+  
+</ol>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  i am an anti-social human being. i prefer being left alone.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Henry_Rollins" target="_blank">henry rollins</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+#! /usr/bin/env ruby
+#  encoding: utf-8
+
+script do
+  tldr <<~____
+    ~> translate uk sv fr es it nl
+  ____
+
+  param :build_dir, value: :required
+  param :lang_dir, value: :required
+
+  param :clean
+  param :force
+  param :noop
+
+  run do
+    setup!
+
+    jobs =
+      []
+
+    langs.each do |lang, name|
+      @build_dir.glob '**/**.html' do |src|
+        rel = src.relative_to(@build_dir)
+        parts = rel.parts
+        root = parts.first
+        next if %w[ ro langs ].include?(root)
+
+        dst = @lang_dir.join(lang, *parts)
+        job = {lang:, name:, src:, dst:, force:force?}
+        jobs.push(job)
+      end
+    end
+
+    if noop?
+      jobs.each{|job| p(job)}
+      abort
+    end
+
+    if clean?
+      langs.each do |lang, name|
+        @lang_dir.join(lang).delete!(recursive: true)
+      end
+    end
+
+    Parallel.each(jobs, in_threads: 20) do |job|
+      lang = job.fetch(:lang)
+      translate!(**job)
+    end
+  end
+
+private
+  def setup!
+    @iso_639_1 = JSON.parse(IO.binread('./config/iso-639-1.json'))
+    @noop = params.has_key?(:noop)
+    @force = params.has_key?(:force)
+    @clean = params.has_key?(:clean)
+
+    @build_dir = Path.for(params.fetch(:build_dir){ './build' })
+    @lang_dir = Path.for(params.fetch(:lang_dir){ './langs' })
+  end
+
+  def translate!(lang:, name:, src:, dst:, force:)
+    p(lang:, name:, src:, dst:)
+
+    translate = [
+      force,
+      test(?e, src) && test(?e, dst) && test('>', src, dst)
+    ].any?
+
+    unless translate
+      p(skipping: {src:, dst:})
+      return nil
+    end
+
+    html = IO.binread(src)
+
+    prompt = [].tap do |l|
+      l.push "<INSTRUCTIONS>"
+      l.push "  translate the following html file to '#{ name }', ISO-639-1 code '#{ lang }'."
+      l.push "  respond with the translated document and ONLY the translated document."
+      l.push "  be sure to translate the content of any links as well."
+      l.push "  also, add an html <base> tag to the output to constrain usees to the given lang,"
+      l.push "  for example, if translating to '#{ lang }' you should add `<base href='/langs/#{ lang }' />` to the <head> section of the translated document."
+      l.push "</INSTRUCTIONS>"
+      l.push
+
+      l.push html
+    end.
+      join("\n\n").
+      force_encoding('utf-8')
+
+    a = Time.now.to_f
+
+    translated = nil
+    error = nil
+
+    11.times do
+      begin
+        translated = AI::Groq.completion_for(prompt)
+        break
+      rescue => e
+        error = e
+        sleep(rand * 11)
+      end
+    end
+
+    raise(error) if error
+
+    string_bash!(translated)
+
+    b = Time.now.to_f
+    elapsed = (b - a).round(2)
+
+    FileUtils.mkdir_p(File.dirname(dst))
+    IO.binwrite(dst, translated)
+
+    p(lang:, name:, src:, dst:, elapsed:)
+  end
+
+  def string_bash!(translated)
+    translated.gsub!(/^\s*```html\s*/, '')
+    translated.gsub!(/\s*```\s*$/, '')
+  end
+
+  def ai
+    AI
+  end
+
+  def langs
+    keys =
+      if argv.empty?
+        default_langs
+      else
+        argv
+      end
+
+    keys -= %w[ en ]
+
+    values = keys.map{|key| iso_639_1.fetch(key)}
+
+    Hash[keys.zip(values)]
+  end
+
+  def default_langs
+    site.dato.fetch(:langs)
+  end
+
+  def langdirs
+    langs.keys
+  end
+
+  def noop?
+    !!@noop
+  end
+
+  def force?
+    !!@force
+  end
+
+  def clean?
+    !!@clean
+  end
+
+  def iso_639_1
+    @iso_639_1
+  end
+
+  def site
+    Site.only
+  end
+end
+
+BEGIN {
+  Dir.chdir(File.dirname(__dir__))
+
+  require_relative '../lib/script.rb'
+  require_relative '../config/boot.rb'
+
+  require_relative '../lib/ai.rb'
+}

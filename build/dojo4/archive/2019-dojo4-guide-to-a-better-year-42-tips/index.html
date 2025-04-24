@@ -1,0 +1,329 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>&#39;2019 dojo4 guide to a better year: 42 tips&#39;</title>
+
+<meta property="og:title" content="&#39;2019 dojo4 guide to a better year: 42 tips&#39;"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"2019-dojo4-guide-to-a-better-year-42-tips"}">
+    <meta property="site:path_info" content=""/2019-dojo4-guide-to-a-better-year-42-tips"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/2019-dojo4-guide-to-a-better-year-42-tips">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/2019-dojo4-guide-to-a-better-year-42-tips">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2019-01-31</em>
+<br>
+<br>
+<div class="ro markdown">
+  <ul>
+  <li>Be outside.</li>
+  <li>Ditch the car, ride a bike. <a href="https://www.radpowerbikes.com/">Electric bikes</a> are fun, too.</li>
+  <li>Eat more <a href="https://fungi.com/">mushrooms</a>.</li>
+  <li>Gift <a href="https://jesslove.format.com/julian-is-a-mermaid"><em>Julian is a Mermaid</em></a> to someone you love. Or to anyone.
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/b.png' alt="Screen Shot 2018-12-19 at 12.29.45 PM.png" /></li>
+  <li>Go <a href="https://gofossilfree.org/">fossil free</a>.</li>
+  <li>Reduce your screen time.</li>
+  <li>Follow <a href="https://www.instagram.com/sweateredgoats/">goats in sweaters</a>.</li>
+  <li>Study and practice <a href="https://www.4ringstactical.com/">a martial art</a>.</li>
+  <li>Try something you’ve never tried before.</li>
+  <li>Try something again that you’ve tried before and didn’t like at the time.
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/c.jpeg' alt="TryThemAndYouMay.jpg" /></li>
+  <li>Submerge yourself in cold water to charge <a href="https://www.wimhofmethod.com/science">your immune system, boost metabolic and brain activity, and reduce inflammation and pain</a>. <a href="https://www.youtube.com/watch?v=VaMjhwFE1Zw">Wim Hoff</a> says so, and he’s right.</li>
+  <li>Eat <a href="http://jaimix.com/">Jai Mix</a>.</li>
+  <li>Listen to the human-centered <a href="http://bouldertechpodcast.com/">Boulder Tech Podcast</a>.</li>
+  <li>Read and support independent media, like <a href="https://thecorrespondent.com/">The Correspondent</a> and other sources that are <a href="https://mediabiasfactcheck.com/center/">rated as least biased</a>.</li>
+  <li>Get the help you may need to <a href="https://hirediversity.us/">hire more inclusively</a>.</li>
+  <li><a href="http://www.giftitforwardproject.com/screenings/">Host a screening</a> of <a href="http://www.giftitforwardproject.com/the-film/">Gift</a>
+<a href="http://www.giftitforwardproject.com/trailer/"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/d.png' alt="Screen Shot 2018-12-20 at 11.46.33 AM.png" /> </a></li>
+  <li>Join the <a href="http://cecmeditate.com/">Consciousness Explorers Clubs</a>.</li>
+  <li>Learn more about permaculture and pattern language by reading books like <a href="https://www.amazon.com/Change-Here-Now-Permaculture-Transformation/dp/1623170648"><em>Change Here Now: Permaculture Solutions for Personal and Community Transformation</em></a></li>
+  <li>See what you think about <a href="https://www.youtube.com/watch?v=JJ1yS9JIJKs">Yuval Noah Harari</a>’s new book <a href="https://www.ynharari.com/book/homo-deus/">Homo Deus</a>.</li>
+  <li>Allocate at least 25% of your time spent on Spotify, iTunes, etc. to exploring <a href="https://bandcamp.com/">Bandcamp</a> or making a <a href="https://www.mixcloud.com/TheVibrarian/dancing-about-architecture-ignite-boulder-37-mixtape/">mixtape</a> for someone (and, of course, follow <a href="https://twitter.com/thevibrarian">@TheVibrarian</a>). Don’t forget that you can always <a href="https://www.youtube.com/watch?v=vXqkhK3lXhA">find new music to love</a>.</li>
+  <li>Listen to the latest dojo4 mixtape here: <a href="bit.ly/coloradojoyride">ColoraDOJOyride</a></li>
+  <li>Don’t forget <a href="https://g.co/kgs/Vki1FV">jazz</a>.</li>
+  <li>Don’t forget <a href="https://g.co/kgs/zHQvZB">poetry</a>.</li>
+  <li>Don’t forget <a href="https://www.npr.org/series/tiny-desk-concerts/">Tiny Desk Concerts</a>. Here are some of our favorites:
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=mhyD2qchkEw">Sylvan Esso</a></li>
+      <li><a href="https://www.youtube.com/watch?v=QKzobTCIRDw&amp;t=1213s">Tank and the Bangas</a></li>
+      <li><a href="https://www.youtube.com/watch?v=-rl26QKPHtE">Mariachi Flor De Toloache</a></li>
+      <li><a href="https://www.youtube.com/watch?v=8KUV2TFTpGo">Nathaniel Rateliff &amp; the Night Sweats</a></li>
+    </ul>
+  </li>
+  <li>Wear your <a href="http://">heart</a>, or your <a href="https://iheartguts.com/collections/buttons-pins/products/spleen-lapel-pin">spleen</a>, on your sleeve.</li>
+  <li><a href="https://microcosmpublishing.com/catalog/patches">Patch</a> yourself (or <a href="https://iheartguts.com/collections/buttons-pins/products/vadge-of-honor-patch">part of yourself</a>) up.
+<a href="https://iheartguts.com/collections/buttons-pins/products/ova-achiever-patch"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/e.png' alt="Screen Shot 2019-01-30 at 10.16.30 AM.png" /> </a></li>
+  <li>Follow more artists on instagram, like these:
+    <ul>
+      <li><a href="https://www.instagram.com/vanessalgerman/">Vanessa German</a></li>
+      <li><a href="https://www.instagram.com/ruby_onyinyechi_amanze/">Ruby Onyinyechi Amanze</a></li>
+      <li><a href="https://www.instagram.com/asahinyc/">Elia Alba</a></li>
+      <li><a href="https://www.instagram.com/rhianneclarke/">Rhianne Clarke</a></li>
+      <li><a href="https://www.instagram.com/suchitramattaiart/">Suchitra Mattai</a></li>
+      <li><a href="https://www.instagram.com/gneural/">Debbie Clapper</a></li>
+      <li><a href="https://www.instagram.com/ianmclaughlin/">Ian Mclaughlin</a></li>
+      <li><a href="https://www.instagram.com/linairisviktor/">Lina Iris Viktor</a>
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/f.png' alt="Screen Shot 2018-12-20 at 1.41.02 PM.png" /></li>
+    </ul>
+  </li>
+  <li>Look at more <a href="https://mymodernmet.com/iapbp-birth-photography-contest-2018/">images</a> of <a href="https://www.birthbecomeshercontest.com/image-contest-2018/">humans being born</a>.</li>
+  <li>Share more <a href="https://www.instagram.com/forgottenneighbors/">images</a> of humans without a home, by becoming a <a href="https://forgottenneighbors.typeform.com/to/KlpI6F">contributor</a> to <a href="https://www.forgotten-neighbors.com/">Forgotten Neighbors</a>.</li>
+  <li>Make art. Or, at least, draw in some <a href="https://microcosmpublishing.com/catalog/books?subject=coloring_books&amp;mm=or&amp;pg=1#subjects=">coloring books</a>.</li>
+  <li>Consider using <a href="https://www.scientificamerican.com/article/scientists-are-starting-to-test-claims-about-microdosing/">psychedelics</a>.</li>
+  <li>Use your <a href="https://aconica.com/">iPhone to travel</a> more visually. 
+<a href="https://aconica.com/travel/cuba/"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/g.jpeg' alt="Screen-Shot-2019-01-09-at-12.40.14-PM.jpg" /> </a></li>
+  <li>If you can’t travel far, <a href="http://www.globalgadding.com/travel-locally/">travel near</a>.</li>
+  <li>Develop a friendlier, more <a href="https://www.highlanderwealth.com/mindful-finance-blog/">mindful relationship to your finances</a>.</li>
+  <li>Form new habits by picking something and doing it 200 days in this year.  That’s barely more than half the days.
+<img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/h.png' alt="Screen Shot 2019-01-23 at 2.18.37 PM.png" /></li>
+  <li><a href="https://www.vox.com/2018/7/16/17067214/cellphone-cancer-5g-evidence-studies">Don’t sleep near your phone</a>.</li>
+  <li>Don’t let doing your taxes get you down: use <a href="https://brasstaxes.com/">BrassTaxes</a>.</li>
+  <li>Give your electronics a bedtime - try observing a digital sunset.</li>
+  <li>Track the phases of the moon.
+<a href="https://bisonbookbinding.com/products/2019-moon-phase-calendar"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/i.png' alt="Screen Shot 2019-01-24 at 3.48.37 PM.png" /> </a></li>
+  <li>Don’t wait to tell someone how you feel.</li>
+  <li>Create (or join) a regular, standing date to spend time outside with other people. We favor a weekly, family hike followed by early dinner/happy hour.</li>
+  <li>Take a <a href="https://www.thehikinglife.com/2018/01/wanderlust-hiking-on-legendary-trails/">walk</a>.
+<a href="https://us.gestalten.com/products/wanderlust"><img src='/ro/dojo4/2019-dojo4-guide-to-a-better-year-42-tips/assets/j.png' alt="Screen Shot 2019-01-28 at 3.35.04 PM.png" /></a></li>
+  <li>Slow down.</li>
+</ul>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  life is a constant process of dying.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Arthur_Schopenhauer" target="_blank">arthur schopenhauer</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

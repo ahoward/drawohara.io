@@ -1,0 +1,682 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Almost Died In An Ice Cave</title>
+
+<meta property="og:title" content="Almost Died In An Ice Cave"/>
+<meta property="og:description" content="On April of 2024, I, along with 6 of my friends, dug for our lives to come out on the other side." />
+<meta property="og:image" content="https://drawohara.io/ro/io/almost-died-in-an-ice-cave/assets/og.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/io/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"almost-died-in-an-ice-cave"}">
+    <meta property="site:path_info" content=""/almost-died-in-an-ice-cave"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/almost-died-in-an-ice-cave">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/almost-died-in-an-ice-cave">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <div class="ro markdown">
+  <p><a href="#tl;dr;">tl;dr;</a></p>
+
+<blockquote>
+  <p>in april, 2024, myself, and 6 brave men attempted to cross the harding
+icefield.</p>
+
+  <p>in celebration of <a href="https://en.wikipedia.org/wiki/Harding_Icefield#History">yule kilcher’s 1968 crossing</a></p>
+
+  <p>midway through our trip, at the point of no return, we were beseiged by a storm of storms.</p>
+
+  <p>we dug shoulder to shoulder for 5 days before the air national gaurd crash
+landed, and we crawled into the void on a one way journey to save each other’s
+lives at a bearing of 300, 900 meters away.</p>
+
+  <p>these are my memories from that trip.</p>
+
+  <p>they are not meant to be definiative or complete; merely a refelection on how
+the experience sits in my mind.</p>
+
+  <p>it took me a full year to be able to put pen to paper about this so, forgive
+any tresspasses.</p>
+
+  <p>it’s strange how fungible time truly is.</p>
+
+  <p><strong>a lifetime, a lifetime ago, just yesterday…</strong></p>
+</blockquote>
+
+<p><a href="#pss">p.s.s</a> -&gt; <a href="https://www.instagram.com/gazleah/">@gaz</a> is <a href="https://www.wellgoodproductions.com/">making a film about this ↓↓↓↓</a></p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/og.jpg' alt="" /></p>
+
+<p>at this point, i was down to being able to remember</p>
+
+<blockquote>
+  <p>hail mary, full of grace</p>
+</blockquote>
+
+<p>and then nothing.</p>
+
+<p>the rest of the verses eluded me.</p>
+
+<p>as did my children’s names.</p>
+
+<p>everything, was very, very far away.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image1.png' alt="" /></p>
+
+<p>suddenly there was gaz, pulling me out of a 10 feet deep hole in the snow.</p>
+
+<p>out of the darkness of the cave, into the pure white nothingness of the storm.
+wind screaming like a banshee.  it was so white, so loud. it hurt.  after
+nearly 5 days in that hole.</p>
+
+<p>i imagine this might be what it’s like to be born.</p>
+
+<p>pulled from a dark place you cannot stay, into the brightness of a place you
+will surely die in.</p>
+
+<p>i was feeling slightly lackadaisical, not in a hurry, but i was still aware,
+in some capacity, that gaz seemed to be yelling:</p>
+
+<p><strong>“go! go! go!”</strong></p>
+
+<p>i was having difficulty being excited about it.</p>
+
+<p>so. cold…</p>
+
+<p>above ground, it was time for one last push.</p>
+
+<p>not long before we’d made josh ‘a last cup of coffee’.  he said it was the
+best he’d ever tasted.  he seemed to be the last one standing.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image2.png' alt="" /></p>
+
+<p>i think that was the point when we knew.</p>
+
+<p>we couldn’t keep up – we were going to be buried alive.</p>
+
+<p>they were not going to be able to reach us – despite trying for days.</p>
+
+<p>probably before the next morning or, depending on the rage of the storm, in
+minutes.</p>
+
+<p>we’d radioed the rescue team, letting know we were tapping out.  we didn’t
+want them trying to recover corpses.</p>
+
+<p>one more shot!  the radio said.  they were going to try one more time…</p>
+
+<p>at its peak, the storm pumped out snow like it was being blown out of a
+firehose.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7N4briDDD7A?si=xYSyzpdnKlMvQNgC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>some of us were lifelong alaskans.</p>
+
+<p>we grew up mountain running, backpacking, winter camping in freakishly bad
+weather.  i’ve read how to build a fire a hundred times.  as my dad taught me:
+<strong>3</strong>, not 2 ways to make a fire.  unless you have a death wish.</p>
+
+<p>of course, on a glacier there is no way to make a fire. nothing to burn.</p>
+
+<p>gaz trained special ops people in winter travel and was a guide in france for
+years. he is good at his job because he can film skiing switch.  he
+knows how to fly paragliders, scuba, climb. and he split his skull open in
+oman in a climbing fall. at that time, he was the only one of us to have been
+rescued by a military helicopter.</p>
+
+<p>he is also a bit of a nut.  i loved him 30 seconds after picking him up at
+the anchorage airport:
+<br />
+<br />
+<a href="https://recorder.google.com/5ceeb9c2-22a7-47fe-a1e0-48654444fa1b">https://recorder.google.com/5ceeb9c2-22a7-47fe-a1e0-48654444fa1b</a>.</p>
+
+<p>josh lives in a 12x8x15 cabin, built into the roots of hemlock trees on
+a steep hillside in seward, alaska. surrounded by moss and ice climbing. he
+doesn’t have electricity, or running water.</p>
+
+<p>his days seem to be filled with a.m. radio, watching the weather, and looking at
+maps.</p>
+
+<p>he is always pointing.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/josh-pointing.jpg' alt="" /></p>
+
+<p>levi, who has the strength of the Incredible Hulk, the heart of Shrek, the
+brain of Bernardo Kastrop and a gigantic Alaskan smile, had never seen it snow
+like this.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image3.png' alt="" /></p>
+
+<p>none of us had.</p>
+
+<p>it came down in sheets.  a strange combination of graupelly pellets surrounded
+by what seemed like grape sized slush balls surrounding them.</p>
+
+<p>later, in the chunnel, it would fill up as fast as you could move it.  working
+full tilt.  panting, wheezing, stumbling about with less than zero visibility.</p>
+
+<p>shovel full tilt for 10 minutes.  turn around to feel everything you’d just
+removed already returned.  racing for air.</p>
+
+<p>while digging, i often simply left my eyes closed to conserve energy, and hold
+onto to sanity.</p>
+
+<p>at the bottom, under the awning of skis we’d barely managed to retrieve on a
+recon mission, i would drop and take a knee.</p>
+
+<p>to say another ‘hail mary’.</p>
+
+<p>my grandma had told me, over and over and over again, that i would one day
+need it.</p>
+
+<p>she made me say it with her over and over.</p>
+
+<p>but this was the first time i’d felt i truly needed it.</p>
+
+<blockquote>
+  <p>axel, nova, axel, nova, axel…</p>
+</blockquote>
+
+<p>my kids’ names.</p>
+
+<blockquote>
+
+  <p>outside of right leg.<br />
+<strong>(axel)</strong><br />
+towards right leg, swinging it out of the way.<br />
+<strong>(nova)</strong><br />
+between the legs.<br />
+<strong>(axel)</strong><br />
+towards the left leg swinging left foot out of way.<br />
+<strong>(nova)</strong><br />
+outside of left foot.<br />
+<strong>(axel)</strong><br /></p>
+
+  <p><strong>[[ reverse ]]</strong></p>
+
+  <p>towards left leg, swinging it out of the way.<br />
+<strong>(nova)</strong><br />
+between the legs.<br />
+<strong>(axel)</strong><br />
+towards the right leg swinging right foot out of way.<br />
+<strong>(nova)</strong><br />
+outside of left foot.<br />
+<strong>(axel)</strong><br /></p>
+
+</blockquote>
+
+<p>digging truly was the best part. at least then, you were warm.</p>
+
+<p>and above ground.  breathing air.</p>
+
+<p>the chunnel had gotten so high and narrow only two men could work at a time.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image4.png' alt="" /></p>
+
+<p>i kinda figured that randy would go first.  at night i’d felt him, hands and
+knees, shivering…  but, the spring before, i’d seen him reveling in shit
+like this…</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image6.png' alt="" /></p>
+
+<p><strong>maybe it would be ok?</strong></p>
+
+<p>he never seemed to stop laughing.  even when he was hypothermic. for days.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i8Se0WE77p4?si=DpOZCJZVI73P2gTK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>on day 2, or 3, or 4 - i forget, levi woke up in a panic, realizing that the
+structure of our roof, the roof of our ‘backup backup backup’ cave, the one we
+weren’t supposed to need, wasn’t convex enough and that our breath was slowly
+melting it.</p>
+
+<p>thousands of pounds of wet, dense, snow was above us, and starting to drip and fall out in clumps.</p>
+
+<p>he stripped off his clothes and started chopping away at the ceiling. a sled
+brigrade to shuttle the snow, raining down everywhere on our gear.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/levi-rawr.png' alt="" /></p>
+
+<p>when everything is soaking wet and freezing, it can easily take two people and
+30 to 45 minutes to simply execute a clothing change.  inside the cave, it’s
+34 degrees and raining.  the second you are outside, everything freezes solid.
+once back inside, you get to reverse the process.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z-L13WwsBkg?si=-S3ikF9CzF-VTYMR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>we used all our tricks.</p>
+
+<p>i remember a particular session.</p>
+
+<p>it was the first time i’d been able to perceive any atmospheric feature in
+days.</p>
+
+<p>not the moon, not sky, nor the massive bulk of the nunatak behind us.</p>
+
+<p>i leaned inside and said:</p>
+
+<blockquote>
+  <p><strong>i saw the moon!</strong></p>
+</blockquote>
+
+<p>no one moved.  maybe they didn’t hear me?</p>
+
+<p>i went back outside to keep digging.</p>
+
+<hr />
+
+<p>for levi and eivin, this trip was born onto them.  their grandfather yule was the first
+explorer to cross the ice sheet in 1968.  still boggles the mind, knowing what
+they did, back then, on that gear.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image7.png' alt="" /></p>
+
+<p>but for me, it was only 3 years in the making.</p>
+
+<hr />
+
+<p>i’d met jess deep in the desert.  having gotten off crutches just a few weeks
+before.</p>
+
+<p>she sent me.  knowing before i did that i had to go.</p>
+
+<hr />
+
+<p>then somehow she was there with me.  on the left side, in front.</p>
+
+<p>directly opposite the dark energy of the nunatak which i could barely see.
+could not see.  but could feel.</p>
+
+<p>the juxtaposition felt a little like a lightning bolt, piercing diagonally
+through my body but, at that moment, i knew i was ok to die.  i was seeing all
+of it, right now, or so i still feel.</p>
+
+<p>i think each of us felt it, in our own way.</p>
+
+<p>the idea of lying next to your best friends, exhausted, and falling asleep in
+total silence, buried together, seemed pretty ok.</p>
+
+<p>sure the fuck beats dying of cancer surrounded by beeping monitors and strangers.
+tv in the corner.  at least, from what i’ve seen.</p>
+
+<p>that’s what i’d felt in <strong>that session</strong>.</p>
+
+<hr />
+
+<p>a few days ago, levi left a voice message in our group chat.  almost one year
+before the day.</p>
+
+<p>he reminded us that mike had woken us all up.  and that this small act had saved our lives.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5V-cYzmAQ58?si=ZbUk9Y9X9D7TVVsp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+<p><br /></p>
+
+<p>there were 100s of such small acts over that week in the cave.</p>
+
+<p>mike is missing a finger.  a fisherman.  father.  carpenter.</p>
+
+<p>he built his own dome and gardens year round in a 20x40 hoop building in homer
+alaska.  he’s built like an ox.</p>
+
+<p>3 big ones: levi, josh, mike.  and 3 small ones.  ara, randy, gaz.</p>
+
+<p>eivin is the smart one.  he left on day 4, via ski plane.  before anyone knew
+what was up.   thankfully for us, because he and sarah held everything
+together for us later.</p>
+
+<p>i remeber mike reaching over the group to scratch my head when it was getting
+hard, face crushed into the ice wall.  randy shaking violently in between
+levi, and me.</p>
+
+<p>our sleeping bags were completely useless. only this tyvek bivy created enough
+warm, dry space to raise body temperature.</p>
+
+<p>levi and i have talked about next time.  no sleeping bags.  wool.  perhaps
+sealskin.  and sails, definitely bringing sails for the skis.  a sealskin sail
+would be very useful, and better in an ice cave than even tyvek.</p>
+
+<p>stuff made out of oil starts to feel just like what it is in situations like
+this.</p>
+
+<p>plastic.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image8.png' alt="" /></p>
+
+<p>these are the kinds of things only ‘alaska boys’ seem to appreciate.   you can
+tell them in any group of moutaineers - all thier shit is either 30 years old,
+homemade, or a piece of carbon a buddy just started manufacturing out of his
+bus.</p>
+
+<p>well, that, and some ozzy osbourne.</p>
+
+<p>mike also woke up screaming at one point - singing</p>
+
+<blockquote>
+  <p><a href="https://open.spotify.com/track/7ACxUo21jtTHzy7ZEV56vU?si=f77d78dc3ea24ad2">‘going off the rails in an icey c-avE! 🎵🤘🤘🤘’</a></p>
+</blockquote>
+
+<p>around 3 in the morning on night 3.</p>
+
+<p>despite being too tired to laugh, it was at least as comforting to me as
+praying.</p>
+
+<p>on the helicopter i messaged jess. telling her that i’d felt her there, when i
+as utterly alone, and that i loved her.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image9.png' alt="" /></p>
+
+<p>i didn’t yet know that she’d tracked down sarah, josh’s sister, and known of
+the severity of our predicament for the past few days, during which she’d also
+been up all night praying.</p>
+
+<p>for all of us.</p>
+
+<p>who does that?  there is a reason i’ve been in los angeles for a year now.
+some gennies don’t go back in the bottle.</p>
+
+<p>sarah had been instrumental in our rescue.</p>
+
+<p>along with eivin, and many other friends and family members, calling everyone
+from the national guard to friends with crazy ideas about how to approach us
+on tracked vehicles after the storm passed.</p>
+
+<p>we had hit the button on day two.</p>
+
+<p>it took many approaches, and two more nights, before we saw that red coat in
+the distance.  literally the happiest any of us have probably been to see
+another human being.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image10.png' alt="" /></p>
+
+<p>at the hospital, walking through the hallways, the staff and
+patients literally gagged and moved away quickly.</p>
+
+<p>we smelled like death.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image11.png' alt="" /></p>
+
+<p>sarah took us to fred meyer to buy new clothes.  most of my clothing still
+smells like cave. even after washing it in bleach.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image12.png' alt="" /></p>
+
+<p>at freddy’s i wandered around remembering being a kid:  grandma always took me
+there too, and we’d visit my uncle rik, that ran the store.</p>
+
+<p>we lost mike for then second time in 24 hours.  though thankfully not in a
+crevasse – it was in the meat isle.</p>
+
+<p>the only thing i recall eating in the cave was a handful of moose jerky that
+mike stuffed in my mouth as i crawled out for another shift.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image13.png' alt="" /></p>
+
+<p>back in anchorage, bellies full, and in dry clothes, we let our guards down.</p>
+
+<p>so. happy.</p>
+
+<p>being upright, and above ground.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image14.png' alt="" /></p>
+
+<p>and fell asleep</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/image15.png' alt="" /></p>
+
+<p>there are so many other things i coudl say about this trip.</p>
+
+<p>and re-reading now, i can see clearly that, despite a year of trying, i will
+never be able to explain what happened out there.</p>
+
+<p>but, today, april 19th, 2025, one year to the day that we were rescued, i
+wanted to stop to say thank you to my friends, thank you to my family, thank
+you jess.</p>
+
+<p>thank you axel and nova.</p>
+
+<p>i wouldn’t be here without you.</p>
+
+<p>so much love to you all.</p>
+
+<p><img src='/ro/io/almost-died-in-an-ice-cave/assets/purple-heart.jpg' alt="" /></p>
+
+<hr />
+<p><a href="https://photos.app.goo.gl/xbRt9Waj8583Bzvd7">more photos =&gt;</a>.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  we have all known the long loneliness and we have learned that the only
+solution is love and that love comes with community.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Dorothy_Day" target="_blank">dorothy day</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

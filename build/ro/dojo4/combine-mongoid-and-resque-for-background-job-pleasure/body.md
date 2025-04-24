@@ -1,0 +1,1 @@
+<script src="https://gist.github.com/3005861.js?file=job.rb"></script>

@@ -1,0 +1,7 @@
+Last week, our friends at Amplify launched their ambitious tablet product at [SXSWedu](http://sxswedu.com/). You can check it out [here](http://amplify.com/tablet/). Be sure to watch the video and grasp the whole scope of what they're tackling. Isn't it awesome?! Instant student and teacher feedback. Content where students spend their time: on devices and on the web. A more personalized education experience.
+
+dojo4 couldn't be happier to contribute to this effort by building two content applications for student use. The first is an Encyclopædia Britannica application and the second is a Khan Academy video application. Both proved to be positive challenges with respect to student-focused usability and design, offline media, and Android development. We hope they see some good use!
+
+Regarding development of the EB application for Android, one of my favorite parts of the implementation was around search. A good encyclopedia application has to have good search, right? We ended up using SQLite since, with Android, it ships with the [FTS4](http://sqlite.org/fts3.html) extension compliled and enabled. If you haven't used FTS4 virtual tables before, they provide great full-text search indexing capabilities and the `MATCH` SQL operator. The docs are a bit technical, but very helpful overall once you wrap your head around them.
+
+You can read more from Amplify's CEO [here](http://amplify.com/article/technology-thats-truly-designed-education).

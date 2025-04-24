@@ -1,0 +1,235 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"the-mongoid-wars-removing-production-indexes"}">
+    <meta property="site:path_info" content=""/the-mongoid-wars-removing-production-indexes"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/the-mongoid-wars-removing-production-indexes">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/the-mongoid-wars-removing-production-indexes</strong>
+    </header>
+
+    <main>
+      <em>published on: 2014-06-12</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>Yesterday <a href="https://twitter.com/cookrn">Ryan Cook</a> and I hit one of those dreaded production only issues experienced developers know and hate on the soft launched <a href="http://gomoshimoshi.com/">Moshi Moshi Co</a> product <a href="http://wallspacefinder.com/">Wall Space Finder</a>.</p>
+
+<p>This one was a doozy, models would fail to save in staging only, not locally or in production.  Obviously this was <em>RAILS_ENV</em> related, or so I thought…</p>
+
+<p>First we did the obvious, looked at the code locally in development mode.  Nothing, it totally worked.  No problems.</p>
+
+<p>Then we used the awesome</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;~&gt;&nbsp;cap&nbsp;staging&nbsp;db:suck&nbsp;
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;<span style="color: #6e7781">### the inverse is, you guessed it, db:blow, because development needs to be moar funi...</span>
+</div><div class='code-line code-line-7'>
+</div><div class='code-line code-line-8'>
+</div></code></div>
+
+<p>to suck the remote staging db into the local db, thereby replicating code,<br />
+data, and the <em>RAILS_ENV</em> via</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;~&gt;&nbsp;<span style="color: #0550ae">RAILS_ENV</span><span style="color: #0550ae">=</span>production&nbsp;<span style="color: #0550ae">RAILS_STAGE</span><span style="color: #0550ae">=</span>staging&nbsp;./bin/rails&nbsp;server
+</div><div class='code-line code-line-3'>
+</div></code></div>
+
+<p>A quick note on that: Dojo4 runs all staging deploys in <em>RAILS_ENV=production</em> and disambiguates staging vs. production via another environment variable (<em>RAILS_STAGE</em>) precisely for the reason that we like to exercise any and all production behaviors in staging/qa where possible - selectively guarding only <em>crazy</em> behaviors like charging credit cards via <em>RAILS_STAGE</em>.</p>
+
+<p>So rest assured the issue was <em>not</em> because we had <em>./config/environments/staging.rb</em> setup differently than <em>./config/environments/production.rb</em>!</p>
+
+<p>But still, we could not replicate. <em>#WTF</em>!?</p>
+
+<p>Finally, I instrumented the staging deploy to use <a href="https://twitter.com/search?f=realtime&amp;q=%23die%C3%BCberawesomesauce&amp;src=typd">#dieüberawesomesauce</a> <a href="https://github.com/Mon-Ouie/pry-remote">pry-remote</a> and dropped right into the <em>BOOMing</em> code on the staging node.</p>
+
+<p>And there it was: a unique contraint was being violated in the database.  Yet no<br />
+unique indexes were defined in the model, or anywhere else.  Hrmmmmm…</p>
+
+<p>Reviewing the git logs I found that, previously, a unique index <em>had</em> been<br />
+defined on the offending model.  Problem solved I thought, a quick</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>&nbsp;&nbsp;~&gt;&nbsp;rake&nbsp;db:mongoid:remove_indexes
+</div><div class='code-line code-line-3'>
+</div></code></div>
+
+<p>and.  <em>The problem remained.</em></p>
+
+<p>Ok.  Code reading time.  3 minutes later the problem was discovered. In Mongoid 4 the <em>remove_indexes</em> task uses this code</p>
+
+<div class="language-ruby highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># Return the list of indexes by model that exist in the database but aren't</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># specified on the models.</span>
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># @example Return the list of unused indexes.</span>
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">#   Mongoid::Tasks::Database.undefined_indexes</span>
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6e7781"># @return Hash{Class =&gt; Array(Hash)} The list of undefined indexes by model.</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #cf222e">def</span>&nbsp;<span style="color: #8250df">undefined_indexes</span><span style="color: #24292f;background-color: #f6f8fa">(</span><span style="color: #24292f;background-color: #f6f8fa">models</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #0550ae">::</span><span style="color: #953800">Mongoid</span><span style="color: #24292f;background-color: #f6f8fa">.</span><span style="color: #8250df">models</span><span style="color: #24292f;background-color: #f6f8fa">)</span>
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">undefined_by_model</span>&nbsp;<span style="color: #0550ae">=</span>&nbsp;<span style="color: #24292f;background-color: #f6f8fa">{}</span>
+</div><div class='code-line code-line-12'>
+</div></code></div>
+
+<p>ref: https://github.com/mongoid/mongoid/blob/master/lib/mongoid/tasks/database.rb#L40</p>
+
+<p>but, in Mongoid 3.x, which we are using, it has no such logic.</p>
+
+<p>ref: https://github.com/mongoid/mongoid/blob/3.1.0-stable/lib/rails/mongoid.rb</p>
+
+<p>So there you have it: Mongoid 4 ensures that all indexes, even those no longer defined in the code/repo are nuked when indexes are dropped, while Mongoid 3 will leave those indexes lying around in the database!</p>
+
+<p>I decided to write about this experience because:</p>
+
+<ul>
+  <li>20/20 hindsight I’ve hit it before myself.  /cc <a href="https://twitter.com/spikex">@spikex</a></li>
+  <li>It underscores how development and dev-ops need to converge to debug real-world issues: not everything is stateless and lives in the repo, and not all state can be replicated.  Sometimes you gotta do it live.</li>
+  <li>Someone will undoubtedly have the same issue and, I hope, find this post via the magic of teh googlez.</li>
+  <li><a href="https://twitter.com/modetojoy">@modetojoy</a> might consider my current thinking, which is that we should backport the better Mongoid 4 behavior into 3.1.0.</li>
+</ul>
+
+<p>And people wonder why we engineers can’t estimate the time and effort to fix a simple bug.</p>
+
+<p>P.S.  Some of you readers might be wondering how I fixed this.  I simply re-defined the index in the console, so Mongoid would be aware of it, and then used the model level methods to nuke it</p>
+
+<div class="language-bash highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'><span style="color: #0550ae">[</span>48]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; model.save</span>
+</div><div class='code-line code-line-3'>Moped::Errors::OperationFailure:&nbsp;The&nbsp;operation:&nbsp;<span style="color: #6e7781">#&lt;Moped::Protocol::Command</span>
+</div><div class='code-line code-line-4'>&nbsp;&nbsp;@length<span style="color: #0550ae">=</span>89
+</div><div class='code-line code-line-5'>&nbsp;&nbsp;@request_id<span style="color: #0550ae">=</span>604
+</div><div class='code-line code-line-6'>&nbsp;&nbsp;@response_to<span style="color: #0550ae">=</span>0
+</div><div class='code-line code-line-7'>&nbsp;&nbsp;@op_code<span style="color: #0550ae">=</span>2004
+</div><div class='code-line code-line-8'>&nbsp;&nbsp;@flags<span style="color: #0550ae">=[]</span>
+</div><div class='code-line code-line-9'>&nbsp;&nbsp;@full_collection_name<span style="color: #0550ae">=</span><span style="color: #0a3069">"wall_space_finder-staging.</span><span style="color: #0550ae">$cmd</span><span style="color: #0a3069">"</span>
+</div><div class='code-line code-line-10'>&nbsp;&nbsp;@skip<span style="color: #0550ae">=</span>0
+</div><div class='code-line code-line-11'>&nbsp;&nbsp;@limit<span style="color: #0550ae">=</span><span style="color: #116329">-1</span>
+</div><div class='code-line code-line-12'>&nbsp;&nbsp;@selector<span style="color: #0550ae">={</span>:getlasterror<span style="color: #0550ae">=&gt;</span>1,&nbsp;:safe<span style="color: #0550ae">=&gt;</span><span style="color: #953800">true</span><span style="color: #0550ae">}</span>
+</div><div class='code-line code-line-13'>&nbsp;&nbsp;@fields<span style="color: #0550ae">=</span>nil&gt;
+</div><div class='code-line code-line-14'>failed&nbsp;with&nbsp;error&nbsp;11000:&nbsp;<span style="color: #0a3069">"E11000 duplicate key error index: wall_space_finder-staging.art_spaces.</span><span style="color: #0550ae">$profile</span><span style="color: #0a3069">.slug_1  dup key: { : null }"</span>
+</div><div class='code-line code-line-15'>
+</div><div class='code-line code-line-16'>
+</div><div class='code-line code-line-17'><span style="color: #0550ae">[</span>49]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; ArtSpace.index({:slug =&gt; 1}, {:unique =&gt; true})</span>
+</div><div class='code-line code-line-18'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #0550ae">{</span>:unique<span style="color: #0550ae">=&gt;</span><span style="color: #953800">true</span><span style="color: #0550ae">}</span>
+</div><div class='code-line code-line-19'>
+</div><div class='code-line code-line-20'><span style="color: #0550ae">[</span>50]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; ArtSpace.remove_indexes</span>
+</div><div class='code-line code-line-21'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #953800">true</span>
+</div><div class='code-line code-line-22'>
+</div><div class='code-line code-line-23'><span style="color: #0550ae">[</span>51]&nbsp;pry<span style="color: #0550ae">(</span><span style="color: #6e7781">#&lt;My::SpacesConducer&gt;)&gt; model.save</span>
+</div><div class='code-line code-line-24'><span style="color: #0550ae">=&gt;</span>&nbsp;<span style="color: #953800">true</span>
+</div><div class='code-line code-line-25'>
+</div><div class='code-line code-line-26'>
+</div></code></div>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/the-mongoid-wars-removing-production-indexes">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

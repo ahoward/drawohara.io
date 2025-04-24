@@ -1,0 +1,332 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Configuring the default VirtualHost in apache2</title>
+
+<meta property="og:title" content="Configuring the default VirtualHost in apache2"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"configuring-the-default-virtual-host-in-apache2"}">
+    <meta property="site:path_info" content=""/configuring-the-default-virtual-host-in-apache2"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/configuring-the-default-virtual-host-in-apache2">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/configuring-the-default-virtual-host-in-apache2">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2012-12-13</em>
+<br>
+<br>
+<div class="ro markdown">
+  <div class="language-apache highlighter-rouge"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>
+</div><div class='code-line code-line-2'>
+</div><div class='code-line code-line-3'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-4'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-5'><span style="color: #6e7781"># apache has the odd behaviour of routing any request with a bad or unknown</span>
+</div><div class='code-line code-line-6'><span style="color: #6e7781"># Host: header to the first virtual host found in it's config.  this can cause</span>
+</div><div class='code-line code-line-7'><span style="color: #6e7781"># serioulsy bad issues when multiple sites are hosted in the same apache</span>
+</div><div class='code-line code-line-8'><span style="color: #6e7781"># instance.  for example, a failed request for http://foo.bar.com/missing</span>
+</div><div class='code-line code-line-9'><span style="color: #6e7781"># could hit a passenger virtual host and cause unspecfied behaviour depending</span>
+</div><div class='code-line code-line-10'><span style="color: #6e7781"># on how that application behaves.</span>
+</div><div class='code-line code-line-11'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-12'><span style="color: #6e7781"># the solution is to ensure a catch-all virtual host exists and is loaded</span>
+</div><div class='code-line code-line-13'><span style="color: #6e7781"># before all other virtual host configuration files - and that this virutal</span>
+</div><div class='code-line code-line-14'><span style="color: #6e7781"># host simply 404's (you could also serve a friendly error page)</span>
+</div><div class='code-line code-line-15'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-16'><span style="color: #6e7781"># assuming a layout where apache conf files are loaded from, eg:</span>
+</div><div class='code-line code-line-17'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-18'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/*.conf</span>
+</div><div class='code-line code-line-19'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-20'><span style="color: #6e7781"># you should put this configuation in a file named</span>
+</div><div class='code-line code-line-21'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-22'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/0.conf</span>
+</div><div class='code-line code-line-23'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-24'><span style="color: #6e7781"># the '0.conf' ensures it's loaded first.  you can validate that this config</span>
+</div><div class='code-line code-line-25'><span style="color: #6e7781"># is loaded first via</span>
+</div><div class='code-line code-line-26'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-27'><span style="color: #6e7781">#   ls -1 /etc/apache2/sites-enabled/ | sort | head -1</span>
+</div><div class='code-line code-line-28'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-29'><span style="color: #6e7781"># this should print</span>
+</div><div class='code-line code-line-30'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-31'><span style="color: #6e7781">#   /etc/apache2/sites-enabled/0.conf</span>
+</div><div class='code-line code-line-32'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-33'><span style="color: #6e7781"># once the configuration is in place you can test that it is indeed the</span>
+</div><div class='code-line code-line-34'><span style="color: #6e7781"># default/first configuration used via</span>
+</div><div class='code-line code-line-35'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-36'><span style="color: #6e7781">#   curl --silent --header 'Host: fu.bar.com' your.domain.com</span>
+</div><div class='code-line code-line-37'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-38'><span style="color: #6e7781"># the default apache 404 page will be served is this is correct.  obviously</span>
+</div><div class='code-line code-line-39'><span style="color: #6e7781"># you can configure the default virtual servers to have an acutal document</span>
+</div><div class='code-line code-line-40'><span style="color: #6e7781"># root, etc...</span>
+</div><div class='code-line code-line-41'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-42'><span style="color: #6e7781"># another important note.  it is *not* enough to simple configure the</span>
+</div><div class='code-line code-line-43'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-44'><span style="color: #6e7781">#   _default_:80</span>
+</div><div class='code-line code-line-45'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-46'><span style="color: #6e7781"># virtual host.</span>
+</div><div class='code-line code-line-47'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-48'><span style="color: #6e7781"># you also need to setup the actual named host</span>
+</div><div class='code-line code-line-49'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-50'><span style="color: #6e7781">#   ServerName _default_</span>
+</div><div class='code-line code-line-51'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-52'><span style="color: #6e7781"># the reason for this is that name based virtual hosting will use, by default,</span>
+</div><div class='code-line code-line-53'><span style="color: #6e7781"># the first *name based virtual host* so you cannot rely on an un-named one,</span>
+</div><div class='code-line code-line-54'><span style="color: #6e7781"># which would suffice in most situations.</span>
+</div><div class='code-line code-line-55'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-56'>
+</div><div class='code-line code-line-57'>
+</div><div class='code-line code-line-58'><span style="color: #6e7781"># this section will catch requests to missing hosts under a name-based vhost</span>
+</div><div class='code-line code-line-59'><span style="color: #6e7781"># configuration</span>
+</div><div class='code-line code-line-60'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-61'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;</span><span style="color: #0550ae">VirtualHost</span><span style="color: #116329"> *:80</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-62'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">ServerName</span>&nbsp;_default_
+</div><div class='code-line code-line-63'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Redirect</span>&nbsp;404&nbsp;/
+</div><div class='code-line code-line-64'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;/</span><span style="color: #0550ae">VirtualHost</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-65'>
+</div><div class='code-line code-line-66'>
+</div><div class='code-line code-line-67'><span style="color: #6e7781"># and this will handle the rest</span>
+</div><div class='code-line code-line-68'><span style="color: #6e7781">#</span>
+</div><div class='code-line code-line-69'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;</span><span style="color: #0550ae">VirtualHost</span><span style="color: #116329"> _default_:80</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-70'>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #953800">Redirect</span>&nbsp;404&nbsp;/
+</div><div class='code-line code-line-71'>&nbsp;&nbsp;<span style="color: #24292f;background-color: #f6f8fa">&lt;/</span><span style="color: #0550ae">VirtualHost</span><span style="color: #24292f;background-color: #f6f8fa">&gt;</span>
+</div><div class='code-line code-line-72'>
+</div><div class='code-line code-line-73'>
+</div><div class='code-line code-line-74'>
+</div></code></div>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  every individual matters. every individual has a role to play. every
+individual makes a difference.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Jane_Goodall" target="_blank">jane goodall</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

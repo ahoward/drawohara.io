@@ -1,0 +1,867 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/quotes"">
+    <meta property="site:params" content="{"ext":null}">
+    <meta property="site:path_info" content=""/quotes"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/quotes">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/quotes">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <p>
+i struggle with words, and writing.  being somewhat dislexic and more that a
+little adhd.  but i like to listen the words of some people.  these are some
+of my favorites.
+</p>
+
+
+  <hr>
+  <h5>
+    <a href="#arthur-schopenhauer" name="arthur-schopenhauer">arthur schopenhauer</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          life is a constant process of dying.
+
+        </li>
+      
+        <li>
+          we forfeit three-fourths of ourselves in order to be like other people.
+
+        </li>
+      
+        <li>
+          the world is everything that is the case.
+
+        </li>
+      
+        <li>
+          talent hits a target no one else can hit; genius hits a target no one
+else can see.
+
+        </li>
+      
+        <li>
+          compassion is the basis of morality.
+
+        </li>
+      
+        <li>
+          a man can do what he wills, but he cannot will what he wills.
+
+        </li>
+      
+        <li>
+          every man takes the limits of his own field of vision for the limits of
+the world.
+
+        </li>
+      
+        <li>
+          the two enemies of human happiness are pain and boredom.
+
+        </li>
+      
+        <li>
+          the first forty years of life give us the text; the next thirty supply
+the commentary on it.
+
+        </li>
+      
+        <li>
+          great men are like eagles, and build their nest on some lofty solitude.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Arthur_Schopenhauer" target="_blank">about arthur &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#jane-goodall" name="jane-goodall">jane goodall</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          the least i can do is speak out for those who cannot speak for themselves.
+
+        </li>
+      
+        <li>
+          only if we understand, can we care. only if we care, will we help. only if
+we help shall they be saved.
+
+        </li>
+      
+        <li>
+          you cannot get through a single day without having an impact on the world
+around you. what you do makes a difference, and you have to decide what
+kind of difference you want to make.
+
+        </li>
+      
+        <li>
+          every individual matters. every individual has a role to play. every
+individual makes a difference.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Jane_Goodall" target="_blank">about jane &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#h.h.-the-14th-dalai-lama" name="h.h.-the-14th-dalai-lama">h.h. the 14th dalai lama</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          be kind whenever possible.  it is always possible.
+
+        </li>
+      
+        <li>
+          the purpose of our lives is to be happy.
+
+        </li>
+      
+        <li>
+          my religion is very simple. my religion is kindness.
+
+        </li>
+      
+        <li>
+          if you want others to be happy, practice compassion. if you want to be happy, practice compassion.
+
+        </li>
+      
+        <li>
+          be kind whenever possible. it is always possible.
+
+        </li>
+      
+        <li>
+          silence is sometimes the best answer.
+
+        </li>
+      
+        <li>
+          happiness is not something ready-made. it comes from your own actions.
+
+        </li>
+      
+        <li>
+          our prime purpose in this life is to help others. and if you can&#39;t help them, at least don&#39;t hurt them.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Dalai_Lama" target="_blank">about h.h. &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#bernardo-kastrop" name="bernardo-kastrop">bernardo kastrop</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          what most people mean by &#39;free will&#39; is that my choices are determined, but they are determined by me.
+
+        </li>
+      
+        <li>
+          the universe can only know itself by expressing itself fully in a computationally irreducible way.
+
+        </li>
+      
+        <li>
+          your confusion arises from a fundamental inversion: it is your head that is in your mind, not your mind in your head.
+
+        </li>
+      
+        <li>
+          matter is a representation or appearance of what is, in and of itself, mental processes.
+
+        </li>
+      
+        <li>
+          consciousness is all there is.
+
+        </li>
+      
+        <li>
+          the &#39;outer&#39; world is simply the &#39;inner&#39; world viewed from a different perspective.
+
+        </li>
+      
+        <li>
+          we are all dissociated alters of a single, universal consciousness.
+
+        </li>
+      
+        <li>
+          materialism is a story we tell ourselves.
+
+        </li>
+      
+        <li>
+          reality is experience.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Bernardo_Kastrup" target="_blank">about bernardo &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#carlo-rovelli" name="carlo-rovelli">carlo rovelli</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          the world is not a collection of things, it is a collection of events.
+
+        </li>
+      
+        <li>
+          time is ignorance.
+
+        </li>
+      
+        <li>
+          we are made of the same atoms and the same light signals as are exchanged
+between pine trees in the mountains and stars in the galaxies.
+
+        </li>
+      
+        <li>
+          the notion of &#39;now&#39; refers to what we are doing here, and nowhere else.
+
+        </li>
+      
+        <li>
+          but it isn&#39;t absence that causes sorrow. it is affection and love. without
+affection, without love, such absences would cause us no pain. for this
+reason, even the pain caused by absence is, in the end, something good and
+even beautiful, because it feeds on that which gives meaning to life.
+
+        </li>
+      
+        <li>
+          the world is a network of events, not of things.
+
+        </li>
+      
+        <li>
+          perhaps time is not a flowing river, but a murmuring, a shimmering, a play of
+mirrors.
+
+        </li>
+      
+        <li>
+          we are time. we are this space, this clearing opened by the traces of memory
+inside the connections between our neurons. we are memory. we are nostalgia.
+we are longing for a future that will not come.
+
+        </li>
+      
+        <li>
+          the beauty of the world is not in the things that are, but in the things that
+become.
+
+        </li>
+      
+        <li>
+          reality is made of layers of realities. like in dreams.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Carlo_Rovelli" target="_blank">about carlo &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#patti-smith" name="patti-smith">patti smith</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          to me, punk rock is the freedom to create, freedom to be successful,
+freedom to not be successful, freedom to be who you are. it&#39;s freedom.
+
+        </li>
+      
+        <li>
+          never let go of that fiery sadness called desire.
+
+        </li>
+      
+        <li>
+          in art and dream may you proceed with abandon. in life may you proceed
+with balance and stealth.
+
+        </li>
+      
+        <li>
+          grief starts to become indulgent, and it doesn&#39;t serve anyone, and it&#39;s
+painful. but if you transform it into remembrance, then you&#39;re magnifying the
+person you lost and also giving something of that person to other people, so
+they can experience something of that person.
+
+        </li>
+      
+        <li>
+          it was always my belief that rock and roll belonged in the hands of the
+people, not rock stars.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Patti_Smith" target="_blank">about patti &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#henry-rollins" name="henry-rollins">henry rollins</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          questioning anything and everything, to me, is punk rock.
+
+        </li>
+      
+        <li>
+          i believe that one defines oneself by reinvention. to not be like your
+parents. to not be like your friends. to be yourself. to cut yourself
+out of stone.
+
+        </li>
+      
+        <li>
+          loneliness adds beauty to life. it puts a special burn on sunsets and
+makes night air smell better.
+
+        </li>
+      
+        <li>
+          knowledge without mileage equals bullshit.
+
+        </li>
+      
+        <li>
+          i am an anti-social human being. i prefer being left alone.
+
+        </li>
+      
+        <li>
+          the idea that fame is anything more than just a measurement of how many
+people need your services is ridiculous.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Henry_Rollins" target="_blank">about henry &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#dorothy-day" name="dorothy-day">dorothy day</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          people say, what is the sense of our small effort? they cannot see that we
+must lay one brick at a time, take one step after another. a pebble cast
+into a pond causes ripples that spread in all directions. each one of our
+thoughts, words, and deeds is like that.
+
+        </li>
+      
+        <li>
+          the greatest challenge is how to bring about a revolution of the heart.
+
+        </li>
+      
+        <li>
+          we have all known the long loneliness and we have learned that the only
+solution is love and that love comes with community.
+
+        </li>
+      
+        <li>
+          the gospel takes away our right forever, to discriminate between the
+deserving and the undeserving poor.
+
+        </li>
+      
+        <li>
+          i see christ in you.
+
+        </li>
+      
+        <li>
+          we have been given a love that is unconditional. we have been given a love
+that is without limit.
+
+        </li>
+      
+        <li>
+          the mystery of the poor is this: that they are jesus.
+
+        </li>
+      
+        <li>
+          we cannot love god unless we love each other.
+
+        </li>
+      
+        <li>
+          we cannot love god unless we love our neighbor.
+
+        </li>
+      
+        <li>
+          don&#39;t call me a saint. i don&#39;t want to be dismissed so easily.
+
+        </li>
+      
+        <li>
+          the trouble with this world is that people are inconsistent.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Dorothy_Day" target="_blank">about dorothy &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#iggy-pop" name="iggy-pop">iggy pop</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          i’m not ashamed to dress ‘like a woman’ because i don’t think it’s shameful to be a woman.
+
+        </li>
+      
+        <li>
+          the only thing that you can do is do your best.
+
+        </li>
+      
+        <li>
+          i&#39;m not in this world to live up to your expectations and you&#39;re not in this world to live up to mine.
+
+        </li>
+      
+        <li>
+          i&#39;m not going to be a monkey for anyone.
+
+        </li>
+      
+        <li>
+          i&#39;m not afraid to die. i&#39;m more afraid of not living.
+
+        </li>
+      
+        <li>
+          i&#39;m not a role model. i&#39;m a roach.
+
+        </li>
+      
+        <li>
+          i think the most important thing you can do is to be yourself.
+
+        </li>
+      
+        <li>
+          i think people have to be educated to see that beauty is in everything.
+
+        </li>
+      
+        <li>
+          the future is unwritten.
+
+        </li>
+      
+        <li>
+          i&#39;m a street walking cheetah with a heart full of napalm.
+
+        </li>
+      
+        <li>
+          i never had any social graces.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Iggy_Pop" target="_blank">about iggy &rarr;</a>
+  </small>
+
+  <hr>
+  <h5>
+    <a href="#johnny-cash" name="johnny-cash">johnny cash</a>
+  </h5>
+
+  <blockquote>
+    <ul>
+      
+        <li>
+          you build on failure. you use it as a stepping stone. close the door on
+the past. you don&#39;t try to forget the mistakes, but you don&#39;t dwell on it.
+you don&#39;t let it have any of your energy, or any of your time, or any of
+your space.
+
+        </li>
+      
+        <li>
+          life is rough so you gotta be tough.
+
+        </li>
+      
+        <li>
+          sometimes i am two people. johnny is the nice one. cash causes all the trouble.
+
+        </li>
+      
+        <li>
+          i wear the black for the poor and the beaten down, livin&#39; in the hopeless,
+hungry side of town.
+
+        </li>
+      
+        <li>
+          i’m just trying to matter.
+
+        </li>
+      
+        <li>
+          you&#39;ve got to try to do the right thing at the right time.
+
+        </li>
+      
+        <li>
+          there&#39;s a whole lot more to me than you&#39;ll ever see.
+
+        </li>
+      
+        <li>
+          i learn from my mistakes. it’s a very painful way to learn, but without
+the pain, seemingly, i don’t learn.
+
+        </li>
+      
+        <li>
+          you’ve got to know your limitations. i don’t know what my limitations are.
+
+        </li>
+      
+        <li>
+          i’m not really concerned about what people say about me. i don’t care.
+
+        </li>
+      
+        <li>
+          i love the things that you can’t buy with money.
+
+        </li>
+      
+    <ul>
+  </blockquote>
+
+  <small>
+    <a href="https://en.wikipedia.org/wiki/Johnny_Cash" target="_blank">about johnny &rarr;</a>
+  </small>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  life is a constant process of dying.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Arthur_Schopenhauer" target="_blank">arthur schopenhauer</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

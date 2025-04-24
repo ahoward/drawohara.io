@@ -1,0 +1,32 @@
+<p>
+  <em>
+    non sequitor at best, annoying at worst...  these are some words that i wrote
+  </em>
+</p>
+
+<dl>
+  <% data.each do |type, list| %>
+      <dt>
+        <a href="/<%= type %>">/<%= type %></a>
+        <hr>
+      </dt>
+
+      <dd>
+        <ul>
+          <% list.each do |content| %>
+            <li>
+              <a href="<%= content.url %>"><%= content.url %></a>
+            </li>
+          <% end %>
+        </ul>
+      </dd>
+  <% end %>
+
+  <dt>
+    <a href="#dojo4" name="dojo4">/dojo4</a>
+    <hr>
+  </dt>
+  <dd>
+    &rarr; <a href="/dojo4">enter the dojo4 archives</a> 🥷
+  </dd>
+</dl>

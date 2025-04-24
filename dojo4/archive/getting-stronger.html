@@ -1,0 +1,207 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4');
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>nothing to see here.</title>
+
+<meta property="og:title" content="nothing to see here."/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/mick.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"getting-stronger"}">
+    <meta property="site:path_info" content=""/getting-stronger"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+    </style>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        const progressBar = document.querySelector('.turbo-progress-bar');
+        if (progressBar) { progressBar.remove(); }
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/home">@drawohara</a> &mdash;
+<a href="mailto:i-love-this@drawohara.io?subject=/getting-stronger">i ❤️  this!</a>
+<small>
+  <small>
+    <small>
+      <span title='drink me'>&lt;&lt; click me 🐛 🫖 🧚</a>
+    </small>
+  </small>
+</small>
+<hr>
+<strong>/getting-stronger</strong>
+    </header>
+
+    <main>
+      <em>published on: 2013-02-19</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p>i think many developers consider the work of development to be about developing software.</p>
+
+<p>for sure it is about that!</p>
+
+<p>however, it’s also about developing the developer.</p>
+
+<p><em>getting stronger.</em></p>
+
+<p>here is a simple algorithm one can use to become a stronger developer:</p>
+
+<ul>
+  <li>
+    <p>understand the problem completely</p>
+  </li>
+  <li>
+    <p>design an abstraction</p>
+  </li>
+  <li>
+    <p>implement the abstraction</p>
+  </li>
+  <li>
+    <p>release the abstraction</p>
+  </li>
+  <li>
+    <p>solicit feedback</p>
+  </li>
+  <li>
+    <p>use feedback to build understanding</p>
+  </li>
+</ul>
+
+<p>that’s pretty abstract for some people to understand, so let me give a concrete example contrasting this developer</p>
+
+<p><img src='/ro/dojo4/getting-stronger/assets/weak.jpg' alt="img" /></p>
+
+<p>from this one</p>
+
+<p><img src='/ro/dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg' alt="img" /></p>
+
+<p>in development of an application that needs to create isosceles and right triangles.</p>
+
+<p>developer one uses the following process:</p>
+
+<ul>
+  <li>
+    <p>pull the ‘isosceles’ card off the board.  don’t bother reading the ‘right triangle’ one.</p>
+  </li>
+  <li>
+    <p>get samples of isosceles triangles.  write code that can reliably produce just those kinds of isosceles triangles the code expects.  since doing more is YAGNI, check it in, make sure CI is green.  and head home.</p>
+  </li>
+</ul>
+
+<p>developer two does instead:</p>
+
+<ul>
+  <li>
+    <p>review the board.  read recent commits.  undestandings the 10,000 ft. roadmap the developer merges the ‘isosceles’ and ‘right’ triangle cards into a single new card called ‘build a triangle domain model’ (understand the problem)</p>
+  </li>
+  <li>
+    <p>developer works on paper, finally arriving at (the abstraction)</p>
+  </li>
+</ul>
+
+<p><img src='/ro/dojo4/getting-stronger/assets/pythagorean.png' alt="img" /></p>
+
+<ul>
+  <li>
+    <p>developer implements code that models generic triangles using the theorem and specialisations for each of the specific types ‘isosceles’ and ‘right’ (implement the abstraction)</p>
+  </li>
+  <li>
+    <p>developer isolates the domain code from non-domain code and pushes a library to github.  (publishing the abstraction and soliciting feedback)</p>
+  </li>
+  <li>
+    <p>developer merges pull request for ‘divide-by-zero’ bug several days later (using feedback to further understanding)</p>
+  </li>
+</ul>
+
+<p>in the end developer one checks of a box and strenghtens his team’s process.  developer two strenghtens the code, the team and, most of all, himself.</p>
+
+<p>by repeating the process over and over developer one can transform himself in developer two by repeated working to strengthen technical and domain muscles.  conversely, developer two can stop training and become soft like developer one.</p>
+
+<p>developer ability is just like muscle: you’ve got to use it or loose it.</p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+<blockquote>
+<ul>
+  <li>
+    <a href="mailto:i-hate-this@drawohara.io?subject=/getting-stronger">😩, i 🖤 ^this!<a>
+  </li>
+  <li>
+    <a href="/now">/now<a>
+  </li>
+  <li>
+    <a href="/about">/about<a>
+  </li>
+  <li>
+    <a href="/contact">/contact<a>
+  </li>
+</ul>
+</blockquote>
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

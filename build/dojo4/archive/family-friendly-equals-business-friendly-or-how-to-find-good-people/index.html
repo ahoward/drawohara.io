@@ -1,0 +1,311 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>family-friendly = business-friendly OR how to find good people</title>
+
+<meta property="og:title" content="family-friendly = business-friendly OR how to find good people"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"family-friendly-equals-business-friendly-or-how-to-find-good-people"}">
+    <meta property="site:path_info" content=""/family-friendly-equals-business-friendly-or-how-to-find-good-people"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/family-friendly-equals-business-friendly-or-how-to-find-good-people">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/family-friendly-equals-business-friendly-or-how-to-find-good-people">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2016-01-08</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/family-friendly-equals-business-friendly-or-how-to-find-good-people/assets/b.jpeg' alt="blogLukeandFlo.jpg" /></p>
+
+<p>One of the most rewarding opportunities we have as entrepreneurs is to build a dynamic, reliable and resilient team. And yet, hiring and retaining the “right people” is also one of the greatest challenges in business. Over the years of running dojo4, the most important lessons I’ve learned about building a truly wonderful team come down to these three guiding principles:</p>
+
+<ul>
+  <li>
+    <p><em><a href="http://little-startup-handbook.dojo4.com/hire-people-you-like">hire people you’ll be happy to spend time with;</a></em></p>
+  </li>
+  <li>
+    <p><em>when it comes to hiring and firing, <a href="http://little-startup-handbook.dojo4.com/courageousness-conquers">trust your gut</a> - even if it’s unconventional or inconvenient to do so;</em></p>
+  </li>
+  <li>
+    <p><em>and most importantly, people’s life experience is equally (if not more) valuable than their professional skills.</em></p>
+  </li>
+</ul>
+
+<p>Whether or not they have the appropriate skills on their resume, people who lead full and varied lives often have better social skills, greater emotional intelligence, psychological resilience and plasticity, <a href="http://little-startup-handbook.dojo4.com/never-lose-sight-of-the-big-picture">a bigger perspective</a> and a <a href="http://little-startup-handbook.dojo4.com/call-on-community">wider network of valuable connections</a>. My business is built almost entirely on the strength of these qualities in the team I work with.</p>
+
+<p>Although they certainly don’t have a corner on rich and varied life experiences, I’ve found that parents have often developed many of these invaluable traits in the process of having and raising children. Families have been immeasurably integral and valuable to our business.  In the open-sourced, dojo4 <a href="https://github.com/dojo4/policy/blob/master/family-friendly_workplace_manifesto">Family-Friendly Workplace Manifesto</a> we note that parents tend to be some of our most valuable team members because:</p>
+
+<ul>
+  <li>
+    <p><em>they are conditioned for hard work and a relentless schedule;</em></p>
+  </li>
+  <li>
+    <p><em>they have a lot at stake and are likely to be working with the world their kids will inherit in mind;</em></p>
+  </li>
+  <li>
+    <p><em>their home lives emphasize the need for clear decision-making, collaboration and the invaluable ability to play well with others.</em></p>
+  </li>
+</ul>
+
+<p><a href="http://www.huffingtonpost.com/kiri-westby/a-mothers-resumebecause-i_b_8901326.html">A parent’s resume</a> also usually includes years of experience honing applicable skills such as the ability to multitask, attention to detail, negotiation and diplomacy, humility and empathy. The competitive advantages of running a family-friendly workplace are <a href="http://images.huffingtonpost.com/2016-01-01-1451613159-9989301-AMothersResume1.png">persuasive</a>.</p>
+
+<p>Supporting families in the workplace provides direct financial benefit to your company through cost-saving retention of employees and their institutional knowledge. This view recently made headlines when Vodaphone revised its parental leave policy to offer <a href="http://adage.com/article/agency-news/huge-investing-moms-good-business/298398/">at least 16 weeks paid maternity leave and full pay for 30-hour work weeks in the six months following their return</a>. Their video <a href="https://www.youtube.com/watch?v=FpxYpymkyt8">Maternomics</a> argues that businesses that view maternity leave as a loss, are letting the valuable resource of working mothers slip through their hands.</p>
+
+<p>As entrepreneurs, in order to take advantage of the human resource of parents, we have to advocate for two things:</p>
+
+<ul>
+  <li>hiring and supporting parents</li>
+  <li>offering <strong><a href="http://www.lifehack.org/310307/why-companies-should-value-parental-leave-for-both-men-and-women">paid parental leave</a></strong></li>
+</ul>
+
+<p>Before you say, “That’s all well and good but I’m financially responsible to my shareholders and benefits like paid parental leave will never fly,” you might be interested to know that more and more <a href="http://www.xconomy.com/national/2014/07/21/sexism-and-misogyny-in-tech-how-investors-can-help-drive-change/">experienced investors</a> agree with Vodaphone. In a survey of almost 100 tech companies, <a href="http://women2.com/2014/05/05/establishing-maternity-leave-policies-help-startups-close-gender-gap/">one study</a> found that while 0% of seed-funded companies have a maternity or paternity policy, 50% of funded startups began implementing such policies at Series A; and 100% of startups put both in place by the Series D and post-IPO stages.</p>
+
+<p><a href="https://www.themuse.com/advice/hey-startups-why-you-should-think-about-your-maternity-leave-policy-now">Even a small business is likely to lose money on retention costs and efforts to maintain a healthy workplace culture</a> in the long run if they are not able to offer support to new parents.  Astute employees and <a href="http://www.nytimes.com/2015/04/08/upshot/silicon-valley-perks-for-some-workers-struggles-for-parents.html?abt=0002&amp;abg=0">prospective hires</a> will value parental leave benefits and the sacrifices it may take to offer them - and smart, fair-minded people like these are the ones you want on your team.</p>
+
+<p>Cultivating family-friendly workplaces means cultivating more profitable, effective and efficient workplaces. <a href="http://dojo4.com/blog/family-friendly-workplace-manifesto">A workplace that values families, is a happier, more realistic and more sustainable workplace. It is more likely to retain good employees. It is more likely to generate good will, a resource that can be drawn on when it is needed most.</a> And whether or not doing this is a matter of social responsibility, it is an opportunity that entrepreneurs cannot afford to miss.</p>
+
+<p><img src='/ro/dojo4/family-friendly-equals-business-friendly-or-how-to-find-good-people/assets/c.jpeg' alt="blogNat-dojo-hat.jpeg" /></p>
+
+<p><small><em>Stay tuned for our next post on what running a family-friendly workplace actually looks like, written by my collaborator and editor, <a href="http://dojo4.com/team/emily-utz">Emily Utz</a>.</em></small></p>
+
+<p><img src='/ro/dojo4/family-friendly-equals-business-friendly-or-how-to-find-good-people/assets/d.png' alt="FamilyFriendlyWorkplaceManifesto.png" /></p>
+
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  your confusion arises from a fundamental inversion: it is your head that is in your mind, not your mind in your head.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Bernardo_Kastrup" target="_blank">bernardo kastrop</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  <%
+    key = ctx.path_info
+    quotes = site.dato.fetch(:quotes)
+
+    hardwired = {
+      '/' => {
+        author: 'johnny cash',
+        index: -1
+      },
+
+      '/now' => {
+        author: 'bernardo kastrop',
+        index: -2
+      }
+    }
+
+    if hardwired[key]
+      hardwired[key] => author:, index:
+      list = quotes[author].fetch(:quotes)
+      quote = index ? list.fetch(index) : site.utils.sample_key(key, list)
+    else
+      authors = quotes.keys
+      author = site.utils.sample_key(key, authors)
+      url = quotes[author].fetch(:url)
+      list = quotes[author].fetch(:quotes)
+      quote = site.utils.sample_key(key, list)
+    end
+  %>
+
+  <%= quote %> <br> <br> &nbsp;&nbsp;&mdash; <a href="<%= url %>" target="_blank"><%= author %></a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+
+<% if false %>
+<%= render 'views/reloader.erb' %>
+<% end %>

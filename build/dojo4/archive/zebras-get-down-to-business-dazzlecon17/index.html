@@ -1,0 +1,280 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>&#39;Zebras get down to business: DazzleCon17&#39;</title>
+
+<meta property="og:title" content="&#39;Zebras get down to business: DazzleCon17&#39;"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"zebras-get-down-to-business-dazzlecon17"}">
+    <meta property="site:path_info" content=""/zebras-get-down-to-business-dazzlecon17"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/zebras-get-down-to-business-dazzlecon17">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/zebras-get-down-to-business-dazzlecon17">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2017-12-06</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><em>Another world is not only possible, she’s on the way and, on a quiet day, if you listen very carefully you can hear her breathe.</em> 
+-Arundhati Roy</p>
+
+<p><em>Business is neither good nor bad, it’s just a tool.</em> 
+-Ari Weinzweig</p>
+
+<p><a href="http://www.edinburghart.com/product/dazzling-zebras-a2-or-a3-print/"><img src='/ro/dojo4/zebras-get-down-to-business-dazzlecon17/assets/b.jpeg' alt="A-Dazzle-of-Zebras-Print-by-Mr-Peebles.jpg" /> </a></p>
+
+<p>If you aren’t a <a href="https://www.collectivenounslist.com/zebras">collective pronoun geek</a> and didn’t know that a collection of zebras is <a href="http://www.collectivenounslist.com/zebras">sometimes</a> called a dazzle, now you do. A dazzle of zebras dazzles, indeed!</p>
+
+<p>The Zebras that were called together at <a href="https://www.zebrasunite.com/dazzlecon/">DazzleCon</a> are a special breed. We are founders, investors and participants in companies that are both <a href="https://medium.com/@sexandstartups/zebrasfix-c467e55f9d96">black and white: they are profitable and improve society</a> and don’t sacrifice one for the other. We are playing a different game than the often predatory, exploitative, short-sighted, narrow and repetitive sport that has been exemplified by the conventional startup funding model’s exclusive preference for unicorn <a href="https://www.wired.com/wp-content/uploads/blogs/magazine/wp-content/images/18-10/mf_thinkgeek_f.jpg">meat</a>.</p>
+
+<p><a href="(https://medium.com/@sexandstartups/zebrasfix-c467e55f9d96)"><img src='/ro/dojo4/zebras-get-down-to-business-dazzlecon17/assets/c.png' alt="Screen Shot 2017-12-05 at 12.17.50 PM copy.png" /></a></p>
+
+<p>Back in 2016, this gathering was just a glimmer in the eye of the <a href="https://www.zebrasunite.com/our-story">authors of this sentence</a>: <a href="https://medium.com/@sexandstartups/sex-startups-53f2f63ded49">“Startups, like the male anatomy, are designed for liquidity events.”</a> That sentence opened an article that expressed what many of us had known, but may or may not have fully acknowledged, for years: the startup ecosystem is rigged. Who participates in, cultivates, funds and benefits from this ecosystem is dictated by the mostly <a href="http://fortune.com/2017/09/29/group-of-white-men-in-patagonia-vests-confused-for-vc-fund-raise-500-million/">white, patriarchal hegemony</a> that engendered it. The startup world is primarily populated by people who are most likely to identify as being economically-advantaged, white and male. And the startup business model and network that makes it possible is characterized by a high level of competition, exploitation of its workers and users, emphasis on profit at all costs and generally predatory business practices. As Zebras, we are designing and building businesses that are aimed at solving real-world problems through collaboration, mutualism, and inclusive thinking that regenerates our communities, our economies, our environment, and our families. Our businesses aren’t just creating social impact in what we’re doing, but how we’re doing it.</p>
+
+<p><img src='/ro/dojo4/zebras-get-down-to-business-dazzlecon17/assets/d.jpeg' alt="IMG_5624.JPG" /></p>
+
+<p>DazzleCon made a great effort in reflecting this in who was there and what we talked about. Without a doubt, <a href="https://www.feld.com/archives/2017/11/zebras-uniting-dazzlecon.html">DazzleCon was a business conference</a>. But it was a conference for business as Zebras practice it. It was a conference for business as we aspire for the world to practice it. Clues to this were scattered throughout: the opening acknowledgement of being on the ancestral lands of the native peoples of the area, the childcare offered during the whole the program, <a href="https://burginmathews.files.wordpress.com/2017/03/wendell-berry.jpg?w=863">Wendell Berry</a>’s “<a href="https://www.neh.gov/about/awards/jefferson-lecture/wendell-e-berry-lecture">It All Turns On Affection</a>” and Bahá’í Assembly’s “<a href="http://www.bahai.org/documents/nsa-usa/two-wings-bird">Two Wings of a Bird</a>” tucked into the swag bag. This was the first such conference, <a href="https://www.zebrasunite.com/our-story">emerging out of the the overwhelming response to the first few articles posted by the founders of the gathering</a>, and as such, it had that feeling of intimacy, that we can make it what we want by being who we are.</p>
+
+<p>The enthusiasm and deep networks of the founders, the inspiring <a href="http://www.marazepeda.com/">Mara Zepeda</a>, <a href="http://www.aniyiawilliams.com/">Aniyia Williams</a>, <a href="http://www.sphaera.world/astrid/">Astrid Scholz</a> and <a href="http://www.jennyanything.com/">Jennifer Brandel</a>, was heartfelt and apparent. Unfortunately that gusto expressed itself in a schedule that was too packed with speakers talking at attendees from a stage. In this way, the conference missed the opportunity to embody in its design the abundant energy that was gathered with facilitation tools that create emergent connections and actions like those offered organizations like the <a href="http://www.artofhosting.org/">Art of Hosting</a> and <a href="https://social-labs.org/toolkits/">Social Labs</a>. The feeling of the conference as great, but the <a href="https://goodgoodwork.io/5-shapes-training-without-boss/">shape</a> of this first one was somewhat misconceived. However, this gave me the opportunity to forge my own path with some of the enormously compelling people that I met there. The reality that how we do business is the nexus of our impact was beautifully manifested in the organizations built by so many of the people I got a chance to connect with there, like <a href="http://tinsel.me/">Tinsel</a>, <a href="http://sidedooraccess.com/">Side Door</a>, <a href="https://namastream.com/">Namastream</a>, <a href="https://goodgoodwork.io/">Good Good Work</a> and <a href="https://www.smithandconnors.com/">Smith and Connors</a>, to name a few. And that’s why I was there: to survey and wander through this landscape of people and companies that are making real and deep positive change by the way they are doing business. The Zebra ethos is in dojo4’s DNA- I went to share who we are, to connect and to learn. And that’s exactly what happened.</p>
+
+<p>In a post-conference email exchange of feedback, <a href="http://www.marazepeda.com/">Mara Zepeda</a> expressed that her hope for the future of these gatherings is that we would <em>party</em> more together. I share her sentiment that Zebras can actually change the course of the history of business and the problems it solves with our playful energy. I have no doubt that we will find lots of ways to play together and am looking forward it it!</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  loneliness adds beauty to life. it puts a special burn on sunsets and
+makes night air smell better.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Henry_Rollins" target="_blank">henry rollins</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

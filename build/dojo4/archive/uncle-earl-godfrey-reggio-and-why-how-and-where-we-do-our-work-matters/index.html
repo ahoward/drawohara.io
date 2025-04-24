@@ -1,0 +1,281 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Uncle Earl, Godfrey Reggio and Why How &amp; Where We Do Our Work Matters</title>
+
+<meta property="og:title" content="Uncle Earl, Godfrey Reggio and Why How &amp; Where We Do Our Work Matters"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters"}">
+    <meta property="site:path_info" content=""/uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-10-29</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src='/ro/dojo4/uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters/assets/b.jpeg' alt="cubicles.jpg" /> 
+In 2001, my uncle, Earl, took me to visit an old buddy of his, <a href="http://www.imdb.com/name/nm0716585/">Godfrey Reggio</a>, in the film editing studio he had set up just below Canal St., not long before 9/11, and not far from my East Village apartment. He was in the process of making <a href="https://en.wikipedia.org/wiki/Naqoyqatsi">Naqoyqatsi</a>, the third film in the <a href="http://www.koyaanisqatsi.com/">Qatsi trilogy</a>. Earl thought I’d be interested because I was working in documentary film and television production at the time- but in the end, what was a huge influence on me wasn’t the product of the filmmaking that was happening, but the environment is which the film was being made.</p>
+
+<p>Godfrey welcomed us warmly as we stepped out of the freight elevator and into the cavernous loft. Right away I could see there was something different happening here than in any other production company I’d ever visited or worked at. It was late-morning and almost completely quiet in the space- there was none of the regular hubbub I was used to and although I couldn’t see anyone right away, there was an palpable sense of hushed productivity. The tour Godfrey led us on revealed numbers of sparse but cozy, dimly lit edit bays arranged along wide <a href="http://www.faena.com/aleph/articles/the-monk-who-became-a-filmmaker-documents-the-soul-of-the-world/">cloistral</a> hallways, each inhabited by one or two people, working on footage glistening on cinema displays. The back of the loft opened up into a communal kitchen area bounded by a long, heavy wooden dining table with a projector screen at the end of the room.</p>
+
+<p>As Godfrey and Earl kibitzed about friends from their hippie commune days, someone came out of the kitchen and clanged a large, iron fire triangle hanging from the ceiling. Seconds later, a dozen and a half or so people came streaming out into the hall and into the kitchen and started to serve each other from the pots that had been cooking on the stove. We joined them with our bowls of steaming lunch as they sat down at the long table and started to eat. The meal’s lively conversation was punctuated by Godfrey’s introduction of us as guests, and then a screening of some of that morning’s work.</p>
+
+<p>Probably then everyone just got up, plopped their dishes in the sink and holed up for a few more hours to slog their way through endless hours of difficult video. However, the way that I like to remember it- and the imagery and activity that the environment seemed to be designed to evoke-  is that there was then a post-meal, spontaneous, communal and utopian co-cleaning of the kitchen and some meaningful small talk in the skylight beam of downtown, early afternoon sun as people brewed themselves some tea before settling back into applying their natural talents to an artful documentary imbued with deep purpose. I think I like to remember it like that because the studio and the people I met there opened my eyes to a way of doing, and <em>being in</em> work, that I had not yet encountered.</p>
+
+<p>Maybe I remember it that way because I’m an incorrigible idealist (or maybe because of the giant joint we smoked after lunch with Godfrey in the apartment he shared with his girlfriend in the back of the loft). But, I left with my mind sparked by seeing that the product of work is deeply influence by the environment in which it is created, that the ‘what’ may actually be wholly secondary to the ‘how’. That day influenced me in my belief that <em>the work is in the doing rather than what comes out of the doing</em>. And it influenced my thinking about what is important work and why we do it. It encouraged my understanding that work does not have to look like what people might think of as work to be both impactful and valuable. It allowed me to be inspired to build beautiful, unconventional physical and interpersonal spaces for people to do that work.</p>
+
+<p>I hope that what we are doing at dojo4 is some version of that and that I can do it more and more. We’ve worked hard to create a space that is a reflection our values of the primacy of community and authentic relationships, radical openness, and the worthiness of work well-done. Maybe some day, some young whippersnapper will come here and be inspired to do meaningful work in a meaningful way. (And maybe, if I’m lucky, I’ll smoke a joint with them in the back and they’ll write an idealistic blog post about it.)</p>
+
+<p><img src='/ro/dojo4/uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters/assets/c.jpeg' alt="dojo4panorama.jpg" /></p>
+
+<p><a href="https://instagram.com/p/8USDweEqgZ/"><em>Uncle Earl Rosner ::: July 9, 1942 - October 1, 2015</em></a> 
+<em>Om gate gate paragate parasamgate bodhi svaha</em></p>
+
+<p><strong>Naqoyqatsi</strong></p>
+<ul>
+  <li>trailer: <a href="https://www.youtube.com/watch?v=jl1RcfvEsiA">https://www.youtube.com/watch?v=jl1RcfvEsiA</a></li>
+  <li>full movie: <a href="http://www.disclose.tv/action/viewvideo/174861/Naqoyqatsi_Life_as_WarFull_Length/">http://www.disclose.tv/action/viewvideo/174861/Naqoyqatsi_Life_as_WarFull_Length/</a></li>
+  <li>soundtrack by Philip Glass: <a href="https://soundcloud.com/peyman-khazaeli/naqoyqatsi-philip-glass">https://soundcloud.com/peyman-khazaeli/naqoyqatsi-philip-glass</a></li>
+  <li>Qatsi Trilogy: <a href="http://www.koyaanisqatsi.com/films/film.php">http://www.koyaanisqatsi.com/films/film.php</a></li>
+</ul>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  i am an anti-social human being. i prefer being left alone.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Henry_Rollins" target="_blank">henry rollins</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<%
+  fmt = proc{|n| n.to_s.gsub(/\B(?=(...)*\b)/, ',')}
+  rubygems = site.dato.fetch(:rubygems)
+  gems = rubygems.fetch(:gems)
+  total = gems.map{|g| g.fetch(:downloads)}.sum
+
+  exports[:og] = render(
+    'views/og.erb',
+
+     data: {
+      title: 'lotta rubygems...🦒',
+      description: 'like a tall, code whacking giraffe',
+      image: '/media/giraffe.jpeg'
+    }
+  )
+%>
+
+<p>
+i have written a bunch of software over the years.
+<p>
+
+<p>
+apparently, some of it <a href="https://github.com/ahoward">(there is a bunch more)</a> has been downloaded about <strong><%= fmt[total] %></strong> times.
+</p>
+
+<p>
+here's a quick summary:
+</p>
+
+<dl>
+<%
+  gems.each do |gem|
+    url = gem.fetch(:url)
+    downloads = fmt[gem.fetch(:downloads)]
+%>
+  <dt>
+    <a href="<%= url %>"><%= url %></a>
+  </dt>
+  <dd>
+    <strong><%= downloads %></strong>
+  </dd>
+<% end %>
+</dl>

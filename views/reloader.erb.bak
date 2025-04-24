@@ -1,0 +1,41 @@
+// FIXME - this should only fire if the hostname isn't 'drawohara.io'
+<script>
+// AI: added hostname check
+function scroll() {
+  const scrollPosition = sessionStorage.getItem('scrollPosition');
+
+  if (scrollPosition) {
+    window.scrollTo(0, scrollPosition);
+  }
+}
+
+function reload() {
+  if (window.location.hostname === 'drawohara.io') return; // AI: added hostname check
+  const href = window.location.href + '?' + crypto.randomUUID();
+
+  fetch(href, { method: 'HEAD' })
+  .then(response => {
+    if (response.ok) {
+      location.reload();
+    }
+  });
+}
+
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) {
+    reload();
+  }
+});
+
+function setScroll() {
+  sessionStorage.setItem('scrollPosition', window.scrollY);
+}
+
+window.addEventListener('beforeunload', function() {
+  setScroll();
+});
+
+scroll();
+
+setTimeout(reload, 1000*10);
+</script>

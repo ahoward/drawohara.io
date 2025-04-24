@@ -1,0 +1,19 @@
+# This website prohibits the use of any and all content 
+# for AI training purposes, including but not limited to:
+# - Text
+# - Images
+# - Code
+# - Audio
+# - Video
+
+# This prohibition applies to all uses, including:
+# - Commercial and non-commercial
+# - Research and development
+# - Model training and evaluation
+
+# Any unauthorized use of this website's content for AI
+# training is strictly prohibited and may result in legal action.
+
+User-agent: *
+Disallow: /
+Allow: 🖕

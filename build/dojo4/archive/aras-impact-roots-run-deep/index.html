@@ -1,0 +1,301 @@
+<html color-mode="user" lang="en">
+  <head>
+  <!-- ga -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQVD9T27V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DQVD9T27V4', {'debug_mode':true});
+</script>
+
+  <!-- deps -->
+    <script type="module" src="/assets/js/turbo.es2017-esm.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.fuchsia.min.css"
+    >
+
+  <!-- langs -->
+  <!--
+    https://developers.google.com/search/docs/specialty/international/localized-versions#html
+  -->
+   <link rel="alternate" hreflang="en" href="/" />
+   <link rel="alternate" hreflang="uk" href="https://drawohara.io/langs/uk" />
+   <link rel="alternate" hreflang="sv" href="https://drawohara.io/langs/sv" />
+   <link rel="alternate" hreflang="fr" href="https://drawohara.io/langs/fr" />
+   <link rel="alternate" hreflang="es" href="https://drawohara.io/langs/es" />
+   <link rel="alternate" hreflang="it" href="https://drawohara.io/langs/it" />
+
+  <!-- defaults -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+
+  <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+  <!-- meta -->
+    <title>Ara&#39;s Impact Roots Run Deep</title>
+
+<meta property="og:title" content="Ara&#39;s Impact Roots Run Deep"/>
+<meta property="og:description" content="move along." />
+<meta property="og:image" content="https://drawohara.io/media/tauntaun.jpg" />
+
+
+
+
+  <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="site:route" content=""/dojo4/archive/:id"">
+    <meta property="site:params" content="{"ext":null,"id":"aras-impact-roots-run-deep"}">
+    <meta property="site:path_info" content=""/aras-impact-roots-run-deep"">
+
+    <style>
+      /* anti pico */
+      a {text-decoration: none !important; }
+
+      @media (min-width: 768px) {
+        body {
+          max-width: 66%;
+          margin: auto;
+        }
+      }
+
+      /* anti turbo */
+      html { transition: none !important; }
+      .turbo-progress-bar { visibility: hidden; }
+
+      /* anti progressive */
+      html { margin: 1em; }
+      img { display: block; text-align: center; }
+
+      /* markdown shit */
+      .highlighter-rouge { background: white !important; }
+      .code { background: white !important; }
+    </style>
+
+    <script defer>
+    /* anti turbo */
+    document.addEventListener("turbo:load", function() {
+      const progressBar = document.querySelector('.turbo-progress-bar');
+      if (progressBar) {
+        progressBar.remove();
+      }
+    });
+    </script>
+
+    <style>
+      .youtube-video-container {
+        position: relative; /* Establishes a positioning context for the iframe */
+        width: 100%;      /* Takes the full width of its parent */
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+        /* Adjust this percentage if your videos have a different aspect ratio */
+        height: 0; /* Collapse the container's original height */
+      }
+
+      .youtube-video-container iframe {
+        position: absolute; /* Positions the iframe relative to the container */
+        top: 0;
+        left: 0;
+        width: 100%;      /* Fills the container horizontally */
+        height: 100%;     /* Fills the container vertically */
+        border: 0;        /* Optional: removes default border */
+      }
+    </style>
+    <script>
+      // Define the function that finds and wraps YouTube iframes
+      function wrapYouTubeIframes() {
+        const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"]');
+        const containerClassName = 'youtube-video-container';
+
+        if (youtubeIframes.length === 0) {
+            // console.log('No YouTube iframes found to wrap.'); // Optional debug log
+            return; // Exit if no iframes found
+        }
+        // console.log(`Found ${youtubeIframes.length} YouTube iframes to process.`); // Optional debug log
+
+        youtubeIframes.forEach(iframe => {
+          // Check if already wrapped
+          if (!iframe.parentNode || !iframe.parentNode.classList.contains(containerClassName)) {
+            // console.log('Wrapping iframe:', iframe.src); // Optional debug log
+
+            // Remove fixed width/height attributes from the iframe itself
+            iframe.removeAttribute('width');
+            iframe.removeAttribute('height');
+
+            // Create the wrapper div element
+            const wrapper = document.createElement('div');
+            wrapper.classList.add(containerClassName);
+
+            // Insert the wrapper div right before the iframe in the DOM
+            // Need to check if iframe has a parent before inserting relative to it
+            if (iframe.parentNode) {
+                iframe.parentNode.insertBefore(wrapper, iframe);
+                // Move the iframe inside the newly created wrapper div
+                wrapper.appendChild(iframe);
+            } else {
+                // console.warn("Orphan iframe found, cannot wrap:", iframe); // Should ideally not happen in valid HTML
+            }
+
+          } else {
+              // console.log('Iframe already wrapped:', iframe.src); // Optional debug log
+              // Even if wrapped, ensure attributes are removed
+              iframe.removeAttribute('width');
+              iframe.removeAttribute('height');
+          }
+        });
+      }
+
+      // --- Execution Hooks ---
+
+      // Option 1: Run on initial load AND after Turbo navigations (Recommended)
+      // Use 'turbo:load' which fires both after the initial page load and subsequent Turbo visits.
+      document.addEventListener('turbo:load', function() {
+        // console.log('turbo:load event fired - wrapping YouTube iframes'); // Optional debug log
+        wrapYouTubeIframes();
+      });
+
+      // Option 2: Explicitly run on initial load (if not using defer/module or for extra safety)
+      // If your script might run before Turbo is fully ready or if Turbo might be absent,
+      // you might also call it directly or use DOMContentLoaded as a fallback/primary trigger.
+      // However, 'turbo:load' *should* cover the initial load too. If you experience issues
+      // where initial load isn't handled, uncomment the line below.
+      // document.addEventListener('DOMContentLoaded', wrapYouTubeIframes);
+
+
+      // --- Handling Dynamically Added Iframes (Advanced) ---
+
+      // The above listeners handle iframes present during the 'turbo:load' event.
+      // If iframes are added *later* via JavaScript, Turbo Streams, Stimulus actions, etc.,
+      // the 'turbo:load' event won't re-fire for those specific additions.
+      // For those cases, you have a few options:
+
+      // A) Manually call `wrapYouTubeIframes()` after you know new content containing iframes has been added.
+
+      // B) Use a MutationObserver to automatically detect when *any* nodes are added to the page
+      //    and check if they contain iframes that need wrapping. This is more robust but complex.
+      /*
+      const observerCallback = (mutationsList, observer) => {
+        let needsWrap = false;
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                // Check if the added node IS an iframe or CONTAINS iframes
+                if (node.matches('iframe[src*="youtube.com"]') || node.querySelector('iframe[src*="youtube.com"]')) {
+                  needsWrap = true;
+                  break; // Found one, no need to check further in this mutation record
+                }
+              }
+            }
+          }
+          if (needsWrap) break; // Found one, no need to check further mutations
+        }
+        if (needsWrap) {
+          // console.log('MutationObserver detected potential new iframes, re-running wrap.'); // Optional debug log
+          wrapYouTubeIframes(); // Re-run the wrapping function
+        }
+      };
+
+      const observer = new MutationObserver(observerCallback);
+
+      // Start observing the document body for additions/removals in the subtree
+      // Make sure this runs *after* the body exists
+      if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+      } else {
+          document.addEventListener('DOMContentLoaded', () => {
+              observer.observe(document.body, { childList: true, subtree: true });
+          });
+      }
+      */
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">@drawohara</a>
+&nbsp;
+<small>
+  <a href="mailto:i-love-this@drawohara.io?subject=/aras-impact-roots-run-deep">❤️ </a>
+    ||
+  <a href="mailto:i-hate-that@drawohara.io?subject=/aras-impact-roots-run-deep">🖤</a>
+</small>
+<hr>
+    </header>
+
+    <main>
+      <em>published on: 2015-02-27</em>
+<br>
+<br>
+<div class="ro markdown">
+  <p><img src="http://draftin.com//images/26342?token=5ueNk2OPOENaDOibcdEd3mVtoM1KWswDME8ybzrQ9X1F0lfZYdWAhIyQgVY7cZcjFg2eUhQzohEsL4OgZ3LrEOs" alt="" /></p>
+
+<p>I hung out with Ara yesterday.</p>
+
+<p>My main mission in hanging out with Ara (aside from getting my butt kicked by him on the bicycle) was to understand what the big idea with DOJO4’s new pivot-noir as Ara loves to put it. As I could feel the bonk starting to set in I knew my only hope of being any kind of good company for Ara was to get him talking and that I did.</p>
+
+<p>I essentially asked Ara to take it from the top and tell me the story of DOJO4 and how it has come to repositioning itself as the the go-to mission driven tech design/dev shop.</p>
+
+<h1 id="childhood">Childhood</h1>
+
+<p>Ara took it from the top and began with a full character development of his grandmother, who by no stretch of the imagination is a strong candidate for an Alaskan Catholic Saint. She taught Ara formative values early in life such as:</p>
+<ul>
+  <li>never complain (it’s a demonstration of weakness)
+always return a borrowed item in better condition than you found it.</li>
+  <li>build community with saints and sinners alike (everyone is worthy of forgiveness)</li>
+  <li>respect adults and practice good manners
+work harder than everyone you know</li>
+  <li>take other people’s perceived limitations as fuel for your own tenacity (she lived for 30 years after doctors told her she only had 3 years left with Hepatitis C)</li>
+</ul>
+
+<p>Ara explained to me that helping others, caring for the disadvantaged and the planet were values as basic as the water he grew up drinking. Yet, his athletic successes drew him down the path of personal excellence and achievement throughout his college and early post-college years until his life altering bicycle crash and injury. In an instant he broke his back in multiple places his hip and ribs he realized that he would have to find work that didn’t require him to to be a world class athlete.</p>
+
+<h1 id="code">Code</h1>
+<p>Since Ara was always good in math, he went back to college for a computer science degree and was the top of every class he took. From there he took a job programming satellite for NOAA and worked several of his colleagues out of their jobs. He didn’t think that was fair so he quit and worked with an elite team of 5 working on highly classified night sky data analytics with one of the webs most prophetic pioneers and open source champions.</p>
+
+<h1 id="dojo4">DOJO4</h1>
+
+<p>After a stint with the <a href="http://ngdc.noaa.gov/eog/night_sat/nightsat.html">night sky project</a>, Ara started contracting and from there was inspired to start an agency that would elegantly combine design and development into one team and under one roof. He spotted the future DOJO4 building moments after having the formative conversation with DOJO4’s first designer, phone calls were made, the founding team was assembled, and DOJO4 was born.</p>
+
+<p>In the first few months founders were shuffled around. Corey Kohn replaced Jeffrey. Eventually, Justin and Dave left the ownership team.  Over the years DOJO4 has explored and experimented with several different small-agency business models including shared equity with clients, hourly pay structures, fixed bids, employee designers and developers, contractor-based teams, in-house products, and various project management tools and practices.</p>
+
+<p>After surveying everything they could get their hands on in the tech world and building countless technology solutions for entrepreneur after entrepreneur, Ara and Corey are feeling a tug back to their humanitarian roots. They are hearing the call to purpose and meaning in the work of programming that they drank deeply of earlier in their careers.</p>
+
+<p>Ara attended the <a href="http://girleffectaccelerator.com/">Girl Effect Accelerator</a> conference in San Francisco recently on Corey’s prompting and was heartened to see that there are still companies doing amazingly impactful work all over the planet and solving compelling global challenges, despite the zeitgeist in the U.S. tech communty for solving problems no one has and then figuring out how to make people want them: some people are still solving real problems!</p>
+
+<h1 id="pivot-noir">Pivot-Noir</h1>
+
+<p>Ara called Corey on the phone after a late night of communion with inspiring foreign entrepreneurs and told her that he wanted to work on projects like these from now on. Corey was in after hearing 30 seconds of Ara’s pitch.</p>
+
+<h1 id="my-view">My View</h1>
+
+<p>Seeking to bring deeper meaning and purpose into one’s life and work is a primary agenda of modern times. So Ara and Corey and the DOJO4 crew aren’t alone in this. As Ara pointed out in an earlier conversation, helping others is a primary contributor to happiness but alas for most of us in Boulder, life is relatively comfy. Is helping a fellow entrepreneur build the next social forum really a global priority and challenge? Maybe, if it’s meant to organize a sharing economy in the third world. If you’re working on this, [contact us] (mailto:<a href="mailto:corey@dojo4.com" target="_blank">corey@dojo4.com</a>) and we’ll find a way to make it work.</p>
+
+</div>
+    </main>
+
+    <footer>
+      <hr>
+
+<a href="/goto" name="goto">&mdash;&gt; goto</a>
+
+<blockquote>
+  
+
+  but it isn&#39;t absence that causes sorrow. it is affection and love. without
+affection, without love, such absences would cause us no pain. for this
+reason, even the pain caused by absence is, in the end, something good and
+even beautiful, because it feeds on that which gives meaning to life.
+ <br> <br> &nbsp;&nbsp;&mdash; <a href="https://en.wikipedia.org/wiki/Carlo_Rovelli" target="_blank">carlo rovelli</a>
+</blockquote>
+
+<a href="/">&lt;&mdash; eject</a>
+    </footer>
+  </body>
+</html>
