@@ -182,6 +182,14 @@ https://drawohara.io/langs/fr/io/return-your-laptop
 https://drawohara.io/langs/es/io/return-your-laptop
 https://drawohara.io/langs/it/io/return-your-laptop
 https://drawohara.io/langs/nl/io/return-your-laptop
+https://drawohara.io/io/su_c_de
+https://drawohara.io/langs/en/io/su_c_de
+https://drawohara.io/langs/uk/io/su_c_de
+https://drawohara.io/langs/sv/io/su_c_de
+https://drawohara.io/langs/fr/io/su_c_de
+https://drawohara.io/langs/es/io/su_c_de
+https://drawohara.io/langs/it/io/su_c_de
+https://drawohara.io/langs/nl/io/su_c_de
 https://drawohara.io/nerd/fastest-possible-embeddings
 https://drawohara.io/langs/en/nerd/fastest-possible-embeddings
 https://drawohara.io/langs/uk/nerd/fastest-possible-embeddings
