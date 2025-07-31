@@ -41,20 +41,18 @@ jobs:
       - name: setup gh-pages
         uses: actions/configure-pages@v3
         id: gh-pages
-     #- name: ro build
-     #  uses: ruby/setup-ruby@v1
-     #  with:
-     #    bundler-cache: true
-     #- run: |
-     #      export RO_URL=${{ steps.gh-pages.outputs.base_url }}/ro
-     #      export RO_IMG_URL=https://res.cloudinary.com/drawohara/image/upload/ro
-     #      cd ./data/
-     #      bundle
-     #      bundle binstubs ro --force
-     #      bundle exec ./bin/ro build ./public/ro ./public/api/ro
-     #      tree ./public
-     #      echo RO_URL=$RO_URL
-     #      echo RO_IMG_URL=$RO_IMG_URL
+      - name: build
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: |
+            #export RO_URL=${{ steps.gh-pages.outputs.base_url }}/ro
+            export RO_IMG_URL=https://res.cloudinary.com/drawohara/image/upload/ro
+            bundle
+            ./script/build
+            tree ./build
+            #echo RO_URL=$RO_URL
+            #echo RO_IMG_URL=$RO_IMG_URL
       - name: upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

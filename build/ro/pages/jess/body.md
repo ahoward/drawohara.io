@@ -4,7 +4,8 @@ i met jess at [jacumba hot springs](https://maps.app.goo.gl/Q8hzaHeMJqwXhTmi8).
 
 i'd been [lost in the desert](/io/lost-in-the-desert) for some time.
 
-a few weeks later, she gave me a [purple rock](/io/almost-died-in-ice-cave) and sent on an adventure.
+a few weeks later, she gave me a [purple rock](/io/almost-died-in-ice-cave)
+and sent me on an adventure.
 
 but, let's rewind.
 
@@ -15,7 +16,8 @@ shelter i could find. an old power pole shack, full of snakes, that seemed
 better than the [raging lightning storm above and all around me](https://photos.app.goo.gl/SuSxrKVj6ZA5V4xm7).
 
 the next morning, out of food and water, i'd ridden my 70 pound bike about 30 miles
-to a gas station where, undoubtedly, i ate 3000 calories of something horrible for breakfast.
+to a gas station where, undoubtedly, i ate 3000 calories of something horrible
+for [breakfast](https://photos.app.goo.gl/rzTzGWUbLLuJAbTg6).
 
 i was sitting by myself when some other cyclists came up and gave me the nod.
 when you know, you know. [@yogibuur](https://www.instagram.com/yogibuur) and
@@ -38,7 +40,7 @@ and thinking 'i will probably sleep there...'.
 there seemed to be very little in town except a closed gas station.
 
 at the front desk of the hot springs, an airstream trailer, the girls asked what
-i was doing. when i told them, they looked at me [like i was crazy](k) said that i could have a room - it was
+i was doing. when i told them, they looked at me [like i was crazy](https://photos.app.goo.gl/s5wsANZg3gT1BqFs5) said that i could have a room - it was
 a posh place and sold out, too - even though i barely had enough cash for the
 soak. i was relieved, and immediately nervous about being around people in a
 confined space. at that point, i'd been sleeping outside for at least 4
@@ -85,19 +87,9 @@ i couldn't describe it any other way.
 
 it was simply, very natural.
 
-the most comfortable i'd been around another human for quite a while. 
-
-_well, except the 65 year old hobo, the married flamenco dancer couple that
-studied in the caves of spain, the old guy that walked the camino and a
-wilderness survival guide that skateboarded before working on hides in our camp
-every morning.  but that is another tale..._
-
-but, i'd said goodbye to all that, and everything i owned, in bisbee, arizona
-and had been, very solitary, following the border wall, and trying not to get
-hit by snakes.  they are everywhere, in the desert.
+🐘 ❤️  🐘
 
 ![big-snake](./assets/big-snake.jpg)
-
 
 
 all that is to say. it was a big, big, big surprise.
@@ -109,7 +101,7 @@ dangerous camps on the way but... i had to go. places do that to me. this
 one, had a very nice shape. you can tell from afar if you look long and hard
 enough.
 
-jess was there for her birthday. also, for different reasons, avoiding human contact.
+jess was there for her birthday.
 
 so, the next morning, i was a little surprised when she told me i could visit her in los angeles.
 
@@ -130,9 +122,8 @@ terrible, and beautiful to see.
 i still have not ridden north of that spot. even though i ride here every day
 now, it has been unavailable to me.
 
-that was almost a year ago, and in two days we leave to alaska. seeing
-friends, mom and dad, the dogs, and leaving the wolf in good hands for a week or
-two. i will miss him. he is a very, very good boy.
+now, we've been to alaska, colorado, and arizona together.  somehow, we're
+making a place for 3 dogs and quiet days.
 
 in between, there have been many more stories, some of which i plan to write
 about here. this is a work in progress, like everyting else...  but, for
