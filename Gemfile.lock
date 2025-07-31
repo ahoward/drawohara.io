@@ -1,18 +1,21 @@
-PATH
-  remote: ../map
+GIT
+  remote: https://github.com/ahoward/map
+  revision: 213ea218515a77dfadb3a7163f28167d59017c16
   specs:
     map (6.7.0)
 
-PATH
-  remote: ../rego
+GIT
+  remote: https://github.com/ahoward/rego
+  revision: 293a62a3ff0b3a4f25abc6c3848b88f9b74cb0db
   specs:
     rego (4.2.2)
       listen (~> 3.9)
       main (~> 6)
       map (~> 6)
 
-PATH
-  remote: ../ro
+GIT
+  remote: https://github.com/ahoward/ro
+  revision: 40643c1f848c56ee6c338b1031f0f17fb2005ec0
   specs:
     ro (4.4.0)
       front_matter_parser (~> 1.0)
@@ -96,7 +99,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     lockfile (2.1.3)
     logger (1.6.4)
-    main (6.3.0)
+    main (6.4.0)
       arrayfields (~> 4.9, >= 4.9.2)
       chronic (~> 0.10, >= 0.10.2)
       fattr (~> 2.4, >= 2.4.0)
@@ -110,21 +113,21 @@ GEM
     net-http (0.6.0)
       uri
     nio4r (2.7.4)
-    nokogiri (1.18.2-aarch64-linux-gnu)
+    nokogiri (1.18.9-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.2-aarch64-linux-musl)
+    nokogiri (1.18.9-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.18.2-arm-linux-gnu)
+    nokogiri (1.18.9-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.2-arm-linux-musl)
+    nokogiri (1.18.9-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.18.2-arm64-darwin)
+    nokogiri (1.18.9-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.2-x86_64-darwin)
+    nokogiri (1.18.9-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.2-x86_64-linux-gnu)
+    nokogiri (1.18.9-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.2-x86_64-linux-musl)
+    nokogiri (1.18.9-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.1)
     parallel (1.26.3)
@@ -143,7 +146,7 @@ GEM
       psych (>= 4.0.0)
     rexml (3.4.1)
     rinku (2.0.6)
-    rouge (4.5.1)
+    rouge (4.6.0)
     securerandom (0.4.1)
     stringio (3.1.1)
     typhoeus (1.4.1)

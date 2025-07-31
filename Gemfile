@@ -15,11 +15,11 @@ gem "ostruct"
   map
   rego
 ].each do |lib|
-  if test(?e, File.expand_path("~/gh/ahoward/#{ lib }"))
-    gem "#{ lib }", path: "~/gh/ahoward/#{ lib }"
-  else
+  #if test(?e, File.expand_path("~/gh/ahoward/#{ lib }"))
+    #gem "#{ lib }", path: "~/gh/ahoward/#{ lib }"
+  #else
     gem "#{ lib }", git: "https://github.com/ahoward/#{ lib }"
-  end
+  #end
 end
 
 gem "dotenv"
