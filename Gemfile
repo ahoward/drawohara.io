@@ -8,7 +8,7 @@ gem "rdoc"
 gem "fiddle"
 gem "webrick", "~> 1.9.1"
 gem "logger"
-gem "ostruct"
+gem "ostruct", "0.6.0"
 
 %w[
   ro

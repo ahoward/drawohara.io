@@ -35,6 +35,8 @@ script do
     dojo4 = true #params.has_key?(:dojo4)
     translate = !!params.has_key?(:translate)
 
+    ENV['RO_IMG_URL'] = 'https://res.cloudinary.com/drawohara/image/upload/ro' # FIXME
+
   #
     puts "=" * 42
     puts "BUILD #{ tmp }"
