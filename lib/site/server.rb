@@ -46,10 +46,11 @@ class Server
     req = Rack::Request.new(env)
     path_info = req.path_info
 
+# FIXME -- req.request_method.to_sym => :GET ;-)
+
     status = 200
     headers = {"content-type" => "text/html; charset=utf-8"}
     body = []
-
 
     routes.each do |route|
       match = route.match(path_info)
