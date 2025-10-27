@@ -1,0 +1,40 @@
+{
+  "data": {
+    "dojo4/a-bow-and-a-clap": {
+      "published_at": "2011-05-04 00:00:00 UTC",
+      "title": "a bow and a clap",
+      "author": "corey@dojo4.com",
+      "body": "<p class=\"text-align-center\"><img src='/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload' title=\"Dilbert Stand Up.Png\" alt=\"Dilbert Stand Up.Png\" rel=\"225x255\" width=\"600\" height=\"202\" /></p>\r\n<p>It was like pulling teeth to get everyone in a room once a week to check in with each other. Just the word 'meeting' made people avoid eye contact with me, and it felt like punishment, rather than just a way for people to know what everyone else was doing and see how we could best help each other. So I decided to structure the meetings as simply as possible and promise that they would never take more than 15 minutes once a week. Everyone would stand in a circle and be asked to go around and answer the basic questions: \"What are you working on?\", \"What do you need help with?\", \"What will you be working on next?\" But the feeling didn't change much. The punishment theme held steady, and even if it wasn't that bad, it was definitely dull, tedious, and frankly, useless. We each got a dry overview of what other people around dojo4 were doing, but not particularly anymore than we could have figured out by just paying even mild attention to each other throughout the day to day. And we weren't connecting with each other any more than we would just casually around work, and actually much less so.</p>\r\n<p>But the need still felt like it was there: how could we connect with one another on a regular basis, providing some cadence and cohesion within the group of us that make up this company?</p>\r\n<p>Then one day, Ara comes to me with a thought he's had. He's been thinking about how we offer our clients and their projects much more than design and technology services; we offer our clients understanding. We base our relationships with clients on developing sturdy, innovative and satisfactory technology and design products, and that takes really listening. It takes listening and understanding to figure out what is unique about each client and each product, what are the nuances of the market that the product will be entering, what does the particular context require? We are building technology not for users but for humans, and to do that the basic ground has to be understanding. Since that is one of the main things we offer as a business, the logic follows that we should be cultivating that and allowing it to flourish within the company. With that in mind, Ara suggested and I offered to host a different kind of weekly check-in.</p>\r\n<p>Our weekly standups now look like this:</p>\r\n<ul><li>We meet on the same day, same time, once a week.</li>\r\n<li>The standup starts with everyone doing a bow and a clap, and ends with the reverse (clap then bow). (I asked how people wanted to open and close the standup. I grew up as part of a Buddhist community, so the bow of mutual respect is, for me, a natural marker of opening and closing anything. And someone else suggested a clap. So we do both!)</li>\r\n<li>We start with a minute or two of quiet, allowing everyone to slow down a little and arrive.</li>\r\n<li>A different person brings a question every week, that each person then has a chance to answer. For instance, last week Dave had the question (I am breaching confidentiality here with his permission!): \"What is the most important thing to you, that you can think of, that you are most likely wrong about?\" Since it was kind of a hard question, he gave a example by answering first and saying, \"I am most likely wrong that I do not have enough time to create the life that I want, I am most likely wrong that I cannot rely on others, I am most likely wrong that other people remember the most embarrassing moments in my life.\" Other weeks we've had questions like, \"What was something you did this last week that felt satisfying or accomplishing?\" or \"If dojo4 were a hot air balloon and we each had to drop something over the side in order to allow the balloon to rise higher, what would you jettison?\"</li>\r\n<li>The guidelines for the standup are: <ul>\r\n<li>to speak from the heart</li>\r\n<li>to listen completely</li>\r\n<li>to not be thinking about or decide what you are going to say while someone else is talking</li>\r\n<li>to say only what needs to be said</li>\r\n<li>not withhold from saying something that needs to be said</li>\r\n<li>not talk while someone else is talking</li>\r\n<li>anything said during the standup is confidential</li>\r\n</ul>\r\n</li>\r\n<li>There's a 'talking piece' in the middle that each person can pick up and hold if they are inspired to say something.</li>\r\n<li>When everyone has had the chance to speak, I ask who wants to bring the question for next week.</li>\r\n<li>Then we end with a clap and a bow.</li>\r\n<li>The whole thing never takes more than 10-15 minutes.</li>\r\n</ul>\r\n<p>The punishment vibe has pretty much evaporated. Our weekly standup now evokes a lot of laughter and is often very touching. It has allowed me to have a better understanding of the people I work with and what is important to them. We spend endless hours and emails relating the practical details of our work projects to each other, but it is rare that we get a chance to relate to each other in a genuine and candid way about what may (or may not) be meaningful to us. Granting some time to cultivating that understanding with each other feels incalculably more valuable to each other and the health of our business than any other way that we could spend 15 minutes 'meeting'.</p>\r\n",
+      "assets": {
+        "dilbertstandup.png.crdownload": {
+          "url": "/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload",
+          "path": "dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload",
+          "size": 8,
+          "img": null,
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/a-bow-and-a-clap",
+        "type": "dojo4",
+        "id": "a-bow-and-a-clap",
+        "urls": [
+          "/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload",
+          "/ro/dojo4/a-bow-and-a-clap/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-bow-and-a-clap",
+          "prev": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class",
+          "next": "dojo4/what-we-do-and-how-we-do-it-is-who-we-are"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "a-bow-and-a-clap"
+  }
+}

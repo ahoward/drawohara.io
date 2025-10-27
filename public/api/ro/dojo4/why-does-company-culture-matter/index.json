@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/why-does-company-culture-matter": {
+      "published_at": "2013-02-05 00:00:00 UTC",
+      "title": "why does company culture matter?",
+      "author": "corey@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/why-does-company-culture-matter/assets/photo.JPG' alt=\"image\" /></p>\n\n<p>What is <em>company culture</em>? And why does it matter?</p>\n\n<p>The culture of a company is how it <em>feels</em> when you are there. It describes the expectations that the people that spend their time there can have about their daily and long-term experience at that organization. It is a set of t<em>raditions, practices and policies</em>.  It’s expressed in <em>how the place looks</em>, <em>what it sounds like</em>, and in the <em>demeanor</em> of the people that work there.</p>\n\n<p><a href=\"http://www.bls.gov/tus/charts/#work\">Adult Americans spend more time at work than at any other activity.</a> We spend <a href=\"http://www.theatlantic.com/business/archive/2012/06/your-day-in-a-chart-10-cool-facts-about-how-americans-spend-our-time/258967/\">at least an hour more time working than sleeping</a> every day and way more time than that on eating/drinking, taking care of our households or care for other people. For many of us, we are likely to spend the majority of our lives in the workplace.</p>\n\n<p>This is why company culture matters. How and where we spend our time affects how we develop as people, <a href=\"http://www.ted.com/talks/michael_merzenich_on_the_elastic_brain.html\">it changes how our brains function</a> and <a href=\"http://www.onbeing.org/program/investigating-healthy-minds-richard-davidson/251\">how we behave toward ourselves and others</a>. If we want our work to be impactful, effective, meaningful and sustainably profitable, our workplaces have to promote physical and mental health, joy, humor and compassion. Our workplaces must provide the basis for engaging challenges, they must help foster our creative and intellectual development, and be a real source of support for ourselves and our families. Maybe this is a tall order, but I have no doubt that it is an indispensable cornerstone for building a sane society. Sane and supportive workplaces can be the building blocks of stablility and innovation in our greater culture.</p>\n\n<p>We’re working on it here at dojo4. Here are a few of the things I think contribute to an evolvingly enlightened company culture:</p>\n\n<ul>\n  <li>\n    <p>our <a href=\"https://github.com/dojo4/policy/blob/master/hr.md\">HR guidelines are open-sourced</a> on github and aim to promote systems that allow employees flexibility in where they work from and how they take their time away from work</p>\n  </li>\n  <li>\n    <p>‘benefits’ that promote physical and psychological security, such as a good health plan, short-term disability insurance, and <a href=\"http://dojo4.com/blog/meditation-every-tuesday-morning-the-dojo\">weekly meditation</a> and yoga</p>\n  </li>\n  <li>\n    <p>an emphasis on communication that <a href=\"http://dojo4.com/blog/beginning-and-ending-properly\">respects peoples’ time</a> and <a href=\"http://dojo4.com/blog/a-bow-and-a-clap\">values their contribution and insights</a></p>\n  </li>\n  <li>\n    <p><a href=\"http://dojo4.com/blog/have-babies-at-dojo4\">provision of a paid maternity AND paternity leave</a> that aspires to support healthy families and an equilibrium between home and work life</p>\n  </li>\n  <li>\n    <p><a href=\"http://one.valeski.org/2013/01/community-anchors-dojo4.html\">an open-door community atmosphere</a> where our <a href=\"http://dojo4.com/blog/proud-parents-of-a-future-dojo4er\">friends</a>, <a href=\"http://instagram.com/p/UuJ3e/\">family</a>, <a href=\"http://instagram.com/p/L9-u7/\">clients</a>, <a href=\"http://cl.ly/image/2C1c2P0p3T2M\">neighbors</a> and even <a href=\"http://boulderruby.org/news/2012/06/29/code-n-coffee/\">curious strangers</a> can come spend time, <a href=\"http://dojo4.com/blog/dojo4-quiz-2-have-a-go\">exchange ideas</a>, <a href=\"http://dojo4.com/blog/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4\">host events</a> and <a href=\"http://instagram.com/p/NSCJr-rvdw/\">sit on the patio and have a beer</a>- an <a href=\"http://dojo4.com/blog/dojo4-supports-boulder-being-even-more-awesome\">enriched community</a> is an <a href=\"http://dojo4.com/blog/hubbishness\">inspiring</a> and <a href=\"http://instagram.com/p/EfDQL/\">enriching community</a> that we get to be part of</p>\n  </li>\n</ul>\n\n<p>It’s a work in progress and will always benefit from suggestion, improvement and engagement by the people that make this little company culture thrive. And we feel that we are amongst good company with lots of other companies (like <a href=\"http://www.recycoil.com/company-culture.html\">Recycoil</a> and <a href=\"http://blog.gnip.com/gnip-best-place-to-work/\">Gnip</a>) in town whose company cultures we admire and can learn from. Company culture is as important to the success and longevity of our organization as anything else we do. It matters a lot.</p>\n\n</div>\n",
+      "assets": {
+        "photo.JPG": {
+          "url": "/ro/dojo4/why-does-company-culture-matter/assets/photo.JPG",
+          "path": "dojo4/why-does-company-culture-matter/assets/photo.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 320,
+            "height": 239
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/why-does-company-culture-matter",
+        "type": "dojo4",
+        "id": "why-does-company-culture-matter",
+        "urls": [
+          "/ro/dojo4/why-does-company-culture-matter/assets/photo.JPG",
+          "/ro/dojo4/why-does-company-culture-matter/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/why-does-company-culture-matter",
+          "prev": "dojo4/chop-dojo4-re-envisions-a-calligraphic-element",
+          "next": "dojo4/lead"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "why-does-company-culture-matter"
+  }
+}

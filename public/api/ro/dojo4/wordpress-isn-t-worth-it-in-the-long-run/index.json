@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/wordpress-isn-t-worth-it-in-the-long-run": {
+      "author": "miles@dojo4.com",
+      "title": "WordPress Isn't Worth It in the Long Run",
+      "published_at": "2014-11-25 02:23:03 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>One of our favorite clients, <a href=\"http://gnip.com\">Gnip</a> (recently <a href=\"https://blog.gnip.com/gnip-twitter-join-forces/\">acquired by Twitter</a>), leans on us for all of their marketing design and websites, including <a href=\"http://gnip.com\">gnip.com</a>, <a href=\"https://blog.gnip.com\">blog.gnip.com</a>, and <a href=\"https://engineering.gnip.com\">engineering.gnip.com</a>.</p>\n\n<p>Their two blogs are WordPress instances (remnants of a pre-dojo4 legacy) that never seemed to be worth the effort to migrate out of WordPress at the time.</p>\n\n<p><a href=\"http://gnip.com\">Gnip.com</a> however is a fully static website built with Middleman and hosted on S3 and CloudFront. We made this recommendation after building and hosting a full-fledged Rails application for their site and noticing that their site would be a perfect candidate for a simple static site. The factors that tipped us off to this are the same for any other static site: no user accounts, speed and uptime are the highest priority, and so few updates that an admin interface is overkill (although with our static site, dojo4.com, we built <a href=\"http://dojo4.com/blog/static-is-the-new-black\">a webhook to listen for blog post publishes</a>).</p>\n\n<p>We had one interesting question though - since we’re training the marketing team how to use this website, not developers, what kind of reactions would they have in experiencing both the admin-heavy side of WordPress (for their blogs) versus updating code in the middleman site (for gnip.com) and deploying via the command line?</p>\n\n<p>Turns out they love the middleman setup and wish we would have switched their blogs over to middleman instead of WordPress years ago.</p>\n\n<p>WordPress has one feature - an interface to draft and publish content that people are familiar with. Ignoring the <a href=\"http://dojo4.com/blog/irish-dance-and-wordpress-the-soul-destroyer\">emotional turmoil</a> of WordPress for a second, the maintenance cost and effort for a WordPress site are astounding for a medium to large company.</p>\n\n<p>Plugins seem like a good shortcut to add functionality to your site until you have to modify or update one because it hasn’t been updated in 2 years. When Gnip was acquired by Twitter, the security team at Twitter wanted the blogs to ensure all content was over HTTPS. It’s a simple request, but when you have 25 WordPress plugins that are including their own resources, many of which don’t even support HTTPS, it’s a monster headache. Whereas with our static, Middleman approach, we do a quick search and replace in the code (and from the beginning, only using local resources or ones from reputable sources that do support HTTPS, like Google), deploy, and we’re done.</p>\n\n<p>When you take the time to help people learn simple skills like HTML, CSS, and Javascript (which are nearly required skills to learn if you’re involved in tech at all - regardless of your job title), the drawbacks of WordPress become way more than is acceptable when there’s such a simple and powerful option in static web content and hosting.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/wordpress-isn-t-worth-it-in-the-long-run",
+        "type": "dojo4",
+        "id": "wordpress-isn-t-worth-it-in-the-long-run",
+        "urls": [
+          "/ro/dojo4/wordpress-isn-t-worth-it-in-the-long-run/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/wordpress-isn-t-worth-it-in-the-long-run",
+          "prev": "dojo4/community-happy-hours-have-begun",
+          "next": "dojo4/reblog-the-jellyfish-model"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "wordpress-isn-t-worth-it-in-the-long-run"
+  }
+}

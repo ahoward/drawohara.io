@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/dojo4-hosts-inaugural-diy-coding-101-class": {
+      "published_at": "2011-04-25 00:00:00 UTC",
+      "title": "! \"Dojo4 Hosts Inaugural DIY Coding 101\\x80\\x99 Class\"",
+      "author": "alyssa@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG' title=\"Img 0745\" alt=\"Img 0745\" rel=\"450x450\" width=\"450\" height=\"338\" /></p>\r\n<p>It's our belief that the more education and understanding that can be cultivated between designers, programmers and entrepreneurs, the better products we will be able to create and the happier we'll all be. DIY Coding 101 is an experimental class designed to not only educate people working in the tech industry on the complex world of coding, but to give them a hands on experience with basic coding. Our purpose is not to make programmers, but to make designers, project managers, sales people and entrepreneurs who can more fully understand and integrate with the possibilities and limitations of the current programming world.</p>\r\n<p>Last Thursday we launched DIY Coding 101 at dojo4 to the tune of 11 curious designers, project managers and entrepreneurs hungry to more fully understand the complex world of coding. Garett, one of dojo4's programmers, gracefully navigated the difficult task of giving us a ground up explanation of the current state of code while simultaneously weaving in answers to the hundred questions we pelted him with.</p>\r\n<p>Coming up this Thursday:</p>\r\n<strong>Week 2: Client Side basics (Thurs April 28th)</strong>\r\n<br /><ul><li>How does the client side interact with the server side?</li>\r\n<li>What are client side databases?</li>\r\n<li>What is ajax?</li>\r\n<li>How do HTML5, CSS, and Javascript work and interact?</li>\r\n<li>What is jquery and jquery mobile?</li>\r\n<li>Any other notable libraries?</li>\r\n<li>How do you make a site live?</li>\r\n</ul>",
+      "assets": {
+        "img-0745.JPG": {
+          "url": "/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG",
+          "path": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 338
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class",
+        "type": "dojo4",
+        "id": "dojo4-hosts-inaugural-diy-coding-101-class",
+        "urls": [
+          "/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG",
+          "/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class",
+          "prev": "dojo4/because-we-all-love-to-bicycle",
+          "next": "dojo4/a-bow-and-a-clap"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-hosts-inaugural-diy-coding-101-class"
+  }
+}

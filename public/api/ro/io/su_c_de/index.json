@@ -1,0 +1,84 @@
+{
+  "data": {
+    "io/su_c_de": {
+      "og": {
+        "image": {
+          "url": "/ro/io/su_c_de/assets/og.png"
+        },
+        "title": "on su_c_de",
+        "description": "we aren't supposed to talk about it"
+      },
+      "body": "<div class=\"ro markdown\">\n  <p><img src=\"./assets/image2.png\" alt=\"\" /></p>\n\n<p>after the 5th or 6th su_c_de, in as many years… now that i stop and count\nabout twice as many actually…</p>\n\n<p>i’ve begun to form some opinions, from both my personal <em>and</em> professional\nperspectives.</p>\n\n<ol>\n  <li>\n    <p>anyone that doesn’t get depressed a little in this world is a monster.  it’s much, much more than ok to not be ok.</p>\n  </li>\n  <li>\n    <p>perhaps they’ve gone to a better place, and are at complete rest.</p>\n  </li>\n  <li>\n    <p>perhaps it was us they were fleeing from, and not life.</p>\n  </li>\n  <li>\n    <p>it’s not accusational, or sensational, to say that we all have a responsibility, and interest, in preserving the mental freedom of our fellow humans, no matter how unlike us they might be.</p>\n  </li>\n  <li>\n    <p>putting people in little boxes, queues, lines, grades, levels. is mental violence. the lines on your paper, are someone else’s prison.</p>\n  </li>\n  <li>\n    <p>the internet is, idealistically, and factually, one of the biggest levers being used to enforce this type violence on others.</p>\n  </li>\n  <li>\n    <p>anyone that thinks ‘this sort of conversation does not belong _here’ can eat a bag of d_cks. you are the problem.</p>\n  </li>\n</ol>\n\n<p>we all are.</p>\n\n<p>every, single day.</p>\n\n<p>one thing we can do to reduce suffering, is to be there for our friends.</p>\n\n<p>the others, we don’t know how to help them…</p>\n\n<p>do we?</p>\n\n<p>at least we can try to do no harm.  then again, we lock those people up…</p>\n\n<p>we seem to prefer pretending that this very internet isn’t one of the biggest\n‘putter in boxers’ out there.</p>\n\n<p><img src='/ro/io/su_c_de/assets/wizzard.jpg' alt=\"\" /></p>\n\n<p>the one that literally places the crazy eight balls behind those 9 trillion [[boxes]] that read</p>\n\n<blockquote>\n  <p><strong>[[ tell me the truth ]]</strong></p>\n</blockquote>\n\n<p>or</p>\n\n<blockquote>\n  <p><strong>[[ love me ]]</strong></p>\n</blockquote>\n\n<p>or</p>\n\n<blockquote>\n  <p><strong>[[ see me ]]</strong></p>\n</blockquote>\n\n<p>((and now people are really going to get pissy…))</p>\n\n<p>if you work for an AI company.  if you work for a social media company.  if\nyou use machines to sell stuff to people that makes them sick or unwell.  or\nthat they don’t need and didn’t ask for…  same damn thing…  if you\nmaximize time on site.  if you replace human connection with ‘user\ninterface’.  if you make it ‘faster and easier’ to do the stuff ‘less\ncapable’ people used to do with calculators.</p>\n\n<p>i urge you to get up, and look in the mirror for 8 minutes without looking away.  what could it hurt?</p>\n\n<p>unfair you say?  why me?</p>\n\n<p>because you, and i, make this place.</p>\n\n<p>you either <em>already</em> know, or do not know, why this is the <strong>perfect</strong> sound track for this click baity ass post.</p>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OVboY26AexU?si=DOs5Bi_G7pzsgaOG\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>\n\n\n</div>\n",
+      "assets": {
+        "image1.png": {
+          "url": "/ro/io/su_c_de/assets/image1.png",
+          "path": "io/su_c_de/assets/image1.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 760,
+            "height": 570
+          },
+          "src": null
+        },
+        "og.jpg": {
+          "url": "/ro/io/su_c_de/assets/og.jpg",
+          "path": "io/su_c_de/assets/og.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2400,
+            "height": 1200
+          },
+          "src": null
+        },
+        "og.png": {
+          "url": "/ro/io/su_c_de/assets/og.png",
+          "path": "io/su_c_de/assets/og.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 760,
+            "height": 570
+          },
+          "src": null
+        },
+        "wizzard.jpg": {
+          "url": "/ro/io/su_c_de/assets/wizzard.jpg",
+          "path": "io/su_c_de/assets/wizzard.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1000,
+            "height": 735
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "io/su_c_de",
+        "type": "io",
+        "id": "su_c_de",
+        "urls": [
+          "/ro/io/su_c_de/assets/image1.png",
+          "/ro/io/su_c_de/assets/og.jpg",
+          "/ro/io/su_c_de/assets/og.png",
+          "/ro/io/su_c_de/assets/wizzard.jpg",
+          "/ro/io/su_c_de/body.md"
+        ],
+        "created_at": "2025-05-06 08:50:02 +0000",
+        "updated_at": "2025-05-06 09:43:18 +0000",
+        "rel": {
+          "curr": "io/su_c_de",
+          "prev": "io/return-your-laptop",
+          "next": null
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "io",
+    "id": "su_c_de"
+  }
+}

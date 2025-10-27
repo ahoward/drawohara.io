@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/hello-hello-moshimoshico-is-all-about-building-broducts": {
+      "author": "corey@dojo4.com",
+      "title": "hello hello! moshimoshico is all about building broducts",
+      "published_at": "2014-05-07 20:18:25 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>And the <a href=\"http://dojo4.com/fun/moshi-moshi-co\">experiment</a> continues!</p>\n\n<p>The idea is to:</p>\n<ul>\n  <li>build lots of products swiftly and iteratively</li>\n  <li>not get attached to any one product but move along fluidly, and kill projects quickly if they aren’t robust</li>\n  <li>optimize on technical redundancies across products</li>\n  <li>build products that are genuinely helpful and don’t cause harm</li>\n  <li>build products for real, live humans to use</li>\n  <li>gravitate toward simple, lucrative business models</li>\n  <li>unicorns</li>\n</ul>\n\n<p>We’re about to release <a href=\"http://gomoshimoshi.com/\">another product</a> this week – look for a launch announcement soon. After that, we’ll be picking our next project to get started on the following week. Part of our process is <a href=\"http://gomoshimoshi.com/ideas.html\">soliciting ideas</a> from you, the reader. It’s not stealing because you give it to us and get to see it built. (If you want to be more involved than just giving us your brilliant idea, let us know and we’ll listen.)</p>\n\n<p>So far the moshimoshico process has been going well. We’re building products. We’re having fun. And we’ll be posting more about it (and more regularly) soon…</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/hello-hello-moshimoshico-is-all-about-building-broducts",
+        "type": "dojo4",
+        "id": "hello-hello-moshimoshico-is-all-about-building-broducts",
+        "urls": [
+          "/ro/dojo4/hello-hello-moshimoshico-is-all-about-building-broducts/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/hello-hello-moshimoshico-is-all-about-building-broducts",
+          "prev": "dojo4/we-re-flying-high-on-bitballoon",
+          "next": "dojo4/wallspace-finder-is-up-running"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "hello-hello-moshimoshico-is-all-about-building-broducts"
+  }
+}

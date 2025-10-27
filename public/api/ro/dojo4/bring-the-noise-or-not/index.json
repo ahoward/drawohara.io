@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/bring-the-noise-or-not": {
+      "published_at": "2012-10-17 00:00:00 UTC",
+      "title": "! 'bring the noise. or not. '",
+      "author": "corey@dojo4.com",
+      "body": "<p><img rel=\"450x450\" alt=\"Id Rather Be At Work Smoothfluid\" title=\"Id Rather Be At Work Smoothfluid\" src='/ro/dojo4/bring-the-noise-or-not/assets/id-rather-be-at-work-smoothfluid.jpg' height=\"450\" width=\"300\" /></p>\r\n<p>I'm rarely in the same place two days in row. I get to work, slide my MacBook Air out of my bike basket and plunk myself down where every suits my fancy for the day (or at least in whatever there's a seat left). I've gone through phases where I will hunker down at the same desk for a few weeks, but since we have an open office with no assigned desks, none of us tend to attach to one spot for too long. With brief experimental exceptions, dojo4 has been like that since we opened almost three years ago. There are desks and standing desks, there are tables and couches, and anyone one who works here (and often many who don't!) are sitting in various arrangements and combinations at these various \"stations\" throughout the day and week. We each have our own laptops, and that's about it. The closest that we've gotten to personalized spaces are the individual laundry baskets in the closet that we each have to keep our stuff, and these get used to greater and lesser extents, depending on the person. </p>\r\n<p>This means a few things:</p>\r\n<ul><li>I don't get to have a cozy, personalized desk with its predictable familiarity</li>\r\n<li>I don't have to have a cozy, personalized desk with its predictable familiarity</li>\r\n<li>I can move according to whom I may be working with that day, my mood, the light and the noise/distraction level</li>\r\n</ul>\r\n<p>And that's exactly where the main drawback comes in: noise/distraction level. A more \"traditional\" office setting may be more spatially dictatorial and environmentally regimented, but it also often allows for more focussed spaces and distraction-limited areas. Here at dojo4, there are very few doors that can be closed. In order to make a phone call, so as not to disturb my colleagues, most often I have to go outside and take a walk around the block while I talk (which does, however, have its own anti-sedative advantages). This is a hubbubby place. It's less than 1000 sq. feet and there are seven people that work here regularly. As I write this, Steve, Fred and Garett sit just a few feet away talking about frameworks for a particular job and then the etymology of various French words. Peter pipes in with some potential Sanskrit swear words. Two guys who don't even work here sit right next to me talking about how to keep track of the head of a Github repository. There's something that sounds like Turkish dance music playing through the speaker near me. Diversions, diversions. </p>\r\n<p>It turns out that \"<a target=\"_blank\" title=\"http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000\" href=\"http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000\">we have a very small amount of bandwidth for processing auditory input</a>,\" and so working in an \"open-plan office\" can greatly reduce productivity. <a title=\"http://www.juliantreasure.com/\" href=\"http://www.juliantreasure.com/\">Julian Treasure</a>, a sound expert, recommends <a title=\"http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000\" href=\"http://www.ted.com/talks/julian_treasure_the_4_ways_sound_affects_us.html#100000\">for the sake of our health and our productivity that we can take control of the sound around us</a>. It's a rare talent to be able to focus one-pointedly, tuning out all other diversions, although it is possible to <a title=\"http://pss.sagepub.com/content/early/2010/05/11/0956797610371339.abstract\" href=\"http://pss.sagepub.com/content/early/2010/05/11/0956797610371339.abstract\">hone this useful ability through meditation</a> and other techniques. Most of us put on our headphones as a way into a virtual cubicle. In open offices \"<a title=\"http://www.nytimes.com/2012/05/20/science/when-buzz-at-your-cubicle-is-too-loud-for-work.html\" href=\"http://www.nytimes.com/2012/05/20/science/when-buzz-at-your-cubicle-is-too-loud-for-work.html\">headphones are the new wall</a>.\" So many of us sit here together in our own auditory worlds, attempting to get a day's work done. </p>\r\n<p>That being said, I do not want to have my own assigned desk, and most of the people I work with have also rejected that possibility. Our space is a pleasant place to spend the day. It is comfortable, conducive to collaboration and often ringing with good humor and general friendliness.We do get a lot done, make clients happy, work well with each other and have a lot of fun.</p>\r\n<p>So how do we balance our affinity for flexibility, openness, fluidity and the creativity produced by chaos, with our desire to be able to focus, to be left alone to do our jobs and for the creativity that is produced by order? We've come up with a few ideas:</p>\r\n<ul><li>make part of everyday (like mornings) a quiet period - a mutually agreed upon daily period of \"functional talking only\"</li>\r\n<li>carve out spaces that are quiet zones, where a door can be closed and it is acknowledged that whoever is working in there needs quiet</li>\r\n<li>get another, off-site place that is dedicated as a quiet work/creative space </li>\r\n</ul>\r\n<p>We have not yet found a solution that suits us. It's a work in progress and we'll continue to try to find the balance between chaos and order- a balance that keeps us miles away from cubicle-ization but safely within the supports of a conducive and undistracting environment. It's clear that <a title=\"http://www.thecoolhunter.com.au/article/detail/1373/offices\" href=\"http://www.thecoolhunter.com.au/article/detail/1373/offices\">creative environments foster and attract creative minds</a>\r\n<span>- do noisy environments foster and attract noisy minds?</span>\r\n\r\n</p>\r\n<p><em>artwork thanks to <a title=\"http://smoothfluid.com/\" href=\"http://smoothfluid.com/\">Smoothfluid Ltd</a>\r\n</em>\r\n</p>\r\n<p class=\"font-size-small\"></p>",
+      "assets": {
+        "id-rather-be-at-work-smoothfluid.jpg": {
+          "url": "/ro/dojo4/bring-the-noise-or-not/assets/id-rather-be-at-work-smoothfluid.jpg",
+          "path": "dojo4/bring-the-noise-or-not/assets/id-rather-be-at-work-smoothfluid.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 300,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/bring-the-noise-or-not",
+        "type": "dojo4",
+        "id": "bring-the-noise-or-not",
+        "urls": [
+          "/ro/dojo4/bring-the-noise-or-not/assets/id-rather-be-at-work-smoothfluid.jpg",
+          "/ro/dojo4/bring-the-noise-or-not/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/bring-the-noise-or-not",
+          "prev": "dojo4/so-you-think-youre-a-web-developer-eh",
+          "next": "dojo4/entrepreneurial-by-nature"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "bring-the-noise-or-not"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/a-tablet-for-the-future": {
+      "published_at": "2013-03-12 00:00:00 UTC",
+      "title": "A Tablet for the Future",
+      "author": "ryan@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>Last week, our friends at Amplify launched their ambitious tablet product at <a href=\"http://sxswedu.com/\">SXSWedu</a>. You can check it out <a href=\"http://amplify.com/tablet/\">here</a>. Be sure to watch the video and grasp the whole scope of what they’re tackling. Isn’t it awesome?! Instant student and teacher feedback. Content where students spend their time: on devices and on the web. A more personalized education experience.</p>\n\n<p>dojo4 couldn’t be happier to contribute to this effort by building two content applications for student use. The first is an Encyclopædia Britannica application and the second is a Khan Academy video application. Both proved to be positive challenges with respect to student-focused usability and design, offline media, and Android development. We hope they see some good use!</p>\n\n<p>Regarding development of the EB application for Android, one of my favorite parts of the implementation was around search. A good encyclopedia application has to have good search, right? We ended up using SQLite since, with Android, it ships with the <a href=\"http://sqlite.org/fts3.html\">FTS4</a> extension compliled and enabled. If you haven’t used FTS4 virtual tables before, they provide great full-text search indexing capabilities and the <code>MATCH</code> SQL operator. The docs are a bit technical, but very helpful overall once you wrap your head around them.</p>\n\n<p>You can read more from Amplify’s CEO <a href=\"http://amplify.com/article/technology-thats-truly-designed-education\">here</a>.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/a-tablet-for-the-future",
+        "type": "dojo4",
+        "id": "a-tablet-for-the-future",
+        "urls": [
+          "/ro/dojo4/a-tablet-for-the-future/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-tablet-for-the-future",
+          "prev": "dojo4/yak-shaving-at-tax-time",
+          "next": "dojo4/a-sane-image-magick-configuration-for-your-rails-apps"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "a-tablet-for-the-future"
+  }
+}

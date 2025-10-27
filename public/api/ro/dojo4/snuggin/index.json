@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/snuggin": {
+      "published_at": "2011-11-07 00:00:00 UTC",
+      "title": "Snuggin'!",
+      "author": "justin@dojo4.com",
+      "body": "<p>Brrr! Last night the wind slid down the Flatirons like an avalanche and crashed into Boulder's insulation-challenged ranch homes. Goodbye, Indian Summer; hello, icy winter.</p>\r\n<a href=\"http://www.flickr.com/photos/michaelbuck/310303516/\" title=\"CU Snow by Michael Buck, on Flickr\"><img src=\"http://farm1.static.flickr.com/114/310303516_460245c202.jpg\" width=\"500\" height=\"375\" alt=\"CU Snow\" /></a>\r\n<p>It's not easy keeping the cold out of these old houses. All the caulking in the world won't help if the attic doesn't have enough fluff in it. And then there's new windows, a new furnace and thermostat, pipe insulation, water heater insulation, wall insulation, floor insulation, insulation insulation, and so forth.</p>\r\n<p>The folks over at <a href=\"http://snugghome.com\" title=\"http://snugghome.com\">Snugg Home</a> (also profiled in our <a href=\"http://dojo4.com/clients/snugg-home\" title=\"http://dojo4.com/clients/snugg-home\">case studies</a>) are making it easier, though. Home improvements that reduce energy usage are often subject to incentives at the local, state, and federal levels. But it's <em>hard</em>, figuring it all out in the dead of winter when you can hardly use the keyboard because your fingers are blue with cold.</p>\r\n<p>Snugg Home has partnered with quite a few local governments to untangle the web of rebates, incentives, sales, and so forth that help people make efficiency improvements to their homes. With their help, homeowners around the country are discovering new ways to help their families and reduce their carbon footprint with smart upgrades.</p>\r\n<p>The value of this utility is reflected in Snugg Home's success. They've turned their idea into a very robust startup with impressive revenue and exciting prospects. Right now they're looking for a handful of partners who want to join them in the next phase of their evolution. You can learn more from the video below, or by <a href=\"http://www.snugghome.com/contact-us/\" title=\"http://www.snugghome.com/contact-us/\">contacting Adam at Snugg Home</a>.</p>\r\n<figure>\r\n  <div class=\"flex-video vimeo\">\r\n    <iframe src=\"http://player.vimeo.com/video/31414422?title=0&byline=0&portrait=0\" width=\"400\" height=\"350\" frameborder=\"0\"></iframe>\r\n  </div>\r\n  <figcaption><a href=\"http://vimeo.com/31414422\">Snugg Home Overview</a> from <a href=\"http://vimeo.com/user3824926\">Snugg Home</a> on <a href=\"http://vimeo.com\">Vimeo</a>.</figcaption>\r\n</figure>\r\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/snuggin",
+        "type": "dojo4",
+        "id": "snuggin",
+        "urls": [
+          "/ro/dojo4/snuggin/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/snuggin",
+          "prev": "dojo4/thoughts-on-launching-and-scaling-quickly",
+          "next": "dojo4/ninja-problem-solving"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "snuggin"
+  }
+}

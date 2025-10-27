@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/front-end-dependency-management-with-bower-ro-r": {
+      "published_at": "2013-07-12 00:00:00 UTC",
+      "title": "Front-End Dependency Management with Bower & RoR",
+      "author": "miles@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  \n<p>Dependency management can be tricky. When I came on board at dojo4 a few weeks ago, it was awesome to clone a ruby on rails project repo, be able to do a <code>bundle install</code> and then be able to run the app with <code>rails s</code>. For those of you that aren’t familiar with ruby on rails dependency management, the gems that are needed to run the application are listed in a file named <code>Gemfile</code>. The bundle application reads this gemfile and downloads and installs any gems that aren’t on your computer yet. Not only does this make it easy for getting the application up and running correctly quickly and without much setup effort, it also makes it easy to update those dependent gems when a new version is released. Running <code>bundle update</code> or updating the gemfile and running <code>bundle install</code> again makes this an easy process that guarantees every other user of the app will be using the new version too (granted that we share the changes via source control). This is a great workflow for the server side of things, but what about the client side?</p>\n\n<p>As client applications get more complicated, we frequently need the assistance of libraries and frameworks on the client too. At dojo4, we currently download the files we need and manually drop the required files into source control and commit them. The files are under source control, so at least everyone will get those files and we can revert a version upgrade, but it’s sort of messy. To update the library files we have to repeat the manual process. On the server side, it’s also really nice that dependency management tasks are less tightly coupled with the application code so that updating and rolling back versions are easier. Unfortunately, there hasn’t been a good way to manage dependencies for the front end. Until recently.</p>\n\n<p>In September of last year, Twitter released <a href=\"http://bower.io\">Bower</a>, which offers “a generic, unopinionated solution to the problem of front-end package management”. Bower provides the same capabilities for the front-end application that bundle does for the back end: a central listing of dependencies in one file, easy install and update commands, and some separation from app code and commits. While researching how we could take advantage of this in our standard ruby on rails application, I was referred by the Bower creators to the <a href=\"https://github.com/42dev/bower-rails/\">bower-rails</a> gem, which integrates bower into the ruby on rails directory structure and adds some <code>rake</code> commands to run bower commands. Now instead of manually committing library files to the app repo, a developer can do <code>rake bower:install [package name]</code> and the latest version of that package will be installed in the asset pipeline and will be added to the list of required packages. A new developer can then download the app code and after running <code>bundle install</code>, can run <code>rake bower:install</code> and all of the front-end dependencies will be installed in the proper directory in the ruby on rails asset pipeline for immediate use.</p>\n\n<p>Personally, I really like this approach and am hopeful that we can convert the front-end libraries that are manually added to the bower approach. We’re still discussing the benefits and drawbacks internally and will make a decision soon. What do you think? How do you handle front-end dependencies in a distributed team?</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/front-end-dependency-management-with-bower-ro-r",
+        "type": "dojo4",
+        "id": "front-end-dependency-management-with-bower-ro-r",
+        "urls": [
+          "/ro/dojo4/front-end-dependency-management-with-bower-ro-r/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/front-end-dependency-management-with-bower-ro-r",
+          "prev": "dojo4/rising-and-falling-in-business",
+          "next": "dojo4/the-manager-and-the-engineer"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "front-end-dependency-management-with-bower-ro-r"
+  }
+}

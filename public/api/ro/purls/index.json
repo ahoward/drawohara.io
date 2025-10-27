@@ -1,0 +1,284 @@
+{
+  "data": {
+    "purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights": {
+      "type": "purl",
+      "url": "/media/noaa/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights",
+        "type": "purls",
+        "id": "a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights",
+          "prev": null,
+          "next": "purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data"
+        }
+      }
+    },
+    "purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data": {
+      "type": "purl",
+      "url": "/media/noaa/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data",
+        "type": "purls",
+        "id": "a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data",
+          "prev": "purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights",
+          "next": "purls/can-poverty-rates-be-estimated-using-satellite-data"
+        }
+      }
+    },
+    "purls/can-poverty-rates-be-estimated-using-satellite-data": {
+      "type": "purl",
+      "url": "/media/noaa/can-poverty-rates-be-estimated-using-satellite-data.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/can-poverty-rates-be-estimated-using-satellite-data",
+        "type": "purls",
+        "id": "can-poverty-rates-be-estimated-using-satellite-data",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/can-poverty-rates-be-estimated-using-satellite-data",
+          "prev": "purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data",
+          "next": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003"
+        }
+      }
+    },
+    "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003": {
+      "type": "purl",
+      "url": "/media/noaa/change-detection-in-satellite-observed-nighttime-lights-1992-2003.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+        "type": "purls",
+        "id": "change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+          "prev": "purls/can-poverty-rates-be-estimated-using-satellite-data",
+          "next": "purls/global-distribution-and-density-of-constructed-impervious-surfaces"
+        }
+      }
+    },
+    "purls/global-distribution-and-density-of-constructed-impervious-surfaces": {
+      "type": "purl",
+      "url": "/media/noaa/global-distribution-and-density-of-constructed-impervious-surfaces.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/global-distribution-and-density-of-constructed-impervious-surfaces",
+        "type": "purls",
+        "id": "global-distribution-and-density-of-constructed-impervious-surfaces",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/global-distribution-and-density-of-constructed-impervious-surfaces",
+          "prev": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+          "next": "purls/paulsboutiqueisthegreatestalbumofalltime"
+        }
+      }
+    },
+    "purls/paulsboutiqueisthegreatestalbumofalltime": {
+      "type": "purl",
+      "og": {
+        "title": "Q: is paul's boutique the greatest album of all time",
+        "description": "\"A: yes\"",
+        "image": {
+          "url": "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "width": 1920
+        }
+      },
+      "body": "<div class=\"ro markdown\">\n  <h3 id=\"1\">1.</h3>\n<p><br /></p>\n<iframe width=\"100%\" height=\"52\" src=\"https://odesli.co/embed/?url=https%3A%2F%2Fsong.link%2Fi%2F723654604&amp;theme=dark\" frameborder=\"0\" allowfullscreen=\"\" sandbox=\"allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox\" allow=\"clipboard-read; clipboard-write\"></iframe>\n\n<h3 id=\"2\">2.</h3>\n<p><br />\n<img src='/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg' alt=\"beastie boys\" /></p>\n\n<h3 id=\"3\">3.</h3>\n<hr />\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_U82_MiB2OM?si=Y6Ube-2E7wyP_rX5&amp;start=27\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>\n\n<h3 id=\"4\">4.</h3>\n<hr />\n\n<blockquote>\n  <p>” dropping science like galileo dropped an orange</p>\n</blockquote>\n\n</div>\n",
+      "assets": {
+        "bboyz.jpg": {
+          "url": "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "path": "purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "size": 8,
+          "img": {
+            "format": "avif",
+            "width": 1920,
+            "height": 1257
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "purls/paulsboutiqueisthegreatestalbumofalltime",
+        "type": "purls",
+        "id": "paulsboutiqueisthegreatestalbumofalltime",
+        "urls": [
+          "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:15 +0000",
+        "updated_at": "2025-05-06 08:47:15 +0000",
+        "rel": {
+          "curr": "purls/paulsboutiqueisthegreatestalbumofalltime",
+          "prev": "purls/global-distribution-and-density-of-constructed-impervious-surfaces",
+          "next": "purls/public-sentiment-towards-the-fortune-500-in-america"
+        }
+      }
+    },
+    "purls/public-sentiment-towards-the-fortune-500-in-america": {
+      "type": "purl",
+      "url": "https://gist.github.com/ahoward/41b06d15d7afeed9fd82726057ad2646",
+      "og": {
+        "title": "Public Sentiment Towards The Fortune 500",
+        "description": "AI, and 1 million *real* conversations were analyzed to produce this response.",
+        "image": {
+          "url": "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "width": 1024
+        }
+      },
+      "assets": {
+        "free-luigi.jpg": {
+          "url": "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "path": "purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        },
+        "free-luigi.png": {
+          "url": "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.png",
+          "path": "purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "purls/public-sentiment-towards-the-fortune-500-in-america",
+        "type": "purls",
+        "id": "public-sentiment-towards-the-fortune-500-in-america",
+        "urls": [
+          "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.png"
+        ],
+        "created_at": "2025-05-06 08:47:15 +0000",
+        "updated_at": "2025-05-06 08:47:15 +0000",
+        "rel": {
+          "curr": "purls/public-sentiment-towards-the-fortune-500-in-america",
+          "prev": "purls/paulsboutiqueisthegreatestalbumofalltime",
+          "next": "purls/replace-your-ceo"
+        }
+      }
+    },
+    "purls/replace-your-ceo": {
+      "type": "purl",
+      "url": "https://gist.github.com/ahoward/0b20b69b0cb74703fe60ecbf70926563",
+      "og": {
+        "title": "You can program your CEO **now**",
+        "description": "CMO, CEO, CFO. All gone. I am DEV!@@@@@@@@@@@@@@@@",
+        "image": {
+          "url": "/ro/purls/replace-your-ceo/assets/arnold.jpg",
+          "width": 1024
+        }
+      },
+      "assets": {
+        "arnold.jpg": {
+          "url": "/ro/purls/replace-your-ceo/assets/arnold.jpg",
+          "path": "purls/replace-your-ceo/assets/arnold.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1056,
+            "height": 586
+          },
+          "src": null
+        },
+        "arnold.png": {
+          "url": "/ro/purls/replace-your-ceo/assets/arnold.png",
+          "path": "purls/replace-your-ceo/assets/arnold.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1056,
+            "height": 586
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "purls/replace-your-ceo",
+        "type": "purls",
+        "id": "replace-your-ceo",
+        "urls": [
+          "/ro/purls/replace-your-ceo/assets/arnold.jpg",
+          "/ro/purls/replace-your-ceo/assets/arnold.png"
+        ],
+        "created_at": "2025-05-06 08:47:15 +0000",
+        "updated_at": "2025-05-06 08:47:15 +0000",
+        "rel": {
+          "curr": "purls/replace-your-ceo",
+          "prev": "purls/public-sentiment-towards-the-fortune-500-in-america",
+          "next": "purls/software-developer-vs-startup-developer"
+        }
+      }
+    },
+    "purls/software-developer-vs-startup-developer": {
+      "type": "purl",
+      "og": {
+        "title": "startup developer be like:",
+        "description": "me and my friend have never even seen this fucking course.  hold my beer!",
+        "image": {
+          "url": "/ro/purls/software-developer-vs-startup-developer/assets/startup.jpg",
+          "width": 720
+        }
+      },
+      "body": "<div class=\"ro markdown\">\n  <h3 id=\"1-software-developer\">1. software-developer</h3>\n\n<blockquote>\n  <h3 id=\"-bro-this-car-cost-a-billion-dollars-and-took-us-a-decade-to-build--go-teamwork\">” bro, this car cost a billion dollars and took us a decade to build.  go #teamwork!</h3>\n</blockquote>\n\n<article>\n<iframe src=\"https://giphy.com/embed/F3JhKaucb9QqSF7bSS\" width=\"480\" height=\"269\" style=\"\" frameborder=\"0\" class=\"giphy-embed\" allowfullscreen=\"\"></iframe><p><a href=\"https://giphy.com/gifs/cinemagraph-F3JhKaucb9QqSF7bSS\">via GIPHY</a></p>\n</article>\n\n<h3 id=\"2-startup-developer\">2. startup-developer</h3>\n\n<blockquote>\n  <h3 id=\"-me-and-my-friend-have-never-even-seen-this-fucking-course--hold-my-beer\">” me and my friend have never even seen this fucking course.  hold my beer!</h3>\n</blockquote>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/5gJxWIybplc?start=14&amp;autoplay=1\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>\n\n<p><br />\n<br /></p>\n\n<p><strong>2 &gt;&gt; 1</strong></p>\n\n\n</div>\n",
+      "assets": {
+        "startup.jpg": {
+          "url": "/ro/purls/software-developer-vs-startup-developer/assets/startup.jpg",
+          "path": "purls/software-developer-vs-startup-developer/assets/startup.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 720,
+            "height": 495
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "purls/software-developer-vs-startup-developer",
+        "type": "purls",
+        "id": "software-developer-vs-startup-developer",
+        "urls": [
+          "/ro/purls/software-developer-vs-startup-developer/assets/startup.jpg",
+          "/ro/purls/software-developer-vs-startup-developer/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:15 +0000",
+        "updated_at": "2025-05-06 08:47:15 +0000",
+        "rel": {
+          "curr": "purls/software-developer-vs-startup-developer",
+          "prev": "purls/replace-your-ceo",
+          "next": null
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls"
+  }
+}

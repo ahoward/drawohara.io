@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/within-40-feet-of-where-i-stand": {
+      "published_at": "2014-01-17 00:00:00 UTC",
+      "title": "within 40 feet of where I stand",
+      "author": "corey@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>This has been a busy year for us over here at dojo4 (e.g. we helped launched <a href=\"http://hubboulder.com/\">the Hub</a> into it’s first year, <a href=\"https://dojo4.com/blog/work-after-flo-dojo4\">I had a baby</a>, <a href=\"https://dojo4.com/team\">we made a bunch of great hires</a>, I think we launched every project we were hired to complete, <a href=\"http://dojo4.com/team/ara-t-howard\">Ara</a> had major back surgery, etc.) And although gratifying in many ways, it’s been hard to find space and time for many of the things I used to like to do, like photography (and sleep- hah, hah). (<a href=\"http://coreykohn.com/\">coreykohn.com</a> and <a href=\"http://pixtress.tumblr.com/\">pixtress.tumblr.com</a> are cute, but out of date and poorly kept up.)</p>\n\n<p>I’ve been thinking about this and realized that I have not been making use some of the best-ever tools available when feeling busy, harried and overwhelmed: being gentle with oneself and resourceful with what’s right there.</p>\n\n<p>Chogyam Trungpa had this, and more, to say on the subject: <a href=\"http://www.shambhala.com/shambhala-3.html\">“When you are fully gentle, without arrogance and without aggression, you see the brilliance of the universe. You can appreciate green, nicely shaped blades of grass, and you can appreciate a striped grasshopper with a tinge of copper color and black antennae. It is so beautiful sitting on a plant… Little things like that are not boring sights; they are new discoveries. Every day you see different things… The world is very interesting wherever you go, wherever you look.”</a></p>\n\n<p>In this case, I think gentleness means actually being who and where you are and allowing what’s happening to actually unfold. And being without aggression and arrogance means not trying to alter those things, to force any situation into being other than what it is, not trying to force it into what you may want it to be instead.</p>\n\n<p>We can be most resourceful when we acknowledge where we are at and what the world is presenting to us. And sometimes it even helps to create contraints to highlight that. We do this in relationships, on projects and in almost every aspect of our lives, by setting parameters that help us acknowledge the resources that are available to us. These parameters are what allow us to then make the most creative use of the tools we have. We do this at dojo4 by outlining the limitations of each project and then using those boundaries to exert the pressure needed to write truly robust code and design thoroughly useable applications. Constraints are our allies in the creative process. And gentleness allows us to discover great things in what we do and see every day.</p>\n\n<p>With this in mind, I’ve decided to embark on a mini-project of appreciating where I’m at and the resources that are available to me. This project is based on my most favorite quote about photography, by <a href=\"http://www.womeninphotography.org/ruthbernhardAA.html\">Ruth Berhard</a>: <a href=\"http://www.amazon.com/The-Search-Reality-Documentary-Filmmaking/dp/0941188620\">“If you can’t find something worthy to photograph with forty feet from where you stand, you are not seeing… [It’s about] the difference between looking and seeing… You must look with eyes that are awake to the extraordinary within the ordinary. I want to capture in my photgraphs that singular moment of tenderness I see in life.”</a></p>\n\n<p>For the next month I will post a photograph every day that I am at work of something I see within 40 feet of dojo4.</p>\n\n<p>Today I saw this #within40feet:</p>\n\n<p><a href=\"http://tinypic.com?ref=rhv8ea\" target=\"_blank\"><img src=\"http://i39.tinypic.com/rhv8ea.jpg\" border=\"0\" alt=\"Image and video hosting by TinyPic\" /></a></p>\n\n</div>\n",
+      "assets": {
+        "within40feet011614.JPG": {
+          "url": "/ro/dojo4/within-40-feet-of-where-i-stand/assets/within40feet011614.JPG",
+          "path": "dojo4/within-40-feet-of-where-i-stand/assets/within40feet011614.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1280,
+            "height": 1280
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/within-40-feet-of-where-i-stand",
+        "type": "dojo4",
+        "id": "within-40-feet-of-where-i-stand",
+        "urls": [
+          "/ro/dojo4/within-40-feet-of-where-i-stand/assets/within40feet011614.JPG",
+          "/ro/dojo4/within-40-feet-of-where-i-stand/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/within-40-feet-of-where-i-stand",
+          "prev": "dojo4/responding-to-the-everyday-as-it-happens",
+          "next": "dojo4/within40feet-day-2"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "within-40-feet-of-where-i-stand"
+  }
+}

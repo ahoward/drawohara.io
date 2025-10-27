@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/never-debug-alone": {
+      "published_at": "2013-01-29 00:00:00 UTC",
+      "title": "Never debug alone.",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>this recently went out to our team.  thought i’d share:</p>\n\n<p><br /></p>\n<pre>\n\nit's pretty simple:\n\n\nall of us get hung up on shit.  all of us have random bug bombs dropped in our lap on sunday.\n\ndevelopment is actually something best done alone, with trance music, in a dark room smelling of coffee.\n\ndespite what all the communication and pm tools proclaim.\n\n\nthat is, with the exception of debugging.\n\n\nwhen shit goes wrong take advantage of your team:  it's strong, patient, and willing.\n\nwhen someone reaches out to you with an issue take a breath and ask:\n\n  \"must this launch in 10 minutes?\"\n\nif the answer is no - or even if it is - take time to listen the problem you team-mate is facing.\n\nafter all, as we all know, just talking through a problem out *LOUD* is 90% of fixing it.\n\noften more like 100%.\n\n\nthis is rule 57 of dojo4:\n\n  NEVER DEBUG ALONE\n  \n  \n</pre>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/never-debug-alone",
+        "type": "dojo4",
+        "id": "never-debug-alone",
+        "urls": [
+          "/ro/dojo4/never-debug-alone/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/never-debug-alone",
+          "prev": "dojo4/yes-we-can-js",
+          "next": "dojo4/chop-dojo4-re-envisions-a-calligraphic-element"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "never-debug-alone"
+  }
+}

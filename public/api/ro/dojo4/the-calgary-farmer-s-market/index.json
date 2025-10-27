@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/the-calgary-farmer-s-market": {
+      "published_at": "2010-12-13 00:00:00 UTC",
+      "title": "The Calgary Farmer's Market",
+      "author": "justin@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png' title=\"Screen Shot 2010 12 13 At 6.27.51 Pm4 590x520\" alt=\"Screen Shot 2010 12 13 At 6.27.51 Pm4 590x520\" rel=\"225x255\" width=\"225\" height=\"198\" /></p>\r\n<p>In March we were approached by representatives of The Calgary Farmers' Market, one of Canada's most extensive farmers' markets. They wanted a new website, and they wanted a new way to engage with their customers.</p>\r\n<p>dojo4 worked with a team of local marketing and design experts, including <a href=\"http://jeffreylarrimore.com\">Jeffrey Larrimore</a>, to produce a comprehensive review of their existing content and design. We led numerous brainstorming sessions to help understand who the market wants to serve and how best to reach those folks. </p>\r\n<p><strong>Then it was to design</strong>. We presented several options and ran through multiple iterations until it was clear that the market's managers were delighted. We were delighted, too! The new design has a vibrant and celebratory feel and offers multiple options for engagement and growth. </p>\r\n<p>As the market completes a move from one physical location to another in Calgary, we continue to support it with fresh content and site features to help people learn about the market's new home. </p>\r\n<p>This has been a very rewarding project&mdash;the folks in Calgary are very interested in making their market's site and online outreach second-to-none. We're proud to be a part of it.</p>",
+      "assets": {
+        "screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png": {
+          "url": "/ro/dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png",
+          "path": "dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 225,
+            "height": 198
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/the-calgary-farmer-s-market",
+        "type": "dojo4",
+        "id": "the-calgary-farmer-s-market",
+        "urls": [
+          "/ro/dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png",
+          "/ro/dojo4/the-calgary-farmer-s-market/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-calgary-farmer-s-market",
+          "prev": "dojo4/driving-user-behavior-with-game-dynamics",
+          "next": "dojo4/proud-parents-of-a-future-dojo4er"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "the-calgary-farmer-s-market"
+  }
+}

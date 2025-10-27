@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/how-to-fold-a-marketing-site-into-a-web-app": {
+      "title": "How to Fold a Marketing Site into a Web App",
+      "published_at": "2012-04-10 00:00:00 UTC",
+      "author": "steve@dojo4.com",
+      "body": "<div class=\"cf\">\n\n<figure class=\"pal lightestgrayBg mbl mrl\">\n<img src='/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-before-after.png' style=\"max-width: 100%;\" title=\"Inspirepay Before After\" alt=\"Inspirepay Before After\" />\n<figcaption class=\"mtm fontItalic\" style=\"text-align:center;\">InspirePay homepage before and after realignment</figcaption>\n</figure>\n\n<p>Soon after releasing the new version of <a href=\"https://inspirepay.com\" title=\"https://inspirepay.com\">InspirePay</a>, CEO Mark Fischer decided it was time to integrate his marketing site with the shiny new web application and refresh the look and content of the marketing site, too.</p>\n<p>Mark enlisted the help of Joanna Wiebe from <a href=\"http://Copyhackers.com\" title=\"http://Copyhackers.com\">Copyhackers.com</a> to tell the InspirePay story and asked dojo4 to design and build the new site.</p>\n\n<p>From a content perspective, the fusion meant that a single landing page would have to do double duty: <em>familiarize customers with the product</em> and <em>acquaint users with the app</em>. Joanna and Mark first worked on massaging the content from the marketing site into the web app's landing page, using wireframes to place content into discrete buckets. Their clear copy explains how easy it is for folks to use InspirePay to start taking payments.</p>\n\n<p>Next,&#160;<a href=\"/#anthony\" target=\"_blank\">Anthony Dimitre</a>, resident design wizard at dojo4, turned the content map into an elegant, well-designed web page:</p>\n\n<figure class=\"pal lightestgrayBg mvl mrl\">\n<img src='/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-new-design.png' title=\"Inspirepay New Design\" alt=\"Inspirepay New Design\" style=\"max-width: 100%;\" />\n<figcaption class=\"mtm fontItalic\" style=\"text-align:center;\">The redesigned page describes the product and instructs the user</figcaption>\n</figure>\n\n<p>With page designs in hand we moved into implementation. In this case that meant replacing a siloed instance of Wordpress with static pages in the application itself. Serving marketing content from the same container as InspirePay's payment processing application required dojo4 to ensure all assets and 3rd-party embeds were transmitted securely across https. We also integrated the application's authentication into the static page.</p>\n<p>Now from the landing page alone, visitors can learn about the product, get a sense of how it works, and sign up to use it. One-stop shopping!</p>\n\n<p>See for yourself: <a href=\"https://inspirepay.com\" target=\"_blank\">https://inspirepay.com</a>.</p>\n\n</div>",
+      "assets": {
+        "inspirepay-before-after.png": {
+          "url": "/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-before-after.png",
+          "path": "dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-before-after.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 920,
+            "height": 479
+          },
+          "src": null
+        },
+        "inspirepay-new-design.png": {
+          "url": "/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-new-design.png",
+          "path": "dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-new-design.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1035,
+            "height": 626
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/how-to-fold-a-marketing-site-into-a-web-app",
+        "type": "dojo4",
+        "id": "how-to-fold-a-marketing-site-into-a-web-app",
+        "urls": [
+          "/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-before-after.png",
+          "/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/assets/inspirepay-new-design.png",
+          "/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/how-to-fold-a-marketing-site-into-a-web-app",
+          "prev": "dojo4/push-it-out-the-window",
+          "next": "dojo4/a-sequel"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "how-to-fold-a-marketing-site-into-a-web-app"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/ninja-problem-solving": {
+      "title": "Ninja Problem Solving",
+      "published_at": "2011-11-22 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<p>Recently this email went out to our technical team.  I thought I'd share it un-edited.</p>\n\n<pre>problem solving is the number one service we provide.  over the years\ni've developed some high level ideas about it that i've found\nconsistently leads towards good solutions, of which there are always\nmany.  you may or may not find these ideas useful but i wanted to\nshare them regardless:\n\n\n- understand the problem completely.  if there is even a small lack of\nclarity ask questions and dig deeper.  in fact, all problem solutions\nstem from ruthless application of just this one principle.  that one\nsmall word the client or manual mentioned you were embarrassed to ask\nabout - ask about it.  that one small line in the code you didn't\nquite understand is likely the source of your problem, don't ignore\nit.\n\n- talk about the problem *out loud* with someone else.  it's\nsurprising how often framing a problem in english, outside mental\nconstructs, will automatically suggest a solution.\n\n- never debug alone.  buy someone coffee or beer.  call a team member\nup.  it's nearly always a waste of time to debug by your self.  a\ncorollary: stop whatever you are doing and help if it looks like\nsomeone else is stuck on a problem.\n\n- when there is a problem check these things, in order, *every single\ntime*: read the code, read the manual, google it.  this is the\nopposite of what most people do.  put another way \"check the highest\nquality sources first\" because low quality sources lead to further\nconfusion.  i cannot stress strongly enough the importance of becoming\na religious code reader.\n\n- never take the low road.  if you think \"this is a hack but...\" stop\nand ask for help.\n\n- don't fight the future.  a solution doesn't have to be complete but\nit should at least take one single step towards being complete.  track\npartial solutions with #FIXME, #TODO, a card in redmine or a\nconversation with a co-worker.\n\n- leave turds.  if your work doesn't make artifacts that people can\neither re-use or re-edit it's probably a band-aid and not a solution.\nmaking re-editable code is quite a bit easier than making re-usable\ncode.  avoid solutions that are neither like the plague.\n\n- don't get angry.  your brain shuts down if you get mad at a problem.\n nothing we do has lives hinging on it so lighten up.  so you trashed\nthe data.  have a laugh and then get back to recovering it.\n\n- avoid early adoption by being an early adopter.  the way to\nunderstand the sweet spot between bleeding edge and crufty stability,\nironically, is to ruthlessly explore and understand new solutions.\nyou have to be an early adopter to understand when you should avoid\nit.  FUD (fear uncertainty and doubt) should never be a motivator to\navoid new and shiny, but a deep understanding of technical flaws\n*should be*.\n</pre>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/ninja-problem-solving",
+        "type": "dojo4",
+        "id": "ninja-problem-solving",
+        "urls": [
+          "/ro/dojo4/ninja-problem-solving/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/ninja-problem-solving",
+          "prev": "dojo4/snuggin",
+          "next": "dojo4/hands-off-my-window-title"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "ninja-problem-solving"
+  }
+}

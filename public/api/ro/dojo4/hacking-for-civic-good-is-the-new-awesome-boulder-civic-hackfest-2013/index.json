@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013": {
+      "published_at": "2013-04-12 00:00:00 UTC",
+      "title": "! 'hacking for civic good is the new awesome: Boulder Civic Hackfest 2013'",
+      "author": "corey@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/assets/boulder-civic-hackfest1.png' alt=\"img\" /></p>\n\n<p><a href=\"http://hackforchange.org\">National Day of Civic Hacking</a> in happening on June 1-2 this year. <a href=\"http://hackforchange.org/events\">There are events happening in over 70 cities around the country, from Alaska to Puerto Rico.</a> So we decided to band together with the good folk at <a href=\"http://quickleft.com/\">Quick Left</a>, <a href=\"http://ad.venture.io/\">Ad.venture.io</a>, <a href=\"http://www.rallydev.com/community/rallyforimpact/\">Rally</a> and <a href=\"http://www.hubboulder.com/\">HUB Boulder</a> to put on an <a href=\"http://www.bouldercivichackfest.org\">event</a> here in our own fair town of Boulder. We chose the <a href=\"http://www.rhok.org/\">Random Hacks of Kindness</a> format for a hackthon that will use all open data sets to support whatever civic projects we all decide to build together. Projects will be seeded, can be at any phase of completion, can be brought by anyone to be hacked on and designed and will be rewarded with prizes of all sorts! Coders, designers and regular ol’ citizens are all invited.</p>\n\n<p>When: Saturday, June 1, 12am-8pm &amp; Sunday, June 2, 11am-4pm</p>\n\n<p>Where: <a href=\"http://www.hubboulder.com/\">HUB Boulder</a></p>\n\n<p>How: <a href=\"http://bouldercivichackfest-es2005.eventbrite.com/\">Boulder Civic Hackfest registration</a></p>\n\n<p>More info: <a href=\"http://bouldercivichackfest.org/\">bouldercivichackfest.org</a></p>\n\n<p>And just let us know if you want to be involved as an organizer, team leader, sponsor or generally helpful person at <a href=\"mailto:bouldercivichackfest@dojo4.com\" target=\"_blank\">bouldercivichackfest@dojo4.com</a>.</p>\n\n<p>See you there!</p>\n\n<p>(And if you’re of the Denver persuasion, there’s also a big event happening at <a href=\"http://galvanize.it/\">Galvanize</a> that weekend: <a href=\"http://www.hack4colorado.com/\">hack4colorado.com/</a>)</p>\n\n</div>\n",
+      "assets": {
+        "Boulder_Civic_HackFest1.png": {
+          "url": "/ro/dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/assets/Boulder_Civic_HackFest1.png",
+          "path": "dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/assets/Boulder_Civic_HackFest1.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 433,
+            "height": 619
+          },
+          "src": null
+        },
+        "boulder-civic-hackfest1.png": {
+          "url": "/ro/dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/assets/boulder-civic-hackfest1.png",
+          "path": "dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/assets/boulder-civic-hackfest1.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 320,
+            "height": 457
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013",
+        "type": "dojo4",
+        "id": "hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013",
+        "urls": [
+          "/ro/dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/assets/Boulder_Civic_HackFest1.png",
+          "/ro/dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/assets/boulder-civic-hackfest1.png",
+          "/ro/dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013",
+          "prev": "dojo4/how-to-get-your-front-end-developers-to-fix-things",
+          "next": "dojo4/being-open-with-competitors-is-valuable-for-everyone"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013"
+  }
+}

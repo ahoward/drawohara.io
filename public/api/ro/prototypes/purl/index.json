@@ -1,0 +1,60 @@
+{
+  "data": {
+    "prototypes/purl": {
+      "url": "https://todo.com",
+      "og": {
+        "title": "Teh Title",
+        "description": "So much, so many",
+        "image": {
+          "url": "/ro/prototypes/purl/assets/free-luigi.jpg",
+          "width": 1024
+        }
+      },
+      "assets": {
+        "free-luigi.jpg": {
+          "url": "/ro/prototypes/purl/assets/free-luigi.jpg",
+          "path": "prototypes/purl/assets/free-luigi.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        },
+        "free-luigi.png": {
+          "url": "/ro/prototypes/purl/assets/free-luigi.png",
+          "path": "prototypes/purl/assets/free-luigi.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "prototypes/purl",
+        "type": "prototypes",
+        "id": "purl",
+        "urls": [
+          "/ro/prototypes/purl/assets/free-luigi.jpg",
+          "/ro/prototypes/purl/assets/free-luigi.png"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "prototypes/purl",
+          "prev": "prototypes/io",
+          "next": null
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "prototypes",
+    "id": "purl"
+  }
+}

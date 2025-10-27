@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/tax-day-is-coming-be-not-afraid": {
+      "author": "emily@dojo4.com",
+      "title": "Tax Day Is Coming; Be Not Afraid.",
+      "published_at": "2016-04-13 18:27:18 UTC",
+      "body": "<div class=\"ro markdown\">\n  \n<p><img src='/ro/dojo4/tax-day-is-coming-be-not-afraid/assets/b.jpeg' alt=\"blue-1_grande.jpg\" /></p>\n\n<p>Mathematician and artist used to be pretty much the same job (see above drawing by <a href=\"https://www.kickstarter.com/projects/1854671654/golden-ratio-coloring-book\">Rafael Araujo</a>). But today the prevailing belief seems to be that artists suck at math, and visa versa.  While I disagree, I do know a lot of artists who seem averse to working with numbers.</p>\n\n<p>You know who you are.  You’re still teetering on the verge of <a href=\"https://brasstaxes.com/extension\">filing that extension</a>, even though Tax Day is less than a week away.</p>\n\n<p>Enter Rus Garofalo of <a href=\"https://brasstaxes.com/\">Brass Taxes</a>. He specializes in taxes for the self-employed, especially us artist-types.  DOJO4 had the opportunity to re-build the backend of <a href=\"https://brasstaxes.com/\">http://brasstaxes.com</a> this year, so we can honestly say: it works beautifully!</p>\n\n<p>Listen dear friends: having someone else file your taxes - someone who actually understands the IRS’ ever-changing rules - <em>is</em> your god-given right as an adult. Can’t afford it?  Planning to DIY with Turbo Tax?  Aside from being a tax write-off, Brass Taxes will be more fun and less expensive than Turbo Tax, as <a href=\"https://youtu.be/9fEm9Y0cpOI\">Rus explains in this video</a> (while wearing a diaper).</p>\n\n<p><img src='/ro/dojo4/tax-day-is-coming-be-not-afraid/assets/c.jpeg' alt=\"rus.jpeg\" /></p>\n\n<p>So go ahead, <a href=\"https://brasstaxes.com/extension\">file that extension</a> and make an appointment with Brass Taxes to put tax season behind you.  That way, if you’re in Colorado, you can go skiing this weekend.</p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/tax-day-is-coming-be-not-afraid/assets/b.jpeg",
+          "path": "dojo4/tax-day-is-coming-be-not-afraid/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 600,
+            "height": 444
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/tax-day-is-coming-be-not-afraid/assets/c.jpeg",
+          "path": "dojo4/tax-day-is-coming-be-not-afraid/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 500,
+            "height": 438
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/tax-day-is-coming-be-not-afraid",
+        "type": "dojo4",
+        "id": "tax-day-is-coming-be-not-afraid",
+        "urls": [
+          "/ro/dojo4/tax-day-is-coming-be-not-afraid/assets/b.jpeg",
+          "/ro/dojo4/tax-day-is-coming-be-not-afraid/assets/c.jpeg",
+          "/ro/dojo4/tax-day-is-coming-be-not-afraid/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/tax-day-is-coming-be-not-afraid",
+          "prev": "dojo4/dojo4-s-got-answers",
+          "next": "dojo4/workeasy-opening-in-our-neighborhood-soon"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "tax-day-is-coming-be-not-afraid"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/meditation-doesn-t-actually-do-anything-dojo": {
+      "author": "corey@dojo4.com",
+      "title": "meditation doesn't actually do anything @ dojo",
+      "published_at": "2014-04-03 20:42:21 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/meditation-doesn-t-actually-do-anything-dojo/assets/b.jpeg' alt=\"\" /></p>\n\n<p>It’s happening again. People are sitting on the floor of dojo4 doing seemingly nothing on a regular basis. <a href=\"http://dojo4.com/blog/in-your-minds-browser-clear-your-cache-every-tuesday-morning\">For years we did it every Tuesday morning</a>, then there was a bit of a lag, but with <a href=\"http://dojo4.com/team/ryan-cook\">Ryan</a>’s encouragement, we’ve started doing it again recently. Tell your friends: dojo4 hosts meditation every Thursday 1:00-1:20pm. You can come, and so can anyone else who wants to.</p>\n\n<p>And we’re not the only ones doing it (<a href=\"http://bigthink.com/amped/meditation-is-the-new-yoga-bringing-mindfulness-into-the-workplace\">obviously</a>). Here in Boulder, our friends at <a href=\"http://one.valeski.org/2014/01/day-in-pictures-another-awesome-tuesday.html\">Gnip</a> and the <a href=\"http://http://www.feld.com/wp/archives/2014/02/two-weeks-meditation.html\">Foundry Group</a>, to name a few, are fiends for it, too. And for good reason: <a href=\"http://startupguide.com/tag/meditation/\">the positive effects of meditation include stress relief, better health, creativity, increased brain function, mental focus</a>, <a href=\"http://www.fastcompany.com/3013333/unplug/3-reasons-everyone-at-google-is-meditating\">emotionally intelligent, resilient and more</a>. Apparently, it’s also <a href=\"http://https://www.eventbrite.com/e/meditation-the-startups-secret-weapon-tickets-7388997691\">the startup’s secret weapon for fostering more effective leadership &amp; organizational collaboration</a>. Not mention that there’s a good chance that it’ll make you at least 42% <a href=\"http://www.psychologicalscience.org/index.php/publications/observer/2013/may-june-13/the-compassionate-mind.html\">happier</a>.</p>\n\n<p>But what’s coolest to me is that <strong>meditation doesn’t actually do anything</strong> in itself. It doesn’t make you a better person. It doesn’t make you more likeable, more efficient, kinder, smarter or more accomplishing. You have to do that yourself. All meditation does is make it easier to notice [what’s actually happening] right now. And that makes it more likely that you might notice things about yourself. And that can lead to being more likeable, more efficient, kinder, smarter or more accomplishing. Or not. Up to you…</p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/meditation-doesn-t-actually-do-anything-dojo/assets/b.jpeg",
+          "path": "dojo4/meditation-doesn-t-actually-do-anything-dojo/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1280,
+            "height": 1280
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/meditation-doesn-t-actually-do-anything-dojo",
+        "type": "dojo4",
+        "id": "meditation-doesn-t-actually-do-anything-dojo",
+        "urls": [
+          "/ro/dojo4/meditation-doesn-t-actually-do-anything-dojo/assets/b.jpeg",
+          "/ro/dojo4/meditation-doesn-t-actually-do-anything-dojo/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/meditation-doesn-t-actually-do-anything-dojo",
+          "prev": "dojo4/death-to-password-committers",
+          "next": "dojo4/sinskey-vin65-and-dragons"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "meditation-doesn-t-actually-do-anything-dojo"
+  }
+}

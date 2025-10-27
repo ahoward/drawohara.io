@@ -1,0 +1,128 @@
+{
+  "data": {
+    "dojo4/testing-ie9-is-less-like-eating-glass-than-before": {
+      "published_at": "2012-12-18 00:00:00 UTC",
+      "title": "Testing IE9 is less like eating glass than before",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>This weekend I was hammering out some bugs in two projects (<a href=\"http://dojo4.com\" target=\"_blank\">http://dojo4.com</a> itself and <a href=\"http://my.windowfarms.com\" target=\"_blank\">http://my.windowfarms.com</a>).  I’d been putting them off for a long time because testing in IE9, traditionally, is like eating glass or slamming your woo-woo in the car door.</p>\n\n<p>It’d been a while since I’d expore the options for “not having to bootstrap an actual windows machine” and was pleasantly suprised to find two radically awesome alternatives:</p>\n\n<hr />\n\n<p>The first is <a href=\"http://saucelabs.com/\" target=\"_blank\">http://saucelabs.com/</a> - they pretty much let you boot any browser in the web browser</p>\n\n<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.03.18_PM.png' alt=\"img\" /></p>\n\n<p>That’s me booting an instance of IE9.  Once yer done it looks like so:</p>\n\n<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.06.14_PM.png' alt=\"img\" /></p>\n\n<p>They record and let you share all the sessions:</p>\n\n<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.07.19_PM.png' alt=\"img\" /></p>\n\n<p>PS.  it is a paid service, but they give you a free account if you are certified OSS.  With &gt; 150 rubygems out there I took advantage of this to preview, but I plan on folding paid accounts into <a href=\"http://dojo4.com\" target=\"_blank\">http://dojo4.com</a> because it’s fast, rad, and also extremely fast and rad to test a stupid IE bug in a hurry using their platform.</p>\n\n<p>That’s pretty much it.  You boot it, you use it.  It’s kinda slow.</p>\n\n<p>BTW - the boot screens are the <em>best</em>:</p>\n\n<p><img src='/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.05.27_PM.png' alt=\"img\" /></p>\n\n<hr />\n\n<p>The next tool is used is less fancy and extremely slow to install, but it gives you real live IE instances inside a <a href=\"https://www.virtualbox.org/\" target=\"_blank\">https://www.virtualbox.org/</a> instance in a hurry.  The screenshots look just like bloody windows: but head on over to</p>\n\n<p><a href=\"https://github.com/xdissent/ievms\" target=\"_blank\">https://github.com/xdissent/ievms</a></p>\n\n<p>and follow the destructions.  4-8 hours later you’ll have easy to fire up full-on IE VMs on yer OSX/linux box.</p>\n\n<p><em>HUGE</em> shout out to <a href=\"https://twitter.com/janeqpublic\" target=\"_blank\">https://twitter.com/janeqpublic</a> // <a href=\"https://github.com/xdissent\" target=\"_blank\">https://github.com/xdissent</a> for the fine work.</p>\n\n\n</div>\n",
+      "assets": {
+        "Screen_Shot_2012-12-17_at_9.03.18_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.03.18_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.03.18_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1438,
+            "height": 762
+          },
+          "src": null
+        },
+        "Screen_Shot_2012-12-17_at_9.05.27_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.05.27_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.05.27_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 757,
+            "height": 691
+          },
+          "src": null
+        },
+        "Screen_Shot_2012-12-17_at_9.06.14_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.06.14_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.06.14_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1381,
+            "height": 945
+          },
+          "src": null
+        },
+        "Screen_Shot_2012-12-17_at_9.07.19_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.07.19_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.07.19_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1423,
+            "height": 989
+          },
+          "src": null
+        },
+        "screen-shot-2012-12-17-at-9.03.18_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.03.18_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.03.18_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 640,
+            "height": 339
+          },
+          "src": null
+        },
+        "screen-shot-2012-12-17-at-9.05.27_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.05.27_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.05.27_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 640,
+            "height": 584
+          },
+          "src": null
+        },
+        "screen-shot-2012-12-17-at-9.06.14_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.06.14_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.06.14_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 640,
+            "height": 438
+          },
+          "src": null
+        },
+        "screen-shot-2012-12-17-at-9.07.19_PM.png": {
+          "url": "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.07.19_PM.png",
+          "path": "dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.07.19_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 640,
+            "height": 445
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/testing-ie9-is-less-like-eating-glass-than-before",
+        "type": "dojo4",
+        "id": "testing-ie9-is-less-like-eating-glass-than-before",
+        "urls": [
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.03.18_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.05.27_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.06.14_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/Screen_Shot_2012-12-17_at_9.07.19_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.03.18_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.05.27_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.06.14_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/assets/screen-shot-2012-12-17-at-9.07.19_PM.png",
+          "/ro/dojo4/testing-ie9-is-less-like-eating-glass-than-before/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/testing-ie9-is-less-like-eating-glass-than-before",
+          "prev": "dojo4/ncwit-is-making-it-happen",
+          "next": "dojo4/processing-huge-files-with-an-html5-file-input"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "testing-ie9-is-less-like-eating-glass-than-before"
+  }
+}

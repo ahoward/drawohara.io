@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/harvest-time-calgary-farmers-market": {
+      "author": "emily@dojo4.com",
+      "title": "Harvest Time @ Calgary Farmers Market",
+      "published_at": "2014-10-23 16:29:40 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>It’s that time of the year when your CSA drops off the last of the eggplant and apples at your door and you start Googling <em>babaghanoush</em> and making cider.</p>\n\n<p>dojo4 recently reconnected with our favorite farmers up North at the <a href=\"http://www.calgaryfarmersmarket.ca/\">Calgary Farmer’s Market</a>.  For a number of years, dojo4 has assisted CFM in maintaining its ExpressionEngine website - one we designed and built for them many moons ago.</p>\n\n<p>We’ve lent a hand with everything from design micro-adjustments to full-page overhauls, such as making their <a href=\"http://www.calgaryfarmersmarket.ca/vendors\">“Explore the Market” map </a>interactive with hover states, tooltips, and light boxes.</p>\n\n<p>On every occasion, it’s been a pleasure working with Mark Franssen; he never seems to get tired of Steve asking “How’s the weather up there?” either. Thanks for being such a great client, CFM!</p>\n\n<p>And while you’re out there perusing blogs, check out <a href=\"http://www.calgaryfarmersmarket.ca/seasons\">CFM’s mouthwatering recipe index for the fall harvest</a>.</p>\n\n<p><img src='/ro/dojo4/harvest-time-calgary-farmers-market/assets/b.jpeg' alt=\"DSC_0761.jpg\" /></p>\n\n<p><img src='/ro/dojo4/harvest-time-calgary-farmers-market/assets/c.jpeg' alt=\"DSC_0799.jpg\" /></p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/harvest-time-calgary-farmers-market/assets/b.jpeg",
+          "path": "dojo4/harvest-time-calgary-farmers-market/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 425
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/harvest-time-calgary-farmers-market/assets/c.jpeg",
+          "path": "dojo4/harvest-time-calgary-farmers-market/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 425
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/harvest-time-calgary-farmers-market",
+        "type": "dojo4",
+        "id": "harvest-time-calgary-farmers-market",
+        "urls": [
+          "/ro/dojo4/harvest-time-calgary-farmers-market/assets/b.jpeg",
+          "/ro/dojo4/harvest-time-calgary-farmers-market/assets/c.jpeg",
+          "/ro/dojo4/harvest-time-calgary-farmers-market/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/harvest-time-calgary-farmers-market",
+          "prev": "dojo4/does-your-company-care-about-the-environment",
+          "next": "dojo4/dojo4-takes-a-bat-to-cancer"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "harvest-time-calgary-farmers-market"
+  }
+}

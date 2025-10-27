@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/leprechauns-love-rainbows": {
+      "author": "noah@dojo4.com",
+      "title": "Leprechauns love rainbows.",
+      "published_at": "2014-03-17 16:09:49 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>We here at the dojo love us some holidays. In honor of many holidays, we’ve enabled our site with a quick switching color scheme. St. Patrick’s day was the first such opportunity to give this a go. We rolled out the green and were mighty pleased with ourselves as we sipped giant steins of Guinness.</p>\n\n<p>Then, disaster struck. We learned of the lame <a href=\"http://www.washingtonpost.com/news/morning-mix/wp/2014/03/17/no-brewers-and-no-mayor-in-new-yorks-st-patricks-day-parade/\">situations</a> in New York Citay and Boston where LGBTQ folks (in particular gay vets) were being excluded from marching in the parade. This led to a boycott of the parades by mayors and brewers alike. We too were all like, “not on my watch, suckas.” We took down the green. Peace was restored.</p>\n\n<p>It wasn’t long before we started to miss the green like a leprechaun misses his pot of gold. We wanted it back, but we didn’t want to seem like we were giving in.</p>\n\n<p>We reevaluated the situation and decided that in this particular instance, doing something was going to make more of a statement than doing nothing at all.</p>\n\n<p>As a result, the green is back and badder than ever. And to make sure we’re not misunderstood, we added a little rainbow to the logo… ya know, ‘cause leprechauns love rainbows.</p>\n\n<p>Happy St. Paddy’s Day!!</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/leprechauns-love-rainbows",
+        "type": "dojo4",
+        "id": "leprechauns-love-rainbows",
+        "urls": [
+          "/ro/dojo4/leprechauns-love-rainbows/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/leprechauns-love-rainbows",
+          "prev": "dojo4/within40feet-day-36",
+          "next": "dojo4/within40feet-day-37"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "leprechauns-love-rainbows"
+  }
+}

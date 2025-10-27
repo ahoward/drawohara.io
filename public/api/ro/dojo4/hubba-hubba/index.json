@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/hubba-hubba": {
+      "title": "Hubba Hubba",
+      "published_at": "2012-05-04 00:00:00 UTC",
+      "author": "corey@dojo4.com",
+      "body": "<p><img class=\"text-align-center\" rel=\"450x450\" alt=\"Hub Event\" title=\"Hub Event\" src='/ro/dojo4/hubba-hubba/assets/hubevent.jpg' height=\"301\" width=\"450\" /></p>\n<p><a title=\"http://www.hubboulder.com/\" href=\"http://www.hubboulder.com/\">Hub Boulder</a> had its first public event this week out at <a title=\"http://303vodka.com/\" href=\"http://303vodka.com/\">303 Vodka</a>. It was originally slated to be held downtown but when the number of RSVPs climbed to close to 300, we decided to move it out to the <a title=\"http://assets.flavorwire.com/wp-content/uploads/2012/03/Mad_Max_Beyond_Thunderdome_1985-image-497780-1024x687.jpg\" href=\"http://assets.flavorwire.com/wp-content/uploads/2012/03/Mad_Max_Beyond_Thunderdome_1985-image-497780-1024x687.jpg\">Bartertown</a> neighborhood of Boulder. Despite (or maybe because of) the move, the turnout persisted in being phenomenal and included a whole range of folk, from those who already died-hard members of the Hub to those who came just to find out more. <span><a title=\"http://www.impactassets.org/about-us/team/timothy-freundlich/\" href=\"http://www.impactassets.org/about-us/team/timothy-freundlich/\">Tim Freundlich</a>\n</span> was on hand to talk about <a title=\"hhttp://hub-ventures.com/\" href=\"hhttp://hub-ventures.com/\">Hub Ventures</a>' support for Hub Boulder and the vision for the next ten years  of having <a title=\"http://www.the-hub.net/\" href=\"http://www.the-hub.net/\">Hubs</a> in every <a title=\"http://www.the-hub.net/network\" href=\"http://www.the-hub.net/network\">major metropolitan city in the world</a> with a membership of over 2 million change-makers, social innovators, and entrepreneurs cultivating the common good. Hub Boulder a dynamic piece of this movement and dojo4 is thrilled to be one of its founding members and primary supporters. </p>\n<p>To become a member or for more info: <a title=\"http://www.hubboulder.com/memberships/\" href=\"http://www.hubboulder.com/memberships/\">http://www.hubboulder.com/memberships/</a>\n<a title=\"http://www.hubboulder.com/memberships/\" href=\"http://www.hubboulder.com/memberships/\"></a>\n</p>",
+      "assets": {
+        "hubevent.jpg": {
+          "url": "/ro/dojo4/hubba-hubba/assets/hubevent.jpg",
+          "path": "dojo4/hubba-hubba/assets/hubevent.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 301
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/hubba-hubba",
+        "type": "dojo4",
+        "id": "hubba-hubba",
+        "urls": [
+          "/ro/dojo4/hubba-hubba/assets/hubevent.jpg",
+          "/ro/dojo4/hubba-hubba/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/hubba-hubba",
+          "prev": "dojo4/toolbox-for-a-better-world-do-something-simple-first-listen-deeply",
+          "next": "dojo4/your-style-is-orthodox-and-it-sucks"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "hubba-hubba"
+  }
+}

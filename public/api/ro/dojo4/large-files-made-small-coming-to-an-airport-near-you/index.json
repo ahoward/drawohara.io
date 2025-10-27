@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/large-files-made-small-coming-to-an-airport-near-you": {
+      "published_at": "2013-05-31 00:00:00 UTC",
+      "title": "! 'Large Files Made Small... Coming to an Airport Near You! '",
+      "author": "fred@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src=\"assets/airplane1980bq30x40in195.jpg\" alt=\"img\" /></p>\n\n<p>For the past few months, dojo4 has been working feverishly on an very cool new product for our client: <a href=\"http://www.movime.com\">MoviMe Networks</a> allowing air travelers to quickly rent and download feature films to their iPads from airport gates while waiting to board their flights.  We are excited to announce that the product has gone into live beta testing at Chicago O’Hare International Airport!</p>\n\n<p>We hope you will fire up your iPad and give it a try the next time you are flying out of or through ORD.  While you are waiting for your movie to download you may like to contemplate all of disparate  components working together to facilitate your movie browsing and fast downloading.  First, a studio ingest automation system retrieves gigantic raw movie files from movie studios and re-encodes them for the perfect iPad viewing experience.  Then a centralized management system creates products in the MoviMe Store for those new movies which you can browse and purchase.  And, movie files are distributed to an in-airport Content Distribution Network (CDN) so they can be downloaded lickedy-split before you need to board your flight.  That’s a lot to consider in the brief time it took to download your movie.  Perhaps you should rent another while we cover some more of the interesting technical details…</p>\n\n<p>Video files are large. A feature length HD version of a movie takes around 10GB. The files that people download from iTunes are in a 1-2GB range. The video files that we ended up using for MoviMe are around 1GB in size.</p>\n\n<p>The size of these files introduced a few interesting challenges. Most HTTP libraries are not designed to work with such large files. They do not fit in the memory of an iPad. They take a long time to move. We needed to think differently about handling such files than we normally do about images and other media. Our solution was to upload and download files in fragments. We coded the iPad player to use byte ranges when downloading the movie files, and then reassemble them into ready-to-play files. This also required us to add byte range support to our uploads controller, as well as in <a href=\"https://github.com/ahoward/mongoid-grid_fs\">Mongo gridFs driver</a>, so we could retrieve file portions efficiently. We used multi-part uploads to push files from the servers, which were preparing the movies for the appropriate S3 buckets.</p>\n\n<p>Another advantage of dealing with file fragments was that we could parallelize both uploads and downloads to reduce the amount of time it takes to move the files around. The iPad player can download up to 4 fragments in parallel, reducing the amount of time required to download a whole file. We discovered that we could use up to 5 concurrent multipart uploads to an S3 bucket to reduce the upload time to get the media files to S3.</p>\n\n<p>All this so you can find and download <a href=\"http://www.youtube.com/watch?v=ZqtNxNRCcGg\">your favorite movie</a> at the airport at lightning speed and watch it on your next flight! Coming to <a href=\"http://www.movime.com/#!airports/c13f3\">an airport near you</a> soon…</p>\n\n<p><strong>this blog post by <a href=\"http://dojo4.com/team/fred-jean\">Fred Jean</a> and <a href=\"http://dojo4.com/team/garett-shulman\">Garett Shulman</a> and <a href=\"http://dojo4.com/team/corey-kohn\">Corey Kohn</a></strong></p>\n\n\n</div>\n",
+      "assets": {
+        "Airplane1980bq30x40in195.jpg": {
+          "url": "/ro/dojo4/large-files-made-small-coming-to-an-airport-near-you/assets/Airplane1980bq30x40in195.jpg",
+          "path": "dojo4/large-files-made-small-coming-to-an-airport-near-you/assets/Airplane1980bq30x40in195.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 376,
+            "height": 280
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/large-files-made-small-coming-to-an-airport-near-you",
+        "type": "dojo4",
+        "id": "large-files-made-small-coming-to-an-airport-near-you",
+        "urls": [
+          "/ro/dojo4/large-files-made-small-coming-to-an-airport-near-you/assets/Airplane1980bq30x40in195.jpg",
+          "/ro/dojo4/large-files-made-small-coming-to-an-airport-near-you/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/large-files-made-small-coming-to-an-airport-near-you",
+          "prev": "dojo4/the-fear-startups",
+          "next": "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "large-files-made-small-coming-to-an-airport-near-you"
+  }
+}

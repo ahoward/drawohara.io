@@ -1,0 +1,52 @@
+{
+  "data": {
+    "dojo4/all-in-every-person-is-welcome-here": {
+      "author": "corey@dojo4.com",
+      "title": "! 'ALL IN: Every Person Is Welcome Here'",
+      "published_at": "2016-12-09 23:05:51 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>The election happened. We looked around and suddenly understood that other people might see us as possible haters; that as far as they could see we could be secretly (or not so secretly) harboring ill will toward them, wondering if we’d prefer they weren’t here, and disrespect them as fellow human beings.</p>\n\n<p>Xenophobia, racism, misogyny, homophobia, and prejudice of all kinds have always existed in this country, but we are, perhaps, more in danger now than ever of having those types of violence normalized. We resist and rail against this! And we want people to know that we are <a href=\"http://www.whiteaccomplices.org/\">working to liberate ourselves</a> from these fundamental misunderstandings of the truth of interdependence.</p>\n\n<p><em>All spaces big or small, whether they be a public space, a business, an institution or a country, shall be welcoming and safe for all humans. We may not share beliefs, appearance, privilege, experience nor means, but hold in common the infinite capacity for human kindness. Regardless of gender, religion, origin, race, ethnicity, ability, or economic access, every person has indelible value. We recognize this and proclaim it.</em></p>\n\n<p><img src='/ro/dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg' alt=\"ALL-IN-3-1.jpg\" /></p>\n\n<p>So, we created an <a href=\"http://dojo4.com/all-in\">image</a> (thanks, <a href=\"http://anthonydimitre.com/\">Anthony Dimitre</a>) to let others know and remind ourselves that we welcome all people, whether it be in our homes, our streets, our businesses, our institutions, or our country. If that speaks to you, too, <a href=\"http://dojo4.com/all-in\">download here</a> and share far and wide…</p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg",
+          "path": "dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1405,
+            "height": 1780
+          },
+          "src": null
+        },
+        "b.jpeg.a5f9dd99cfbf8868e1ba68d8ec142ce8.cloudinary.yml": {
+          "url": "/ro/dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg.a5f9dd99cfbf8868e1ba68d8ec142ce8.cloudinary.yml",
+          "path": "dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg.a5f9dd99cfbf8868e1ba68d8ec142ce8.cloudinary.yml",
+          "size": 8,
+          "img": null,
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/all-in-every-person-is-welcome-here",
+        "type": "dojo4",
+        "id": "all-in-every-person-is-welcome-here",
+        "urls": [
+          "/ro/dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg",
+          "/ro/dojo4/all-in-every-person-is-welcome-here/assets/b.jpeg.a5f9dd99cfbf8868e1ba68d8ec142ce8.cloudinary.yml",
+          "/ro/dojo4/all-in-every-person-is-welcome-here/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/all-in-every-person-is-welcome-here",
+          "prev": "dojo4/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-2",
+          "next": "dojo4/be-yourself--or-else"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "all-in-every-person-is-welcome-here"
+  }
+}

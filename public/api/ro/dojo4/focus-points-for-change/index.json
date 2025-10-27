@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/focus-points-for-change": {
+      "published_at": "2011-03-30 00:00:00 UTC",
+      "title": "Focus Points for Change",
+      "author": "corey@dojo4.com",
+      "body": "<p class=\"imgCtr\"><img src='/ro/dojo4/focus-points-for-change/assets/about-head.png' title=\"About Head\" alt=\"About Head\" rel=\"225x255\" width=\"198\" height=\"234\" /></p>\r\n<p><a href=\"http://change-connections.com/focus_points/find\" title=\"http://change-connections.com/focus_points/find\">http://change-connections.com/focus_points/find</a></p>\r\n<p>Want to design and build technology that actually helps people and addresses the world's most pressing issues? Change Connections provides a nicely vetted list of focus points that \"ensure that your ideas address key problem areas.\" And you can browse some good ideas that other people have come up with. There's no reason that these focus points couldn't be the instigation for dozens of successful and profitable business models...</p>",
+      "assets": {
+        "about-head.png": {
+          "url": "/ro/dojo4/focus-points-for-change/assets/about-head.png",
+          "path": "dojo4/focus-points-for-change/assets/about-head.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 198,
+            "height": 234
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/focus-points-for-change",
+        "type": "dojo4",
+        "id": "focus-points-for-change",
+        "urls": [
+          "/ro/dojo4/focus-points-for-change/assets/about-head.png",
+          "/ro/dojo4/focus-points-for-change/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/focus-points-for-change",
+          "prev": "dojo4/this-is-dojo4",
+          "next": "dojo4/simple-essential"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "focus-points-for-change"
+  }
+}

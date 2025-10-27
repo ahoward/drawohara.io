@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/lets-kill-altruism": {
+      "author": "nate@dojo4.com",
+      "title": "Let's Kill Altruism",
+      "published_at": "2015-12-01 12:58:19 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/lets-kill-altruism/assets/b.jpeg' alt=\"tumblr_mtseryqG701rpowflo1_540.jpg\" /> \n“A train has two great attributes of life… motion and purpose,” I said, reading a line from Atlas Shrugged to a friend this past weekend. There’s something wildly attractive about honest, confident movement. I was explaining to a friend why the search for it is what drew me into entrepreneurship, and Kenya. Like other recently graduated twenty-something year olds I want motion and purpose, or in other words, I want to do good through a meaningful career.</p>\n\n<p>A couple of months ago, my search for it led me to ask some DOJO4 co-conspirators, “How can we destroy altruism?” We were wondering why we don’t see more people choosing a career that makes them happy and benefits society—something many of us want, right? There’s nothing inherently wrong with altruism. I’m pinning it as the culprit though because it prioritizes doing good for society before doing what is good for the individual when creating a meaningful career, which is just backwards. Ironically, I’ve seen it hinder both individuals and businesses from doing good.</p>\n\n<p>I’m writing from a small blue-doored car garage in the hills of Central Kenya. It’s owned by Raji, a six-foot-three, 200-plus pound Indian mechanic with a camouflage bandana on his head. I’m here because of a startup called <a href=\"http://www.efkgroup.co.ke/\">EFK Group</a>. Our truck broke down and he’s fixing it. He’s the best mechanic around. He gives me a Coca-Cola and asks me what I am writing about. I tell him and ask him what he thinks. “I’m good at fixing broken shit. So I do that.” “Do you like it?” “Yeah.” “Are you happy?” “Sure.”</p>\n\n<p>I caught a glimpse of motion and purpose in his demeanor and wished life was that simple. But it is. He helps people as a result of what he is good at, which led me to thinking, like Reid Hoffman in Startup of You explains, that a meaningful career is an entrepreneurial endeavor, and thus, altruism has nothing to do with it.</p>\n\n<p>Altruism is defined as “the belief in or practice of disinterested and selfless concern for the wellbeing of others.” (It’s not philanthropy or volunteering necessarily.) It’s giving without getting anything in return. It’s apathetic. There’s no desire for a feedback loop for learning, no mutual value exchanged. Creating a meaningful career is entrepreneurial and motivated by self interest, which is neither selfish nor altruistic.</p>\n\n<p>“I want,” in front of “to do good” is self interest before good. The real work for those looking for a meaningful career consists of asking hard questions, taking action, and defining a set of principles that will guide self interest—like a startup.</p>\n\n<p>Like a recycling plant pays people for collecting cans in cities, EFK Group, a locally owned and run startup in Kenya, pays people for collecting the fallen nuts from an indigenous tree called croton megalocarpus. They process the nut into three organic products that they sell back to local industry as a substitute for imported diesel oil, fertilizer, and animal feed.</p>\n\n<p>There’s a lack of funding for projects like these that the social impact space aims to fill. Since they’re in this space, they are often asked, “What problem are you solving? Who are your beneficiaries and how are you improving their lives? What impact metrics can you show?” Because the tree (and nut) has no previous economic value, it is traditionally cut down for firewood. But now people find economic value in it because they sell it to EFK Group. They are protecting existing trees and planting more. It is locally owned, employs local workers, and it also gives smallholder farmers, street kids, and housewives another source of income. It has a zero-waste manufacturing process because it uses every part of the nut.</p>\n\n<p>What problem are they not solving? Who are they not benefitting? They’re solving massive problems—from poverty to deforestation and climate change—but they didn’t start the business to solve any of those problems. They’re exploiting an opportunity and pursuing personal interests. Their efforts are guided by principles (i.e. don’t waste stuff, be honest, be kind, work hard, etc.) and logic, not good intentions or altruism.</p>\n\n<p>I don’t think impact metrics and goals harm businesses. If anything, they improve them because they encourage people to understand their customer more. But I can see how this could distract a high-performing business. If we were to say that EFK Group exists to improve the lives of farmers, that could limit potential avenues of growth that could positively affect other stakeholders more in the future.</p>\n\n<p>If I were a business, I’d go bankrupt because altruistic thinking had me prioritizing my search for what I thought would be good for society before what is good for me. Fact is, I neither understand what good is nor what it means—for myself or others—because as humans we have a limited capacity to fully grasp life, time and the systems in which we live. (Whenever we solve a problem, we create new ones—that’s progress, right?) Sure, I want to do good and help people, but just like a startup can’t scale impact without profits, I can’t do good without acquiring more and more knowledge and skills.</p>\n\n<p>Joan Didion said, “I write entirely to find out what I’m thinking, what I’m looking at, what I see and what it means.” That’s my purpose here. I think good is an externality of motion and purpose, which is a result of a principled pursuit of self interest.</p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/lets-kill-altruism/assets/b.jpeg",
+          "path": "dojo4/lets-kill-altruism/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 540,
+            "height": 556
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/lets-kill-altruism",
+        "type": "dojo4",
+        "id": "lets-kill-altruism",
+        "urls": [
+          "/ro/dojo4/lets-kill-altruism/assets/b.jpeg",
+          "/ro/dojo4/lets-kill-altruism/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/lets-kill-altruism",
+          "prev": "dojo4/doing-a-good-job",
+          "next": "dojo4/grief-as-an-entrepreneurial-asset"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "lets-kill-altruism"
+  }
+}

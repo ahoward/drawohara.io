@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/imbed-for-android": {
+      "author": "miles@dojo4.com",
+      "title": "Imbed for Android",
+      "published_at": "2014-04-09 21:41:52 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>A while back I wrote about <a href=\"http://dojo4.com/blog/why-phonegap-sucks\">why phonegap sucks</a> and how we chose to incorporate web content into our native apps. The open source code that resulted from building several native apps that included web content was the <a href=\"https://github.com/Imbed\">Imbed project</a>. We released the <a href=\"http://dojo4.com/blog/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app\">iOS version first</a>.</p>\n\n<p>The project aims to be a starting point for what we think is the best way to incorporate web content into a native app - using native code. In iOS that means writing Objective-C to use a UIWebView and in Android that means writing Java to use a WebView. Yes, this requires that you know enough about iOS/Objective-C and Android/Java to write your own native functions when you want to use device features, but that means being able to follow Apple &amp; Google’s directions exactly and not depend on a third party to support a new feature and support it without bugs of its own.</p>\n\n<p>Recently I’ve been diving deeper into Android research and have created the <a href=\"https://github.com/imbed/android\">Android version of Imbed</a>. In addition to providing a nice starting point for including web content, the example html code demonstrates some javascript limitations in the webview and provides built-in support for the all-important back button on Android phones when you click a link that needs opening in Chrome vs in the web content within your app.</p>\n\n<p>Check out the <a href=\"https://github.com/imbed/android\">Android version</a> and let me know your thoughts on twitter!</p>\n\n<p>As always, pull requests welcome :)</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/imbed-for-android",
+        "type": "dojo4",
+        "id": "imbed-for-android",
+        "urls": [
+          "/ro/dojo4/imbed-for-android/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/imbed-for-android",
+          "prev": "dojo4/the-shadow-world-of-css-tables",
+          "next": "dojo4/using-redis-with-sensitive-information"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "imbed-for-android"
+  }
+}

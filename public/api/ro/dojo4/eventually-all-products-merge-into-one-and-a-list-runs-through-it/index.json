@@ -1,0 +1,92 @@
+{
+  "data": {
+    "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it": {
+      "published_at": "2012-07-10 00:00:00 UTC",
+      "title": "Eventually, All Products Merge into One and A List Runs Through It",
+      "author": "steve@dojo4.com",
+      "body": "    <p>Recently, while helping a client mark up a <a href=\"http://shopify.com\" target=\"_blank\">Shopify</a> theme, I came across a thorny problem: how to merge the output of one loop with that of another in a seamless fashion. Allow me to explain.\r\n    </p>\r\n    <p>\r\n      Most Shopify themes include a \"collection template\" where products are listed via a <a href=\"http://wiki.shopify.com/UsingLiquid\" target=\"_blank\">Liquid</a> loop. <a href=\"#figure1\">Figure 1</a> shows how such lists often take shape.\r\n    </p>\r\n    <figure id=\"figure1\" class=\"pal lightestgrayBg mvl\" style=\"text-align: center;\"><img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/mockup.png' title=\"Mockup\" alt=\"Mockup\" /><figcaption class=\"mtm fontItalic\">\r\n        <strong><em>Figure 1</em>\r\n</strong>: A typical Shopify product listing\r\n      </figcaption>\r\n    </figure>\r\n    <p>\r\n      If you're not averse to using <code>TABLEs</code> for such layouts, Liquid has you covered with its <code>TABLEROW</code> tag (<a href=\"http://wiki.shopify.com/UsingLiquid#Tables\">reference</a>). If grid-systems are more your speed, you'll want to employ some kind of <a href=\"http://stackoverflow.com/questions/2245972/modulus-or-lack-thereof-in-rubys-liquid-templating-engine/8439160#8439160\" target=\"_blank\">row wrapping hack</a>, since Liquid doesn't have an <code>each_slice()</code> enumerator or <code>modulus</code> operator.\r\n    </p>\r\n    <p>\r\n      But if you, like me, think the semantically appropriate markup for a product <strong>list</strong> is an unordered list (<code>UL</code>), you're committed to working with a stream of <code>LIs</code>.\r\n    </p>\r\n    <p>\r\n      As I mentioned above, this design required that a list of product collections appear inline with the list of products, but not just anywhere. It was supposed to be the third item in the first row, as shown in <a href=\"#figure2\">Figure 2</a>.\r\n    </p>\r\n    <figure id=\"figure2\" class=\"pal lightestgrayBg mvl\" style=\"text-align: center;\">\r\n      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/desired-layout.png' title=\"Desired Layout\" alt=\"Desired Layout\" />\r\n      <figcaption class=\"mtm fontItalic\" style=\"text-align: center;\">\r\n        <strong><em>Figure 2</em>\r\n</strong>: A product listing loop ostensibly interrupted by a navigation list\r\n      </figcaption>\r\n    </figure>\r\n    <p>\r\n      Now, I didn't want to start one loop, stop it, start another, stop it, then start the first one again with an appropriate offset. That seemed too manual. Again, I wanted the output to be a stream of <code>LIs</code> like so:\r\n    </p>\r\n      <script src=\"https://gist.github.com/icegulch/8373741.js\"></script>\r\n    <p>\r\n      So, that left me with two choices for laying out this stream of <code>LIs</code>: floating and clearing them or inline-blocking them.\r\n    </p>\r\n    <p>\r\n      It's easy enough to imagine how you could achieve the desired layout with floats, floating each <code>LI</code> left, except for the first one, which would be floated right. But the floating option requires careful clearing—both the <code>UL</code> itself and every third <code>LI</code> (starting with the first) must be cleared in order to avoid the problem revealed in <a href=\"#figure3\">Figure 3</a>.\r\n    </p>\r\n    <figure id=\"figure3\" class=\"pal lightestgrayBg mvl\" style=\"text-align: center;\">\r\n      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/float-issue.png' title=\"Float Issue\" alt=\"Float Issue\" />\r\n      <figcaption class=\"mtm fontItalic\" style=\"text-align: center;\">\r\n        <strong><em>Figure 3</em>\r\n</strong>: When the first LI in each \"row\" isn't cleared...\r\n      </figcaption>\r\n    </figure>\r\n    <p>\r\n      Liquid's <code>CYCLE</code> tag (<a href=\"http://wiki.shopify.com/UsingLiquid#Cycle\">reference</a>) is a handy way of doing this, as is CSS3's <a href=\"http://reference.sitepoint.com/css/pseudoclass-nthchild\" target=\"_blank\">positional pseudo selectors</a>. But, when IE7/IE8 support is required, cycling's the better bet.\r\n    </p>\r\n    <p>\r\n      Still, this house of clearing cards felt brittle to me, so I endeavored to put the aforementioned inline-block listing techinque to work. \r\n    </p>\r\n    <script src=\"https://gist.github.com/icegulch/8373784.js\"></script>\r\n    <p>\r\n       Which got me most of the way there, as <strong>Figure 4</strong> demonstrates.\r\n    </p>\r\n    <figure id=\"figure4\" class=\"pal lightestgrayBg mvl\" style=\"text-align: center;\">\r\n      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/initial-inline-block.png' title=\"Initial Inline Block\" alt=\"Initial Inline Block\" />\r\n      <figcaption class=\"mtm fontItalic\" style=\"text-align: center;\">\r\n        <strong><em>Figure 4</em>\r\n</strong>: First crack at inline-block layout\r\n      </figcaption>\r\n    </figure>\r\n    <p>\r\n      Though the inline-block technique freed me of clearing concerns, I still had to contend with the positioning challenge of the design: the product navigation list was supposed to be flush right in the first row. Floating it to the right wasn't the answer either, as that would subject our layout to the same risk shown in <a href=\"#figure3\">Figure 3</a>.\r\n    </p>\r\n    <p>\r\n      That's when I had a crazy idea: what if I changed the language direction of the <code>UL</code> so that the list would display right to left? Emboldened by a <a href=\"http://css-tricks.com/star-ratings/\" target=\"_blank\">recent Chris Coyier article</a>, I decided to give it a whirl. Here's what I ultimately came up with:\r\n    </p>\r\n<script src=\"https://gist.github.com/icegulch/8373820.js\"></script>\r\n<p>\r\n      As you can see, I had to change the language direction on the containing <code>UL</code>, then reset it on elements within its <code>LIs</code> (for some reason, reseting the language direction on the <code>LIs</code> themselves didn't work in Opera). I also had to set the font size on the <code>UL</code> to zero in order <a href=\"http://css-tricks.com/fighting-the-space-between-inline-block-elements/\" target=\"_blank\">to avoid this</a>.\r\n    </p>\r\n    <p>\r\n      Since the listing of products in this store didn't require specific ordering (alphabetical, price, etc), it was okay for the output to flow right to left, as shown in <a href=\"#figure5\">Figure 5</a>.\r\n    </p>\r\n    <figure id=\"figure5\" class=\"pal lightestgrayBg mvl\" style=\"text-align: center;\">\r\n      <img src='/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/inline-block-final.png' title=\"Inline Block Final\" alt=\"Inline Block Final\" />\r\n      <figcaption class=\"mtm fontItalic\" style=\"text-align: center;\">\r\n        <strong><em>Figure 5</em>\r\n</strong>: the language direction switch in action\r\n      </figcaption>\r\n    </figure>\r\n    <p>\r\n      While there are pros and cons to both floated and inline-blocked layouts, I thought the latter was a little more elegant in this situation. Have any of you run across this? Are you <a href=\"http://youtu.be/ATKQLgi5Z2Y\" target=\"_blank\">haunted by</a> lists?\r\n    </p>",
+      "assets": {
+        "desired-layout.png": {
+          "url": "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/desired-layout.png",
+          "path": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/desired-layout.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 460,
+            "height": 339
+          },
+          "src": null
+        },
+        "float-issue.png": {
+          "url": "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/float-issue.png",
+          "path": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/float-issue.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 460,
+            "height": 516
+          },
+          "src": null
+        },
+        "initial-inline-block.png": {
+          "url": "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/initial-inline-block.png",
+          "path": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/initial-inline-block.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 460,
+            "height": 362
+          },
+          "src": null
+        },
+        "inline-block-final.png": {
+          "url": "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/inline-block-final.png",
+          "path": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/inline-block-final.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 460,
+            "height": 362
+          },
+          "src": null
+        },
+        "mockup.png": {
+          "url": "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/mockup.png",
+          "path": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/mockup.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 460,
+            "height": 339
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it",
+        "type": "dojo4",
+        "id": "eventually-all-products-merge-into-one-and-a-list-runs-through-it",
+        "urls": [
+          "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/desired-layout.png",
+          "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/float-issue.png",
+          "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/initial-inline-block.png",
+          "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/inline-block-final.png",
+          "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/assets/mockup.png",
+          "/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it",
+          "prev": "dojo4/distraction",
+          "next": "dojo4/resque-best-practices"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "eventually-all-products-merge-into-one-and-a-list-runs-through-it"
+  }
+}

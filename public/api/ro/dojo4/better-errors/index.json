@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/better-errors": {
+      "author": "miles@dojo4.com",
+      "title": "Better Errors",
+      "published_at": "2014-03-31 16:28:41 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>One of the rails gems that we’ve been using in our newer apps is <a href=\"https://github.com/charliesome/better_errors\">Better Errors</a>, which allows you to be dropped into a pry-like REPL and nicer error page when rails raises an exception during the browser’s request process.</p>\n\n<p><img src='/ro/dojo4/better-errors/assets/b.png' alt=\"\" /> \n<em>(<a href=\"https://github.com/charliesome/better_errors\">Image source</a>)</em></p>\n\n<p>This is helpful for our developers because instead of getting a static error page, going to search in the code where to put a <code>binding.pry</code>, and re-running the error prone code, Better Errors loads a page where we can interact with the code right there and then, enabling us to find the problem faster, write a fix faster, and iterate faster.</p>\n\n<p>One of the recent features we just discovered is the ability to see the last rpc error. We have a pattern of ajax calling an rpc method in our rails app when we just need to get some information or post a simple object like favoriting a user or something. The code that runs on our rails server that handles that ajax request won’t blow up the whole server and automatically invoke Better Errors, so the work around is to go to a special url that better errors exposes to show the last error thrown in our rails code: http://localhost:3000/__better_errors.</p>\n\n<p>Has anyone else out there used this tool? What are some things you like/dislike about it? Always love to hear feedback via twitter (click below).</p>\n\n</div>\n",
+      "assets": {
+        "b.png": {
+          "url": "/ro/dojo4/better-errors/assets/b.png",
+          "path": "dojo4/better-errors/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 3108,
+            "height": 1806
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/better-errors",
+        "type": "dojo4",
+        "id": "better-errors",
+        "urls": [
+          "/ro/dojo4/better-errors/assets/b.png",
+          "/ro/dojo4/better-errors/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/better-errors",
+          "prev": "dojo4/i-emailadore-you",
+          "next": "dojo4/death-to-password-committers"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "better-errors"
+  }
+}

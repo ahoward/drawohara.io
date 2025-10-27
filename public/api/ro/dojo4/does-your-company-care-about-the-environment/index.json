@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/does-your-company-care-about-the-environment": {
+      "author": "emily@dojo4.com",
+      "title": "Does Your Company Care About the Environment?",
+      "published_at": "2014-10-22 14:29:48 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Then put it in writing!  Including an environmental policy in your company’s handbook actually matters.  Maybe your founders and/or current employees already bike to work, carry reusable mugs and recycle religiously, but by taking the time to craft an environmental policy that is specific to your organization and including it in the handbook, you deepen that commitment, provide the ethical foundation for earth-driven financial decisions, and ensure that it outlasts you and your personal commitments to the environment.</p>\n\n<p><img src='/ro/dojo4/does-your-company-care-about-the-environment/assets/b.jpeg' alt=\"FullSizeRender.jpg\" /></p>\n\n<p>We live in an exciting time when new ways to mitigate environmental impacts are becoming available every year, so make the time to stay current with everything your company can and should be doing to be green, write it down, and share it to inspire others.</p>\n\n<p>Partners for A Clean Environment is a Boulder, CO resource for businesses in any sector seeking to be more environmentally responsible.  Their website is being redesigned, but <a href=\"http://www.pacepartners.com/resource-sheet-library/80-resource-sheets\">many fact sheets are still available</a> if you need some guidance around reducing your impact.</p>\n\n<p>Here’s what dojo4 is doing now:</p>\n\n<p><strong>dojo4 Environmental Policy</strong></p>\n\n<p><em>dojo4 considers environmentally intelligent practices to be an organizational priority.  Simply because dojo4 is in the business of virtual production does not mean that our impact on the environment is only a virtual reality.  We recognize that the manufacturing of computer equipment is currently a toxic and resource-heavy industry, and also that data centers are one of the biggest power users today.  According to a <a href=\"http://www.nytimes.com/2012/09/23/technology/data-centers-waste-vast-amounts-of-energy-belying-industry-image.html?pagewanted=all&amp;_r=0\">New York Times investigative report</a>, “Worldwide, digital warehouses use about 30 billion watts of electricity, roughly equivalent to the output of 30 nuclear power plants….Data centers in the United States account for one-quarter to one-third of that load.”</em></p>\n\n<p><em>dojo4 is committed to being aware of the extent of our environmental impact, and to mitigating it in whatever ways possible, both through how we run our business here in Boulder, Colorado and how we advocate for industry-wide eco-friendly changes.</em></p>\n\n<p><em>- We voluntarily pay higher electricity rates to ensure that our office is 100% wind-powered.</em>\n<em>- We operate with minimal computer equipment.</em>\n<em>- We don’t print things unless we absolutely must.</em> \n<em>- We prioritize the environment in our purchase choices (of office supplies, cupcakes, etc.).</em>\n<em>- We do not use toxic chemicals for cleaning our office or in our garden.</em>\n<em>- We are centrally located in downtown Boulder, enabling most of our employees to walk or bike to work year-round, which they do.  We are also able to avoid air travel most of the time.</em>\n<em>- We primarily drink beer, because we understand that water is a precious resource not to be wasted.</em></p>\n\n<p><img src='/ro/dojo4/does-your-company-care-about-the-environment/assets/c.jpeg' alt=\"x354.jpg\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/does-your-company-care-about-the-environment/assets/b.jpeg",
+          "path": "dojo4/does-your-company-care-about-the-environment/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1280,
+            "height": 1280
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/does-your-company-care-about-the-environment/assets/c.jpeg",
+          "path": "dojo4/does-your-company-care-about-the-environment/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 212,
+            "height": 268
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/does-your-company-care-about-the-environment",
+        "type": "dojo4",
+        "id": "does-your-company-care-about-the-environment",
+        "urls": [
+          "/ro/dojo4/does-your-company-care-about-the-environment/assets/b.jpeg",
+          "/ro/dojo4/does-your-company-care-about-the-environment/assets/c.jpeg",
+          "/ro/dojo4/does-your-company-care-about-the-environment/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/does-your-company-care-about-the-environment",
+          "prev": "dojo4/sister-code-5-ways-to-meet-women-halfway",
+          "next": "dojo4/harvest-time-calgary-farmers-market"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "does-your-company-care-about-the-environment"
+  }
+}

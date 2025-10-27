@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/on-the-floor-at-dojo4": {
+      "author": "corey@dojo4.com",
+      "title": "on the floor at dojo4",
+      "published_at": "2014-02-14 00:27:23 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/on-the-floor-at-dojo4/assets/9007.jpeg' alt=\"\" /></p>\n\n<p>It’s Wednesday evening, the room is full of heavy, deep breathing and I’m laying on the floor next to my co-workers. Again.</p>\n\n<p>Yoga led by the indominable and perspicacious <a href=\"http://www.angiesamadhi.com/\">Angie Samadhi</a> has become a regular and popular part of our week at dojo4. Many of us won’t miss it. We’ll do it in our jeans if we forgot to bring something stretchier. We’ve had neighbors, friends, strangers and clients drop in and get limber on a borrowed mat. We bring our babies and our dogs. Everyone loves it.</p>\n\n<p>We highly recommend doing non-work related things with the people you work with. We highly recommend it be physical. We highly recommend it make you stronger and more relaxed. Interpret as you like. We like to do yoga together.</p>\n\n<p>Oh, and we highly recommend Angie. She’s one of the best instructors I’ve ever had. Seriously. And she’ll come to you. You should call her: <a href=\"http://www.angiesamadhi.com/\">http://www.angiesamadhi.com/</a>.</p>\n\n\n</div>\n",
+      "assets": {
+        "9007.jpeg": {
+          "url": "/ro/dojo4/on-the-floor-at-dojo4/assets/9007.jpeg",
+          "path": "dojo4/on-the-floor-at-dojo4/assets/9007.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1632,
+            "height": 1224
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/on-the-floor-at-dojo4",
+        "type": "dojo4",
+        "id": "on-the-floor-at-dojo4",
+        "urls": [
+          "/ro/dojo4/on-the-floor-at-dojo4/assets/9007.jpeg",
+          "/ro/dojo4/on-the-floor-at-dojo4/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/on-the-floor-at-dojo4",
+          "prev": "dojo4/within40feet-day-17",
+          "next": "dojo4/within40feet-day-18"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "on-the-floor-at-dojo4"
+  }
+}

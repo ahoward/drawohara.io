@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/step-1-mmco-status-update-on-purpose": {
+      "author": "ryan@dojo4.com",
+      "title": "! 'Step 1: MMCO Status Update on Purpose'",
+      "published_at": "2014-05-30 19:58:31 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>As a follow up to my <a href=\"http://dojo4.com/blog/step-0-getting-started-building-a-purposeful-organization\">Step 0</a> post the other day, I wanted to offer some insight into the current status of <a href=\"http://gomoshimoshi.com/\">Moshi Moshi Co.</a> along these lines.</p>\n\n<p><strong>WRITE IT DOWN</strong> This process began essentially on day 1 of MMCO at our kickoff retreat and we ended up with some high-level aspirations in our internal wiki. After that though, the next writing we did was the most recent blog post. Our current WIP is creating a more fully-formed “About Us” page on the <a href=\"http://gomoshimoshi.com/\">website</a> as there isn’t much there currently.</p>\n\n<p><strong>REVISIT OFTEN</strong> We currently have a short, weekly status meeting on Fridays at 1pm. If you’d like to sit in on one, <a href=\"mailto:ryan@gomoshimoshi.com\">let me know</a>! Part of these meetings will soon be checking in around our more purposeful, non-$$ focused progress/tasks.</p>\n\n<p><strong>HAVE ALLIES//ENABLE OTHERS</strong> We have begun a search for an arts organization that we could help out and collaborate with as a pair to <a href=\"http://wallspacefinder.com/\">Wallspace Finder</a>. Know anyone who might be interested?</p>\n\n<p>If you have questions, feedback, criticisms, or encouragement to offer on any of these fronts, we’d love to hear from you.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/step-1-mmco-status-update-on-purpose",
+        "type": "dojo4",
+        "id": "step-1-mmco-status-update-on-purpose",
+        "urls": [
+          "/ro/dojo4/step-1-mmco-status-update-on-purpose/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/step-1-mmco-status-update-on-purpose",
+          "prev": "dojo4/step-0-getting-started-building-a-purposeful-organization",
+          "next": "dojo4/angularjs-service-rails-api"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "step-1-mmco-status-update-on-purpose"
+  }
+}

@@ -8,18 +8,18 @@ gem "rdoc"
 gem "fiddle"
 gem "webrick", "~> 1.9.1"
 gem "logger"
-gem "ostruct", "0.6.0"
+gem "ostruct", "0.6.3"
 
 %w[
   ro
   map
   rego
 ].each do |lib|
-  #if test(?e, File.expand_path("~/gh/ahoward/#{ lib }"))
-    #gem "#{ lib }", path: "~/gh/ahoward/#{ lib }"
-  #else
+  if test(?e, File.expand_path("~/gh/ahoward/#{ lib }"))
+    gem "#{ lib }", path: "~/gh/ahoward/#{ lib }"
+  else
     gem "#{ lib }", git: "https://github.com/ahoward/#{ lib }"
-  #end
+  end
 end
 
 gem "dotenv"

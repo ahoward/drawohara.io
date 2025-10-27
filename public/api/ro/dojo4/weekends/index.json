@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/weekends": {
+      "author": "miles@dojo4.com",
+      "title": "weekends.",
+      "published_at": "2014-11-12 23:55:36 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/weekends/assets/b.jpeg' alt=\"rAbWPdS.jpg\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/weekends/assets/b.jpeg",
+          "path": "dojo4/weekends/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 282,
+            "height": 281
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/weekends",
+        "type": "dojo4",
+        "id": "weekends",
+        "urls": [
+          "/ro/dojo4/weekends/assets/b.jpeg",
+          "/ro/dojo4/weekends/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/weekends",
+          "prev": "dojo4/maintaining-our-urban-professionalism",
+          "next": "dojo4/girl-effect-accelerator-braindump"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "weekends"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/meetings-do-not-need-to-look-like-meetings": {
+      "published_at": "2013-10-28 00:00:00 UTC",
+      "title": "Meetings do not need to look like meetings",
+      "author": "corey@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src=\"assets/walktalkcartoon.png\" alt=\"img\" /></p>\n\n<p>Meetings do not need to happen inside around a table. And meetings do not need to take a long time.</p>\n\n<p>Instead of shutting yourself in a stuffy room with coworkers or clients, take the conversation outside. Go for a walk- the best meetings happen when there is a change of scenery, fresh air and bodies are moving. Sometimes it actually helps communication not to be face-to-face, but walking side by side, going somewhere. Especially difficult conversations can be easier to have when in motion.</p>\n\n<p>Studies show that being in motion lengthens <a href=\"http://www.prdaily.com/Main/Articles/What_is_the_length_of_an_audiences_attention_span_12517.aspx\">our attention spans</a>, but even if people are interested in the meeting and even if they actually care, attention spans still hover around 7-10 minutes for most meetings. So we’ve found that it helps maintain morale and a general sense of good humor to keep meetings short, to-the-point and to move them outside whenever possible.</p>\n\n</div>\n",
+      "assets": {
+        "WalkTalkCartoon.png": {
+          "url": "/ro/dojo4/meetings-do-not-need-to-look-like-meetings/assets/WalkTalkCartoon.png",
+          "path": "dojo4/meetings-do-not-need-to-look-like-meetings/assets/WalkTalkCartoon.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 320,
+            "height": 283
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/meetings-do-not-need-to-look-like-meetings",
+        "type": "dojo4",
+        "id": "meetings-do-not-need-to-look-like-meetings",
+        "urls": [
+          "/ro/dojo4/meetings-do-not-need-to-look-like-meetings/assets/WalkTalkCartoon.png",
+          "/ro/dojo4/meetings-do-not-need-to-look-like-meetings/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/meetings-do-not-need-to-look-like-meetings",
+          "prev": "dojo4/why-phonegap-sucks",
+          "next": "dojo4/screen-set-up-your-project-s-terminal-environment-once-and-only-once"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "meetings-do-not-need-to-look-like-meetings"
+  }
+}

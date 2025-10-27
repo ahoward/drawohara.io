@@ -1,0 +1,27 @@
+{
+  "data": {
+    "purls/can-poverty-rates-be-estimated-using-satellite-data": {
+      "type": "purl",
+      "url": "/media/noaa/can-poverty-rates-be-estimated-using-satellite-data.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/can-poverty-rates-be-estimated-using-satellite-data",
+        "type": "purls",
+        "id": "can-poverty-rates-be-estimated-using-satellite-data",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/can-poverty-rates-be-estimated-using-satellite-data",
+          "prev": "purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data",
+          "next": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls",
+    "id": "can-poverty-rates-be-estimated-using-satellite-data"
+  }
+}

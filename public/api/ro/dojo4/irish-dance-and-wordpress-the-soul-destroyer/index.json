@@ -1,0 +1,68 @@
+{
+  "data": {
+    "dojo4/irish-dance-and-wordpress-the-soul-destroyer": {
+      "author": "ara@dojo4.com",
+      "title": "Irish Dance and Wordpress the Soul Destroyer",
+      "published_at": "2014-01-07 00:00:00 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>The other night my family was out watching my daughter perform at her first Irish dance - which was loads of fun</p>\n\n<p><img src='/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/b.jpeg' alt=\"\" /></p>\n\n<p>During the show I ran into an old friend of mine from bike racing days: “Keith”.  Keith has a great family and we always enjoy their company.  We chatted about the old times and his upcoming trip to London for the world championships of Irish dancing - his daughter is 16 and will be representing Colorado in the event!</p>\n\n<p>Keith has always been someone I admire.  He raced as a professional for Motorola and, to this day, is one of the most suffering, talented, and fearless of all the bike racers I’ve known.  I remember him talking about yoga a good 10 years before anyone else in Boulder considered it fashionable and he’s been a dedicated husband and father for years longer that me. He sure seems to have fun doing it too!</p>\n\n<p>Keith is also a designer and a developer; he’s been at it much longer that I have and is someone to count on for showing up at the party with the coolest shoes.  In short, he is just the kind of guy you want working on your shit.</p>\n\n<p>During our chat at dinner I asked Keith about work.</p>\n\n<p>He said it was sucking and that he needed to find something new.</p>\n\n<p>I asked why?</p>\n\n<p>“Wordpress”</p>\n\n<p>In a nutshell, was his answer.  I pressed on this a bit and this is what he had to say:</p>\n\n<p>“It’s just the same thing over and over.  It pays the bills but I’m just declining.”</p>\n\n<p>He motioned a crashing plane as he said this.</p>\n\n<p>I totally get it: I, along with much (all?) of the developer world, fucking hate working in Wordpress and PHP.</p>\n\n<p>There, I said it.</p>\n\n<p>Why, you might ask, do you care?</p>\n\n<p>You care because you <em>want</em> creative people working on your awesome site.</p>\n\n<p>You care because you <em>want</em> talented developers building your awesome app.</p>\n\n<p>You care because <em>we do</em>.</p>\n\n<p>When you choose a platform you don’t choose it for technology (listen to me, I’m a CTO saying this), rather, you choose it for the culture of the people attracted to it.  You choose a platform because of all the awesome people like Keith that come along with it.</p>\n\n<p>So, the next time you are building something, don’t ask yourself</p>\n\n<p>“what should I build this on”</p>\n\n<p>ask yourself</p>\n\n<p>“<em>who</em> should be building this”</p>\n\n<p>and the platform will follow as a result.</p>\n\n<p>After all, it is the <em>people</em> at the dance that really make it.</p>\n\n<p>p.s.  you may also enjoy <a href=\"/blog/static-is-the-new-black\">Static Is The New Black</a> ;-)</p>\n\n</div>\n",
+      "assets": {
+        "2014-01-05-17.01.02.jpg": {
+          "url": "/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/2014-01-05-17.01.02.jpg",
+          "path": "dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/2014-01-05-17.01.02.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 853
+          },
+          "src": null
+        },
+        "2014-01-05_17.01.02.jpg": {
+          "url": "/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/2014-01-05_17.01.02.jpg",
+          "path": "dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/2014-01-05_17.01.02.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "b.jpeg": {
+          "url": "/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/b.jpeg",
+          "path": "dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/irish-dance-and-wordpress-the-soul-destroyer",
+        "type": "dojo4",
+        "id": "irish-dance-and-wordpress-the-soul-destroyer",
+        "urls": [
+          "/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/2014-01-05-17.01.02.jpg",
+          "/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/2014-01-05_17.01.02.jpg",
+          "/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/assets/b.jpeg",
+          "/ro/dojo4/irish-dance-and-wordpress-the-soul-destroyer/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/irish-dance-and-wordpress-the-soul-destroyer",
+          "prev": "dojo4/using-terminal-notifier-in-our-capfiles",
+          "next": "dojo4/responding-to-the-everyday-as-it-happens"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "irish-dance-and-wordpress-the-soul-destroyer"
+  }
+}

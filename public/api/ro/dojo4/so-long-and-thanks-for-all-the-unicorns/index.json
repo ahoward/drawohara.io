@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/so-long-and-thanks-for-all-the-unicorns": {
+      "published_at": "2013-08-15 00:00:00 UTC",
+      "title": "So long and thanks for all the unicorns!",
+      "author": "fred@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src=\"http://farm7.staticflickr.com/6190/6035265163_3bf4587be3_z.jpg\" alt=\"Unicorn\" /></p>\n\n<p>Today is my last day at Dojo4. It has an adventure full of ups and downs, challenging technologies and being surrounded by an amazing crew.</p>\n\n<p>I first heard of the Dojo four years ago. I was attending a Ruby code and coffee event when Jeremy mentioned that he was going to work at the dojo. I asked about this mystical place but hesitated to visit at first. I eventually overcame that hesitation and became a frequent visitor. I must warn you: hanging out at the dojo puts you at high risk of working for the dojo. I eventually heard of a position that dojo4 was recruiting for. I applied and my fate was sealed.</p>\n\n<p>I returned to the dojo a little more than a year later to join as a full time employee. Here, I had the chance to work with amazing clients on deeply interesting projects. There was iOS, infrastructure, front end, back end, ops, devops, noops opportunities. Lots of MVP, some ongoing maintenance.</p>\n\n<p>Still, I was missing working at scale. So I answered the call of a local startup who already has a product and a steep growth curve who needed help with scaling, expanding and running their product. Dealing with millions of emails a day is going to force me to up my game to a few  levels.</p>\n\n<p>It is bitter sweet to leave such a crew behind, but they’ll do just fine. They are amazing in their own ways.</p>\n\n<p>I’ll post more details of my adventures on <a href=\"http://twitter.com/fredjean\">my twitter feed</a> and <a href=\"http://fredjean.net\">on my blog</a>. Stay posted!</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/so-long-and-thanks-for-all-the-unicorns",
+        "type": "dojo4",
+        "id": "so-long-and-thanks-for-all-the-unicorns",
+        "urls": [
+          "/ro/dojo4/so-long-and-thanks-for-all-the-unicorns/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/so-long-and-thanks-for-all-the-unicorns",
+          "prev": "dojo4/org-dev-dojo",
+          "next": "dojo4/work-after-flo-dojo4"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "so-long-and-thanks-for-all-the-unicorns"
+  }
+}

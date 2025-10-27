@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/organizational-development-and-leadership-at-dojo4": {
+      "published_at": "2011-02-24 00:00:00 UTC",
+      "title": "organizational development and leadership at dojo4",
+      "author": "corey@dojo4.com",
+      "body": "\r\n<p>\r\n  <img src='/ro/dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG' title=\"Uphoto\" alt=\"Uphoto\" rel=\"450x450\" width=\"450\" height=\"339\" />\r\n</p>\r\n\r\n<p>\r\n  The symposium is called <a href=\"http://www.naropa.edu/extend/EmergingParadigmsforLeadership.cfm\" title=\"http://www.naropa.edu/extend/EmergingParadigmsforLeadership.cfm\"></a> and has some heavy hittering presenters from the world of organizational development: Peter Senge (MIT), Mark Gerzon (UN advisor), Rich Fernandez (eBay), etc. I'm there because I drank this particular flavor of koolaid a while ago, and am convinced that one of the main ways that good work is going to happen successfully in this complex world of ours in the next little while, is through some of the practices illuminated by the disciplines of organizational learning: conversation, presence, listening, mindfulness, and knowing how to lead in our own lives. I'm also at this symposium because I believe that dojo4 has a lot to contribute as a leader in its sphere of influence. Not only as a software design and development company, but as an organization dedicated to fostering community and putting its collaborative talents toward making good things happen, dojo4 is committed to being part of the change that we want to see in the world.\r\n</p>\r\n\r\n<p>\r\n  The guy introducing the weekend says that we are all there because we agree that \"existing leadership and management systems are what is failing the world.\" Whether or not we can indeed agree on the specificity of \"what is failing the world,\" it's certainly clear that we are there because we agree that what we can do to help make this world thrive is rethinking current leadership and management systems. And throughout the weekend it also becomes clear that we're a bit scattered in our thinking of how to rework those systems.\r\n</p>\r\n\r\n<p>\r\n  This is something we contact at dojo4 everyday: how can we allow systems to work that accommodate different ways of knowing? We put a premium on our understanding and connections with people, whether within the company or with the many people that come through our door, friends, clients, colleagues in the field. We recognize that this understanding and connection is a huge part of what makes our work valuable, and that it can be fostered through conversation and supporting a more fundamental connection to ourselves. So we have rethought our company systems to make room for us to do things like host meditation, yoga, social gatherings, and to meet with each other regularly in a way that is designed to cultivate meaning, rather than being content-driven. We are doing good work here at dojo4. And it's a work in progress...\r\n</p>\r\n\r\n<p>\r\n  Although symposium was a bit haphazard, I was glad to have been there. Organizational development and new ways of understanding leadership that privilege introspection, listening, connection, and mindfulness, are part of a big movement in the world today that will hopefully allow us to rethink the systems that have gotten us into trouble. And I'm glad to have dojo4 be part of that movement.\r\n</p>\r\n",
+      "assets": {
+        "uphoto.JPG": {
+          "url": "/ro/dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG",
+          "path": "dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 339
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/organizational-development-and-leadership-at-dojo4",
+        "type": "dojo4",
+        "id": "organizational-development-and-leadership-at-dojo4",
+        "urls": [
+          "/ro/dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG",
+          "/ro/dojo4/organizational-development-and-leadership-at-dojo4/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/organizational-development-and-leadership-at-dojo4",
+          "prev": "dojo4/hackerspaces-r-us",
+          "next": "dojo4/office-dog-makes-twitter-splash"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "organizational-development-and-leadership-at-dojo4"
+  }
+}

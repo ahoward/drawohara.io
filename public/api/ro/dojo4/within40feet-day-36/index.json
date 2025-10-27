@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/within40feet-day-36": {
+      "author": "corey@dojo4.com",
+      "title": "! '#within40feet day 36'",
+      "published_at": "2014-03-14 22:43:19 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/within40feet-day-36/assets/b.png' alt=\"\" /></p>\n\n<p>ref: <a href=\"http://www.dojo4.com/fun/within40feet\">within 40 feet</a></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/within40feet-day-36/assets/b.jpeg",
+          "path": "dojo4/within40feet-day-36/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 2448
+          },
+          "src": null
+        },
+        "b.png": {
+          "url": "/ro/dojo4/within40feet-day-36/assets/b.png",
+          "path": "dojo4/within40feet-day-36/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1280,
+            "height": 1280
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/within40feet-day-36",
+        "type": "dojo4",
+        "id": "within40feet-day-36",
+        "urls": [
+          "/ro/dojo4/within40feet-day-36/assets/b.jpeg",
+          "/ro/dojo4/within40feet-day-36/assets/b.png",
+          "/ro/dojo4/within40feet-day-36/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/within40feet-day-36",
+          "prev": "dojo4/what-s-up-with-moshi-moshi-co",
+          "next": "dojo4/leprechauns-love-rainbows"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "within40feet-day-36"
+  }
+}

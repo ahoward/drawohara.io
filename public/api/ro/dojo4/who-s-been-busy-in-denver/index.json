@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/who-s-been-busy-in-denver": {
+      "author": "ryan@dojo4.com",
+      "title": "Who's Been Busy in Denver?",
+      "published_at": "2014-08-19 21:47:37 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><a href=\"https://crosscultured.org/\">Cross Cultured</a> has.</p>\n\n<p><img src=\"https://crosscultured.org/assets/logo-19f4031d25628004ee0e96df35da29c6.png\" alt=\"Cross Cultured logo\" /></p>\n\n<p>They’re midway through their inaugural season and are kicking butt. In case you’re unfamiliar, Cross Cultured runs a membership program for young, culturally curious individuals that gives access to a special event series at some of the various arts institutions around Denver. This summer, the program will run until October 31st. It’s not too late to check out their <a href=\"https://crosscultured.org/events\">list of remaining events</a> and <a href=\"https://crosscultured.org/signup\">become a member</a>!</p>\n\n<p>dojo4 and <a href=\"http://gomoshimoshi.com/\">Moshi Moshi Co.</a> had a chance to help out Cross Cultured throughout the springtime by collaborating on their web presence and membership backend. Here are few highlights:</p>\n\n<ul>\n  <li>Mobile Friendly: utilizing <a href=\"http://getbootstrap.com/\">industry-recognized tools</a>, we quickly built a site that feels good on all devices</li>\n  <li><a href=\"https://stripe.com/checkout\">Stripe Checkout Integration</a>: they can easily track revenue, manage discounts, and issue refunds</li>\n  <li>Content/Data Management: Cross Cultured staff can login and manage all the necessary content and data to drive their homepage, events, and member program</li>\n  <li>Reporting: Their back-office work is streamlined through detailed and exportable reporting</li>\n</ul>\n\n<p>This was really enjoyable for us because we got to leverage our expertise and past experience to build up a deserving organization and cause. Let us know what you think by commenting using the “Tweet” button below!</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/who-s-been-busy-in-denver",
+        "type": "dojo4",
+        "id": "who-s-been-busy-in-denver",
+        "urls": [
+          "/ro/dojo4/who-s-been-busy-in-denver/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/who-s-been-busy-in-denver",
+          "prev": "dojo4/never-play-games-other-secrets-to-success-from-dojo4-s-cto",
+          "next": "dojo4/dojo4-stands-up-to-cancer"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "who-s-been-busy-in-denver"
+  }
+}

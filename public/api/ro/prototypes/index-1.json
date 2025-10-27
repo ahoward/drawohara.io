@@ -1,0 +1,108 @@
+{
+  "data": {
+    "prototypes/io": {
+      "og": {
+        "image": {
+          "url": "/media/og/io/og.jpeg"
+        },
+        "title": null,
+        "description": "# WRITEME"
+      },
+      "body": "<div class=\"ro markdown\">\n  <p>following is an AI generated summary of this article, so you won’t have to read it!</p>\n\n<blockquote>\n  <h3>”</h3>\n  <h1 id=\"fixme\">FIXME</h1>\n  <h3 id=\"-1\">”</h3>\n</blockquote>\n\n<h1 id=\"writeme\">WRITEME</h1>\n\n</div>\n",
+      "assets": {
+        "og.jpg": {
+          "url": "/ro/prototypes/io/assets/og.jpg",
+          "path": "prototypes/io/assets/og.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2400,
+            "height": 1200
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "prototypes/io",
+        "type": "prototypes",
+        "id": "io",
+        "urls": [
+          "/ro/prototypes/io/assets/og.jpg",
+          "/ro/prototypes/io/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "prototypes/io",
+          "prev": null,
+          "next": "prototypes/purl"
+        }
+      }
+    },
+    "prototypes/purl": {
+      "url": "https://todo.com",
+      "og": {
+        "title": "Teh Title",
+        "description": "So much, so many",
+        "image": {
+          "url": "/ro/prototypes/purl/assets/free-luigi.jpg",
+          "width": 1024
+        }
+      },
+      "assets": {
+        "free-luigi.jpg": {
+          "url": "/ro/prototypes/purl/assets/free-luigi.jpg",
+          "path": "prototypes/purl/assets/free-luigi.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        },
+        "free-luigi.png": {
+          "url": "/ro/prototypes/purl/assets/free-luigi.png",
+          "path": "prototypes/purl/assets/free-luigi.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "prototypes/purl",
+        "type": "prototypes",
+        "id": "purl",
+        "urls": [
+          "/ro/prototypes/purl/assets/free-luigi.jpg",
+          "/ro/prototypes/purl/assets/free-luigi.png"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "prototypes/purl",
+          "prev": "prototypes/io",
+          "next": null
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "prototypes",
+    "page": {
+      "count": 1,
+      "size": 42,
+      "first": 0,
+      "last": 0,
+      "index": 0,
+      "curr": 0,
+      "prev": null,
+      "next": null
+    }
+  }
+}

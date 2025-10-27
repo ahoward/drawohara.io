@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/web-developer-challenge": {
+      "published_at": "2011-01-29 00:00:00 UTC",
+      "title": "Web Developer Challenge!",
+      "author": "justin@dojo4.com",
+      "body": "<p>Today I'm cross-browser testing a new site prior to launching it. As usual, this involves some styling gymnastics in order to make the site look better-than-terrible in Internet Explorer. But today, I came across an issue in Firefox that I couldn't explain.</p>\r\n<p>The site I'm building advertises a cycling event. It has a few blocks like this:</p>\r\n\r\n<p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>\r\n\r\n<p>They contain information about the sponsors of the event. Remarkably, even though these blocks show up in <a href=\"http://en.wikipedia.org/wiki/Internet_Explorer_6\" title=\"http://en.wikipedia.org/wiki/Internet_Explorer_6\">everyone's favorite ten-year-old browser</a>, they don't appear in any version of Firefox on my drive.</p>\r\n<p>Seriously? Yes.</p>\r\n<p>These blocks are <em>invisible</em> in Firefox. The browser modifies them to give them a <code>display:none;</code> attribute.</p>\r\n<p>But the best part is, if I change the section's class to anything other than \"sponsor\", the blocks show up just fine. In fact, once you know the cause, that's the only solution: Don't give items on your page a CSS class of \"sponsor\".</p>\r\n<p>Think you know what caused it? <a href=\"http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845\" title=\"http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845\">Check it out</a>.</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/web-developer-challenge",
+        "type": "dojo4",
+        "id": "web-developer-challenge",
+        "urls": [
+          "/ro/dojo4/web-developer-challenge/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/web-developer-challenge",
+          "prev": "dojo4/the-ceo-should-wash-the-dishes",
+          "next": "dojo4/meditation-every-tuesday-morning-the-dojo"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "web-developer-challenge"
+  }
+}

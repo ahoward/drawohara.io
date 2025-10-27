@@ -1,6 +1,10 @@
 todo
 ----
 
+- botty
+- buffer
+  - https://github.com/humanwhocodes/crosspost
+
 positivity!
 
 # wip partial

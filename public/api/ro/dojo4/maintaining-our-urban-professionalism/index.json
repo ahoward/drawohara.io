@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/maintaining-our-urban-professionalism": {
+      "author": "miles@dojo4.com",
+      "title": "Maintaining our (Urban) Professionalism",
+      "published_at": "2014-11-12 18:58:36 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>We take our work seriously. We’re professional with our clients. We don’t mess around.</p>\n\n<p>In addition, anyone who’s worked with us knows that we wear suits every day to work, we refer to each person we come into contact with by their last name only, and we express our feelings through the most professional of gestures - the head nod.</p>\n\n<p>However, <a href=\"http://urbandictionary.com\">UrbanDictionary.com</a> is funny.</p>\n\n<p>So I wrote <a href=\"http://github.com/milesmatthias/urban_dict\">a ruby client</a> to interact with the UrbanDictionary API and integrated it into our robot, <a href=\"https://github.com/ahoward/fbomb\">fbomb</a>, which lives in our group chat in Flowdock.</p>\n\n<p>Thus:</p>\n\n<p><img src='/ro/dojo4/maintaining-our-urban-professionalism/assets/b.png' alt=\"LCxZH.png\" /></p>\n\n<p><a href=\"http://github.com/milesmatthias/urban_dict\">Add it</a> to your robots to continue your professionalism.</p>\n\n</div>\n",
+      "assets": {
+        "b.png": {
+          "url": "/ro/dojo4/maintaining-our-urban-professionalism/assets/b.png",
+          "path": "dojo4/maintaining-our-urban-professionalism/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1426,
+            "height": 292
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/maintaining-our-urban-professionalism",
+        "type": "dojo4",
+        "id": "maintaining-our-urban-professionalism",
+        "urls": [
+          "/ro/dojo4/maintaining-our-urban-professionalism/assets/b.png",
+          "/ro/dojo4/maintaining-our-urban-professionalism/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/maintaining-our-urban-professionalism",
+          "prev": "dojo4/weekends-make-us-more-productive-on-mondays",
+          "next": "dojo4/weekends"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "maintaining-our-urban-professionalism"
+  }
+}

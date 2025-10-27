@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/korean-release-the-click-clean-scorecard": {
+      "author": "emily@dojo4.com",
+      "title": "! 'Korean Release: The Click Clean Scorecard'",
+      "published_at": "2015-11-19 04:06:02 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Greenpeace has been at the forefront of a growing problem many of us haven’t really even thought about: the carbon footprint of our collective Internet use.  People, “the cloud” is actually on the ground, and it takes <a href=\"http://www.greenpeace.org/usa/global-warming/click-clean/#report\">A LOT of power to run it</a>.  That power can either come from clean or dirty sources, and Greenpeace has been out there for years actually measuring the flow of energy that fuels our streaming video, texted photos and websites.</p>\n\n<p>Greenpeace’s <a href=\"https://chrome.google.com/webstore/detail/click-clean-scorecard/kabglhocepgbnobnbhjalijemcipaoha\">Click Clean Scorecard</a> Chrome extension is the latest plugin, so to speak, in their <a href=\"http://www.greenpeace.org/usa/global-warming/click-clean/#report\">Click Clean Campaign</a>, which leverages consumer demand to compel corporations to switch to green energy sources. Now thanks to some serious nerd head-banging here at DOJO4, it now functions for Korean users in their native tongue.</p>\n\n<p><img src='/ro/dojo4/korean-release-the-click-clean-scorecard/assets/b.png' alt=\"Image 2015-11-11 at 11.24.18 오전.png\" /></p>\n\n<p>When you use the Click Clean Scorecard extension, a little cloud lights up red, yellow or green on your dashboard, indicating how the website you’re on scores in terms of their data power sourcing.  Click on the cloud, and you’ll see the details, but more importantly you’ll have a Tweet all written out for you that either congratulates or shames the responsible corporation for their stand on clean energy usage.</p>\n\n<pre><code>            ![tweet.jpg](assets/c.jpeg) \n</code></pre>\n\n<p>For all you armchair activists out there, let me tell you: those Tweets make a difference! Waaaaay back in 2011, Greenpeace estimated that global energy use for data/computing was equivalent to that of the 6th largest country in the world. The subsequent explosion of mobile device usage, streaming video and remote data storage has increased that usage exponentially. So, by today’s numbers, if we got the digital industry to go 100% renewable, it would be kind of like getting a nation the size of the United States to get off fossil fuels entirely. Pretty cool, huh?</p>\n\n\n</div>\n",
+      "assets": {
+        "b.png": {
+          "url": "/ro/dojo4/korean-release-the-click-clean-scorecard/assets/b.png",
+          "path": "dojo4/korean-release-the-click-clean-scorecard/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 400,
+            "height": 755
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/korean-release-the-click-clean-scorecard/assets/c.jpeg",
+          "path": "dojo4/korean-release-the-click-clean-scorecard/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 300,
+            "height": 300
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/korean-release-the-click-clean-scorecard",
+        "type": "dojo4",
+        "id": "korean-release-the-click-clean-scorecard",
+        "urls": [
+          "/ro/dojo4/korean-release-the-click-clean-scorecard/assets/b.png",
+          "/ro/dojo4/korean-release-the-click-clean-scorecard/assets/c.jpeg",
+          "/ro/dojo4/korean-release-the-click-clean-scorecard/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/korean-release-the-click-clean-scorecard",
+          "prev": "dojo4/can-you-build-me-an-app",
+          "next": "dojo4/jared-polis-representative-of-hate"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "korean-release-the-click-clean-scorecard"
+  }
+}

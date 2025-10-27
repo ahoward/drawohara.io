@@ -1,0 +1,80 @@
+{
+  "data": {
+    "dojo4/dojo4-s-got-answers": {
+      "author": "corey@dojo4.com",
+      "title": "dojo4's got answers",
+      "published_at": "2016-04-06 21:36:47 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/dojo4-s-got-answers/assets/b.jpeg' alt=\"Answers.jpg\" /></p>\n\n<p><img src='/ro/dojo4/dojo4-s-got-answers/assets/c.jpeg' alt=\"answersCU.jpg\" /></p>\n\n<p>You’ve got questions, we’ve got answers! But they’ll cost you. 25 cents to be exact.</p>\n\n<p>In collaboration with the inimitable <a href=\"http://youtu.be/cT0pGKaPdLc\">Spike Ilacqua</a>, dojo4 is now offering illuminating answers to any curious passerby in need, for the mere price of a gum-ball.</p>\n\n<p>Currently, answers are dispensed only during business hours, but you can look forward 24-access answers soon. And once this batch of useful and applicable answers has been dished out, we will be supplying our worthy community with tiny-art, at the same low, low price. <em>(Please note: we are now in soliciting tiny art for the tiny-art and answer dispenser. So if you are a tiny artist and would like to contribute, please send an example of your submission to <a href=\"mailto:tinyart@dojo4.com\" target=\"_blank\">tinyart@dojo4.com</a> asap. Fame and appreciation await you.)</em></p>\n\n<p>Our answers have been extremely popular. Come by 2030 17th St., Boulder, CO and get your’s soon. Available while supplies last.</p>\n\n<p><img src='/ro/dojo4/dojo4-s-got-answers/assets/d.jpeg' alt=\"WindyAnswers.jpeg\" /></p>\n\n<p><img src='/ro/dojo4/dojo4-s-got-answers/assets/e.jpeg' alt=\"answeruser1.jpg\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/dojo4-s-got-answers/assets/b.jpeg",
+          "path": "dojo4/dojo4-s-got-answers/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 640
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/dojo4-s-got-answers/assets/c.jpeg",
+          "path": "dojo4/dojo4-s-got-answers/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 640
+          },
+          "src": null
+        },
+        "d.jpeg": {
+          "url": "/ro/dojo4/dojo4-s-got-answers/assets/d.jpeg",
+          "path": "dojo4/dojo4-s-got-answers/assets/d.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 4032,
+            "height": 3024
+          },
+          "src": null
+        },
+        "e.jpeg": {
+          "url": "/ro/dojo4/dojo4-s-got-answers/assets/e.jpeg",
+          "path": "dojo4/dojo4-s-got-answers/assets/e.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 477,
+            "height": 487
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/dojo4-s-got-answers",
+        "type": "dojo4",
+        "id": "dojo4-s-got-answers",
+        "urls": [
+          "/ro/dojo4/dojo4-s-got-answers/assets/b.jpeg",
+          "/ro/dojo4/dojo4-s-got-answers/assets/c.jpeg",
+          "/ro/dojo4/dojo4-s-got-answers/assets/d.jpeg",
+          "/ro/dojo4/dojo4-s-got-answers/assets/e.jpeg",
+          "/ro/dojo4/dojo4-s-got-answers/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-s-got-answers",
+          "prev": "dojo4/these-are-12-of-my-favorite-things",
+          "next": "dojo4/tax-day-is-coming-be-not-afraid"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-s-got-answers"
+  }
+}

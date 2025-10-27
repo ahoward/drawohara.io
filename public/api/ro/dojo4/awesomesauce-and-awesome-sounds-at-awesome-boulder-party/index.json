@@ -1,0 +1,68 @@
+{
+  "data": {
+    "dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party": {
+      "author": "emily@dojo4.com",
+      "title": "Awesomesauce & Awesome Sounds @ Awesome Boulder Party",
+      "published_at": "2015-10-21 16:42:05 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/b.jpeg' alt=\"awesome.jpg\" /></p>\n\n<p>One of the best things about being on the Board of <a href=\"http://www.awesomeboulder.org/\">Awesome Boulder Foundation</a> is the annual celebration at which we:</p>\n\n<ul>\n  <li>hang out</li>\n  <li>eat good food</li>\n  <li>drink some beers</li>\n  <li>visit with some of <a href=\"http://www.awesomefoundation.org/en/chapters/boulder\">the past year’s grantees</a></li>\n  <li>drink some beers</li>\n</ul>\n\n<p>This year’s bash was especially delicious, thanks to our favorite pizza joint, <a href=\"http://localeboulder.com/\">Pizzeria Locale</a>, which managed to donate 30 pies to our event in the midst of their Friday evening rush. Thank you pizza gods!</p>\n\n<p><img src='/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/c.jpeg' alt=\"pizzerialocale.jpg\" /></p>\n\n<p>A huge shout out also goes to Joel of <a href=\"http://www.blackswansounds.com/\">Black Swan Sounds</a> who brought out the booty-shakin’ soul in all of us.</p>\n\n<p><img src='/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/d.jpeg' alt=\"blackswan.jpg\" /></p>\n\n<p>If you’re someone doing cool shit in Boulder, it’s super easy to <a href=\"http://www.awesomefoundation.org//submissions/new\">apply</a> for an Awesome Boulder grant. $1,000. Submission deadline’s once/month. Make Boulder even more awesome, and then you can come to next year’s party! : )</p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/b.jpeg",
+          "path": "dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1462,
+            "height": 986
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/c.jpeg",
+          "path": "dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 417,
+            "height": 51
+          },
+          "src": null
+        },
+        "d.jpeg": {
+          "url": "/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/d.jpeg",
+          "path": "dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/d.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 500,
+            "height": 500
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party",
+        "type": "dojo4",
+        "id": "awesomesauce-and-awesome-sounds-at-awesome-boulder-party",
+        "urls": [
+          "/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/b.jpeg",
+          "/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/c.jpeg",
+          "/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/assets/d.jpeg",
+          "/ro/dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/awesomesauce-and-awesome-sounds-at-awesome-boulder-party",
+          "prev": "dojo4/2015-complete-boulder-voter-guide",
+          "next": "dojo4/where-can-we-meet"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "awesomesauce-and-awesome-sounds-at-awesome-boulder-party"
+  }
+}

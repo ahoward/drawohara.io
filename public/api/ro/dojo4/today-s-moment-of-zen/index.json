@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/today-s-moment-of-zen": {
+      "author": "jeremy@dojo4.com",
+      "title": "Today's Moment of Zen",
+      "published_at": "2014-03-11 03:48:46 UTC",
+      "body": "<div class=\"ro markdown\">\n  <h1 id=\"todays-moment-of-zen\">Today’s Moment of Zen</h1>\n\n<p>Somehow, all the articles from <a href=\"http://research.microsoft.com/en-us/people/mickens/\">James Mickens</a> end up in <a href=\"https://twitter.com/copiousfreetime\">my twitter stream</a>. It is a thoroughly enjoyable time when it does.</p>\n\n<p>This edition, <a href=\"https://www.usenix.org/system/files/1403_02-08_mickens.pdf\">To Wash It All Away</a>, does not disappoint.</p>\n\n<p>The nugget I learned today about JavaScript from James.</p>\n\n<blockquote>\n  <p>“\\r\\n\\t” == false</p>\n</blockquote>\n\n<p>WTF? I had to try it out.</p>\n\n<div class=\"language-bash highlighter-rouge\"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>\n</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;node\n</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&gt;</span>&nbsp;<span style=\"color: #0a3069\">\"</span><span style=\"color: #0a3069\">\\r\\n\\t</span><span style=\"color: #0a3069\">\"</span>&nbsp;<span style=\"color: #0550ae\">==</span>&nbsp;<span style=\"color: #953800\">false</span>\n</div><div class='code-line code-line-4'><span style=\"color: #953800\">    true</span>\n</div><div class='code-line code-line-5'>\n</div></code></div>\n\n<p>And of course, the explanation from James:</p>\n\n<blockquote>\n  <p>Here’s why: the browser detects that the two operands have different types, so it converts false to 0 and retries the comparison. The operands still have different types (string and number), so the browser coerces “\\r\\n\\t” into the number 0, because somehow, a non-zero number of characters is equal to 0. Voila—0 equals 0! AWESOME. That explanation was like the plot to Inception, but the implanted idea was “the correctness of your program has been coerced to false.”</p>\n</blockquote>\n\n<p>Really, I just had to share.</p>\n\n<p>P.S. <a href=\"https://www.destroyallsoftware.com/talks/wat\">WAT</a></p>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/today-s-moment-of-zen",
+        "type": "dojo4",
+        "id": "today-s-moment-of-zen",
+        "urls": [
+          "/ro/dojo4/today-s-moment-of-zen/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/today-s-moment-of-zen",
+          "prev": "dojo4/within40feet-day-33",
+          "next": "dojo4/static-is-the-new-black"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "today-s-moment-of-zen"
+  }
+}

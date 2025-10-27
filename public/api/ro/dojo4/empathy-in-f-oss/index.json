@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/empathy-in-f-oss": {
+      "author": "ryan@dojo4.com",
+      "title": "Empathy in (F)OSS",
+      "published_at": "2014-07-14 17:02:34 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>I recently came across a tweet that was <em>really</em> surprising to me. To provide some context, the tweet was authored by someone that maintains a popular javascript library on GitHub. It has since been deleted, but here is the text:</p>\n\n<blockquote>\n  <p>Most people are garbage. Some are amazing. Count\nyourself super lucky if you’re friends with some\nof the amazing ones.</p>\n</blockquote>\n\n<p>Goodness. Gracious. I wonder if that statement includes all of the people that take the time to learn and use their software? Giving them the benefit of the doubt though, I’m hoping that it was just a product of a bad day. I ended up spinning on something that I think is important: Among many other things, you have to be empathetic to be a <em>great</em> open source contributor or maintainer.</p>\n\n<p>Why is this? If you don’t appreciate the folks using your (F)OSS software, how will you create a quality atmosphere and community around it? You have felt the same pain as your users so you presumably care about them at least a little if you released the code for them to use. Here are a few other positive, empathetic motivations for contributing to, releasing, or maintaining (F)OSS software:</p>\n\n<ul>\n  <li>Help others learn</li>\n  <li>Help others do their work</li>\n  <li>Improve communities</li>\n</ul>\n\n<p>Notice though that I used “great” as an adjective before. I do think that it’s possible to be a good contributor without being too empathetic. For example, people may contribute with the goal being to demonstrate ability or build reputation, both of which are just fine.</p>\n\n<p>Managing and working in the (F)OSS community is very challenging in its own ways, I’m sure. It seems very important though to make an effort to relate to your users if the goal is to build the most appropriate software for the situation. Keeping that in mind is already, or hopefully will become, a good baseline for having more happy people in our industry.</p>\n\n<p><strong>Note:</strong> I hope it’s clear that I’m not differentiating between libre and open-source software here. They are very different and this post is generalizing in that regard.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/empathy-in-f-oss",
+        "type": "dojo4",
+        "id": "empathy-in-f-oss",
+        "urls": [
+          "/ro/dojo4/empathy-in-f-oss/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/empathy-in-f-oss",
+          "prev": "dojo4/all-software-contains-bugs",
+          "next": "dojo4/mobile-detection-behind-a-cdn"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "empathy-in-f-oss"
+  }
+}

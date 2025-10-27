@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/weekends-make-us-more-productive": {
+      "author": "emily@dojo4.com",
+      "title": "Weekends Make Us More Productive",
+      "published_at": "2014-11-03 15:52:05 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><a href=\"http://\"></a>Happy Monday, folks.  Today is likely to be at least 14% more productive for you than any other day this week, so you should probably stop reading our blog and get busy!</p>\n\n<p>Here @dojo4 we manage our never-ending workflow with the aptly named and exceptionally well-designed <a href=\"https://www.flowdock.com/\">Flowdock</a>.  As I post this blog I’m sure my colleagues are virtually there, sharing their morning gifs and speaking in code - literally.</p>\n\n<p>Getflow - a similar product that we don’t use - recently shared <a href=\"https://www.getflow.com/blog/2014/09/how-to-make-the-most-of-mondays/\">some interesting productivity stats</a> based on their data from tens of thousands of worker bees just like us.</p>\n\n<p><img src='/ro/dojo4/weekends-make-us-more-productive/assets/b.jpeg' alt=\"monday-bump.jpg\" /></p>\n\n<p>The data points are noteworthy, but the key take away for me was that, “We come back from the weekend with new ideas and perspectives on what we want to accomplish. <strong>Time off makes us both more inspired and more productive.</strong>”  Amen.</p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/weekends-make-us-more-productive/assets/b.jpeg",
+          "path": "dojo4/weekends-make-us-more-productive/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 813,
+            "height": 589
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/weekends-make-us-more-productive",
+        "type": "dojo4",
+        "id": "weekends-make-us-more-productive",
+        "urls": [
+          "/ro/dojo4/weekends-make-us-more-productive/assets/b.jpeg",
+          "/ro/dojo4/weekends-make-us-more-productive/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/weekends-make-us-more-productive",
+          "prev": "dojo4/we-have-the-cutest-munchkins",
+          "next": "dojo4/weekends-make-us-more-productive-on-mondays"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "weekends-make-us-more-productive"
+  }
+}

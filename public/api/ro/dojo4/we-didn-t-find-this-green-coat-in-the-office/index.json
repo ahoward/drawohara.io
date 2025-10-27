@@ -1,0 +1,128 @@
+{
+  "data": {
+    "dojo4/we-didn-t-find-this-green-coat-in-the-office": {
+      "title": "We Didn't Find This Green Coat In The Office",
+      "author": "ara@dojo4.com",
+      "published_at": "2013-11-21 19:33:14 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-1.JPG' alt=\"img\" /></p>\n\n<p><img src='/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-3.JPG' alt=\"img\" /></p>\n\n<p><img src='/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-2.JPG' alt=\"img\" /></p>\n\n<p><img src='/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-4.JPG' alt=\"img\" /></p>\n\n</div>\n",
+      "assets": {
+        "photo-1.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-1.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-1.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 3264,
+            "height": 2448
+          },
+          "src": null
+        },
+        "photo-2.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-2.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-2.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "photo-3.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-3.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-3.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "photo-4.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-4.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-4.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "photo_1.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_1.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_1.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 3264,
+            "height": 2448
+          },
+          "src": null
+        },
+        "photo_2.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_2.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_2.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "photo_3.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_3.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_3.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "photo_4.JPG": {
+          "url": "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_4.JPG",
+          "path": "dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_4.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/we-didn-t-find-this-green-coat-in-the-office",
+        "type": "dojo4",
+        "id": "we-didn-t-find-this-green-coat-in-the-office",
+        "urls": [
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-1.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-2.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-3.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo-4.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_1.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_2.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_3.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/assets/photo_4.JPG",
+          "/ro/dojo4/we-didn-t-find-this-green-coat-in-the-office/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/we-didn-t-find-this-green-coat-in-the-office",
+          "prev": "dojo4/buy-some-dojo4-merch",
+          "next": "dojo4/responsive-design-is-dead-long-live-responsive-design"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "we-didn-t-find-this-green-coat-in-the-office"
+  }
+}

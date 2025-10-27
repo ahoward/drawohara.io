@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/site-launch-planted-nutrition": {
+      "title": "! 'Site Launch: Planted Nutrition'",
+      "published_at": "2012-06-18 00:00:00 UTC",
+      "author": "justin@dojo4.com",
+      "body": "<figure style=\"float:right;\"><a href=\"http://plantednutrition.com\"><img alt=\"Planted Nutrition's new site\" title=\"Planted Nutrition's new site\" src='/ro/dojo4/site-launch-planted-nutrition/assets/screen-shot-2012-06-18-at-1.28.12PM.png' height=\"753\" width=\"450\" /></a>\n</figure>\n\n\n\n<div><p>We just launched a marketing website for <a title=\"http://plantednutrition.com\" href=\"http://plantednutrition.com\">Planted Nutrition</a>, a new nutrition practice in Boulder run by Ellen Teig.&#160;</p>\n<p>Planted Nutrition is a fresh business, just starting to cook, and Ellen wanted a bright, professional web site to help clients learn more about her services and approach. Ellen's budget and needs were both small, so we decided to build a quick one-page site showcasing all her content.</p>\n<p>Ellen's design inspirations included several culinary blogs with big, beautiful pictures of food. Anthony Dimitre brought that bold look into the page with a couple very nice carrots. </p>\n<p>Anthony also put together a nice logo that will flavor all of Planted Nutrition's other materials -- business cards, client packets, and more.</p>\n<p>Behind the scenes, Planted Nutrition is a static web site built with <a title=\"http://middlemanapp.com/\" href=\"http://middlemanapp.com/\">Middleman</a>. We can't say enough about this tool. Static site generation isn't new, and Middleman isn't the first static site generator, but it is a <em>very good</em> tool. </p>\n<p>At dojo4 we're using Middleman as an alternative to the ubiquitous LAMP content management systems. There are several good LAMP CMS tools out there, but they aren't one-size-fits-all, and they all require some trade-offs. In this case, even a CMS as simple as Wordpress would be too complex and maintenance-heavy for Planted Nutrition's immediate needs.</p>\n<p>Someday, Planted Nutrition may want something more than a static site. But meanwhile, this tasty site is plenty. </p>\n</div>\n",
+      "assets": {
+        "screen-shot-2012-06-18-at-1.28.12PM.png": {
+          "url": "/ro/dojo4/site-launch-planted-nutrition/assets/screen-shot-2012-06-18-at-1.28.12PM.png",
+          "path": "dojo4/site-launch-planted-nutrition/assets/screen-shot-2012-06-18-at-1.28.12PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 753
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/site-launch-planted-nutrition",
+        "type": "dojo4",
+        "id": "site-launch-planted-nutrition",
+        "urls": [
+          "/ro/dojo4/site-launch-planted-nutrition/assets/screen-shot-2012-06-18-at-1.28.12PM.png",
+          "/ro/dojo4/site-launch-planted-nutrition/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/site-launch-planted-nutrition",
+          "prev": "dojo4/easy-cheasy-log-rolling-for-teh-rails-appz",
+          "next": "dojo4/dojo4-brands-the-big-boulder-conference"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "site-launch-planted-nutrition"
+  }
+}

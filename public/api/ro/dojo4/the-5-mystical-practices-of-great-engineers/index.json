@@ -1,0 +1,80 @@
+{
+  "data": {
+    "dojo4/the-5-mystical-practices-of-great-engineers": {
+      "author": "ara@dojo4.com",
+      "title": "THE 5 MYSTICAL PRACTICES OF GREAT ENGINEERS",
+      "published_at": "2013-11-06 00:00:00 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Being a great engineer is an art, not a science.</p>\n\n<p>Hiring great engineers is more like dating than anything else.</p>\n\n<p>Recently, on my daily hikes over Mt. Sanitas to @dojo4 I’ve been trying to answer seemingly simple questions such as:</p>\n\n<ul>\n  <li>Why is it hard to hire <em>great</em> engineers?</li>\n  <li>What <em>is</em> a great engineer?</li>\n</ul>\n\n<p>Typically, I’ll begin to categorize, formalize, and arrange ideal traits in my mind as the trail gets steeper (I do stuff like that while I’m hiking).  Later, when my breathing labors and oxygen deprivation has focused my mind a bit more, I come back to the same set of ideas.</p>\n\n<p>On the one hand, I <em>know</em> the answers to both of the above questions but, on the other, I’ve found that trying to formulate precise answers has become harder and harder to pin down, as I’ve pondered them more and more on each passing hike.</p>\n\n<p>Ultimately, I’ve arrived at the conclusion that describing <em>how</em> great engineers are, is more meaningful than describing <em>what</em> they are.</p>\n\n<p>It’s probably important to mention here, that what <em>I</em> mean when I say ‘great engineer’, might be different from what <em>you</em> mean.</p>\n\n<p>–</p>\n\n<p>I mean technicians who build useful solutions to real human problems.</p>\n\n<p>Wikipedia sums this up similarly:</p>\n\n<p>The work of engineers forms the link between scientific discoveries and their subsequent applications to human needs and quality of life. In short, engineers are versatile minds who create links between science, technology, and society.</p>\n\n<p>ref: <a href=\"http://en.wikipedia.org/wiki/Engineer\" target=\"_blank\">http://en.wikipedia.org/wiki/Engineer</a></p>\n\n<p>By this definition and my own, one isn’t an engineer when one’s work:</p>\n\n<ul>\n  <li>doesn’t address the needs of real humans.</li>\n  <li>doesn’t create solutions that are adopted by groups of humans.</li>\n</ul>\n\n<p>I don’t think most engineers actually evaluate themselves by a similar definition - instead, preferring an assessment based on technical skill alone, and leaving the human litmus tests as the responsibility of business and marketing teams.</p>\n\n<p>This is unfortunate, and a topic for a future post…</p>\n\n<p>In the meantime, here are some of the practices I’ve witnessed in successful engineers, and ones that I’ve grown to identify as indicators of the type of engineer who is going to consistently - problem after problem - be able to deliver solutions to large groups of other living, breathing human beings.</p>\n\n<h2 id=\"great-engineers-use-hammers\">Great engineers use hammers</h2>\n\n<p>No, I don’t mean “rm -rf”. I mean hammers, metal ones that bang nails in.</p>\n\n<p>Nothing tests engineering skill (vs. technical skill) like solving a problem outside one’s domain:</p>\n\n<ul>\n  <li>bathroom to tile?</li>\n  <li>bridge to build?</li>\n  <li>satellite dish to calibrate?</li>\n  <li>sump pump to repair?</li>\n</ul>\n\n<p>Being a technician, means being limited by tools and skill, but being an engineer, means being limited only by problem solving skills and communication - so pick up that f***ing manual and figure out how to wire the thermostat today; tomorrow, you can figure out how to change the oil.</p>\n\n<p>(An interesting titbit on hammers: does a titanium one produce more force on impact than a lead one?  Does it depend on how fast you swing it? Is it  ‘easier’ or ‘harder’ to use a light hammer vs. a heavy one.)</p>\n\n<h2 id=\"great-engineers-are-athletes\">Great engineers are athletes</h2>\n\n<p>All systems are engineered for humans.  And all organic systems follow the same cyclical pattern of:</p>\n\n<ul>\n  <li>Stress</li>\n  <li>Recovery</li>\n  <li>Regeneration</li>\n</ul>\n\n<p>Moving through this cycle, is how athletes gain fitness.  But it’s also how populations grow, over extend themselves, experience famine, and begin to grow again.</p>\n\n<p>No biological system experiences growth in a linear fashion.</p>\n\n<p>When engineers are out of touch with the realities of their bodies (and everyone else’s), they develop ideologies that model machines instead of organic systems.  For example, the concept of ‘velocity’ in agile development is seen as something that should be predictable in the future, and consistent given a certain team size. In fact, we know that all organic systems experiencing stress are going to move through small and large periodic cycles of activation and fatigue.  This means that periods of high velocity are always going to be followed by periods of low velocity, and that this is to be expected and actively planned for.  It’s been an accepted pillar of producing peak performance in the professional coaching community since the 1950s - <a href=\"http://en.wikipedia.org/wiki/Sports_periodization\" target=\"_blank\">http://en.wikipedia.org/wiki/Sports_periodization</a> - but an engineering community that identifies with machines more than people hasn’t quite gotten there yet.</p>\n\n<p>Many individual engineers, however, are there now.</p>\n\n<p>You don’t need to run marathons, or lift 500 pounds to learn about biological rhythms.  Riding to work, backpacking, doing yoga, or just taking long walks is sufficient to learn about this fact of nature when practiced <em>consistently</em> when feeling good, and <em>also</em> when feeling bad.</p>\n\n<p>Understanding the periodic nature of human beings lets great engineers have insight into problems, users, teams, project trajectories, and even markets - all organic systems.</p>\n\n<h2 id=\"great-engineers-listen-to-good-music\">Great engineers listen to good music</h2>\n\n<p>Good problem solving is both non-linear, and pattern recognition based, and developing abstractions means being able to see the forest and not the trees.</p>\n\n<p>Appreciating good music - let alone playing it - requires all of these skills in spades.</p>\n\n<p>Throughout my programming career I’ve noticed that great engineers - the ones helping real humans solve real problems - have a love for great music and are often musicians themselves.</p>\n\n<p>Mediocre ones seem to think Pandora is a ‘pretty neat idea’ and really haven’t considered how having sounds bouncing around in their heads, and making sense of it, is pretty much <em>just like</em> reasoning about complex systems. Or why listening to bluegrass or opera - even if you don’t like it - is a <em>lot like</em> learning Lisp when you’ve been stuck programming C.  Or why the JVM is the glam metal of engineering tools.</p>\n\n<p>For instance, a Google search for ‘image of java’ brings this up:</p>\n\n<p><img src='/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/3644.jpeg' alt=\"java.jpg\" /></p>\n\n<p>and one for ‘ruby’, this:</p>\n\n<p><img src='/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/3645.jpeg' alt=\"ruby.jpg\" /></p>\n\n<p>Kidding aside, my observation has been that reviewing an engineer’s music collection for interesting stuff is as reliable a metric as any for assessing how often they’ll be able to get someone else’s problem solved, and how harmonic their own solutions will be.</p>\n\n<h2 id=\"great-engineers-do-hard-physical-labor\">Great engineers do hard physical labor</h2>\n\n<p>There are two issues that crop up repeatedly with engineers that don’t sometimes perform hard physical labor:</p>\n\n<ul>\n  <li>They develop solutions that are too expensive.</li>\n  <li>They develop solutions that are too resource intensive.</li>\n</ul>\n\n<p>The field of engineering operates in a weird vacuum where six-figure budgets are the norm, and even small projects take months. There really aren’t checks and balances in the field that knock concepts back to the real world of energy and effort.</p>\n\n<p>For instance, many people in software consider their work as something magical that transforms mere ether into piles of money with nothing but huge brain power applied.  They forget that the Cloud is made of metal boxes, connected with wires, and burning tons of oil every second to keep those magnetic media spinning on bearings made by children in China.</p>\n\n<p>Lately, it’s become fashionable for some engineers to participate in things like - cycling, CrossFit, running, etc. - but these activities, while beneficial, don’t measure as highly on the “über engineer” scale when compared to solving problems through the application of physical and mental effort <em>_combined_</em>.  Operating your mind and your body independently is a different mode of operation, than operating them both together, which is exponentially more difficult.  Nothing brings you back to reality like moving a ton of rock, digging a ditch, or painting all day.  The clever idea you had at 7am - that seemed like a great one at the time - is a faint memory.  Actually, you may have forgotten why you climbed up that ladder …  It turns out that solutions that are hard to implement make you tired, and that being tired <em>makes you stupid</em>.</p>\n\n<p>Solving problems through pure effort teaches engineers about what <em>hard</em> really is. That something doesn’t need to be an order of harder magnitude to become a total PITA, and that fatigue puts a mental premium on simplicity and the hand cuffs on complexity.</p>\n\n<h2 id=\"great-engineers-make-great-lovers\">Great engineers make great lovers</h2>\n\n<p>Everyone knows that engineers are famous for their love-making ability.</p>\n\n<p>;-)</p>\n\n<p>Here’s the thing. It’s hard to develop solutions for a great many people when you don’t understand a great many people.  It’s also really hard to develop an understanding for people that are different from us without being in an intimate relationship with them.</p>\n\n<p>Anyone that’s married can tell you how profoundly difficult it is to understand his or her, so being in a relationship is a tried and true way to stretch these muscles.</p>\n\n<p>Truthfully, what this last practice is speaking to, isn’t whether you have a wife, husband, boyfriend, girlfriend, or all four - but whether or not you are able to identify closely with other people that are <em>very different</em> from yourself.</p>\n\n<p>It is a rare engineer that solves problems only for other engineers, and even then, what makes sense and is helpful for someone else, is a remarkably difficult thing to get right.</p>\n\n<p>Great engineering, after all, stems from understanding the problems of others; thus, the most valued skill an engineer can have is the ability to understand deeply, someone with a mind that is completely different than their own.</p>\n\n<hr />\n\n<p>So there you have it.  5 practices great problem solvers practice.</p>\n\n<p>Some of you may have noticed that <em>none</em> of them are mystical; in fact, they’re all quite human.  Other readers may be poised on the comment button with the reaction that none of these have anything to do with engineering and, for them, the path to becoming the most versatile, powerful, engineer possible may indeed <em>be</em> mystical.</p>\n\n<p>:::</p>\n\n</div>\n",
+      "assets": {
+        "3644.jpeg": {
+          "url": "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/3644.jpeg",
+          "path": "dojo4/the-5-mystical-practices-of-great-engineers/assets/3644.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 400,
+            "height": 400
+          },
+          "src": null
+        },
+        "3645.jpeg": {
+          "url": "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/3645.jpeg",
+          "path": "dojo4/the-5-mystical-practices-of-great-engineers/assets/3645.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 225,
+            "height": 225
+          },
+          "src": null
+        },
+        "java.jpg": {
+          "url": "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/java.jpg",
+          "path": "dojo4/the-5-mystical-practices-of-great-engineers/assets/java.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 400,
+            "height": 400
+          },
+          "src": null
+        },
+        "ruby.jpg": {
+          "url": "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/ruby.jpg",
+          "path": "dojo4/the-5-mystical-practices-of-great-engineers/assets/ruby.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 225,
+            "height": 225
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/the-5-mystical-practices-of-great-engineers",
+        "type": "dojo4",
+        "id": "the-5-mystical-practices-of-great-engineers",
+        "urls": [
+          "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/3644.jpeg",
+          "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/3645.jpeg",
+          "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/java.jpg",
+          "/ro/dojo4/the-5-mystical-practices-of-great-engineers/assets/ruby.jpg",
+          "/ro/dojo4/the-5-mystical-practices-of-great-engineers/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-5-mystical-practices-of-great-engineers",
+          "prev": "dojo4/dangling-rpc-fruit-off-of-your-rails-controllers",
+          "next": "dojo4/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "the-5-mystical-practices-of-great-engineers"
+  }
+}

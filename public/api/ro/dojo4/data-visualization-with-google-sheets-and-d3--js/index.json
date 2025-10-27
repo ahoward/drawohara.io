@@ -1,0 +1,68 @@
+{
+  "data": {
+    "dojo4/data-visualization-with-google-sheets-and-d3--js": {
+      "author": "luke@dojo4.com",
+      "title": "Data visualization with Google Sheets and D3.js",
+      "published_at": "2018-10-11 19:08:07 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>There are people who look at a spreadsheet and see the magic.  There are others who look at a spreadsheet and their eyes go all blurry and there’s a strong urge to take a nap.  No judgement on either type, but sometimes you need to make it easier to digest.</p>\n\n<p>Putting rows and columns of data into a format the helps people understand “what it’s all about” is usually called <em>data visualization</em>.  There a lots of tools out there to create charts and graphics from spreadsheets - including ones built in to Excel or Google Sheets.  Sometimes you need something more robust though - and the best tool for the job is <a href=\"http://d3js.org\">D3</a>.</p>\n\n<p>Case in point: dojo4 recently finished a job for <a href=\"https://350.org\">350.org</a> - an organization focused on reducing fossil fuels and moving to 100% renewable energy sources.  We used the concept of a chord diagram to represent the efforts of several groups and organizations targeting international banks that fund fossil fuel projects around the world.  The color coding gives a quick overview on the groups and their particular fossil fuel focus.</p>\n\n<p><img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg' alt=\"350-chord-diagram-base.jpg\" /></p>\n\n<p>Users can hover over an organization and see which banks they are targeting:\n<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg' alt=\"350-d3-chord-diagram-hover1.jpg\" /></p>\n\n<p>Or hover over a bank and see which groups are targeting that specific bank.\n<img src='/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg' alt=\"350-d3-chord-diagram-hover2.jpg\" /></p>\n\n<p><sup><em>(note that the names of banks and organizations have been removed for privacy)</em></sup></p>\n\n<p>This chord diagram was dynamically generated from a shared Google Sheet using Google App Script and custom Javascript attached to the Sheet.  This self-contained relationship helps to make sure the source data and the code to generate the chart don’t lose their relationship, and any updates to the shared sheet will automatically update the chart.</p>\n\n<blockquote>\n  <p><em>I enjoyed working with dojo4. The team really wanted to understand how a visualization of my data would be valuable and they seem to work from there. I now have an accessible and engaging graphic that tells a story of where there are gaps, redundancies, and opportunities for more coordination. I appreciated how they took the time to learn my organization’s aesthetics and worked to match our style.</em>    –Senior Global Analyst, <a href=\"https://350.org/\">350.org</a></p>\n</blockquote>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg",
+          "path": "dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1574,
+            "height": 1440
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg",
+          "path": "dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1574,
+            "height": 1440
+          },
+          "src": null
+        },
+        "d.jpeg": {
+          "url": "/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg",
+          "path": "dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1574,
+            "height": 1440
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/data-visualization-with-google-sheets-and-d3--js",
+        "type": "dojo4",
+        "id": "data-visualization-with-google-sheets-and-d3--js",
+        "urls": [
+          "/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/b.jpeg",
+          "/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/c.jpeg",
+          "/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/assets/d.jpeg",
+          "/ro/dojo4/data-visualization-with-google-sheets-and-d3--js/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/data-visualization-with-google-sheets-and-d3--js",
+          "prev": "dojo4/what-is-impact-anyway",
+          "next": "dojo4/generosity-is-an-advantage"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "data-visualization-with-google-sheets-and-d3--js"
+  }
+}

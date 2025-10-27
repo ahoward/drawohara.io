@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/dojo4-quiz-2-have-a-go": {
+      "title": "! 'dojo4 quiz #2.  have a go.'",
+      "published_at": "2012-03-02 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <script src=\"https://gist.github.com/1959341.js?file=quiz-2.txt\"></script>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/dojo4-quiz-2-have-a-go",
+        "type": "dojo4",
+        "id": "dojo4-quiz-2-have-a-go",
+        "urls": [
+          "/ro/dojo4/dojo4-quiz-2-have-a-go/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-quiz-2-have-a-go",
+          "prev": "dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts",
+          "next": "dojo4/the-worlds-simplest-presenter-pattern"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-quiz-2-have-a-go"
+  }
+}

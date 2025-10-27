@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/fred-jean": {
+      "title": "Fred Jean!",
+      "published_at": "2012-09-02 00:00:00 UTC",
+      "author": "corey@dojo4.com",
+      "body": "<p><img rel=\"450x450\" alt=\"Fred Friday Hug\" title=\"Fred Friday Hug\" src='/ro/dojo4/fred-jean/assets/fredfridayhug.jpg' height=\"300\" width=\"450\" /></p>\n<p>We're psyched to have had <a target=\"_blank\" title=\"https://github.com/fredjean\" href=\"https://github.com/fredjean\">Fred Jean</a> step aboard the good ship dojo4 this last month as a senior dev and help steer our little vessel on the stormy and ordered seas of code.&#160;</p>\n<p>For those of you who don't already know Fred, he answered a few questions about how he came to us from la belle provence with a memorable accident and the majority of a theology degree:</p>\n<p><em>Where are you from and how did you end up here?</em>\n</p>\n<p>\"I grew up in Montreal and went back home after college. I was working in the IBM offices there when someone, who knew someone who knew someone who needed a French Canadian to man at a help desk referred me. I soon landed at the Denver International Airport in a snow storm and have been here since.\"</p>\n<p><em>What kind of technologist are you?</em>\n</p>\n<p>\"I was 3 credits short of getting a minor in Theology. This has definitively shaped how I think and approach technologies and projects. The irony of studying (and later rejecting) a dogma has helped me avoid a dogmatic approach to programming, architecture and technology in general.\"</p>\n<p><em>What's your favorite thing about what you do for a living?</em>\n</p>\n\n<p>\"We go from a vague, barely defined idea to a product or a service that can have an impact on many people and even change lives. There are very few careers where this can occur without extraordinary effort or capital. There is also the sheer excitement of doing things that many times have not been done before while following well travelled paths.\"</p>\n<p><em>Tell us a little about your family and your life here in Colorado...</em>\n</p>\n<p>\"We live a quiet life here in Colorado. Most of my family time revolves around playing Angry Bird and World of Goo with my 2 year old son and watching his twin sister sing and dance to her own song. It's a nice quiet life!\"</p>\n<p><em>What will your be known for 100 years from now?</em>\n</p>\n<p>\"The downside of working with technology is that it is very transient. I suspect that I will have faded from our collective memory well before a 100 years from now. I might however be remembered by my great-great-grand-kids as this crazy old man that no one could understand due to his heavy accent.\"</p>\n<p><em>If dojo4 was a desert island and you were stuck on it, what would you want to have with you?</em>\n</p>\n<p>\"All the books that I want to read but can't quite seem to get to...\"</p>",
+      "assets": {
+        "fredfridayhug.jpg": {
+          "url": "/ro/dojo4/fred-jean/assets/fredfridayhug.jpg",
+          "path": "dojo4/fred-jean/assets/fredfridayhug.jpg",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 300
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/fred-jean",
+        "type": "dojo4",
+        "id": "fred-jean",
+        "urls": [
+          "/ro/dojo4/fred-jean/assets/fredfridayhug.jpg",
+          "/ro/dojo4/fred-jean/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/fred-jean",
+          "prev": "dojo4/what-would-you-do-with-a-1-000-to-make-boulder-more-awesome",
+          "next": "dojo4/shipped-it"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "fred-jean"
+  }
+}

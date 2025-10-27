@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/test-your-b-corp-trivia-knowledge": {
+      "author": "emily@dojo4.com",
+      "title": "Test Your B Corp Trivia Knowledge",
+      "published_at": "2015-06-25 17:35:22 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Last week DOJO4 hosted <a href=\"https://www.bcorporation.net/what-are-b-corps/the-non-profit-behind-b-corps\">B Lab</a>’s community development maven, Kara Peck, to test our B Corp movement trivia knowledge.  How many can you get right? (More than Olive the Dog, we hope).</p>\n\n<p><img src='/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/b.jpeg' alt=\"BCorpTriviaNight.jpg\" /></p>\n\n<p><strong>QUESTIONS</strong></p>\n\n<ol>\n  <li>\n    <p>How many B Corps are there around the world? In Colorado?</p>\n  </li>\n  <li>\n    <p>What is the difference between a Certified B Corp and Benefit Corporation?</p>\n  </li>\n  <li>\n    <p>What three things does a company have to do to get certified?</p>\n  </li>\n  <li>\n    <p>What are the main topics covered in the B Impact Assessment?</p>\n  </li>\n  <li>\n    <p>How often does a B Corp have to renew their certification?</p>\n  </li>\n  <li>\n    <p>This local spicy chai tea producer holds a yoga and music festival each year.</p>\n  </li>\n  <li>\n    <p>What Colorado B Corp celebrates their employee owners 5-year anniversary by giving them a paid trip to Belgium?</p>\n  </li>\n  <li>\n    <p>This B Corp is located in Boulder, on the corner of Broadway and Walnut.  They offer a co-working space for companies dedicated to having a positive social and environmental impact in the world, including B Labs Colorado. What is their name?</p>\n  </li>\n  <li>\n    <p>Which two Colorado B Corps just celebrated their 10 year anniversaries - hint, you might find one on your roof, and one on your doorstep.</p>\n  </li>\n  <li>\n    <p>What B Corp recently re-located to Colorado from California, and sells socks and t-shirts in Whole Foods?</p>\n  </li>\n  <li>\n    <p>Name one of the three Certified B Corp law firms in Colorado.</p>\n  </li>\n  <li>\n    <p>Name a Colorado B Corp that certified in 2015.</p>\n  </li>\n  <li>\n    <p>This B corp sells sturdy comfortable shoes that certain types of professionals swear by: nurses, hair stylists, waiters, chefs? What is the name of this company?</p>\n  </li>\n</ol>\n\n<p><img src='/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/c.jpeg' alt=\"b-the-change.jpg\" /></p>\n\n<p><strong>ANSWERS</strong></p>\n\n<ol>\n  <li>\n    <p>1300 / 55.</p>\n  </li>\n  <li>\n    <p>Here’s <a href=\"http://www.nonprofitlawblog.com/what-it-means-to-be-a-b-b-corp-v-benefit-corporation/\">a good explanation</a> of how the two differ.</p>\n  </li>\n  <li>\n    <p>Performance, Accountability (legal), Transparency.</p>\n  </li>\n  <li>\n    <p>Governance, Workers, Community, Environment, Impact Biz model.</p>\n  </li>\n  <li>\n    <p>Every 2 years.</p>\n  </li>\n  <li>\n    <p><a href=\"http://bhaktichai.com/\">Bhakti Chai</a>.</p>\n  </li>\n  <li>\n    <p><a href=\"http://www.newbelgium.com/\">New Belgium Brewing</a>.</p>\n  </li>\n  <li>\n    <p><a href=\"http://www.impacthubboulder.com/\">Impact HUB Boulder</a>.</p>\n  </li>\n  <li>\n    <p><a href=\"http://www.namastesolar.com/\">Namaste Solar</a> and <a href=\"https://colorado.doortodoororganics.com/shop-good-food\">Door to Door Organics</a>.</p>\n  </li>\n  <li>\n    <p><a href=\"https://www.wearpact.com/\">PACT Apparel</a>.</p>\n  </li>\n  <li>\n    <p><a href=\"http://www.jrwiener.com/about-jason/\">Jason Wiener PBC</a>, <a href=\"http://www.moyewhite.com/default.aspx\">Moye White</a>, <a href=\"http://www.bluedotlaw.com/\">Blue Dot Advocates</a>.</p>\n  </li>\n  <li>\n    <p><a href=\"http://dojo4.com/\">DOJO4</a>, <a href=\"http://conservationimpact.com/\">Conservation Impact</a>, <a href=\"http://\">Nava Real Estate</a>, <a href=\"http://purelyelizabeth.com/\">Purely Elizabeth</a>, <a href=\"[http://www.jrwiener.com/about-jason/](http://)\">Jason Wiener PBC</a></p>\n  </li>\n  <li>\n    <p><a href=\"https://www.dansko.com/\">Dansko</a>!</p>\n  </li>\n</ol>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/b.jpeg",
+          "path": "dojo4/test-your-b-corp-trivia-knowledge/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1000,
+            "height": 1000
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/c.jpeg",
+          "path": "dojo4/test-your-b-corp-trivia-knowledge/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 851,
+            "height": 315
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/test-your-b-corp-trivia-knowledge",
+        "type": "dojo4",
+        "id": "test-your-b-corp-trivia-knowledge",
+        "urls": [
+          "/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/b.jpeg",
+          "/ro/dojo4/test-your-b-corp-trivia-knowledge/assets/c.jpeg",
+          "/ro/dojo4/test-your-b-corp-trivia-knowledge/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/test-your-b-corp-trivia-knowledge",
+          "prev": "dojo4/the-problem-with-volunteerism",
+          "next": "dojo4/code-and-and-coffee-at-dojo4"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "test-your-b-corp-trivia-knowledge"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/dojo4-takes-a-bat-to-cancer": {
+      "author": "miles@dojo4.com",
+      "title": "dojo4 takes a bat to cancer.",
+      "published_at": "2014-10-23 21:02:53 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><a href=\"http://dojo4.com/blog/dojo4-stands-up-to-cancer\">dojo4’s last project with Stand Up to Cancer</a> (SU2C) <a href=\"http://dojo4.com/blog/su2c-live-telethon-rawked\">helped them raise over $100 million in one telethon</a>. A month later we’re working with SU2C again; this time they are partnering with Major League Baseball to raise funds at the World Series!</p>\n\n<p>SU2C came to us with an issue - MLB is featuring SU2C and the fight against cancer during <a href=\"http://mlb.mlb.com/mlb/gameday/index.jsp?gid=2014_10_24_kcamlb_sfnmlb_1\">Game 3 of the World Series</a> (tomorrow - Friday, Oct 24th)! They wanted to improve upon an app that we built them a few months ago that allows people to make a tribute to a loved one affected by cancer: <a href=\"http://istandupfor.su2c.org\">#istandupfor</a>.</p>\n\n<p>We originally built the app as a responsive website where people could upload an image, type in a dedication, share their tribute on social media, and be featured in the SU2C gallery. With the new visibility of Major League Baseball, SU2C wanted to take the app to a whole ‘nother level. So we went back to the drawing board.</p>\n\n<p>Here were the requirements:</p>\n\n<ul>\n  <li><strong>handle tons of traffic!</strong> The MLB World Series is an international event with millions of people watching. When they mention the #istandupfor movement, we’re gonna see a major spike in traffic.</li>\n  <li><strong>have a native app presence!</strong> There was an older version of #istandupfor in the iOS app store, but it needed updating and there wasn’t an Android application. We needed to allow people to honor loved ones and share their tribute on their mobile devices as well.</li>\n  <li><strong>keep maintenance to a minimum</strong> SU2C’s goal is to raise money for cancer research, not have 3 different apps to maintain for the same #istandupfor movement.</li>\n</ul>\n\n<p>So here’s what we did:</p>\n\n<h2 id=\"leave-scaling-to-the-experts\">leave scaling to the experts</h2>\n\n<p>Attempting to handle the load of a huge amount of traffic directly on our servers is a straight ticket to stressed out developers frantically fixing bugs and leaving users hanging when they’re trying to contribute to the awesome SU2C community. You know who’s good at handling massive amounts of uploads? Amazon S3.</p>\n\n<p>So instead of requiring that one of our EC2 web servers is up and working, the apps directly upload images and all of the required information about a tribute (dedication, email, etc in a little json file) to AWS S3. The web version of #istandupfor already uploaded images to S3, so the refactor was minimal. Amazon also has native mobile app support for S3 uploads with SDKs for iOS and Android.</p>\n\n<p>Then our EC2 servers just periodically check S3 for new tribute uploads and process them in our central database for viewing individual tributes online (think social media sharing) and for SU2C to approve and add to the gallery. Our users will always be able to create tributes no matter which platform they’re using (web, iOS, or android), thanks to S3 &amp; CloudFront.</p>\n\n<p>We had a conference call with AWS (shout out to David and Nathaniel!) to ensure our plan was solid and they agreed it was the best approach. The engineers over at AWS know exactly how to handle thousands of requests per second without breaking anything, so we let them.</p>\n\n<h2 id=\"hybrid-native-apps\">hybrid native apps</h2>\n\n<p>SU2C wanted a native app presence, but also really wanted to avoid a lot of maintenance going forward. App stores are great distribution mechanisms, but do contain a lot of hoops to jump through. Going through those hoops once is a lot easier to handle than having to go through them every time a change is required in the applications.</p>\n\n<p>So we used my iOS &amp; Android starting points, <a href=\"http://imbed.github.io/\">Imbed</a>, to create native iOS and Android applications that use a web view to load the application. The native wrappers provide javascript handlers that trigger native code, so we can create whatever native code we need (for this case the majority of the native code was picking an image from the device and uploading it to AWS S3 via the AWS SDKs) and then call that native code via a web page loaded within the app. That web page is still a web page, so we can make updates to it, push it live, and the app will be updated without ever having to jump through app store hoops again.</p>\n\n<p>Check out the <a href=\"https://play.google.com/store/apps/details?id=com.eifoundation.su2c\">Android App on Google Play</a> and the <a href=\"https://itunes.apple.com/us/app/stand-up-to-cancer/id669692145?mt=8\">iOS app on the Apple App Store</a>!</p>\n\n<p>We love working with SU2C. Not only do they raise bajillions to fight cancer, they are super nice and awesome to work with.  We can’t wait to see the results of tomorrow’s game - download the app and donate!</p>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/dojo4-takes-a-bat-to-cancer",
+        "type": "dojo4",
+        "id": "dojo4-takes-a-bat-to-cancer",
+        "urls": [
+          "/ro/dojo4/dojo4-takes-a-bat-to-cancer/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-takes-a-bat-to-cancer",
+          "prev": "dojo4/harvest-time-calgary-farmers-market",
+          "next": "dojo4/we-have-the-cutest-munchkins"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-takes-a-bat-to-cancer"
+  }
+}

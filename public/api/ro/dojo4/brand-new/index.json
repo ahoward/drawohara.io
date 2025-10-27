@@ -1,0 +1,68 @@
+{
+  "data": {
+    "dojo4/brand-new": {
+      "title": "brand new",
+      "published_at": "2012-09-24 00:00:00 UTC",
+      "author": "corey@dojo4.com",
+      "body": "<p>Sometimes the day comes when it's time for a change. Today was one of those days, and the change came in the form of a new logo on our front door. </p>\n<p><img rel=\"450x450\" alt=\"Photo\" title=\"Photo\" src='/ro/dojo4/brand-new/assets/photo.JPG' height=\"450\" width=\"450\" /></p>\n<p>There's been a lot of fresh mountain water under the bridge since the day back in early 2010 when dojo4 co-founder, Jeffrey Larrimore (of tear-away pants and <a title=\"https://twitter.com/okayjeffrey\" href=\"https://twitter.com/okayjeffrey\">@okayjeffrey</a> fame) did his magic, designed the original dojo4 logo and put it on the door of our burgeoning new little business. That logo is the brand that got us known around town and beyond, and has made us recognizable as the one-chop shop that \"will send ninjas.\" It's the elegant and iconographic logo that brought us more than our fair share of fun and success. And it's what people have seen for the past two and a half years every time they walk happily through our door.</p>\n<p><img rel=\"450x450\" alt=\"Photo 1\" title=\"Photo 1\" src='/ro/dojo4/brand-new/assets/photo-1.JPG' height=\"450\" width=\"450\" /></p>\n<p>The decision to change the logo is a reflection of the ongoing growth and metamorphosis of dojo4 and the people that comprise it. It's a reflection of the agility that is our necessary approach to manifesting a resilient company culture and durable client services. It reflects the playful vision we have for engaging rewardingly with the world around us. </p>\n<p>Indeed, we've found that it's possible to thrive on change, rather than be thrashed by it, and that in order to do so requires being unsentimental and the ability to <a title=\"http://www.talkingsquid.net/archives/32\" href=\"http://www.talkingsquid.net/archives/32\">murder our darlings</a>. It requires that we ride change rather than be ridden by it. It requires always being willing to try something new and always being willing to know ourselves better.</p>\n<p>So we thank you very much, Jeffrey, for coining the seminal dojo4 brand and are looking forward to seeing what this new one brings us- and the one after that, and the one after that... </p>\n<p>Also: look for our new site, to be launched soon.</p>\n<p><img rel=\"225x255\" alt=\"Jeff\" title=\"Jeff\" src='/ro/dojo4/brand-new/assets/jeff.jpg' height=\"225\" width=\"225\" /> </p>\n<p><em>[The ever adroit and bewhiskered Jeffrey Larrimore (jeffreylarrimore.com<span>)]</span>\n</em>\n</p>",
+      "assets": {
+        "jeff.jpg": {
+          "url": "/ro/dojo4/brand-new/assets/jeff.jpg",
+          "path": "dojo4/brand-new/assets/jeff.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 225,
+            "height": 225
+          },
+          "src": null
+        },
+        "photo-1.JPG": {
+          "url": "/ro/dojo4/brand-new/assets/photo-1.JPG",
+          "path": "dojo4/brand-new/assets/photo-1.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 450
+          },
+          "src": null
+        },
+        "photo.JPG": {
+          "url": "/ro/dojo4/brand-new/assets/photo.JPG",
+          "path": "dojo4/brand-new/assets/photo.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/brand-new",
+        "type": "dojo4",
+        "id": "brand-new",
+        "urls": [
+          "/ro/dojo4/brand-new/assets/jeff.jpg",
+          "/ro/dojo4/brand-new/assets/photo-1.JPG",
+          "/ro/dojo4/brand-new/assets/photo.JPG",
+          "/ro/dojo4/brand-new/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/brand-new",
+          "prev": "dojo4/from-a-streamlined-startup-stack-to-pci-compliance-on-aws",
+          "next": "dojo4/handcrafted-code-and-design"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "brand-new"
+  }
+}

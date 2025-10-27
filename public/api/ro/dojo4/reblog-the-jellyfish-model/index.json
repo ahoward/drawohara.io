@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/reblog-the-jellyfish-model": {
+      "author": "emily@dojo4.com",
+      "title": "(reblog) The Jellyfish Model",
+      "published_at": "2014-12-10 18:34:35 UTC",
+      "body": "<div class=\"ro markdown\">\n  \n<p>Interested in a business model that’s transparent, distributed, decentralized, collaborative, adaptive and egoless?  So are we…</p>\n\n<p>Check out <a href=\"http://www.ngenworks.com/blog/the-jellyfish-model?utm_content=buffer1fa55&amp;utm_medium=social&amp;utm_source=facebook.com&amp;utm_campaign=buffer\">The Jellyfish Model</a> by Carl Smith at <a href=\"http://www.ngenworks.com/\">ngen works</a>.</p>\n\n<p><img src='/ro/dojo4/reblog-the-jellyfish-model/assets/b.jpeg' alt=\"IMG_1047.JPG\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/reblog-the-jellyfish-model/assets/b.jpeg",
+          "path": "dojo4/reblog-the-jellyfish-model/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1280,
+            "height": 1280
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/reblog-the-jellyfish-model",
+        "type": "dojo4",
+        "id": "reblog-the-jellyfish-model",
+        "urls": [
+          "/ro/dojo4/reblog-the-jellyfish-model/assets/b.jpeg",
+          "/ro/dojo4/reblog-the-jellyfish-model/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/reblog-the-jellyfish-model",
+          "prev": "dojo4/wordpress-isn-t-worth-it-in-the-long-run",
+          "next": "dojo4/maurizio-the-microsite"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "reblog-the-jellyfish-model"
+  }
+}

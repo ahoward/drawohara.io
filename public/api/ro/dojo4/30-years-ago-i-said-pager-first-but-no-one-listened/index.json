@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened": {
+      "published_at": "2012-01-19 00:00:00 UTC",
+      "title": "30 years ago I said \"pager first\", but no one listened...",
+      "author": "anthony@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png' title=\"Mobile First Illustration\" alt=\"Mobile First Illustration\" rel=\"450x450\" width=\"450\" height=\"450\" /></p>\r\n<p>I recently took a trip to New York city just after reading the book <a href=\"http://www.abookapart.com/products/mobile-first\" title=\"http://www.abookapart.com/products/mobile-first\" target=\"_blank\">\"Mobile First\"</a> by <a href=\"http://www.lukew.com/\" title=\"http://www.lukew.com/\" target=\"_blank\">Luke Wroblewski.</a> During the commute between Queens and Manhattan, I saw lots of folks on their mobile devices. And while I didn't need this trip to convince me that Mobile is exploding, it sure made the fact even clearer.</p>\r\n<p>The 6th book in the design series by <cite>A Book Apart</cite>, \"Mobile First\" explores the reasons and strategy for putting mobile web design before all else. Here are a few of my favorite points.</p>\r\n<p><strong>Links.</strong> Each time a web link is shared online or referenced in a native app, it is opened in a web browser. So if you have your native Facebook app open on your mobile device and you click a link, you are taken out to a browser that now displays the website. Has this site prepared its content for mobile? Probably not.</p>\r\n<p><strong>Small Space.</strong> The small screen space of mobile forces designers, developers, and clients to consider to what matters most. You have to give your customers exactly what they need and want. No room for useless information. </p>\r\n<p><strong>Be quick.</strong> Mobile forces you to think of building for quick load time. Make things fast, users will go away if you don't. Use sprites, minify CSS and javascript files, style in CSS not images, etc.</p>\r\n<p>Great, you've simplified your product, considered what content matters most, and made it load fast. Now apply this to the desktop experience. That's \"mobile first\" in a nutshell. Oh, and...if we were living back in the 80's, the title to this book would most likely be \"pager first\". Someone just beeped me, gotta go.</p>",
+      "assets": {
+        "mobile-first-illustration.png": {
+          "url": "/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png",
+          "path": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened",
+        "type": "dojo4",
+        "id": "30-years-ago-i-said-pager-first-but-no-one-listened",
+        "urls": [
+          "/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png",
+          "/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened",
+          "prev": "dojo4/css3-horizontal-rules",
+          "next": "dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "30-years-ago-i-said-pager-first-but-no-one-listened"
+  }
+}

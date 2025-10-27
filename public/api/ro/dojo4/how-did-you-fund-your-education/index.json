@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/how-did-you-fund-your-education": {
+      "author": "jeremy@dojo4.com",
+      "title": "How did you fund your education?",
+      "published_at": "2015-04-17 22:20:36 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>One of my younger cousins is moving to the Front Range to attend CSU Fort Collins. Maiele (my cousin) is taking a different approach to funding her education. <a href=\"https://www.gofundme.com/s54zfk\">She’s crowd-sourcing it</a>.</p>\n\n<p>Its been 15 years since I was at University, and if it wasn’t for <a href=\"http://www.oracle.com/us/corporate/acquisitions/collectiveintellect/index.html\">Collective Intellect</a>,  I would still be paying off my student loans.</p>\n\n<p>Of the folks sitting in Dojo4 today, we have 5 people between 7 and 15 years out of university, 8 degrees, 2 of those degrees (both MS Computer Science) see daily use. Funding sources were: Loans, Parents, Scholarships and Canada. 1 person is still paying on their student loans.</p>\n\n<p>I find it encouraging that <a href=\"https://www.gofundme.com/s54zfk\">Maiele</a> is using <a href=\"http://maiart.weebly.com/\">her skills</a> and finding creative ways to fund her education.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/how-did-you-fund-your-education",
+        "type": "dojo4",
+        "id": "how-did-you-fund-your-education",
+        "urls": [
+          "/ro/dojo4/how-did-you-fund-your-education/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/how-did-you-fund-your-education",
+          "prev": "dojo4/what-would-it-be-like-if-everything-was-better-for-everyone",
+          "next": "dojo4/responsive-against-lung-cancer"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "how-did-you-fund-your-education"
+  }
+}
