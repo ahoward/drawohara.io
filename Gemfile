@@ -10,17 +10,9 @@ gem "webrick", "~> 1.9.1"
 gem "logger"
 gem "ostruct", "0.6.3"
 
-%w[
-  ro
-  map
-  rego
-].each do |lib|
-  if test(?e, File.expand_path("~/gh/ahoward/#{ lib }"))
-    gem "#{ lib }", path: "~/gh/ahoward/#{ lib }"
-  else
-    gem "#{ lib }", git: "https://github.com/ahoward/#{ lib }"
-  end
-end
+gem "ro", "~> 5.2"
+gem "map", "~> 6.6"
+gem "rego", "~> 4.2"
 
 gem "dotenv"
 
