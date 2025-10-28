@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/aws-dns-https-doj4-hosting": {
+      "author": "garett@dojo4.com",
+      "title": "AWS, DNS & HTTPS @ Doj4 Hosting",
+      "published_at": "2014-04-07 16:33:30 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Hosting, DNS &amp; HTTPS often require the interactions of more than a few providers.  Often becoming unwieldily if not managed effectively.</p>\n\n<p>DNS requires both record management and domain registration.  For both Dojo4 has employed <a href=\"http://dyn.com/dns\">DyDNS</a> for many years.</p>\n\n<p>Dojo4 generally uses <a href=\"http://aws.amazon.com/ec2\">Amazon AWS EC2 cloud computers</a> for hosting and as such tend to use <a href=\"http://aws.amazon.com/elasticloadbalancing\">AWS ELB load balancers</a> in front of those web hosts.  Unfortunately, Amazon doesn’t give you a consistent IP addresses for ELB instances and so consequently the only way to create second level domain records pointing to ELB instances is to use <a href=\"http://aws.amazon.com/route53\">Amazon AWS Route53</a> for record management which has a special alias record for the purpose.  So, we tend to use Route53 for DNS record management.</p>\n\n<p>Due to the way TLS handshakes are negotiated by linux/apache you are limited to the number of SSL certificates that can be served to the number of IP’s on the host.  With EC2 this is basically a single cert if you are not using a <a href=\"http://aws.amazon.com/vpc\">VPC</a>.  Dojo4 often uses ELB’s to provide SSL as a means to get around this.</p>\n\n<p>DNS &amp; HTTPS are closely related as the domains and subdomains to be secured must be enumerated prior to certificate provisioning.  Often the most convenient and flexible strategy is to get a wildcard cert.  Note, though, that not all wildcard certificate issuers include the base domain in the certificate (so you can only use the cert to protect *.somedomain.com, and not somedomain.com).  The $100/year wildcard certificate from <a href=\"dnsimple.com\">dnsimple.com</a> issued by <a href=\"http://comodo.com\">Comodo</a> and including the base domain is a good value even with the $96 ($8/month * 12 months) dnsimple dns hosting cost.</p>\n\n<p>dnsimple has some other convenient features such as being able to delegate management of records set to other dnsimple user accounts.  As we have moved record set management from DynDNS to Route53, and are having an account on dnsimple for SSL provisioning, we went ahead and moved domain registration from DynDNS to dnsimple to consolidate services.</p>\n\n<p>Some handy command-liners:</p>\n\n<p>Find the Start Of Authority for a DNS record</p>\n<blockquote>\n  <p>dig SOA dojo4.com</p>\n</blockquote>\n\n<p>View the certificate that a host is serving</p>\n<blockquote>\n  <p>openssl s_client -showcerts -connect dojo4.com:443 &lt; /dev/null</p>\n</blockquote>\n\n<p>Access a web server by IP ignoring SSL verification</p>\n<blockquote>\n  <p>curl -k <a href=\"https://184.72.61.241\" target=\"_blank\">https://184.72.61.241</a> -H “Host: projects.dojo4.com”</p>\n</blockquote>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/aws-dns-https-doj4-hosting",
+        "type": "dojo4",
+        "id": "aws-dns-https-doj4-hosting",
+        "urls": [
+          "/ro/dojo4/aws-dns-https-doj4-hosting/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/aws-dns-https-doj4-hosting",
+          "prev": "dojo4/sinskey-vin65-and-dragons",
+          "next": "dojo4/the-shadow-world-of-css-tables"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "aws-dns-https-doj4-hosting"
+  }
+}

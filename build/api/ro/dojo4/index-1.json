@@ -1,0 +1,1236 @@
+{
+  "data": {
+    "dojo4/what-a-rush": {
+      "published_at": "2010-03-22 00:00:00 UTC",
+      "title": "What a rush!",
+      "author": "justin@dojo4.com",
+      "body": "<p>Today we beta-launched the first startup to come all the way through our shop.</p>\r\n<p>BlipSnips makes online videos more powerful.  It lets site users tag specific moments in videos, and send their friends straight in. One of the great benefits of this tool is the annotation that people generate for videos. Suddenly, we can discover the very moment that's drawing people to a video online; and we can even try to understand why they're drawn to it, since users describe their tags in their own words. Powerful? Check. Offers something useful to users and to advertisers? Check.</p>\r\n<p>In delivering BlipSnips, we wrote Ruby, JavaScript, HTML/CSS, and marketing copy. Our development team encountered technical challenges galore, which I mostly dodged by claiming to be a PHP developer; but that defense didn't hold up when it came time for wordsmithing.</p>\r\n<p>Along the way we also developed our own dojo4 processes and collective vision in much greater detail.</p>\r\n<p>Of course, all of that was made possible by the drive and vision of the BlipSnips management team, John Bliss and Greg Keller. Having them at the dojo has been great—they've been a part of the team, caffeinating when we do, watching our endless furniture evolution.</p>\r\n<p>I hope we get to do this many more times. But BlipSnips will always stand out as the first time dojo4 built and launched a product together. I have to thank the BlipSips team, John and Greg, and the dojo4 crew, Ara, Jeff, Dave and Corey, for an exhilarating ride right up to the end. What a rush!</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/what-a-rush",
+        "type": "dojo4",
+        "id": "what-a-rush",
+        "urls": [
+          "/ro/dojo4/what-a-rush/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/what-a-rush",
+          "prev": null,
+          "next": "dojo4/rails-to-json"
+        }
+      }
+    },
+    "dojo4/rails-to-json": {
+      "published_at": "2010-10-05 00:00:00 UTC",
+      "title": "rails to_json",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>rails, including rails3, has this lovely bit of code related to providing a “to_json” method on built-ins:</p>\n\n<div class=\"language-ruby highlighter-rouge\"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>\n</div><div class='code-line code-line-2'><span style=\"color: #6e7781\"># Hack to load json gem first so we can overwrite its to_json.</span>\n</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">begin</span>\n</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #953800\">require</span>&nbsp;<span style=\"color: #0a3069\">'json'</span>\n</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">rescue</span>&nbsp;<span style=\"color: #953800\">LoadError</span>\n</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-7'>\n</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #6e7781\"># The JSON gem adds a few modules to Ruby core classes containing :to_json definition, overwriting</span>\n</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #6e7781\"># their default behavior. That said, we need to define the basic to_json method in all of them,</span>\n</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #6e7781\"># otherwise they will always use to_json gem implementation, which is backwards incompatible in</span>\n</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #6e7781\"># several cases (for instance, the JSON implementation for Hash does not work) with inheritance</span>\n</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #6e7781\"># and consequently classes as ActiveSupport::OrderedHash cannot be serialized to json.</span>\n</div><div class='code-line code-line-13'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">[</span><span style=\"color: #953800\">Object</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Array</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">FalseClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Float</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Hash</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Integer</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">NilClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">String</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">TrueClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">].</span><span style=\"color: #8250df\">each</span>&nbsp;<span style=\"color: #cf222e\">do</span>&nbsp;<span style=\"color: #0550ae\">|</span><span style=\"color: #24292f;background-color: #f6f8fa\">klass</span><span style=\"color: #0550ae\">|</span>\n</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">klass</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">class_eval</span>&nbsp;<span style=\"color: #0550ae\">&lt;&lt;-</span><span style=\"color: #953800\">RUBY</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #cf222e\">__FILE__</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #cf222e\">__LINE__</span>\n</div><div class='code-line code-line-15'><span style=\"color: #0a3069\"># Dumps object in JSON (JavaScript Object Notation). See www.json.org for more info.</span>\n</div><div class='code-line code-line-16'><span style=\"color: #0a3069\">def to_json(options = nil)</span>\n</div><div class='code-line code-line-17'><span style=\"color: #0a3069\">ActiveSupport::JSON.encode(self, options)</span>\n</div><div class='code-line code-line-18'><span style=\"color: #0a3069\">end</span>\n</div><div class='code-line code-line-19'><span style=\"color: #953800\">RUBY</span>\n</div><div class='code-line code-line-20'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-21'>\n</div></code></div>\n\n<p>what this effectively does is clobber the “to_json” method the json gem provides with one that active_support feels is better. the comment about json being broken is out of date and this was hack to begin with. in my case i really like this sort of thing in my /api controller:</p>\n\n<div class=\"language-ruby highlighter-rouge\"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>\n</div><div class='code-line code-line-2'>&nbsp;&nbsp;<span style=\"color: #cf222e\">def</span>&nbsp;<span style=\"color: #8250df\">to_json</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #24292f;background-color: #f6f8fa\">object</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>\n</div><div class='code-line code-line-3'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">if</span>&nbsp;<span style=\"color: #953800\">Rails</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">env</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">production?</span>\n</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #953800\">JSON</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">generate</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #24292f;background-color: #f6f8fa\">object</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>\n</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">else</span>\n</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #953800\">JSON</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">pretty_generate</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #24292f;background-color: #f6f8fa\">object</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>\n</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-8'>&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-9'>\n</div></code></div>\n\n<p>since it makes debugging a shit-ton easier. here’s how i did it in a rails3 app -</p>\n\n<p>step one was to make rails3 support the “preinitializer” concept that old-skool rails used to have:</p>\n\n<div class=\"language-ruby highlighter-rouge\"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>\n</div><div class='code-line code-line-2'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #6e7781\">### file: config/preinitializer.rb</span>\n</div><div class='code-line code-line-3'>\n</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">dirname</span>&nbsp;<span style=\"color: #0550ae\">=</span>&nbsp;<span style=\"color: #953800\">File</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">dirname</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #953800\">File</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">expand_path</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #cf222e\">__FILE__</span><span style=\"color: #24292f;background-color: #f6f8fa\">))</span>\n</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">glob</span>&nbsp;<span style=\"color: #0550ae\">=</span>&nbsp;<span style=\"color: #953800\">File</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">join</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #24292f;background-color: #f6f8fa\">dirname</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #0a3069\">'preinitializers'</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #0a3069\">'**/**.rb'</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>\n</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">preinitializers</span>&nbsp;<span style=\"color: #0550ae\">=</span>&nbsp;<span style=\"color: #953800\">Dir</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">glob</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #24292f;background-color: #f6f8fa\">glob</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>\n</div><div class='code-line code-line-7'>\n</div><div class='code-line code-line-8'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">preinitializers</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">each</span><span style=\"color: #24292f;background-color: #f6f8fa\">{</span><span style=\"color: #0550ae\">|</span><span style=\"color: #24292f;background-color: #f6f8fa\">preinitializer</span><span style=\"color: #0550ae\">|</span>&nbsp;<span style=\"color: #953800\">Kernel</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">load</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #24292f;background-color: #f6f8fa\">preinitializer</span><span style=\"color: #24292f;background-color: #f6f8fa\">)}</span>\n</div><div class='code-line code-line-9'>\n</div></code></div>\n\n<p>next, i added this preinitializer:</p>\n\n<div class=\"language-ruby highlighter-rouge\"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>\n</div><div class='code-line code-line-2'><span style=\"color: #6e7781\">### file: config/preinitializers/un_fuck_to_json.rb</span>\n</div><div class='code-line code-line-3'>\n</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">begin</span>\n</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #953800\">require</span>&nbsp;<span style=\"color: #0a3069\">'rubygems'</span>\n</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">rescue</span>&nbsp;<span style=\"color: #953800\">LoadError</span>\n</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-8'>\n</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">begin</span>\n</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #953800\">require</span>&nbsp;<span style=\"color: #0a3069\">'json'</span>\n</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">rescue</span>&nbsp;<span style=\"color: #953800\">LoadError</span>\n</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-13'>\n</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">[</span><span style=\"color: #953800\">Object</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Array</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">FalseClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Float</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Hash</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Integer</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">NilClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">String</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">TrueClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">].</span><span style=\"color: #8250df\">each</span>&nbsp;<span style=\"color: #cf222e\">do</span>&nbsp;<span style=\"color: #0550ae\">|</span><span style=\"color: #24292f;background-color: #f6f8fa\">klass</span><span style=\"color: #0550ae\">|</span>\n</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">klass</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">class_eval</span>&nbsp;<span style=\"color: #cf222e\">do</span>\n</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">alias_method</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #0a3069\">'__to_json__'</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #0a3069\">'to_json'</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>&nbsp;<span style=\"color: #cf222e\">if</span>&nbsp;<span style=\"color: #953800\">method_defined?</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #0a3069\">'to_json'</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>\n</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-19'>\n</div></code></div>\n\n<p>finally, this initializer:</p>\n\n<div class=\"language-ruby highlighter-rouge\"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>\n</div><div class='code-line code-line-2'><span style=\"color: #6e7781\">### file: config/preinitializers/un_fuck_to_json.rb</span>\n</div><div class='code-line code-line-3'>\n</div><div class='code-line code-line-4'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">begin</span>\n</div><div class='code-line code-line-5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #953800\">require</span>&nbsp;<span style=\"color: #0a3069\">'rubygems'</span>\n</div><div class='code-line code-line-6'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">rescue</span>&nbsp;<span style=\"color: #953800\">LoadError</span>\n</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-8'>\n</div><div class='code-line code-line-9'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">begin</span>\n</div><div class='code-line code-line-10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #953800\">require</span>&nbsp;<span style=\"color: #0a3069\">'json'</span>\n</div><div class='code-line code-line-11'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">rescue</span>&nbsp;<span style=\"color: #953800\">LoadError</span>\n</div><div class='code-line code-line-12'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-13'>\n</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">[</span><span style=\"color: #953800\">Object</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Array</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">FalseClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Float</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Hash</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">Integer</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">NilClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">String</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #953800\">TrueClass</span><span style=\"color: #24292f;background-color: #f6f8fa\">].</span><span style=\"color: #8250df\">each</span>&nbsp;<span style=\"color: #cf222e\">do</span>&nbsp;<span style=\"color: #0550ae\">|</span><span style=\"color: #24292f;background-color: #f6f8fa\">klass</span><span style=\"color: #0550ae\">|</span>\n</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">klass</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">class_eval</span>&nbsp;<span style=\"color: #cf222e\">do</span>\n</div><div class='code-line code-line-16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">alias_method</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #0a3069\">'__to_json__'</span><span style=\"color: #24292f;background-color: #f6f8fa\">,</span>&nbsp;<span style=\"color: #0a3069\">'to_json'</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>&nbsp;<span style=\"color: #cf222e\">if</span>&nbsp;<span style=\"color: #953800\">method_defined?</span><span style=\"color: #24292f;background-color: #f6f8fa\">(</span><span style=\"color: #0a3069\">'to_json'</span><span style=\"color: #24292f;background-color: #f6f8fa\">)</span>\n</div><div class='code-line code-line-17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-18'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #cf222e\">end</span>\n</div><div class='code-line code-line-19'>\n</div></code></div>\n\n<p>in english what this does is</p>\n\n<ul>\n  <li>make rails support code that runs before all else</li>\n  <li>during this phase suck in the json gem and remember how it does things</li>\n  <li>nuke the rails’ way and restore the json method of to_json</li>\n</ul>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/rails-to-json",
+        "type": "dojo4",
+        "id": "rails-to-json",
+        "urls": [
+          "/ro/dojo4/rails-to-json/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/rails-to-json",
+          "prev": "dojo4/what-a-rush",
+          "next": "dojo4/driving-user-behavior-with-game-dynamics"
+        }
+      }
+    },
+    "dojo4/driving-user-behavior-with-game-dynamics": {
+      "published_at": "2010-11-08 00:00:00 UTC",
+      "title": "Driving User Behavior with Game Dynamics",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"flex-video youtube\">\r\n  <iframe width=\"640\" height=\"480\" src=\"http://www.youtube.com/embed/MCfUFpZUk6s\" frameborder=\"0\"></iframe>\r\n</div>\r\n<p>From our friends at Leviathan Games</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/driving-user-behavior-with-game-dynamics",
+        "type": "dojo4",
+        "id": "driving-user-behavior-with-game-dynamics",
+        "urls": [
+          "/ro/dojo4/driving-user-behavior-with-game-dynamics/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/driving-user-behavior-with-game-dynamics",
+          "prev": "dojo4/rails-to-json",
+          "next": "dojo4/the-calgary-farmer-s-market"
+        }
+      }
+    },
+    "dojo4/the-calgary-farmer-s-market": {
+      "published_at": "2010-12-13 00:00:00 UTC",
+      "title": "The Calgary Farmer's Market",
+      "author": "justin@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png' title=\"Screen Shot 2010 12 13 At 6.27.51 Pm4 590x520\" alt=\"Screen Shot 2010 12 13 At 6.27.51 Pm4 590x520\" rel=\"225x255\" width=\"225\" height=\"198\" /></p>\r\n<p>In March we were approached by representatives of The Calgary Farmers' Market, one of Canada's most extensive farmers' markets. They wanted a new website, and they wanted a new way to engage with their customers.</p>\r\n<p>dojo4 worked with a team of local marketing and design experts, including <a href=\"http://jeffreylarrimore.com\">Jeffrey Larrimore</a>, to produce a comprehensive review of their existing content and design. We led numerous brainstorming sessions to help understand who the market wants to serve and how best to reach those folks. </p>\r\n<p><strong>Then it was to design</strong>. We presented several options and ran through multiple iterations until it was clear that the market's managers were delighted. We were delighted, too! The new design has a vibrant and celebratory feel and offers multiple options for engagement and growth. </p>\r\n<p>As the market completes a move from one physical location to another in Calgary, we continue to support it with fresh content and site features to help people learn about the market's new home. </p>\r\n<p>This has been a very rewarding project&mdash;the folks in Calgary are very interested in making their market's site and online outreach second-to-none. We're proud to be a part of it.</p>",
+      "assets": {
+        "screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png": {
+          "url": "/ro/dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png",
+          "path": "dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 225,
+            "height": 198
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/the-calgary-farmer-s-market",
+        "type": "dojo4",
+        "id": "the-calgary-farmer-s-market",
+        "urls": [
+          "/ro/dojo4/the-calgary-farmer-s-market/assets/screen-shot-2010-12-13-at-6.27.51_PM4-590x520.png",
+          "/ro/dojo4/the-calgary-farmer-s-market/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-calgary-farmer-s-market",
+          "prev": "dojo4/driving-user-behavior-with-game-dynamics",
+          "next": "dojo4/proud-parents-of-a-future-dojo4er"
+        }
+      }
+    },
+    "dojo4/proud-parents-of-a-future-dojo4er": {
+      "published_at": "2011-01-11 00:00:00 UTC",
+      "title": "Proud parents of a future dojo4er",
+      "author": "ara@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/proud-parents-of-a-future-dojo4er/assets/photo--3--590-441.JPG' title=\"Photo (3) 590 441\" alt=\"Photo (3) 590 441\" rel=\"450x450\" width=\"450\" height=\"336\" /></p>\r\n<p>Luke and Nicole</p>",
+      "assets": {
+        "photo--3--590-441.JPG": {
+          "url": "/ro/dojo4/proud-parents-of-a-future-dojo4er/assets/photo--3--590-441.JPG",
+          "path": "dojo4/proud-parents-of-a-future-dojo4er/assets/photo--3--590-441.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 336
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/proud-parents-of-a-future-dojo4er",
+        "type": "dojo4",
+        "id": "proud-parents-of-a-future-dojo4er",
+        "urls": [
+          "/ro/dojo4/proud-parents-of-a-future-dojo4er/assets/photo--3--590-441.JPG",
+          "/ro/dojo4/proud-parents-of-a-future-dojo4er/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/proud-parents-of-a-future-dojo4er",
+          "prev": "dojo4/the-calgary-farmer-s-market",
+          "next": "dojo4/the-ceo-should-wash-the-dishes"
+        }
+      }
+    },
+    "dojo4/the-ceo-should-wash-the-dishes": {
+      "published_at": "2011-01-26 00:00:00 UTC",
+      "title": "The CEO should wash the dishes",
+      "author": "corey@dojo4.com",
+      "body": "<p>Years ago, okay maybe decades ago, I worked at the most successful Boulder restaurant that nobody even knows is there.  This was back when Lucky, God rest his soul, would play Sax on the steps and say hello to everyone walking by. </p>\r\n<p>I was always struck by the work ethic of the owner,  he easily pulled 12 hour days, every day of the week.  He would start in the garden harvesting the daily organic crop. And end each day pulling weeds. This was ten years before every Boulder restaurant had relationships with local organic farmers.</p>\r\n<p>Anytime he could, he would be back in the dish room cranking through the dishes. Let's admit it, no one really enjoyed doing the dishes, but it had to be done.  Seeing him do this, as well as take out the trash and busing tables had a real lasting effect on everyone who worked there.   It made you want to work harder. It made you want to do the dishes as well. That was an easy lesson in leadership. </p>\r\n<p>There was a hidden effect as well though.  </p>\r\n<p>It created an environment where he was super accessible to talk about anything.  He got to hear new ideas from employees while they did their side work, he got to share with them his insight about life and the business, and he got to find out more about what was important to them.  Through this simple act, he built partnerships with his employees.</p>\r\n<p>So let go of the idea that your time is worth too much to stop in the middle of the day and take care of something simple. Re-fill the copier, take out the trash, do the dishes. </p>\r\n<p>You will be surprised at the effect it could have.</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/the-ceo-should-wash-the-dishes",
+        "type": "dojo4",
+        "id": "the-ceo-should-wash-the-dishes",
+        "urls": [
+          "/ro/dojo4/the-ceo-should-wash-the-dishes/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-ceo-should-wash-the-dishes",
+          "prev": "dojo4/proud-parents-of-a-future-dojo4er",
+          "next": "dojo4/web-developer-challenge"
+        }
+      }
+    },
+    "dojo4/web-developer-challenge": {
+      "published_at": "2011-01-29 00:00:00 UTC",
+      "title": "Web Developer Challenge!",
+      "author": "justin@dojo4.com",
+      "body": "<p>Today I'm cross-browser testing a new site prior to launching it. As usual, this involves some styling gymnastics in order to make the site look better-than-terrible in Internet Explorer. But today, I came across an issue in Firefox that I couldn't explain.</p>\r\n<p>The site I'm building advertises a cycling event. It has a few blocks like this:</p>\r\n\r\n<p><code>&lt;section class=&quot;sponsor&quot;&gt;...&lt;/section&gt;</code></p>\r\n\r\n<p>They contain information about the sponsors of the event. Remarkably, even though these blocks show up in <a href=\"http://en.wikipedia.org/wiki/Internet_Explorer_6\" title=\"http://en.wikipedia.org/wiki/Internet_Explorer_6\">everyone's favorite ten-year-old browser</a>, they don't appear in any version of Firefox on my drive.</p>\r\n<p>Seriously? Yes.</p>\r\n<p>These blocks are <em>invisible</em> in Firefox. The browser modifies them to give them a <code>display:none;</code> attribute.</p>\r\n<p>But the best part is, if I change the section's class to anything other than \"sponsor\", the blocks show up just fine. In fact, once you know the cause, that's the only solution: Don't give items on your page a CSS class of \"sponsor\".</p>\r\n<p>Think you know what caused it? <a href=\"http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845\" title=\"http://stackoverflow.com/questions/4372779/geckofirefox-3-6-4beta-hides-div-while-webkitchrome-dreamweaver-displays-just/4372845#4372845\">Check it out</a>.</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/web-developer-challenge",
+        "type": "dojo4",
+        "id": "web-developer-challenge",
+        "urls": [
+          "/ro/dojo4/web-developer-challenge/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/web-developer-challenge",
+          "prev": "dojo4/the-ceo-should-wash-the-dishes",
+          "next": "dojo4/meditation-every-tuesday-morning-the-dojo"
+        }
+      }
+    },
+    "dojo4/meditation-every-tuesday-morning-the-dojo": {
+      "published_at": "2011-02-01 00:00:00 UTC",
+      "title": "Meditation every tuesday morning @ the dojo",
+      "author": "corey@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/meditation-every-tuesday-morning-the-dojo/assets/sitting.gif' title=\"Sitting\" alt=\"Sitting\" rel=\"450x450\" width=\"300\" height=\"300\" /></p>\r\n<p>Yup, that's it. And we do it every <strike>Tuesday morning, 8:40-9am</strike>. Come, bring your friends, no experience required. </p>\r\n<p>Basic mindfulness-awareness meditation has been proven to reduce stress, improve brain function, benefit health and,undoubtedly, make you better looking!</p>\r\n<p>Instruction offered, if desired.</p>\r\n\r\n<br>\r\n<br>\r\n<em>\r\nNOTE: look <a href=\"/fun/meditation\">over here</a> for up to date information about current meditation schedules.\r\n</em>\r\n",
+      "assets": {
+        "sitting.gif": {
+          "url": "/ro/dojo4/meditation-every-tuesday-morning-the-dojo/assets/sitting.gif",
+          "path": "dojo4/meditation-every-tuesday-morning-the-dojo/assets/sitting.gif",
+          "size": 8,
+          "img": {
+            "format": "gif",
+            "width": 300,
+            "height": 300
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/meditation-every-tuesday-morning-the-dojo",
+        "type": "dojo4",
+        "id": "meditation-every-tuesday-morning-the-dojo",
+        "urls": [
+          "/ro/dojo4/meditation-every-tuesday-morning-the-dojo/assets/sitting.gif",
+          "/ro/dojo4/meditation-every-tuesday-morning-the-dojo/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/meditation-every-tuesday-morning-the-dojo",
+          "prev": "dojo4/web-developer-challenge",
+          "next": "dojo4/the-buffalo-bicycle-classic"
+        }
+      }
+    },
+    "dojo4/the-buffalo-bicycle-classic": {
+      "published_at": "2011-02-03 00:00:00 UTC",
+      "title": "The Buffalo Bicycle Classic",
+      "author": "justin@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/the-buffalo-bicycle-classic/assets/bbc.jpg' title=\"Bbc\" alt=\"Bbc\" rel=\"450x450\" width=\"450\" height=\"398\" /></p>\r\n<p>In which we radically simplify a non-profit scholarship  web site, turning 50 pages of information into 5 pages of information, refreshing the design, and moving it into a new CMS.</p>",
+      "assets": {
+        "bbc.jpg": {
+          "url": "/ro/dojo4/the-buffalo-bicycle-classic/assets/bbc.jpg",
+          "path": "dojo4/the-buffalo-bicycle-classic/assets/bbc.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 398
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/the-buffalo-bicycle-classic",
+        "type": "dojo4",
+        "id": "the-buffalo-bicycle-classic",
+        "urls": [
+          "/ro/dojo4/the-buffalo-bicycle-classic/assets/bbc.jpg",
+          "/ro/dojo4/the-buffalo-bicycle-classic/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-buffalo-bicycle-classic",
+          "prev": "dojo4/meditation-every-tuesday-morning-the-dojo",
+          "next": "dojo4/home-office"
+        }
+      }
+    },
+    "dojo4/home-office": {
+      "title": "Home Office",
+      "published_at": "2011-02-07 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/home-office/assets/home-office-590-441-100.jpg' title=\"Home Office 590 441 100\" alt=\"Home Office 590 441 100\" rel=\"450x450\" width=\"450\" height=\"336\" /></p>",
+      "assets": {
+        "home-office-590-441-100.jpg": {
+          "url": "/ro/dojo4/home-office/assets/home-office-590-441-100.jpg",
+          "path": "dojo4/home-office/assets/home-office-590-441-100.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 336
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/home-office",
+        "type": "dojo4",
+        "id": "home-office",
+        "urls": [
+          "/ro/dojo4/home-office/assets/home-office-590-441-100.jpg",
+          "/ro/dojo4/home-office/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/home-office",
+          "prev": "dojo4/the-buffalo-bicycle-classic",
+          "next": "dojo4/hackerspaces-r-us"
+        }
+      }
+    },
+    "dojo4/hackerspaces-r-us": {
+      "published_at": "2011-02-15 00:00:00 UTC",
+      "title": "hackerspaces R us",
+      "author": "corey@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/hackerspaces-r-us/assets/dojo41.JPG' title=\"Dojo41\" alt=\"Dojo41\" rel=\"225x255\" width=\"225\" height=\"168\" /></p>\r\n<p>There's a recent story by KQED about hackerspaces, \"<a href=\"http://hackerspaces.org/wiki/\" title=\"http://hackerspaces.org/wiki/\">community-operated physical places, where people can meet and work on their projects</a>,\" generally tech or media related endeavors. Reading the story, I thought, \"oh cool, we should do that!\" And then I thought, \"oh cool, we do that!\" Although we are a business that supports our livelihoods by building client projects, we are also a community-oriented physical space, where people meet to work on their projects. The main difference is that the projects that people come to work on in our space are more often employment or work related projects, rather than purely labors of love, creativity and obsessive imagination. What if we set aside some solid time every month for a more pure dojo4 hackerspace and see what we build together (or individually). We've been talking about this for a while. Is it time to do it?</p>",
+      "assets": {
+        "dojo41.JPG": {
+          "url": "/ro/dojo4/hackerspaces-r-us/assets/dojo41.JPG",
+          "path": "dojo4/hackerspaces-r-us/assets/dojo41.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 225,
+            "height": 168
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/hackerspaces-r-us",
+        "type": "dojo4",
+        "id": "hackerspaces-r-us",
+        "urls": [
+          "/ro/dojo4/hackerspaces-r-us/assets/dojo41.JPG",
+          "/ro/dojo4/hackerspaces-r-us/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/hackerspaces-r-us",
+          "prev": "dojo4/home-office",
+          "next": "dojo4/organizational-development-and-leadership-at-dojo4"
+        }
+      }
+    },
+    "dojo4/organizational-development-and-leadership-at-dojo4": {
+      "published_at": "2011-02-24 00:00:00 UTC",
+      "title": "organizational development and leadership at dojo4",
+      "author": "corey@dojo4.com",
+      "body": "\r\n<p>\r\n  <img src='/ro/dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG' title=\"Uphoto\" alt=\"Uphoto\" rel=\"450x450\" width=\"450\" height=\"339\" />\r\n</p>\r\n\r\n<p>\r\n  The symposium is called <a href=\"http://www.naropa.edu/extend/EmergingParadigmsforLeadership.cfm\" title=\"http://www.naropa.edu/extend/EmergingParadigmsforLeadership.cfm\"></a> and has some heavy hittering presenters from the world of organizational development: Peter Senge (MIT), Mark Gerzon (UN advisor), Rich Fernandez (eBay), etc. I'm there because I drank this particular flavor of koolaid a while ago, and am convinced that one of the main ways that good work is going to happen successfully in this complex world of ours in the next little while, is through some of the practices illuminated by the disciplines of organizational learning: conversation, presence, listening, mindfulness, and knowing how to lead in our own lives. I'm also at this symposium because I believe that dojo4 has a lot to contribute as a leader in its sphere of influence. Not only as a software design and development company, but as an organization dedicated to fostering community and putting its collaborative talents toward making good things happen, dojo4 is committed to being part of the change that we want to see in the world.\r\n</p>\r\n\r\n<p>\r\n  The guy introducing the weekend says that we are all there because we agree that \"existing leadership and management systems are what is failing the world.\" Whether or not we can indeed agree on the specificity of \"what is failing the world,\" it's certainly clear that we are there because we agree that what we can do to help make this world thrive is rethinking current leadership and management systems. And throughout the weekend it also becomes clear that we're a bit scattered in our thinking of how to rework those systems.\r\n</p>\r\n\r\n<p>\r\n  This is something we contact at dojo4 everyday: how can we allow systems to work that accommodate different ways of knowing? We put a premium on our understanding and connections with people, whether within the company or with the many people that come through our door, friends, clients, colleagues in the field. We recognize that this understanding and connection is a huge part of what makes our work valuable, and that it can be fostered through conversation and supporting a more fundamental connection to ourselves. So we have rethought our company systems to make room for us to do things like host meditation, yoga, social gatherings, and to meet with each other regularly in a way that is designed to cultivate meaning, rather than being content-driven. We are doing good work here at dojo4. And it's a work in progress...\r\n</p>\r\n\r\n<p>\r\n  Although symposium was a bit haphazard, I was glad to have been there. Organizational development and new ways of understanding leadership that privilege introspection, listening, connection, and mindfulness, are part of a big movement in the world today that will hopefully allow us to rethink the systems that have gotten us into trouble. And I'm glad to have dojo4 be part of that movement.\r\n</p>\r\n",
+      "assets": {
+        "uphoto.JPG": {
+          "url": "/ro/dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG",
+          "path": "dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 339
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/organizational-development-and-leadership-at-dojo4",
+        "type": "dojo4",
+        "id": "organizational-development-and-leadership-at-dojo4",
+        "urls": [
+          "/ro/dojo4/organizational-development-and-leadership-at-dojo4/assets/uphoto.JPG",
+          "/ro/dojo4/organizational-development-and-leadership-at-dojo4/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/organizational-development-and-leadership-at-dojo4",
+          "prev": "dojo4/hackerspaces-r-us",
+          "next": "dojo4/office-dog-makes-twitter-splash"
+        }
+      }
+    },
+    "dojo4/office-dog-makes-twitter-splash": {
+      "title": "Office dog makes twitter splash",
+      "published_at": "2011-03-03 00:00:00 UTC",
+      "author": "alyssa@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg' title=\"Moxy2\" alt=\"Moxy2\" rel=\"450x450\" width=\"348\" height=\"450\" /></p>\n<p><a href=\"http://twitter.com/dojodog\" title=\"http://twitter.com/dojodog\"></a>Finally got my own twitter stream to rival that punk <a href=\"http://twitter.com/#!/zipperthedog\" title=\"http://twitter.com/#!/zipperthedog\">@zipperthedog</a> who is always trying to steal my patch of sunshine. Follow me <a href=\"http://twitter.com/#!/dojodog\" title=\"http://twitter.com/#!/dojodog\">@dojodog</a> to hear my exciting adventures.</p>",
+      "assets": {
+        "moxy2.jpg": {
+          "url": "/ro/dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg",
+          "path": "dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 348,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/office-dog-makes-twitter-splash",
+        "type": "dojo4",
+        "id": "office-dog-makes-twitter-splash",
+        "urls": [
+          "/ro/dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg",
+          "/ro/dojo4/office-dog-makes-twitter-splash/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/office-dog-makes-twitter-splash",
+          "prev": "dojo4/organizational-development-and-leadership-at-dojo4",
+          "next": "dojo4/this-is-dojo4"
+        }
+      }
+    },
+    "dojo4/this-is-dojo4": {
+      "published_at": "2011-03-18 00:00:00 UTC",
+      "title": "This is dojo4.",
+      "author": "justin@dojo4.com",
+      "body": "<p>Yesterday was wonderfully warm, and our front door was propped open most of the day. Sometime around noon, a fellow walked in wearing khaki pants and a button-up shirt, just like the ones I used to wear. He was looking for another business nearby, and we helped him find it.</p>\r\n<p class=\"imgLft mrm\"><img src='/ro/dojo4/this-is-dojo4/assets/img-20110121-160154-adjusted1.jpg' title=\"Img 20110121 160154 Adjusted1\" alt=\"Img 20110121 160154 Adjusted1\" rel=\"225x255\" width=\"191\" height=\"255\" /></p>\r\n<p>After he walked out, I took a look around, wondering what we look like to an accidental visitor in khaki pants. Here's what I saw: Ara and Ben were sitting on the couch crunching a difficult problem in Rails. Garett was working with Fred and Jeff. Corey was making things happen. Loud hip-hop filled the air. Three or four other folks were around, plumbing the magical pipes that the internet spouts out of. The entire building was humming with work and loud conversation and excited creativity.</p>\r\n<p>If I was the accidental visitor, I would have to wonder: What the hell were those people doing? Computer stuff, clearly. Startup stuff? Art? The Twitter? Was it some kind of study hall? Some kind of co-op? It looks cool.</p>\r\n<p>Yeah. This is dojo4. We make cool stuff. We make stuff cool. Bring your khaki pants and your laptop and ask us what the hell we're doing.</p>",
+      "assets": {
+        "img-20110121-160154-adjusted1.jpg": {
+          "url": "/ro/dojo4/this-is-dojo4/assets/img-20110121-160154-adjusted1.jpg",
+          "path": "dojo4/this-is-dojo4/assets/img-20110121-160154-adjusted1.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 191,
+            "height": 255
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/this-is-dojo4",
+        "type": "dojo4",
+        "id": "this-is-dojo4",
+        "urls": [
+          "/ro/dojo4/this-is-dojo4/assets/img-20110121-160154-adjusted1.jpg",
+          "/ro/dojo4/this-is-dojo4/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/this-is-dojo4",
+          "prev": "dojo4/office-dog-makes-twitter-splash",
+          "next": "dojo4/focus-points-for-change"
+        }
+      }
+    },
+    "dojo4/focus-points-for-change": {
+      "published_at": "2011-03-30 00:00:00 UTC",
+      "title": "Focus Points for Change",
+      "author": "corey@dojo4.com",
+      "body": "<p class=\"imgCtr\"><img src='/ro/dojo4/focus-points-for-change/assets/about-head.png' title=\"About Head\" alt=\"About Head\" rel=\"225x255\" width=\"198\" height=\"234\" /></p>\r\n<p><a href=\"http://change-connections.com/focus_points/find\" title=\"http://change-connections.com/focus_points/find\">http://change-connections.com/focus_points/find</a></p>\r\n<p>Want to design and build technology that actually helps people and addresses the world's most pressing issues? Change Connections provides a nicely vetted list of focus points that \"ensure that your ideas address key problem areas.\" And you can browse some good ideas that other people have come up with. There's no reason that these focus points couldn't be the instigation for dozens of successful and profitable business models...</p>",
+      "assets": {
+        "about-head.png": {
+          "url": "/ro/dojo4/focus-points-for-change/assets/about-head.png",
+          "path": "dojo4/focus-points-for-change/assets/about-head.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 198,
+            "height": 234
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/focus-points-for-change",
+        "type": "dojo4",
+        "id": "focus-points-for-change",
+        "urls": [
+          "/ro/dojo4/focus-points-for-change/assets/about-head.png",
+          "/ro/dojo4/focus-points-for-change/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/focus-points-for-change",
+          "prev": "dojo4/this-is-dojo4",
+          "next": "dojo4/simple-essential"
+        }
+      }
+    },
+    "dojo4/simple-essential": {
+      "published_at": "2011-04-04 00:00:00 UTC",
+      "title": "Simple & Essential",
+      "author": "justin@dojo4.com",
+      "body": "<p>You may have seen this stunning video making the rounds last week. If not, take a couple minutes and enjoy.</p>\r\n<div class=\"flex-video youtube widescreen\">\r\n  <iframe width=\"640\" height=\"360\" src=\"http://www.youtube.com/embed/C_CDLBTJD4M\" frameborder=\"0\"></iframe>\r\n</div>\r\n</p>\r\n<p>It's a marvel of engineering and production, and it's hard not to admire the creative team that put it together. Especially after seeing their site:</p>\r\n<p><a href=\"http://www.drill-inc.jp/\" title=\"http://www.drill-inc.jp/\">http://www.drill-inc.jp/</a>\r\n</p>\r\n<p>Way to keep it real, Drill, Inc. If you're ever in Boulder, the IPA is on us.</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/simple-essential",
+        "type": "dojo4",
+        "id": "simple-essential",
+        "urls": [
+          "/ro/dojo4/simple-essential/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/simple-essential",
+          "prev": "dojo4/focus-points-for-change",
+          "next": "dojo4/because-we-all-love-to-bicycle"
+        }
+      }
+    },
+    "dojo4/because-we-all-love-to-bicycle": {
+      "published_at": "2011-04-08 00:00:00 UTC",
+      "title": "Because we all love to bicycle",
+      "author": "corey@dojo4.com",
+      "body": "<figure>\r\n  <div class=\"flex-video youtube\">\r\n    <iframe width=\"640\" height=\"360\" src=\"http://www.youtube.com/embed/xIe6hYAdw_I\" frameborder=\"0\"></iframe>\r\n  </div>\r\n<figcaption class=\"block mtm txtC\">Ara will be doing this race next year</figcaption>\r\n</figure>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/because-we-all-love-to-bicycle",
+        "type": "dojo4",
+        "id": "because-we-all-love-to-bicycle",
+        "urls": [
+          "/ro/dojo4/because-we-all-love-to-bicycle/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/because-we-all-love-to-bicycle",
+          "prev": "dojo4/simple-essential",
+          "next": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class"
+        }
+      }
+    },
+    "dojo4/dojo4-hosts-inaugural-diy-coding-101-class": {
+      "published_at": "2011-04-25 00:00:00 UTC",
+      "title": "! \"Dojo4 Hosts Inaugural DIY Coding 101\\x80\\x99 Class\"",
+      "author": "alyssa@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG' title=\"Img 0745\" alt=\"Img 0745\" rel=\"450x450\" width=\"450\" height=\"338\" /></p>\r\n<p>It's our belief that the more education and understanding that can be cultivated between designers, programmers and entrepreneurs, the better products we will be able to create and the happier we'll all be. DIY Coding 101 is an experimental class designed to not only educate people working in the tech industry on the complex world of coding, but to give them a hands on experience with basic coding. Our purpose is not to make programmers, but to make designers, project managers, sales people and entrepreneurs who can more fully understand and integrate with the possibilities and limitations of the current programming world.</p>\r\n<p>Last Thursday we launched DIY Coding 101 at dojo4 to the tune of 11 curious designers, project managers and entrepreneurs hungry to more fully understand the complex world of coding. Garett, one of dojo4's programmers, gracefully navigated the difficult task of giving us a ground up explanation of the current state of code while simultaneously weaving in answers to the hundred questions we pelted him with.</p>\r\n<p>Coming up this Thursday:</p>\r\n<strong>Week 2: Client Side basics (Thurs April 28th)</strong>\r\n<br /><ul><li>How does the client side interact with the server side?</li>\r\n<li>What are client side databases?</li>\r\n<li>What is ajax?</li>\r\n<li>How do HTML5, CSS, and Javascript work and interact?</li>\r\n<li>What is jquery and jquery mobile?</li>\r\n<li>Any other notable libraries?</li>\r\n<li>How do you make a site live?</li>\r\n</ul>",
+      "assets": {
+        "img-0745.JPG": {
+          "url": "/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG",
+          "path": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 338
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class",
+        "type": "dojo4",
+        "id": "dojo4-hosts-inaugural-diy-coding-101-class",
+        "urls": [
+          "/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/assets/img-0745.JPG",
+          "/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class",
+          "prev": "dojo4/because-we-all-love-to-bicycle",
+          "next": "dojo4/a-bow-and-a-clap"
+        }
+      }
+    },
+    "dojo4/a-bow-and-a-clap": {
+      "published_at": "2011-05-04 00:00:00 UTC",
+      "title": "a bow and a clap",
+      "author": "corey@dojo4.com",
+      "body": "<p class=\"text-align-center\"><img src='/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload' title=\"Dilbert Stand Up.Png\" alt=\"Dilbert Stand Up.Png\" rel=\"225x255\" width=\"600\" height=\"202\" /></p>\r\n<p>It was like pulling teeth to get everyone in a room once a week to check in with each other. Just the word 'meeting' made people avoid eye contact with me, and it felt like punishment, rather than just a way for people to know what everyone else was doing and see how we could best help each other. So I decided to structure the meetings as simply as possible and promise that they would never take more than 15 minutes once a week. Everyone would stand in a circle and be asked to go around and answer the basic questions: \"What are you working on?\", \"What do you need help with?\", \"What will you be working on next?\" But the feeling didn't change much. The punishment theme held steady, and even if it wasn't that bad, it was definitely dull, tedious, and frankly, useless. We each got a dry overview of what other people around dojo4 were doing, but not particularly anymore than we could have figured out by just paying even mild attention to each other throughout the day to day. And we weren't connecting with each other any more than we would just casually around work, and actually much less so.</p>\r\n<p>But the need still felt like it was there: how could we connect with one another on a regular basis, providing some cadence and cohesion within the group of us that make up this company?</p>\r\n<p>Then one day, Ara comes to me with a thought he's had. He's been thinking about how we offer our clients and their projects much more than design and technology services; we offer our clients understanding. We base our relationships with clients on developing sturdy, innovative and satisfactory technology and design products, and that takes really listening. It takes listening and understanding to figure out what is unique about each client and each product, what are the nuances of the market that the product will be entering, what does the particular context require? We are building technology not for users but for humans, and to do that the basic ground has to be understanding. Since that is one of the main things we offer as a business, the logic follows that we should be cultivating that and allowing it to flourish within the company. With that in mind, Ara suggested and I offered to host a different kind of weekly check-in.</p>\r\n<p>Our weekly standups now look like this:</p>\r\n<ul><li>We meet on the same day, same time, once a week.</li>\r\n<li>The standup starts with everyone doing a bow and a clap, and ends with the reverse (clap then bow). (I asked how people wanted to open and close the standup. I grew up as part of a Buddhist community, so the bow of mutual respect is, for me, a natural marker of opening and closing anything. And someone else suggested a clap. So we do both!)</li>\r\n<li>We start with a minute or two of quiet, allowing everyone to slow down a little and arrive.</li>\r\n<li>A different person brings a question every week, that each person then has a chance to answer. For instance, last week Dave had the question (I am breaching confidentiality here with his permission!): \"What is the most important thing to you, that you can think of, that you are most likely wrong about?\" Since it was kind of a hard question, he gave a example by answering first and saying, \"I am most likely wrong that I do not have enough time to create the life that I want, I am most likely wrong that I cannot rely on others, I am most likely wrong that other people remember the most embarrassing moments in my life.\" Other weeks we've had questions like, \"What was something you did this last week that felt satisfying or accomplishing?\" or \"If dojo4 were a hot air balloon and we each had to drop something over the side in order to allow the balloon to rise higher, what would you jettison?\"</li>\r\n<li>The guidelines for the standup are: <ul>\r\n<li>to speak from the heart</li>\r\n<li>to listen completely</li>\r\n<li>to not be thinking about or decide what you are going to say while someone else is talking</li>\r\n<li>to say only what needs to be said</li>\r\n<li>not withhold from saying something that needs to be said</li>\r\n<li>not talk while someone else is talking</li>\r\n<li>anything said during the standup is confidential</li>\r\n</ul>\r\n</li>\r\n<li>There's a 'talking piece' in the middle that each person can pick up and hold if they are inspired to say something.</li>\r\n<li>When everyone has had the chance to speak, I ask who wants to bring the question for next week.</li>\r\n<li>Then we end with a clap and a bow.</li>\r\n<li>The whole thing never takes more than 10-15 minutes.</li>\r\n</ul>\r\n<p>The punishment vibe has pretty much evaporated. Our weekly standup now evokes a lot of laughter and is often very touching. It has allowed me to have a better understanding of the people I work with and what is important to them. We spend endless hours and emails relating the practical details of our work projects to each other, but it is rare that we get a chance to relate to each other in a genuine and candid way about what may (or may not) be meaningful to us. Granting some time to cultivating that understanding with each other feels incalculably more valuable to each other and the health of our business than any other way that we could spend 15 minutes 'meeting'.</p>\r\n",
+      "assets": {
+        "dilbertstandup.png.crdownload": {
+          "url": "/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload",
+          "path": "dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload",
+          "size": 8,
+          "img": null,
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/a-bow-and-a-clap",
+        "type": "dojo4",
+        "id": "a-bow-and-a-clap",
+        "urls": [
+          "/ro/dojo4/a-bow-and-a-clap/assets/dilbertstandup.png.crdownload",
+          "/ro/dojo4/a-bow-and-a-clap/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-bow-and-a-clap",
+          "prev": "dojo4/dojo4-hosts-inaugural-diy-coding-101-class",
+          "next": "dojo4/what-we-do-and-how-we-do-it-is-who-we-are"
+        }
+      }
+    },
+    "dojo4/what-we-do-and-how-we-do-it-is-who-we-are": {
+      "published_at": "2011-05-16 00:00:00 UTC",
+      "title": "What we do and how we do it is who we are.",
+      "author": "justin@dojo4.com",
+      "body": "<p>\"What we do and how we do it is who we are.\" dojo4 came up that tagline last fall when we launched this website. It was purposely broad. It channeled Whitman:</p>\r\n<blockquote>\"Do I contradict myself? Very well, then I contradict myself. I am large, I contain multititudes.\" </blockquote>\r\n<p>It echoed Abbey:</p>\r\n<blockquote>\"Let our practice form our doctrine, thus assuring precise theoretical coherence.\" </blockquote>\r\n<p>It speaks to our incredible breadth, which spans visual and interface design, massive web application and API architecture, content and product strategy, CMS customization and development, and all facets of mobile design and development, to name a few. It also encompasses our broad ambitions: to be simultaneously a creative collective, an open hackspace, a kickass software development agency, a product laboratory, a center of mindfulness, and more.</p>\r\n<p> This is an enigmatic combination&mdash;sometimes hard to sell; sometimes hard to explain. Is dojo4 a Rails shop? A branding agency? An ExpressionEngine shop? An iOS shop? A startup incubator? A coworking space? A coffee shop? We have been a little of each, at different times and for different people. For example: When someone asked us, less than a month ago, whether we'd come out and build a chicken coop for them, we were thrilled to say \"Yes!\" (One of our competitors in coop fabrication eventually won the job. But we tried.)</p>\r\n<p><img src='/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/212671413-d002d9ebf6.jpg' title=\"212671413 D002d9ebf6\" alt=\"212671413 D002d9ebf6\" rel=\"225x255\" width=\"225\" height=\"169\" /></p>\r\n<p>Almost every day, someone walks into dojo4 with a big idea, a dream they want to make real. They don't know what web framework it should be built in, or whether it lives on the device or in the cloud, or which part of it is the most difficult to design. They come in to dojo4 because they want to create a new thing in the world, and that's what we do.</p>\r\n<p>We succeed at that by listening to our customers, helping them articulate their needs, and providing critical context informed by decades of experience building technology products. And, as we've grown, we've heard again and again that people want dojo4's help co-creating their visions. They want to work together with us to make ideas&mdash;first making them awesome, then making them awesomely.</p>\r\n<p>Which is what we want to do, too. Brilliant!</p>\r\n<p>It is a gratifying revelation to discover that people want you to do what you already do well. With that in mind, we're redoubling our commitment to building things with you. dojo4 is focusing our efforts on the excellent consulting and creation services that we're known for. We're hiring outstanding developers and designers (email Corey for more information). We've established a clear corporate structure and vision. We got hoodies for all the crew; we're getting stickers for all of you. This is serious.</p>\r\n<p>At dojo4, what we do (build your incredible ideas in technology and art) and how we do it (with integrity, excellence, innovation and execution) is who we are (Fred, Justin, Ara, Alyssa, Dave, Corey, Garett, Jesse, and Ben behind the camera.)</p>\r\n<p><img src='/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/photo-1.JPG' title=\"Photo(1)\" alt=\"Photo(1)\" rel=\"225x255\" width=\"225\" height=\"168\" /></p>\r\n<p>Thank you for being a part of this incredible place.</p>",
+      "assets": {
+        "212671413-d002d9ebf6.jpg": {
+          "url": "/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/212671413-d002d9ebf6.jpg",
+          "path": "dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/212671413-d002d9ebf6.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 225,
+            "height": 169
+          },
+          "src": null
+        },
+        "photo-1.JPG": {
+          "url": "/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/photo-1.JPG",
+          "path": "dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/photo-1.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 225,
+            "height": 168
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/what-we-do-and-how-we-do-it-is-who-we-are",
+        "type": "dojo4",
+        "id": "what-we-do-and-how-we-do-it-is-who-we-are",
+        "urls": [
+          "/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/212671413-d002d9ebf6.jpg",
+          "/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/assets/photo-1.JPG",
+          "/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/what-we-do-and-how-we-do-it-is-who-we-are",
+          "prev": "dojo4/a-bow-and-a-clap",
+          "next": "dojo4/the-dojo-is-growing"
+        }
+      }
+    },
+    "dojo4/the-dojo-is-growing": {
+      "published_at": "2011-06-23 00:00:00 UTC",
+      "title": "The dojo Is Growing!",
+      "author": "steve@dojo4.com",
+      "body": "&lt;% content_for :style do %&gt;\r\n  <style>\r\n      h2, dd {line-height: 1.7;}\r\n      h2 {margin-top: 1em;}\r\n      dd {margin-left: 0;}\r\n</style>\r\n&lt;% end %&gt;\r\n<p>Recently, dojo4 hired two new folks to help the shop take on new challenges. Well, truth be told, we were tired of picking on each other, so we brought on new blood. In any event, if you're in the neighborhood, please stop by and introduce yourself. Meantime, here's some background on these guys.</p>\r\n<p>After 10 years abroad, Brett decided it was time to return stateside. Before doing so, he did tons of research on the perfect place to hang his hat. Boulder fit the bill. We think he made the right choice.</p>\r\n<p>More about Brett:</p>\r\n<dl>\r\n<h2>Why dojo4?</h2>\r\n<p>Since I started working with the dojo4 crew, I felt that I fit in right away and their ideals really aligned with my own.  I haven't been able to wipe this goofy grin off my face since moving out here and working at Dojo4, I love it!</p>\r\n<h2>Where were you before?</h2>\r\n<p>I am a bit of a world traveller.  I was in Sydney, Australia finishing up my Masters and was working there for awhile.  Before that, I was living in Beppu, Japan where I completed my undergrad degree.  I lived in the coolest little hot spring resort town in the world.  After a long day school, I would go for a dip in the hot springs.  For anybody traveling to Japan, I really recommend getting as far away from Tokyo as possible and going to a place like Kyushu or Shikoku, it will be well worth it.</p>\r\n<h2>What are your strong suits or what gets you psyched about working on the Interwebs?</h2>\r\n<p>I am a pretty visually orientated person and really like frontend development where I can see creation as I am coding it.  A lot is going on in the front-end engineering world right now as Javascript is finally earning its wings as a main development language.  Been playing around with Node and Backbone.js recently, it's an interesting time to be doing front-end work.</p>\r\n<h2>What do you do when you're not online?</h2>\r\n<p>I like to rock climb.  Since I've moved out to Boulder, I've been meaning to get into more cycling as well.  Been meaning to do some fly fishing too.  And perhaps some tubing.  Boulder has it all just in my backyard.</p>\r\n<h2>Do you know any martial arts?</h2>\r\n<p>As a matter of fact, I do.  While I was living in Japan, I studied Kendo, the Japanese martial art of sword-fighting.  It taught me discipline and focus in addition to exposing me to a unique part of Japanese culture.</p>\r\n</dl>\r\n<hr>\r\n<p>Hailing from the Granite State, Steve came to dojo4 through the backdoor, which we think Garett left ajar one evening while venturing out for banana ice cream. We're not sure how the paperwork got filled out, but Steve's here, often swaddled in an afgan on the couch or taking a nap (sometimes it's hard to tell the difference).</p>\r\n\r\n<h2>Why dojo4?</h2>\r\n<p>Because these folks are way smarter than I. I'm trying to absorb.</p>\r\n<h2>Where were you before?</h2>\r\n<p>Ultimately, I'm a failed literary theorist who took to frontend coding, strolling in 120mph winds, and installing remote mountain outhouses. Actually, I'm not really good at the latter, so consider yourself forewarned.</p>\r\n<h2>What are your strong suits or what gets you psyched about working on the Interwebs?</h2>\r\n<p>I have a knack for hoodwinking folks into bike rides. This skill is *highly* undervalued in most workplaces; however, Dojo4 encourages such things. As for nerdy stuff, I like creating grid systems and tarrying with information-dense design. I also enjoy trying to engage audiences with snappy copy.</p>\r\n<h2>What do you do when you're not online?</h2>\r\n<p>My wife and I are fairly active, and yet we're equally adept at indenting couches for great shows like The Wire, Dexter, and Arrested Development.</p>\r\n<h2>Do you know any martial arts?</h2>\r\n<p>Friends have observed that I'm particularly skilled at running and hiding. Is there a name for that discipline?</p>\r\n\r\n\r\n<p>Welcome to the dojo, fellas!</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/the-dojo-is-growing",
+        "type": "dojo4",
+        "id": "the-dojo-is-growing",
+        "urls": [
+          "/ro/dojo4/the-dojo-is-growing/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-dojo-is-growing",
+          "prev": "dojo4/what-we-do-and-how-we-do-it-is-who-we-are",
+          "next": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring"
+        }
+      }
+    },
+    "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring": {
+      "title": "Throw things into the future with us. (dojo4 is hiring)",
+      "published_at": "2011-07-06 00:00:00 UTC",
+      "author": "justin@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG' title=\"Photo 3\" alt=\"Photo 3\" rel=\"450x450\" width=\"450\" height=\"336\" />Come work for ALL the Boulder startups!</p>\n<p>dojo4 co-creates incredible technology products with great customers.  We've helped launch many of Boulder's thriving startups: Blipsnips, Everlater, Graphic.ly, RoundPegg, Snugg Home, lokalite, Splickit and many more.</p>\n<p>We are growing our team of excellent professionals. We're hiring more people like us: cloud-deploying API-building HTTP experts; DOM-manipulating mobile-first JQuery-slinging front-end experts; and generalists who rock.</p>\n\n<p>We build stuff.<br />Our culture is built on the premise that engineers thrive when they have challenging work, smart colleagues, good benefits, their choice of tools, a dojo4 hoodie, and respect. We'll treat you right.</p>\n<p>You should have code in the public domain that we can read. You should like hacking on wicked projects. You should be able to own a sale, a project, a process, a server, a meeting, a relationship, an API, a bike. You should come by the shop and pair with us sometime! Email: hire_me@dojo4.com</p>",
+      "assets": {
+        "photo-3.JPG": {
+          "url": "/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG",
+          "path": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 336
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring",
+        "type": "dojo4",
+        "id": "throw-things-into-the-future-with-us-dojo4-is-hiring",
+        "urls": [
+          "/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG",
+          "/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring",
+          "prev": "dojo4/the-dojo-is-growing",
+          "next": "dojo4/a-foray-into-the-edu-domain"
+        }
+      }
+    },
+    "dojo4/a-foray-into-the-edu-domain": {
+      "published_at": "2011-08-05 00:00:00 UTC",
+      "title": "A Foray into the EDU Domain",
+      "author": "steve@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/a-foray-into-the-edu-domain/assets/pedagogy2.png' title=\"Pedagogy2\" alt=\"Pedagogy2\" rel=\"450x450\" width=\"450\" height=\"314\" /></p>\r\n<p>Bret Fund, a professor in CU-Boulder's Leeds School of Business, walked into dojo4 with a great idea he outlined in three sentences. After meeting with a few dojo ninjas, he left with dozens of user stories, a clear sense of the project's scope, and the assurance that dojo4 could deliver on a tight budget.</p>\r\n<p>In short, Bret wanted to build a slide sharing, commenting, and note-taking application allowing teachers to share presentations and notes with students, while permitting students to comment on slides and pose questions either to teachers or fellow students.</p>\r\n<p>Given the lean nature of the project, UI designer Alyssa, backend specialist Garett, and frontend guru Justin leveraged dojo4's \"Base Rails App\" to iterate rapidly and share those iterations with Bret. Alyssa produced tapflows and wireframes that further cut development times, guiding Garett and Justin as they tailored the base app to Bret's needs.</p>\r\n<p>\"Bret's a great client to work with because he's very helpful in defining requirements,\" beams Alyssa. Garett agrees, \"Bret was really responsive when we shared iterations but also tremendously patient during the development process, providing lightning-fast feedback that helped us immensely.\"</p>\r\n<p>For his part, Bret's excited that his colleagues now \"can actually see what the web app does vs just hearing about it.\" He's set to use it in class this coming fall semester.</p>\r\n<p>Here at dojo4 we're looking forward to Bret's feedback and to further collaborations with CU-Boulder.</p>",
+      "assets": {
+        "pedagogy2.png": {
+          "url": "/ro/dojo4/a-foray-into-the-edu-domain/assets/pedagogy2.png",
+          "path": "dojo4/a-foray-into-the-edu-domain/assets/pedagogy2.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 314
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/a-foray-into-the-edu-domain",
+        "type": "dojo4",
+        "id": "a-foray-into-the-edu-domain",
+        "urls": [
+          "/ro/dojo4/a-foray-into-the-edu-domain/assets/pedagogy2.png",
+          "/ro/dojo4/a-foray-into-the-edu-domain/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-foray-into-the-edu-domain",
+          "prev": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring",
+          "next": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america"
+        }
+      }
+    },
+    "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america": {
+      "published_at": "2011-08-08 00:00:00 UTC",
+      "title": "! \"dojo4 designs help make Boulder the \\\"\\x80\\x98Foodiest Town in America\\\"\\x80\\x99\"",
+      "author": "corey@dojo4.com",
+      "body": "<p>dojo4 designed <a href=\"http://localfoodshift.com/\" title=\"http://localfoodshift.com/\">localfoodshift.com</a> to help us all support and eat local. We also designed the <a href=\"http://foodtree.com\" title=\"http://foodtree.com\">foodtree.com</a> web (coming soon) and <a href=\"http://itunes.apple.com/ca/app/foodtree/id446647800?mt=8\" title=\"http://itunes.apple.com/ca/app/foodtree/id446647800?mt=8\">mobile app</a>...</p>\r\n<p><img src='/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png' title=\"Bcfm And 10 Percent Pledge Press Release4\" alt=\"Bcfm And 10 Percent Pledge Press Release4\" rel=\"450x450\" width=\"348\" height=\"450\" /></p>",
+      "assets": {
+        "bcfm-and-10percentpledge-press-release4.png": {
+          "url": "/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png",
+          "path": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 348,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america",
+        "type": "dojo4",
+        "id": "dojo4-designs-help-make-boulder-the-foodiest-town-in-america",
+        "urls": [
+          "/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png",
+          "/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america",
+          "prev": "dojo4/a-foray-into-the-edu-domain",
+          "next": "dojo4/lean-development-process-sketch"
+        }
+      }
+    },
+    "dojo4/lean-development-process-sketch": {
+      "title": "Lean Development Process Sketch",
+      "published_at": "2011-08-22 00:00:00 UTC",
+      "author": "alyssa@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/lean-development-process-sketch/assets/leandevelopment-.png' title=\"Lean Development \" alt=\"Lean Development \" rel=\"450x450\" width=\"450\" height=\"342\" /></p>",
+      "assets": {
+        "leandevelopment-.png": {
+          "url": "/ro/dojo4/lean-development-process-sketch/assets/leandevelopment-.png",
+          "path": "dojo4/lean-development-process-sketch/assets/leandevelopment-.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 342
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/lean-development-process-sketch",
+        "type": "dojo4",
+        "id": "lean-development-process-sketch",
+        "urls": [
+          "/ro/dojo4/lean-development-process-sketch/assets/leandevelopment-.png",
+          "/ro/dojo4/lean-development-process-sketch/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/lean-development-process-sketch",
+          "prev": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america",
+          "next": "dojo4/slow-food-slow-tech"
+        }
+      }
+    },
+    "dojo4/slow-food-slow-tech": {
+      "published_at": "2011-08-23 00:00:00 UTC",
+      "title": "Slow Food >> Slow Tech",
+      "author": "corey@dojo4.com",
+      "body": "<p style=\"text-align:center\"><img src='/ro/dojo4/slow-food-slow-tech/assets/whatsripe.png' title=\"Whats Ripe\" alt=\"Whats Ripe\" rel=\"225x255\" width=\"225\" height=\"225\" /></p>\r\n<p>Recently we've been involved in building a number of applications made to help support local food systems. And so we're hosting an event for the Eat Local Week to talk about the quickly evolving intersection of tech and local food.</p>\r\n<p>Anthony Nicalo, CEO of Foodtree and and Justin Crawford, dojo4 CEO, will talk about the current romance between the food movement and consumer tech innovation. How can we leverage the power of technology to support our farms, growers and food? Can the food movement go viral? Is Slow Food provoking the birth of Slow Tech? The presentation will be followed by discussion and locally sourced refreshments. Hosted at dojo4, Friday, 9/2, 5pm. </p>\r\n<p>Come and bring your friends!</p>",
+      "assets": {
+        "whatsripe.png": {
+          "url": "/ro/dojo4/slow-food-slow-tech/assets/whatsripe.png",
+          "path": "dojo4/slow-food-slow-tech/assets/whatsripe.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 225,
+            "height": 225
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/slow-food-slow-tech",
+        "type": "dojo4",
+        "id": "slow-food-slow-tech",
+        "urls": [
+          "/ro/dojo4/slow-food-slow-tech/assets/whatsripe.png",
+          "/ro/dojo4/slow-food-slow-tech/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/slow-food-slow-tech",
+          "prev": "dojo4/lean-development-process-sketch",
+          "next": "dojo4/happy-birthday-dojo4"
+        }
+      }
+    },
+    "dojo4/happy-birthday-dojo4": {
+      "published_at": "2011-10-01 00:00:00 UTC",
+      "title": "Happy Birthday, dojo4!",
+      "author": "justin@dojo4.com",
+      "body": "<p>As of today, dojo4 is 2 years old! But instead of a having a special day with cake and hats, we just did what we always do: Launched something. In this case, it's <strong>a new dojo4 website</strong> running on <strong>new technology</strong>, with <strong>new branding</strong> and <strong>new content</strong>. Happy birthday, dojo4!</p>\r\n<h2>What we set out to do</h2>\r\n<p>We wanted a website that would explain, in a glance, who dojo4 is, what we do, and how you can reach us. We wanted it to demonstrate our technical skills, our design mastery, and our personality. We wanted to practice lean design and development methods. And we wanted it to be a living project — something that we can hack on, tinker with, and improve over time.</p>\r\n<h2>Branding</h2>\r\n<p><img src='/ro/dojo4/happy-birthday-dojo4/assets/card.jpg' title=\"Card\" alt=\"Card\" rel=\"225x255\" width=\"225\" height=\"151\" /></p>\r\n<p>We worked with Jay at <a href=\"http://angrybovine.com/\" title=\"http://angrybovine.com/\">AngryBovine</a> to identify the characteristics of dojo4 that we want to emphasize. Jay helped us understand how our brand could inform our business — not just our messaging. Then, using data gathered with Jay, dojo4 worked together in-house to refine our core message and explain it powerfully. This site tells that story in words, but also in style and practice. At dojo4, we always move toward the practical implementation of new ideas — and we're having a good time along the way.</p>\r\n<h2>Technology</h2>\r\n<p>I'm an unabashed fan of the <a href=\"http://expressionengine.com/\" title=\"http://expressionengine.com/\">ExpressionEngine CMS</a>. It's very powerful, and I like to think I'm a real EE badass. I built dozens of sites in EE, including the previous dojo4.com site. But I left that all behind for this site. At dojo4, we've chosen to write most of our code in Ruby, often in Rails, because the language and framework delight us and our customers. EE is, unfortunately, not written in Ruby. So, we built this site on <a href=\"http://refinerycms.com/\" title=\"http://refinerycms.com/\">RefineryCMS</a>, a flexible, young Rails CMS. Now our entire shop can hack on it. We'll have more to say about RefineryCMS in another post!</p>\r\n<h2>Design</h2>\r\n<p>Engineering is the practice of making things possible and practical. Design is the practice of making them wonderful and beautiful. Balancing these competing priorities can be difficult, to say the least. Plenty of firms simply avoid the problem by focusing on one or the other.  But we think the most inspiring, transformative products and services are both practical and wonderful. That requires a collaboration between design experts and technology experts, and this site is an example of it. Try it on a small screen. Try it on a big screen. It looks nice on both, and only because we worked together, balanced our efforts, and created space for beauty and possibility to coexist.</p>\r\n<h2>Content</h2>\r\n<p>We ported a number of our favorite blog posts to the new site — you'll find them conveniently located in <a href=\"/blog\" title=\"Blog\">the blog</a>. But we also added a <a href=\"/clients\" title=\"Clients\">clients section</a> where we'll talk about some of our projects and explain our capabilities in more depth. To date, we've built case studies for <a href=\"http://dojo4.com/clients/boxcar-coffee-roasters\" title=\"http://dojo4.com/clients/boxcar-coffee-roasters\">Boxcar Coffee Roasters</a> (if you haven't been down there, you're missing out), <a href=\"http://dojo4.com/clients/snugg-home\" title=\"http://dojo4.com/clients/snugg-home\">Snugg Home</a>, and <a href=\"http://dojo4.com/clients/lokalite\" title=\"http://dojo4.com/clients/lokalite\">lokalite</a>. There will be more!</p>\r\n<p>We're loving this new site. It appeals tothe great aspiration we share with our customers: <em>To imagine great things, and make them real</em>. We hope you enjoy it, too.</p>",
+      "assets": {
+        "card.jpg": {
+          "url": "/ro/dojo4/happy-birthday-dojo4/assets/card.jpg",
+          "path": "dojo4/happy-birthday-dojo4/assets/card.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 225,
+            "height": 151
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/happy-birthday-dojo4",
+        "type": "dojo4",
+        "id": "happy-birthday-dojo4",
+        "urls": [
+          "/ro/dojo4/happy-birthday-dojo4/assets/card.jpg",
+          "/ro/dojo4/happy-birthday-dojo4/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/happy-birthday-dojo4",
+          "prev": "dojo4/slow-food-slow-tech",
+          "next": "dojo4/a-splash-of-whimsy-with-your-redesign"
+        }
+      }
+    },
+    "dojo4/a-splash-of-whimsy-with-your-redesign": {
+      "title": "A Splash of Whimsy with Your Redesign?",
+      "published_at": "2011-10-11 00:00:00 UTC",
+      "author": "steve@dojo4.com",
+      "body": "<figure class=\"txtC mbl\"><img src='/ro/dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png' title=\"Dj4 Reboot\" alt=\"Dj4 Reboot\" rel=\"450x450\" width=\"450\" height=\"255\" /><figcaption class=\"fontItalic font12 serif\">Just how whimsical can a creative agency be?</figcaption>\n</figure>\n \n <p>It's <a href=\"http://www.alistapart.com/articles/beyourownclient/\">widely recognized</a> that redesigning your own website is hard, especially when you're a creative agency whose domain <strong>is</strong> the internet.</p>\n\n  <p>Will your code be the sleekest? Will your design blow clients away? Will your choice of platform showcase your capabilities?</p>\n\n  <p>As thorny as these questions may be, they are mere <em class=\"fontItalic\">technical</em> questions; they can be addressed with the right application of skill and effort.</p>\n\n  <p>The question that can really upend a creative agency endeavoring to redesign is: <span class=\"fontItalic\">How whimsical and goofy can we be?</span> We know the importance of conveying a message, but that doesn't mean it has to be conveyed stodgily.</p>\n\n  <p>When it came to our site, we thought we'd found the right mixture. We'd done market research, crafted personas, and tailored our designs as best we could to those personas.</p>\n\n  <p>Alas! Guerrilla user testing told us we'd miscalculated. \"A little heavy on the whimsy\" was the common refrain.</p>\n\n  <p>So, what went wrong?</p>\n\n  <p>I'd venture to say we got caught up in the excitement of telling our \"design, build, launch\" story. As creative types, we eat metaphors for breakfast, so diving headlong into the metaphorical was easy and fun.</p>\n\n  <p>But, this came at the expense of conveying an easy-to-digest message to the all-powerful 5 second visitor, whose scant attention could make or break our business. Or so the story goes.</p>\n\n  <p>The compromise was to turn our story into a slideshow with the \"what we do\" message directly preceeding the \"dream, build, launch\" story.</p>\n\n  <p>Does it work? Do you have better ideas? Let us know and we'll steal them.</p>\n",
+      "assets": {
+        "dj4-reboot.png": {
+          "url": "/ro/dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png",
+          "path": "dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 255
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/a-splash-of-whimsy-with-your-redesign",
+        "type": "dojo4",
+        "id": "a-splash-of-whimsy-with-your-redesign",
+        "urls": [
+          "/ro/dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png",
+          "/ro/dojo4/a-splash-of-whimsy-with-your-redesign/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-splash-of-whimsy-with-your-redesign",
+          "prev": "dojo4/happy-birthday-dojo4",
+          "next": "dojo4/thoughts-on-launching-and-scaling-quickly"
+        }
+      }
+    },
+    "dojo4/thoughts-on-launching-and-scaling-quickly": {
+      "published_at": "2011-10-12 00:00:00 UTC",
+      "title": "Thoughts on launching and scaling quickly",
+      "author": "pete@dojo4.com",
+      "body": "<p>We discussed <a href=\"http://www.jperla.com/blog/post/how-to-launch-in-a-month-scale-to-a-million-users\">this interesting blog post by Joseph Perla and building and scaling quickly</a> internally this week, and I wanted to share some brief thoughts about some of his points.  Below are some topics from his post with my thoughts and reactions:</p>\r\n<p><em>Keep it simple</em>\r\n</p>\r\n<p>No argument here. This is often easier said than done, however. There's a lot of art and gut to this. Many product managers equate high simplicity with low value.</p>\r\n<p><em>Get it right (have tests).</em>\r\n</p>\r\n<p>Good testing practices and culture are key, and this is fairly well-known in the industry at this point</p>\r\n<p><em>Don't hide power</em>\r\n</p>\r\n<p>They wrote a library called <a href=\"http://www.jperla.com/blog/post/write-bug-free-javascript-with-pebbles\">Pebbles</a> which gives an HTML way to express a few common ajax interaction patterns. Definitely there are smart folks in the camp of making a domain specific language (DSL) for every project.  He's doing that here in at least his pebbles AJAX system and his python twitter parsing code.</p>\r\n\r\n<p><a href=\"http://pixtress.tumblr.com/post/4102228454/stylish-slabs-of-steel-and-glass-the-skyscrapers\">\r\n  <img src='/ro/dojo4/thoughts-on-launching-and-scaling-quickly/assets/skyscraper-corey-kohn.jpg' style=\"max-width:100%;display:block;\" /></a></p>\r\n<p><em>Leave it to the client</em>\r\n</p>\r\n<p>This is the most dubious point in the article in my opinion.  This strategy works OK if you only have a single interface, but how realistic is that?  Most projects are going to have one form or another of a desktop web interface, and some mobile variant thereof in all likelihood.  Other projects might have an API available, language bindings, command line tools, fat clients, etc.  As soon as you have a second interface, all that logic that you wrote in the client code must be duplicated, and by definition if it's duplicated in another framework or language, there will be behavioral differences.  My rule of thumb is any computation/manipulation that you would want to work consistently in multiple interfaces belongs in the back end and should be exposed via an API. In any case, the trade-off here is a business strategy decision that should not be made in isolation by the technical team without clearly explaining the trade-off (harder/slower to build another UI) to the business stakeholders and product managers.</p>\r\n<p><em>Continuity</em>\r\n</p>\r\n<p>He's not clear on exactly what he means but wow, if he's saying over the course of a month he was maintaining several API versions, that seems unnecessary.  Support multiple API versions when you absolutely must for business reasons, not as a general rule.</p>\r\n<p><em>Handle normal and worst cases separately as a rule</em>\r\n</p>\r\n<p>Sounds pretty reasonable to me.</p>\r\n\r\n<p><em>Take-aways</em>\r\n</p>\r\n<p>The post nicely collects a bunch of common approaches for scalability. A lot of it boils down to \"don't do things that don't scale\" with a healthy dose of pragmatism thrown in there.  The thing I always struggle with is knowing when building for scale from the start will be harder than not worrying about scale at the start and making trade-offs that favor validated learning sooner even if it means recoding later.  <a href=\"/#Ara\" title=\"Home\">Ara</a> mentioned something to me last week about building things fast in Rails and then if its wildly successful having enough cash (and time/knowledge/product stability) around to get it rebuilt in Scala (basically the Twitter story).  I've even seen Matz himself on video make the argument that if you develop rapidly in Ruby, get market traction, and have so much traffic that you can't handle it in Ruby, you've got a good problem.  You can scale your Ruby system while optimizing/rewriting key pieces of it in other languages. But this is better than losing the market to a faster competitor.  Both Facebook and Twitter have pulled this move successfully with things like <a href=\"https://developers.facebook.com/blog/post/358/\">HipHop for PHP</a> and <a href=\"http://www.readwriteweb.com/cloud/2011/04/twitter-drops-ruby-for-java.php\">converting Rails code to Java</a>. What we can say for sure is that a lot of projects that were very concerned with handling large scale from the beginning never made it to launch, or launched something nobody wanted, or launched 6 months after a competitor who captured marketshare, etc.  I definitely lean toward the agile/lean/<a href=\"http://en.wikipedia.org/wiki/You_ain't_gonna_need_it\">YAGNI</a> end of the spectrum.</p>\r\n<p>A general comment about the state of the industry now vs in the first .com bubble is we seem way better at figuring out what the market wants and also our technology stack makes it possible to build web apps that serve hundreds of thousands of users with a small team using readily available tools.</p>",
+      "assets": {
+        "skyscraper-corey-kohn.jpg": {
+          "url": "/ro/dojo4/thoughts-on-launching-and-scaling-quickly/assets/skyscraper-corey-kohn.jpg",
+          "path": "dojo4/thoughts-on-launching-and-scaling-quickly/assets/skyscraper-corey-kohn.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 800,
+            "height": 598
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/thoughts-on-launching-and-scaling-quickly",
+        "type": "dojo4",
+        "id": "thoughts-on-launching-and-scaling-quickly",
+        "urls": [
+          "/ro/dojo4/thoughts-on-launching-and-scaling-quickly/assets/skyscraper-corey-kohn.jpg",
+          "/ro/dojo4/thoughts-on-launching-and-scaling-quickly/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/thoughts-on-launching-and-scaling-quickly",
+          "prev": "dojo4/a-splash-of-whimsy-with-your-redesign",
+          "next": "dojo4/snuggin"
+        }
+      }
+    },
+    "dojo4/snuggin": {
+      "published_at": "2011-11-07 00:00:00 UTC",
+      "title": "Snuggin'!",
+      "author": "justin@dojo4.com",
+      "body": "<p>Brrr! Last night the wind slid down the Flatirons like an avalanche and crashed into Boulder's insulation-challenged ranch homes. Goodbye, Indian Summer; hello, icy winter.</p>\r\n<a href=\"http://www.flickr.com/photos/michaelbuck/310303516/\" title=\"CU Snow by Michael Buck, on Flickr\"><img src=\"http://farm1.static.flickr.com/114/310303516_460245c202.jpg\" width=\"500\" height=\"375\" alt=\"CU Snow\" /></a>\r\n<p>It's not easy keeping the cold out of these old houses. All the caulking in the world won't help if the attic doesn't have enough fluff in it. And then there's new windows, a new furnace and thermostat, pipe insulation, water heater insulation, wall insulation, floor insulation, insulation insulation, and so forth.</p>\r\n<p>The folks over at <a href=\"http://snugghome.com\" title=\"http://snugghome.com\">Snugg Home</a> (also profiled in our <a href=\"http://dojo4.com/clients/snugg-home\" title=\"http://dojo4.com/clients/snugg-home\">case studies</a>) are making it easier, though. Home improvements that reduce energy usage are often subject to incentives at the local, state, and federal levels. But it's <em>hard</em>, figuring it all out in the dead of winter when you can hardly use the keyboard because your fingers are blue with cold.</p>\r\n<p>Snugg Home has partnered with quite a few local governments to untangle the web of rebates, incentives, sales, and so forth that help people make efficiency improvements to their homes. With their help, homeowners around the country are discovering new ways to help their families and reduce their carbon footprint with smart upgrades.</p>\r\n<p>The value of this utility is reflected in Snugg Home's success. They've turned their idea into a very robust startup with impressive revenue and exciting prospects. Right now they're looking for a handful of partners who want to join them in the next phase of their evolution. You can learn more from the video below, or by <a href=\"http://www.snugghome.com/contact-us/\" title=\"http://www.snugghome.com/contact-us/\">contacting Adam at Snugg Home</a>.</p>\r\n<figure>\r\n  <div class=\"flex-video vimeo\">\r\n    <iframe src=\"http://player.vimeo.com/video/31414422?title=0&byline=0&portrait=0\" width=\"400\" height=\"350\" frameborder=\"0\"></iframe>\r\n  </div>\r\n  <figcaption><a href=\"http://vimeo.com/31414422\">Snugg Home Overview</a> from <a href=\"http://vimeo.com/user3824926\">Snugg Home</a> on <a href=\"http://vimeo.com\">Vimeo</a>.</figcaption>\r\n</figure>\r\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/snuggin",
+        "type": "dojo4",
+        "id": "snuggin",
+        "urls": [
+          "/ro/dojo4/snuggin/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/snuggin",
+          "prev": "dojo4/thoughts-on-launching-and-scaling-quickly",
+          "next": "dojo4/ninja-problem-solving"
+        }
+      }
+    },
+    "dojo4/ninja-problem-solving": {
+      "title": "Ninja Problem Solving",
+      "published_at": "2011-11-22 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<p>Recently this email went out to our technical team.  I thought I'd share it un-edited.</p>\n\n<pre>problem solving is the number one service we provide.  over the years\ni've developed some high level ideas about it that i've found\nconsistently leads towards good solutions, of which there are always\nmany.  you may or may not find these ideas useful but i wanted to\nshare them regardless:\n\n\n- understand the problem completely.  if there is even a small lack of\nclarity ask questions and dig deeper.  in fact, all problem solutions\nstem from ruthless application of just this one principle.  that one\nsmall word the client or manual mentioned you were embarrassed to ask\nabout - ask about it.  that one small line in the code you didn't\nquite understand is likely the source of your problem, don't ignore\nit.\n\n- talk about the problem *out loud* with someone else.  it's\nsurprising how often framing a problem in english, outside mental\nconstructs, will automatically suggest a solution.\n\n- never debug alone.  buy someone coffee or beer.  call a team member\nup.  it's nearly always a waste of time to debug by your self.  a\ncorollary: stop whatever you are doing and help if it looks like\nsomeone else is stuck on a problem.\n\n- when there is a problem check these things, in order, *every single\ntime*: read the code, read the manual, google it.  this is the\nopposite of what most people do.  put another way \"check the highest\nquality sources first\" because low quality sources lead to further\nconfusion.  i cannot stress strongly enough the importance of becoming\na religious code reader.\n\n- never take the low road.  if you think \"this is a hack but...\" stop\nand ask for help.\n\n- don't fight the future.  a solution doesn't have to be complete but\nit should at least take one single step towards being complete.  track\npartial solutions with #FIXME, #TODO, a card in redmine or a\nconversation with a co-worker.\n\n- leave turds.  if your work doesn't make artifacts that people can\neither re-use or re-edit it's probably a band-aid and not a solution.\nmaking re-editable code is quite a bit easier than making re-usable\ncode.  avoid solutions that are neither like the plague.\n\n- don't get angry.  your brain shuts down if you get mad at a problem.\n nothing we do has lives hinging on it so lighten up.  so you trashed\nthe data.  have a laugh and then get back to recovering it.\n\n- avoid early adoption by being an early adopter.  the way to\nunderstand the sweet spot between bleeding edge and crufty stability,\nironically, is to ruthlessly explore and understand new solutions.\nyou have to be an early adopter to understand when you should avoid\nit.  FUD (fear uncertainty and doubt) should never be a motivator to\navoid new and shiny, but a deep understanding of technical flaws\n*should be*.\n</pre>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/ninja-problem-solving",
+        "type": "dojo4",
+        "id": "ninja-problem-solving",
+        "urls": [
+          "/ro/dojo4/ninja-problem-solving/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/ninja-problem-solving",
+          "prev": "dojo4/snuggin",
+          "next": "dojo4/hands-off-my-window-title"
+        }
+      }
+    },
+    "dojo4/hands-off-my-window-title": {
+      "published_at": "2011-11-29 00:00:00 UTC",
+      "title": "Hands off my window title!",
+      "author": "pete@dojo4.com",
+      "body": "<p>So I recently ssh'ed into a shiny new Ubuntu 11.10 server on EC2 and noticed some new things.  Firstly, Ubuntu seems to have enabled the <a href=\"https://help.ubuntu.com/11.10/serverguide/C/byobu.html\">byobu</a> terminal multiplexer configuration by default.  This looks potentially handy, but just like <a href=\"https://github.com/robbyrussell/oh-my-zsh\">Oh my zsh</a>, I don't feel motivated to futz with it just now.  It's easy to disable byobu with just a quick <code>byobu-disable</code>, which will, somewhat surprisingly, fully exit your shell, log you out and close your ssh session.  But next time you'll get a normal shell instead of a byobu/screen session.</p>\r\n\r\n<p>Now one thing I noticed and finally got motivated with to \"research\" (and by that I mean ask smarter people on twitter) and fix was that when I connected via ssh, the window title in my iTerm2 tab was dynamically changed from what I had carefully set it to (\"asset pipeline\") to the supremely unhelpful \"ubuntu@ip-10-11-12-13\".  In some non-cloud situations where the server has a meaningful hostname, this might be handy, but distinguishing dozens of servers by their internal EC2 IP is not appealing to me.  Initial research suggested my <code>PROMPT</code> or <code>PROMPT_COMMAND</code> environment variables, but neither was set.  I read through <a href=\"http://www.ibm.com/developerworks/linux/library/l-tip-prompt/\">this DeveloperWorks article</a> and found the responsible code in the <code>~/.bashrc</code> file.  Here's the offending excerpt.</p>\r\n\r\n<pre><code># If this is an xterm set the title to user@host:dir\r\ncase \"$TERM\" in\r\nxterm*|rxvt*)\r\n    PS1=\"\\[\\e]0;${debian_chroot:+($debian_chroot)}\\u@\\h: \\w\\a\\]$PS1\"\r\n    ;;\r\n*)\r\n    ;;\r\nesac\r\n</code>\r\n</pre>\r\n\r\n<p>So you can comment out that line that changes <code>PS1</code> if you prefer your own manually-set window title.</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/hands-off-my-window-title",
+        "type": "dojo4",
+        "id": "hands-off-my-window-title",
+        "urls": [
+          "/ro/dojo4/hands-off-my-window-title/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/hands-off-my-window-title",
+          "prev": "dojo4/ninja-problem-solving",
+          "next": "dojo4/random-core-dumps-in-ruby-193-on-osx"
+        }
+      }
+    },
+    "dojo4/random-core-dumps-in-ruby-193-on-osx": {
+      "title": "Random Core Dumps in Ruby 1.9.3 on OSX?",
+      "published_at": "2011-12-09 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<pre>you linked against the wrong openssl lib\n\n\nyou need to run something like this:\n\n(for rvm)\n\n otool -L ~/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/1.9.1/x86_64-darwin11.2.0/openssl.bundle\n\n\n(for rbenv)\n\n otool -L ~/.rbenv/versions/1.9.3-p0/lib/ruby/1.9.1/x86_64-darwin11.2.0/openssl.bundle\n\n\nif you have any references to /opt or any non-osx openssl lib (say\nfrom brew) you are F***** and will need to rebuild ruby.  this is the\nsource of the ssh/http/and random seg faults you've been having on\nvarious projects.\n\n</pre>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/random-core-dumps-in-ruby-193-on-osx",
+        "type": "dojo4",
+        "id": "random-core-dumps-in-ruby-193-on-osx",
+        "urls": [
+          "/ro/dojo4/random-core-dumps-in-ruby-193-on-osx/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/random-core-dumps-in-ruby-193-on-osx",
+          "prev": "dojo4/hands-off-my-window-title",
+          "next": "dojo4/reblog-programming-is-gardening-not-engineering"
+        }
+      }
+    },
+    "dojo4/reblog-programming-is-gardening-not-engineering": {
+      "published_at": "2011-12-13 00:00:00 UTC",
+      "title": "! 'reblog: Programming is Gardening, not Engineering'",
+      "author": "corey@dojo4.com",
+      "body": "<p><em>We thought it well worth reblogging this Conversation with Andy Hunt and Dave Thomas, Part VII by Bill Venners from April 14, 2003...</em>\r\n</p>\r\n<h2>Software Development as Gardening</h2>\r\n<p>Bill Venners: In your book, The Pragmatic Programmer, you say, \"Rather than construction, programming is more like gardening.\" I really like your gardening metaphor for software development. Can you elaborate on it?</p>\r\n<p>Andy Hunt: There is a persistent notion in a lot of literature that software development should be like engineering. First, an architect draws up some great plans. Then you get a flood of warm bodies to come in and fill the chairs, bang out all the code, and you're done. A lot of people still feel that way. I saw an interview in the last six months of a big outsourcing house in India where this was how they felt. They paint a picture of constructing software like buildings. The high talent architects do the design. The coders do the constructing. The tenants move in, and everyone lives happily ever after. We don't think that's very realistic. It doesn't work that way with software.</p>\r\n<p>We paint a different picture. Instead of that very neat and orderly procession, which doesn't happen even in the real world with buildings, software is much more like gardening. You do plan. You plan you're going to make a plot this big. You're going to prepare the soil. You bring in a landscape person who says to put the big plants in the back and short ones in the front. You've got a great plan, a whole design.</p>\r\n<p>But when you plant the bulbs and the seeds, what happens? The garden doesn't quite come up the way you drew the picture. This plant gets a lot bigger than you thought it would. You've got to prune it. You've got to split it. You've got to move it around the garden. This big plant in the back died. You've got to dig it up and throw it into the compost pile. These colors ended up not looking like they did on the package. They don't look good next to each other. You've got to transplant this one over to the other side of the garden.</p>\r\n<p>Dave Thomas: Also with a garden, there's a constant assumption of maintenance. Everybody says, I want a low maintenance garden, but the reality is a garden is something that you're always interacting with to improve or even just keep the same. Although I know there's building maintenance, you typically don't change the shape of a building. It just sits there. We want people to view software as being far more organic, far more malleable, and something that you have to be prepared to interact with to improve all the time. </p>\r\n<p><em>Read the rest at </em>\r\n<a style=\"font-style: italic;\" title=\"http://www.artima.com/intv/garden.html\" href=\"http://www.artima.com/intv/garden.html\">http://www.artima.com/intv/garden.html</a>\r\n<em>.</em>\r\n</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/reblog-programming-is-gardening-not-engineering",
+        "type": "dojo4",
+        "id": "reblog-programming-is-gardening-not-engineering",
+        "urls": [
+          "/ro/dojo4/reblog-programming-is-gardening-not-engineering/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/reblog-programming-is-gardening-not-engineering",
+          "prev": "dojo4/random-core-dumps-in-ruby-193-on-osx",
+          "next": "dojo4/tips-for-mongodb-migrations-in-rails"
+        }
+      }
+    },
+    "dojo4/tips-for-mongodb-migrations-in-rails": {
+      "title": "Tips for MongoDB Migrations in Rails",
+      "published_at": "2011-12-27 00:00:00 UTC",
+      "author": "pete@dojo4.com",
+      "body": "<p>I wanted to share a quick and easy method for testing Rails migrations when using the MongoDB database.  The flexibility of mongo and ruby makes this pretty straightforward. In this example, we'll be renaming a field in our example \"books\" collection from \"isbn\" to \"book_number\". This is a pretty common type of migration and once you get the hang of this simple case, more complex migrations follow the same pattern. First, lets generate our timestamped migration script boilerplate.</p>\n<pre><code>rails generate migration rename_isbn_to_book_number\n</code>\n</pre>\n<p>Then we'll edit the file that generated under <code>db/migrate</code>.  We'll split our code up into several sections as follows.</p>\n<ol>\n<li>Some class constants shared by all methods</li>\n<li>The <code>self.up</code> method that does the forward migration</li>\n<li>A helper method to set up some sample data to test forward migration</li>\n<li>The <code>self.down</code> method that does the rollback</li>\n<li>A helper method to set up some sample data (if needed) to test rollback</li>\n</ol>\n<p>First, just define some constants that our methods will use.  We store the mongo update options hash <code>MultiUpdate</code> for convenience since most migration update operations want upsert false (don't create any new documents), multi true (update all matching documents), and safe true.</p>\n<p>Then we also define a constant for the collection name.  For the real migration, the collection is \"books\", but for testing, we'll create a new collection called \"test_books_migration\" as we develop our code.</p>\n<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration\n  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}\n  Collection = db.collection(\"books\") #Final production code\n  Collection = db.collection(\"test_books_migration\") #Just for testing on the console\n  def up\n  end\n\n  def down\n  end\nend\n</code>\n</pre>\n<p>OK, that's our initial boilerplate.  The next step is to take a backup of our development database if there's any data in there we don't want to accidentally wreck.  Then we start coding a little helper method to populate our test collection with fake documents resembling what we expect to see in production, but only focusing on the fields relevant to the migration. Add this method to your migration class.</p>\n<pre><code>def mock_data_for_testing_up\n  3.times {|number| Collection.insert({\"isbn\" =&gt; \"#{number}\"})}\nend\n\ndef show_collection\n  Collection.find({}).each {|_| puts _}\nend\n</code>\n</pre>\n<p>This will create 3 dummy documents we can use for testing.  We are putting this code in a method so it's easy to re-run as we tweak and test our migration code.  For complex migrations, many rounds of tweaking to get all the edge cases might be needed.</p>\n<p>We can now fire up a rails console and run this code by copying and pasting the 2 class constants and the mock_data_for_testing_up method into the console and then running mock_data_for_testing_up</p>\n<pre><code>$ bundle exec rails console\nLoading development environment (Rails 3.1.1)\nirb(main):001:0&gt; #Paste the following into the console\nMultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}\nCollection = db.collection(\"test_books_migration\") #Just for testing on the console\ndef mock_data_for_testing_up\n  3.times {|number| Collection.insert({\"isbn\" =&gt; \"#{number}\"})}\n  Collection.find({}).each {|_| puts _}\nend\ndef show_collection\n  Collection.find({}).each {|_| puts _}\nend\nirb(main):008:0&gt; mock_data_for_testing_up\nmock_data_for_testing_up\nMONGODB app_development['test_books_migration'].insert([{\"isbn\"=&gt;\"0\", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000001')}])\nMONGODB app_development['test_books_migration'].insert([{\"isbn\"=&gt;\"1\", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000002')}])\nMONGODB app_development['test_books_migration'].insert([{\"isbn\"=&gt;\"2\", :_id=&gt;BSON::ObjectId('4ef5f43b2a4397a5d7000003')}])\nirb(main):009:0&gt; show_collection\nMONGODB app_development['test_books_migration'].find({})\n{\"_id\"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000001'), \"isbn\"=&gt;\"0\"}\n{\"_id\"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000002'), \"isbn\"=&gt;\"1\"}\n{\"_id\"=&gt;BSON::ObjectId('4ef5f3812a4397a5bd000003'), \"isbn\"=&gt;\"2\"}\n=&gt; nil\n</code>\n</pre>\n<p>So now we have a separate, well-understood test collection ready to test our simple migration.  Let's code up our <code>up</code> method. To do our migration.</p>\n<pre><code>def up\n  #We want to rename the book.isbn field to book.book_number\n  Collection.find({\"isbn\" =&gt; {\"$exists\" =&gt; 1}}).each do |book|\n    update_op = {\n      \"$unset\" =&gt; {\"isbn\" =&gt; 1},\n      \"$set\" =&gt; {\"book_number\" =&gt; book[\"isbn\"]}\n    }\n  Collection.update({\"_id\" =&gt; book[\"_id\"]}, update_op, MultiUpdate)\nend\n</code>\n</pre>\n<p>We can paste that into the console and run it to test our migration.  We can verify the results with <code>show_colletion</code>.  If we want to test other records for the rollback, we can create a <code>mock_data_for_testing_down</code> method.</p>\n<p>This should give you a really quick way to experiment and get your migration code working.  Mongo has some advanced query and modify capabilities that can do amazing things, and an easy way to do some trial and error is handy.  If you make a mess of your test data, you can use <code>Collection.drop</code> to get a clean slate. Here's the final migration code for reference. <strong>Don't forget</strong> to remove the test collection constant and drop the test collection from your database when your ready to start running your code for real with <code>rake db:migrate</code>.</p>\n<pre><code>class RenameIsbnToBookNumber &lt; Mongoid::Migration\n  MultiUpdate = {:upsert =&gt; false, :multi =&gt; true, :safe=&gt;true}\n  Collection = db.collection(\"books\") #Final production code\n\n  def up\n    #We want to rename the book.isbn field to book.book_number\n    Collection.find({\"isbn\" =&gt; {\"$exists\" =&gt; 1}}).each do |book|\n      update_op = {\n        \"$unset\" =&gt; {\"isbn\" =&gt; 1},\n        \"$set\" =&gt; {\"book_number\" =&gt; book[\"isbn\"]}\n      }\n      Collection.update({\"_id\" =&gt; book[\"_id\"]}, update_op, MultiUpdate)\n    end\n  end\n\n  def down\n    #We want to rename the book.book_number field to book.isbn\n    Collection.find({\"book_number\" =&gt; {\"$exists\" =&gt; 1}}).each do |book|\n      update_op = {\n        \"$unset\" =&gt; {\"book_number\" =&gt; 1},\n        \"$set\" =&gt; {\"isbn\" =&gt; book[\"book_number\"]}\n      }\n      Collection.update({\"_id\" =&gt; book[\"_id\"]}, update_op, MultiUpdate)\n    end\n  end\n\n  #These methods are not called by the migration.  Just for manual testing\n  #by copy/pasting into the console\n  #To test (by copy/pasting from here to the console)\n  #1. Set the MultiUpdate constant. Adjust \"Collection\" to be a test collection\n  #2. Copy/paste the 2 methods below\n  #2. Run mock_data_for_testing_up\n  #3. Run the body of self.up\n  #3b. Optionally run the body of self.up again to make sure it is idempotent\n  def mock_data_for_testing_up\n    3.times {|number| Collection.insert({\"isbn\" =&gt; \"#{number}\"})}\n  end\n\n  def show_collection\n    Collection.find({}).each {|_| puts _}\n  end\nend\n</code>\n</pre>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/tips-for-mongodb-migrations-in-rails",
+        "type": "dojo4",
+        "id": "tips-for-mongodb-migrations-in-rails",
+        "urls": [
+          "/ro/dojo4/tips-for-mongodb-migrations-in-rails/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/tips-for-mongodb-migrations-in-rails",
+          "prev": "dojo4/reblog-programming-is-gardening-not-engineering",
+          "next": "dojo4/css3-horizontal-rules"
+        }
+      }
+    },
+    "dojo4/css3-horizontal-rules": {
+      "published_at": "2012-01-18 00:00:00 UTC",
+      "title": "CSS3 Horizontal Rules",
+      "author": "steve@dojo4.com",
+      "body": "<p>I recently found myself devising styles for the \"short story\" posts on my personal site, which I decided to re-plumb, switching from WordPress to Octopress and GitHub—post about that experience forthcoming!</p>\r\n<p>In any event, short stories tend to be long-winded (as blog posts go), so I wanted to provide authors with an easy way to include emphatic, semantic section breaks. The humble horizontal rule <code>&lt;hr&gt;</code> seemed like the right solution, the more so since <a href=\"http://daringfireball.net/projects/markdown/syntax\" class=\"darkTxt\" target=\"_blank\">Markdown</a> makes them so easy to include&mdash;just add <code>***</code> on a new line.</p>\r\n<p>Most browsers render the <code>&lt;hr&gt;</code> tag as an inset border&mdash;essentially a dark line stacked directly on top of a lighter line. But that's about as exciting as one of <a href=\"/#Ara\" class=\"darkTxt\" target=\"_blank\">Ara's</a> two hour lectures on the history and advantages of wind-briefs in rural Alaska.</p>\r\n<p>So, I sleuthed the interwebs for sexier solutions and came across an all-too-familiar site: <a href=\"http://css-tricks.com/simple-styles-for-horizontal-rules/\" class=\"darkTxt\" target=\"_blank\">Chris Coyier's CSS Tricks</a>.</p>\r\n<p>A word of caution: because these styles rely on the <code>:after</code> and <code>:before</code> pseudo-element selectors, IE7 and below don't do a great job rendering them. Thus, you might have to spend some time futzing with IE-specific styles. Or you might choose to do something more valuable with your time.</p>",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/css3-horizontal-rules",
+        "type": "dojo4",
+        "id": "css3-horizontal-rules",
+        "urls": [
+          "/ro/dojo4/css3-horizontal-rules/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/css3-horizontal-rules",
+          "prev": "dojo4/tips-for-mongodb-migrations-in-rails",
+          "next": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened"
+        }
+      }
+    },
+    "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened": {
+      "published_at": "2012-01-19 00:00:00 UTC",
+      "title": "30 years ago I said \"pager first\", but no one listened...",
+      "author": "anthony@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png' title=\"Mobile First Illustration\" alt=\"Mobile First Illustration\" rel=\"450x450\" width=\"450\" height=\"450\" /></p>\r\n<p>I recently took a trip to New York city just after reading the book <a href=\"http://www.abookapart.com/products/mobile-first\" title=\"http://www.abookapart.com/products/mobile-first\" target=\"_blank\">\"Mobile First\"</a> by <a href=\"http://www.lukew.com/\" title=\"http://www.lukew.com/\" target=\"_blank\">Luke Wroblewski.</a> During the commute between Queens and Manhattan, I saw lots of folks on their mobile devices. And while I didn't need this trip to convince me that Mobile is exploding, it sure made the fact even clearer.</p>\r\n<p>The 6th book in the design series by <cite>A Book Apart</cite>, \"Mobile First\" explores the reasons and strategy for putting mobile web design before all else. Here are a few of my favorite points.</p>\r\n<p><strong>Links.</strong> Each time a web link is shared online or referenced in a native app, it is opened in a web browser. So if you have your native Facebook app open on your mobile device and you click a link, you are taken out to a browser that now displays the website. Has this site prepared its content for mobile? Probably not.</p>\r\n<p><strong>Small Space.</strong> The small screen space of mobile forces designers, developers, and clients to consider to what matters most. You have to give your customers exactly what they need and want. No room for useless information. </p>\r\n<p><strong>Be quick.</strong> Mobile forces you to think of building for quick load time. Make things fast, users will go away if you don't. Use sprites, minify CSS and javascript files, style in CSS not images, etc.</p>\r\n<p>Great, you've simplified your product, considered what content matters most, and made it load fast. Now apply this to the desktop experience. That's \"mobile first\" in a nutshell. Oh, and...if we were living back in the 80's, the title to this book would most likely be \"pager first\". Someone just beeped me, gotta go.</p>",
+      "assets": {
+        "mobile-first-illustration.png": {
+          "url": "/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png",
+          "path": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened",
+        "type": "dojo4",
+        "id": "30-years-ago-i-said-pager-first-but-no-one-listened",
+        "urls": [
+          "/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/assets/mobile-first-illustration.png",
+          "/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened",
+          "prev": "dojo4/css3-horizontal-rules",
+          "next": "dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts"
+        }
+      }
+    },
+    "dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts": {
+      "title": "A Simple Backup Strategy For Amazon Cloud Hosts",
+      "published_at": "2012-03-01 00:00:00 UTC",
+      "author": "garett@dojo4.com",
+      "body": "<p>Over the years Dojo4 has put together a really great web application development and hosting stack.&#160; The Amazon Web Services (AWS) cloud forms the base of this stack. &#160; The flexibility and convenience of Elastic Block Store (EBS) disk volumes is compelling and we use them for system volumes as well as data volumes for deploying apps to and persisting databases to on our Elastic Compute Cloud (EC2) cloud computers.&#160; Some time ago, at the end of a conversation about the hosting architecture, Ara stated in an off hand way 'Oh, and periodic backups of the disks should just happen automatically whenever we launch a new EC2 instance'.&#160; So, I began working on a little script called DREBS (Disaster Recovery for Elastic Block Store).&#160; DREBS can be baked into your Amazon Machine Image (AMI) or setup in your Chef or other cloud provisioning mechanisms.&#160;&#160; DREBS can be configured to take periodic snapshots of EBS volumes attached to the EC2 instance it is running on.&#160; It supports flexible snapshot retention strategies as well as pre and post snapshots tasks for things like dumping databases to disk for consistent database backups.&#160; <a href=\"https://github.com/dojo4/DREBS\" title=\"https://github.com/dojo4/DREBS\">Have a look at DREBS</a> and let us know what you think.</p>\n<br />",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts",
+        "type": "dojo4",
+        "id": "a-simple-backup-strategy-for-amazon-cloud-hosts",
+        "urls": [
+          "/ro/dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts",
+          "prev": "dojo4/30-years-ago-i-said-pager-first-but-no-one-listened",
+          "next": "dojo4/dojo4-quiz-2-have-a-go"
+        }
+      }
+    },
+    "dojo4/dojo4-quiz-2-have-a-go": {
+      "title": "! 'dojo4 quiz #2.  have a go.'",
+      "published_at": "2012-03-02 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <script src=\"https://gist.github.com/1959341.js?file=quiz-2.txt\"></script>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/dojo4-quiz-2-have-a-go",
+        "type": "dojo4",
+        "id": "dojo4-quiz-2-have-a-go",
+        "urls": [
+          "/ro/dojo4/dojo4-quiz-2-have-a-go/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-quiz-2-have-a-go",
+          "prev": "dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts",
+          "next": "dojo4/the-worlds-simplest-presenter-pattern"
+        }
+      }
+    },
+    "dojo4/the-worlds-simplest-presenter-pattern": {
+      "title": "The worlds simplest presenter pattern.",
+      "published_at": "2012-03-02 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <script src=\"https://gist.github.com/1888244.js?file=presenter.rb\"></script>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/the-worlds-simplest-presenter-pattern",
+        "type": "dojo4",
+        "id": "the-worlds-simplest-presenter-pattern",
+        "urls": [
+          "/ro/dojo4/the-worlds-simplest-presenter-pattern/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-worlds-simplest-presenter-pattern",
+          "prev": "dojo4/dojo4-quiz-2-have-a-go",
+          "next": "dojo4/dojo4-hosts-young-changemakers-from-around-the-world"
+        }
+      }
+    },
+    "dojo4/dojo4-hosts-young-changemakers-from-around-the-world": {
+      "title": "dojo4 hosts young changemakers from around the world",
+      "published_at": "2012-03-07 00:00:00 UTC",
+      "author": "corey@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>On Monday, March 12th, dojo4 is co-hosting a group of young social innovators, 17-19 years old, from six different countries - Afghanistan, Zambia, Nigeria, Malaysia, Swaziland, and Uganda. They are students in the Social Entrepreneurship Incubator program at the United World College in Montezuma, NM - an international high school, one of the thirteen of its kind around the world.</p>\n\n<p>The students are:</p>\n\n<ul>\n  <li>Gilbert - We Enrich Business - fair micro-finance for blue collar workers in Zambia</li>\n  <li>Mzwakithi - Platforms for Hope - enabling young kids in Swaziland to learn with lap desks</li>\n  <li>Gideon - starting a recycling business on campus in preparation for a larger Recycle Nigeria project</li>\n  <li>Farid &amp; Fiachra - The Library Project - filling an empty library in Palestine</li>\n  <li>Andrew - Transformative Education - transformational learning experiences for high school students in Uganda</li>\n</ul>\n\n<p>From 5-7pm the students will be at <a href=\"http://maps.google.com/maps?q=2030+17th+Street+Boulder,+CO+80302&amp;ll=40.019941,-105.273399&amp;spn=0.00981,0.020063&amp;oe=utf-8&amp;client=firefox-a&amp;hnear=2030+17th+St,+Boulder,+Colorado+80302&amp;gl=us&amp;t=m&amp;z=16&amp;iwloc=r0\">dojo4</a> to meet, practice their pitches, get feedback and make real world connections.  Along with <a href=\"http://w1sd0m.net/\">w1sd0m</a>, the <a href=\"http://w1sd0m.net/\">Hub</a>, and the <a href=\"http://unreasonableinstitute.org/\">Unreasonable Institute</a>, we’re psyched to be supporting these young innovators, entrepreneurs and changemakers.</p>\n\n<p>Please RSVP to <a href=\"mailto:uwc@martincadee.nl\" target=\"_blank\">uwc@martincadee.nl</a>.</p>\n\n<p>The Social Entrepreneurship Incubator is led and hosted by Martin CadÃ©e and Amy McConnell-Franklin - more info at <a href=\"http://uwcusaseinc.wordpress.com/\">http://uwcusaseinc.wordpress.com/</a>.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/dojo4-hosts-young-changemakers-from-around-the-world",
+        "type": "dojo4",
+        "id": "dojo4-hosts-young-changemakers-from-around-the-world",
+        "urls": [
+          "/ro/dojo4/dojo4-hosts-young-changemakers-from-around-the-world/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-hosts-young-changemakers-from-around-the-world",
+          "prev": "dojo4/the-worlds-simplest-presenter-pattern",
+          "next": "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"
+        }
+      }
+    },
+    "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view": {
+      "title": "easy cheasy realtime log tailing in a rails admin view",
+      "published_at": "2012-03-07 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>in our rails apps we always have an ‘/su’ or ‘super user’ section.  we dump stuff like reports into that backend.  recently i needed to allow super users to view logs in realtime from the browser (to assist debugging firewall issues for a license server we built).  i considered doing something clever like websockets and then i became sane and just decided to do the simplest thing that could possibly work - remember, this is super users only so the following polling approach is <em>juuuust dandy</em>…\n<br />\n<br /></p>\n\n<p>step one was to setup an action and view that could tail a log, show it, and then ajax poll update it.  icing was adding a fancy ui (aka <em>link</em>) that could start and stop the polling\n<br />\n<br /></p>\n\n<p>here’s a majority of the relevant codez\n<br />\n<br /></p>\n\n<script src=\"https://gist.github.com/1994292.js?file=tail-f.rb\"></script>\n\n<p><br />\n<br /></p>\n\n<p>step two, shown in that gist, was to quiet down the recursive logger feature i inadvertently added: aka - the polling ajax itself created tons of logger output.\n<br /></p>\n\n<p>so there you have it.  low tech.  easy cheasy.  k.i.s.s. log tailing for admins.\n<br />\n<br /></p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view",
+        "type": "dojo4",
+        "id": "easy-cheasy-realtime-log-tailing-in-a-rails-admin-view",
+        "urls": [
+          "/ro/dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view",
+          "prev": "dojo4/dojo4-hosts-young-changemakers-from-around-the-world",
+          "next": "dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "page": {
+      "count": 9,
+      "size": 42,
+      "first": 0,
+      "last": 8,
+      "index": 0,
+      "curr": 0,
+      "prev": null,
+      "next": 1
+    }
+  }
+}

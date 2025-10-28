@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/workeasy-opening-in-our-neighborhood-soon": {
+      "author": "corey@dojo4.com",
+      "title": "WORKEASY opening in our neighborhood soon...",
+      "published_at": "2016-04-19 20:33:08 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/workeasy-opening-in-our-neighborhood-soon/assets/b.jpeg' alt=\"workeasy_logo_web.jpg\" /> \n<img src='/ro/dojo4/workeasy-opening-in-our-neighborhood-soon/assets/c.jpeg' alt=\"dojo4-panorama-workeasy.jpg\" /> \nThere’s so much to do, but so few conducive places to do it that are open 24/7, well- stocked with good tunes, good people, good things to eat and drink, at a good location. We’ve been feeling the  need for a 24-hour, member-access speakeasy in downtown Boulder that gets ‘er done- we need a WORKEASY. And now we have one! dojo4 is opening WORKEASY on May 15th, upstairs from our offices, for your easy workin’ pleasure. For more info, <a href=\"https://dojo4.wufoo.com/forms/workeasy-membership/\">apply here and now</a>.</p>\n\n<p>WORKEASY is member community space dedicated to enriching the working and social lives of entrepreneurs, coders, designers and changemakers.\nOur mission is nurture individual and community good fortune through providing an uplifted,  untameable and vitalizing members-only, 24-hour-access space in which members can work and play.</p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/workeasy-opening-in-our-neighborhood-soon/assets/b.jpeg",
+          "path": "dojo4/workeasy-opening-in-our-neighborhood-soon/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 291,
+            "height": 344
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/workeasy-opening-in-our-neighborhood-soon/assets/c.jpeg",
+          "path": "dojo4/workeasy-opening-in-our-neighborhood-soon/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 4096,
+            "height": 1166
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/workeasy-opening-in-our-neighborhood-soon",
+        "type": "dojo4",
+        "id": "workeasy-opening-in-our-neighborhood-soon",
+        "urls": [
+          "/ro/dojo4/workeasy-opening-in-our-neighborhood-soon/assets/b.jpeg",
+          "/ro/dojo4/workeasy-opening-in-our-neighborhood-soon/assets/c.jpeg",
+          "/ro/dojo4/workeasy-opening-in-our-neighborhood-soon/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/workeasy-opening-in-our-neighborhood-soon",
+          "prev": "dojo4/tax-day-is-coming-be-not-afraid",
+          "next": "dojo4/your-people-at-workeasy"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "workeasy-opening-in-our-neighborhood-soon"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "data": {
+    "purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights": {
+      "type": "purl",
+      "url": "/media/noaa/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights",
+        "type": "purls",
+        "id": "a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights",
+          "prev": null,
+          "next": "purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls",
+    "id": "a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights"
+  }
+}

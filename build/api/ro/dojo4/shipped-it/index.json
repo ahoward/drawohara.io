@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/shipped-it": {
+      "title": "Shipped It!",
+      "published_at": "2012-09-06 00:00:00 UTC",
+      "author": "fred@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><a href=\"http://selectnewmexico.com\">Select New Mexico</a> is my first Dojo4 project that went live. Select New Mexico is a green chile distributor who wanted a refresh of their web site. It is a great example of the breath of services that Dojo4 provides. Peter designed it, Corey took product photos, Steve built the HTML and CSS and I added transitions and animations to it.</p>\n\n<p>The result is a beautiful, simple web site that celebrates hatch green chiles and makes hungry for a large bowl of pork green chili.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/shipped-it",
+        "type": "dojo4",
+        "id": "shipped-it",
+        "urls": [
+          "/ro/dojo4/shipped-it/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/shipped-it",
+          "prev": "dojo4/fred-jean",
+          "next": "dojo4/from-a-streamlined-startup-stack-to-pci-compliance-on-aws"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "shipped-it"
+  }
+}

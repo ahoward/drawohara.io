@@ -1,0 +1,23 @@
+# Cursor Rules
+
+## Project Guidelines
+Follow the AI agent guidelines maintained in the `/ai/` directory.
+
+## Writing Style
+When helping with writing tasks, refer to `/ai/WRITING.md` for style guidelines.
+
+Key principles from the style guide:
+- Direct and conversational
+- Short paragraphs, clear structure
+- Show examples and reasoning
+- Challenge conventional wisdom
+- No corporate speak
+
+## Code Style
+When writing or reviewing code, refer to `/ai/CODE.md` for coding conventions.
+
+Key principles:
+- Simplicity over cleverness
+- Direct method names
+- Ruby idioms: splat, tap, guards
+- Minimal dependencies

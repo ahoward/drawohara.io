@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/dojo4-ninja-rescues-boulders-food": {
+      "author": "emily@dojo4.com",
+      "title": "dojo4 ninja rescues boulder's food",
+      "published_at": "2015-03-18 16:56:01 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>On his way to work Monday, dojo4 developer Rylan Bowers picked up about 500 lbs of would-be-thrown-away-food from Walmart and powered it over to <a href=\"http://www.hopepantry.org/index.html\">Harvest of Hope</a> <em>on a bike</em>.</p>\n\n<p><img src='/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/b.jpeg' alt=\"BoulderFoodRescue.jpg\" /></p>\n\n<p>Rylan has volunteered almost every Monday for <a href=\"http://www.boulderfoodrescue.org/\">Boulder Food Rescue</a> over the past two years. When asked why, he shared that, “Volunteering my time/energy and giving back to the world/community is very important to me and was ingrained in me from an early age by my mother. Growing up we volunteered with Children’s Home Society in San Diego to help those at a disadvantage in society. When I moved to Boulder I wanted to continue giving back in some way and found Boulder Food Rescue. Food waste and misallocation of resources are major issues worldwide and are important for me to address and be involved in in any way that I can. This was a way I can be involved in volunteering, saving food from going into the garbage can and moving it to people in need while keeping a low carbon footprint. Wins all around!”</p>\n\n<p>In the good ‘ol US of A food waste is arguably a much bigger problem than food shortage.  A comprehensive report from <a href=\"http://endhunger.org/food-waste/\">endhunger.org</a> notes that in 2010, “31% of the 430 billion pounds of the available food supply at the retail and consumer levels went uneaten.” Translation: over half of the daily recommended caloric intake for grown men, much less children, was thrown in the trash.  Meanwhile, <em>1 in 6</em> Americans experiences food insecurity–aka: hunger.</p>\n\n<p>Given this reality, we hope <em>every</em> town and city in America will found it’s own Food Rescue. BFR is <a href=\"http://www.boulderfoodrescue.org/index.php/start-your-own-food-rescue/\">making that possible</a> through advocacy, mentorship and leveraging technology for good. Check out their open sourced <a href=\"https://github.com/somerandomsequence/food-rescue-robot\">Food Rescue Robot</a>, already being used in at least 22 cities.  The Robot reports that Rylan has clocked about 90 pickups, 9,000lbs of rescued food and counting.</p>\n\n<p>If this peaks your curiousity about food justice work locally–and we hope it does–go to the <a href=\"http://www.boulderfoodrescue.org/index.php/forward-food-summit/\">Forward Food Summit</a> next month over at <a href=\"http://www.impacthubboulder.com/\">Impact Hub Boulder</a>.</p>\n\n<p><img src='/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/c.jpeg' alt=\"Forward-Food-Poster.jpg\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/b.jpeg",
+          "path": "dojo4/dojo4-ninja-rescues-boulders-food/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 640
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/c.jpeg",
+          "path": "dojo4/dojo4-ninja-rescues-boulders-food/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1371,
+            "height": 2048
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/dojo4-ninja-rescues-boulders-food",
+        "type": "dojo4",
+        "id": "dojo4-ninja-rescues-boulders-food",
+        "urls": [
+          "/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/b.jpeg",
+          "/ro/dojo4/dojo4-ninja-rescues-boulders-food/assets/c.jpeg",
+          "/ro/dojo4/dojo4-ninja-rescues-boulders-food/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-ninja-rescues-boulders-food",
+          "prev": "dojo4/the-power-of-passion-projects",
+          "next": "dojo4/wanted-gnu-unreasonable-nerds"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-ninja-rescues-boulders-food"
+  }
+}

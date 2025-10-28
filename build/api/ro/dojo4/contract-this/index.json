@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/contract-this": {
+      "author": "corey@dojo4.com",
+      "title": "contract this!",
+      "published_at": "2016-06-22 21:16:49 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/contract-this/assets/b.jpeg' alt=\"contract-meme.jpg\" /></p>\n\n<p>The process of negotiating and getting legal agreements executed can be easy or it can be hard. A lot of that ease or difficulty depends on the relationship between the parties, but a lot also depends on the tool used to document the agreement. It’s always been a necessity for dojo4 that <a href=\"http://dojo4.com/blog/filing-cabinets-are-for-suckers\">this and our other business tools are multi-user, lightweight and online</a>- and so, for years we used a great service called <a href=\"http://www.contractual.ly/\">Contractual.ly</a>. But because they were recently acquired (and thus, sadly for us, shutting down client services) we had to find a good, comparable replacement for creating, negotiating, executing and storing all our contracts. Surprisingly, this proved harder than I would have thought. The basic requirements we were looking for were:</p>\n\n<ul>\n  <li>ability to draft and templatize agreements online</li>\n  <li>ability to share with 3rd parties (clients, contractors, etc.) without them having to create an account with the service</li>\n  <li>ability to have those 3rd parties make real-time edits, not just comments</li>\n  <li>version control</li>\n  <li>ability to sign online and have those 3rd parties sign</li>\n  <li>storage of those executed contracts, preferably within an easily navigable file structure</li>\n  <li>less than $50/month fee</li>\n</ul>\n\n<p>When I asked the folks a Contractual.ly who they might recommend to replace them, they suggested looking at these: <a href=\"http://www.pcmag.com/article2/0,2817,2489199,00.asp\">http://www.pcmag.com/article2/0,2817,2489199,00.asp</a> and <a href=\"https://www.pandadoc.com/\">https://www.pandadoc.com/</a>. There seemed to be some good options there, but in the end, none of them had all the features we need and/or were way out of our price range.</p>\n\n<p>I spent dozens of tedious hours looking at feature lists and on the phone with sometimes confused sales people before I finally found <a href=\"http://www.concordnow.com/\">Concord</a>. Right away, the Concord UI was markedly more elegant and appealing than many of the other services I researched. The needed features are also all there, plus some really helpful integrations with Google Drive and Dropbox, etc. I talked to one of their sales people, who was super helpful, knowledgeable and non-pushy. (If you want to get in touch, too: Ramsay Henderson, <a href=\"mailto:ramsay.henderson@concordnow.com\" target=\"_blank\">ramsay.henderson@concordnow.com</a>, (801)438-4188.)</p>\n\n<p>So we’ve no moved all our contracts and contract services to Concord, and… so far, so good! For small businesses like ours (and maybe yours), it seems like just the ticket. Hopefully our research saves you time and energy.  Small businesses, like ours, are difficult to operate but such a powerful part of doing meaningful work in the world- it’s important to us to share resources to make it easier to do that important work. And in the same vein, don’t forget that we open-source our contract templates and HR policies: [<a href=\"https://github.com/dojo4/policy\" target=\"_blank\">https://github.com/dojo4/policy</a>] (<a href=\"https://github.com/dojo4/policy\" target=\"_blank\">https://github.com/dojo4/policy</a>).</p>\n\n<p>Cheers!</p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/contract-this/assets/b.jpeg",
+          "path": "dojo4/contract-this/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 432,
+            "height": 288
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/contract-this",
+        "type": "dojo4",
+        "id": "contract-this",
+        "urls": [
+          "/ro/dojo4/contract-this/assets/b.jpeg",
+          "/ro/dojo4/contract-this/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/contract-this",
+          "prev": "dojo4/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-1",
+          "next": "dojo4/bigger-paychecks-better-impact"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "contract-this"
+  }
+}

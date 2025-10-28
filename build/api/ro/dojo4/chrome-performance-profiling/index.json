@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/chrome-performance-profiling": {
+      "title": "chrome performance profiling",
+      "author": "miles@dojo4.com",
+      "published_at": "2014-01-02 00:24:31 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>I’ve recently dug a lot deeper into chrome’s abilities to help us gauge and debug performance in our web apps. We always try to use best practices so we don’t usually have an issue with performance, but it’s a very good skill to learn.</p>\n\n<p>I was impressed with google’s documentation on the subject since they’ve re-done the developer website. Instead of writing an introduction to chrome performance gauging and debugging, it’s more valuable to link to their excellent documentation:</p>\n\n<p><a href=\"https://developers.google.com/chrome-developer-tools/\" target=\"_blank\">https://developers.google.com/chrome-developer-tools/</a></p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/chrome-performance-profiling",
+        "type": "dojo4",
+        "id": "chrome-performance-profiling",
+        "urls": [
+          "/ro/dojo4/chrome-performance-profiling/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/chrome-performance-profiling",
+          "prev": "dojo4/digital-ocean-fast-and-cheap-but-good",
+          "next": "dojo4/our-remote-working-setup"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "chrome-performance-profiling"
+  }
+}

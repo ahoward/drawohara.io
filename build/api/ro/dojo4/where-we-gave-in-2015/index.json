@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/where-we-gave-in-2015": {
+      "author": "emily@dojo4.com",
+      "title": "Where We Gave in 2015",
+      "published_at": "2016-01-08 04:13:13 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>B Corp certification is the gold standard of <a href=\"http://www.roundpegcomm.com/how-the-b-corp-certification-provides-crucial-context/\">proof that your company is walking its talk</a>. But aside from affirming what you already do, the process of becoming a B Corp also compels you to <a href=\"http://little-startup-handbook.dojo4.com/be-generous\">clarify your values</a> and write them into the DNA of the company in the form of <a href=\"https://github.com/dojo4/policy/blob/master/hr.md\">policies and practices</a>.</p>\n\n<p>DOJO4 is doing this in quite a few areas, but my personal favorite is our new matching gifts program. Here are a few reasons why your company should start one, too:</p>\n\n<ol>\n  <li>\n    <p>“Generosity is the virtue that produces peace,” says Buddhism (and a lot of other spiritual traditions - Google it). Peace is good. The world could use more of it.</p>\n  </li>\n  <li>\n    <p>No gift is too small to make a difference (and it doubles in size as soon as you match it, anyway). In fact, nationwide <a href=\"https://gusto.com/blog/zenpayroll-giving/\">individuals donate over five times as much as all foundations combined</a>, representing 72% of all charitable giving (which in 2014 totaled about 316 billion!).</p>\n  </li>\n  <li>\n    <p>It’s easy as all get-out to have a matching gifts program. If you’re big, you can use a service like <a href=\"https://support.gusto.com/hc/en-us/articles/210107558-How-Can-My-Employees-Donate-to-Charities-\">Gusto</a>, which we love, and if you’re small you can do what we did and just alert the team in <a href=\"https://www.flowdock.com/features\">Flowdock</a> that you’ll match their gifts up to X amount; they can just add the donate url and amount to the thread and voila!</p>\n  </li>\n  <li>\n    <p>You will be a valuable asset to your community.  Interestingly, almost all of the organizations and causes that our team gave to were local, even though our work is international. It’s always good to give back where you live, and it’ll also raise your business’ profile among friends and neighbors.</p>\n  </li>\n  <li>\n    <p>In a business context, offering a matching gift program (or giving your team members a say in what your company gives to) is a great way to get to know each other in a way that often doesn’t happen during the daily grind. It was delightful and inspiring to see what moved our team members to give, and hear why they chose the causes they did.</p>\n  </li>\n</ol>\n\n<p>For us in 2015, that included:</p>\n\n<ul>\n  <li>\n    <p><a href=\"http://www.block1750.com/\">Block 1750</a></p>\n  </li>\n  <li>\n    <p><a href=\"http://bcap.org/\">Boulder County Aids Project</a></p>\n  </li>\n  <li>\n    <p><a href=\"http://www.boulderfoodrescue.org\">Boulder Food Rescue </a></p>\n  </li>\n  <li>\n    <p>Boulder Shelter for the Homeless <a href=\"http://www.bouldershelter.org/programs.bccares.html\">Boulder County Cares Program </a></p>\n  </li>\n  <li>\n    <p><a href=\"http://www.boulderwomenshealth.org/\">Boulder Valley Women’s Health</a>\n<a href=\"http://communityfoodshare.org/\">Community Food Share</a></p>\n  </li>\n  <li>\n    <p><a href=\"http://www.hopepantry.org/\">Harvest of Hope Pantry</a></p>\n  </li>\n  <li>\n    <p><a href=\"http://neweracolorado.org/\">New Era Colorado Foundation</a></p>\n  </li>\n  <li>\n    <p><a href=\"http://thecompassioncollective.org/\">The Compassion Collective</a></p>\n  </li>\n  <li>\n    <p><a href=\"urgentactionfund.org\">Urgent Action Fund for Women’s Human Rights</a></p>\n  </li>\n  <li>\n    <p>And a Go Fund Me Campaign for <a href=\"https://www.gofundme.com/zugey\">a local mom battling cancer</a>.</p>\n  </li>\n</ul>\n\n<p>So remember, a company can match gifts no matter how small you are or how small the gifts. In business, as in life, <a href=\"http://little-startup-handbook.dojo4.com/be-generous\">be generous and you will be prosperous</a>.</p>\n\n<p><img src='/ro/dojo4/where-we-gave-in-2015/assets/b.jpeg' alt=\"Screen Shot 2016-01-07 at 7.50.26 PM.jpg\" /></p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/where-we-gave-in-2015/assets/b.jpeg",
+          "path": "dojo4/where-we-gave-in-2015/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 500,
+            "height": 736
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/where-we-gave-in-2015",
+        "type": "dojo4",
+        "id": "where-we-gave-in-2015",
+        "urls": [
+          "/ro/dojo4/where-we-gave-in-2015/assets/b.jpeg",
+          "/ro/dojo4/where-we-gave-in-2015/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/where-we-gave-in-2015",
+          "prev": "dojo4/the-black-swan-theory",
+          "next": "dojo4/family-friendly-equals-business-friendly-or-how-to-find-good-people"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "where-we-gave-in-2015"
+  }
+}

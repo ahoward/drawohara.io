@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/chrome-logger": {
+      "published_at": "2013-04-10 00:00:00 UTC",
+      "title": "Chrome Logger",
+      "author": "ryan@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>A cool tool called <a href=\"http://craig.is/writing/chrome-logger\">Chrome Logger</a> has been around for awhile that allows, through a known specification, client side logging from the server. It seemed to have undergone a complete rewrite recently but only had PHP and Python implementations.</p>\n\n<p>After some quick work last night, I was able to release an early version of a Ruby implementation. It’s a Rack middleware packaged as a gem that exposes <code>env['console']</code> from which you can create log messages.</p>\n\n<p>It also comes with easy Rails integration: <code>require 'chrome_logger/railtie'</code></p>\n\n<p>You can check out <a href=\"https://github.com/cookrn/chrome_logger/blob/master/example/config.ru\">an example</a>, read <a href=\"https://github.com/cookrn/chrome_logger\">the code</a>, or just install it!</p>\n\n<p><code>gem install chrome_logger</code></p>\n\n<p>Ryan</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/chrome-logger",
+        "type": "dojo4",
+        "id": "chrome-logger",
+        "urls": [
+          "/ro/dojo4/chrome-logger/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/chrome-logger",
+          "prev": "dojo4/filing-cabinets-are-for-suckers",
+          "next": "dojo4/how-to-get-your-front-end-developers-to-fix-things"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "chrome-logger"
+  }
+}

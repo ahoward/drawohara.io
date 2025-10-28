@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/impact-project-example-idea": {
+      "author": "jesse@dojo4.com",
+      "title": "Impact Project Example Idea",
+      "published_at": "2015-01-15 20:02:25 UTC",
+      "body": "<div class=\"ro markdown\">\n  <h1 id=\"impact-project-idea\">Impact Project Idea</h1>\n\n<h2 id=\"panhandling-app-for-bums\">Panhandling app for bums</h2>\n\n<p><img src='/ro/dojo4/impact-project-example-idea/assets/b.gif' alt=\"Homeless_2D00_indiegogo.06012009.gif\" /></p>\n\n<p>I was just hit up by a bum on the street today who asked me for spare change. I told him I didn’t have any. Then I saw his smartphone in his hand and asked him about it. He said it was an LG. It was in a nice case. I asked him if he had a decent ability to use his phone and he said yes. I told him that all my money basically flows through my phone now and if he had an app that could easily facilitate a small donation, I’d give him a few pieces of spare change. I told him to invent that app and he could make a million dollars instead of begging for spare change. He didn’t respond. I walked away.</p>\n\n<p>I wondered if someone is already working on this. It looks like <a href=\"http://www.ctagroup.org/\">these guys</a> are working on something similar in Silicon Valley but I think they’re missing the mark a bit by aiming to be the “first place in America where homelessness doesn’t exist.” There are plenty of gated communities, small towns etc. where homelessness doesn’t exist. And, I don’t think this should even be the goal. The goal should be to facilitate a higher quality human experience for those living on the margins through smartphone technology, period.</p>\n\n<p>These guys present this info-graphic that shows a lot of opportunity for purpose-driven entrepreneurs to help those among us in the most need. C’mon, humanity, let’s fix the biggest problems human dignity as our next big thing.</p>\n\n<p><img src='/ro/dojo4/impact-project-example-idea/assets/c.png' alt=\"Homeless-Cell-Phone-Stats.png\" /> <a href=\"http://forums.techsoup.org/cs/community/b/tsblog/archive/2014/12/09/can-mobile-phones-solve-homelessness.aspx\">img reference</a></p>\n\n<p>My friend who I was walking with suggested I could perhaps just put a few bucks on the guy’s EBT card. “Great Idea”</p>\n\n<p>I’d love to hear your thoughts and/or help you create this vision for our brothers and sisters on the street.</p>\n\n</div>\n",
+      "assets": {
+        "b.gif": {
+          "url": "/ro/dojo4/impact-project-example-idea/assets/b.gif",
+          "path": "dojo4/impact-project-example-idea/assets/b.gif",
+          "size": 8,
+          "img": {
+            "format": "gif",
+            "width": 525,
+            "height": 484
+          },
+          "src": null
+        },
+        "c.png": {
+          "url": "/ro/dojo4/impact-project-example-idea/assets/c.png",
+          "path": "dojo4/impact-project-example-idea/assets/c.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 980,
+            "height": 349
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/impact-project-example-idea",
+        "type": "dojo4",
+        "id": "impact-project-example-idea",
+        "urls": [
+          "/ro/dojo4/impact-project-example-idea/assets/b.gif",
+          "/ro/dojo4/impact-project-example-idea/assets/c.png",
+          "/ro/dojo4/impact-project-example-idea/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/impact-project-example-idea",
+          "prev": "dojo4/b-the-certifiable-change",
+          "next": "dojo4/5-ways-to-make-owning-a-smartphone-less-stupid"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "impact-project-example-idea"
+  }
+}

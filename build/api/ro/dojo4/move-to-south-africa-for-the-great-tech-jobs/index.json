@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/move-to-south-africa-for-the-great-tech-jobs": {
+      "author": "ara@dojo4.com",
+      "title": "Move To South Africa For The Great Tech Jobs",
+      "published_at": "2015-02-14 05:12:43 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>I had a super fun conversation last week with <a href=\"https://twitter.com/kdavies24\">Keith Davies</a>, Head of Finance, Risk, and Analytics at <a href=\"http://www.ilovezoona.com/\">Zoona Africa</a>, which is a mobile payments platform committed unlocking the full potential of the African continent.</p>\n\n<p><img src='/ro/dojo4/move-to-south-africa-for-the-great-tech-jobs/assets/home2.jpg' alt=\"\" /></p>\n\n<p>I was extremely fortunate to get to know the CEO of Zoona, <a href=\"https://twitter.com/zoonamike\">Mike Quinn</a>, and their Head of Talent, <a href=\"https://twitter.com/lelemba\">Lelemba Phiri</a>, at the <a href=\"http://girleffectaccelerator.com/\">the world’s first accelerator dedicated adolescent girls</a>, and I can say that their company represents a best-in-class effort to use technology and solid business principles to make a positive impact on a population that has real demand for it.</p>\n\n<p>Keith and I talked about all manner of things related to building teams, and hiring good people, which is what led me to write this post: they are looking for a top-notch individual to lead a unique opportunity to do data science on an exploding market in an exciting place, and I think DOJO4’s network might reach this person.</p>\n\n<p>So, as promised, here is Keith’s summary, verbatim, about an opportunity to do meaningful work with great people in Cape Town, South Africa.</p>\n\n<p><em>Please share with great people!</em></p>\n\n<hr />\n\n<p>Zoona (<a href=\"http://www.ilovezoona.com\" target=\"_blank\">www.ilovezoona.com</a>) is a growing African payments business with a passion for helping businesses grow by delivering solutions to Micro &amp; Small Enterprises (MSEs). In countries like Zambia, businesses of all sizes struggle to grow because of challenges transacting in cash, low access to affordable finance and poor and unreliable data. By combining a set of affordable and accessible working capital finance products with a real-time, electronic payments platform, customers are able to transact in an easy, quick and safe way.</p>\n\n<p>Zoona has a sustainable business model and is backed by quality, international investors. We have grown to process millions of dollars in payment value each month in pursuit of our vision of Cashless Growing Businesses…everywhere!</p>\n\n<p>Here are some videos to help make this more tangible</p>\n\n<ul>\n  <li><a href=\"http://vimeo.com/114721782\" target=\"_blank\">http://vimeo.com/114721782</a></li>\n  <li><a href=\"https://www.youtube.com/watch?v=IrpO-uGz_XE\" target=\"_blank\">https://www.youtube.com/watch?v=IrpO-uGz_XE</a></li>\n</ul>\n\n<p>From a data perspective, Zoona is in the enviable position of gathering data on sectors of society where there is very little formal data.  We can therefore use this data to improve our products and services and thereby build financial inclusion (which is considered to be one of the most impactful poverty relief interventions) in these communities.  We have built a data team and proved the value that data can bring to both our business and our customers.  We are now looking to add a strong data scientist to our team that will lead in taking data insights and predictive capabilities to the forefront of our business.  The right person will have deep technical skills and have a burning desire to leverage their skills in a new, socially impactful way.</p>\n\n<p>The position will be based in Cape Town at the tip of South Africa.  Cape Town is a beautiful, cosmopolitan city, with myriad activities to choose from, from great night life to hiking, surfing, sailing, kite-boarding, mountain biking trail running, golf etc and a climate to match.  That is not to even mention the world class (and cheap) food and wine in and around the city.  Cape Town is also emerging as a tech hub with a vibrant startup community. By way of example, Amazon AWS has emerged from and is based out of Cape Town.</p>\n\n<p>This is an incredibly exciting opportunity for anybody who is looking to utilise their cutting edge skills in an industry that is making great strides at sustainablly alleviating poverty.</p>\n\n<p>If this sounds interesting to you, please get in touch with me at <a href=\"mailto:keith@zoona.co.za\" target=\"_blank\">keith@zoona.co.za</a></p>\n\n</div>\n",
+      "assets": {
+        "home2.jpg": {
+          "url": "/ro/dojo4/move-to-south-africa-for-the-great-tech-jobs/assets/home2.jpg",
+          "path": "dojo4/move-to-south-africa-for-the-great-tech-jobs/assets/home2.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1920,
+            "height": 1280
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/move-to-south-africa-for-the-great-tech-jobs",
+        "type": "dojo4",
+        "id": "move-to-south-africa-for-the-great-tech-jobs",
+        "urls": [
+          "/ro/dojo4/move-to-south-africa-for-the-great-tech-jobs/assets/home2.jpg",
+          "/ro/dojo4/move-to-south-africa-for-the-great-tech-jobs/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/move-to-south-africa-for-the-great-tech-jobs",
+          "prev": "dojo4/whats-new-in-dojo4--2-version-notes",
+          "next": "dojo4/orgdev-wants-you"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "move-to-south-africa-for-the-great-tech-jobs"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/office-dog-makes-twitter-splash": {
+      "title": "Office dog makes twitter splash",
+      "published_at": "2011-03-03 00:00:00 UTC",
+      "author": "alyssa@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg' title=\"Moxy2\" alt=\"Moxy2\" rel=\"450x450\" width=\"348\" height=\"450\" /></p>\n<p><a href=\"http://twitter.com/dojodog\" title=\"http://twitter.com/dojodog\"></a>Finally got my own twitter stream to rival that punk <a href=\"http://twitter.com/#!/zipperthedog\" title=\"http://twitter.com/#!/zipperthedog\">@zipperthedog</a> who is always trying to steal my patch of sunshine. Follow me <a href=\"http://twitter.com/#!/dojodog\" title=\"http://twitter.com/#!/dojodog\">@dojodog</a> to hear my exciting adventures.</p>",
+      "assets": {
+        "moxy2.jpg": {
+          "url": "/ro/dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg",
+          "path": "dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 348,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/office-dog-makes-twitter-splash",
+        "type": "dojo4",
+        "id": "office-dog-makes-twitter-splash",
+        "urls": [
+          "/ro/dojo4/office-dog-makes-twitter-splash/assets/moxy2.jpg",
+          "/ro/dojo4/office-dog-makes-twitter-splash/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/office-dog-makes-twitter-splash",
+          "prev": "dojo4/organizational-development-and-leadership-at-dojo4",
+          "next": "dojo4/this-is-dojo4"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "office-dog-makes-twitter-splash"
+  }
+}

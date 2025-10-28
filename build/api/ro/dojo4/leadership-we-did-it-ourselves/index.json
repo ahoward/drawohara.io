@@ -1,0 +1,52 @@
+{
+  "data": {
+    "dojo4/leadership-we-did-it-ourselves": {
+      "author": "corey@dojo4.com",
+      "title": "'leadership: we did it ourselves'",
+      "published_at": "2017-12-06 03:45:53 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><em>A poor leader: the people fear.\nA good leader: the people love.\nA great leader: the people say, “we did it ourselves.”\n-Sun Tzu</em></p>\n\n<p><img src='/ro/dojo4/leadership-we-did-it-ourselves/assets/b.png' alt=\"SunTzu.png\" /></p>\n\n<p>We <a href=\"http://dojo4.com/blog/friday-question\">ask each other a question every Friday at dojo4</a>. It helps us understand ourselves each other better. Recently the question was: what makes an exemplary leader? This question starts to get at the heart of what leadership is. What does it mean to be a leader? How do we lead well in our own lives, not just for others but for ourselves. I thought the answers harvested for our motley crew worth sharing:</p>\n\n<p>An exemplary leader…</p>\n\n<ul>\n  <li>has impeccable ethics.</li>\n  <li>projects calm at the center of the storm.</li>\n  <li>is someone who is not motivated by the desire to be liked, nor the fear of being disliked.</li>\n  <li>understands that there is one mountain, but many passes.</li>\n  <li>has integrity and the ability to hold a path in the face of adversity.</li>\n  <li>can communicate effectively the reasons why a decision was made.</li>\n  <li>will do the dirtiest work.</li>\n</ul>\n\n</div>\n",
+      "assets": {
+        "b.png": {
+          "url": "/ro/dojo4/leadership-we-did-it-ourselves/assets/b.png",
+          "path": "dojo4/leadership-we-did-it-ourselves/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 312,
+            "height": 352
+          },
+          "src": null
+        },
+        "b.png.8db772e5181de54e44e44a3ac88fb384.cloudinary.yml": {
+          "url": "/ro/dojo4/leadership-we-did-it-ourselves/assets/b.png.8db772e5181de54e44e44a3ac88fb384.cloudinary.yml",
+          "path": "dojo4/leadership-we-did-it-ourselves/assets/b.png.8db772e5181de54e44e44a3ac88fb384.cloudinary.yml",
+          "size": 8,
+          "img": null,
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/leadership-we-did-it-ourselves",
+        "type": "dojo4",
+        "id": "leadership-we-did-it-ourselves",
+        "urls": [
+          "/ro/dojo4/leadership-we-did-it-ourselves/assets/b.png",
+          "/ro/dojo4/leadership-we-did-it-ourselves/assets/b.png.8db772e5181de54e44e44a3ac88fb384.cloudinary.yml",
+          "/ro/dojo4/leadership-we-did-it-ourselves/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/leadership-we-did-it-ourselves",
+          "prev": "dojo4/were-all-naked-8-ways-to-help-the-right-clients-find-you",
+          "next": "dojo4/zebras-get-down-to-business-dazzlecon17"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "leadership-we-did-it-ourselves"
+  }
+}

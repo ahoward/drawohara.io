@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/never-play-games-other-secrets-to-success-from-dojo4-s-cto": {
+      "author": "emily@dojo4.com",
+      "title": "Never Play Games & Other Secrets to Success from dojo4's CTO",
+      "published_at": "2014-08-12 21:13:09 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Have you ever wondered how Ara got started as a web developer?  (He used to work on weather data and supercomputers for NOAA, you know).  As one of his non-geek colleagues, <a href=\"http://www.ugurus.com/blog/estimate-the-quality-of-a-developer-by-the-size-of-their-bin-directory-interview-with-ara-howard-of-dojo4\">this ugurus interview</a> provided some interesting backstory for me, and a good window into the evolution of the modern programmers walking among us.</p>\n\n<p>Around 15:40 he goes into “the” two types of developers (and which type he is) as well as daily best practices for productivity and sanity (20:00) - useful if you’re someone who stares at a screen most of the day.</p>\n\n<div class=\"flex-video\">\n<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/udk9jQU8tAc\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n</div>\n\n<p>If you really want to know what our inimitable CTO is all about, you’ll probably have to offer him a beer.  Or, follow him on <a href=\"https://twitter.com/drawohara\">Twitter</a>.</p>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/never-play-games-other-secrets-to-success-from-dojo4-s-cto",
+        "type": "dojo4",
+        "id": "never-play-games-other-secrets-to-success-from-dojo4-s-cto",
+        "urls": [
+          "/ro/dojo4/never-play-games-other-secrets-to-success-from-dojo4-s-cto/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/never-play-games-other-secrets-to-success-from-dojo4-s-cto",
+          "prev": "dojo4/snugg-le-up-the-boulder-energy-challenge-community-pitch-night-tommorrow",
+          "next": "dojo4/who-s-been-busy-in-denver"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "never-play-games-other-secrets-to-success-from-dojo4-s-cto"
+  }
+}

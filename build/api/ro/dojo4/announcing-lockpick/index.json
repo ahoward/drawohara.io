@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/announcing-lockpick": {
+      "published_at": "2013-06-26 00:00:00 UTC",
+      "title": "Announcing Lockpick",
+      "author": "fred@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/announcing-lockpick/assets/lockpick.jpg' alt=\"img\" /></p>\n\n<p>Like many other shops, we deal with many smallish problems. Problems like where to get our coffee from (<a href=\"http://boxcarcoffeeroasters.com/\">Boxcar</a>), where to go for lunch, what editor to use (Vim).</p>\n\n<p>We also struggled with how to manage who has access to our development, staging and production servers. We went through a few iterations attempting to solve this problem. We then hit two realizations:</p>\n\n<ul>\n  <li>Everyone that develop and deploy code are in a single team on GitHub</li>\n  <li>GitHub provides access to the <a href=\"http://developer.github.com/v3/users/keys/\">public SSH key for their user via their API</a></li>\n</ul>\n\n<p>It turns out that SSH <em>public</em> keys are indeed <strong>public</strong>. The impending arrival of <a href=\"http://dojo4.com/blog/miles-smiles\">Miles Matthias</a> provided the motivation to act on this insight. <a href=\"https://github.com/fredjean/lockpick\">lockpick</a> came out of that realization.</p>\n\n<p>We now have the <code>lockpick</code> script on a cron job. Any member of the dojo4 and trusted sub team now has access to our servers.</p>\n\n<p><a href=\"https://github.com/fredjean/lockpick\">lockpick</a> is open source software and is licensed under the MIT license.</p>\n\n<p>–</p>\n\n<p>Image from <a href=\"http://www.flickr.com/photos/ranh/\">Ran Yaniv Hartstein</a>, found on <a href=\"http://flickr.com\">Flickr</a> at <a href=\"http://www.flickr.com/photos/71052670@N00/106709219/in/photolist-aqUW8-2NYNRp-3afgoE-56hKYh-6tsdur-6twmtW-7bBkEv-acmuGx\" target=\"_blank\">http://www.flickr.com/photos/71052670@N00/106709219/in/photolist-aqUW8-2NYNRp-3afgoE-56hKYh-6tsdur-6twmtW-7bBkEv-acmuGx</a></p>\n\n</div>\n",
+      "assets": {
+        "lockpick.jpg": {
+          "url": "/ro/dojo4/announcing-lockpick/assets/lockpick.jpg",
+          "path": "dojo4/announcing-lockpick/assets/lockpick.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 371
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/announcing-lockpick",
+        "type": "dojo4",
+        "id": "announcing-lockpick",
+        "urls": [
+          "/ro/dojo4/announcing-lockpick/assets/lockpick.jpg",
+          "/ro/dojo4/announcing-lockpick/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/announcing-lockpick",
+          "prev": "dojo4/miles-smiles",
+          "next": "dojo4/rising-and-falling-in-business"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "announcing-lockpick"
+  }
+}

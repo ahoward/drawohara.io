@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/a-year-of-vinyl-please": {
+      "author": "jeremy@dojo4.com",
+      "title": "A Year of Vinyl, Please",
+      "published_at": "2016-11-22 16:58:04 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/a-year-of-vinyl-please/assets/b.png' alt=\"s300_beatbundle.png\" /> \nFor over a year DOJO4 has had the pleasure of working with the best damn record store on the Internet, <a href=\"http://www.vinylmeplease.com/\">Vinyl Me, Please</a>. They <a href=\"http://dojo4.com/work/vinyl-me\">believe that music has the ability to connect with people on a much deeper level and that through listening to and discovering music, a person’s life can be legitimately impacted for the better.</a> We believe the same thing, so when they approached us last summer, it immediately felt like a great fit. They were reaching the point where their own internal tech know-how just wasn’t cutting it anymore, and they were not yet at the stage where they were going to hire full time technical staff.</p>\n\n<p>It has been a long and joyous project. Over the past year DOJO4 and Vinyl Me Please have:</p>\n\n<ul>\n  <li>streamlined and automated  the fulfillment process taking what used to be a stressful week for one person to a push-button task.</li>\n  <li>reduced the time, and costs for customer support issues related to product replacement.</li>\n  <li>migrated Vinyl Me, Please from an unscalable web infrastructure that regularly took too much maintenance, to an automated, scalable platform.</li>\n  <li>created a customizable e-commerce store tailored to the needs and business processes of Vinyl Me Please and rolled it out with great success. Vinyl Me, Please no longer has the e-commerce woes it had just six months ago.</li>\n  <li>created a member portal where Vinyl Me, Please’s members may more easily manage their subscriptions and orders.</li>\n</ul>\n\n<p>And to cap it off, we helped Vinyl Me, Please hire their full time technical staff and transition all this work off to them.</p>\n\n<p>Matt Fielder, Founder and CEO of Vinyl Me, Please had this to say about working with us:</p>\n\n<blockquote>\n  <p><em>“DOJO4 is the best dev firm around. They’re amazing people and took the time to understand our business needs before building anything. They gave us the resources that made sense given our objectives and worked within a budget that we set. We look at any contractor as an extension of our team and it’s amazing to have people as smart and passionate as the folks at Dojo on our side.”</em></p>\n</blockquote>\n\n<p>We are so pleased to have spent the past year working alongside Vinyl Me, Please; assisting them in bringing the finest music to their members. And if you want, you can <a href=\"http://www.vinylmeplease.com/select-your-plan/\">become a member</a> or <a href=\"http://www.vinylmeplease.com/gift/\">give a membership</a>.</p>\n\n<p>If you need assistance from a team that will care about your success just <a href=\"http://dojo4.com/contact\">let us know</a>.</p>\n\n</div>\n",
+      "assets": {
+        "b.png": {
+          "url": "/ro/dojo4/a-year-of-vinyl-please/assets/b.png",
+          "path": "dojo4/a-year-of-vinyl-please/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 600,
+            "height": 600
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/a-year-of-vinyl-please",
+        "type": "dojo4",
+        "id": "a-year-of-vinyl-please",
+        "urls": [
+          "/ro/dojo4/a-year-of-vinyl-please/assets/b.png",
+          "/ro/dojo4/a-year-of-vinyl-please/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-year-of-vinyl-please",
+          "prev": "dojo4/trends-community-data-made-easy",
+          "next": "dojo4/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-2"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "a-year-of-vinyl-please"
+  }
+}

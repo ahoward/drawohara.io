@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/responsive-against-lung-cancer": {
+      "author": "corey@dojo4.com",
+      "title": "responsive against lung cancer",
+      "published_at": "2015-04-20 23:25:53 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/responsive-against-lung-cancer/assets/b.png' alt=\"Screen Shot 2015-04-20 at 4.36.23 PM.png\" /></p>\n\n<p><img src='/ro/dojo4/responsive-against-lung-cancer/assets/c.png' alt=\"Screen Shot 2015-04-20 at 4.36.59 PM.png\" /></p>\n\n<p><a href=\"http://dojo4.com/work/su2c\">Working with Stand Up To Cancer</a> has been rewarding for us, not only because the <a href=\"http://www.standup2cancer.org/why_were_different\">innovations this organization support</a> are truly groundbreaking and often lifesaving, but also because they are great to work with. Most recently we implemented a responsive design for their <a href=\"http://www.standup2cancer.org/lungcancer/\">lung cancer campaign</a>. We were able to implement design and Tony Goldwyn’s embedded PSA video responsively to be effective, look great and get this important message across within any screen size.</p>\n\n<p><a href=\"http://www.lung.org/lung-disease/lung-cancer/resources/facts-figures/lung-cancer-fact-sheet.html\">Lung cancer is leading cause of cancer deaths accounting for approximately 27 percent of all cancer deaths in the United States</a>. And Stand Up to Cancer is helping fund <a href=\"http://www.standup2cancer.org/dream_teams/view/su2c_acs_lung_cancer_dream_team\">research</a> that is giving lung cancer patients options that have never been available to them before.</p>\n\n</div>\n",
+      "assets": {
+        "b.png": {
+          "url": "/ro/dojo4/responsive-against-lung-cancer/assets/b.png",
+          "path": "dojo4/responsive-against-lung-cancer/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1868,
+            "height": 1390
+          },
+          "src": null
+        },
+        "c.png": {
+          "url": "/ro/dojo4/responsive-against-lung-cancer/assets/c.png",
+          "path": "dojo4/responsive-against-lung-cancer/assets/c.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 2264,
+            "height": 1450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/responsive-against-lung-cancer",
+        "type": "dojo4",
+        "id": "responsive-against-lung-cancer",
+        "urls": [
+          "/ro/dojo4/responsive-against-lung-cancer/assets/b.png",
+          "/ro/dojo4/responsive-against-lung-cancer/assets/c.png",
+          "/ro/dojo4/responsive-against-lung-cancer/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/responsive-against-lung-cancer",
+          "prev": "dojo4/how-did-you-fund-your-education",
+          "next": "dojo4/crap-developers-fear-mongo-and-worship-the-rdbms"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "responsive-against-lung-cancer"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/screen-set-up-your-project-s-terminal-environment-once-and-only-once": {
+      "published_at": "2013-11-01 00:00:00 UTC",
+      "title": "Screen -- set up your project's terminal environment once and only once.",
+      "author": "miles@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>With any project, I’m running several programs at once during the development process. This usually results in several tabs in the Terminal app - one for my local server, one for my database, one for my client application, and one for git. (Right now I use a GUI editor (ST2), but I may be reverting to vim soon…) This multiple tab setup re-occurs for each project I’m working on, and I’m usually switching between multiple projects several times a day.</p>\n\n<p>With this multi-tab setup, when I have to switch the project that I’m working on, I have to either open a new Terminal window with its own tabs for that project and deal with having a more than required number of windows open (not an option for a minimalist like myself) or close all of the tabs I have open, only to re-open them all when I switch back to that project.</p>\n\n<p>Well like most days, I learned a clever solution to this problem from the dojo4 wise and all-powerful leader, <a href=\"http://dojo4.com/team/ara-t-howard\">Ara</a>. He uses the GNU <a href=\"https://www.gnu.org/software/screen/\">Screen</a> program. Within a single Terminal tab, Screen allows you to open multiple “windows” (aka tabs) within the same Terminal tab. Here’s how to use it:</p>\n\n<pre><code class=\"language-text\"># creating and reattaching to a session\nscreen -S [name] = create a named screen\nscreen -D -R [name] = reattach to a named screen and detach other people if nec\nscreen -list = list screens\n\n# (exiting all windows in a screen session will exit that session. However a screen session is a running process, so you can kill it manually.)\n\n# within a screen session:\nctrl-A + ? = help\nctrl-A + \" = list windows\nctrl-A + c = create new window\nctrl-A + n = next window\nctrl-A + p = previous window\nctrl-A + A = rename a window\n\n# aliases we use\nalias sl='screen -list '\nalias sdr='screen -d -r '\nalias s='screen -D -R '\nalias ss='screen -S'\n\nsdr [name] = reattach to a named screen and detach other people if nec\nss [name] = create a named screen\nsl = list screens\n</code></pre>\n\n<p>Another really cool feature of screen is that when you detach from a screen session, all of your windows remain running, and when you re-attach to the screen session, you have all of your windows back at your disposal.</p>\n\n<p>When we discussed this in our office, <a href=\"http://dojo4.com/team/ryan-cook\">Ryan Cook</a> created a <a href=\"https://gist.github.com/cookrn/2711966\">nice little Ruby helper</a> to create screen sessions that are named after your current directory.</p>\n\n<p>So my workflow has changed from having multiple tabs in Terminal open to a single tab in Terminal where I re-connect to a screen session for each project I’m working on. That allows me to switch projects extremely quickly and to stop wasting time re-setting up and re-tearing down all of the Terminal tabs I’m using for a project.</p>\n\n<p>Now I just have to convert more things to terminal usage (like my editor) in order to really make the most of screen…</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/screen-set-up-your-project-s-terminal-environment-once-and-only-once",
+        "type": "dojo4",
+        "id": "screen-set-up-your-project-s-terminal-environment-once-and-only-once",
+        "urls": [
+          "/ro/dojo4/screen-set-up-your-project-s-terminal-environment-once-and-only-once/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/screen-set-up-your-project-s-terminal-environment-once-and-only-once",
+          "prev": "dojo4/meetings-do-not-need-to-look-like-meetings",
+          "next": "dojo4/dangling-rpc-fruit-off-of-your-rails-controllers"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "screen-set-up-your-project-s-terminal-environment-once-and-only-once"
+  }
+}

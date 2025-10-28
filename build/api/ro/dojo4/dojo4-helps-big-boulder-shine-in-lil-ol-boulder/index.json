@@ -1,0 +1,80 @@
+{
+  "data": {
+    "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder": {
+      "published_at": "2013-06-06 00:00:00 UTC",
+      "title": "dojo4 helps Big Boulder shine in lil' ol' Boulder",
+      "author": "corey@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/screen-shot-2013-06-05-at-4.22.51_PM.png' alt=\"img\" /></p>\n\n<p>Starting today, lil ol’ Boulder hosts <a href=\"http://bigboulderconf.com\">Big Boulder 2013</a>, <a href=\"http://gnip.com/\">Gnip</a>’s second annual, star-studded conference dedicated to social data. We enjoy working with Gnip throughout the year as a client, but supporting this project is always especially fun.</p>\n\n<p>In terms of design, we updated the iconic Flatirons logo for this year’s conference, and redesigned the brochure and lanyards for press. We were also pleased to do the logo and layout design for the <a href=\"http://bigboulderconf.com/initiative\">Big Boulder Initiative</a>, launched today.</p>\n\n<p><img src=\"assets/bigboulderbrosh.png\" alt=\"img\" /></p>\n\n<p>In order to let the killer, responsive aesthetic of the conference (yes, we think it looks gorgeous, in the the flesh and on the phone) shine seemlessly, we made sure all the technical components were properly in place:</p>\n\n<ul>\n  <li>\n    <p>we moved hosting to S3</p>\n  </li>\n  <li>\n    <p>we implemented new <a href=\"https://github.com/fredjean/middleman-s3_sync\">Middleman gems for S3 syncing</a>, gzipping, and other types of site optimization</p>\n  </li>\n  <li>\n    <p>devised strategy for <a href=\"http://2012.bigboulderconf.com/\">old conference</a> / new conference archiving</p>\n  </li>\n  <li>\n    <p>swapped out <a href=\"http://dojo4.com/blog/zurbs-foundation-3-embracing-the-new-old-box-model\">Zurb CSS framework</a> with Twitter Bootstrap for consistency between Gnip’s web properties</p>\n  </li>\n  <li>\n    <p>branded and built <a href=\"http://bigboulderconf.com/initiative\">The Big Boulder Initiative microsite</a></p>\n  </li>\n  <li>\n    <p>helped automate creation of name badges, feeding CSV file into InDesign (a simple tutorial on this to follow this post soon…)</p>\n  </li>\n</ul>\n\n<p><img src=\"assets/bigboulderresponsive.png\" alt=\"img\" /></p>\n\n<p>dojo4 is psyched to be able to support the Gnip team and contribute to this important gathering!</p>\n\n<p><em>this blog post made possible by <a href=\"http://dojo4.com/team/steve-bailey\">Steve</a> and <a href=\"http://dojo4.com/team/anthony-dimitre\">Anthony</a></em></p>\n\n\n</div>\n",
+      "assets": {
+        "BigBoulderBrosh.png": {
+          "url": "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/BigBoulderBrosh.png",
+          "path": "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/BigBoulderBrosh.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 320,
+            "height": 293
+          },
+          "src": null
+        },
+        "BigBoulderResponsive.png": {
+          "url": "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/BigBoulderResponsive.png",
+          "path": "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/BigBoulderResponsive.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 320,
+            "height": 330
+          },
+          "src": null
+        },
+        "Screen_Shot_2013-06-05_at_4.22.51_PM.png": {
+          "url": "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/Screen_Shot_2013-06-05_at_4.22.51_PM.png",
+          "path": "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/Screen_Shot_2013-06-05_at_4.22.51_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 324,
+            "height": 174
+          },
+          "src": null
+        },
+        "screen-shot-2013-06-05-at-4.22.51_PM.png": {
+          "url": "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/screen-shot-2013-06-05-at-4.22.51_PM.png",
+          "path": "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/screen-shot-2013-06-05-at-4.22.51_PM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 324,
+            "height": 174
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder",
+        "type": "dojo4",
+        "id": "dojo4-helps-big-boulder-shine-in-lil-ol-boulder",
+        "urls": [
+          "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/BigBoulderBrosh.png",
+          "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/BigBoulderResponsive.png",
+          "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/Screen_Shot_2013-06-05_at_4.22.51_PM.png",
+          "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/assets/screen-shot-2013-06-05-at-4.22.51_PM.png",
+          "/ro/dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-helps-big-boulder-shine-in-lil-ol-boulder",
+          "prev": "dojo4/large-files-made-small-coming-to-an-airport-near-you",
+          "next": "dojo4/non-icky-javascript-helper-ap-is-on-your-rails-controllers"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-helps-big-boulder-shine-in-lil-ol-boulder"
+  }
+}

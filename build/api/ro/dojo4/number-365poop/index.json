@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/number-365poop": {
+      "author": "emily@dojo4.com",
+      "title": "! '#365poop'",
+      "published_at": "2015-02-19 18:18:26 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>I was recently on a hike, thinking about my to-do list and how I haven’t been posting on the <a href=\"http://dojo4.com/blog/28-days-of-kindness\">#28dayskind project</a> every day this month.</p>\n\n<p>When I fall behind on a commitment, I like to spend a little time <a href=\"http://youtu.be/RZWf2_2L2v8\">blaming others</a> before I <a href=\"http://www.tricycle.com/web-exclusive/train-your-mind-drive-all-blames-one\">drive all blames into one</a>.</p>\n\n<p>As my trusty ego leapt to the defense of my ever-reliable flakiness, I started thinking about all you people out there on the Internet doing things to improve yourselves and the world every damn day, putting me to shame: <a href=\"http://365grateful.com/\">#365grateful</a>, <a href=\"https://www.facebook.com/events/430758197076608/453994228086338/?notif_t=plan_mall_activity\">#28dayskind</a>, <a href=\"https://giveit100.com/\">#giveit100</a>, and so on.</p>\n\n<p>Then I asked myself, “Well, what <em>have</em> we managed to do every day for a year?”  Skipping over things that I do not choose to do, like breathe, I landed one step up from autonomic bodily functions at: drink water. I’m pretty sure I did that every single day - even on the days I didn’t eat, sleep or poop.</p>\n\n<p>When you have a kid, eating and sleeping every day is unlikely (thanks to sleepless nights of the stomach flu), so I think my next goal will be <strong>#365poop</strong>. Baby steps, people.</p>\n\n<p><a href=\"https://twitter.com/jwatsoncreative\">@jessicawatson</a>, are you in, you damned day-maker?  ; )</p>\n\n<p>In all seriousness, though, <a href=\"https://www.facebook.com/events/430758197076608/453994228086338/?notif_t=plan_mall_activity\">28 Days of Kindness</a> has highlighted for me both how innate the daily kindnesses that family and friendship require are, as well as how much effort it takes to step outside of my comfort zone and extend kindness to strangers.  It’s been deeply thought-provoking and inspiring to participate - and worthwhile any day, even if I can’t pull it off everyday.</p>\n\n<p><img src='/ro/dojo4/number-365poop/assets/b.jpeg' alt=\"wonderlandview.jpg\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/number-365poop/assets/b.jpeg",
+          "path": "dojo4/number-365poop/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/number-365poop",
+        "type": "dojo4",
+        "id": "number-365poop",
+        "urls": [
+          "/ro/dojo4/number-365poop/assets/b.jpeg",
+          "/ro/dojo4/number-365poop/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/number-365poop",
+          "prev": "dojo4/5-benefits-to-becoming-a-b-corp",
+          "next": "dojo4/love-is-listening-together"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "number-365poop"
+  }
+}

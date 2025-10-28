@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/resque-best-practices": {
+      "title": "Resque best practices.",
+      "published_at": "2012-07-16 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  \n<h2 id=\"introduction\">Introduction</h2>\n\n<p>Resque ( <a href=\"https://github.com/defunkt/resque\" target=\"_blank\">https://github.com/defunkt/resque</a> ) is a really nice, robust,\nproduction quality background job facility for rails.  However, it leaves alot\nof thinking for the developer to do regarding best practices for modeling your jobs, managing\ndeployments, and managing worker processes.  Following is a set of best\npractices for using resque/redis as your background job system.</p>\n\n<h2 id=\"managing-the-background-processes\">Managing The Background Processes</h2>\n\n<p>Resque has some facilities for managing background processes, but they are\ncruftly and buggy.  We use this simple wrapper script to manage a single\ninstance of the background job daemon:</p>\n\n<p><br />\n<br /></p>\n\n<script src=\"https://gist.github.com/3123756.js?file=jobs.rb\"></script>\n\n<p><br />\n<br /></p>\n\n<h2 id=\"modeling-your-jobs\">Modeling Your Jobs</h2>\n\n<p>One of the first thing to do is to determine how to model your jobs.  Resque\nmakes is pretty simple to submit arbitrary methods on modules, but we prefer\ndoing something a little more sanitary.  In particular we like having ids on\njobs, being able to query them easily, and making them uber durable in the\nface of system or process failures.  By simply consolodating all job logic\ninto a single model that shadows the resque job this is quite possible.  Here\nis our base job class.</p>\n\n<p><br />\n<br /></p>\n\n<script src=\"https://gist.github.com/3123839.js?file=job.rb\"></script>\n\n<p><br />\n<br /></p>\n\n<p>As you can probably see, this class (which could easily be ported to ActiveRecord) allows submission of arbitrary jobs,\nmailer or otherwise, and each job leaves a turd in the main database that ties\nit to the resque/redis entry.  It makes working with jobs objects extremely natural  - for instance having a polling loop check the status of a particular job by id, or getting a quick count of how may jobs have succeeded in the last week.  It also keeps our resque install super vanilla - we don’t use any plugins - and makes it possible to drop in another background processing system in a matter of minutes.\nAbout the only management it needs is a periodic task to to clean out the job\ncollection/table.  We use whenever( <a href=\"https://github.com/javan/whenever/\" target=\"_blank\">https://github.com/javan/whenever/</a> ) plus a rake\ntask to accomplish this:</p>\n\n<p><br />\n<br /></p>\n\n<script src=\"https://gist.github.com/3123860.js?file=jobs.rake\"></script>\n\n<p><br />\n<br /></p>\n\n<script src=\"https://gist.github.com/3123860.js?file=schedule.rb\"></script>\n\n<p><br />\n<br /></p>\n\n<h2 id=\"deployment\">Deployment</h2>\n\n<p>Finally, your deployment needs to keep things going:</p>\n\n<p><br />\n<br /></p>\n\n<script src=\"https://gist.github.com/3123860.js?file=Capfile.rb\"></script>\n\n<p><br /></p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/resque-best-practices",
+        "type": "dojo4",
+        "id": "resque-best-practices",
+        "urls": [
+          "/ro/dojo4/resque-best-practices/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/resque-best-practices",
+          "prev": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it",
+          "next": "dojo4/ports-or-porn-stars"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "resque-best-practices"
+  }
+}

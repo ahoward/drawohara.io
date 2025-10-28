@@ -1,0 +1,27 @@
+{
+  "data": {
+    "purls/global-distribution-and-density-of-constructed-impervious-surfaces": {
+      "type": "purl",
+      "url": "/media/noaa/global-distribution-and-density-of-constructed-impervious-surfaces.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/global-distribution-and-density-of-constructed-impervious-surfaces",
+        "type": "purls",
+        "id": "global-distribution-and-density-of-constructed-impervious-surfaces",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/global-distribution-and-density-of-constructed-impervious-surfaces",
+          "prev": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+          "next": "purls/paulsboutiqueisthegreatestalbumofalltime"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls",
+    "id": "global-distribution-and-density-of-constructed-impervious-surfaces"
+  }
+}

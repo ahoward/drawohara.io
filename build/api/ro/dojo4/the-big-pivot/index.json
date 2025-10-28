@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/the-big-pivot": {
+      "author": "ara@dojo4.com",
+      "title": "The Big Pivot",
+      "published_at": "2015-01-13 18:41:46 -0700",
+      "body": "<div class=\"ro markdown\">\n  <p>‘Pivoting’ is rarely a good thing in software, regardless of how people try\nto spin it to their investors.  It is generally made up of one part ‘we\nfucked up’ and one part ‘try something fast before we drop it!’</p>\n\n<p><img src='/ro/dojo4/the-big-pivot/assets/pivot.gif' alt=\"\" /></p>\n\n<p>Fortunately we’re our own investors at DOJO4 so we don’t need to spin\nanything.  We just needed to <em>pivot</em>.</p>\n\n<p>I don’t like telling stories in order, and you’ve got things to do, so let me\ncut right to the chase:</p>\n\n<ul>\n  <li>DOJO4 is pivoting away from being nothing but a software agency.</li>\n  <li>DOJO4 is focusing all it’s energy on delivering technology to purpose-driven\ncompanies.</li>\n  <li>DOJO4 has made partnerships that enable it to bring development horsepower,\n&amp; financial horsepower, to bear on said selected purpose-driven companies.</li>\n</ul>\n\n<p>To our current customers, whom we value so much, please know that, we are\ncontinuing to support our current, excellent, crop of DOJO4 customers\nindefinitely; we take our all of our commitments seriously, especially those we’ve\nmade to you, who’ve supported us these <a href=\"/blog/ity\">past 5 years</a>. If you’d like to get involved or discuss this with us, please <a href=\"/contact\">just let us know</a> and we can discuss it further.</p>\n\n<p>For those of you who want to be part of our next bumper crop of technically elegant, world-saving, profit-making ventures, step up to the plate, partner with us in changing the world 42 million bytes at a time.</p>\n\n<p><a href=\"/team/jesse-seavers\">Jesse</a> has already begun discussions with some of the\nmost exciting purpose driven companies, and impactful investors, in Colorado,\nbut we’ll be reaching out to more of you internationally over the next three\nmonths in a campaign designed to produce a single result: to bring the\nbest technologists, together with the best investors, into the service of the\npassionate social entrepreneurs that are already dedicating their lives to\nsolving the world’s many endemic problems.</p>\n\n<p>For those of you that want to know more, please give <a href=\"/\">our home page</a>, <a href=\"/manifesto\">mission</a> and <a href=\"/about\">about page</a> a scan.  We’d <a href=\"javascript:void(&quot;feedback&quot;)\" class=\"feedback\">love to know what you think!</a></p>\n\n<p>And if you’d like to start talking to us about this, please <a href=\"/contact\">drop by or get in touch any time</a>.</p>\n\n\n</div>\n",
+      "assets": {
+        "pivot.gif": {
+          "url": "/ro/dojo4/the-big-pivot/assets/pivot.gif",
+          "path": "dojo4/the-big-pivot/assets/pivot.gif",
+          "size": 8,
+          "img": {
+            "format": "gif",
+            "width": 500,
+            "height": 215
+          },
+          "src": null
+        },
+        "unicorn.gif": {
+          "url": "/ro/dojo4/the-big-pivot/assets/unicorn.gif",
+          "path": "dojo4/the-big-pivot/assets/unicorn.gif",
+          "size": 8,
+          "img": {
+            "format": "gif",
+            "width": 500,
+            "height": 326
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/the-big-pivot",
+        "type": "dojo4",
+        "id": "the-big-pivot",
+        "urls": [
+          "/ro/dojo4/the-big-pivot/assets/pivot.gif",
+          "/ro/dojo4/the-big-pivot/assets/unicorn.gif",
+          "/ro/dojo4/the-big-pivot/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/the-big-pivot",
+          "prev": "dojo4/controlling-html5-audio-on-mobile-devices",
+          "next": "dojo4/b-the-certifiable-change"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "the-big-pivot"
+  }
+}

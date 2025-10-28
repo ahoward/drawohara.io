@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/community-happy-hours-have-begun": {
+      "author": "emily@dojo4.com",
+      "title": "Community Happy Hours Have Begun!",
+      "published_at": "2014-11-21 21:32:35 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Last night we hosted the first dojo4 Community Happy Hour, a monthly series featuring a short talk by a presenter from our community, bookended by beer, wine and delectable treats.</p>\n\n<p><strong>5-6:30pm every third Thursday, come to 2030 17th Street.</strong>  Bring a friend, bring a bottle to share and warm up the winter evenings by engaging interesting topics, enjoying each other’s company, and enriching your world.</p>\n\n<p>A big shout out to <a href=\"http://www.boulderdowntown.com/\">Downtown Boulder, Inc.</a> for sponsoring these gatherings!  Keep an eye on <a href=\"https://www.facebook.com/pages/dojo4/109134865775715?sk=events\">dojo4’s Facebook events page</a> for upcoming topics.  Hope to see you there!</p>\n\n<p><img src='/ro/dojo4/community-happy-hours-have-begun/assets/b.jpeg' alt=\"image1.JPG\" /> \n<em>Sol Halpern of <a href=\"http://www.highlanderwealth.com/\">Highlander Wealth: A Mindful Finance Company</a>, enlightening us last night on the basics of being awake with regard to our financial lives.</em></p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/community-happy-hours-have-begun/assets/b.jpeg",
+          "path": "dojo4/community-happy-hours-have-begun/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 2448
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/community-happy-hours-have-begun",
+        "type": "dojo4",
+        "id": "community-happy-hours-have-begun",
+        "urls": [
+          "/ro/dojo4/community-happy-hours-have-begun/assets/b.jpeg",
+          "/ro/dojo4/community-happy-hours-have-begun/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/community-happy-hours-have-begun",
+          "prev": "dojo4/emailadore-on-producthunt",
+          "next": "dojo4/wordpress-isn-t-worth-it-in-the-long-run"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "community-happy-hours-have-begun"
+  }
+}

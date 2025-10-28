@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip": {
+      "author": "corey@dojo4.com",
+      "title": "! 'dojo4 owns it! IP, contracts and why we all benefit when programmers own",
+      "published_at": "2014-09-11 21:40:36 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>dojo4’s general services agreement that we sign with every client includes a clause that describes our IP and what we reserve the right to do with it (see below and <a href=\"https://github.com/dojo4/dojo4/blob/master/docs/dojo4IP_legalese\" target=\"_blank\">https://github.com/dojo4/dojo4/blob/master/docs/dojo4IP_legalese</a>). It says that we absolutely own our IP and that we can use it again and again to do work for our clients. It says that we can release it as open source and that we can build upon what we’ve learned and developed in the past (including through client projects) to build more and even better things for ourselves and our clients.</p>\n\n<p>At first blush, this can sometimes be disconcerting for some clients. Our contracts also specify that dojo4 irrevocably and unconditionally assigns to the client all rights, titles, and interests worldwide to each and every deliverable that that client pays for. But this can sometimes cause misunderstanding since our IP is nested in most deliverables we produce.</p>\n\n<p>In a recent email exchange with a client, our CTO,<a href=\"http://http://dojo4.com/team/ara-t-howard\">Ara Howard</a> explained his take on how this works:</p>\n\n<p><em>…it’s precisely because of the extreme expense of both development and testing of  critical web components that foundational tools like bootstrap (<a href=\"http://getbootstrap.com/\" target=\"_blank\">http://getbootstrap.com/</a>) and eric meyer’s reset\n(<a href=\"http://www.cssreset.com/scripts/eric-meyer-reset-css/\" target=\"_blank\">http://www.cssreset.com/scripts/eric-meyer-reset-css/</a>) are used on literally millions and millions of websites today.</em></p>\n\n<p><em>They are:</em></p>\n\n<p>*1. super expensive to create</p>\n<ol>\n  <li>super expensive to test</li>\n  <li>super expensive to maintain*</li>\n</ol>\n\n<p><em>This why technologists share, and share alike when we reach for off-the-shelf functionality needed across a broad spectrum of projects.</em></p>\n\n<p><em>Although we’re not a giant in the space, dojo4 has developed literally hundreds of tools that we’ve open sourced, shared, and rely on to execute in the most professional way for our clients: <a href=\"https://github.com/ahoward\" target=\"_blank\">https://github.com/ahoward</a>, <a href=\"http://dojo4.com/blog/imbed-for-android\" target=\"_blank\">http://dojo4.com/blog/imbed-for-android</a>, <a href=\"http://dojo4.com/blog/the-shadow-world-of-css-tables\" target=\"_blank\">http://dojo4.com/blog/the-shadow-world-of-css-tables</a>.</em></p>\n\n<p><em>etc.</em></p>\n\n<p><em>If we could not share these foundational tools between projects our estimates would need to increase by a factor of 5-10, and time to market by a similar amount.</em></p>\n\n<p><em>It’s because of this that we advise clients to let us use the mistakes and lessons from other difficult projects on theirs.</em></p>\n\n<p><em>We’re happy not to, but the expense and time increases required are simply not able to be saddled by a majority of projects.</em></p>\n\n<p>We believe that we all benefit from being able to own and share our IP freely.</p>\n\n<p><strong>Excerpted from our general services agreement (feel free to use in yours!):</strong></p>\n\n<p><em>dojo4 IP</em></p>\n\n<p>(a) Client acknowledges and agrees that (i) dojo4 shall retain all\nownership and other rights in and to the dojo4 IP notwithstanding that\nany such dojo4 IP may become known to Client in connection with any\nEngagement Agreement or is integrated into or otherwise becomes a part\nof any of the Deliverables; (ii) Client shall have no ownership\ninterest or title in or to dojo4 IP; and (iii) dojo4 shall be free to\nuse any of the dojo4 IP in connection with performing services or\nproducing deliverables for any third parties so long as it complies\nwith its confidentiality obligations set forth elsewhere herein.</p>\n\n<p>(b) Client shall not (i) modify, create derivative works from,\nreverse‑­engi­neer, decompile, disassemble or otherwise translate\ndojo4 IP in any manner;  (ii) disclose or distribute copies of dojo4\nIP or any portion thereof to third parties except as permitted by the\napplicable Engagement Agreement; (iii) reproduce the dojo4 IP or any\nportion thereof in any form or medium, except as permitted by the\napplicable Engagement Agreement; (iv) use the dojo4 IP for any purpose\nnot specifically authorized by the applicable Engagement Agreement or\nthis Agreement; or (v) remove any copyright notices, trademarks or\nother proprietary legends appearing on or in the dojo4 IP.</p>\n\n<p>note: In summary, dojo4 may to select abstract parts of work performed\nto make open source when it makes sense, but will not make any part of\nany work performed for the Client open source without their\npermission. A significant amount of dojo4 projects, including work for\nhire, contain components of previously open sourced work.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip",
+        "type": "dojo4",
+        "id": "dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip",
+        "urls": [
+          "/ro/dojo4/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip",
+          "prev": "dojo4/su2c-live-telethon-rawked",
+          "next": "dojo4/it-s-in-the-logs-stupid"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip"
+  }
+}

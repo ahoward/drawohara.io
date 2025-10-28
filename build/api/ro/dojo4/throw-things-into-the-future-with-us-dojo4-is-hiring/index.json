@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring": {
+      "title": "Throw things into the future with us. (dojo4 is hiring)",
+      "published_at": "2011-07-06 00:00:00 UTC",
+      "author": "justin@dojo4.com",
+      "body": "<p><img src='/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG' title=\"Photo 3\" alt=\"Photo 3\" rel=\"450x450\" width=\"450\" height=\"336\" />Come work for ALL the Boulder startups!</p>\n<p>dojo4 co-creates incredible technology products with great customers.  We've helped launch many of Boulder's thriving startups: Blipsnips, Everlater, Graphic.ly, RoundPegg, Snugg Home, lokalite, Splickit and many more.</p>\n<p>We are growing our team of excellent professionals. We're hiring more people like us: cloud-deploying API-building HTTP experts; DOM-manipulating mobile-first JQuery-slinging front-end experts; and generalists who rock.</p>\n\n<p>We build stuff.<br />Our culture is built on the premise that engineers thrive when they have challenging work, smart colleagues, good benefits, their choice of tools, a dojo4 hoodie, and respect. We'll treat you right.</p>\n<p>You should have code in the public domain that we can read. You should like hacking on wicked projects. You should be able to own a sale, a project, a process, a server, a meeting, a relationship, an API, a bike. You should come by the shop and pair with us sometime! Email: hire_me@dojo4.com</p>",
+      "assets": {
+        "photo-3.JPG": {
+          "url": "/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG",
+          "path": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 336
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring",
+        "type": "dojo4",
+        "id": "throw-things-into-the-future-with-us-dojo4-is-hiring",
+        "urls": [
+          "/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/assets/photo-3.JPG",
+          "/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring",
+          "prev": "dojo4/the-dojo-is-growing",
+          "next": "dojo4/a-foray-into-the-edu-domain"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "throw-things-into-the-future-with-us-dojo4-is-hiring"
+  }
+}

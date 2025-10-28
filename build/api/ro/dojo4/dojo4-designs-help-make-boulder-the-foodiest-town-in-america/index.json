@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america": {
+      "published_at": "2011-08-08 00:00:00 UTC",
+      "title": "! \"dojo4 designs help make Boulder the \\\"\\x80\\x98Foodiest Town in America\\\"\\x80\\x99\"",
+      "author": "corey@dojo4.com",
+      "body": "<p>dojo4 designed <a href=\"http://localfoodshift.com/\" title=\"http://localfoodshift.com/\">localfoodshift.com</a> to help us all support and eat local. We also designed the <a href=\"http://foodtree.com\" title=\"http://foodtree.com\">foodtree.com</a> web (coming soon) and <a href=\"http://itunes.apple.com/ca/app/foodtree/id446647800?mt=8\" title=\"http://itunes.apple.com/ca/app/foodtree/id446647800?mt=8\">mobile app</a>...</p>\r\n<p><img src='/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png' title=\"Bcfm And 10 Percent Pledge Press Release4\" alt=\"Bcfm And 10 Percent Pledge Press Release4\" rel=\"450x450\" width=\"348\" height=\"450\" /></p>",
+      "assets": {
+        "bcfm-and-10percentpledge-press-release4.png": {
+          "url": "/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png",
+          "path": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 348,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america",
+        "type": "dojo4",
+        "id": "dojo4-designs-help-make-boulder-the-foodiest-town-in-america",
+        "urls": [
+          "/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/assets/bcfm-and-10percentpledge-press-release4.png",
+          "/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america",
+          "prev": "dojo4/a-foray-into-the-edu-domain",
+          "next": "dojo4/lean-development-process-sketch"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "dojo4-designs-help-make-boulder-the-foodiest-town-in-america"
+  }
+}

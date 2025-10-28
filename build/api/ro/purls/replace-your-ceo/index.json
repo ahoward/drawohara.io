@@ -1,0 +1,61 @@
+{
+  "data": {
+    "purls/replace-your-ceo": {
+      "type": "purl",
+      "url": "https://gist.github.com/ahoward/0b20b69b0cb74703fe60ecbf70926563",
+      "og": {
+        "title": "You can program your CEO **now**",
+        "description": "CMO, CEO, CFO. All gone. I am DEV!@@@@@@@@@@@@@@@@",
+        "image": {
+          "url": "/ro/purls/replace-your-ceo/assets/arnold.jpg",
+          "width": 1024
+        }
+      },
+      "assets": {
+        "arnold.jpg": {
+          "url": "/ro/purls/replace-your-ceo/assets/arnold.jpg",
+          "path": "purls/replace-your-ceo/assets/arnold.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1056,
+            "height": 586
+          },
+          "src": null
+        },
+        "arnold.png": {
+          "url": "/ro/purls/replace-your-ceo/assets/arnold.png",
+          "path": "purls/replace-your-ceo/assets/arnold.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1056,
+            "height": 586
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "purls/replace-your-ceo",
+        "type": "purls",
+        "id": "replace-your-ceo",
+        "urls": [
+          "/ro/purls/replace-your-ceo/assets/arnold.jpg",
+          "/ro/purls/replace-your-ceo/assets/arnold.png"
+        ],
+        "created_at": "2025-05-06 08:47:15 +0000",
+        "updated_at": "2025-05-06 08:47:15 +0000",
+        "rel": {
+          "curr": "purls/replace-your-ceo",
+          "prev": "purls/public-sentiment-towards-the-fortune-500-in-america",
+          "next": "purls/software-developer-vs-startup-developer"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls",
+    "id": "replace-your-ceo"
+  }
+}

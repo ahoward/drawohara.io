@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/cheering-for-our-friend-scott-jurek": {
+      "author": "emily@dojo4.com",
+      "title": "Cheering for Our Friend Scott Jurek!",
+      "published_at": "2015-07-09 21:46:33 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><em>“Setting a record on the [Appalachian] Trail means huffing through an ultra marathon once a day, every day, for about six weeks. The total elevation gain and loss is nearly 515,000 feet, and much of it is hardscrabble rock barely identifiable as a trail.”</em></p>\n\n<p>We at the dojo are cheering for our old friend &amp; client, <a href=\"http://scottjurek.com/\">Scott Jurek</a> as he <a href=\"http://www.outsideonline.com/1997316/will-scott-jurek-break-appalachian-trail-record-maybe\">attempts to break the speed record for the AT</a>.</p>\n\n<p>In 2012 we had the enjoyable experience of building a fast-loading <a href=\"http://dojo4.com/blog/static-is-the-new-black\">static website</a> for Scott, to coincide with the launch of his memoir, <a href=\"http://scottjurek.com/eatandrun/\"><em>Eat &amp; Run</em></a>. We worked together to create a visually cohesive brand as well as to incorporate a blog and a calendar plugin that he could edit.</p>\n\n<p><img src='/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/b.jpeg' alt=\"Screen Shot 2015-07-09 at 3.19.19 PM.jpg\" /></p>\n\n<p>We love the site and we love the man.  This quote from <em>Eat &amp; Run</em> could easily have come from our CTO, Ara Howard:</p>\n\n<p>“There’s a joy to discomfort and pain. Any time you push through a barrier of discomfort there’s an ease and a lightness on the other side.”  May that philosophy carry him swiftly into yet another mind-boggling ultra-running record!</p>\n\n<p><img src='/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/c.jpeg' alt=\"Screen Shot 2015-07-09 at 3.19.55 PM.jpg\" /></p>\n\n<h3 id=\"update\">UPDATE</h3>\n\n<p><a href=\"http://www.runnersworld.com/trail-racing/scott-jurek-celebrates-a-new-appalachian-trail-thru-hike-speed-record\">HE DID IT!</a></p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/b.jpeg",
+          "path": "dojo4/cheering-for-our-friend-scott-jurek/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2866,
+            "height": 1466
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/c.jpeg",
+          "path": "dojo4/cheering-for-our-friend-scott-jurek/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1690,
+            "height": 1468
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/cheering-for-our-friend-scott-jurek",
+        "type": "dojo4",
+        "id": "cheering-for-our-friend-scott-jurek",
+        "urls": [
+          "/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/b.jpeg",
+          "/ro/dojo4/cheering-for-our-friend-scott-jurek/assets/c.jpeg",
+          "/ro/dojo4/cheering-for-our-friend-scott-jurek/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/cheering-for-our-friend-scott-jurek",
+          "prev": "dojo4/code-and-and-coffee-at-dojo4",
+          "next": "dojo4/hacking-human-suffering-is-the-only-real-growth-industry"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "cheering-for-our-friend-scott-jurek"
+  }
+}

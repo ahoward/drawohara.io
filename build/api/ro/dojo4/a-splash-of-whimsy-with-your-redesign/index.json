@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/a-splash-of-whimsy-with-your-redesign": {
+      "title": "A Splash of Whimsy with Your Redesign?",
+      "published_at": "2011-10-11 00:00:00 UTC",
+      "author": "steve@dojo4.com",
+      "body": "<figure class=\"txtC mbl\"><img src='/ro/dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png' title=\"Dj4 Reboot\" alt=\"Dj4 Reboot\" rel=\"450x450\" width=\"450\" height=\"255\" /><figcaption class=\"fontItalic font12 serif\">Just how whimsical can a creative agency be?</figcaption>\n</figure>\n \n <p>It's <a href=\"http://www.alistapart.com/articles/beyourownclient/\">widely recognized</a> that redesigning your own website is hard, especially when you're a creative agency whose domain <strong>is</strong> the internet.</p>\n\n  <p>Will your code be the sleekest? Will your design blow clients away? Will your choice of platform showcase your capabilities?</p>\n\n  <p>As thorny as these questions may be, they are mere <em class=\"fontItalic\">technical</em> questions; they can be addressed with the right application of skill and effort.</p>\n\n  <p>The question that can really upend a creative agency endeavoring to redesign is: <span class=\"fontItalic\">How whimsical and goofy can we be?</span> We know the importance of conveying a message, but that doesn't mean it has to be conveyed stodgily.</p>\n\n  <p>When it came to our site, we thought we'd found the right mixture. We'd done market research, crafted personas, and tailored our designs as best we could to those personas.</p>\n\n  <p>Alas! Guerrilla user testing told us we'd miscalculated. \"A little heavy on the whimsy\" was the common refrain.</p>\n\n  <p>So, what went wrong?</p>\n\n  <p>I'd venture to say we got caught up in the excitement of telling our \"design, build, launch\" story. As creative types, we eat metaphors for breakfast, so diving headlong into the metaphorical was easy and fun.</p>\n\n  <p>But, this came at the expense of conveying an easy-to-digest message to the all-powerful 5 second visitor, whose scant attention could make or break our business. Or so the story goes.</p>\n\n  <p>The compromise was to turn our story into a slideshow with the \"what we do\" message directly preceeding the \"dream, build, launch\" story.</p>\n\n  <p>Does it work? Do you have better ideas? Let us know and we'll steal them.</p>\n",
+      "assets": {
+        "dj4-reboot.png": {
+          "url": "/ro/dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png",
+          "path": "dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 450,
+            "height": 255
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/a-splash-of-whimsy-with-your-redesign",
+        "type": "dojo4",
+        "id": "a-splash-of-whimsy-with-your-redesign",
+        "urls": [
+          "/ro/dojo4/a-splash-of-whimsy-with-your-redesign/assets/dj4-reboot.png",
+          "/ro/dojo4/a-splash-of-whimsy-with-your-redesign/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-splash-of-whimsy-with-your-redesign",
+          "prev": "dojo4/happy-birthday-dojo4",
+          "next": "dojo4/thoughts-on-launching-and-scaling-quickly"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "a-splash-of-whimsy-with-your-redesign"
+  }
+}

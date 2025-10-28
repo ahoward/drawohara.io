@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/death-to-password-committers": {
+      "author": "ara@dojo4.com",
+      "title": "Death to Password Committers",
+      "published_at": "2014-04-01 00:50:26 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Recently an article came across my not-rss feed regarding the number of developers who’ve carelessly checked in sensitive credentials for the world to see:</p>\n\n<ul>\n  <li><a href=\"http://www.net-security.org/secworld.php?id=16566\" target=\"_blank\">http://www.net-security.org/secworld.php?id=16566</a></li>\n</ul>\n\n<p>A couple of things struck me about this article:</p>\n\n<ul>\n  <li>\n    <p>How the fuck does any one run a website with ‘security’ <em>and</em> ‘php’ in its urls… ?</p>\n  </li>\n  <li>\n    <p>How much lazier can the average developer be?</p>\n  </li>\n</ul>\n\n<p>Seriously, laziness is generally considered to be a great virtue amongst programmers (<a href=\"http://c2.com/cgi/wiki?LazinessImpatienceHubris\" target=\"_blank\">http://c2.com/cgi/wiki?LazinessImpatienceHubris</a>) but this has never applied to security, despite my own personal penchant for solving problems with ‘chmod -R 0777’.  (temporarily Dave!)</p>\n\n<p>There is an army of developers, listed as contributors to the offending repos, who will argue until they’re red in the face about all sorts of things like editors, languages, frameworks, platforms, css grids, and testing frameworks.  These same developers will check sensitive passwords into a <em>repository</em>, to be preserved like amber in a icy cave, because they just can’t be bothered to write 100 lines of code to properly encrypt stuff that <em>should never be in a repo</em>.</p>\n\n<p>If you are one of those developers please stick an onion slice in you pee-hole and ponder this a bit.</p>\n\n<p>If you’re a company that practices this anti-pattern please use the entire onion.</p>\n\n<p>If you write frameworks that encourage the use of ‘config/hack-my-db-little-pony.yml’ use the entire bag.</p>\n\n<p>OpenSSl isn’t that hard.  Encrypt your shit.  At least encrypt your client’s shit.</p>\n\n<p>Just <em>don’t</em> leave the password your boss, client, or founders use for <em>everything else</em> (because you know they do) lying in the cryogenic freeze of a GitHub repo.  Public <em>or</em> private.</p>\n\n<p>The design patterns to solve this are simple;</p>\n\n<ul>\n  <li><a href=\"https://github.com/ahoward/sekrets\" target=\"_blank\">https://github.com/ahoward/sekrets</a></li>\n</ul>\n\n<p>is one.</p>\n\n<p>If you’re in Ruby, you can flat out <em>have</em> this one.</p>\n\n<p>If not please write one in your language of choice.</p>\n\n<p>But whatever you do, don’t be lazy when it comes to checking in passwords.  It’s just completely and totally - amateur hour #weaksauce.</p>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/death-to-password-committers",
+        "type": "dojo4",
+        "id": "death-to-password-committers",
+        "urls": [
+          "/ro/dojo4/death-to-password-committers/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/death-to-password-committers",
+          "prev": "dojo4/better-errors",
+          "next": "dojo4/meditation-doesn-t-actually-do-anything-dojo"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "death-to-password-committers"
+  }
+}

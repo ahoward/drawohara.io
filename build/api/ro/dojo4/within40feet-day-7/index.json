@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/within40feet-day-7": {
+      "title": "! '#within40feet day 7'",
+      "published_at": "2014-01-29 00:00:00 UTC",
+      "author": "corey@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/within40feet-day-7/assets/within40feet012914.JPG' alt=\"img\" /></p>\n\n<p>ref: <a href=\"http://dojo4.com/blog/within-40-feet-of-where-i-stand\" target=\"_blank\">http://dojo4.com/blog/within-40-feet-of-where-i-stand</a></p>\n\n</div>\n",
+      "assets": {
+        "within40feet012914.JPG": {
+          "url": "/ro/dojo4/within40feet-day-7/assets/within40feet012914.JPG",
+          "path": "dojo4/within40feet-day-7/assets/within40feet012914.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1280,
+            "height": 1280
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/within40feet-day-7",
+        "type": "dojo4",
+        "id": "within40feet-day-7",
+        "urls": [
+          "/ro/dojo4/within40feet-day-7/assets/within40feet012914.JPG",
+          "/ro/dojo4/within40feet-day-7/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/within40feet-day-7",
+          "prev": "dojo4/within40feet-day-6",
+          "next": "dojo4/within40feet-day-8"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "within40feet-day-7"
+  }
+}

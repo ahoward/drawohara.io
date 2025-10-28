@@ -1,4 +1,6 @@
 Site.for 'drawohara.io' do |site|
+  site.layout = './views/layout-minimal.erb'
+
 # /
 #
   site.route '/' do |route|

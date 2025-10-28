@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/sinskey-vin65-and-dragons": {
+      "author": "noah@dojo4.com",
+      "title": "Sinskey, Vin65 and Dragons",
+      "published_at": "2014-04-07 15:59:56 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Once upon a time in a (napa) valley far, far away there was a beautiful vineyard. <a href=\"http://www.robertsinskey.com/\">Robert Sinskey Vineyards</a>, as it was known, produced some of the most remarkable wine on the planet. But there was a problem. Some unrest. Their ecommerce vendor was being unreliable, tyrannical even! So, they called on the dojo to help.</p>\n\n<p>Sinskey had selected <a href=\"http://www.vin65.com/\">Vin65</a> to replace their previous vendor and asked us to find the best way to integrate the new system with their existing site and infrastructure to restore some sense of peace and normalcy to their sunny vineyard. The dream was to have Vin65 integration be as seamless and invisible as possible – this is <em>not</em> the typical use case for Vin65.</p>\n\n<p>Vin65 does offer a set of JavaScript widgets to assist with remote integration. While these are incredibly useful, realization of the ultimate goal still required a good deal of contorting.</p>\n\n<p>We integrated the widgets, restyled the micro-cart and wine listing pages. We also wrote custom javascript to reroute Vin65 hosted pages back to robertsinskey.com. On the backend, we got the Vin65 API to play nicely with BrowserCMS in order to dynamically pull in wines and track inventory.</p>\n\n<p>As with any API/non-custom solution, there were dragons to slay and frogs to kiss. Like all fairytales involving dojo4, things ended happily ever after. <a href=\"http://www.robertsinskey.com/\">Take a look for yourself</a> and grab a bottle or three of some seriously spectacular wine.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/sinskey-vin65-and-dragons",
+        "type": "dojo4",
+        "id": "sinskey-vin65-and-dragons",
+        "urls": [
+          "/ro/dojo4/sinskey-vin65-and-dragons/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/sinskey-vin65-and-dragons",
+          "prev": "dojo4/meditation-doesn-t-actually-do-anything-dojo",
+          "next": "dojo4/aws-dns-https-doj4-hosting"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "sinskey-vin65-and-dragons"
+  }
+}

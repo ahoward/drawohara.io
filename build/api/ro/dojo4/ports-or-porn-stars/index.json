@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/ports-or-porn-stars": {
+      "title": "ports or porn stars?",
+      "published_at": "2012-07-25 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <blockquote class=\"twitter-tweet\"><p>of course you should name ports after porn stars: <a href=\"http://t.co/sVs7SXkN\" title=\"http://antirez.com/post/redis-as-LRU-cache.html\">antirez.com/post/redis-as-â¦</a></p>&mdash; Ara T. Howard (@drawohara) <a href=\"https://twitter.com/drawohara/status/227956168998408193\" data-datetime=\"2012-07-25T02:39:20+00:00\">July 25, 2012</a></blockquote>\n<script src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/ports-or-porn-stars",
+        "type": "dojo4",
+        "id": "ports-or-porn-stars",
+        "urls": [
+          "/ro/dojo4/ports-or-porn-stars/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/ports-or-porn-stars",
+          "prev": "dojo4/resque-best-practices",
+          "next": "dojo4/dojo4-supports-boulder-being-even-more-awesome"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "ports-or-porn-stars"
+  }
+}

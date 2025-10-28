@@ -1,0 +1,68 @@
+{
+  "data": {
+    "dojo4/chop-dojo4-re-envisions-a-calligraphic-element": {
+      "published_at": "2013-01-30 00:00:00 UTC",
+      "title": "Chop! dojo4 re-envisions a calligraphic element.",
+      "author": "peter@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>We were recently approached by a buddhist teacher named Löppon Rechungpa to design identity assets for his <a href=\"http://www.miphamshedra.org/\">meditation center</a>. We decided to simplify the current <a href=\"http://en.wikipedia.org/wiki/Thangka\">thangka</a>-styled mark and go with something elegant, simple, and easy to stamp on collateral. We found <a href=\"https://www.tashimannox.com/\">Tashi Mannox’s</a> inspiring calligraphic works a prime visual resource for the project.</p>\n\n<p>We decided on doing a play on a ‘chop’, which is a calligraphic seal that represents an organization, person, or in some cases an artist. A ‘chop’ needs to have a strong, commanding aesthetic presence. As a brand identity resource we thought a seal was a great option! The client was pleased with our effort and we also made a dojo4 chop for the studio. We love when a project gives us an opportunity to learn new things about the arts and ancient cultures.</p>\n\n<p><img src='/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham2.png' alt=\"img\" /></p>\n\n<p><img src='/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham1.png' alt=\"img\" /></p>\n\n<p><img src='/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/tumblr-mf3543jxyv1qgu8kso1-1280.jpeg' alt=\"img\" /></p>\n\n</div>\n",
+      "assets": {
+        "mipham1.png": {
+          "url": "/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham1.png",
+          "path": "dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham1.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 311,
+            "height": 270
+          },
+          "src": null
+        },
+        "mipham2.png": {
+          "url": "/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham2.png",
+          "path": "dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham2.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 311,
+            "height": 270
+          },
+          "src": null
+        },
+        "tumblr-mf3543jxyv1qgu8kso1-1280.jpeg": {
+          "url": "/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/tumblr-mf3543jxyv1qgu8kso1-1280.jpeg",
+          "path": "dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/tumblr-mf3543jxyv1qgu8kso1-1280.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 612,
+            "height": 612
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/chop-dojo4-re-envisions-a-calligraphic-element",
+        "type": "dojo4",
+        "id": "chop-dojo4-re-envisions-a-calligraphic-element",
+        "urls": [
+          "/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham1.png",
+          "/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/mipham2.png",
+          "/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/assets/tumblr-mf3543jxyv1qgu8kso1-1280.jpeg",
+          "/ro/dojo4/chop-dojo4-re-envisions-a-calligraphic-element/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/chop-dojo4-re-envisions-a-calligraphic-element",
+          "prev": "dojo4/never-debug-alone",
+          "next": "dojo4/why-does-company-culture-matter"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "chop-dojo4-re-envisions-a-calligraphic-element"
+  }
+}

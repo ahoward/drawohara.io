@@ -1,0 +1,27 @@
+{
+  "data": {
+    "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003": {
+      "type": "purl",
+      "url": "/media/noaa/change-detection-in-satellite-observed-nighttime-lights-1992-2003.pdf",
+      "assets": {},
+      "_meta": {
+        "identifier": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+        "type": "purls",
+        "id": "change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+        "urls": [],
+        "created_at": null,
+        "updated_at": null,
+        "rel": {
+          "curr": "purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003",
+          "prev": "purls/can-poverty-rates-be-estimated-using-satellite-data",
+          "next": "purls/global-distribution-and-density-of-constructed-impervious-surfaces"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls",
+    "id": "change-detection-in-satellite-observed-nighttime-lights-1992-2003"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4": {
+      "published_at": "2012-03-14 00:00:00 UTC",
+      "title": "! 'perfect fit: community gathering of young social entrepreneurs at dojo4'",
+      "author": "corey@dojo4.com",
+      "body": "<p style=\"font-style: italic;\"><img rel=\"450x450\" alt=\"Photo\" title=\"Photo\" src='/ro/dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/assets/photo.JPG' height=\"450\" width=\"450\" /></p>\r\n<p style=\"font-style: italic;\">Dear people @ Dojo,</p>\r\n<p style=\"font-style: italic;\">Greg Berry told me about you and advised me to get in touch. My name is Martin Cadee and I'll be bringing a group of 6 international students (17-19)  from the United World College in Montezuma, NM, to Boulder next week. They're all part of a Social Entrepreneurship Incubator that I'm piloting there. Together with Greg Berry (<span>the <a target=\"_blank\" title=\"http://www.hubboulder.com/\" href=\"http://www.hubboulder.com/\">Hub</a>\r\n</span>\r\n<span><span>) and Teju Ravilochan (<a target=\"_blank\" title=\"http://unreasonableinstitute.org/\" href=\"http://unreasonableinstitute.org/\">Unreasonable Institute</a>) we're organizing a meet & pitch. I'm still looking for a space for that event. Greg told me you might have a space available and could be the perfect fit. </span>\r\n</span>\r\n</p>\r\n<p style=\"font-style: italic;\">Warm greetings!</p>\r\n<p style=\"font-style: italic;\">Martin</p>\r\n<p>I'd never met Martin nor heard of the <a target=\"_blank\" title=\"http://uwcusaseinc.wordpress.com/\" href=\"http://uwcusaseinc.wordpress.com/\">Social Entrepreneurship Incubator</a> at the UWC in New Mexico, but it turns out Martin and I know a number of people in common and it felt like a perfect fit, indeed. This is exactly the kind of thing we love to support at dojo4. Community gatherings of innovative entrepreneurs of all ages embody our thinking about the vast possibility that comes from engaging in fearless thinking and the willingness to see problems as workable opportunities. </p>\r\n<p>Less than a week after getting this email from Martin, our space if full of people from all over the world, laughing cheerfully and listening attentively as each person introduces themselves before we hear presentations from each of the 6 UWC students. We have lawyers, local business leaders, journalists, students, activists, friends and family filing every last chair, even sitting on the floor to hear the presentations that range from a proposal to open reopen a defunct library for young people in Palestine to continuing an ongoing micro-lending operation in Nigeria.And the presentations are good- unusually good.</p>\r\n<p>One of the students, Andrew Nalani from Uganda, wrapped it up by talking about the shoulders he stands on that support him in believing in himself, following his inspirations and making real breakthroughs and innovation happen. We stand there, too, and are committed to becoming these shoulders ourselves. </p>",
+      "assets": {
+        "photo.JPG": {
+          "url": "/ro/dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/assets/photo.JPG",
+          "path": "dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/assets/photo.JPG",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 450,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4",
+        "type": "dojo4",
+        "id": "perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4",
+        "urls": [
+          "/ro/dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/assets/photo.JPG",
+          "/ro/dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4",
+          "prev": "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view",
+          "next": "dojo4/relay-twitter-campfire"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4"
+  }
+}

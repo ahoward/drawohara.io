@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/how-to-create-and-apply-a-patch-w-git-across-similar-repositories": {
+      "title": "How to Create and Apply a Patch w/ Git Across Similar Repositories",
+      "published_at": "2012-03-21 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>We have a set of applications we often clone to bootstrap new projects.   Managing downstream updates to many similar, but not precisely the same code bases can be tricky, even with git.  <a href=\"http://twitter.com/cookrn\" target=\"_blank\">http://twitter.com/cookrn</a>  came up with this approach:</p>\n\n<blockquote class=\"twitter-tweet\"><p>creating/applying patch files with git :: <a href=\"https://t.co/w3wUZymh\" title=\"https://gist.github.com/2140571\">gist.github.com/2140571</a> /cc @<a href=\"https://twitter.com/brettgoulder\">brettgoulder</a> @<a href=\"https://twitter.com/drawohara\">drawohara</a></p>&mdash; Ryan Cook (@cookrn) <a href=\"https://twitter.com/cookrn/status/182197510356475904\" data-datetime=\"2012-03-20T20:10:46+00:00\">March 20, 2012</a></blockquote>\n<script src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n\n<p>summarized here</p>\n\n<script src=\"https://gist.github.com/2140571.js\"> </script>\n\n<p>perfect!</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/how-to-create-and-apply-a-patch-w-git-across-similar-repositories",
+        "type": "dojo4",
+        "id": "how-to-create-and-apply-a-patch-w-git-across-similar-repositories",
+        "urls": [
+          "/ro/dojo4/how-to-create-and-apply-a-patch-w-git-across-similar-repositories/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/how-to-create-and-apply-a-patch-w-git-across-similar-repositories",
+          "prev": "dojo4/relay-twitter-campfire",
+          "next": "dojo4/big-boulder-rolling"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "how-to-create-and-apply-a-patch-w-git-across-similar-repositories"
+  }
+}

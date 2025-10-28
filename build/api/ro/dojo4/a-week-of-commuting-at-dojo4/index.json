@@ -1,0 +1,236 @@
+{
+  "data": {
+    "dojo4/a-week-of-commuting-at-dojo4": {
+      "author": "ara@dojo4.com",
+      "title": "A week of commuting at DOJO4",
+      "published_at": "2015-05-08 22:37:09 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/b.jpeg' alt=\"2015-05-06 11.46.18.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/c.jpeg' alt=\"2015-05-08 11.59.11.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/d.jpeg' alt=\"2015-05-08 10.55.31.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/e.jpeg' alt=\"2015-05-08 10.22.12.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/f.jpeg' alt=\"2015-05-08 10.18.08 HDR-2.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/g.jpeg' alt=\"2015-05-08 10.10.09.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/h.jpeg' alt=\"2015-05-08 09.59.25 HDR.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/i.jpeg' alt=\"2015-05-08 09.51.08.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/j.jpeg' alt=\"2015-05-08 09.40.46.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/k.jpeg' alt=\"2015-05-07 18.22.33.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/l.jpeg' alt=\"2015-05-07 10.04.36.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/m.jpeg' alt=\"2015-05-07 09.50.33.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/n.jpeg' alt=\"2015-05-06 12.34.59.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/o.jpeg' alt=\"2015-05-06 12.29.15.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/p.jpeg' alt=\"2015-05-06 11.52.32.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/q.jpeg' alt=\"2015-05-06 11.47.01.jpg\" /></p>\n\n<p><img src='/ro/dojo4/a-week-of-commuting-at-dojo4/assets/r.jpeg' alt=\"2015-05-04 18.47.52.jpg\" /></p>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/b.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 960,
+            "height": 960
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/c.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 2448
+          },
+          "src": null
+        },
+        "d.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/d.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/d.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 2448
+          },
+          "src": null
+        },
+        "e.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/e.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/e.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 2448
+          },
+          "src": null
+        },
+        "f.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/f.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/f.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "g.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/g.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/g.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "h.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/h.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/h.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "i.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/i.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/i.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "j.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/j.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/j.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "k.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/k.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/k.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 2448
+          },
+          "src": null
+        },
+        "l.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/l.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/l.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 2448
+          },
+          "src": null
+        },
+        "m.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/m.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/m.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 960,
+            "height": 960
+          },
+          "src": null
+        },
+        "n.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/n.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/n.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "o.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/o.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/o.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "p.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/p.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/p.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "q.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/q.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/q.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2448,
+            "height": 3264
+          },
+          "src": null
+        },
+        "r.jpeg": {
+          "url": "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/r.jpeg",
+          "path": "dojo4/a-week-of-commuting-at-dojo4/assets/r.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 3264,
+            "height": 2448
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/a-week-of-commuting-at-dojo4",
+        "type": "dojo4",
+        "id": "a-week-of-commuting-at-dojo4",
+        "urls": [
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/b.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/c.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/d.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/e.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/f.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/g.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/h.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/i.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/j.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/k.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/l.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/m.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/n.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/o.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/p.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/q.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/assets/r.jpeg",
+          "/ro/dojo4/a-week-of-commuting-at-dojo4/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/a-week-of-commuting-at-dojo4",
+          "prev": "dojo4/less-is-more-busyness-vs--effectiveness",
+          "next": "dojo4/the-new-startups-got-heart"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "a-week-of-commuting-at-dojo4"
+  }
+}

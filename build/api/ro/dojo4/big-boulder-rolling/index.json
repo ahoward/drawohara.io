@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/big-boulder-rolling": {
+      "published_at": "2012-03-28 00:00:00 UTC",
+      "title": "Big Boulder Rolling",
+      "author": "justin@dojo4.com",
+      "body": "<figure style=\"float:left\" class=\"mbl mrl\"><img src='/ro/dojo4/big-boulder-rolling/assets/bigboulderconf-logo-ideas-2.png' title=\"Big Boulder Conf Logo Ideas 2\" alt=\"Progression of Big Boulder's logomark\" rel=\"450x450\" width=\"170\" height=\"450\" />\r\n</figure>\r\n\r\n<div><p>Today we supported the launch of <a href=\"http://BigBoulderConf.com\" title=\"http://BigBoulderConf.com\">BigBoulderConf.com</a>, a site we designed and built for <a href=\"http://gnip.com\" title=\"http://gnip.com\">GNIP</a>'s <strong>Big Boulder Conference</strong>. We're really pleased with how the project turned out. Here are some of the details:</p>\r\n<h2>A logo and brand</h2>\r\n<p>We decided to start with a logo that turns Boulder's famous Flatirons into a single awesome peak (the \"Big Boulder\", if you will). Our design hero Anthony took basic shapes from the first, second, and third Flatirons and simplified them.</p>\r\n<p>As we worked with our excellent friends Randy and Bre at GNIP, we explored different type treatments in combination with logo. The progression is evident in the image to the left, which illustrates how the final logomark came to be.</p>\r\n<h2>A website for all devices</h2>\r\n<p>We jumped right off the Big Boulder brand into site design. This was a close collaboration between Anthony and our resident HTML samurai, Steve, because we committed at the outset to make this site <strong>highly responsive</strong>. Thanks to Steve's precision bladework, the site looks great on big screens, medium screens and little screens. And, importantly, <strong>the content tapers</strong> to only the most essential items when viewed on the small screen.</p>\r\n<img src='/ro/dojo4/big-boulder-rolling/assets/bigboulder-mobile.png' title=\"Bigboulder Mobile\" alt=\"Bigboulder Mobile\" rel=\"225x255\" width=\"136\" height=\"255\" style=\"float:right\" class=\"mll mbl\" />\r\n<p>We've been using responsive grid libraries such as <a href=\"http://foundation.zurb.com/\" title=\"http://foundation.zurb.com/\">Foundation</a> and <a href=\"http://twitter.github.com/bootstrap/\" title=\"http://twitter.github.com/bootstrap/\">Bootstrap</a> in our apps for some time, so we decided to do the same with Big Boulder.</p>\r\n<p>See for yourself! For instance, compare how the site's header navigation looks on desktops with how it looks on your smartphone.</p>\r\n\r\n<h2>A launch</h2>\r\n<p>Once we had a solid static website built, we mixed in a <a href=\"http://middlemanapp.com/\" title=\"http://middlemanapp.com/\">Middleman</a>. If you build web sites and you've never seen Middleman, check it out. Middleman lets you<strong> templatize your static web site</strong>: Because <strong>it's totally crazy to maintain ten identical copies of a header and a footer</strong>. </p>\r\n<p>Middleman works with a variety of templating languages. We used ERB because we like it. That allowed us to do things like have dynamic title tags on pages, even though the HTML head is elsewhere:</p>\r\n\r\n<p>\r\n<code>  \r\n  &lt;title&gt;&lt;%= (content_for?(:title)) ? yield_content(:title) : \"Big Boulder Conference\" %&gt;&lt;/title&gt;\r\n</code>\r\n</p>\r\n\r\n<p>Middleman also allows us to do things like minimize CSS and JavaScript, and force browsers to load new versions of CSS and JavaScript files:</p>\r\n\r\n<p>\r\n<code>\r\n  &lt;link href=&quot;/stylesheets/style.css?1332972306&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;\r\n</code>\r\n</p>\r\n\r\n<p>And Middleman lets us put important or repetitive data in a YAML file, making the site far more maintainable than a traditional static site.</p>\r\n<div class=\"lightestgrayBg roundMd mll mtm\">\r\n  <pre>  \r\n  registration:\r\n    label: Registration Opened\r\n    description: Register outside of the Xanadu Ballroom at the St Julien Hotel and Spa\r\n  </pre>\r\n</div>\r\n<p>Finally, we built an automated deploy to our staging and production environments (hosted on EC2). Build the site, rsync it to the server.</p>\r\n<div class=\"lightestgrayBg roundMd mll mtm\">\r\n  <pre>  \r\n  middleman build\r\n  rsync -avz ./ user@server.dojo4.com:/ebs/sites/bigboulderconference2012\r\n  </pre>\r\n</div>\r\n<p>Now ain't that pretty?</p>\r\n</div>",
+      "assets": {
+        "bigboulder-mobile.png": {
+          "url": "/ro/dojo4/big-boulder-rolling/assets/bigboulder-mobile.png",
+          "path": "dojo4/big-boulder-rolling/assets/bigboulder-mobile.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 136,
+            "height": 255
+          },
+          "src": null
+        },
+        "bigboulderconf-logo-ideas-2.png": {
+          "url": "/ro/dojo4/big-boulder-rolling/assets/bigboulderconf-logo-ideas-2.png",
+          "path": "dojo4/big-boulder-rolling/assets/bigboulderconf-logo-ideas-2.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 170,
+            "height": 450
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/big-boulder-rolling",
+        "type": "dojo4",
+        "id": "big-boulder-rolling",
+        "urls": [
+          "/ro/dojo4/big-boulder-rolling/assets/bigboulder-mobile.png",
+          "/ro/dojo4/big-boulder-rolling/assets/bigboulderconf-logo-ideas-2.png",
+          "/ro/dojo4/big-boulder-rolling/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/big-boulder-rolling",
+          "prev": "dojo4/how-to-create-and-apply-a-patch-w-git-across-similar-repositories",
+          "next": "dojo4/tagged"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "big-boulder-rolling"
+  }
+}

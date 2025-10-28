@@ -1,0 +1,68 @@
+{
+  "data": {
+    "dojo4/getting-stronger": {
+      "published_at": "2013-02-19 00:00:00 UTC",
+      "title": "getting stronger",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>i think many developers consider the work of development to be about developing software.</p>\n\n<p>for sure it is about that!</p>\n\n<p>however, it’s also about developing the developer.</p>\n\n<p><em>getting stronger.</em></p>\n\n<p>here is a simple algorithm one can use to become a stronger developer:</p>\n\n<ul>\n  <li>\n    <p>understand the problem completely</p>\n  </li>\n  <li>\n    <p>design an abstraction</p>\n  </li>\n  <li>\n    <p>implement the abstraction</p>\n  </li>\n  <li>\n    <p>release the abstraction</p>\n  </li>\n  <li>\n    <p>solicit feedback</p>\n  </li>\n  <li>\n    <p>use feedback to build understanding</p>\n  </li>\n</ul>\n\n<p>that’s pretty abstract for some people to understand, so let me give a concrete example contrasting this developer</p>\n\n<p><img src='/ro/dojo4/getting-stronger/assets/weak.jpg' alt=\"img\" /></p>\n\n<p>from this one</p>\n\n<p><img src='/ro/dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg' alt=\"img\" /></p>\n\n<p>in development of an application that needs to create isosceles and right triangles.</p>\n\n<p>developer one uses the following process:</p>\n\n<ul>\n  <li>\n    <p>pull the ‘isosceles’ card off the board.  don’t bother reading the ‘right triangle’ one.</p>\n  </li>\n  <li>\n    <p>get samples of isosceles triangles.  write code that can reliably produce just those kinds of isosceles triangles the code expects.  since doing more is YAGNI, check it in, make sure CI is green.  and head home.</p>\n  </li>\n</ul>\n\n<p>developer two does instead:</p>\n\n<ul>\n  <li>\n    <p>review the board.  read recent commits.  undestandings the 10,000 ft. roadmap the developer merges the ‘isosceles’ and ‘right’ triangle cards into a single new card called ‘build a triangle domain model’ (understand the problem)</p>\n  </li>\n  <li>\n    <p>developer works on paper, finally arriving at (the abstraction)</p>\n  </li>\n</ul>\n\n<p><img src='/ro/dojo4/getting-stronger/assets/pythagorean.png' alt=\"img\" /></p>\n\n<ul>\n  <li>\n    <p>developer implements code that models generic triangles using the theorem and specialisations for each of the specific types ‘isosceles’ and ‘right’ (implement the abstraction)</p>\n  </li>\n  <li>\n    <p>developer isolates the domain code from non-domain code and pushes a library to github.  (publishing the abstraction and soliciting feedback)</p>\n  </li>\n  <li>\n    <p>developer merges pull request for ‘divide-by-zero’ bug several days later (using feedback to further understanding)</p>\n  </li>\n</ul>\n\n<p>in the end developer one checks of a box and strenghtens his team’s process.  developer two strenghtens the code, the team and, most of all, himself.</p>\n\n<p>by repeating the process over and over developer one can transform himself in developer two by repeated working to strengthen technical and domain muscles.  conversely, developer two can stop training and become soft like developer one.</p>\n\n<p>developer ability is just like muscle: you’ve got to use it or loose it.</p>\n\n\n</div>\n",
+      "assets": {
+        "arnoldschwarzenegger227.jpg": {
+          "url": "/ro/dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg",
+          "path": "dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 481
+          },
+          "src": null
+        },
+        "pythagorean.png": {
+          "url": "/ro/dojo4/getting-stronger/assets/pythagorean.png",
+          "path": "dojo4/getting-stronger/assets/pythagorean.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 100,
+            "height": 20
+          },
+          "src": null
+        },
+        "weak.jpg": {
+          "url": "/ro/dojo4/getting-stronger/assets/weak.jpg",
+          "path": "dojo4/getting-stronger/assets/weak.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 178,
+            "height": 284
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/getting-stronger",
+        "type": "dojo4",
+        "id": "getting-stronger",
+        "urls": [
+          "/ro/dojo4/getting-stronger/assets/arnoldschwarzenegger227.jpg",
+          "/ro/dojo4/getting-stronger/assets/pythagorean.png",
+          "/ro/dojo4/getting-stronger/assets/weak.jpg",
+          "/ro/dojo4/getting-stronger/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/getting-stronger",
+          "prev": "dojo4/cooking-up-a-storm-with-vagrant-librarian-and-chef-solo",
+          "next": "dojo4/competition-at-its-best"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "getting-stronger"
+  }
+}

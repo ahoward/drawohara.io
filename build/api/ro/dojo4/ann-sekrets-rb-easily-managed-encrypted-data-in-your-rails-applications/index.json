@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications": {
+      "published_at": "2013-02-21 00:00:00 UTC",
+      "title": "! '[ANN] sekrets.rb - easily managed encrypted data in your rails'' applications'",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>ref: <a href=\"https://github.com/ahoward/sekrets\" target=\"_blank\">https://github.com/ahoward/sekrets</a></p>\n\n<pre>\n\nNAME\n  sekrets.rb\n\nSYNOPSIS\n  sekrets is a command line tool and library used to securely manage encrypted\n  files and settings in your rails' applications and git repositories.\n\nINSTALL\n  gem install sekrets\n  gem 'sekrets'\n\nDESCRIPTION\n  TL;DR\n    # create an encrypted config file\n    \n      ruby -r yaml -e'puts({:api_key =&gt; 1234}.to_yaml)' | sekrets write config/settings.yml.enc --key 42\n\n    # display it\n\n      sekrets read config/settings.yml.enc --key 42\n\n    # edit it\n\n      sekrets edit config/settings.yml.enc --key 42\n\n    # see that it's encrypted\n\n      cat config/settings.yml.enc\n\n    # commit it\n\n      git add config/settings.yml.enc\n\n    # put the decryption key in a file\n      \n      echo 42 &gt; .sekrets.key\n\n    # ignore this file in git\n\n      echo .sekrets.key &gt;&gt; .gitgnore\n\n    # you now no longer need to provide the --key argument to commands\n\n      sekrets read config/settings.yml.enc\n\n      sekrets edit config/settings.yml.enc\n\n    # make sure this file gets deployed on your server\n\n      echo \" require 'sekrets/capistrano' \" &gt;&gt; Capfile\n\n    # commit and deploy\n\n      git add config/settings.yml.enc\n      git commit -am'encrypted settings yo'\n      git pull &amp;&amp; git push &amp;&amp; cap staging deploy\n\n    # access these settings in your application code\n\n      settings = Sekrets.settings_for('./config/settings.yml.enc')\n      \n\n  DESCRIPTION\n    sekrets provides commandline tools and a library to manage and access\n    encrypted files in your code base.\n\n    it allows one to check encrypted infomation into a repository and to manage\n    it alongside the rest of the code base.  it elimnates the need to check in\n    unencrypted information, keys, or other sensitive infomation.\n\n    sekrets provides both a general mechanism for managing arbitrary encrypted\n    files and a specific mechanism for managing encrypted config files.\n\n\n  KEY LOOKUP\n    for *all* operations, from the command line or otherwise, sekrets uses the\n    following algorithm to search for a decryption key:\n\n    - any key passed directly as a parameter to a library call will be preferred\n\n    - otherwise the code looks for a companion key file.  for example, given the\n      file 'config/sekrets.yml.enc' sekrets will look for a key at\n      \n        config/.sekrets.yml.enc.key\n        \n      if either of these is found to be non-empty the contents of the file will\n      be used as the decryption key for that file.  you should *never* commit\n      these key files and also add them to your .gitignore - or similar.\n\n    - next a project key file is looked for.  the path of this file is\n      \n        ./.sekrets.key\n        \n      normally and, in a rails' application\n\n        RAILS_ROOT/.sekrets.key\n\n    - if that is not found sekrets looks for the key in the environment under\n      the env var\n\n        SEKRETS_KEY\n\n      the env var used is configurable in the library\n\n    - next the global key file is search for, the path of this file is\n\n        ~/.sekrets.key\n\n    - finally, if no key has yet been specified or found, the user is prompted\n      to input the key.  prompt only occurs if the user us attached to a tty.\n      so, for example, no prompt will hang and application being started in the\n      background such as a rails' application being managed by passenger.\n   \n\n    see Sekrets.key_for for more details\n\n  KEY DISTRIBUTION\n    sekrets does *not* attempt to solve the key distribution problem for you,\n    with one exception:\n    \n    if you are using capistrano to do a 'vanilla' ssh based deploy a simple\n    recipe is provided which will detect a local keyfile and scp it onto the\n    remote server(s) on deploy.\n\n    sekrets assumes that the local keyfile, if it exists, is correct.\n\n    in plain english the capistrano recipe does:\n\n      scp ./sekrets.key deploy@remote.host.com:/rails_root/current/sekrets.key\n\n    it goes without saying that the local keyfile should *never* be checked in\n    and also should be in .gitignore\n\n    distribution of this key among developers is outside the scope of the\n    library.  likely unencrypted email is the best mechanism for distribution\n    ;-/\n\n</pre>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications",
+        "type": "dojo4",
+        "id": "ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications",
+        "urls": [
+          "/ro/dojo4/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications",
+          "prev": "dojo4/competition-at-its-best",
+          "next": "dojo4/marshal-mongoid-object-like-butter"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications"
+  }
+}

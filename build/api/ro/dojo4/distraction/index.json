@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/distraction": {
+      "title": "Distraction",
+      "published_at": "2012-07-06 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>This message recently went out to our crew.  How do you manage distraction?</p>\n\n<hr />\n\n<p>working in the digital realm is an awesomely overpowering source of distraction that drives us to consume without creating.  some ideas for fighting back</p>\n\n<ul>\n  <li>\n    <p>shut off email</p>\n  </li>\n  <li>\n    <p>answer emails once, or twice, per day</p>\n  </li>\n  <li>\n    <p>shut of twitter, assbook, and other social networks</p>\n  </li>\n  <li>\n    <p>shut of propane.  we’ll find you iff we need to</p>\n  </li>\n  <li>\n    <p>do one thing at a time.  multi-tasking is distraction itself.</p>\n  </li>\n  <li>\n    <p>block out time.  this in the morning.  that in the afternoon.</p>\n  </li>\n  <li>\n    <p>finish something.  stopping at 90% costs time, money, and creates and open loop in your mind</p>\n  </li>\n  <li>\n    <p>focus on methods that let you create without consuming: you can post a picture without logging into twitter/facebook/tumblr by just sharing an image via email to your account.  you can create posts, gists, or other content using scripts or tools that let you do so without reading/consuming other cones.  you can ‘git commit’ even when the internet is completely off.</p>\n  </li>\n  <li>\n    <p>build you own.  sure you can find it on google - along with a 45 minute diversion into the abyss</p>\n  </li>\n  <li>\n    <p>IM is the devil</p>\n  </li>\n  <li>\n    <p>adjust your phone so that, if it rings, you know you have to pick it up</p>\n  </li>\n  <li>\n    <p>spend time and aggressively filter you inbox with gmail.  if it makes it into your inbox is should be important by default.  everything else should be filters or deleted automatically.</p>\n  </li>\n</ul>\n\n<p>UPDATE from <a href=\"http://dojo4.com/#Corey\" target=\"_blank\">http://dojo4.com/#Corey</a></p>\n\n<hr />\n\n<ul>\n  <li>when you notice that you are distracted, go for a walk around the block</li>\n  <li>talking in person (especially when the other person is in the same room) is likely a more effective, quicker and less convoluted option than email</li>\n  <li>don’t always trust the impulse to answer all emails / txts immediately - a little space, even a few minutes, will probably make the communication more effective</li>\n  <li>regular eye yoga <a href=\"http://www.youtube.com/watch?v=00XqvNwYMoc\" target=\"_blank\">http://www.youtube.com/watch?v=00XqvNwYMoc</a> !</li>\n</ul>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/distraction",
+        "type": "dojo4",
+        "id": "distraction",
+        "urls": [
+          "/ro/dojo4/distraction/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/distraction",
+          "prev": "dojo4/zurb-s-foundation-3-embracing-the-new-old-box-model",
+          "next": "dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "distraction"
+  }
+}

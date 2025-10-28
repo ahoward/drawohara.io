@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/buy-some-dojo4-merch": {
+      "published_at": "2013-11-15 00:00:00 UTC",
+      "title": "Buy some dojo4 merch!",
+      "author": "miles@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>Looking to get more dojo4 awesome-ness? We just launched a merchandise store, so now your aspirations to look as fly as us can finally be fulfilled.</p>\n\n<p>Right now we have three awesome products available with our logo:</p>\n\n<ul>\n  <li>t-shirt:</li>\n</ul>\n\n<pre><code class=\"language-text\">T-shirt + dojo4 logo = incredible. Pick your color. Be awesome.\n</code></pre>\n\n<ul>\n  <li>coffee mug:</li>\n</ul>\n\n<pre><code class=\"language-text\">get your dojo4 on in the morning. also cures hangovers. \n</code></pre>\n\n<ul>\n  <li>mousepad:</li>\n</ul>\n\n<pre><code class=\"language-text\">We'll comfort you with a dojo4 mousepad if you're not ready to accept the future of trackpads just yet. Shh, shh, it's okay. Buy a dojo4 mousepad and all will be okay.\n</code></pre>\n\n<p>Checkout <a href=\"http://dojo4.myshopify.com\">dojo4.myshopify.com</a> and order some dojo4 swag!</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/buy-some-dojo4-merch",
+        "type": "dojo4",
+        "id": "buy-some-dojo4-merch",
+        "urls": [
+          "/ro/dojo4/buy-some-dojo4-merch/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/buy-some-dojo4-merch",
+          "prev": "dojo4/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army",
+          "next": "dojo4/we-didn-t-find-this-green-coat-in-the-office"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "buy-some-dojo4-merch"
+  }
+}

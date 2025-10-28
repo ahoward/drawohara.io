@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/luxury-vacations-need-we-say-more": {
+      "author": "noah@dojo4.com",
+      "title": "Luxury Vacations, Need We Say More?",
+      "published_at": "2014-05-02 15:42:13 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Quintess, a luxury vacation rental club, launched a sparkly new site/app this week and we couldn’t be happier. dojo4 worked along side Quintess’ extremely talented internal staff to help design and implement their new home on the web. It’s gorgeous, both visually and functionally. While we might be slightly biased, take a look for yourself and be sure to drool over their offerings while you’re there:</p>\n\n<p><a href=\"http://quintess.com/\" target=\"_blank\">http://quintess.com/</a></p>\n\n<p><img src='/ro/dojo4/luxury-vacations-need-we-say-more/assets/b.jpeg' alt=\"\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/luxury-vacations-need-we-say-more/assets/b.jpeg",
+          "path": "dojo4/luxury-vacations-need-we-say-more/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 900,
+            "height": 892
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/luxury-vacations-need-we-say-more",
+        "type": "dojo4",
+        "id": "luxury-vacations-need-we-say-more",
+        "urls": [
+          "/ro/dojo4/luxury-vacations-need-we-say-more/assets/b.jpeg",
+          "/ro/dojo4/luxury-vacations-need-we-say-more/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/luxury-vacations-need-we-say-more",
+          "prev": "dojo4/habits-as-a-conduit-for-change",
+          "next": "dojo4/we-re-flying-high-on-bitballoon"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "luxury-vacations-need-we-say-more"
+  }
+}

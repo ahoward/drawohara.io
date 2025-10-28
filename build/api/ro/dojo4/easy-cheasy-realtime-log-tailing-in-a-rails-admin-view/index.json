@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view": {
+      "title": "easy cheasy realtime log tailing in a rails admin view",
+      "published_at": "2012-03-07 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>in our rails apps we always have an ‘/su’ or ‘super user’ section.  we dump stuff like reports into that backend.  recently i needed to allow super users to view logs in realtime from the browser (to assist debugging firewall issues for a license server we built).  i considered doing something clever like websockets and then i became sane and just decided to do the simplest thing that could possibly work - remember, this is super users only so the following polling approach is <em>juuuust dandy</em>…\n<br />\n<br /></p>\n\n<p>step one was to setup an action and view that could tail a log, show it, and then ajax poll update it.  icing was adding a fancy ui (aka <em>link</em>) that could start and stop the polling\n<br />\n<br /></p>\n\n<p>here’s a majority of the relevant codez\n<br />\n<br /></p>\n\n<script src=\"https://gist.github.com/1994292.js?file=tail-f.rb\"></script>\n\n<p><br />\n<br /></p>\n\n<p>step two, shown in that gist, was to quiet down the recursive logger feature i inadvertently added: aka - the polling ajax itself created tons of logger output.\n<br /></p>\n\n<p>so there you have it.  low tech.  easy cheasy.  k.i.s.s. log tailing for admins.\n<br />\n<br /></p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view",
+        "type": "dojo4",
+        "id": "easy-cheasy-realtime-log-tailing-in-a-rails-admin-view",
+        "urls": [
+          "/ro/dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view",
+          "prev": "dojo4/dojo4-hosts-young-changemakers-from-around-the-world",
+          "next": "dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "easy-cheasy-realtime-log-tailing-in-a-rails-admin-view"
+  }
+}

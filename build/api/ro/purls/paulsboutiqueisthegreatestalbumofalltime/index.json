@@ -1,0 +1,50 @@
+{
+  "data": {
+    "purls/paulsboutiqueisthegreatestalbumofalltime": {
+      "type": "purl",
+      "og": {
+        "title": "Q: is paul's boutique the greatest album of all time",
+        "description": "\"A: yes\"",
+        "image": {
+          "url": "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "width": 1920
+        }
+      },
+      "body": "<div class=\"ro markdown\">\n  <h3 id=\"1\">1.</h3>\n<p><br /></p>\n<iframe width=\"100%\" height=\"52\" src=\"https://odesli.co/embed/?url=https%3A%2F%2Fsong.link%2Fi%2F723654604&amp;theme=dark\" frameborder=\"0\" allowfullscreen=\"\" sandbox=\"allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox\" allow=\"clipboard-read; clipboard-write\"></iframe>\n\n<h3 id=\"2\">2.</h3>\n<p><br />\n<img src='/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg' alt=\"beastie boys\" /></p>\n\n<h3 id=\"3\">3.</h3>\n<hr />\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/_U82_MiB2OM?si=Y6Ube-2E7wyP_rX5&amp;start=27\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\"></iframe>\n\n<h3 id=\"4\">4.</h3>\n<hr />\n\n<blockquote>\n  <p>” dropping science like galileo dropped an orange</p>\n</blockquote>\n\n</div>\n",
+      "assets": {
+        "bboyz.jpg": {
+          "url": "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "path": "purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "size": 8,
+          "img": {
+            "format": "avif",
+            "width": 1920,
+            "height": 1257
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "purls/paulsboutiqueisthegreatestalbumofalltime",
+        "type": "purls",
+        "id": "paulsboutiqueisthegreatestalbumofalltime",
+        "urls": [
+          "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/assets/bboyz.jpg",
+          "/ro/purls/paulsboutiqueisthegreatestalbumofalltime/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:15 +0000",
+        "updated_at": "2025-05-06 08:47:15 +0000",
+        "rel": {
+          "curr": "purls/paulsboutiqueisthegreatestalbumofalltime",
+          "prev": "purls/global-distribution-and-density-of-constructed-impervious-surfaces",
+          "next": "purls/public-sentiment-towards-the-fortune-500-in-america"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls",
+    "id": "paulsboutiqueisthegreatestalbumofalltime"
+  }
+}

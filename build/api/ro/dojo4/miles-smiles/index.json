@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/miles-smiles": {
+      "published_at": "2013-06-25 00:00:00 UTC",
+      "title": "Miles Smiles",
+      "author": "peter@dojo4.com",
+      "body": "<p>We want to welcome our newest developer, <a href=\"https://twitter.com/miles_matthias\">Miles Matthias</a> to the magical realm of dojo4! dojo4, where everyday is <a href=\"http://biketowork2013.org/\">Ride Your Bike To Work Day</a> and the IPA flows like an eternal spring. We met this morning and over some delicious <a href=\"http://boxcarcoffeeroasters.com/\">Boxcar Coffee</a> discussed the causes and conditions of his ascent to power.</p>\r\n  \r\n<h2>Favorite Cryptozoological Creature:</h2> \r\n<p><a href=\"http://en.wikipedia.org/wiki/Bigfoot\">Bigfoot</a></p>\r\n<h2>Favorite Writer:</h2>\r\n<p><a href=\"http://en.wikipedia.org/wiki/David_McCullough\">David McCullough</a></p>\r\n<h2>Nude Beaches?</h2><p>Resounding no.</p>\r\n<h2>Development Passion:</h2>\r\n<p>Integrating fluidity and simplicity into the development craft.</p>\r\n<h2>Approach to Living:</h2>\r\n<p>Organized and minimalistic (neat freak?)</p>\r\n<h2>Favorite Design Book:</h2>\r\n<p><a href=\"http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107\">The Design of Everyday Things</a></p>\r\n<h2>Secret Power:</h2>\r\n<p><a href=\"http://en.wikipedia.org/wiki/Speed_reading\">Speed Reading</a></p>\r\n<h2>dojo4 Meetup Subject:</h2>\r\n<p><a href=\"http://meteor.com/\">Meteor.js</a></p>\r\n\r\n<p>In closing, we suggest you get to know dojo4's new iOS, HTML/CSS, javascript dev. Check him at <a href=\"https://twitter.com/miles_matthias\">@miles_matthias</a> or at <a href=\"http://milesmatthias.com/\">http://milesmatthias.com/</a> and get to some conversin'!</p>\r\n<p>Oh yeah, one more thing!</p>\r\n<h2>Favorite Steed:</h2>\r\n<p><img src='/ro/dojo4/miles-smiles/assets/nph-unicorn.png'></p>",
+      "assets": {
+        "NPH_unicorn.png": {
+          "url": "/ro/dojo4/miles-smiles/assets/NPH_unicorn.png",
+          "path": "dojo4/miles-smiles/assets/NPH_unicorn.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 640,
+            "height": 327
+          },
+          "src": null
+        },
+        "nph-unicorn.png": {
+          "url": "/ro/dojo4/miles-smiles/assets/nph-unicorn.png",
+          "path": "dojo4/miles-smiles/assets/nph-unicorn.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 640,
+            "height": 327
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/miles-smiles",
+        "type": "dojo4",
+        "id": "miles-smiles",
+        "urls": [
+          "/ro/dojo4/miles-smiles/assets/NPH_unicorn.png",
+          "/ro/dojo4/miles-smiles/assets/nph-unicorn.png",
+          "/ro/dojo4/miles-smiles/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/miles-smiles",
+          "prev": "dojo4/another-quiz",
+          "next": "dojo4/announcing-lockpick"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "miles-smiles"
+  }
+}

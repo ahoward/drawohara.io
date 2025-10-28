@@ -1,0 +1,61 @@
+{
+  "data": {
+    "purls/public-sentiment-towards-the-fortune-500-in-america": {
+      "type": "purl",
+      "url": "https://gist.github.com/ahoward/41b06d15d7afeed9fd82726057ad2646",
+      "og": {
+        "title": "Public Sentiment Towards The Fortune 500",
+        "description": "AI, and 1 million *real* conversations were analyzed to produce this response.",
+        "image": {
+          "url": "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "width": 1024
+        }
+      },
+      "assets": {
+        "free-luigi.jpg": {
+          "url": "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "path": "purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        },
+        "free-luigi.png": {
+          "url": "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.png",
+          "path": "purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1024,
+            "height": 1316
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "purls/public-sentiment-towards-the-fortune-500-in-america",
+        "type": "purls",
+        "id": "public-sentiment-towards-the-fortune-500-in-america",
+        "urls": [
+          "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.jpg",
+          "/ro/purls/public-sentiment-towards-the-fortune-500-in-america/assets/free-luigi.png"
+        ],
+        "created_at": "2025-05-06 08:47:15 +0000",
+        "updated_at": "2025-05-06 08:47:15 +0000",
+        "rel": {
+          "curr": "purls/public-sentiment-towards-the-fortune-500-in-america",
+          "prev": "purls/paulsboutiqueisthegreatestalbumofalltime",
+          "next": "purls/replace-your-ceo"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "purls",
+    "id": "public-sentiment-towards-the-fortune-500-in-america"
+  }
+}

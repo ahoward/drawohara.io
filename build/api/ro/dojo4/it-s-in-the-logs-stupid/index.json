@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/it-s-in-the-logs-stupid": {
+      "author": "spike@dojo4.com",
+      "title": "It’s in the Logs, Stupid...",
+      "published_at": "2014-09-12 18:58:04 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>(This post originally appeared on Spike’s <a href=\"http://www.stuff-things.net/\">Stuff… And Things… blog</a>)</p>\n\n<p>Yesterday, I was involved in a fire drill around the launch of a new Rails site on a very tight time frame. The site worked fine in development/staging, but the index was taking upwards of 10 seconds to render in production.</p>\n\n<p>Because it worked outside of production we leapt to the conclusion it was related to the hosting infrastructure. We checked Apache, Passenger, server load, network configuration, and so on. Nothing.</p>\n\n<p>Finally, I thought to check <code>log/production.log</code>, and there is was:</p>\n\n<pre><code>Processing by BlahController#index as */*\n  Rendered blah/_carousel.html.erb (5795.2ms)\n  Rendered blah/index.html.erb within layouts/site (5801.5ms)\n</code></pre>\n\n<p>We quickly tracked it down some image processing that wasn’t being cached. It didn’t show outside of production because the image assets were different. I won’t bore you with the details.</p>\n\n<p>However, I will <del>bore</del> enlighten you as to my point. When debugging a problem, start with the simple things. The Rails logs aren’t very detailed, but they provide more than enough information to quickly drill down to problems in your code.</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/it-s-in-the-logs-stupid",
+        "type": "dojo4",
+        "id": "it-s-in-the-logs-stupid",
+        "urls": [
+          "/ro/dojo4/it-s-in-the-logs-stupid/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/it-s-in-the-logs-stupid",
+          "prev": "dojo4/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip",
+          "next": "dojo4/this-blog-posted-from-behind-the-locked-door-of-the-bathroom-at-dojo4"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "it-s-in-the-logs-stupid"
+  }
+}

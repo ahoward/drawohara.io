@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/aws-ebs-backups-we-rewrote-drebs": {
+      "author": "miles@dojo4.com",
+      "title": "! 'AWS EBS Backups: We Rewrote Drebs'",
+      "published_at": "2014-06-23 16:58:01 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>The other day we released version 0.1.0 of <a href=\"https://rubygems.org/gems/drebs\">DREBS</a>, our Disaster Recovery for Elastic Block Storage script. We use it every hour on all 3 of our EC2 instances, backing up 6 different EBS volumes. This script is crucial to us and the AWS community at large because Amazon does not officially support any such script or tool to provide backups. There are several SaaS products out there which provide the functionality, but open source scripts for hackers like us are far and few between. The newly rewritten version is production ready and we hope you’ll enjoy it as much as we do.</p>\n\n<p>Last year, former dojo4 employee and forever friend of the dojo <a href=\"https://twitter.com/shulmang\">Garett Shulman</a>, released the <a href=\"http://dojo4.com/blog/a-simple-backup-strategy-for-amazon-cloud-hosts\">first version of DREBS</a>. It had the simple goal of allowing an administrator to define backup strategies and pre/post backup tasks (mysqldump, etc.) for each EBS volume mounted to an EC2 instance. A simple cron task runs DREBS every  hour, which goes through each EBS instance’ backup strategy and if the strategy indicates a backup should happen, DREBS uses the <a href=\"https://github.com/rightscale/right_aws\">right_aws</a> gem to backup the volume and upload it to the AWS account as an EBS snapshot.</p>\n\n<p>The new version of DREBS provides the same functionality but with a few improvements:</p>\n\n<ul>\n  <li>State is now stored in a tiny sqlite database instead of a json file.</li>\n  <li>Resilient when strategies change.</li>\n  <li>Resilient when snapshots are deleted in the AWS console.</li>\n  <li>A DREBS shell which allows you to test your config easily and quickly.</li>\n</ul>\n\n<p>As an example setup, here’s DREBS in our crontab on all of our machines:</p>\n\n<pre><code>0 * * * * /home/dojo4/git/drebs/bin/drebs execute /usr/local/var/drebs_config.yml &amp;&gt; /usr/local/var/drebs_cron.out\n</code></pre>\n\n<p>and here’s our config file for one of our EC2 instances:</p>\n\n<pre><code>---\naws_access_key_id: XXXX\naws_secret_access_key: XXX\nregion: us-west-1\nstrategies:\n- hours_between: 6\n  num_to_keep: 12\n  mount_point: /dev/sdh\n  pre_snapshot_tasks:\n  - pg_dump -U postgres -f /ebs/databases/postgresql/backups/project_name_production.sql project_name_production\n  post_snapshot_tasks:\n- hours_between: 1\n  num_to_keep: 2\n  mount_point: /dev/sda1\n  pre_snapshot_tasks:\n  post_snapshot_tasks:\n- hours_between: 24\n  num_to_keep: 4\n  mount_point: /dev/sda1\n- hours_between: 96\n  num_to_keep: 4\n  mount_point: /dev/sda1\nlog_path: /usr/local/var/drebs.log\nemail_on_exception: miles@dojo4.com\nemail_host: smtp.gmail.com\nemail_port: 587\nemail_domain: gmail.com\nemail_user: xxx\nemail_password: xxx\n</code></pre>\n\n<p>As always, we have more ideas on how to improve this script and if this script helps you as much as it does us, we invite you to fork <a href=\"https://github.com/dojo4/drebs\">the repo</a> and send us a pull request:</p>\n\n<ul>\n  <li>Improve test coverage</li>\n  <li>Use whenever gem for easier crontab setup</li>\n  <li>Arbitrary execution intervals (snapshots every 5 minutes instead of every hour)</li>\n  <li>AWS API keys and other config values from AWS Instance Data</li>\n  <li>Add example AWS user access config</li>\n</ul>\n\n<p>We think DREBS is a great contribution to the AWS community that has helped us build a great deployment architecture that has hosted awesome websites and products over the years. If you agree and use it, we’d love to hear your feedback on twitter at <a href=\"https://twitter.com/intent/tweet?text=@dojo4\">@dojo4</a>!</p>\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/aws-ebs-backups-we-rewrote-drebs",
+        "type": "dojo4",
+        "id": "aws-ebs-backups-we-rewrote-drebs",
+        "urls": [
+          "/ro/dojo4/aws-ebs-backups-we-rewrote-drebs/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/aws-ebs-backups-we-rewrote-drebs",
+          "prev": "dojo4/the-mongoid-wars-removing-production-indexes",
+          "next": "dojo4/all-software-contains-bugs"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "aws-ebs-backups-we-rewrote-drebs"
+  }
+}

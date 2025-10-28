@@ -1,0 +1,80 @@
+{
+  "data": {
+    "dojo4/doing-a-good-job": {
+      "author": "emily@dojo4.com",
+      "title": "Doing A Good Job",
+      "published_at": "2015-11-30 17:10:15 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Sometimes I get completely myopic about the to-do lists. Especially those ones at work, where I want to do a good job and be a team player (my team does a really, really good job).</p>\n\n<p>I need to remind myself from time to time that you can’t do a good job if your job is all you do, so recently I put all the responsibilities up on the shelf and visited some favorite places - Moab, San Francisco, Carbondale.</p>\n\n<p>Now I’m back, grateful for good work to do and the to-do list is front and center again.  Happy Monday, folks!</p>\n\n<p><img src='/ro/dojo4/doing-a-good-job/assets/b.jpeg' alt=\"Screen Shot 2015-11-30 at 9.56.22 AM.jpg\" /></p>\n\n<p><img src='/ro/dojo4/doing-a-good-job/assets/c.jpeg' alt=\"Screen Shot 2015-11-30 at 9.56.12 AM.jpg\" /></p>\n\n<p><img src='/ro/dojo4/doing-a-good-job/assets/d.jpeg' alt=\"Screen Shot 2015-11-30 at 10.07.47 AM.jpg\" /></p>\n\n<p><img src='/ro/dojo4/doing-a-good-job/assets/e.jpeg' alt=\"Screen Shot 2015-11-30 at 9.55.11 AM.jpg\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/doing-a-good-job/assets/b.jpeg",
+          "path": "dojo4/doing-a-good-job/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1196,
+            "height": 1200
+          },
+          "src": null
+        },
+        "c.jpeg": {
+          "url": "/ro/dojo4/doing-a-good-job/assets/c.jpeg",
+          "path": "dojo4/doing-a-good-job/assets/c.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1196,
+            "height": 1198
+          },
+          "src": null
+        },
+        "d.jpeg": {
+          "url": "/ro/dojo4/doing-a-good-job/assets/d.jpeg",
+          "path": "dojo4/doing-a-good-job/assets/d.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1202,
+            "height": 1196
+          },
+          "src": null
+        },
+        "e.jpeg": {
+          "url": "/ro/dojo4/doing-a-good-job/assets/e.jpeg",
+          "path": "dojo4/doing-a-good-job/assets/e.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 1200,
+            "height": 1198
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/doing-a-good-job",
+        "type": "dojo4",
+        "id": "doing-a-good-job",
+        "urls": [
+          "/ro/dojo4/doing-a-good-job/assets/b.jpeg",
+          "/ro/dojo4/doing-a-good-job/assets/c.jpeg",
+          "/ro/dojo4/doing-a-good-job/assets/d.jpeg",
+          "/ro/dojo4/doing-a-good-job/assets/e.jpeg",
+          "/ro/dojo4/doing-a-good-job/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:13 +0000",
+        "updated_at": "2025-05-06 08:47:13 +0000",
+        "rel": {
+          "curr": "dojo4/doing-a-good-job",
+          "prev": "dojo4/jared-polis-representative-of-hate",
+          "next": "dojo4/lets-kill-altruism"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "doing-a-good-job"
+  }
+}

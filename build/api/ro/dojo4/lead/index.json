@@ -1,0 +1,31 @@
+{
+  "data": {
+    "dojo4/lead": {
+      "published_at": "2013-02-06 00:00:00 UTC",
+      "title": "lead",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <pre>\n  following is an excerpt from an internal email\n  \n  sent to team dojo4 team members\n  \n  regarding what being a project lead means at dojo4 \n </pre>\n\n<p>as some of you may have noticed, we designate ‘lead’ in the [STATUS] update.</p>\n\n<p>probably what this precisely means hasn’t been clear enough in the past.</p>\n\n<p>this message aims to rectify any confusion.</p>\n\n<p>without further ado:</p>\n\n<ul>\n  <li>\n    <p>being a lead means that it ships.</p>\n  </li>\n  <li>\n    <p>being a lead means that it ships.</p>\n  </li>\n  <li>\n    <p>being a lead means that it ships.</p>\n  </li>\n  <li>\n    <p>being a lead means you are constantly aware of the budget.</p>\n  </li>\n  <li>\n    <p>being a lead means that you have a mental mind-map of the whole damn thing.\nin your sleep.  on sunday.  at 10:31 pm.</p>\n  </li>\n  <li>\n    <p>being a lead means that you plan your weekends and vacations around the\nproject.  you can hand it off.  but you cannot just drop it.</p>\n  </li>\n  <li>\n    <p>being a lead means that you constantly upsell.  @dojo4 this just means\nlooking for shit that needs or should be done, that we can excellently do,\nthat the client isn’t aware of.  sales @dojo4 is normally just exchanging\n‘we can do’ for ‘you need to do’ in the context of a running project.  for\n@dojo4 sales this should always represent “acting in the client’s\nbest interest” to see <em>in advance</em>, what your personal professional\ncapacity allows you to see - that the client does not yet see.</p>\n  </li>\n  <li>\n    <p>being a lead means cutting the hell out of internal waste.  you should\nfight, yell, and scream to reduce internal waste.  we make money by being\nexcellent and shipping code.  look for waste from the client’s perspective\nand kill it dead.  if you can reduce a project’s spending from 100k to 10k\njust do it.  they’ll be back with other awesome projects.</p>\n  </li>\n  <li>\n    <p>being a lead means that you <em>aggressively</em> delegate and recruit when you\ncan’t do something yourself.  you may have to fight for the resources you\nneed.</p>\n  </li>\n  <li>\n    <p>being a lead means that you relish, and encourage, communication with the\nclient whenever the client feels like it.  or, whenever and however you’ve\nagreed and patiently trained the client to communicate.</p>\n  </li>\n  <li>\n    <p>being a lead means that you identify with, care for, and empathize with,\nour clients.  their checks feed our families. and their ideas stimulate\nour own.</p>\n  </li>\n  <li>\n    <p>being a lead means that, when the shit hits the fan, you will do it all\nyouself.</p>\n  </li>\n  <li>\n    <p>being a lead means that you put it all into perspective: our projects\nseldom have lives hanging in the balance - you must manage your own\nrelationship with the crises, real or perceived, that always - always -\noccur in the lifecyles of technology production.</p>\n  </li>\n</ul>\n\n<p>not everyone wants to be a project lead.</p>\n\n<p>project leads don’t want to captain every project they’re involved with.</p>\n\n<p>we need all kinds @dojo4.</p>\n\n<p>if you feel remotely uncomfortable being thrust into a ‘lead’ role on a\nproject, or desparately desire that role on another project, talk with your\nteam and adjust.</p>\n\n<p>everyone needs to be clear, comfortable, and capable in their roles.</p>\n\n\n</div>\n",
+      "assets": {},
+      "_meta": {
+        "identifier": "dojo4/lead",
+        "type": "dojo4",
+        "id": "lead",
+        "urls": [
+          "/ro/dojo4/lead/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/lead",
+          "prev": "dojo4/why-does-company-culture-matter",
+          "next": "dojo4/shiny-shiny-markdown"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "lead"
+  }
+}

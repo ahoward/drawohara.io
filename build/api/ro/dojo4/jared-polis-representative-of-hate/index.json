@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/jared-polis-representative-of-hate": {
+      "author": "mark@dojo4.com",
+      "title": "! 'Jared Polis: Representative of Hate?'",
+      "published_at": "2015-11-19 23:12:52 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p><img src='/ro/dojo4/jared-polis-representative-of-hate/assets/b.png' alt=\"Screen Shot 2015-11-19 at 2.49.26 PM.png\" /> \nThe U.S.(eless) House of Representatives voted 289-137 today to more severely restrict Syrian and Iraqi refugees wanting to immigrate. Get that - they are restricting the ability for some of the world’s most vulnerable people (refugees are people) from relocating to our country.</p>\n\n<p>We’ve all seen this before, many, many times. We’ve heard the arguments about security. We know the racism of Japanese internment and some of Roosevelt’s decisions when Jews were trying to escape Nazi Germany.</p>\n\n<p>And we know Benjamin Franklin’s great quote: “Those who would give up essential Liberty, to purchase a little temporary Safety, deserve neither Liberty nor Safety.”</p>\n\n<p>The vote in itself is appalling to me - especially as the son of a Holocaust survivor whose family was denied access to the U.S. I am lucky to be alive.</p>\n\n<p>However, I cannot believe my House Representative Jared Polis, an openly gay man, was the only Democrat to vote in support of this measure. I have taken to Twitter today to demand an explanation for his vote, and this was his response:\n<img src='/ro/dojo4/jared-polis-representative-of-hate/assets/c.png' alt=\"Screen Shot 2015-11-19 at 2.26.44 PM.png\" /> \nRead what he is saying carefully.</p>\n\n<p>Here is my response: “I support allowing greater numbers of homosexuals to adopt children and improving our vetting system to ensure no pedophilia.” It uses his very logic, and I am only trying to make a point.</p>\n\n<p>His logic makes even less sense when you consider the current process:</p>\n\n<ul>\n  <li>takes two years</li>\n  <li>includes in-person interviews and supporting documents</li>\n  <li>has experience of conflict cross</li>\n  <li>checked against intelligence</li>\n  <li>and allows about 50% of applicants to get approved</li>\n</ul>\n\n<p>I am deeply saddened, disappointed and enraged by Representative Polis’ vote. Please join me in demanding he retract his position.</p>\n\n\n</div>\n",
+      "assets": {
+        "b.png": {
+          "url": "/ro/dojo4/jared-polis-representative-of-hate/assets/b.png",
+          "path": "dojo4/jared-polis-representative-of-hate/assets/b.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1426,
+            "height": 781
+          },
+          "src": null
+        },
+        "c.png": {
+          "url": "/ro/dojo4/jared-polis-representative-of-hate/assets/c.png",
+          "path": "dojo4/jared-polis-representative-of-hate/assets/c.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 591,
+            "height": 103
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/jared-polis-representative-of-hate",
+        "type": "dojo4",
+        "id": "jared-polis-representative-of-hate",
+        "urls": [
+          "/ro/dojo4/jared-polis-representative-of-hate/assets/b.png",
+          "/ro/dojo4/jared-polis-representative-of-hate/assets/c.png",
+          "/ro/dojo4/jared-polis-representative-of-hate/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/jared-polis-representative-of-hate",
+          "prev": "dojo4/korean-release-the-click-clean-scorecard",
+          "next": "dojo4/doing-a-good-job"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "jared-polis-representative-of-hate"
+  }
+}

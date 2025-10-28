@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/we-wrote-a-book": {
+      "published_at": "2014-01-21 00:00:00 UTC",
+      "title": "We wrote a book!",
+      "author": "miles@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>Over the holiday break I was reflecting on my introduction to Ruby on Rails at the dojo. As a full stack developer that mainly concentrates on the front-end, it was overwhelming to come into an existing rails project with a small javascript task. What files to edit? How are my scripts included in the page? How is a request handled in rails? Ahh!!</p>\n\n<p>So I wrote a book about it. My awesome dojo4 teammates helped review it for technical soundness and I think it’s at a great point to release to the world. Hopefully it helps other front-end developers who jump into a rails project and realize they’re lost. Let this book be your compass!</p>\n\n<p><img src='/ro/dojo4/we-wrote-a-book/assets/cover-idea-2.png' alt=\"img\" /></p>\n\n<p>Check out the book:</p>\n\n<ul>\n  <li><a href=\"https://leanpub.com/rorfrontend\">In multiple e-book formats (PDF, MOBI, EPUB)</a></li>\n  <li><a href=\"http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/\">In the Kindle store</a></li>\n  <li><a href=\"http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html\">In paperback!</a></li>\n</ul>\n\n<p>Description:</p>\n\n<pre><code class=\"language-text\">Ruby on Rails is an extremely powerful full-stack web application framework, but with its power comes complexity. For front-end developers who simply need to edit HTML, CSS, and JS within a Ruby on Rails application, it can be a daunting task. This book explains what front-end developers needs to know about Ruby on Rails in order to work their mastery within a rails app.\n\nBy the end of the book, you'll be able to:\n\n* know where to put your html, css, &amp; js within the structure of a ruby on rails app\n\n* how rails routes requests to controllers\n\n* using views, layouts, and partials in controllers\n\n* what the asset pipeline is and how to use it\n\n* how controllers and views in rails work together to render a response in the browser\n\n* how data is added to views and how to link to the data in your html\n</code></pre>\n\n<p>You’ll love it:</p>\n\n<ul>\n  <li><a href=\"https://leanpub.com/rorfrontend\">In multiple e-book formats (PDF, MOBI, EPUB)</a></li>\n  <li><a href=\"http://www.amazon.com/Ruby-Rails-Explained-Front-End-Developers-ebook/dp/B00HYO0PT6/\">In the Kindle store</a></li>\n  <li><a href=\"http://www.lulu.com/shop/miles-matthias/ruby-on-rails-explained-for-front-end-developers/paperback/product-21409160.html\">In paperback!</a></li>\n</ul>\n\n</div>\n",
+      "assets": {
+        "cover-idea-2.png": {
+          "url": "/ro/dojo4/we-wrote-a-book/assets/cover-idea-2.png",
+          "path": "dojo4/we-wrote-a-book/assets/cover-idea-2.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 320,
+            "height": 414
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/we-wrote-a-book",
+        "type": "dojo4",
+        "id": "we-wrote-a-book",
+        "urls": [
+          "/ro/dojo4/we-wrote-a-book/assets/cover-idea-2.png",
+          "/ro/dojo4/we-wrote-a-book/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/we-wrote-a-book",
+          "prev": "dojo4/within40feet-day-2",
+          "next": "dojo4/within40feet-day-3"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "we-wrote-a-book"
+  }
+}

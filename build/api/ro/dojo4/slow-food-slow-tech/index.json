@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/slow-food-slow-tech": {
+      "published_at": "2011-08-23 00:00:00 UTC",
+      "title": "Slow Food >> Slow Tech",
+      "author": "corey@dojo4.com",
+      "body": "<p style=\"text-align:center\"><img src='/ro/dojo4/slow-food-slow-tech/assets/whatsripe.png' title=\"Whats Ripe\" alt=\"Whats Ripe\" rel=\"225x255\" width=\"225\" height=\"225\" /></p>\r\n<p>Recently we've been involved in building a number of applications made to help support local food systems. And so we're hosting an event for the Eat Local Week to talk about the quickly evolving intersection of tech and local food.</p>\r\n<p>Anthony Nicalo, CEO of Foodtree and and Justin Crawford, dojo4 CEO, will talk about the current romance between the food movement and consumer tech innovation. How can we leverage the power of technology to support our farms, growers and food? Can the food movement go viral? Is Slow Food provoking the birth of Slow Tech? The presentation will be followed by discussion and locally sourced refreshments. Hosted at dojo4, Friday, 9/2, 5pm. </p>\r\n<p>Come and bring your friends!</p>",
+      "assets": {
+        "whatsripe.png": {
+          "url": "/ro/dojo4/slow-food-slow-tech/assets/whatsripe.png",
+          "path": "dojo4/slow-food-slow-tech/assets/whatsripe.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 225,
+            "height": 225
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/slow-food-slow-tech",
+        "type": "dojo4",
+        "id": "slow-food-slow-tech",
+        "urls": [
+          "/ro/dojo4/slow-food-slow-tech/assets/whatsripe.png",
+          "/ro/dojo4/slow-food-slow-tech/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/slow-food-slow-tech",
+          "prev": "dojo4/lean-development-process-sketch",
+          "next": "dojo4/happy-birthday-dojo4"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "slow-food-slow-tech"
+  }
+}

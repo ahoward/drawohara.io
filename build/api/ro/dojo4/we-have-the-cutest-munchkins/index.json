@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/we-have-the-cutest-munchkins": {
+      "author": "emily@dojo4.com",
+      "title": "We Have the Cutest Munchkins",
+      "published_at": "2014-11-02 23:01:02 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>Sure there were a lot of cute kids at Boulder’s annual <a href=\"http://www.dailycamera.com/news/boulder/ci_26838980/boulders-munchkin-masquerade-brings-halloween-pearl-street\">Munchkin Masquerade</a>, which takes place near the dojo every year.  But basically, our kids are the cutest.</p>\n\n<p><img src='/ro/dojo4/we-have-the-cutest-munchkins/assets/b.jpeg' alt=\"CoreyKohn-Halloween-dojo.jpg\" /></p>\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/we-have-the-cutest-munchkins/assets/b.jpeg",
+          "path": "dojo4/we-have-the-cutest-munchkins/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 640,
+            "height": 640
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/we-have-the-cutest-munchkins",
+        "type": "dojo4",
+        "id": "we-have-the-cutest-munchkins",
+        "urls": [
+          "/ro/dojo4/we-have-the-cutest-munchkins/assets/b.jpeg",
+          "/ro/dojo4/we-have-the-cutest-munchkins/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/we-have-the-cutest-munchkins",
+          "prev": "dojo4/dojo4-takes-a-bat-to-cancer",
+          "next": "dojo4/weekends-make-us-more-productive"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "we-have-the-cutest-munchkins"
+  }
+}

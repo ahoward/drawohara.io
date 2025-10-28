@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/nepal-still-needs-our-help-now": {
+      "author": "corey@dojo4.com",
+      "title": "nepal still needs our help, now",
+      "published_at": "2015-06-01 17:12:36 UTC",
+      "body": "<div class=\"ro markdown\">\n  <p>The <a href=\"https://data.hdx.rwlabs.org/group/nepal-earthquake\">devastation of caused by the recent earthquake in Nepal</a> has been in the forefront of the minds of many of us these last few weeks. Although there have been <a href=\"http://emailadore.com/emails/5568c83d42937dec6b000003\">outpourings of support</a>, <a href=\"http://www.humanosphere.org/world-politics/2015/05/post-quake-funds-for-nepal-drying-up/\">only a fraction of the the UN appeal for funds has been met and those monies are now only trickling in as monsoon season approaches</a> and the reality of landslides and flooding threatens with further infrastructure damage, disease and loss of life. In many cases, the funds that have been donated are having a hard time reaching the communities that need the most help.</p>\n\n<p>This is one way you can help get aid to one of the many places it is needed most: Boulder’s own <a href=\"http://www.sherpasrestaurant.com/owner.html\">Pemba Sherpa</a> is traveling to his native <a href=\"https://www.google.com/maps/place/Sengma,+Chaurikharka,+Nepal/@27.7064698,86.7071271,9z/data=!4m2!3m1!1s0x39e90fd165466e95:0xd142ee6288855e03\">village of Sengma</a> near Mt. Everest, to bring aid.</p>\n\n<p>To send him with as much support as possible, <strong>please donate at: <a href=\"http://www.youcaring.com/boulderpemba\">http://www.youcaring.com/boulderpemba</a></strong></p>\n\n<p><a href=\"https://twitter.com/ggreenstreet\">Greg Greenstreet</a>, Director of Data Products Engineering at Twitter here in Boulder, will be traveling with Pemba to help distribute aid. Greg wrote this appeal:</p>\n\n<p><em>friends,</em></p>\n\n<p><em>if you could put this flyer up at your shops to help raise money for Pemba Sherpa &amp; his village, Sengma Nepal, i would appreciate it.</em></p>\n\n<p><em>i am personally headed over with Pemba on June 13th to help distribute the aid.</em></p>\n\n<p><em>every <strong>$1000 builds a house for a family</strong>.</em></p>\n\n<p><em>the monsoons are coming June-July, closely followed by winter in the Himalayas &amp; more than 1M people are without housing.</em></p>\n\n<p><em>the earthquakes are over (hopefully), but the challenged of rebuilding their lives lay ahead for the Nepalese people.</em></p>\n\n<p><em>please pass it along to your network to help raise awareness.</em></p>\n\n<p><em>Cheers,</em></p>\n\n<p><em>~greg</em></p>\n\n<p><em>Greg Greenstreet\nDirector, Twitter Data Products Engineering\n<a href=\"mailto:ggreenstreet@twitter.com\" target=\"_blank\">ggreenstreet@twitter.com</a>\n@ggreenstreet</em></p>\n\n<p><img src='/ro/dojo4/nepal-still-needs-our-help-now/assets/b.jpeg' alt=\"NEPAL FLYER for Greg.jpg\" /></p>\n\n<p>And here’s a list of other recommended organizations:</p>\n\n<ul>\n  <li><a href=\"http://www.tewa.org.np/site/index.php\">Tewa - Nepal Women’s Fund</a></li>\n  <li><a href=\"http://www.himalayanmedicalfoundation.org/\">Himalayan Medical Foundation</a></li>\n  <li><a href=\"http://www.shedrub.org/news.php?nid=116\">Shedrub Ling</a></li>\n  <li><a href=\"http://shechen.org/donate/\">Shechen</a></li>\n  <li><a href=\"http://karuna-shechen.org/how-to-help/\">Karuna Shenchen</a></li>\n  <li><a href=\"http://www.pri.org/stories/2015-04-25/how-help-nepal-7-vetted-charities-doing-relief-work-following-earthquake\">10 other vetted, international charities</a></li>\n</ul>\n\n\n</div>\n",
+      "assets": {
+        "b.jpeg": {
+          "url": "/ro/dojo4/nepal-still-needs-our-help-now/assets/b.jpeg",
+          "path": "dojo4/nepal-still-needs-our-help-now/assets/b.jpeg",
+          "size": 8,
+          "img": {
+            "format": "jpeg",
+            "width": 2550,
+            "height": 3300
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/nepal-still-needs-our-help-now",
+        "type": "dojo4",
+        "id": "nepal-still-needs-our-help-now",
+        "urls": [
+          "/ro/dojo4/nepal-still-needs-our-help-now/assets/b.jpeg",
+          "/ro/dojo4/nepal-still-needs-our-help-now/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/nepal-still-needs-our-help-now",
+          "prev": "dojo4/youthroots-and-how-it-can-matter-to-you-too",
+          "next": "dojo4/playing-god-in-the-garden"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "nepal-still-needs-our-help-now"
+  }
+}

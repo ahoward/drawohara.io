@@ -1,0 +1,44 @@
+{
+  "data": {
+    "dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu": {
+      "published_at": "2012-11-13 00:00:00 UTC",
+      "title": "Fabrication Illustrated - Infographics and Eli-who? Elihuu!",
+      "author": "peter@dojo4.com",
+      "body": "<p>dojo4 had the opportunity of to work with Dorian Ferlauto, founder of <a href=\"http://elihuu.com\" title=\"http://elihuu.com\" target=\"_blank\">Elihuu.com</a>. Dorian is a veteran of the design industry and was recently the buyer at <a href=\"http://factorymadeboulder.com/\" title=\"http://factorymadeboulder.com/\" target=\"_blank\">Factory Made</a> before setting off on the creation of her own start-up business. Elihuu connects designers and manufacturers in the swiftly burgeoning maker movement.  dojo4 developed a brand identity and created a marketing strategy that will help potential investors and clients visualize the complex world of custom fabrication.</p>\r\n<p>After workshopping a few options with the client, we felt an infographic-based illustration set would be a flexible asset. This way she would have the option of combining the various pieces into cohesive visual presentations without having to invest additional monies for studio time. I think infographics are generally overused in the design marketplace, but this seemed like a great opportunity to illustrate an idea. The formula was simple and we executed a simple <a href=\"http://www.squarespace.com/\" title=\"http://www.squarespace.com/\" target=\"_blank\">Squarespace</a> website, brand identity, and visual assets in 2 weeks of work.</p>\r\n<p>It was fun to execute in an agile fashion and get the assets designed, a small website deployed and the information out on the street. Dorian is out spreading the news about her product and we are hopeful it really takes off, its a great idea! Check out her website at <a href=\"http://elihuu.com\" title=\"http://elihuu.com\" target=\"_blank\">Elihuu.com</a>.</p>\r\n<img src='/ro/dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu/assets/elihuu.png' title=\"Elihuu\" alt=\"Elihuu\" rel=\"450x450\" width=\"439\" height=\"450\" />\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "assets": {
+        "elihuu.png": {
+          "url": "/ro/dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu/assets/elihuu.png",
+          "path": "dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu/assets/elihuu.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 595,
+            "height": 610
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu",
+        "type": "dojo4",
+        "id": "fabrication-illustrated-infographics-and-eli-who-elihuu",
+        "urls": [
+          "/ro/dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu/assets/elihuu.png",
+          "/ro/dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu/body.html"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu",
+          "prev": "dojo4/learn-to-write-dsls-the-right-way",
+          "next": "dojo4/configuring-the-default-virtual-host-in-apache2"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "fabrication-illustrated-infographics-and-eli-who-elihuu"
+  }
+}

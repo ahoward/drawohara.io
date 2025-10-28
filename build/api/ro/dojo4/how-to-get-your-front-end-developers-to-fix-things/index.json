@@ -1,0 +1,56 @@
+{
+  "data": {
+    "dojo4/how-to-get-your-front-end-developers-to-fix-things": {
+      "title": "How to Get Your Front End Developers to Fix Things",
+      "published_at": "2013-04-10 00:00:00 UTC",
+      "author": "ara@dojo4.com",
+      "body": "<div class=\"ro markdown\">\n  <p>first you check in code like this</p>\n\n<div class=\"language-ruby highlighter-rouge\"><code class='code' style='white-space:pre;'><div class='code-line code-line-1'>\n</div><div class='code-line code-line-2'><span style=\"color: #0550ae\">&lt;!--</span>&nbsp;<span style=\"color: #953800\">FIXME</span>&nbsp;<span style=\"color: #953800\">STEVE</span>&nbsp;<span style=\"color: #0550ae\">--&gt;</span>\n</div><div class='code-line code-line-3'><span style=\"color: #0550ae\">&lt;!--</span>&nbsp;<span style=\"color: #953800\">FIXME</span>&nbsp;<span style=\"color: #953800\">STEVE</span>&nbsp;<span style=\"color: #0550ae\">--&gt;</span>\n</div><div class='code-line code-line-4'>\n</div><div class='code-line code-line-5'>&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #24292f;background-color: #f6f8fa\">div</span>&nbsp;<span style=\"color: #cf222e\">class</span><span style=\"color: #0550ae\">=</span><span style=\"color: #0a3069\">'STEVE'</span><span style=\"color: #0550ae\">&gt;</span>\n</div><div class='code-line code-line-6'>\n</div><div class='code-line code-line-7'>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #0a3069\">% unless </span><span style=\"color: #953800\">Rails</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">stage</span>&nbsp;<span style=\"color: #0550ae\">and</span>&nbsp;<span style=\"color: #953800\">Rails</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">stage</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">production?</span>&nbsp;<span style=\"color: #0a3069\">%&gt;</span>\n</div><div class='code-line code-line-8'>\n</div><div class='code-line code-line-9'><span style=\"color: #0a3069\">      &lt;%</span>\n</div><div class='code-line code-line-10'><span style=\"color: #0a3069\">        @hero = Article.hero.limit(1).to_a</span>\n</div><div class='code-line code-line-11'><span style=\"color: #0a3069\">        @featured = Article.featured.limit(3).to_a</span>\n</div><div class='code-line code-line-12'><span style=\"color: #0a3069\">      %&gt;</span>\n</div><div class='code-line code-line-13'>\n</div><div class='code-line code-line-14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #24292f;background-color: #f6f8fa\">div</span>&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">style</span><span style=\"color: #0550ae\">=</span><span style=\"color: #0a3069\">'border:4px dotted orange;'</span><span style=\"color: #0550ae\">&gt;</span>\n</div><div class='code-line code-line-15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #24292f;background-color: #f6f8fa\">h1</span><span style=\"color: #0550ae\">&gt;</span>&nbsp;<span style=\"color: #953800\">HERO</span>&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #116329\">/h1&gt;</span>\n</div><div class='code-line code-line-16'><span style=\"color: #116329\">        &lt;% @hero.each do |article| %&gt;</span>\n</div><div class='code-line code-line-17'><span style=\"color: #116329\">          &lt;div style='height:12em;overflow:scroll;border:2px solid pink;'&gt;</span>\n</div><div class='code-line code-line-18'><span style=\"color: #116329\">            title: &lt;%= link_to article.title, article %&gt;&lt;br&gt;</span>\n</div><div class='code-line code-line-19'><span style=\"color: #116329\">            &lt;%= article.to_html %&gt;</span>\n</div><div class='code-line code-line-20'><span style=\"color: #116329\">          &lt;/</span><span style=\"color: #24292f;background-color: #f6f8fa\">div</span><span style=\"color: #0550ae\">&gt;</span>\n</div><div class='code-line code-line-21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #0a3069\">% end </span><span style=\"color: #0550ae\">%&gt;</span>\n</div><div class='code-line code-line-22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #116329\">/div&gt;</span>\n</div><div class='code-line code-line-23'>\n</div><div class='code-line code-line-24'><span style=\"color: #116329\">      &lt;div style='border:4px dotted fuchsia;'&gt;</span>\n</div><div class='code-line code-line-25'><span style=\"color: #116329\">        &lt;h1&gt; FEATURED &lt;/</span><span style=\"color: #24292f;background-color: #f6f8fa\">h1</span><span style=\"color: #0550ae\">&gt;</span>\n</div><div class='code-line code-line-26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #0a3069\">% @featured.each </span><span style=\"color: #cf222e\">do</span>&nbsp;<span style=\"color: #0550ae\">|</span><span style=\"color: #24292f;background-color: #f6f8fa\">article</span><span style=\"color: #0550ae\">|</span>&nbsp;<span style=\"color: #0a3069\">%&gt;</span>\n</div><div class='code-line code-line-27'><span style=\"color: #0a3069\">          &lt;div style='height:4em;overflow:hidden;border:2px solid purple;'&gt;</span>\n</div><div class='code-line code-line-28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0a3069\">title: </span><span style=\"color: #0550ae\">&lt;</span><span style=\"color: #0a3069\">%= link_to article.title, article %&gt;&lt;br&gt;</span>\n</div><div class='code-line code-line-29'><span style=\"color: #0a3069\">            &lt;%=</span>&nbsp;<span style=\"color: #24292f;background-color: #f6f8fa\">article</span><span style=\"color: #24292f;background-color: #f6f8fa\">.</span><span style=\"color: #8250df\">to_html</span>&nbsp;<span style=\"color: #0a3069\">%&gt;</span>\n</div><div class='code-line code-line-30'><span style=\"color: #0a3069\">          &lt;/div&gt;</span>\n</div><div class='code-line code-line-31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #0a3069\">% end </span><span style=\"color: #0550ae\">%&gt;</span>\n</div><div class='code-line code-line-32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #116329\">/div&gt;</span>\n</div><div class='code-line code-line-33'>\n</div><div class='code-line code-line-34'>\n</div><div class='code-line code-line-35'><span style=\"color: #116329\">    &lt;% end %&gt;</span>\n</div><div class='code-line code-line-36'>\n</div><div class='code-line code-line-37'><span style=\"color: #116329\">    &lt;script&gt; $(function(){ App.blink('.STEVE') }); &lt;/s</span><span style=\"color: #24292f;background-color: #f6f8fa\">cript</span><span style=\"color: #0550ae\">&gt;</span>\n</div><div class='code-line code-line-38'>&nbsp;&nbsp;<span style=\"color: #0550ae\">&lt;</span><span style=\"color: #116329\">/div&gt;</span>\n</div><div class='code-line code-line-39'>\n</div><div class='code-line code-line-40'><span style=\"color: #116329\">&lt;!-- FIXME STEVE --&gt;</span>\n</div><div class='code-line code-line-41'><span style=\"color: #116329\">&lt;!-- FIXME STEVE --&gt;</span>\n</div><div class='code-line code-line-42'>\n</div><div class='code-line code-line-43'>\n</div></code></div>\n\n<p>renders like</p>\n\n<p><img src='/ro/dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/screen-shot-2013-04-10-at-11.44.27_AM.png' alt=\"img\" /></p>\n\n<p>and then you just sit back and wait ;-)</p>\n\n</div>\n",
+      "assets": {
+        "Screen_Shot_2013-04-10_at_11.44.27_AM.png": {
+          "url": "/ro/dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/Screen_Shot_2013-04-10_at_11.44.27_AM.png",
+          "path": "dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/Screen_Shot_2013-04-10_at_11.44.27_AM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 1808,
+            "height": 1018
+          },
+          "src": null
+        },
+        "screen-shot-2013-04-10-at-11.44.27_AM.png": {
+          "url": "/ro/dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/screen-shot-2013-04-10-at-11.44.27_AM.png",
+          "path": "dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/screen-shot-2013-04-10-at-11.44.27_AM.png",
+          "size": 8,
+          "img": {
+            "format": "png",
+            "width": 640,
+            "height": 360
+          },
+          "src": null
+        }
+      },
+      "_meta": {
+        "identifier": "dojo4/how-to-get-your-front-end-developers-to-fix-things",
+        "type": "dojo4",
+        "id": "how-to-get-your-front-end-developers-to-fix-things",
+        "urls": [
+          "/ro/dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/Screen_Shot_2013-04-10_at_11.44.27_AM.png",
+          "/ro/dojo4/how-to-get-your-front-end-developers-to-fix-things/assets/screen-shot-2013-04-10-at-11.44.27_AM.png",
+          "/ro/dojo4/how-to-get-your-front-end-developers-to-fix-things/body.md"
+        ],
+        "created_at": "2025-05-06 08:47:14 +0000",
+        "updated_at": "2025-05-06 08:47:14 +0000",
+        "rel": {
+          "curr": "dojo4/how-to-get-your-front-end-developers-to-fix-things",
+          "prev": "dojo4/chrome-logger",
+          "next": "dojo4/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013"
+        }
+      }
+    }
+  },
+  "_meta": {
+    "url": "/ro",
+    "type": "dojo4",
+    "id": "how-to-get-your-front-end-developers-to-fix-things"
+  }
+}
