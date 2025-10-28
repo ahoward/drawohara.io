@@ -8,7 +8,6 @@ gem "rdoc"
 gem "fiddle"
 gem "webrick", "~> 1.9.1"
 gem "logger"
-gem "ostruct", "0.6.3"
 
 gem "ro", "~> 5.2"
 gem "map", "~> 6.6"
