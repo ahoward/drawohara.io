@@ -41,3 +41,24 @@ Key principles:
 - Adventure and landscape focus
 
 See `/ai/PHOTOGRAPHY.md` for complete philosophy.
+
+## Documentation Philosophy
+
+### The Power of Plaintext
+- All documentation in markdown/plaintext format
+- Human-readable, version-controllable, timeless
+- No proprietary formats, no lock-in
+- grep-able, diff-able, portable
+
+### AI-Portable Knowledge
+- We *always* document in an AI-portable fashion
+- Future AI agents should be able to understand context
+- Knowledge stored in /ai/ directory is AI-agnostic
+- Can be used by any AI system, any tool, any future technology
+- Plain text files are the ultimate portable format
+
+### Memory Through Files
+- Don't rely on session memory or hidden state
+- Write it down in context files
+- If it's important to remember, it goes in plaintext
+- Future sessions should find what past sessions learned

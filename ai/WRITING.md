@@ -41,6 +41,13 @@ This document distills the writing patterns found in ara.t..howard's personal an
 - Self-deprecating humor works well
 - Don't take yourself too seriously
 
+### Deliberate Misspellings and Hacker Aesthetic
+- As a hacker, deliberate misspellings are common for humor and style
+- Examples: "pythong" (not python), creative variations on tech terms
+- **Before "fixing" typos, ask first** - assume intentionality
+- Hacker aesthetic > grammatical perfection
+- If something looks weird, it's probably on purpose
+
 ## Formatting and Style
 
 ### Emphasis
