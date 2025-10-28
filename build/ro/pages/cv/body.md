@@ -109,14 +109,14 @@ i am currently in a unique position, having reduced my own life footprint dramat
 
 -----------------------------
 ##### university of alaska anchorage, anchorage, alaska
--- _student/athelete_ (1992-1994)
+-- _student/athlete_ (1992-1994)
 
 * studied biochemistry and competed in d1 nordic skiing
 
 
 -----------------------------
 ##### university of colorado at boulder, boulder, colorado
--- _student/athelete_ (1999-2003)
+-- _student/athlete_ (1999-2003)
 
 * studied computer science and designed a senior year project for noaa/cires
 * earned a 10th place finish at collegiate nationals and transitioned into the workplace at noaa/cires as a research associate

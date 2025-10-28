@@ -9,11 +9,11 @@
   lotta PT but, [mountains](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9)
   soon...
 
-- doing tons of OSS attm.  https://github.com/ahoward
+- doing tons of OSS atm.  https://github.com/ahoward
 
-- quietly steathing the new steath agency which is
+- quietly stealthing the new stealth agency which is
   [stealthy](https://mountainhigh.codes).  RN we aren't taking clients, just
-  building shit fromm a bus in Alaska.  like
+  building shit from a bus in Alaska.  like
   [actually](https://photos.app.goo.gl/U1HHzcNkjV4GDurq5).  skiing is great too.
 
 - married [jess](/jess) ❤️

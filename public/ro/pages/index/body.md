@@ -6,7 +6,7 @@ see what i am doing 👉 [now](/now) 👈
 
 > _otherwise_
 
- **welcome to my** 🛖️, please make yourself at ome.
+ **welcome to my** 🛖️, please make yourself at home.
 
 here, you will find a [lotta code](/nerd), a little [narcissism](/about).
 
