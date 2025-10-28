@@ -1,3 +1,7 @@
+**update:** we [got married](https://photos.app.goo.gl/6fkFogJdzSoSFZzC9).
+
+---
+
 i met jess at [jacumba hot springs](https://maps.app.goo.gl/Q8hzaHeMJqwXhTmi8).
 
 ![jess](./assets/jess.jpg)
