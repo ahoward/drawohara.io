@@ -1,5 +1,10 @@
 - working with a lil company in boulder doing some crazy AI shit.  frieNDA and a 🍺 for more deets...
 
+- building encrypted clipboards that transcend devices. teaching machines when
+  to say no. treating tests as scripture and code as sand. specifications as
+  prophecy. GitHub as cathedral. message buses for stateless ghosts. keys
+  hiding in vaults. everything else burns.
+
 - finally got my leg all bolted back together after 18 mos of injury.  mighty
   lotta PT but, [mountains](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9)
   soon...
@@ -11,7 +16,7 @@
   building shit fromm a bus in Alaska.  like
   [actually](https://photos.app.goo.gl/U1HHzcNkjV4GDurq5).  skiing is great too.
 
-- [jess](/jess) and i are getting married ;-)
+- married [jess](/jess) ❤️
 
 - [super digging this](https://www.youtube.com/watch?v=i5mZlriOogU&t=463s).
 
