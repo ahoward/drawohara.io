@@ -211,6 +211,42 @@ Site.for 'drawohara.io' do |site|
     end
   end
 
+# /m (microblog)
+#
+  site.route '/m' do |route|
+    route.call do |ctx|
+      # Load all microblog entries
+      entries = []
+
+      Dir.glob('public/ro/microblog/*.yml').each do |path|
+        begin
+          content = IO.binread(path)
+          yaml = YAML.safe_load(content, permitted_classes: [Time, Date], aliases: true)
+
+          # Parse timestamp
+          yaml['timestamp'] = Time.parse(yaml['timestamp'].to_s) if yaml['timestamp']
+
+          # Parse body (content after --- separator)
+          parts = content.split(/^---\s*$/, 3)
+          yaml['body'] = parts[2]&.strip if parts.size >= 3
+
+          entries << Map.for(yaml)
+        rescue => e
+          warn "Skipping #{path}: #{e.message}"
+        end
+      end
+
+      # Sort newest first
+      entries = entries.sort_by { |e| e['timestamp'] }.reverse
+
+      ctx.render 'views/microblog.erb', data: { entries: }
+    end
+
+    route.urls do
+      %w[ /m ]
+    end
+  end
+
 # nested pages
 #
   site.route '**/**' do |route|

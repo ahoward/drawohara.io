@@ -1,0 +1,71 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'yaml'
+require 'json'
+require 'time'
+require 'fileutils'
+
+MICROBLOG_DIR = 'public/ro/microblog'
+
+# Parse issue data from env vars
+issue_number = ENV['ISSUE_NUMBER']
+issue_title = ENV['ISSUE_TITLE']
+issue_body = ENV['ISSUE_BODY']
+issue_url = ENV['ISSUE_URL']
+issue_created = ENV['ISSUE_CREATED']
+issue_updated = ENV['ISSUE_UPDATED']
+
+# Parse issue form fields from body (GitHub issue templates format)
+def parse_form_data(body)
+  data = {}
+  current_field = nil
+
+  body.split("\n").each do |line|
+    # Match "### Field Name" headers
+    if line.match(/^###\s+(.+)/)
+      current_field = $1.downcase.gsub(/\s+/, '_')
+      data[current_field] = ''
+    elsif current_field && !line.strip.empty? && !line.start_with?('_No response_')
+      data[current_field] << line + "\n"
+    end
+  end
+
+  data.transform_values(&:strip)
+end
+
+form_data = parse_form_data(issue_body)
+
+# Extract title (use form title or issue title)
+title = if form_data['title'] && !form_data['title'].empty?
+  form_data['title']
+else
+  issue_title.sub(/^\[microblog\]\s*/, '')
+end
+
+# Build YAML frontmatter
+entry = {
+  'title' => title,
+  'timestamp' => Time.parse(issue_created).iso8601,
+  'updated' => Time.parse(issue_updated).iso8601,
+  'kind' => form_data['kind'] || 'note',
+  'url' => issue_url,
+  'issue' => issue_number.to_i
+}
+
+# Add tags if present
+if form_data['tags'] && !form_data['tags'].empty?
+  entry['tags'] = form_data['tags'].split(',').map(&:strip)
+end
+
+# Content is the 'content' field from form
+content = form_data['content'] || ''
+
+# Write to file
+FileUtils.mkdir_p(MICROBLOG_DIR)
+filepath = File.join(MICROBLOG_DIR, "#{issue_number}.yml")
+
+File.write(filepath, entry.to_yaml)
+File.write(filepath, "---\n\n#{content}\n", mode: 'a')
+
+puts "Created #{filepath}"

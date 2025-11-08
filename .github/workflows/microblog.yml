@@ -1,0 +1,40 @@
+name: Microblog → ro
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+jobs:
+  process-microblog:
+    # Only run if issue has 'microblog' label
+    if: contains(github.event.issue.labels.*.name, 'microblog')
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Process issue to ro content
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_CREATED: ${{ github.event.issue.created_at }}
+          ISSUE_UPDATED: ${{ github.event.issue.updated_at }}
+        run: |
+          bin/issue-to-microblog
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/ro/microblog/
+          git diff --staged --quiet || git commit -m "microblog: add/update issue #${{ github.event.issue.number }}"
+          git push
