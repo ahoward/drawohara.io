@@ -13,6 +13,8 @@ gem "ro", "~> 5.2"
 gem "map", "~> 6.6"
 gem "rego", "~> 4.2"
 
+gem "kramdown"
+
 gem "dotenv"
 
 gem "listen"
