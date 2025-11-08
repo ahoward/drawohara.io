@@ -25,7 +25,7 @@ def parse_form_data(body)
     # Match "### Field Name" headers
     if line.match(/^###\s+(.+)/)
       current_field = $1.downcase.gsub(/\s+/, '_')
-      data[current_field] = ''
+      data[current_field] = String.new
     elsif current_field && !line.strip.empty? && !line.start_with?('_No response_')
       data[current_field] << line + "\n"
     end
