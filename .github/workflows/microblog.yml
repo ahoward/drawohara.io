@@ -11,9 +11,15 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      issues: read
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
