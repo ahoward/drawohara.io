@@ -1,4 +1,4 @@
-- working with a lil company in boulder doing some crazy AI shit.  frieNDA and a 🍺 for more deets...
+- working with a lil company in boulder doing some crazy AI shit.  frieNDA and a 🍺 for more [deets](https://www.nickel5.com/)...
 
 - building encrypted clipboards that transcend devices. teaching machines when
   to say no. treating tests as scripture and code as sand. specifications as
@@ -9,7 +9,7 @@
   lotta PT but, [mountains](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9)
   soon...
 
-- doing tons of OSS atm.  https://github.com/ahoward
+- shipping OSS: [gh-lockbox](https://github.com/ahoward/gh-lockbox) (PIN-protected GitHub secrets), [pbj](https://github.com/ahoward/pbj) (universal encrypted clipboard), [bx](https://github.com/ahoward/bx) (tmux session manager), [tc](https://github.com/ahoward/tc) (language-agnostic testing). 181 public repos and counting. https://github.com/ahoward
 
 - quietly stealthing the new stealth agency which is
   [stealthy](https://mountainhigh.codes).  RN we aren't taking clients, just
