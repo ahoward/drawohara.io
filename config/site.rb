@@ -228,10 +228,16 @@ Site.for 'drawohara.io' do |site|
 
           # Get slug from filename
           slug = File.basename(path, '.yml')
+          yaml['slug'] = slug
 
           # Read body from slug/body.md
           body_path = File.join('public/ro/microblog', slug, 'body.md')
-          yaml['body'] = File.read(body_path) if File.exist?(body_path)
+          if File.exist?(body_path)
+            body = File.read(body_path)
+            # Convert relative image paths to absolute for web rendering
+            body = body.gsub(/!\[([^\]]*)\]\(\.\/assets\/([^)]+)\)/, '![\1](/ro/microblog/' + slug + '/assets/\2)')
+            yaml['body'] = body
+          end
 
           entries << Map.for(yaml)
         rescue => e

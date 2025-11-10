@@ -75,8 +75,8 @@ def process_images(content, assets_dir, slug)
 
         puts "Downloaded #{image_url} -> #{filename}"
 
-        # Return markdown with web root path
-        "![#{alt_text}](/ro/microblog/#{slug}/assets/#{filename})"
+        # Return markdown with relative path (for GitHub rendering)
+        "![#{alt_text}](./assets/#{filename})"
       rescue => e
         warn "Failed to download #{image_url}: #{e.message}"
         match # Return original if download fails
