@@ -5,6 +5,8 @@ require 'yaml'
 require 'json'
 require 'time'
 require 'fileutils'
+require 'open-uri'
+require 'digest'
 
 MICROBLOG_DIR = 'public/ro/microblog'
 
@@ -15,6 +17,16 @@ issue_body = ENV['ISSUE_BODY']
 issue_url = ENV['ISSUE_URL']
 issue_created = ENV['ISSUE_CREATED']
 issue_updated = ENV['ISSUE_UPDATED']
+
+# Slugify a string
+def slugify(text)
+  text
+    .downcase
+    .gsub(/[^\w\s-]/, '')
+    .gsub(/\s+/, '-')
+    .gsub(/-+/, '-')
+    .gsub(/^-|-$/, '')
+end
 
 # Parse issue form fields from body (GitHub issue templates format)
 def parse_form_data(body)
@@ -34,10 +46,55 @@ def parse_form_data(body)
   data.transform_values(&:strip)
 end
 
+# Extract and download images from markdown content
+def process_images(content, assets_dir, slug)
+  image_count = 0
+
+  content.gsub(/!\[([^\]]*)\]\(([^)]+)\)/) do |match|
+    alt_text = $1
+    image_url = $2
+
+    # Only process remote URLs (GitHub user-attachments, etc.)
+    if image_url.match?(/^https?:\/\//)
+      begin
+        # Download image
+        FileUtils.mkdir_p(assets_dir)
+
+        # Get file extension from URL or default to .png
+        ext = File.extname(URI.parse(image_url).path)
+        ext = '.png' if ext.empty?
+
+        image_count += 1
+        filename = "image-#{image_count}#{ext}"
+        filepath = File.join(assets_dir, filename)
+
+        # Download
+        URI.open(image_url) do |remote|
+          File.write(filepath, remote.read, mode: 'wb')
+        end
+
+        puts "Downloaded #{image_url} -> #{filename}"
+
+        # Return markdown with web root path
+        "![#{alt_text}](/ro/microblog/#{slug}/assets/#{filename})"
+      rescue => e
+        warn "Failed to download #{image_url}: #{e.message}"
+        match # Return original if download fails
+      end
+    else
+      match # Keep relative paths as-is
+    end
+  end
+end
+
 form_data = parse_form_data(issue_body)
 
 # Extract title from issue title (strip [microblog] prefix)
 title = issue_title.sub(/^\[microblog\]\s*/, '')
+
+# Create slug from title
+slug = slugify(title)
+slug = "post-#{issue_number}" if slug.empty?
 
 # Build YAML frontmatter
 entry = {
@@ -57,11 +114,22 @@ end
 # Content is the 'content' field from form
 content = form_data['content'] || ''
 
-# Write to file
+# Set up paths
 FileUtils.mkdir_p(MICROBLOG_DIR)
-filepath = File.join(MICROBLOG_DIR, "#{issue_number}.yml")
+yaml_path = File.join(MICROBLOG_DIR, "#{slug}.yml")
+content_dir = File.join(MICROBLOG_DIR, slug)
+body_path = File.join(content_dir, 'body.md')
+assets_dir = File.join(content_dir, 'assets')
 
-File.write(filepath, entry.to_yaml)
-File.write(filepath, "---\n\n#{content}\n", mode: 'a')
+# Process images in content
+processed_content = process_images(content, assets_dir, slug)
 
-puts "Created #{filepath}"
+# Write YAML frontmatter
+File.write(yaml_path, entry.to_yaml)
+
+# Write body
+FileUtils.mkdir_p(content_dir)
+File.write(body_path, processed_content)
+
+puts "Created #{yaml_path}"
+puts "Created #{body_path}"

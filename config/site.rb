@@ -220,15 +220,18 @@ Site.for 'drawohara.io' do |site|
 
       Dir.glob('public/ro/microblog/*.yml').each do |path|
         begin
-          content = IO.binread(path)
-          yaml = YAML.safe_load(content, permitted_classes: [Time, Date], aliases: true)
+          # Load YAML frontmatter
+          yaml = YAML.safe_load_file(path, permitted_classes: [Time, Date], aliases: true)
 
           # Parse timestamp
           yaml['timestamp'] = Time.parse(yaml['timestamp'].to_s) if yaml['timestamp']
 
-          # Parse body (content after --- separator)
-          parts = content.split(/^---\s*$/, 3)
-          yaml['body'] = parts[2]&.strip if parts.size >= 3
+          # Get slug from filename
+          slug = File.basename(path, '.yml')
+
+          # Read body from slug/body.md
+          body_path = File.join('public/ro/microblog', slug, 'body.md')
+          yaml['body'] = File.read(body_path) if File.exist?(body_path)
 
           entries << Map.for(yaml)
         rescue => e
