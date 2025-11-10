@@ -8,12 +8,6 @@ body:
       value: |
         Quick post. Keep it simple.
 
-  - type: input
-    id: title
-    attributes:
-      label: Title
-      description: Post title (optional - uses issue title if blank)
-
   - type: textarea
     id: content
     attributes:

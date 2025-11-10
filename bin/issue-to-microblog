@@ -36,12 +36,8 @@ end
 
 form_data = parse_form_data(issue_body)
 
-# Extract title (use form title or issue title)
-title = if form_data['title'] && !form_data['title'].empty?
-  form_data['title']
-else
-  issue_title.sub(/^\[microblog\]\s*/, '')
-end
+# Extract title from issue title (strip [microblog] prefix)
+title = issue_title.sub(/^\[microblog\]\s*/, '')
 
 # Build YAML frontmatter
 entry = {
