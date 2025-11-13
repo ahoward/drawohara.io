@@ -12,7 +12,7 @@ bin/generate-search-index
 
 # Step 2: Build lunr.js search index
 echo "→ Building lunr index..."
-npx --yes lunr@2.3.9 bin/build-lunr-index
+bin/build-lunr-index
 
 # Step 3: Generate 404.html with embedded static list
 echo "→ Generating 404.html..."

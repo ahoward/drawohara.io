@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'json'
+require 'nokogiri'
+
+# Extract page data from HTML files for search indexing
+# Outputs: build/pages.json
+
+BUILD_DIR = 'build'
+OUTPUT_FILE = File.join(BUILD_DIR, 'pages.json')
+
+pages = []
+
+# Process all HTML files in build directory
+Dir.glob(File.join(BUILD_DIR, '**', '*.html')).each do |file|
+  # Skip 404.html itself
+  next if file.include?('404.html')
+
+  doc = Nokogiri::HTML(IO.binread(file))
+
+  # Extract title (priority: <title>, <h1>, filename fallback)
+  title = doc.at_css('title')&.text ||
+          doc.at_css('h1')&.text ||
+          File.basename(file, '.html')
+
+  # Extract content (priority: meta description, first paragraph)
+  content = doc.at_css('meta[name="description"]')&.[]('content') ||
+            doc.at_css('meta[property="og:description"]')&.[]('content') ||
+            doc.css('article p, main p, .content p').first&.text
+
+  # Truncate content to 150 characters
+  content = content&.[](0..149) if content
+
+  # Generate relative URL path
+  href = file.sub(BUILD_DIR, '').sub('/index.html', '/').sub('.html', '')
+  href = '/' if href.empty?
+
+  pages << {
+    title: title.to_s.strip,
+    href: href,
+    content: content.to_s.strip
+  }
+end
+
+# Write pages.json atomically
+temp_file = "#{OUTPUT_FILE}.tmp.#{Process.pid}"
+IO.binwrite(temp_file, JSON.pretty_generate(pages))
+File.rename(temp_file, OUTPUT_FILE)
+
+puts "Generated #{pages.size} page entries → #{OUTPUT_FILE}"
