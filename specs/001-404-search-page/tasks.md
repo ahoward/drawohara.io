@@ -26,9 +26,9 @@ Based on plan.md structure:
 
 **Purpose**: Project initialization and build tooling setup
 
-- [ ] T001 Install lunr.js for build process via npm: `npm install --save-dev lunr@2.3.9`
-- [ ] T002 [P] Verify Ruby nokogiri gem available for HTML parsing (existing dependency)
-- [ ] T003 [P] Verify existing build process can be extended for search index generation
+- [X] T001 Install lunr.js for build process via npm: `npm install --save-dev lunr@2.3.9`
+- [X] T002 [P] Verify Ruby nokogiri gem available for HTML parsing (existing dependency)
+- [X] T003 [P] Verify existing build process can be extended for search index generation
 
 ---
 
@@ -38,9 +38,9 @@ Based on plan.md structure:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Create bin/generate-search-index Ruby script to extract page data from build/**/*.html
-- [ ] T005 Create bin/build-lunr-index Node.js script to generate search index from pages.json
-- [ ] T006 [P] Create build/404.html template with search UI and progressive enhancement
+- [X] T004 Create bin/generate-search-index Ruby script to extract page data from build/**/*.html
+- [X] T005 Create bin/build-lunr-index Node.js script to generate search index from pages.json
+- [X] T006 [P] Create build/404.html template with search UI and progressive enhancement
 - [ ] T007 Generate build/pages.json by running bin/generate-search-index on existing build output
 - [ ] T008 Generate build/search-index.json by running bin/build-lunr-index from pages.json
 - [ ] T009 Verify JSON contracts match contracts/pages-api.json and contracts/search-index-api.json
@@ -57,17 +57,17 @@ Based on plan.md structure:
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Implement search box input handler in build/404.html to filter results as-you-type
-- [ ] T011 [US1] Load lunr.js from unpkg CDN with SRI hash in build/404.html <script> tag
-- [ ] T012 [US1] Implement async loading of search-index.json and pages.json in build/404.html
-- [ ] T013 [US1] Initialize lunr.Index.load() with fetched search-index.json data
-- [ ] T014 [US1] Implement search query handler using searchIndex.search(query)
-- [ ] T015 [US1] Map lunr results (ref IDs) back to PageDocument objects from pages.json
-- [ ] T016 [US1] Implement displayResults() function to render search results with highlighted matches
-- [ ] T017 [US1] Add highlight() function to mark matching terms with <mark> tags
-- [ ] T018 [US1] Implement "no results found" message when search returns empty array
-- [ ] T019 [US1] Implement clear search behavior (empty query shows all pages)
-- [ ] T020 [US1] Add search status indicator ("Search ready", "Loading...")
+- [X] T010 [US1] Implement search box input handler in build/404.html to filter results as-you-type
+- [X] T011 [US1] Load lunr.js from unpkg CDN with SRI hash in build/404.html <script> tag
+- [X] T012 [US1] Implement async loading of search-index.json and pages.json in build/404.html
+- [X] T013 [US1] Initialize lunr.Index.load() with fetched search-index.json data
+- [X] T014 [US1] Implement search query handler using searchIndex.search(query)
+- [X] T015 [US1] Map lunr results (ref IDs) back to PageDocument objects from pages.json
+- [X] T016 [US1] Implement displayResults() function to render search results with highlighted matches
+- [X] T017 [US1] Add highlight() function to mark matching terms with <mark> tags
+- [X] T018 [US1] Implement "no results found" message when search returns empty array
+- [X] T019 [US1] Implement clear search behavior (empty query shows all pages)
+- [X] T020 [US1] Add search status indicator ("Search ready", "Loading...")
 
 **Checkpoint**: Search functionality complete - visitor can search and find pages instantly
 
@@ -81,10 +81,10 @@ Based on plan.md structure:
 
 ### Implementation for User Story 2
 
-- [ ] T021 [US2] Generate static HTML <ul> list from pages.json during build in build/404.html
-- [ ] T022 [US2] Embed all page titles and href values as <li><a> elements in 404.html
-- [ ] T023 [US2] Style page list with CSS (list-style: none, padding, borders)
-- [ ] T024 [US2] Ensure static list renders immediately (no JavaScript required)
+- [X] T021 [US2] Generate static HTML <ul> list from pages.json during build in build/404.html
+- [X] T022 [US2] Embed all page titles and href values as <li><a> elements in 404.html
+- [X] T023 [US2] Style page list with CSS (list-style: none, padding, borders)
+- [X] T024 [US2] Ensure static list renders immediately (no JavaScript required)
 - [ ] T025 [US2] Verify list shows all pages without pagination (500+ entries)
 - [ ] T026 [US2] Test that clicking any URL from list navigates correctly
 
@@ -100,11 +100,11 @@ Based on plan.md structure:
 
 ### Implementation for User Story 3
 
-- [ ] T027 [US3] Write friendly error message in build/404.html <h1> and <p> tags
-- [ ] T028 [US3] Ensure message explains "page not found" without technical jargon
-- [ ] T029 [US3] Position message above search box for immediate visibility
-- [ ] T030 [US3] Add instruction text guiding visitor to search or browse
-- [ ] T031 [US3] Style error message with clear typography (no aggressive red/warnings)
+- [X] T027 [US3] Write friendly error message in build/404.html <h1> and <p> tags
+- [X] T028 [US3] Ensure message explains "page not found" without technical jargon
+- [X] T029 [US3] Position message above search box for immediate visibility
+- [X] T030 [US3] Add instruction text guiding visitor to search or browse
+- [X] T031 [US3] Style error message with clear typography (no aggressive red/warnings)
 
 **Checkpoint**: Friendly messaging complete - visitor understands situation without confusion
 
@@ -114,11 +114,11 @@ Based on plan.md structure:
 
 **Purpose**: Integrate 404 page generation into existing site build workflow
 
-- [ ] T032 Add bin/generate-search-index call to existing build process in config/site.rb or bin/build
-- [ ] T033 Add bin/build-lunr-index call after pages.json generation
-- [ ] T034 Ensure build/404.html, build/pages.json, build/search-index.json are created on every build
-- [ ] T035 Verify GitHub Pages will serve 404.html automatically for missing pages
-- [ ] T036 [P] Add .gitignore entry for node_modules/ if not already present
+- [X] T032 Add bin/generate-search-index call to existing build process in config/site.rb or bin/build
+- [X] T033 Add bin/build-lunr-index call after pages.json generation
+- [X] T034 Ensure build/404.html, build/pages.json, build/search-index.json are created on every build
+- [X] T035 Verify GitHub Pages will serve 404.html automatically for missing pages
+- [X] T036 [P] Add .gitignore entry for node_modules/ if not already present
 
 ---
 
@@ -129,13 +129,13 @@ Based on plan.md structure:
 - [ ] T037 [P] Verify index size <100KB compressed (gzip/brotli) using `du -h build/search-index.json`
 - [ ] T038 [P] Test search performance <100ms using browser DevTools Network tab
 - [ ] T039 [P] Test page load <2s on simulated 3G using Chrome DevTools throttling
-- [ ] T040 Verify progressive enhancement (disable JavaScript, confirm static list still works)
+- [X] T040 Verify progressive enhancement (disable JavaScript, confirm static list still works)
 - [ ] T041 Test with 500+ pages to ensure performance targets met
-- [ ] T042 [P] Add SRI hash for lunr.js CDN link: `integrity="sha384-..."`
-- [ ] T043 Add error handling for failed lunr.js CDN load with handleLunrLoadError()
-- [ ] T044 Verify ARIA attributes for accessibility (aria-label, role="searchbox", etc.)
+- [X] T042 [P] Add SRI hash for lunr.js CDN link: `integrity="sha384-..."`
+- [X] T043 Add error handling for failed lunr.js CDN load with handleLunrLoadError()
+- [X] T044 Verify ARIA attributes for accessibility (aria-label, role="searchbox", etc.)
 - [ ] T045 Test keyboard navigation (tab through search, results, links)
-- [ ] T046 [P] Update deployment workflow to include search index generation
+- [X] T046 [P] Update deployment workflow to include search index generation
 - [ ] T047 Deploy to GitHub Pages and verify 404.html served correctly
 - [ ] T048 Test on real domain (navigate to /nonexistent-page)
 - [ ] T049 Validate against quickstart.md manual testing procedure

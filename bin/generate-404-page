@@ -1,0 +1,251 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'json'
+
+# Generate 404.html with embedded static page list
+# Inputs: build/pages.json
+# Outputs: build/404.html
+
+BUILD_DIR = 'build'
+PAGES_FILE = File.join(BUILD_DIR, 'pages.json')
+OUTPUT_FILE = File.join(BUILD_DIR, '404.html')
+
+# Load pages data
+unless File.exist?(PAGES_FILE)
+  warn "WARNING: #{PAGES_FILE} not found. Creating 404.html without static list."
+  pages = []
+else
+  pages = JSON.parse(IO.binread(PAGES_FILE))
+end
+
+# Generate static HTML list for progressive enhancement (User Story 2)
+static_list_html = pages.map do |page|
+  title = page['title'].to_s.strip
+  href = page['href'].to_s.strip
+  "    <li><a href=\"#{href}\">#{title}</a></li>"
+end.join("\n")
+
+# Read 404.html template and inject static list
+html_template = <<~HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .message {
+      margin-bottom: 2rem;
+      color: #666;
+    }
+    .search-box {
+      margin: 2rem 0;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: #0066cc;
+    }
+    .status {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    .page-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    .page-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .page-list li:last-child {
+      border-bottom: none;
+    }
+    .page-list a {
+      color: #0066cc;
+      text-decoration: none;
+      display: block;
+    }
+    .page-list a:hover {
+      text-decoration: underline;
+    }
+    .page-list small {
+      display: block;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+    mark {
+      background: #ffd;
+      padding: 0 2px;
+    }
+    .no-results {
+      color: #666;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Page Not Found</h1>
+  <p class="message">
+    Sorry, we couldn't find what you were looking for. 
+    Try searching below or browse all pages.
+  </p>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search for pages..."
+      aria-label="Search site pages"
+    >
+    <div class="status" id="status">Loading search...</div>
+  </div>
+
+  <ul class="page-list" id="results">
+#{static_list_html}
+  </ul>
+
+  <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" 
+          integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg=="
+          crossorigin="anonymous"></script>
+  <script>
+    // Global state
+    let pagesData = [];
+    let searchIdx = null;
+    const searchInput = document.getElementById('search');
+    const resultsList = document.getElementById('results');
+    const statusDiv = document.getElementById('status');
+
+    // Load search data
+    Promise.all([
+      fetch('/pages.json').then(r => r.json()),
+      fetch('/search-index.json').then(r => r.json())
+    ]).then(([pages, idx]) => {
+      pagesData = pages;
+      searchIdx = lunr.Index.load(idx);
+      statusDiv.textContent = 'Search ready';
+      searchInput.addEventListener('input', handleSearch);
+      
+      // Show all pages initially (replaces static list with interactive version)
+      showAllPages();
+    }).catch(err => {
+      console.error('Search failed to load:', err);
+      statusDiv.textContent = 'Search unavailable (page list still works)';
+      // Static list fallback - page still usable without JS
+    });
+
+    function handleSearch(e) {
+      const query = e.target.value.trim();
+
+      if (!query) {
+        showAllPages();
+        return;
+      }
+
+      if (!searchIdx) {
+        statusDiv.textContent = 'Search not ready yet...';
+        return;
+      }
+
+      const results = searchIdx.search(query);
+      displayResults(results, query);
+    }
+
+    function displayResults(results, query) {
+      if (results.length === 0) {
+        resultsList.innerHTML = '<li class="no-results">No pages found.</li>';
+        statusDiv.textContent = `No results for "${query}"`;
+        return;
+      }
+
+      statusDiv.textContent = `Found ${results.length} result${results.length === 1 ? '' : 's'}`;
+
+      const html = results.slice(0, 50).map(r => {
+        const page = pagesData.find(p => p.href === r.ref);
+        if (!page) return '';
+        
+        const titleHtml = highlight(page.title, query);
+        const contentHtml = page.content ? 
+          `<small>${highlight(page.content, query)}</small>` : '';
+        
+        return `
+          <li>
+            <a href="${page.href}">${titleHtml}</a>
+            ${contentHtml}
+          </li>
+        `;
+      }).join('');
+
+      resultsList.innerHTML = html;
+    }
+
+    function showAllPages() {
+      if (pagesData.length === 0) {
+        statusDiv.textContent = 'Loading pages...';
+        return;
+      }
+
+      statusDiv.textContent = `Showing all ${pagesData.length} pages`;
+      
+      const html = pagesData.map(p => `
+        <li>
+          <a href="${p.href}">${p.title}</a>
+        </li>
+      `).join('');
+      
+      resultsList.innerHTML = html;
+    }
+
+    function highlight(text, query) {
+      if (!text) return '';
+      
+      const terms = query.toLowerCase().split(/\\s+/);
+      let result = text;
+      
+      terms.forEach(term => {
+        if (term.length > 1) {
+          const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
+          result = result.replace(regex, '<mark>$1</mark>');
+        }
+      });
+      
+      return result;
+    }
+
+    function escapeRegex(str) {
+      return str.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');
+    }
+  </script>
+</body>
+</html>
+HTML
+
+# Write 404.html atomically
+temp_file = "#{OUTPUT_FILE}.tmp.#{Process.pid}"
+IO.binwrite(temp_file, html_template)
+File.rename(temp_file, OUTPUT_FILE)
+
+puts "Generated 404.html with #{pages.size} static page links → #{OUTPUT_FILE}"
