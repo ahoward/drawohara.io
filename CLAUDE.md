@@ -3,6 +3,7 @@
 Auto-generated from all feature plans. Last updated: 2025-11-13
 
 ## Active Technologies
+- Static JSON search index generated at build time (001-404-search-page)
 
 - Ruby 3.3+ (for build process), vanilla JavaScript (for client-side search) + Existing site build system (ro), Lunr.js (client-side), Kramdown (markdown processing) (001-404-search-page)
 
@@ -22,6 +23,7 @@ npm test && npm run lint
 Ruby 3.3+ (for build process), vanilla JavaScript (for client-side search): Follow standard conventions
 
 ## Recent Changes
+- 001-404-search-page: Added Ruby 3.3+ (for build process), vanilla JavaScript (for client-side search) + Existing site build system (ro), Lunr.js (client-side), Kramdown (markdown processing)
 
 - 001-404-search-page: Added Ruby 3.3+ (for build process), vanilla JavaScript (for client-side search) + Existing site build system (ro), Lunr.js (client-side), Kramdown (markdown processing)
 
