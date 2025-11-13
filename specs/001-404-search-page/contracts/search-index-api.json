@@ -1,0 +1,79 @@
+{
+  "title": "Search Index API - Lunr.js Index Contract",
+  "description": "Contract for search-index.json - pre-built lunr.js search index",
+  "version": "1.0.0",
+  "type": "static-json",
+  "endpoint": "/search-index.json",
+  "methods": ["GET"],
+  "response": {
+    "type": "object",
+    "description": "Serialized lunr.Index object",
+    "required": ["version", "fields", "fieldVectors", "invertedIndex", "pipeline"],
+    "properties": {
+      "version": {
+        "type": "string",
+        "description": "Lunr.js version used to build this index",
+        "example": "2.3.9"
+      },
+      "fields": {
+        "type": "array",
+        "description": "Searchable field names",
+        "items": {
+          "type": "string"
+        },
+        "example": ["title", "content"]
+      },
+      "fieldVectors": {
+        "type": "object",
+        "description": "Inverted index mapping documents to field vectors"
+      },
+      "invertedIndex": {
+        "type": "object",
+        "description": "Term frequency data for fast searching"
+      },
+      "pipeline": {
+        "type": "array",
+        "description": "Text processing pipeline configuration",
+        "items": {
+          "type": "string"
+        },
+        "example": ["stemmer", "stopWordFilter"]
+      }
+    }
+  },
+  "usage": {
+    "load_index": "const idx = lunr.Index.load(searchIndexJson);",
+    "search": "const results = idx.search(query);"
+  },
+  "constraints": {
+    "max_file_size_kb": 150,
+    "max_file_size_kb_compressed": 100,
+    "target_file_size_kb_compressed": 70
+  },
+  "generation": {
+    "build_script": "bin/build-lunr-index (Node.js)",
+    "frequency": "every site build (after pages.json created)",
+    "dependencies": ["build/pages.json", "lunr@2.3.9"]
+  },
+  "client_usage": {
+    "load": {
+      "async": true,
+      "description": "Load index asynchronously to avoid blocking page render",
+      "example": "const response = await fetch('/search-index.json'); const idx = lunr.Index.load(await response.json());"
+    },
+    "search": {
+      "sync": true,
+      "description": "Search is synchronous and fast (<10ms)",
+      "example": "const results = idx.search('about');"
+    },
+    "result_format": [
+      {
+        "ref": "/about/",
+        "score": 1.234,
+        "matchData": {
+          "metadata": "..."
+        }
+      }
+    ]
+  }
+}
