@@ -211,7 +211,7 @@ html_template = <<~HTML
 
   <h1>404</h1>
   <p class="message">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZ5aHBqZGNnNjRnYnVpZzNkZm1jczB5cXRwYmR6aDR5OGNxMXd6OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KctGIT2JHvVTi/giphy.gif" alt="Scooby Doo running" style="max-width: 200px; margin: 1rem 0;">
+    <img src="https://media.giphy.com/media/6l5PF70VKQCw8/giphy.gif" alt="Scooby and Shaggy running" style="max-width: 200px; margin: 1rem 0;">
     <br>
     zoinks! looks like we've got a mystery on our hands. this page vanished faster than scooby snacks at snack time.
   </p>
