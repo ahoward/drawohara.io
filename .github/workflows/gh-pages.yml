@@ -41,6 +41,12 @@ jobs:
       - name: setup gh-pages
         uses: actions/configure-pages@v3
         id: gh-pages
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: install node dependencies
+        run: npm install
       - name: build
         uses: ruby/setup-ruby@v1
         with:
