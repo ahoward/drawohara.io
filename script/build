@@ -84,6 +84,13 @@ script do
     puts "-" * 42
     mv!(tmp, dir)
     puts
+
+  #
+    puts "=" * 42
+    puts "BUILD SEARCH INDEX"
+    puts "-" * 42
+    system "bin/build-search"
+    puts
   end
 
   def site_build!(dir:, dojo4: false, parallel: 8, &block)

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>404 - drawohara</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* layout */
+    body {
+      max-width: 42rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      font: 16px/1.6 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      color: #333;
+      background: #fff;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    header a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    header a:visited {
+      color: #551a8b;
+    }
+
+    small {
+      font-size: 0.9em;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 1.5rem 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .message {
+      margin: 0.5rem 0 2rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    .search-box {
+      margin: 2rem 0;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem;
+      font: 16px/1.6 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      border: 1px solid #ddd;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      background: #fff;
+      border-color: #0066cc;
+    }
+
+    .status {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .page-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+
+    .page-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .page-list li:last-child {
+      border-bottom: none;
+    }
+
+    .page-list a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .page-list a:hover {
+      text-decoration: underline;
+    }
+
+    .page-list a:visited {
+      color: #551a8b;
+    }
+
+    mark {
+      background: #ffd;
+      padding: 0 2px;
+    }
+
+    .no-results {
+      color: #666;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+
+    /* dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #ddd;
+        background: #111;
+      }
+
+      header a,
+      .page-list a {
+        color: #58a6ff;
+      }
+
+      header a:visited,
+      .page-list a:visited {
+        color: #a371f7;
+      }
+
+      .message,
+      .status,
+      .no-results {
+        color: #888;
+      }
+
+      .search-box input {
+        background: #222;
+        border-color: #333;
+        color: #ddd;
+      }
+
+      .search-box input:focus {
+        background: #111;
+        border-color: #58a6ff;
+      }
+
+      .page-list li {
+        border-bottom-color: #333;
+      }
+
+      mark {
+        background: #443300;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">@drawohara</a>
+    <small>
+      <a href="mailto:i-love-this@drawohara.io?subject=/404">❤️</a>
+      ||
+      <a href="mailto:this-makes-me-sad@drawohara.io?subject=/404">💙</a>
+    </small>
+  </header>
+
+  <h1>404</h1>
+  <p class="message">
+    you seem lost. or maybe i moved something. either way, here's every page i've got.
+  </p>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search for pages..."
+      aria-label="Search site pages"
+    >
+    <div class="status" id="status">Loading search...</div>
+  </div>
+
+  <ul class="page-list" id="results">
+    <li><a href="/about/">/about/ - this is the part i hate.  writing about myself.</a></li>
+    <li><a href="/ai/">/ai/ - the o.g. ai.txt</a></li>
+    <li><a href="/contact/">/contact/ - whelp! no sophisticated spam blockage here, what could go wrong? 😂</a></li>
+    <li><a href="/cv/">/cv/ - creating things out of virtual nothingness remains my favorite artform, even after 20 years as a professional software architect. right after traversi</a></li>
+    <li><a href="/disco/">/disco/ - as i’ve hinted on some of my socials, i’ve been working, since mid-2024, at
+synthetic echo on a system i’ve named
+disco.</a></li>
+    <li><a href="/dojo4/archive/2015-complete-boulder-voter-guide/">/dojo4/archive/2015-complete-boulder-voter-guide/ - DOJO4 is above all a community, and we love where we live so - we vote!  We want you to vote, too, and in the hopes of making it easier and thus more</a></li>
+    <li><a href="/dojo4/archive/2019-dojo4-guide-to-a-better-year-42-tips/">/dojo4/archive/2019-dojo4-guide-to-a-better-year-42-tips/</a></li>
+    <li><a href="/dojo4/archive/28-days-of-kindness/">/dojo4/archive/28-days-of-kindness/ - Jessica Watson has put together a super fun project for the month of February who’s aim is simple:  to encourage people and companies to pledge an int</a></li>
+    <li><a href="/dojo4/archive/30-years-ago-i-said-pager-first-but-no-one-listened/">/dojo4/archive/30-years-ago-i-said-pager-first-but-no-one-listened/</a></li>
+    <li><a href="/dojo4/archive/4-critical-tools-for-creating-benefit-through-biz/">/dojo4/archive/4-critical-tools-for-creating-benefit-through-biz/ - Despite that purely mercenary consumerist capitalism still rules the roost of business, the ideas of using business as a force for good and conscious</a></li>
+    <li><a href="/dojo4/archive/5-benefits-to-becoming-a-b-corp/">/dojo4/archive/5-benefits-to-becoming-a-b-corp/</a></li>
+    <li><a href="/dojo4/archive/5-ways-to-make-owning-a-smartphone-less-stupid/">/dojo4/archive/5-ways-to-make-owning-a-smartphone-less-stupid/ - People love gadgets and gimmicks, especially those that promise to help them get more shit done.  Maybe no single thing ever invented has more potenti</a></li>
+    <li><a href="/dojo4/archive/a-bow-and-a-clap/">/dojo4/archive/a-bow-and-a-clap/</a></li>
+    <li><a href="/dojo4/archive/a-foray-into-the-edu-domain/">/dojo4/archive/a-foray-into-the-edu-domain/</a></li>
+    <li><a href="/dojo4/archive/a-sane-image-magick-configuration-for-your-rails-apps/">/dojo4/archive/a-sane-image-magick-configuration-for-your-rails-apps/ - i’ve often said that file uploads are a self inflicted DOS attack.  certainly one doesn’t have to look far to find examples of a seemingly small app f</a></li>
+    <li><a href="/dojo4/archive/a-sequel/">/dojo4/archive/a-sequel/ - We wrote a few weeks back about Photo Graffiti/Boulder is My Gallery, a public art project that visited dojo4. There was a small flurry of media activ</a></li>
+    <li><a href="/dojo4/archive/a-simple-backup-strategy-for-amazon-cloud-hosts/">/dojo4/archive/a-simple-backup-strategy-for-amazon-cloud-hosts/ - Over the years Dojo4 has put together a really great web application development and hosting stack.  The Amazon Web Services (AWS) cloud forms the bas</a></li>
+    <li><a href="/dojo4/archive/a-simple-strategy-for-managing-complex-deployments-of-web-applications/">/dojo4/archive/a-simple-strategy-for-managing-complex-deployments-of-web-applications/ - Web application deployments are complex from the get-go.  One often starts with at least a staging and a production deployment.  Add to this multi-ten</a></li>
+    <li><a href="/dojo4/archive/a-splash-of-whimsy-with-your-redesign/">/dojo4/archive/a-splash-of-whimsy-with-your-redesign/ - It's widely recognized that redesigning your own website is hard, especially when you're a creative agency whose domain is the internet.</a></li>
+    <li><a href="/dojo4/archive/a-tablet-for-the-future/">/dojo4/archive/a-tablet-for-the-future/ - Last week, our friends at Amplify launched their ambitious tablet product at SXSWedu. You can check it out here. Be sure to watch the video and grasp</a></li>
+    <li><a href="/dojo4/archive/a-week-of-commuting-at-dojo4/">/dojo4/archive/a-week-of-commuting-at-dojo4/</a></li>
+    <li><a href="/dojo4/archive/a-year-of-vinyl-please/">/dojo4/archive/a-year-of-vinyl-please/ - For over a year DOJO4 has had the pleasure of working with the best damn record store on the Internet, Vinyl Me, Please. They believe that music has</a></li>
+    <li><a href="/dojo4/archive/all-in-every-person-is-welcome-here/">/dojo4/archive/all-in-every-person-is-welcome-here/ - The election happened. We looked around and suddenly understood that other people might see us as possible haters; that as far as they could see we co</a></li>
+    <li><a href="/dojo4/archive/all-software-contains-bugs/">/dojo4/archive/all-software-contains-bugs/</a></li>
+    <li><a href="/dojo4/archive/angularjs-service-rails-api/">/dojo4/archive/angularjs-service-rails-api/ - Recently I had to dive into AngularJS on a Rails site we were building for a client. In addition to page content, the client has certain pages which d</a></li>
+    <li><a href="/dojo4/archive/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications/">/dojo4/archive/ann-sekrets-rb-easily-managed-encrypted-data-in-your-rails-applications/ - ref: https://github.com/ahoward/sekrets</a></li>
+    <li><a href="/dojo4/archive/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app/">/dojo4/archive/announcing-imbed-the-best-way-to-use-web-content-in-an-i-os-app/ - Lots of times it makes sense to do some development in HTML, JS, and CSS, and then use that content in a native app. Phonegap claims to be the best so</a></li>
+    <li><a href="/dojo4/archive/announcing-lockpick/">/dojo4/archive/announcing-lockpick/</a></li>
+    <li><a href="/dojo4/archive/another-quiz/">/dojo4/archive/another-quiz/ - i stood up a little quiz about html forms today.</a></li>
+    <li><a href="/dojo4/archive/aras-impact-roots-run-deep/">/dojo4/archive/aras-impact-roots-run-deep/</a></li>
+    <li><a href="/dojo4/archive/assessing-the-b-corp-assessment/">/dojo4/archive/assessing-the-b-corp-assessment/</a></li>
+    <li><a href="/dojo4/archive/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/">/dojo4/archive/awesomesauce-and-awesome-sounds-at-awesome-boulder-party/</a></li>
+    <li><a href="/dojo4/archive/aws-dns-https-doj4-hosting/">/dojo4/archive/aws-dns-https-doj4-hosting/ - Hosting, DNS & HTTPS often require the interactions of more than a few providers.  Often becoming unwieldily if not managed effectively.</a></li>
+    <li><a href="/dojo4/archive/aws-ebs-backups-we-rewrote-drebs/">/dojo4/archive/aws-ebs-backups-we-rewrote-drebs/ - The other day we released version 0.1.0 of DREBS, our Disaster Recovery for Elastic Block Storage script. We use it every hour on all 3 of our EC2 ins</a></li>
+    <li><a href="/dojo4/archive/b-the-certifiable-change/">/dojo4/archive/b-the-certifiable-change/</a></li>
+    <li><a href="/dojo4/archive/be-yourself--or-else/">/dojo4/archive/be-yourself--or-else/</a></li>
+    <li><a href="/dojo4/archive/because-we-all-love-to-bicycle/">/dojo4/archive/because-we-all-love-to-bicycle/</a></li>
+    <li><a href="/dojo4/archive/beginner-tutorial-i-os-certificates-provisioning-profiles/">/dojo4/archive/beginner-tutorial-i-os-certificates-provisioning-profiles/ - For a new iOS developer, they can be really confusing. You have an app that you simply want other people to be able to test on their device, and you g</a></li>
+    <li><a href="/dojo4/archive/beginning-and-ending-properly/">/dojo4/archive/beginning-and-ending-properly/ - Meetings can feel like a real time-suck. They often feel like they take longer than they should and meander all over the place without sense of direct</a></li>
+    <li><a href="/dojo4/archive/being-open-with-competitors-is-valuable-for-everyone/">/dojo4/archive/being-open-with-competitors-is-valuable-for-everyone/ - There’s actually a real strategic advantage to embracing our competitors. It makes our jobs more interesting, hones the quality of our work and builds</a></li>
+    <li><a href="/dojo4/archive/better-errors/">/dojo4/archive/better-errors/ - One of the rails gems that we’ve been using in our newer apps is Better Errors, which allows you to be dropped into a pry-like REPL and nicer error pa</a></li>
+    <li><a href="/dojo4/archive/big-boulder-rolling/">/dojo4/archive/big-boulder-rolling/ - Today we supported the launch of BigBoulderConf.com, a site we designed and built for GNIP's Big Boulder Conference. We're really pleased with how the</a></li>
+    <li><a href="/dojo4/archive/bigger-paychecks-better-impact/">/dojo4/archive/bigger-paychecks-better-impact/ - It is accepted wisdom that there are valuable benefits to paying employees more. Paying people more than market rate has been shown to increase empl</a></li>
+    <li><a href="/dojo4/archive/boulder-voter-guide/">/dojo4/archive/boulder-voter-guide/ - DOJO4 is above all a community, and we love where we live so - we vote!  We want you to vote, too, and in the hopes of making it easier and thus more</a></li>
+    <li><a href="/dojo4/archive/brand-new/">/dojo4/archive/brand-new/ - Sometimes the day comes when it's time for a change. Today was one of those days, and the change came in the form of a new logo on our front door.</a></li>
+    <li><a href="/dojo4/archive/bring-the-noise-or-not/">/dojo4/archive/bring-the-noise-or-not/</a></li>
+    <li><a href="/dojo4/archive/business-advice-from-the-movie-hitch/">/dojo4/archive/business-advice-from-the-movie-hitch/</a></li>
+    <li><a href="/dojo4/archive/buy-some-dojo4-merch/">/dojo4/archive/buy-some-dojo4-merch/ - Looking to get more dojo4 awesome-ness? We just launched a merchandise store, so now your aspirations to look as fly as us can finally be fulfilled.</a></li>
+    <li><a href="/dojo4/archive/can-you-build-me-an-app/">/dojo4/archive/can-you-build-me-an-app/ - “Companies that host in colocation and cloud environments can send a powerful signal to potential vendors by adopting procurement policies to work w</a></li>
+    <li><a href="/dojo4/archive/cheering-for-our-friend-scott-jurek/">/dojo4/archive/cheering-for-our-friend-scott-jurek/ - “Setting a record on the [Appalachian] Trail means huffing through an ultra marathon once a day, every day, for about six weeks. The total elevation g</a></li>
+    <li><a href="/dojo4/archive/chop-dojo4-re-envisions-a-calligraphic-element/">/dojo4/archive/chop-dojo4-re-envisions-a-calligraphic-element/ - We were recently approached by a buddhist teacher named Löppon Rechungpa to design identity assets for his meditation center. We decided to simplify t</a></li>
+    <li><a href="/dojo4/archive/chrome-logger/">/dojo4/archive/chrome-logger/ - A cool tool called Chrome Logger has been around for awhile that allows, through a known specification, client side logging from the server. It seemed</a></li>
+    <li><a href="/dojo4/archive/chrome-performance-profiling/">/dojo4/archive/chrome-performance-profiling/ - I’ve recently dug a lot deeper into chrome’s abilities to help us gauge and debug performance in our web apps. We always try to use best practices so</a></li>
+    <li><a href="/dojo4/archive/code-and-and-coffee-at-dojo4/">/dojo4/archive/code-and-and-coffee-at-dojo4/ - “Don’t call it a comeback, I been here for years.”</a></li>
+    <li><a href="/dojo4/archive/combine-mongoid-and-resque-for-background-job-pleasure/">/dojo4/archive/combine-mongoid-and-resque-for-background-job-pleasure/</a></li>
+    <li><a href="/dojo4/archive/community--dojo4--com/">/dojo4/archive/community--dojo4--com/ - Something beautiful happened at dojo4 over these last 5+ years: we built a community. Countless people have come through our doors. We’ve shared mea</a></li>
+    <li><a href="/dojo4/archive/community-happy-hours-have-begun/">/dojo4/archive/community-happy-hours-have-begun/ - Last night we hosted the first dojo4 Community Happy Hour, a monthly series featuring a short talk by a presenter from our community, bookended by bee</a></li>
+    <li><a href="/dojo4/archive/competition-at-its-best/">/dojo4/archive/competition-at-its-best/ - There’s actually a real strategic advantage to embracing our competitors. It makes our jobs more interesting, hones the quality of our work and builds</a></li>
+    <li><a href="/dojo4/archive/configuring-the-default-virtual-host-in-apache2/">/dojo4/archive/configuring-the-default-virtual-host-in-apache2/</a></li>
+    <li><a href="/dojo4/archive/contract-this/">/dojo4/archive/contract-this/</a></li>
+    <li><a href="/dojo4/archive/controlling-html5-audio-on-mobile-devices/">/dojo4/archive/controlling-html5-audio-on-mobile-devices/ - (This originally appeared on Spike’s Stuff… And Things… blog)</a></li>
+    <li><a href="/dojo4/archive/cooking-up-a-storm-with-vagrant-librarian-and-chef-solo/">/dojo4/archive/cooking-up-a-storm-with-vagrant-librarian-and-chef-solo/ - It’s pretty easy to configure apache on a single system. It gets a little more interesting if you have multiple vhosts in the configuration. It gets e</a></li>
+    <li><a href="/dojo4/archive/crap-developers-fear-mongo-and-worship-the-rdbms/">/dojo4/archive/crap-developers-fear-mongo-and-worship-the-rdbms/ - 99.9% of the web developer world believes that the correct usage of an RDBMS, along with transactions, prevents their applications from seeing bad dat</a></li>
+    <li><a href="/dojo4/archive/css3-horizontal-rules/">/dojo4/archive/css3-horizontal-rules/ - I recently found myself devising styles for the "short story" posts on my personal site, which I decided to re-plumb, switching from WordPress to Octo</a></li>
+    <li><a href="/dojo4/archive/culture-at-dojo4/">/dojo4/archive/culture-at-dojo4/ - Culture at dojo4</a></li>
+    <li><a href="/dojo4/archive/dangling-rpc-fruit-off-of-your-rails-controllers/">/dojo4/archive/dangling-rpc-fruit-off-of-your-rails-controllers/ - when working on any non-hello-world rails application you invariably need teeny ajax helpers to communicate with the server - in order to perform clie</a></li>
+    <li><a href="/dojo4/archive/data-visualization-with-google-sheets-and-d3--js/">/dojo4/archive/data-visualization-with-google-sheets-and-d3--js/ - There are people who look at a spreadsheet and see the magic.  There are others who look at a spreadsheet and their eyes go all blurry and there’s a s</a></li>
+    <li><a href="/dojo4/archive/death-to-password-committers/">/dojo4/archive/death-to-password-committers/ - Recently an article came across my not-rss feed regarding the number of developers who’ve carelessly checked in sensitive credentials for the world to</a></li>
+    <li><a href="/dojo4/archive/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army/">/dojo4/archive/defeating-the-sticky-wicket-of-api-limits-with-a-javascript-worker-army/ - when you have way too much work to do on the server with respect to api limits</a></li>
+    <li><a href="/dojo4/archive/digital-ocean-fast-and-cheap-but-good/">/dojo4/archive/digital-ocean-fast-and-cheap-but-good/ - As CTO of a technology agency I’m constantly evaluating new tools, processes, and services.</a></li>
+    <li><a href="/dojo4/archive/disaster/">/dojo4/archive/disaster/ - I lunched a machine today.</a></li>
+    <li><a href="/dojo4/archive/distraction/">/dojo4/archive/distraction/ - This message recently went out to our crew.  How do you manage distraction?</a></li>
+    <li><a href="/dojo4/archive/diy-impact/">/dojo4/archive/diy-impact/ - When we dedicated our business to social impact, we didn’t actually know what that meant.</a></li>
+    <li><a href="/dojo4/archive/does-your-company-care-about-the-environment/">/dojo4/archive/does-your-company-care-about-the-environment/ - Then put it in writing!  Including an environmental policy in your company’s handbook actually matters.  Maybe your founders and/or current employees</a></li>
+    <li><a href="/dojo4/archive/doing-a-good-job/">/dojo4/archive/doing-a-good-job/ - Sometimes I get completely myopic about the to-do lists. Especially those ones at work, where I want to do a good job and be a team player (my team do</a></li>
+    <li><a href="/dojo4/archive/dojo4-brands-the-big-boulder-conference/">/dojo4/archive/dojo4-brands-the-big-boulder-conference/ - dojo4 recently had the opportunity to work closely with GNIP to produce the BigBoulderConf branding, website and all conference collateral (badges, la</a></li>
+    <li><a href="/dojo4/archive/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/">/dojo4/archive/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/ - dojo4 designed localfoodshift.com to help us all support and eat local. We also designed the foodtree.com web (coming soon) and mobile app...</a></li>
+    <li><a href="/dojo4/archive/dojo4-guide-to-a-better-year-42-tips/">/dojo4/archive/dojo4-guide-to-a-better-year-42-tips/ - What does better mean? It might mean better than previous years, or it might mean making the most of existing goodness, and transforming existing chal</a></li>
+    <li><a href="/dojo4/archive/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/">/dojo4/archive/dojo4-helps-big-boulder-shine-in-lil-ol-boulder/</a></li>
+    <li><a href="/dojo4/archive/dojo4-hosts-inaugural-diy-coding-101-class/">/dojo4/archive/dojo4-hosts-inaugural-diy-coding-101-class/</a></li>
+    <li><a href="/dojo4/archive/dojo4-hosts-the-denver-ad-club-kegs-with-legs-party-on-nov-29-2012/">/dojo4/archive/dojo4-hosts-the-denver-ad-club-kegs-with-legs-party-on-nov-29-2012/ - We were honored to host  the Denver Ad Club's Kegs with Legs party November 29, 2012. Snowfall has been minimal here in the Rockies so we decided to d</a></li>
+    <li><a href="/dojo4/archive/dojo4-hosts-young-changemakers-from-around-the-world/">/dojo4/archive/dojo4-hosts-young-changemakers-from-around-the-world/ - On Monday, March 12th, dojo4 is co-hosting a group of young social innovators, 17-19 years old, from six different countries - Afghanistan, Zambia, Ni</a></li>
+    <li><a href="/dojo4/archive/dojo4-ignite-corey-and-giving-a-fuck/">/dojo4/archive/dojo4-ignite-corey-and-giving-a-fuck/ - If you weren’t there and want to see Corey’s recent Ignite talk, it’s now posted</a></li>
+    <li><a href="/dojo4/archive/dojo4-ninja-rescues-boulders-food/">/dojo4/archive/dojo4-ninja-rescues-boulders-food/ - On his way to work Monday, dojo4 developer Rylan Bowers picked up about 500 lbs of would-be-thrown-away-food from Walmart and powered it over to Harve</a></li>
+    <li><a href="/dojo4/archive/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip/">/dojo4/archive/dojo4-owns-it-ip-contracts-and-why-we-all-benefit-when-programmers-own-their-ip/ - dojo4’s general services agreement that we sign with every client includes a clause that describes our IP and what we reserve the right to do with it</a></li>
+    <li><a href="/dojo4/archive/dojo4-quiz-2-have-a-go/">/dojo4/archive/dojo4-quiz-2-have-a-go/</a></li>
+    <li><a href="/dojo4/archive/dojo4-s-got-answers/">/dojo4/archive/dojo4-s-got-answers/</a></li>
+    <li><a href="/dojo4/archive/dojo4-stands-up-to-cancer/">/dojo4/archive/dojo4-stands-up-to-cancer/ - We’re Calling You! Dojo4 creates a highly available, scalable, and beautiful solution for Stand Up To Cancer’s live telethon.</a></li>
+    <li><a href="/dojo4/archive/dojo4-supports-boulder-being-even-more-awesome/">/dojo4/archive/dojo4-supports-boulder-being-even-more-awesome/ - The Awesome Foundation is an ever-growing, worldwide network of people devoted to forwarding the interest of awesomeness in the universe. Created in t</a></li>
+    <li><a href="/dojo4/archive/dojo4-takes-a-bat-to-cancer/">/dojo4/archive/dojo4-takes-a-bat-to-cancer/ - dojo4’s last project with Stand Up to Cancer (SU2C) helped them raise over $100 million in one telethon. A month later we’re working with SU2C again;</a></li>
+    <li><a href="/dojo4/archive/driving-user-behavior-with-game-dynamics/">/dojo4/archive/driving-user-behavior-with-game-dynamics/ - From our friends at Leviathan Games</a></li>
+    <li><a href="/dojo4/archive/easy-cheasy-log-rolling-for-teh-rails-appz/">/dojo4/archive/easy-cheasy-log-rolling-for-teh-rails-appz/</a></li>
+    <li><a href="/dojo4/archive/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view/">/dojo4/archive/easy-cheasy-realtime-log-tailing-in-a-rails-admin-view/ - in our rails apps we always have an ‘/su’ or ‘super user’ section.  we dump stuff like reports into that backend.  recently i needed to allow super us</a></li>
+    <li><a href="/dojo4/archive/emailadore-on-producthunt/">/dojo4/archive/emailadore-on-producthunt/ - Emailadore: It’s adorable, and useful.</a></li>
+    <li><a href="/dojo4/archive/empathy-in-f-oss/">/dojo4/archive/empathy-in-f-oss/ - I recently came across a tweet that was really surprising to me. To provide some context, the tweet was authored by someone that maintains a popular j</a></li>
+    <li><a href="/dojo4/archive/entrepreneurial-by-nature/">/dojo4/archive/entrepreneurial-by-nature/</a></li>
+    <li><a href="/dojo4/archive/eventually-all-products-merge-into-one-and-a-list-runs-through-it/">/dojo4/archive/eventually-all-products-merge-into-one-and-a-list-runs-through-it/ - Recently, while helping a client mark up a Shopify theme, I came across a thorny problem: how to merge the output of one loop with that of another in</a></li>
+    <li><a href="/dojo4/archive/fabrication-illustrated-infographics-and-eli-who-elihuu/">/dojo4/archive/fabrication-illustrated-infographics-and-eli-who-elihuu/ - dojo4 had the opportunity of to work with Dorian Ferlauto, founder of Elihuu.com. Dorian is a veteran of the design industry and was recently the buye</a></li>
+    <li><a href="/dojo4/archive/family-friendly-equals-business-friendly-or-how-to-find-good-people/">/dojo4/archive/family-friendly-equals-business-friendly-or-how-to-find-good-people/</a></li>
+    <li><a href="/dojo4/archive/family-friendly-workplace-manifesto/">/dojo4/archive/family-friendly-workplace-manifesto/</a></li>
+    <li><a href="/dojo4/archive/family-friendly-workplace-manifesto-now-more-than-ever/">/dojo4/archive/family-friendly-workplace-manifesto-now-more-than-ever/</a></li>
+    <li><a href="/dojo4/archive/fancy-shops-harm-start-ups/">/dojo4/archive/fancy-shops-harm-start-ups/ - i wanted to share a little snippet from a client that landed in my inbox today:</a></li>
+    <li><a href="/dojo4/archive/filing-cabinets-are-for-suckers/">/dojo4/archive/filing-cabinets-are-for-suckers/ - Ever since the night I was sitting on his neighbor’s porch drinking wine and caught Ara coming home from work well after midnight from the company he</a></li>
+    <li><a href="/dojo4/archive/five-tips-for-obtaining-and-retaining-a-job-at-dojo4/">/dojo4/archive/five-tips-for-obtaining-and-retaining-a-job-at-dojo4/ - Since we're hiring at dojo4, I thought I'd put together a little tip sheet on how to get and keep a job here. Heck, they hired Garett, so why not</a></li>
+    <li><a href="/dojo4/archive/fix-for-caching-credentials-on-https-github-repos/">/dojo4/archive/fix-for-caching-credentials-on-https-github-repos/ - github recently switched to an https scheme as the default for cloning repos.  as a side effect you may suddenly be prompted for a ‘Username’ and ‘Pas</a></li>
+    <li><a href="/dojo4/archive/focus-points-for-change/">/dojo4/archive/focus-points-for-change/</a></li>
+    <li><a href="/dojo4/archive/for-a-smoother-ride-let-culture-drive-and-put-operations-in-shotgun/">/dojo4/archive/for-a-smoother-ride-let-culture-drive-and-put-operations-in-shotgun/ - For a long time a I had the misconception that culture was born out of operations. I thought that if a company was structured a certain way and creat</a></li>
+    <li><a href="/dojo4/archive/fred-jean/">/dojo4/archive/fred-jean/</a></li>
+    <li><a href="/dojo4/archive/friday-question/">/dojo4/archive/friday-question/ - Here are some questions we’ve asked each other at dojo4. We’ve asked each other one such question every Friday for the past 6+ years- so, obviously, t</a></li>
+    <li><a href="/dojo4/archive/from-a-streamlined-startup-stack-to-pci-compliance-on-aws/">/dojo4/archive/from-a-streamlined-startup-stack-to-pci-compliance-on-aws/ - Working through projects at Dojo4 I’m often surprised to see the way that seemingly tiny increases in technical complexity compound into significant a</a></li>
+    <li><a href="/dojo4/archive/front-end-dependency-management-with-bower-ro-r/">/dojo4/archive/front-end-dependency-management-with-bower-ro-r/ - Dependency management can be tricky. When I came on board at dojo4 a few weeks ago, it was awesome to clone a ruby on rails project repo, be able to d</a></li>
+    <li><a href="/dojo4/archive/generosity-is-an-advantage/">/dojo4/archive/generosity-is-an-advantage/</a></li>
+    <li><a href="/dojo4/archive/geo-near-queries-with-mongoid-3/">/dojo4/archive/geo-near-queries-with-mongoid-3/ - today i was rolling out some new search functionality and really needed the ‘geoNear’ functionality of mongo</a></li>
+    <li><a href="/dojo4/archive/getting-our-kids-in-shape-never-felt-so-good/">/dojo4/archive/getting-our-kids-in-shape-never-felt-so-good/ - It’s been our recent privilege to be doing some design and development for Calorie Cloud to support the work they’re doing with UNICEF USA in a series</a></li>
+    <li><a href="/dojo4/archive/getting-stronger/">/dojo4/archive/getting-stronger/ - i think many developers consider the work of development to be about developing software.</a></li>
+    <li><a href="/dojo4/archive/girl-effect-accelerator-braindump/">/dojo4/archive/girl-effect-accelerator-braindump/ - i’ve just spent the last 10 days in and around san francisco for the inaugural girl effect accelerator: the first unreasonable institute program dedic</a></li>
+    <li><a href="/dojo4/archive/green-the-web-post-number-1-championing-the-conversation-to-a-carbon-neutral-internet/">/dojo4/archive/green-the-web-post-number-1-championing-the-conversation-to-a-carbon-neutral-internet/ - This blog will be the first in a series on the carbon costs of our Internet activities, and what to do about it - woot!</a></li>
+    <li><a href="/dojo4/archive/grief-as-an-entrepreneurial-asset/">/dojo4/archive/grief-as-an-entrepreneurial-asset/</a></li>
+    <li><a href="/dojo4/archive/habits-as-a-conduit-for-change/">/dojo4/archive/habits-as-a-conduit-for-change/ - I’ve often thought that habits are the best mechanism for instituting change. Want to do something differently? Create a new habit or discard an old o</a></li>
+    <li><a href="/dojo4/archive/hackerspaces-r-us/">/dojo4/archive/hackerspaces-r-us/</a></li>
+    <li><a href="/dojo4/archive/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/">/dojo4/archive/hacking-for-civic-good-is-the-new-awesome-boulder-civic-hackfest-2013/</a></li>
+    <li><a href="/dojo4/archive/hacking-human-suffering-is-the-only-real-growth-industry/">/dojo4/archive/hacking-human-suffering-is-the-only-real-growth-industry/</a></li>
+    <li><a href="/dojo4/archive/handcrafted-code-and-design/">/dojo4/archive/handcrafted-code-and-design/ - Upon pondering the redesign of our visual identity here at dojo4, I reflected on the art guilds of renaissance Italy and other artisan workshop models</a></li>
+    <li><a href="/dojo4/archive/hands-off-my-window-title/">/dojo4/archive/hands-off-my-window-title/ - So I recently ssh'ed into a shiny new Ubuntu 11.10 server on EC2 and noticed some new things.  Firstly, Ubuntu seems to have enabled the byobu termina</a></li>
+    <li><a href="/dojo4/archive/happy-birthday-dojo4/">/dojo4/archive/happy-birthday-dojo4/ - As of today, dojo4 is 2 years old! But instead of a having a special day with cake and hats, we just did what we always do: Launched something. In thi</a></li>
+    <li><a href="/dojo4/archive/harvest-time-calgary-farmers-market/">/dojo4/archive/harvest-time-calgary-farmers-market/ - It’s that time of the year when your CSA drops off the last of the eggplant and apples at your door and you start Googling babaghanoush and making cid</a></li>
+    <li><a href="/dojo4/archive/have-babies-at-dojo4/">/dojo4/archive/have-babies-at-dojo4/</a></li>
+    <li><a href="/dojo4/archive/hello-goodbye-dojo4/">/dojo4/archive/hello-goodbye-dojo4/</a></li>
+    <li><a href="/dojo4/archive/hello-hello-moshimoshico-is-all-about-building-broducts/">/dojo4/archive/hello-hello-moshimoshico-is-all-about-building-broducts/ - And the experiment continues!</a></li>
+    <li><a href="/dojo4/archive/hey-you-don-t-need-a-cms/">/dojo4/archive/hey-you-don-t-need-a-cms/ - Everybody, including your mother, has told you that you need a Content Management System (CMS). You, yourself, feel as if you need instant access to t</a></li>
+    <li><a href="/dojo4/archive/home-office/">/dojo4/archive/home-office/</a></li>
+    <li><a href="/dojo4/archive/how-did-you-fund-your-education/">/dojo4/archive/how-did-you-fund-your-education/ - One of my younger cousins is moving to the Front Range to attend CSU Fort Collins. Maiele (my cousin) is taking a different approach to funding her ed</a></li>
+    <li><a href="/dojo4/archive/how-to-create-and-apply-a-patch-w-git-across-similar-repositories/">/dojo4/archive/how-to-create-and-apply-a-patch-w-git-across-similar-repositories/ - We have a set of applications we often clone to bootstrap new projects.   Managing downstream updates to many similar, but not precisely the same code</a></li>
+    <li><a href="/dojo4/archive/how-to-fold-a-marketing-site-into-a-web-app/">/dojo4/archive/how-to-fold-a-marketing-site-into-a-web-app/ - Soon after releasing the new version of InspirePay, CEO Mark Fischer decided it was time to integrate his marketing site with the shiny new web applic</a></li>
+    <li><a href="/dojo4/archive/how-to-get-your-front-end-developers-to-fix-things/">/dojo4/archive/how-to-get-your-front-end-developers-to-fix-things/ - first you check in code like this</a></li>
+    <li><a href="/dojo4/archive/hubba-hubba/">/dojo4/archive/hubba-hubba/</a></li>
+    <li><a href="/dojo4/archive/hubbing-it-in-halifax/">/dojo4/archive/hubbing-it-in-halifax/</a></li>
+    <li><a href="/dojo4/archive/hubbishness/">/dojo4/archive/hubbishness/</a></li>
+    <li><a href="/dojo4/archive/i-emailadore-you/">/dojo4/archive/i-emailadore-you/ - If you’ve been following along with any of the recent news around our forays into product, you may have noticed a certain logo on our page for Moshi M</a></li>
+    <li><a href="/dojo4/archive/if-you-want-to-be-happy-think-of-others/">/dojo4/archive/if-you-want-to-be-happy-think-of-others/ - Despite the torrential flooding and emergency-level havoc that’s been happening in our state, our town and our neighborhoods, we’ve been pretty cheerf</a></li>
+    <li><a href="/dojo4/archive/imbed-for-android/">/dojo4/archive/imbed-for-android/ - A while back I wrote about why phonegap sucks and how we chose to incorporate web content into our native apps. The open source code that resulted fro</a></li>
+    <li><a href="/dojo4/archive/impact-project-example-idea/">/dojo4/archive/impact-project-example-idea/</a></li>
+    <li><a href="/dojo4/archive/in-your-minds-browser-clear-your-cache-every-tuesday-morning/">/dojo4/archive/in-your-minds-browser-clear-your-cache-every-tuesday-morning/</a></li>
+    <li><a href="/dojo4/archive/irish-dance-and-wordpress-the-soul-destroyer/">/dojo4/archive/irish-dance-and-wordpress-the-soul-destroyer/ - The other night my family was out watching my daughter perform at her first Irish dance - which was loads of fun</a></li>
+    <li><a href="/dojo4/archive/it-s-business-time-10-tips-for-doing-it-better/">/dojo4/archive/it-s-business-time-10-tips-for-doing-it-better/ - 1. Be generous
+You can’t afford not to be generous. What goes around, comes around and if you take good care of your employees and clients, they will</a></li>
+    <li><a href="/dojo4/archive/it-s-in-the-logs-stupid/">/dojo4/archive/it-s-in-the-logs-stupid/ - (This post originally appeared on Spike’s Stuff… And Things… blog)</a></li>
+    <li><a href="/dojo4/archive/jared-polis-representative-of-hate/">/dojo4/archive/jared-polis-representative-of-hate/ - The U.S.(eless) House of Representatives voted 289-137 today to more severely restrict Syrian and Iraqi refugees wanting to immigrate. Get that - th</a></li>
+    <li><a href="/dojo4/archive/know-thy-forms/">/dojo4/archive/know-thy-forms/ - i stood up a little quiz about html forms today.</a></li>
+    <li><a href="/dojo4/archive/korean-release-the-click-clean-scorecard/">/dojo4/archive/korean-release-the-click-clean-scorecard/ - Greenpeace has been at the forefront of a growing problem many of us haven’t really even thought about: the carbon footprint of our collective Interne</a></li>
+    <li><a href="/dojo4/archive/large-files-made-small-coming-to-an-airport-near-you/">/dojo4/archive/large-files-made-small-coming-to-an-airport-near-you/</a></li>
+    <li><a href="/dojo4/archive/lead/">/dojo4/archive/lead/ - as some of you may have noticed, we designate ‘lead’ in the [STATUS] update.</a></li>
+    <li><a href="/dojo4/archive/leadership-we-did-it-ourselves/">/dojo4/archive/leadership-we-did-it-ourselves/ - A poor leader: the people fear.
+A good leader: the people love.
+A great leader: the people say, “we did it ourselves.”
+-Sun Tzu</a></li>
+    <li><a href="/dojo4/archive/lean-development-process-sketch/">/dojo4/archive/lean-development-process-sketch/</a></li>
+    <li><a href="/dojo4/archive/learn-to-write-dsls-the-right-way/">/dojo4/archive/learn-to-write-dsls-the-right-way/ - I was working with a certain popular ruby testing library today to prepare a pull request and hit an issue with it i’ve hit many times: passing and/or</a></li>
+    <li><a href="/dojo4/archive/leprechauns-love-rainbows/">/dojo4/archive/leprechauns-love-rainbows/ - We here at the dojo love us some holidays. In honor of many holidays, we’ve enabled our site with a quick switching color scheme. St. Patrick’s day wa</a></li>
+    <li><a href="/dojo4/archive/less-is-more-busyness-vs--effectiveness/">/dojo4/archive/less-is-more-busyness-vs--effectiveness/</a></li>
+    <li><a href="/dojo4/archive/lets-kill-altruism/">/dojo4/archive/lets-kill-altruism/ - “A train has two great attributes of life… motion and purpose,” I said, reading a line from Atlas Shrugged to a friend this past weekend. There’s so</a></li>
+    <li><a href="/dojo4/archive/love-and-code-rocky-mountain-ruby-conference-presentation/">/dojo4/archive/love-and-code-rocky-mountain-ruby-conference-presentation/ - At 3:41 Wednesday I get a Twitter message from Graham McBain, the organizer of this event - and we should probably take a sec to thank Graham, Aliss</a></li>
+    <li><a href="/dojo4/archive/love-is-listening-together/">/dojo4/archive/love-is-listening-together/</a></li>
+    <li><a href="/dojo4/archive/luxury-vacations-need-we-say-more/">/dojo4/archive/luxury-vacations-need-we-say-more/ - Quintess, a luxury vacation rental club, launched a sparkly new site/app this week and we couldn’t be happier. dojo4 worked along side Quintess’ extre</a></li>
+    <li><a href="/dojo4/archive/maintaining-our-urban-professionalism/">/dojo4/archive/maintaining-our-urban-professionalism/ - We take our work seriously. We’re professional with our clients. We don’t mess around.</a></li>
+    <li><a href="/dojo4/archive/marshal-mongoid-object-like-butter/">/dojo4/archive/marshal-mongoid-object-like-butter/ - sticking your models into cache, or serializing them for other reasons shouldn’t be painful.  unfortunately it is with most ORMs, as they have a lame</a></li>
+    <li><a href="/dojo4/archive/maurizio-the-microsite/">/dojo4/archive/maurizio-the-microsite/ - Over the course of several days last month dojo4 created a simple, beautiful microsite for director/producer Maura Axelrod on her forthcoming document</a></li>
+    <li><a href="/dojo4/archive/meaningful-connection-equals-purposeful-business/">/dojo4/archive/meaningful-connection-equals-purposeful-business/ - So, what’s the point of business? For a long time I thought the point of my business was simply to design and develop software for clients and make</a></li>
+    <li><a href="/dojo4/archive/meditation-doesn-t-actually-do-anything-dojo/">/dojo4/archive/meditation-doesn-t-actually-do-anything-dojo/</a></li>
+    <li><a href="/dojo4/archive/meditation-every-tuesday-morning-the-dojo/">/dojo4/archive/meditation-every-tuesday-morning-the-dojo/</a></li>
+    <li><a href="/dojo4/archive/meetings-do-not-need-to-look-like-meetings/">/dojo4/archive/meetings-do-not-need-to-look-like-meetings/</a></li>
+    <li><a href="/dojo4/archive/miles-smiles/">/dojo4/archive/miles-smiles/ - We want to welcome our newest developer, Miles Matthias to the magical realm of dojo4! dojo4, where everyday is Ride Your Bike To Work Day and the IPA</a></li>
+    <li><a href="/dojo4/archive/mobile-detection-behind-a-cdn/">/dojo4/archive/mobile-detection-behind-a-cdn/ - In a recent project, we were tasked with building the mobile version of an existing website. The existing website really wasn’t a good candidate for a</a></li>
+    <li><a href="/dojo4/archive/move-to-south-africa-for-the-great-tech-jobs/">/dojo4/archive/move-to-south-africa-for-the-great-tech-jobs/ - I had a super fun conversation last week with Keith Davies, Head of Finance, Risk, and Analytics at Zoona Africa, which is a mobile payments platform</a></li>
+    <li><a href="/dojo4/archive/multi-domain-https-with-server-name-indication/">/dojo4/archive/multi-domain-https-with-server-name-indication/ - (This this is a condensed version of Yes, Virginia, You Can Use SNI which originally appeared on Spike’s Stuff… And Things… blog)</a></li>
+    <li><a href="/dojo4/archive/ncwit-is-making-it-happen/">/dojo4/archive/ncwit-is-making-it-happen/</a></li>
+    <li><a href="/dojo4/archive/nepal-still-needs-our-help-now/">/dojo4/archive/nepal-still-needs-our-help-now/ - The devastation of caused by the recent earthquake in Nepal has been in the forefront of the minds of many of us these last few weeks. Although there</a></li>
+    <li><a href="/dojo4/archive/never-debug-alone/">/dojo4/archive/never-debug-alone/ - this recently went out to our team.  thought i’d share:</a></li>
+    <li><a href="/dojo4/archive/never-play-games-other-secrets-to-success-from-dojo4-s-cto/">/dojo4/archive/never-play-games-other-secrets-to-success-from-dojo4-s-cto/ - Have you ever wondered how Ara got started as a web developer?  (He used to work on weather data and supercomputers for NOAA, you know).  As one of hi</a></li>
+    <li><a href="/dojo4/archive/nicer-whenver-for-yer-railzer/">/dojo4/archive/nicer-whenver-for-yer-railzer/ - whenever.rb is a nice DSL for configuring cron tasks in ruby ( https://github.com/javan/whenever )</a></li>
+    <li><a href="/dojo4/archive/ninja-problem-solving/">/dojo4/archive/ninja-problem-solving/ - Recently this email went out to our technical team.  I thought I'd share it un-edited.</a></li>
+    <li><a href="/dojo4/archive/non-icky-javascript-helper-ap-is-on-your-rails-controllers/">/dojo4/archive/non-icky-javascript-helper-ap-is-on-your-rails-controllers/ - ref: https://gist.github.com/ahoward/5752290</a></li>
+    <li><a href="/dojo4/archive/number-365poop/">/dojo4/archive/number-365poop/ - I was recently on a hike, thinking about my to-do list and how I haven’t been posting on the #28dayskind project every day this month.</a></li>
+    <li><a href="/dojo4/archive/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada/">/dojo4/archive/number-number-moment-timezone-has-no-data-for-central-time-us-and-canada/ - This error message in the console resulted from directly passing Central Time (US & Canada) as the value for time_zone in a moment.tz(date, time_zon</a></li>
+    <li><a href="/dojo4/archive/office-dog-makes-twitter-splash/">/dojo4/archive/office-dog-makes-twitter-splash/</a></li>
+    <li><a href="/dojo4/archive/on-the-floor-at-dojo4/">/dojo4/archive/on-the-floor-at-dojo4/</a></li>
+    <li><a href="/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-1/">/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-1/</a></li>
+    <li><a href="/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-2/">/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-2/</a></li>
+    <li><a href="/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-3/">/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-3/</a></li>
+    <li><a href="/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-4/">/dojo4/archive/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-4/</a></li>
+    <li><a href="/dojo4/archive/org-dev-dojo/">/dojo4/archive/org-dev-dojo/</a></li>
+    <li><a href="/dojo4/archive/organizational-development-and-leadership-at-dojo4/">/dojo4/archive/organizational-development-and-leadership-at-dojo4/</a></li>
+    <li><a href="/dojo4/archive/orgdev-wants-you/">/dojo4/archive/orgdev-wants-you/ - From: orgdev 
+To: Boulder/Denver Tech Community 
+re: Your opinion</a></li>
+    <li><a href="/dojo4/archive/our-remote-working-setup/">/dojo4/archive/our-remote-working-setup/ - Here at dojo4 we’ve been trying to be more flexible with remote working lately. We love the concept and have been gradually working it into our normal</a></li>
+    <li><a href="/dojo4/archive/patching-between-git-repos/">/dojo4/archive/patching-between-git-repos/ - (This post originally appears on Spike’s Stuff… And Things… blog)</a></li>
+    <li><a href="/dojo4/archive/patience-perspective-and-poop-parenting-and-business/">/dojo4/archive/patience-perspective-and-poop-parenting-and-business/ - Parenting and entrepreneurship are not that different from one another. They are both thoroughly immersive, deeply consuming and relentlessly demand</a></li>
+    <li><a href="/dojo4/archive/per-project-ssh-keys-ftw/">/dojo4/archive/per-project-ssh-keys-ftw/ - With Rails + Capistrano deployments this setting</a></li>
+    <li><a href="/dojo4/archive/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/">/dojo4/archive/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/</a></li>
+    <li><a href="/dojo4/archive/playing-god-in-the-garden/">/dojo4/archive/playing-god-in-the-garden/ - My husband says that making soil (a.k.a. composting) is like being The Creator herself, and that gardening is akin to playing God.  All I know is that</a></li>
+    <li><a href="/dojo4/archive/ports-or-porn-stars/">/dojo4/archive/ports-or-porn-stars/ - of course you should name ports after porn stars: antirez.com/post/redis-as-â¦</a></li>
+    <li><a href="/dojo4/archive/processing-huge-files-with-an-html5-file-input/">/dojo4/archive/processing-huge-files-with-an-html5-file-input/ - I was playing with some code that required processing a huge file (> 600 mb) with an html5 file input type.  It took some playing before I discovered</a></li>
+    <li><a href="/dojo4/archive/program-like-you-give-a-damn/">/dojo4/archive/program-like-you-give-a-damn/ - *This talk was presented at the Ruby Conference 2015 in Kiev, Ukraine.</a></li>
+    <li><a href="/dojo4/archive/proud-parents-of-a-future-dojo4er/">/dojo4/archive/proud-parents-of-a-future-dojo4er/</a></li>
+    <li><a href="/dojo4/archive/push-it-out-the-window/">/dojo4/archive/push-it-out-the-window/ - This was crossposted over at the Boulder Nonprofit Cultivation Center.</a></li>
+    <li><a href="/dojo4/archive/rails-to-json/">/dojo4/archive/rails-to-json/ - rails, including rails3, has this lovely bit of code related to providing a “to_json” method on built-ins:</a></li>
+    <li><a href="/dojo4/archive/random-core-dumps-in-ruby-193-on-osx/">/dojo4/archive/random-core-dumps-in-ruby-193-on-osx/</a></li>
+    <li><a href="/dojo4/archive/reblog-programming-is-gardening-not-engineering/">/dojo4/archive/reblog-programming-is-gardening-not-engineering/ - We thought it well worth reblogging this Conversation with Andy Hunt and Dave Thomas, Part VII by Bill Venners from April 14, 2003...</a></li>
+    <li><a href="/dojo4/archive/reblog-the-jellyfish-model/">/dojo4/archive/reblog-the-jellyfish-model/ - Interested in a business model that’s transparent, distributed, decentralized, collaborative, adaptive and egoless?  So are we…</a></li>
+    <li><a href="/dojo4/archive/relay-twitter-campfire/">/dojo4/archive/relay-twitter-campfire/</a></li>
+    <li><a href="/dojo4/archive/responding-to-the-everyday-as-it-happens/">/dojo4/archive/responding-to-the-everyday-as-it-happens/ - Juggling work life and parenting is an exercise in living with, and surrendering to, constant change. Read: Give into the chaos that is now your life.</a></li>
+    <li><a href="/dojo4/archive/responsive-against-lung-cancer/">/dojo4/archive/responsive-against-lung-cancer/</a></li>
+    <li><a href="/dojo4/archive/responsive-design-is-dead-long-live-responsive-design/">/dojo4/archive/responsive-design-is-dead-long-live-responsive-design/ - Responsive websites are here to stay, and for good reason. There is currently no better method for molding content to the growing plethora of devices</a></li>
+    <li><a href="/dojo4/archive/resque-best-practices/">/dojo4/archive/resque-best-practices/ - Resque ( https://github.com/defunkt/resque ) is a really nice, robust,
+production quality background job facility for rails.  However, it leaves alot</a></li>
+    <li><a href="/dojo4/archive/rising-and-falling-in-business/">/dojo4/archive/rising-and-falling-in-business/</a></li>
+    <li><a href="/dojo4/archive/running-dropbox-for-multiple-accounts-on-one-machine/">/dojo4/archive/running-dropbox-for-multiple-accounts-on-one-machine/ - I setup a new machine this week and really needed to run two Dropbox instances: one for my personal stuff and one for my http://dojo4.com account.</a></li>
+    <li><a href="/dojo4/archive/running-with-it/">/dojo4/archive/running-with-it/</a></li>
+    <li><a href="/dojo4/archive/saccharine-smiles-and-fishnet-stockings/">/dojo4/archive/saccharine-smiles-and-fishnet-stockings/ - “Sincerity - if you can fake that, you’ve got it made.” ― George Burns</a></li>
+    <li><a href="/dojo4/archive/screen-set-up-your-project-s-terminal-environment-once-and-only-once/">/dojo4/archive/screen-set-up-your-project-s-terminal-environment-once-and-only-once/ - With any project, I’m running several programs at once during the development process. This usually results in several tabs in the Terminal app - one</a></li>
+    <li><a href="/dojo4/archive/sense-of-self-as-commodity/">/dojo4/archive/sense-of-self-as-commodity/ - Essena O’Neill quit Instagram. You haven’t heard? It’s hard work being phony, hard on one’s sense of self. Don’t pretend like you don’t know. We’ve</a></li>
+    <li><a href="/dojo4/archive/shiny-shiny-markdown/">/dojo4/archive/shiny-shiny-markdown/ - all dojo4’s rails application use markdown in some fashion.  following is the setup we have for the shiniest of shiny markdown configurations:</a></li>
+    <li><a href="/dojo4/archive/shipped-it/">/dojo4/archive/shipped-it/ - Select New Mexico is my first Dojo4 project that went live. Select New Mexico is a green chile distributor who wanted a refresh of their web site. It</a></li>
+    <li><a href="/dojo4/archive/simple-changes-to-be-more-productive/">/dojo4/archive/simple-changes-to-be-more-productive/</a></li>
+    <li><a href="/dojo4/archive/simple-essential/">/dojo4/archive/simple-essential/ - You may have seen this stunning video making the rounds last week. If not, take a couple minutes and enjoy.</a></li>
+    <li><a href="/dojo4/archive/sinskey-vin65-and-dragons/">/dojo4/archive/sinskey-vin65-and-dragons/ - Once upon a time in a (napa) valley far, far away there was a beautiful vineyard. Robert Sinskey Vineyards, as it was known, produced some of the most</a></li>
+    <li><a href="/dojo4/archive/sister-code-5-ways-to-meet-women-halfway/">/dojo4/archive/sister-code-5-ways-to-meet-women-halfway/</a></li>
+    <li><a href="/dojo4/archive/site-launch-planted-nutrition/">/dojo4/archive/site-launch-planted-nutrition/ - We just launched a marketing website for Planted Nutrition, a new nutrition practice in Boulder run by Ellen Teig. </a></li>
+    <li><a href="/dojo4/archive/size-matters/">/dojo4/archive/size-matters/ - multiplexing which images to send to which devices is a sticky problem.</a></li>
+    <li><a href="/dojo4/archive/slow-food-slow-tech/">/dojo4/archive/slow-food-slow-tech/</a></li>
+    <li><a href="/dojo4/archive/snugg-le-up-the-boulder-energy-challenge-community-pitch-night-tommorrow/">/dojo4/archive/snugg-le-up-the-boulder-energy-challenge-community-pitch-night-tommorrow/ - A few years back dojo4 had the privilege of working closely with a unique Boulder startup, Snugg Home. Snugg is at the cutting edge of tangible climat</a></li>
+    <li><a href="/dojo4/archive/snuggin/">/dojo4/archive/snuggin/ - Brrr! Last night the wind slid down the Flatirons like an avalanche and crashed into Boulder's insulation-challenged ranch homes. Goodbye, Indian Summ</a></li>
+    <li><a href="/dojo4/archive/so-long-and-thanks-for-all-the-unicorns/">/dojo4/archive/so-long-and-thanks-for-all-the-unicorns/</a></li>
+    <li><a href="/dojo4/archive/so-you-think-youre-a-web-developer-eh/">/dojo4/archive/so-you-think-youre-a-web-developer-eh/ - ref: https://gist.github.com/3788769</a></li>
+    <li><a href="/dojo4/archive/so-you-want-to-change-the-world-we-do-too-by-building-better-businesses-aka-the-little-handbook-for-sturdy-startups/">/dojo4/archive/so-you-want-to-change-the-world-we-do-too-by-building-better-businesses-aka-the-little-handbook-for-sturdy-startups/</a></li>
+    <li><a href="/dojo4/archive/speaking-at-hour-of-code/">/dojo4/archive/speaking-at-hour-of-code/ - Today I had the pleasure of speaking at Northglenn Middle School to the 8th grade class for Code.org’s “Hour of Code”. The hour of code is an initiati</a></li>
+    <li><a href="/dojo4/archive/spine-js-an-experience-a-review/">/dojo4/archive/spine-js-an-experience-a-review/ - So we like trying out random front end frameworks here at dojo4 on projects, and the latest one we’ve tried is SpineJS. Here are my thoughts after usi</a></li>
+    <li><a href="/dojo4/archive/spreading-the-good-feels/">/dojo4/archive/spreading-the-good-feels/</a></li>
+    <li><a href="/dojo4/archive/static-is-the-new-black/">/dojo4/archive/static-is-the-new-black/ - As a web agency nothing, and I mean nothing, embodies the spirit of the saying:</a></li>
+    <li><a href="/dojo4/archive/step-0-getting-started-building-a-purposeful-organization/">/dojo4/archive/step-0-getting-started-building-a-purposeful-organization/ - UPDATE See our follow-up post here</a></li>
+    <li><a href="/dojo4/archive/step-1-mmco-status-update-on-purpose/">/dojo4/archive/step-1-mmco-status-update-on-purpose/ - As a follow up to my Step 0 post the other day, I wanted to offer some insight into the current status of Moshi Moshi Co. along these lines.</a></li>
+    <li><a href="/dojo4/archive/su2c-live-telethon-rawked/">/dojo4/archive/su2c-live-telethon-rawked/ - Stand Up to Cancer telethon goes off without a hitch!</a></li>
+    <li><a href="/dojo4/archive/tagged/">/dojo4/archive/tagged/ - We noticed something odd out the back window today.</a></li>
+    <li><a href="/dojo4/archive/tax-day-is-coming-be-not-afraid/">/dojo4/archive/tax-day-is-coming-be-not-afraid/</a></li>
+    <li><a href="/dojo4/archive/technology-considered-harmful/">/dojo4/archive/technology-considered-harmful/ - My parents are in Boulder from Alaska for a few weeks.  I don’t get to see them that much.</a></li>
+    <li><a href="/dojo4/archive/test-your-b-corp-trivia-knowledge/">/dojo4/archive/test-your-b-corp-trivia-knowledge/ - Last week DOJO4 hosted B Lab’s community development maven, Kara Peck, to test our B Corp movement trivia knowledge.  How many can you get right? (Mor</a></li>
+    <li><a href="/dojo4/archive/testing-ie9-is-less-like-eating-glass-than-before/">/dojo4/archive/testing-ie9-is-less-like-eating-glass-than-before/ - This weekend I was hammering out some bugs in two projects (http://dojo4.com itself and http://my.windowfarms.com).  I’d been putting them off for a l</a></li>
+    <li><a href="/dojo4/archive/the-5-mystical-practices-of-great-engineers/">/dojo4/archive/the-5-mystical-practices-of-great-engineers/ - Being a great engineer is an art, not a science.</a></li>
+    <li><a href="/dojo4/archive/the-big-pivot/">/dojo4/archive/the-big-pivot/ - ‘Pivoting’ is rarely a good thing in software, regardless of how people try
+to spin it to their investors.  It is generally made up of one part ‘we
+fu</a></li>
+    <li><a href="/dojo4/archive/the-black-swan-theory/">/dojo4/archive/the-black-swan-theory/</a></li>
+    <li><a href="/dojo4/archive/the-buffalo-bicycle-classic/">/dojo4/archive/the-buffalo-bicycle-classic/</a></li>
+    <li><a href="/dojo4/archive/the-calgary-farmer-s-market/">/dojo4/archive/the-calgary-farmer-s-market/</a></li>
+    <li><a href="/dojo4/archive/the-ceo-should-wash-the-dishes/">/dojo4/archive/the-ceo-should-wash-the-dishes/ - Years ago, okay maybe decades ago, I worked at the most successful Boulder restaurant that nobody even knows is there.  This was back when Lucky, God</a></li>
+    <li><a href="/dojo4/archive/the-dojo-is-growing/">/dojo4/archive/the-dojo-is-growing/ - Recently, dojo4 hired two new folks to help the shop take on new challenges. Well, truth be told, we were tired of picking on each other, so we brough</a></li>
+    <li><a href="/dojo4/archive/the-fear-startups/">/dojo4/archive/the-fear-startups/ - “The fear is the danger.” 
+Steph Davis on free soloing The Diamond.</a></li>
+    <li><a href="/dojo4/archive/the-how-vs-the-what-of-building-meaningful-career-or-why-following-your-bliss-is-a-crock/">/dojo4/archive/the-how-vs-the-what-of-building-meaningful-career-or-why-following-your-bliss-is-a-crock/</a></li>
+    <li><a href="/dojo4/archive/the-manager-and-the-engineer/">/dojo4/archive/the-manager-and-the-engineer/ - An oldie but goodie ;-)</a></li>
+    <li><a href="/dojo4/archive/the-mongoid-wars-removing-production-indexes/">/dojo4/archive/the-mongoid-wars-removing-production-indexes/ - Yesterday Ryan Cook and I hit one of those dreaded production only issues experienced developers know and hate on the soft launched Moshi Moshi Co pro</a></li>
+    <li><a href="/dojo4/archive/the-new-startups-got-heart/">/dojo4/archive/the-new-startups-got-heart/</a></li>
+    <li><a href="/dojo4/archive/the-power-of-passion-projects/">/dojo4/archive/the-power-of-passion-projects/ - The Power of Passion Projects</a></li>
+    <li><a href="/dojo4/archive/the-problem-with-volunteerism/">/dojo4/archive/the-problem-with-volunteerism/ - The problem with volunteerism is that it doesn’t really work. Not over the long haul - and if you really care about impact, then you’d better be in it</a></li>
+    <li><a href="/dojo4/archive/the-sekrets-gem/">/dojo4/archive/the-sekrets-gem/ - (This post originally appears on Spike’s Stuff… And Things… blog)</a></li>
+    <li><a href="/dojo4/archive/the-shadow-world-of-css-tables/">/dojo4/archive/the-shadow-world-of-css-tables/ - The future of web layouts is promising, especially for the wizened web dev whose deeply nested tables still haunt the internet. But, until flexbox</a></li>
+    <li><a href="/dojo4/archive/the-worlds-simplest-presenter-pattern/">/dojo4/archive/the-worlds-simplest-presenter-pattern/</a></li>
+    <li><a href="/dojo4/archive/these-are-12-of-my-favorite-things/">/dojo4/archive/these-are-12-of-my-favorite-things/</a></li>
+    <li><a href="/dojo4/archive/this-blog-posted-from-behind-the-locked-door-of-the-bathroom-at-dojo4/">/dojo4/archive/this-blog-posted-from-behind-the-locked-door-of-the-bathroom-at-dojo4/ - Do any of the behaviors below apply to you?</a></li>
+    <li><a href="/dojo4/archive/this-is-dojo4/">/dojo4/archive/this-is-dojo4/ - Yesterday was wonderfully warm, and our front door was propped open most of the day. Sometime around noon, a fellow walked in wearing khaki pants and</a></li>
+    <li><a href="/dojo4/archive/thoughts-on-launching-and-scaling-quickly/">/dojo4/archive/thoughts-on-launching-and-scaling-quickly/ - We discussed this interesting blog post by Joseph Perla and building and scaling quickly internally this week, and I wanted to share some brief though</a></li>
+    <li><a href="/dojo4/archive/threads-are-so-dang-awesome/">/dojo4/archive/threads-are-so-dang-awesome/ - Reading Aaron Patterson’s excellent piece about where Rails’ standard threading model should be going this weekend</a></li>
+    <li><a href="/dojo4/archive/throw-things-into-the-future-with-us-dojo4-is-hiring/">/dojo4/archive/throw-things-into-the-future-with-us-dojo4-is-hiring/ - Come work for ALL the Boulder startups!</a></li>
+    <li><a href="/dojo4/archive/tips-for-mongodb-migrations-in-rails/">/dojo4/archive/tips-for-mongodb-migrations-in-rails/ - I wanted to share a quick and easy method for testing Rails migrations when using the MongoDB database.  The flexibility of mongo and ruby makes this</a></li>
+    <li><a href="/dojo4/archive/today-s-moment-of-zen/">/dojo4/archive/today-s-moment-of-zen/ - Somehow, all the articles from James Mickens end up in my twitter stream. It is a thoroughly enjoyable time when it does.</a></li>
+    <li><a href="/dojo4/archive/toolbox-for-a-better-world-do-something-simple-first-listen-deeply/">/dojo4/archive/toolbox-for-a-better-world-do-something-simple-first-listen-deeply/ - We were just invited to be one of the presenters at the ShareLab event the CMKY Festival. The event used open space technology to engage the question:</a></li>
+    <li><a href="/dojo4/archive/trends-community-data-made-easy/">/dojo4/archive/trends-community-data-made-easy/</a></li>
+    <li><a href="/dojo4/archive/uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters/">/dojo4/archive/uncle-earl-godfrey-reggio-and-why-how-and-where-we-do-our-work-matters/ - In 2001, my uncle, Earl, took me to visit an old buddy of his, Godfrey Reggio, in the film editing studio he had set up just below Canal St., not lo</a></li>
+    <li><a href="/dojo4/archive/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb/">/dojo4/archive/unpublished-apis-or-how-i-learned-to-stop-worrying-and-love-the-bomb/ - Sometimes you have some boring repetitive online task or you need to automate some or all of a workflow on a website. Scripting these interactions can</a></li>
+    <li><a href="/dojo4/archive/using-redis-with-sensitive-information/">/dojo4/archive/using-redis-with-sensitive-information/ - Update: Redis creator Salvatore Sanfilippo responded to my pull request documenting this method of disabling bgsave with this comment. Since he agrees</a></li>
+    <li><a href="/dojo4/archive/using-terminal-notifier-in-our-capfiles/">/dojo4/archive/using-terminal-notifier-in-our-capfiles/ - We use capistrano for our deployments and recently I came across the sweet terminal-notifier gem that uses the user notifications in OS X 10.8 and abo</a></li>
+    <li><a href="/dojo4/archive/wallspace-finder-is-up-running/">/dojo4/archive/wallspace-finder-is-up-running/ - A few months ago, we started working on Moshi Moshi Co. and picked out Wallspace Finder as our initial venture. This was exciting to us because of our</a></li>
+    <li><a href="/dojo4/archive/wanted-gnu-unreasonable-nerds/">/dojo4/archive/wanted-gnu-unreasonable-nerds/ - The dojo crew had a great conversation at last week’s Community Happy Hour with our most Unreasonable friend, Daniel Epstein. Everything from nanotech</a></li>
+    <li><a href="/dojo4/archive/we-3-awesomeboulder/">/dojo4/archive/we-3-awesomeboulder/ - As if you weren’t already aware, Boulder is freaking awesome. So awesome, that there’s a group of amazing people working to make Boulder even awesome-</a></li>
+    <li><a href="/dojo4/archive/we-didn-t-find-this-green-coat-in-the-office/">/dojo4/archive/we-didn-t-find-this-green-coat-in-the-office/</a></li>
+    <li><a href="/dojo4/archive/we-have-the-cutest-munchkins/">/dojo4/archive/we-have-the-cutest-munchkins/ - Sure there were a lot of cute kids at Boulder’s annual Munchkin Masquerade, which takes place near the dojo every year.  But basically, our kids are t</a></li>
+    <li><a href="/dojo4/archive/we-re-flying-high-on-bitballoon/">/dojo4/archive/we-re-flying-high-on-bitballoon/ - If you’ve been keeping up with dojo activities lately, you’ve noticed we’re big fans of the static web and a young static hosting company called BitBa</a></li>
+    <li><a href="/dojo4/archive/we-wrote-a-book/">/dojo4/archive/we-wrote-a-book/ - Over the holiday break I was reflecting on my introduction to Ruby on Rails at the dojo. As a full stack developer that mainly concentrates on the fro</a></li>
+    <li><a href="/dojo4/archive/web-developer-challenge/">/dojo4/archive/web-developer-challenge/ - Today I'm cross-browser testing a new site prior to launching it. As usual, this involves some styling gymnastics in order to make the site look bette</a></li>
+    <li><a href="/dojo4/archive/weekends/">/dojo4/archive/weekends/</a></li>
+    <li><a href="/dojo4/archive/weekends-make-us-more-productive/">/dojo4/archive/weekends-make-us-more-productive/ - Happy Monday, folks.  Today is likely to be at least 14% more productive for you than any other day this week, so you should probably stop reading our</a></li>
+    <li><a href="/dojo4/archive/weekends-make-us-more-productive-on-mondays/">/dojo4/archive/weekends-make-us-more-productive-on-mondays/ - Happy Monday, folks.  Today is likely to be at least 14% more productive for you than any other day this week, so you should probably stop reading our</a></li>
+    <li><a href="/dojo4/archive/were-all-naked-8-ways-to-help-the-right-clients-find-you/">/dojo4/archive/were-all-naked-8-ways-to-help-the-right-clients-find-you/</a></li>
+    <li><a href="/dojo4/archive/what-a-rush/">/dojo4/archive/what-a-rush/ - Today we beta-launched the first startup to come all the way through our shop.</a></li>
+    <li><a href="/dojo4/archive/what-dojo4-did-over-the-weekend/">/dojo4/archive/what-dojo4-did-over-the-weekend/ - dojo4 had a pretty awesome weekend, and we wanted to share the fun with y’all.  We hiked Airplane Gully on Navajo Peak, one of Colorado’s esteemed 14’</a></li>
+    <li><a href="/dojo4/archive/what-is-impact-anyway/">/dojo4/archive/what-is-impact-anyway/ - A few years ago, we decided we wanted dojo4 to be an “impact organization.” We wanted to commit ourselves to doing work that inspires us, feels impo</a></li>
+    <li><a href="/dojo4/archive/what-s-up-with-moshi-moshi-co/">/dojo4/archive/what-s-up-with-moshi-moshi-co/ - Lately, you may have been hearing whisperings of some new things coming out of dojo4. Not our usual excellent client work or mad science, but somethin</a></li>
+    <li><a href="/dojo4/archive/what-we-do-and-how-we-do-it-is-who-we-are/">/dojo4/archive/what-we-do-and-how-we-do-it-is-who-we-are/ - "What we do and how we do it is who we are." dojo4 came up that tagline last fall when we launched this website. It was purposely broad. It channeled</a></li>
+    <li><a href="/dojo4/archive/what-would-it-be-like-if-everything-was-better-for-everyone/">/dojo4/archive/what-would-it-be-like-if-everything-was-better-for-everyone/ - You’ve heard it before: there are not a lot of women in the tech industry, especially not as technologists. That’s not to say that there aren’t a lo</a></li>
+    <li><a href="/dojo4/archive/what-would-you-do-with-a-1-000-to-make-boulder-more-awesome/">/dojo4/archive/what-would-you-do-with-a-1-000-to-make-boulder-more-awesome/</a></li>
+    <li><a href="/dojo4/archive/whats-new-in-dojo4--2-version-notes/">/dojo4/archive/whats-new-in-dojo4--2-version-notes/ - Corey Kohn, co-owner of dojo4, and I spoke at length today about the new direction of dojo4. Here is what I learned:</a></li>
+    <li><a href="/dojo4/archive/when-was-the-last-time-you-heard-my-voice/">/dojo4/archive/when-was-the-last-time-you-heard-my-voice/ - As in, when was the last time we actually spoke on the phone or in person? I have friends who won’t answer their phone when it rings, who will not l</a></li>
+    <li><a href="/dojo4/archive/where-can-we-meet/">/dojo4/archive/where-can-we-meet/ - Photo by @KellyDelay ello.co/kellydelay</a></li>
+    <li><a href="/dojo4/archive/where-we-gave-in-2015/">/dojo4/archive/where-we-gave-in-2015/ - B Corp certification is the gold standard of proof that your company is walking its talk. But aside from affirming what you already do, the process of</a></li>
+    <li><a href="/dojo4/archive/who-s-been-busy-in-denver/">/dojo4/archive/who-s-been-busy-in-denver/ - Cross Cultured has.</a></li>
+    <li><a href="/dojo4/archive/why-did-speakteesy-die/">/dojo4/archive/why-did-speakteesy-die/ - So, there’s this thing called Speakteesy. You may have seen it mentioned before around here as it is one of our Moshi Moshi Co. experiments.</a></li>
+    <li><a href="/dojo4/archive/why-does-company-culture-matter/">/dojo4/archive/why-does-company-culture-matter/</a></li>
+    <li><a href="/dojo4/archive/why-phonegap-sucks/">/dojo4/archive/why-phonegap-sucks/ - Like every development shop, we get a lot of people coming to us wanting to create an app for both iOS and Android. They want to figure out a way to s</a></li>
+    <li><a href="/dojo4/archive/within-40-feet-of-where-i-stand/">/dojo4/archive/within-40-feet-of-where-i-stand/ - This has been a busy year for us over here at dojo4 (e.g. we helped launched the Hub into it’s first year, I had a baby, we made a bunch of great hire</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-10/">/dojo4/archive/within40feet-day-10/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-11/">/dojo4/archive/within40feet-day-11/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-12/">/dojo4/archive/within40feet-day-12/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-13/">/dojo4/archive/within40feet-day-13/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-14/">/dojo4/archive/within40feet-day-14/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-15/">/dojo4/archive/within40feet-day-15/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-16/">/dojo4/archive/within40feet-day-16/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-17/">/dojo4/archive/within40feet-day-17/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-18/">/dojo4/archive/within40feet-day-18/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-19/">/dojo4/archive/within40feet-day-19/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-2/">/dojo4/archive/within40feet-day-2/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-20/">/dojo4/archive/within40feet-day-20/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-21/">/dojo4/archive/within40feet-day-21/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-22/">/dojo4/archive/within40feet-day-22/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-23/">/dojo4/archive/within40feet-day-23/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-24/">/dojo4/archive/within40feet-day-24/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-25/">/dojo4/archive/within40feet-day-25/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-26/">/dojo4/archive/within40feet-day-26/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-27/">/dojo4/archive/within40feet-day-27/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-28/">/dojo4/archive/within40feet-day-28/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-29/">/dojo4/archive/within40feet-day-29/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-3/">/dojo4/archive/within40feet-day-3/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-30/">/dojo4/archive/within40feet-day-30/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-31/">/dojo4/archive/within40feet-day-31/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-32/">/dojo4/archive/within40feet-day-32/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-33/">/dojo4/archive/within40feet-day-33/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-34/">/dojo4/archive/within40feet-day-34/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-35/">/dojo4/archive/within40feet-day-35/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-36/">/dojo4/archive/within40feet-day-36/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-37/">/dojo4/archive/within40feet-day-37/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-38/">/dojo4/archive/within40feet-day-38/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-39/">/dojo4/archive/within40feet-day-39/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-4/">/dojo4/archive/within40feet-day-4/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-40/">/dojo4/archive/within40feet-day-40/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-5/">/dojo4/archive/within40feet-day-5/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-6/">/dojo4/archive/within40feet-day-6/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-7/">/dojo4/archive/within40feet-day-7/</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-8/">/dojo4/archive/within40feet-day-8/ - this is today:</a></li>
+    <li><a href="/dojo4/archive/within40feet-day-9/">/dojo4/archive/within40feet-day-9/</a></li>
+    <li><a href="/dojo4/archive/wordpress-isn-t-worth-it-in-the-long-run/">/dojo4/archive/wordpress-isn-t-worth-it-in-the-long-run/ - One of our favorite clients, Gnip (recently acquired by Twitter), leans on us for all of their marketing design and websites, including gnip.com, blog</a></li>
+    <li><a href="/dojo4/archive/work-after-flo-dojo4/">/dojo4/archive/work-after-flo-dojo4/ - We worked hard against the sad American status quo and the difficult financial realities of being a small business to come up with at least a reasonab</a></li>
+    <li><a href="/dojo4/archive/workeasy-opening-in-our-neighborhood-soon/">/dojo4/archive/workeasy-opening-in-our-neighborhood-soon/ - There’s so much to do, but so few conducive places to do it that are open 24/7, well- stocked with good tunes, good people, good things to eat and</a></li>
+    <li><a href="/dojo4/archive/writing-hygienic-mixins-in-ruby/">/dojo4/archive/writing-hygienic-mixins-in-ruby/</a></li>
+    <li><a href="/dojo4/archive/yak-shaving-at-tax-time/">/dojo4/archive/yak-shaving-at-tax-time/ - i wrote this script while doing my taxes because, like all good programmers, i’d rather write a tool than use a bloody spreadsheet program</a></li>
+    <li><a href="/dojo4/archive/yes-we-can-js/">/dojo4/archive/yes-we-can-js/ - We’ve been utilizing Can.js lately for some mobile work on tablets. It’s a lightweight frontend JS library for building web applications and we’ve bee</a></li>
+    <li><a href="/dojo4/archive/you-should-learn-to-code/">/dojo4/archive/you-should-learn-to-code/ - (This post is adapted from a presentation I gave recently to a lunch meetup of the Boulder Chamber of Commerce's 2140 group
+.)</a></li>
+    <li><a href="/dojo4/archive/your-application-s-notifcations-bleeping-beep/">/dojo4/archive/your-application-s-notifcations-bleeping-beep/ - “Anything with a sound should have a volume. They should teach this to mechanical engineers.” – Gary Snyder</a></li>
+    <li><a href="/dojo4/archive/your-people-at-workeasy/">/dojo4/archive/your-people-at-workeasy/ - Here’s a sample of the first applications that have come in from prospective WORKEASY members. Clearly, should you, too, become a member, you will be</a></li>
+    <li><a href="/dojo4/archive/your-style-is-orthodox-and-it-sucks/">/dojo4/archive/your-style-is-orthodox-and-it-sucks/ - Today I put together a gist showing code being transformed from fugly to legible</a></li>
+    <li><a href="/dojo4/archive/youthroots-and-how-it-can-matter-to-you-too/">/dojo4/archive/youthroots-and-how-it-can-matter-to-you-too/ - We were fortunate to be visited recently by Cassie Gardner from YouthRoots. We were happy and proud to be able to donate to her organization and asked</a></li>
+    <li><a href="/dojo4/archive/zebras-get-down-to-business-dazzlecon17/">/dojo4/archive/zebras-get-down-to-business-dazzlecon17/ - Another world is not only possible, she’s on the way and, on a quiet day, if you listen very carefully you can hear her breathe. 
+-Arundhati Roy</a></li>
+    <li><a href="/dojo4/archive/zurb-s-foundation-3-embracing-the-new-old-box-model/">/dojo4/archive/zurb-s-foundation-3-embracing-the-new-old-box-model/ - Last week, the clever folks at ZURB rolled out version 3.0 of their Foundation CSS framework, a competitor to Twitter's Bootstrap.</a></li>
+    <li><a href="/dojo4/">/dojo4/</a></li>
+    <li><a href="/goto/">/goto/</a></li>
+    <li><a href="/">/ - 👋 –</a></li>
+    <li><a href="/io/almost-died-in-an-ice-cave/">/io/almost-died-in-an-ice-cave/ - tl;dr;</a></li>
+    <li><a href="/io/facebook-and-global-extremism/">/io/facebook-and-global-extremism/ - following is an AI generated summary of this article, so you won’t have to read it! (saves one llm call!)</a></li>
+    <li><a href="/io/">/io/ - non sequitor at best, annoying at worst...  these are some words that i wrote</a></li>
+    <li><a href="/io/lemmings-considered-harmful/">/io/lemmings-considered-harmful/</a></li>
+    <li><a href="/io/lost-in-the-desert/">/io/lost-in-the-desert/ - in 2024, on the back of a brutal injury, a dark relationship, and the pull of walkabout, i abandoned most things, and headed into the desert.</a></li>
+    <li><a href="/io/mission/">/io/mission/ - everyone should have a mission statement.  here is mine.</a></li>
+    <li><a href="/io/return-your-laptop/">/io/return-your-laptop/ - following is an AI generated summary of this article, so you won’t have to read it!</a></li>
+    <li><a href="/io/su_c_de/">/io/su_c_de/</a></li>
+    <li><a href="/jess/">/jess/ - update: we got married.</a></li>
+    <li><a href="/langs/">/langs/</a></li>
+    <li><a href="/m/">/m/ - oh my this is neato.</a></li>
+    <li><a href="/nerd/fastest-possible-embeddings/">/nerd/fastest-possible-embeddings/ - today i figured out the fasest possible way to generate embeddings locally with open source tools avaiable today</a></li>
+    <li><a href="/nerd/ima/">/nerd/ima/ - ima is the universal unix filter.</a></li>
+    <li><a href="/nerd/index/">/nerd/index/ - for some strange reason, this makes me happy:</a></li>
+    <li><a href="/nerd/">/nerd/ - for some strange reason, this makes me happy:</a></li>
+    <li><a href="/nerd/ro/">/nerd/ro/ - ro stands for read only, and it is the tiniest, best, headless cms.</a></li>
+    <li><a href="/now/">/now/ - working with a lil company in boulder doing some crazy AI shit.  frieNDA and a 🍺 for more deets…</a></li>
+    <li><a href="/purl/public-sentiment-towards-the-fortune-500-in-america">/purl/public-sentiment-towards-the-fortune-500-in-america - AI, and 1 million *real* conversations were analyzed to produce this response.</a></li>
+    <li><a href="/purl">/purl</a></li>
+    <li><a href="/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights/">/purls/a-global-inventory-of-coral-reef-stressors-based-on-satellite-observed-nighttime-lights/</a></li>
+    <li><a href="/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data/">/purls/a-twelve-year-record-of-national-and-global-gas-flaring-volumes-estimated-using-satellite-data/</a></li>
+    <li><a href="/purls/can-poverty-rates-be-estimated-using-satellite-data/">/purls/can-poverty-rates-be-estimated-using-satellite-data/</a></li>
+    <li><a href="/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003/">/purls/change-detection-in-satellite-observed-nighttime-lights-1992-2003/</a></li>
+    <li><a href="/purls/global-distribution-and-density-of-constructed-impervious-surfaces/">/purls/global-distribution-and-density-of-constructed-impervious-surfaces/</a></li>
+    <li><a href="/purls/">/purls/</a></li>
+    <li><a href="/purls/paulsboutiqueisthegreatestalbumofalltime/">/purls/paulsboutiqueisthegreatestalbumofalltime/</a></li>
+    <li><a href="/purls/public-sentiment-towards-the-fortune-500-in-america/">/purls/public-sentiment-towards-the-fortune-500-in-america/</a></li>
+    <li><a href="/purls/replace-your-ceo/">/purls/replace-your-ceo/</a></li>
+    <li><a href="/purls/software-developer-vs-startup-developer/">/purls/software-developer-vs-startup-developer/ - via GIPHY</a></li>
+    <li><a href="/quotes/">/quotes/ - i struggle with words, and writing.  being somewhat dislexic and more that a
+little adhd.  but i like to listen the words of some people.  these are</a></li>
+    <li><a href="/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/body">/ro/dojo4/30-years-ago-i-said-pager-first-but-no-one-listened/body</a></li>
+    <li><a href="/ro/dojo4/a-bow-and-a-clap/body">/ro/dojo4/a-bow-and-a-clap/body</a></li>
+    <li><a href="/ro/dojo4/a-foray-into-the-edu-domain/body">/ro/dojo4/a-foray-into-the-edu-domain/body</a></li>
+    <li><a href="/ro/dojo4/a-sequel/body">/ro/dojo4/a-sequel/body</a></li>
+    <li><a href="/ro/dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts/body">/ro/dojo4/a-simple-backup-strategy-for-amazon-cloud-hosts/body</a></li>
+    <li><a href="/ro/dojo4/a-splash-of-whimsy-with-your-redesign/body">/ro/dojo4/a-splash-of-whimsy-with-your-redesign/body</a></li>
+    <li><a href="/ro/dojo4/because-we-all-love-to-bicycle/body">/ro/dojo4/because-we-all-love-to-bicycle/body</a></li>
+    <li><a href="/ro/dojo4/big-boulder-rolling/body">/ro/dojo4/big-boulder-rolling/body</a></li>
+    <li><a href="/ro/dojo4/brand-new/body">/ro/dojo4/brand-new/body</a></li>
+    <li><a href="/ro/dojo4/bring-the-noise-or-not/body">/ro/dojo4/bring-the-noise-or-not/body</a></li>
+    <li><a href="/ro/dojo4/css3-horizontal-rules/body">/ro/dojo4/css3-horizontal-rules/body</a></li>
+    <li><a href="/ro/dojo4/dojo4-brands-the-big-boulder-conference/body">/ro/dojo4/dojo4-brands-the-big-boulder-conference/body</a></li>
+    <li><a href="/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/body">/ro/dojo4/dojo4-designs-help-make-boulder-the-foodiest-town-in-america/body</a></li>
+    <li><a href="/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/body">/ro/dojo4/dojo4-hosts-inaugural-diy-coding-101-class/body</a></li>
+    <li><a href="/ro/dojo4/dojo4-hosts-the-denver-ad-club-kegs-with-legs-party-on-nov-29-2012/body">/ro/dojo4/dojo4-hosts-the-denver-ad-club-kegs-with-legs-party-on-nov-29-2012/body</a></li>
+    <li><a href="/ro/dojo4/dojo4-supports-boulder-being-even-more-awesome/body">/ro/dojo4/dojo4-supports-boulder-being-even-more-awesome/body</a></li>
+    <li><a href="/ro/dojo4/driving-user-behavior-with-game-dynamics/body">/ro/dojo4/driving-user-behavior-with-game-dynamics/body</a></li>
+    <li><a href="/ro/dojo4/entrepreneurial-by-nature/body">/ro/dojo4/entrepreneurial-by-nature/body</a></li>
+    <li><a href="/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/body">/ro/dojo4/eventually-all-products-merge-into-one-and-a-list-runs-through-it/body</a></li>
+    <li><a href="/ro/dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu/body">/ro/dojo4/fabrication-illustrated-infographics-and-eli-who-elihuu/body</a></li>
+    <li><a href="/ro/dojo4/five-tips-for-obtaining-and-retaining-a-job-at-dojo4/body">/ro/dojo4/five-tips-for-obtaining-and-retaining-a-job-at-dojo4/body</a></li>
+    <li><a href="/ro/dojo4/focus-points-for-change/body">/ro/dojo4/focus-points-for-change/body</a></li>
+    <li><a href="/ro/dojo4/fred-jean/body">/ro/dojo4/fred-jean/body</a></li>
+    <li><a href="/ro/dojo4/hackerspaces-r-us/body">/ro/dojo4/hackerspaces-r-us/body</a></li>
+    <li><a href="/ro/dojo4/handcrafted-code-and-design/body">/ro/dojo4/handcrafted-code-and-design/body</a></li>
+    <li><a href="/ro/dojo4/hands-off-my-window-title/body">/ro/dojo4/hands-off-my-window-title/body</a></li>
+    <li><a href="/ro/dojo4/happy-birthday-dojo4/body">/ro/dojo4/happy-birthday-dojo4/body</a></li>
+    <li><a href="/ro/dojo4/have-babies-at-dojo4/body">/ro/dojo4/have-babies-at-dojo4/body</a></li>
+    <li><a href="/ro/dojo4/hello-goodbye-dojo4/body">/ro/dojo4/hello-goodbye-dojo4/body - I remember that first meeting. It was Jeff, Dave, me and Ara. We were on a rooftop bar in Boulder. It was fall. The leaves were changing and the sun w</a></li>
+    <li><a href="/ro/dojo4/home-office/body">/ro/dojo4/home-office/body</a></li>
+    <li><a href="/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/body">/ro/dojo4/how-to-fold-a-marketing-site-into-a-web-app/body</a></li>
+    <li><a href="/ro/dojo4/hubba-hubba/body">/ro/dojo4/hubba-hubba/body</a></li>
+    <li><a href="/ro/dojo4/hubbing-it-in-halifax/body">/ro/dojo4/hubbing-it-in-halifax/body</a></li>
+    <li><a href="/ro/dojo4/hubbishness/body">/ro/dojo4/hubbishness/body</a></li>
+    <li><a href="/ro/dojo4/in-your-minds-browser-clear-your-cache-every-tuesday-morning/body">/ro/dojo4/in-your-minds-browser-clear-your-cache-every-tuesday-morning/body</a></li>
+    <li><a href="/ro/dojo4/lean-development-process-sketch/body">/ro/dojo4/lean-development-process-sketch/body</a></li>
+    <li><a href="/ro/dojo4/meditation-every-tuesday-morning-the-dojo/body">/ro/dojo4/meditation-every-tuesday-morning-the-dojo/body</a></li>
+    <li><a href="/ro/dojo4/miles-smiles/body">/ro/dojo4/miles-smiles/body</a></li>
+    <li><a href="/ro/dojo4/ninja-problem-solving/body">/ro/dojo4/ninja-problem-solving/body</a></li>
+    <li><a href="/ro/dojo4/office-dog-makes-twitter-splash/body">/ro/dojo4/office-dog-makes-twitter-splash/body</a></li>
+    <li><a href="/ro/dojo4/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-2/assets/c">/ro/dojo4/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-2/assets/c</a></li>
+    <li><a href="/ro/dojo4/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-4/assets/e">/ro/dojo4/on-the-lip-of-shared-ownership-dojo4-becomes-a-co-op-series-number-4/assets/e</a></li>
+    <li><a href="/ro/dojo4/org-dev-dojo/body">/ro/dojo4/org-dev-dojo/body</a></li>
+    <li><a href="/ro/dojo4/organizational-development-and-leadership-at-dojo4/body">/ro/dojo4/organizational-development-and-leadership-at-dojo4/body</a></li>
+    <li><a href="/ro/dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/body">/ro/dojo4/perfect-fit-community-gathering-of-young-social-entrepreneurs-at-dojo4/body</a></li>
+    <li><a href="/ro/dojo4/proud-parents-of-a-future-dojo4er/body">/ro/dojo4/proud-parents-of-a-future-dojo4er/body</a></li>
+    <li><a href="/ro/dojo4/push-it-out-the-window/body">/ro/dojo4/push-it-out-the-window/body</a></li>
+    <li><a href="/ro/dojo4/random-core-dumps-in-ruby-193-on-osx/body">/ro/dojo4/random-core-dumps-in-ruby-193-on-osx/body</a></li>
+    <li><a href="/ro/dojo4/reblog-programming-is-gardening-not-engineering/body">/ro/dojo4/reblog-programming-is-gardening-not-engineering/body</a></li>
+    <li><a href="/ro/dojo4/responsive-design-is-dead-long-live-responsive-design/body">/ro/dojo4/responsive-design-is-dead-long-live-responsive-design/body</a></li>
+    <li><a href="/ro/dojo4/rising-and-falling-in-business/body">/ro/dojo4/rising-and-falling-in-business/body</a></li>
+    <li><a href="/ro/dojo4/running-with-it/body">/ro/dojo4/running-with-it/body</a></li>
+    <li><a href="/ro/dojo4/simple-essential/body">/ro/dojo4/simple-essential/body</a></li>
+    <li><a href="/ro/dojo4/site-launch-planted-nutrition/body">/ro/dojo4/site-launch-planted-nutrition/body</a></li>
+    <li><a href="/ro/dojo4/slow-food-slow-tech/body">/ro/dojo4/slow-food-slow-tech/body</a></li>
+    <li><a href="/ro/dojo4/snuggin/body">/ro/dojo4/snuggin/body</a></li>
+    <li><a href="/ro/dojo4/so-you-think-youre-a-web-developer-eh/body">/ro/dojo4/so-you-think-youre-a-web-developer-eh/body</a></li>
+    <li><a href="/ro/dojo4/tagged/body">/ro/dojo4/tagged/body</a></li>
+    <li><a href="/ro/dojo4/the-buffalo-bicycle-classic/body">/ro/dojo4/the-buffalo-bicycle-classic/body</a></li>
+    <li><a href="/ro/dojo4/the-calgary-farmer-s-market/body">/ro/dojo4/the-calgary-farmer-s-market/body</a></li>
+    <li><a href="/ro/dojo4/the-ceo-should-wash-the-dishes/body">/ro/dojo4/the-ceo-should-wash-the-dishes/body</a></li>
+    <li><a href="/ro/dojo4/the-dojo-is-growing/body">/ro/dojo4/the-dojo-is-growing/body</a></li>
+    <li><a href="/ro/dojo4/this-is-dojo4/body">/ro/dojo4/this-is-dojo4/body</a></li>
+    <li><a href="/ro/dojo4/thoughts-on-launching-and-scaling-quickly/body">/ro/dojo4/thoughts-on-launching-and-scaling-quickly/body</a></li>
+    <li><a href="/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/body">/ro/dojo4/throw-things-into-the-future-with-us-dojo4-is-hiring/body</a></li>
+    <li><a href="/ro/dojo4/tips-for-mongodb-migrations-in-rails/body">/ro/dojo4/tips-for-mongodb-migrations-in-rails/body</a></li>
+    <li><a href="/ro/dojo4/toolbox-for-a-better-world-do-something-simple-first-listen-deeply/body">/ro/dojo4/toolbox-for-a-better-world-do-something-simple-first-listen-deeply/body</a></li>
+    <li><a href="/ro/dojo4/web-developer-challenge/body">/ro/dojo4/web-developer-challenge/body</a></li>
+    <li><a href="/ro/dojo4/what-a-rush/body">/ro/dojo4/what-a-rush/body</a></li>
+    <li><a href="/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/body">/ro/dojo4/what-we-do-and-how-we-do-it-is-who-we-are/body</a></li>
+    <li><a href="/ro/dojo4/what-would-you-do-with-a-1-000-to-make-boulder-more-awesome/body">/ro/dojo4/what-would-you-do-with-a-1-000-to-make-boulder-more-awesome/body</a></li>
+    <li><a href="/ro/dojo4/you-should-learn-to-code/body">/ro/dojo4/you-should-learn-to-code/body</a></li>
+    <li><a href="/ro/dojo4/zurb-s-foundation-3-embracing-the-new-old-box-model/body">/ro/dojo4/zurb-s-foundation-3-embracing-the-new-old-box-model/body</a></li>
+    <li><a href="/ro/io/facebook-and-global-extremism/assets/background">/ro/io/facebook-and-global-extremism/assets/background - Facebook, now Meta Platforms, has revolutionized how people connect and share information worldwide. However, this powerful platform has also been imp</a></li>
+    <li><a href="/rubygems/">/rubygems/ - i have written a bunch of software over the years.</a></li>
+    <li><a href="/sitemap/">/sitemap/</a></li>
+  </ul>
+
+  <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" 
+          integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg=="
+          crossorigin="anonymous"></script>
+  <script>
+    // Global state
+    let pagesData = [];
+    let searchIdx = null;
+    const searchInput = document.getElementById('search');
+    const resultsList = document.getElementById('results');
+    const statusDiv = document.getElementById('status');
+
+    // Load search data
+    Promise.all([
+      fetch('/pages.json').then(r => r.json()),
+      fetch('/search-index.json').then(r => r.json())
+    ]).then(([pages, idx]) => {
+      pagesData = pages;
+      searchIdx = lunr.Index.load(idx);
+      statusDiv.textContent = 'Search ready';
+      searchInput.addEventListener('input', handleSearch);
+      
+      // Show all pages initially (replaces static list with interactive version)
+      showAllPages();
+    }).catch(err => {
+      console.error('Search failed to load:', err);
+      statusDiv.textContent = 'Search unavailable (page list still works)';
+      // Static list fallback - page still usable without JS
+    });
+
+    function handleSearch(e) {
+      const query = e.target.value.trim();
+
+      if (!query) {
+        showAllPages();
+        return;
+      }
+
+      // Two-stage search:
+      // 1. Literal prefix match on URLs (for queries like "/about" or "/foo/bar")
+      // 2. Fallback to lunr full-text search
+
+      const prefixMatches = pagesData.filter(p =>
+        p.href.toLowerCase().includes(query.toLowerCase())
+      );
+
+      let lunrMatches = [];
+      if (searchIdx) {
+        try {
+          lunrMatches = searchIdx.search(query);
+        } catch (e) {
+          // Invalid query syntax, ignore
+        }
+      }
+
+      // Combine results: prefix matches first, then lunr matches (avoiding duplicates)
+      const prefixRefs = new Set(prefixMatches.map(p => p.href));
+      const combinedResults = [
+        ...prefixMatches.map(p => ({ ref: p.href, score: 100 })), // High score for exact matches
+        ...lunrMatches.filter(r => !prefixRefs.has(r.ref))
+      ];
+
+      displayResults(combinedResults, query);
+    }
+
+    function displayResults(results, query) {
+      if (results.length === 0) {
+        resultsList.innerHTML = '<li class="no-results">No pages found.</li>';
+        statusDiv.textContent = `No results for "${query}"`;
+        return;
+      }
+
+      statusDiv.textContent = `Found ${results.length} result${results.length === 1 ? '' : 's'}`;
+
+      const html = results.slice(0, 50).map(r => {
+        const page = pagesData.find(p => p.href === r.ref);
+        if (!page) return '';
+
+        const titleHtml = highlight(page.title, query);
+        const contentHtml = page.content ?
+          ` - ${highlight(page.content, query)}` : '';
+
+        return `
+          <li>
+            <a href="${page.href}">${page.href}${contentHtml}</a>
+          </li>
+        `;
+      }).join('');
+
+      resultsList.innerHTML = html;
+    }
+
+    function showAllPages() {
+      if (pagesData.length === 0) {
+        statusDiv.textContent = 'Loading pages...';
+        return;
+      }
+
+      statusDiv.textContent = `Showing all ${pagesData.length} pages`;
+
+      const html = pagesData.map(p => {
+        const excerpt = p.content ? ` - ${p.content}` : '';
+        return `
+          <li>
+            <a href="${p.href}">${p.href}${excerpt}</a>
+          </li>
+        `;
+      }).join('');
+
+      resultsList.innerHTML = html;
+    }
+
+    function highlight(text, query) {
+      if (!text) return '';
+      
+      const terms = query.toLowerCase().split(/\s+/);
+      let result = text;
+      
+      terms.forEach(term => {
+        if (term.length > 1) {
+          const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
+          result = result.replace(regex, '<mark>$1</mark>');
+        }
+      });
+      
+      return result;
+    }
+
+    function escapeRegex(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+  </script>
+</body>
+</html>
