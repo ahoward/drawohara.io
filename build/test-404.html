@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test 404 Search</title>
+<script>
+// Simple test to verify lunr.js and search work
+window.onload = function() {
+  console.log('Testing 404 search functionality...');
+  
+  // Test 1: Check if lunr loads from CDN
+  setTimeout(() => {
+    if (typeof lunr !== 'undefined') {
+      console.log('✓ lunr.js loaded successfully');
+    } else {
+      console.error('✗ lunr.js failed to load');
+    }
+  }, 1000);
+  
+  // Test 2: Fetch pages.json
+  fetch('/pages.json')
+    .then(r => r.json())
+    .then(pages => {
+      console.log(`✓ pages.json loaded: ${pages.length} pages`);
+      console.log('Sample page:', pages[0]);
+    })
+    .catch(err => console.error('✗ pages.json failed:', err));
+    
+  // Test 3: Fetch search-index.json
+  fetch('/search-index.json')
+    .then(r => r.json())
+    .then(idx => {
+      console.log('✓ search-index.json loaded');
+      console.log('Index version:', idx.version);
+      
+      // Test 4: Try a search
+      const searchIdx = lunr.Index.load(idx);
+      const results = searchIdx.search('about');
+      console.log(`✓ Search test: found ${results.length} results for "about"`);
+      console.log('First result:', results[0]);
+    })
+    .catch(err => console.error('✗ search-index.json failed:', err));
+};
+</script>
+</head>
+<body>
+<h1>404 Search Test</h1>
+<p>Open browser console (F12) to see test results.</p>
+<p><a href="/404.html">Go to actual 404 page</a></p>
+
+<script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" 
+        integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg=="
+        crossorigin="anonymous"></script>
+</body>
+</html>

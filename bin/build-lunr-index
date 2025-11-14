@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+
+const lunr = require('lunr');
+const fs = require('fs');
+const path = require('path');
+
+// Build lunr.js search index from pages.json
+// Inputs: build/pages.json
+// Outputs: build/search-index.json
+
+const BUILD_DIR = 'build';
+const INPUT_FILE = path.join(BUILD_DIR, 'pages.json');
+const OUTPUT_FILE = path.join(BUILD_DIR, 'search-index.json');
+
+// Load pages data
+if (!fs.existsSync(INPUT_FILE)) {
+  console.error(`ERROR: ${INPUT_FILE} not found. Run bin/generate-search-index first.`);
+  process.exit(1);
+}
+
+const pages = JSON.parse(fs.readFileSync(INPUT_FILE, 'utf8'));
+
+if (!Array.isArray(pages) || pages.length === 0) {
+  console.error('ERROR: pages.json is empty or invalid');
+  process.exit(1);
+}
+
+// Build search index with title boost
+const idx = lunr(function () {
+  // Remove stop word filter so common words like "about" are searchable
+  this.pipeline.remove(lunr.stopWordFilter);
+  this.searchPipeline.remove(lunr.stopWordFilter);
+
+  this.ref('href');
+  this.field('title', { boost: 10 });  // Title weighted 10x
+  this.field('path', { boost: 5 });    // Path terms weighted 5x
+  this.field('content');                // Content baseline weight
+
+  pages.forEach(function (page) {
+    // Only add if title exists
+    if (page.title && page.title.trim()) {
+      // Extract path segments for searchability
+      // /about/ -> "about", /foo/bar/ -> "foo bar"
+      const pathTerms = page.href
+        .split('/')
+        .filter(s => s.length > 0)
+        .join(' ');
+
+      this.add({
+        href: page.href,
+        title: page.title,
+        path: pathTerms,
+        content: page.content || ''
+      });
+    }
+  }, this);
+});
+
+// Write serialized index atomically
+const tempFile = `${OUTPUT_FILE}.tmp.${process.pid}`;
+fs.writeFileSync(tempFile, JSON.stringify(idx));
+fs.renameSync(tempFile, OUTPUT_FILE);
+
+console.log(`Search index built: ${pages.length} pages → ${OUTPUT_FILE}`);

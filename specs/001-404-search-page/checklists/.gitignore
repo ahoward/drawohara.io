@@ -1,0 +1,38 @@
+# Ruby
+.bundle/
+log/
+tmp/
+*.gem
+vendor/bundle/
+
+# Node.js / JavaScript (for lunr.js build process)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build artifacts
+build/pages.json
+build/search-index.json
+build/404.html
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Logs
+*.log

@@ -1,0 +1,24 @@
+#!/bin/bash
+# Master script to build search index and 404 page
+# This should be called automatically after the main site build
+
+set -e
+
+echo "=== Building search index ==="
+
+# Step 1: Extract page data from HTML files
+echo "→ Extracting page data..."
+bin/generate-search-index
+
+# Step 2: Build lunr.js search index
+echo "→ Building lunr index..."
+bin/build-lunr-index
+
+# Step 3: Generate 404.html with embedded static list
+echo "→ Generating 404.html..."
+bin/generate-404-page
+
+echo "✓ Search index build complete"
+echo "  - build/pages.json"
+echo "  - build/search-index.json"
+echo "  - build/404.html"

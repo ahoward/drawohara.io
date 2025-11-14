@@ -1,0 +1,64 @@
+{
+  "title": "Pages API - Static Search Data Contract",
+  "description": "Contract for pages.json - the source data for 404 page search functionality",
+  "version": "1.0.0",
+  "type": "static-json",
+  "endpoint": "/pages.json",
+  "methods": ["GET"],
+  "response": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "required": ["title", "href"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Page title extracted from <title> or <h1> tag",
+          "minLength": 1,
+          "maxLength": 200,
+          "example": "About Us - Our Mission and Team"
+        },
+        "href": {
+          "type": "string",
+          "description": "Relative URL path starting with /",
+          "pattern": "^/.*",
+          "example": "/about/"
+        },
+        "content": {
+          "type": "string",
+          "description": "First 150 chars of page content or meta description",
+          "maxLength": 150,
+          "example": "We are a team of developers building amazing things. Our mission is to create simple, powerful tools."
+        }
+      }
+    }
+  },
+  "examples": {
+    "valid_response": [
+      {
+        "title": "Home",
+        "href": "/",
+        "content": "Welcome to our site. Find everything you need here."
+      },
+      {
+        "title": "About Us",
+        "href": "/about/",
+        "content": "Learn about our mission, team, and values."
+      },
+      {
+        "title": "Contact",
+        "href": "/contact/"
+      }
+    ]
+  },
+  "constraints": {
+    "max_array_length": 1000,
+    "max_file_size_kb": 150,
+    "max_file_size_kb_compressed": 100
+  },
+  "generation": {
+    "build_script": "bin/generate-search-index",
+    "frequency": "every site build",
+    "dependencies": ["build/**/*.html"]
+  }
+}

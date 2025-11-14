@@ -1,0 +1,371 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'json'
+
+# Generate 404.html with embedded static page list
+# Inputs: build/pages.json
+# Outputs: build/404.html
+
+BUILD_DIR = 'build'
+PAGES_FILE = File.join(BUILD_DIR, 'pages.json')
+OUTPUT_FILE = File.join(BUILD_DIR, '404.html')
+
+# Load pages data
+unless File.exist?(PAGES_FILE)
+  warn "WARNING: #{PAGES_FILE} not found. Creating 404.html without static list."
+  pages = []
+else
+  pages = JSON.parse(IO.binread(PAGES_FILE))
+end
+
+# Generate static HTML list for progressive enhancement (User Story 2)
+static_list_html = pages.map do |page|
+  href = page['href'].to_s.strip
+  content = page['content'].to_s.strip
+  excerpt = content.empty? ? '' : " - #{content}"
+  "    <li><a href=\"#{href}\">#{href}#{excerpt}</a></li>"
+end.join("\n")
+
+# Read 404.html template and inject static list
+html_template = <<~HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>404 - drawohara</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* layout */
+    body {
+      max-width: 42rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      font: 16px/1.6 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      color: #333;
+      background: #fff;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    header a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    header a:visited {
+      color: #551a8b;
+    }
+
+    small {
+      font-size: 0.9em;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 1.5rem 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .message {
+      margin: 0.5rem 0 2rem;
+      color: #666;
+      font-style: italic;
+    }
+
+    .search-box {
+      margin: 2rem 0;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem;
+      font: 16px/1.6 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      border: 1px solid #ddd;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      background: #fff;
+      border-color: #0066cc;
+    }
+
+    .status {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .page-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+
+    .page-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .page-list li:last-child {
+      border-bottom: none;
+    }
+
+    .page-list a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .page-list a:hover {
+      text-decoration: underline;
+    }
+
+    .page-list a:visited {
+      color: #551a8b;
+    }
+
+    mark {
+      background: #ffd;
+      padding: 0 2px;
+    }
+
+    .no-results {
+      color: #666;
+      font-style: italic;
+      padding: 1rem 0;
+    }
+
+    /* dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #ddd;
+        background: #111;
+      }
+
+      header a,
+      .page-list a {
+        color: #58a6ff;
+      }
+
+      header a:visited,
+      .page-list a:visited {
+        color: #a371f7;
+      }
+
+      .message,
+      .status,
+      .no-results {
+        color: #888;
+      }
+
+      .search-box input {
+        background: #222;
+        border-color: #333;
+        color: #ddd;
+      }
+
+      .search-box input:focus {
+        background: #111;
+        border-color: #58a6ff;
+      }
+
+      .page-list li {
+        border-bottom-color: #333;
+      }
+
+      mark {
+        background: #443300;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">@drawohara</a>
+    <small>
+      <a href="mailto:i-love-this@drawohara.io?subject=/404">❤️</a>
+      ||
+      <a href="mailto:this-makes-me-sad@drawohara.io?subject=/404">💙</a>
+    </small>
+  </header>
+
+  <h1>404</h1>
+  <p class="message">
+    you seem lost. or maybe i moved something. either way, here's every page i've got.
+  </p>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search for pages..."
+      aria-label="Search site pages"
+    >
+    <div class="status" id="status">Loading search...</div>
+  </div>
+
+  <ul class="page-list" id="results">
+#{static_list_html}
+  </ul>
+
+  <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js" 
+          integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg=="
+          crossorigin="anonymous"></script>
+  <script>
+    // Global state
+    let pagesData = [];
+    let searchIdx = null;
+    const searchInput = document.getElementById('search');
+    const resultsList = document.getElementById('results');
+    const statusDiv = document.getElementById('status');
+
+    // Load search data
+    Promise.all([
+      fetch('/pages.json').then(r => r.json()),
+      fetch('/search-index.json').then(r => r.json())
+    ]).then(([pages, idx]) => {
+      pagesData = pages;
+      searchIdx = lunr.Index.load(idx);
+      statusDiv.textContent = 'Search ready';
+      searchInput.addEventListener('input', handleSearch);
+      
+      // Show all pages initially (replaces static list with interactive version)
+      showAllPages();
+    }).catch(err => {
+      console.error('Search failed to load:', err);
+      statusDiv.textContent = 'Search unavailable (page list still works)';
+      // Static list fallback - page still usable without JS
+    });
+
+    function handleSearch(e) {
+      const query = e.target.value.trim();
+
+      if (!query) {
+        showAllPages();
+        return;
+      }
+
+      // Two-stage search:
+      // 1. Literal prefix match on URLs (for queries like "/about" or "/foo/bar")
+      // 2. Fallback to lunr full-text search
+
+      const prefixMatches = pagesData.filter(p =>
+        p.href.toLowerCase().includes(query.toLowerCase())
+      );
+
+      let lunrMatches = [];
+      if (searchIdx) {
+        try {
+          lunrMatches = searchIdx.search(query);
+        } catch (e) {
+          // Invalid query syntax, ignore
+        }
+      }
+
+      // Combine results: prefix matches first, then lunr matches (avoiding duplicates)
+      const prefixRefs = new Set(prefixMatches.map(p => p.href));
+      const combinedResults = [
+        ...prefixMatches.map(p => ({ ref: p.href, score: 100 })), // High score for exact matches
+        ...lunrMatches.filter(r => !prefixRefs.has(r.ref))
+      ];
+
+      displayResults(combinedResults, query);
+    }
+
+    function displayResults(results, query) {
+      if (results.length === 0) {
+        resultsList.innerHTML = '<li class="no-results">No pages found.</li>';
+        statusDiv.textContent = `No results for "${query}"`;
+        return;
+      }
+
+      statusDiv.textContent = `Found ${results.length} result${results.length === 1 ? '' : 's'}`;
+
+      const html = results.slice(0, 50).map(r => {
+        const page = pagesData.find(p => p.href === r.ref);
+        if (!page) return '';
+
+        const titleHtml = highlight(page.title, query);
+        const contentHtml = page.content ?
+          ` - ${highlight(page.content, query)}` : '';
+
+        return `
+          <li>
+            <a href="${page.href}">${page.href}${contentHtml}</a>
+          </li>
+        `;
+      }).join('');
+
+      resultsList.innerHTML = html;
+    }
+
+    function showAllPages() {
+      if (pagesData.length === 0) {
+        statusDiv.textContent = 'Loading pages...';
+        return;
+      }
+
+      statusDiv.textContent = `Showing all ${pagesData.length} pages`;
+
+      const html = pagesData.map(p => {
+        const excerpt = p.content ? ` - ${p.content}` : '';
+        return `
+          <li>
+            <a href="${p.href}">${p.href}${excerpt}</a>
+          </li>
+        `;
+      }).join('');
+
+      resultsList.innerHTML = html;
+    }
+
+    function highlight(text, query) {
+      if (!text) return '';
+      
+      const terms = query.toLowerCase().split(/\\s+/);
+      let result = text;
+      
+      terms.forEach(term => {
+        if (term.length > 1) {
+          const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
+          result = result.replace(regex, '<mark>$1</mark>');
+        }
+      });
+      
+      return result;
+    }
+
+    function escapeRegex(str) {
+      return str.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');
+    }
+  </script>
+</body>
+</html>
+HTML
+
+# Write 404.html atomically
+temp_file = "#{OUTPUT_FILE}.tmp.#{Process.pid}"
+IO.binwrite(temp_file, html_template)
+File.rename(temp_file, OUTPUT_FILE)
+
+puts "Generated 404.html with #{pages.size} static page links → #{OUTPUT_FILE}"

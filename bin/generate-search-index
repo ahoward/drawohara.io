@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'json'
+require 'nokogiri'
+
+# Extract page data from HTML files for search indexing
+# Outputs: build/pages.json
+
+BUILD_DIR = 'build'
+OUTPUT_FILE = File.join(BUILD_DIR, 'pages.json')
+
+pages = []
+
+# Process all HTML files in build directory
+Dir.glob(File.join(BUILD_DIR, '**', '*.html')).each do |file|
+  # Skip 404.html itself
+  next if file.include?('404.html')
+
+  doc = Nokogiri::HTML(IO.binread(file))
+
+  # Generate relative URL path first (we'll use it for title fallback)
+  href = file.sub(BUILD_DIR, '').sub('/index.html', '/').sub('.html', '')
+  href = '/' if href.empty?
+
+  # Extract title (priority: <h1>, first paragraph text, URL path)
+  title = doc.at_css('h1')&.text&.strip
+
+  # If no h1 or h1 is generic "drawohara", try first meaningful text
+  if title.nil? || title.empty? || title.downcase == 'drawohara'
+    # Try first paragraph or any text content
+    first_text = doc.css('main p, article p, .content p, .markdown p').first&.text&.strip
+    if first_text && first_text.length > 10
+      # Use first 50 chars of first paragraph as title
+      title = first_text[0..49].split.join(' ')
+    else
+      # Fallback to URL path (prettified)
+      title = href.gsub('/', '').gsub('-', ' ').capitalize
+      title = 'Home' if title.empty?
+    end
+  end
+
+  # Extract content (priority: meta description, first few paragraphs)
+  content = doc.at_css('meta[name="description"]')&.[]('content') ||
+            doc.at_css('meta[property="og:description"]')&.[]('content') ||
+            doc.css('main p, article p, .content p, .markdown p').first&.text
+
+  # Truncate content to 150 characters
+  content = content&.[](0..149) if content
+
+  pages << {
+    title: title.to_s.strip,
+    href: href,
+    content: content.to_s.strip
+  }
+end
+
+# Write pages.json atomically
+temp_file = "#{OUTPUT_FILE}.tmp.#{Process.pid}"
+IO.binwrite(temp_file, JSON.pretty_generate(pages))
+File.rename(temp_file, OUTPUT_FILE)
+
+puts "Generated #{pages.size} page entries → #{OUTPUT_FILE}"

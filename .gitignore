@@ -3,3 +3,4 @@ tmp/
 langs
 !public/langs
 .kee
+node_modules
