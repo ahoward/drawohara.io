@@ -14,8 +14,9 @@ pages = []
 
 # Process all HTML files in build directory
 Dir.glob(File.join(BUILD_DIR, '**', '*.html')).each do |file|
-  # Skip 404.html itself
+  # Skip 404.html itself and all /ro/ URLs
   next if file.include?('404.html')
+  next if file.include?('/ro/')
 
   doc = Nokogiri::HTML(IO.binread(file))
 
