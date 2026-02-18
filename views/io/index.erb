@@ -5,25 +5,30 @@
 </p>
 
 <dl>
-  <% data.each do |type, list| %>
-      <dt>
-        <a href="/<%= type %>">/<%= type %></a>
-        <hr>
-      </dt>
-
-      <dd>
-        <ul>
-          <% list.each do |content| %>
-            <li>
-              <a href="<%= content.url %>"><%= content.url %></a>
-            </li>
-          <% end %>
-        </ul>
-      </dd>
-  <% end %>
+  <dt>
+    <a href="/io">/io</a>
+    <hr>
+  </dt>
+  <dd>
+    <ul>
+      <% data.posts.each do |post| %>
+        <li>
+          <a href="/io/<%= post.id %>">/io/<%= post.id %></a>
+        </li>
+      <% end %>
+    </ul>
+  </dd>
 
   <dt>
-    <a href="#dojo4" name="dojo4">/dojo4</a>
+    <a href="/purls">/purls</a>
+    <hr>
+  </dt>
+  <dd>
+    &rarr; <a href="/purls">permalinks</a>
+  </dd>
+
+  <dt>
+    <a href="/dojo4">/dojo4</a>
     <hr>
   </dt>
   <dd>

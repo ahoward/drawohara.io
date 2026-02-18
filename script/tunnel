@@ -8,6 +8,8 @@
 # https://caddyserver.com/docs/install#debian-ubuntu-raspbian
 sudo $(which caddy) reverse-proxy --from drawohara.dev --to :4242
 
+#ngrok http 4242
+
 
 # >>> Welcome to Webi! - modern tools, instant installs.  <<<
 #     We expect your experience to be absolutely perfect!
