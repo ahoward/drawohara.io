@@ -52,7 +52,12 @@ Site.for 'drawohara.io' do |site|
       page = site.ro.get("io/#{ id }")
 
       if page
-        ctx.render string: page.body.html_safe, data: page
+        body = page.body.html_safe
+        if page.published_at
+          date = Date.parse(page.published_at.to_s).strftime('%B %d, %Y') rescue page.published_at.to_s
+          body = body + %(\n<p style="margin-top:2em;font-style:italic;opacity:0.6">&mdash; #{ date }</p>).html_safe
+        end
+        ctx.render string: body, data: page
       end
     end
 
@@ -63,34 +68,9 @@ Site.for 'drawohara.io' do |site|
 
   site.route '/io' do |route|
     route.call do |ctx|
-      data = Content.index
+      posts = site.ro.io.reject{|post| post.id == 'index'}.sort_by{|post| post.published_at.to_s}.reverse
+      data = {posts:}
       ctx.render 'views/io/index.erb', data:
-    end
-  end
-
-# /nerd
-#
-  site.route '/nerd' do |route|
-    route.call do |ctx|
-      nerd = Nerd.index
-      index = Nerd.all - [nerd]
-      data = {nerd:, index:}.update(nerd) #FIXME cuz og:
-      ctx.render 'views/nerds.erb', data:
-    end
-  end
-
-  site.route '/nerd/:id' do |route|
-    route.call do |ctx|
-      id = ctx.params.fetch(:id)
-      nerd = Nerd.find(id)
-
-      if nerd
-        ctx.render 'views/nerd.erb', data:nerd
-      end
-    end
-
-    route.urls do
-      site.ro.nerd.map{|nerd| "/nerd/#{ nerd.id }"}
     end
   end
 
@@ -128,7 +108,7 @@ Site.for 'drawohara.io' do |site|
 #
   site.route '/goto' do |route|
     route.call do |ctx|
-      urls = %w[ /now /io /nerd /about /purls /quotes /dojo4 /sitemap ]
+      urls = %w[ /now /io /about /purls /quotes /dojo4 /sitemap ]
       data = {urls:}
       ctx.render 'views/goto.erb', data:
     end
@@ -208,51 +188,6 @@ Site.for 'drawohara.io' do |site|
       Page.top_level.map do |page|
         "/#{ page.id }"
       end
-    end
-  end
-
-# /m (microblog)
-#
-  site.route '/m' do |route|
-    route.call do |ctx|
-      # Load all microblog entries
-      entries = []
-
-      Dir.glob('public/ro/microblog/*.yml').each do |path|
-        begin
-          # Load YAML frontmatter
-          yaml = YAML.safe_load_file(path, permitted_classes: [Time, Date], aliases: true)
-
-          # Parse timestamp
-          yaml['timestamp'] = Time.parse(yaml['timestamp'].to_s) if yaml['timestamp']
-
-          # Get slug from filename
-          slug = File.basename(path, '.yml')
-          yaml['slug'] = slug
-
-          # Read body from slug/body.md
-          body_path = File.join('public/ro/microblog', slug, 'body.md')
-          if File.exist?(body_path)
-            body = File.read(body_path)
-            # Convert relative image paths to absolute for web rendering
-            body = body.gsub(/!\[([^\]]*)\]\(\.\/assets\/([^)]+)\)/, '![\1](/ro/microblog/' + slug + '/assets/\2)')
-            yaml['body'] = body
-          end
-
-          entries << Map.for(yaml)
-        rescue => e
-          warn "Skipping #{path}: #{e.message}"
-        end
-      end
-
-      # Sort newest first
-      entries = entries.sort_by { |e| e['timestamp'] }.reverse
-
-      ctx.render 'views/microblog.erb', data: { entries: }
-    end
-
-    route.urls do
-      %w[ /m ]
     end
   end
 

@@ -34,7 +34,5 @@ so check back soon or just <a href="contact">contact</a> me if you are a-wonderi
 
 [iff](https://letmegooglethat.com/?q=what+does+iff+mean) you are so inclined, you can follow along with the madness here ->
 
-- <a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward/drawohara.io</a>
-- here <a href="https://bsky.app/profile/drawohara.io">https://bsky.app/profile/drawohara.io</a>
+- here -> <a href="https://github.com/ahoward/drawohara.io">https://github.com/ahoward</a>
 - or here -> <a href="https://www.instagram.com/drawohara">https://www.instagram.com/drawohara</a>
-- or even here (ssssshhhhhhh) -> <a href="https://syntheticecho.com">https://syntheticecho.com</a>

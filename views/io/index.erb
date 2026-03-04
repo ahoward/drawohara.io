@@ -5,25 +5,32 @@
 </p>
 
 <dl>
-  <% data.each do |type, list| %>
-      <dt>
-        <a href="/<%= type %>">/<%= type %></a>
-        <hr>
-      </dt>
-
-      <dd>
-        <ul>
-          <% list.each do |content| %>
-            <li>
-              <a href="<%= content.url %>"><%= content.url %></a>
-            </li>
+  <dt>
+    <a href="/io">/io</a>
+    <hr>
+  </dt>
+  <dd>
+    <ul>
+      <% data.posts.each do |post| %>
+        <li>
+          <a href="/io/<%= post.id %>">/io/<%= post.id %></a>
+          <% if post.published_at %>
+            <% date = begin; Date.parse(post.published_at.to_s).strftime('%B %d, %Y'); rescue; post.published_at; end %>
+            <span style="opacity:0.5;font-size:0.85em"> &mdash; <%= date %></span>
           <% end %>
-        </ul>
-      </dd>
-  <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </dd>
 
   <dt>
-    <a href="#dojo4" name="dojo4">/dojo4</a>
+    <hr>
+  </dt>
+  <dd>
+    &rarr; <a href="/purls">permalinks</a> ♾️
+  </dd>
+
+  <dt>
     <hr>
   </dt>
   <dd>
