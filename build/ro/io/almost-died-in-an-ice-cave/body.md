@@ -23,7 +23,10 @@
 >
 > __a lifetime, a lifetime ago, just yesterday...__
 
-[p.s.s](#pss) -> [@gaz](https://www.instagram.com/gazleah/) is [making a film about this ↓↓↓↓](https://www.wellgoodproductions.com/)
+[p.s.s](#pss) -> [@gaz](https://www.instagram.com/gazleah/) made a film about this.  trailer just dropped:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n1mH9DOUNpY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
 
 ![](./assets/og.jpg)
 
