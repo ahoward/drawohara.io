@@ -6,6 +6,7 @@ config = File.join(root, 'config')
 
 require "bundler/setup"
 
+require "#{ lib }/cache.rb"
 require "#{ lib }/site.rb"
 require "#{ config }/site.rb"
 

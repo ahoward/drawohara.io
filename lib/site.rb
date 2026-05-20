@@ -50,6 +50,7 @@ class Site
   attr_reader :utils
 
   attr_accessor :layout
+  attr_accessor :cache
 
   def initialize(*args, **kws, &block)
     @name = kws.fetch(:name){ args.shift || :default }
@@ -67,6 +68,8 @@ class Site
     @server = Server.new(site: self)
 
     @utils = Module.new{ def self.<<(m); include(m); end; extend self }
+
+    @cache = Cache.new
 
     block.call(self) if block
   end
@@ -103,24 +106,26 @@ class Site
         end
       end
     else
-      urls =
-        Parallel.map(routes, in_threads: 8) do |route|
-          route.urls
-        end.tap do |list|
-          list.flatten!
-          list.compact!
-          list.uniq!
-        end
+      @cache.get(:site, :urls) do
+        urls =
+          Parallel.map(routes, in_threads: 8) do |route|
+            route.urls
+          end.tap do |list|
+            list.flatten!
+            list.compact!
+            list.uniq!
+          end
 
-      urls.sort do |a, b|
-        x = Path.for(a).parts
-        y = Path.for(b).parts
+        urls.sort do |a, b|
+          x = Path.for(a).parts
+          y = Path.for(b).parts
 
-        case
-          when x.size == y.size
-            a <=> b
-          else
-            x.size <=> y.size
+          case
+            when x.size == y.size
+              a <=> b
+            else
+              x.size <=> y.size
+          end
         end
       end
     end
