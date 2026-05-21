@@ -230,6 +230,8 @@ hopefully everyone can remember that. that was a period where we recognized the 
 
 everything that's important in life.
 
+![](./assets/jess.jpg)
+
 and i think many of us felt how desperate we were without the fabric of an artificial society that is driving the world towards ruin at a rapid clip. a society we don't really want to participate in, but feel powerless to do anything about.
 
 and that brings me back around. at this point, it's not about doing something. it's about not doing things.
