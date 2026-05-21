@@ -1,5 +1,7 @@
 *life after growth...*
 
+![](./assets/og.jpg)
+
 at the moment i'm walking underneath the moonlight.
 
 and daylight. it's a weird kind of twilight you get at this latitude. which is the latitude of palmer, alaska, where i grew up.
@@ -22,6 +24,8 @@ i've been homeless. properly. everything but a bike.
 
 and in the middle of all that, [in the desert](/io/lost-in-the-desert), i met a beautiful lady, [jess](/jess). i've been with her for about two years, through the hard part of my life. i suppose i've touched on it a little, but most of what i just mentioned happened before it got hard.
 
+![](./assets/jess-and-me.jpg)
+
 so. that's a little bit of context.
 
 of my state of mind. and that's important for what i'm talking about.
@@ -35,6 +39,8 @@ i grew up racing my skis and running chainsaws, shooting guns, smoking weed, rac
 no one ever checked up on us. not once. well, maybe the cops. i do still wonder where the parents were.
 
 in any case. i grew up in a wild place. literally. i'm a fourth-generation alaskan, so that freedom is very much embedded in me.
+
+![](./assets/dad.jpg)
 
 when i'm in a large city, the predominant thing on my mind is a map. a map of where all the private property and roads and cars are.
 
@@ -231,3 +237,5 @@ take the word back. it doesn't belong to them.
 all that's left is conservatism.
 
 slow the fuck down.
+
+[more photos →](https://photos.app.goo.gl/jBDsiqef2dWNDchu7)
