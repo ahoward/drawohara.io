@@ -14,7 +14,7 @@ i think it's around a 1 in 20 chance over 90 days. and clearly even a temporary 
 
 i've been living out of some sort of vehicle—an old suburban, a clapped-out subaru, a van in alaska—for maybe four years now. i've lost track.
 
-in the past year, i've broken both my legs. one of them twice. i blew both my knees. i got [necrosis in my femur](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9). was rescued from a [mountaineering accident](/io/almost-died-in-an-ice-cave) where we were buried alive for five days, fighting for air.
+in the past 3 years, i've broken both my legs. one of them twice. i blew both my knees. i got [necrosis in my femur](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9). was rescued from a [mountaineering accident](/io/almost-died-in-an-ice-cave) where we were buried alive for five days, fighting for air.
 
 digging shoulder to shoulder. ultimately got yanked out by a [blackhawk helicopter](https://photos.app.goo.gl/UuNWQhWDQBqagfXp9).
 
