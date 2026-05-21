@@ -46,6 +46,8 @@ when i'm in a large city, the predominant thing on my mind is a map. a map of wh
 
 and the squiggly little lines that are nature. the beach, a dirt path, a secret alleyway with beautiful graffiti. that's how i experience society. as a sort of trap. there's almost no way out that isn't nature. and it's oppressive and anxiety-producing. at all times.
 
+![](./assets/dogs-in-snow.jpg)
+
 the title of this post is *all that's left is conservatism*. yes, that's a pun. all that we have left. and the political left. both.
 
 what i'm trying to get to is my state of mind. because i think it's something we as a culture are simply not having a discussion about.
