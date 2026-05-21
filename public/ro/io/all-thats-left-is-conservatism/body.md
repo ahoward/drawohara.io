@@ -152,6 +152,8 @@ we talk about progress almost exclusively in terms of statistics. it is two perc
 
 is your mother a percent? a percentage? an idea?
 
+![](./assets/home-with-jesus.jpg)
+
 we say it's progress if 50,000 babies died last year and only 25,000 die this year. yes, that's 25,000 fewer dead babies. but when the population of the planet is 8 billion, a tiny percentage still represents vast sums of actual suffering.
 
 real individuals experiencing it. not an abstract concept on paper.
