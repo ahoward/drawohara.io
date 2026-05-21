@@ -236,6 +236,8 @@ and that brings me back around. at this point, it's not about doing something. i
 
 that is what i am trying to bring back as a political movement.
 
+![](./assets/honest-mess.png)
+
 take the word back. it doesn't belong to them.
 
 all that's left is conservatism.
