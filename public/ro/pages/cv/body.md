@@ -82,13 +82,9 @@ developing fast and light engineering solutions for non-profits and mountain com
 
 services and software that bring the 'social voice' to artificial intelligence applications and research.
 
-**[n5](https://www.nickel5.com/)** -- _researcher, engineer_ (2024-present)
+**[n5](https://www.nickel5.com/)** -- _researcher, engineer_ (2024–2025)
 
-currently, i'm working at this boulder-based, private equity backed think tank on some seriously wild problems: training the mind via the visual cortex using EEG analysis (yeah, we're literally hacking consciousness), and building a 'perfect oracle' as a novel DeFi market that models intersubjective reality through market signals.
-
-> what even is that?
-
-think of it as attempting to create a truth engine that emerges from collective human judgment, tokenized. we're exploring the boundaries where neuroscience, cryptoeconomics, and philosophy collide. because why not?
+worked at this boulder-based, private-equity-backed think tank on a couple of hard problems: training the mind via the visual cortex using EEG analysis, and building a 'perfect oracle' — a DeFi market that models intersubjective reality through market signals (a truth engine emerging from collective, tokenized human judgment). neuroscience, cryptoeconomics, and philosophy, colliding.
 
 
 <hr>

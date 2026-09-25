@@ -1,7 +1,3 @@
-- recently liberated from [n5](https://www.nickel5.com/).  they let me go right before launching (and rapidly un-launching) a product that my due diligence flagged as a regulatory time bomb.  i'm taking that as a sign to keep my seven-day workweeks focused on building things that don't violate federal law — specifically pushing forward on [brane](https://github.com/ahoward/brane) and [destroysaas.coop](https://destroysaas.coop).
-
-- keeping receipts.  [nickel-5](https://github.com/ahoward/nickel-5) is a private archive of recordings and analysis from my time at Nickel5, Inc. — for regulatory and civil filings.  no commentary here; the documents speak for themselves.
-
 - shipping:
 
   - [xenv](https://xenv.sh) — single-binary secrets manager for ai coding agents.  AES-256-GCM vaults safe to commit, decrypted secrets never touch disk, MCP server baked in.
