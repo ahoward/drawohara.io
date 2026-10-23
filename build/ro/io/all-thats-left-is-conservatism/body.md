@@ -1,5 +1,7 @@
 *life after growth...*
 
+![](./assets/og.jpg)
+
 at the moment i'm walking underneath the moonlight.
 
 and daylight. it's a weird kind of twilight you get at this latitude. which is the latitude of palmer, alaska, where i grew up.
@@ -12,7 +14,7 @@ i think it's around a 1 in 20 chance over 90 days. and clearly even a temporary 
 
 i've been living out of some sort of vehicle—an old suburban, a clapped-out subaru, a van in alaska—for maybe four years now. i've lost track.
 
-in the past year, i've broken both my legs. one of them twice. i blew both my knees. i got [necrosis in my femur](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9). was rescued from a [mountaineering accident](/io/almost-died-in-an-ice-cave) where we were buried alive for five days, fighting for air.
+in the past 3 years, i've broken both my legs. one of them twice. i blew both my knees. i got [necrosis in my femur](https://photos.app.goo.gl/ZLLWKpux5jns3JUH9). was rescued from a [mountaineering accident](/io/almost-died-in-an-ice-cave) where we were buried alive for five days, fighting for air.
 
 digging shoulder to shoulder. ultimately got yanked out by a [blackhawk helicopter](https://photos.app.goo.gl/UuNWQhWDQBqagfXp9).
 
@@ -21,6 +23,8 @@ i've had a few friends commit suicide.
 i've been homeless. properly. everything but a bike.
 
 and in the middle of all that, [in the desert](/io/lost-in-the-desert), i met a beautiful lady, [jess](/jess). i've been with her for about two years, through the hard part of my life. i suppose i've touched on it a little, but most of what i just mentioned happened before it got hard.
+
+![](./assets/jess-and-me.jpg)
 
 so. that's a little bit of context.
 
@@ -36,9 +40,13 @@ no one ever checked up on us. not once. well, maybe the cops. i do still wonder 
 
 in any case. i grew up in a wild place. literally. i'm a fourth-generation alaskan, so that freedom is very much embedded in me.
 
+![](./assets/dad.jpg)
+
 when i'm in a large city, the predominant thing on my mind is a map. a map of where all the private property and roads and cars are.
 
 and the squiggly little lines that are nature. the beach, a dirt path, a secret alleyway with beautiful graffiti. that's how i experience society. as a sort of trap. there's almost no way out that isn't nature. and it's oppressive and anxiety-producing. at all times.
+
+![](./assets/dogs-in-snow.jpg)
 
 the title of this post is *all that's left is conservatism*. yes, that's a pun. all that we have left. and the political left. both.
 
@@ -144,6 +152,8 @@ we talk about progress almost exclusively in terms of statistics. it is two perc
 
 is your mother a percent? a percentage? an idea?
 
+![](./assets/home-with-jesus.jpg)
+
 we say it's progress if 50,000 babies died last year and only 25,000 die this year. yes, that's 25,000 fewer dead babies. but when the population of the planet is 8 billion, a tiny percentage still represents vast sums of actual suffering.
 
 real individuals experiencing it. not an abstract concept on paper.
@@ -220,14 +230,20 @@ hopefully everyone can remember that. that was a period where we recognized the 
 
 everything that's important in life.
 
+![](./assets/jess.jpg)
+
 and i think many of us felt how desperate we were without the fabric of an artificial society that is driving the world towards ruin at a rapid clip. a society we don't really want to participate in, but feel powerless to do anything about.
 
 and that brings me back around. at this point, it's not about doing something. it's about not doing things.
 
 that is what i am trying to bring back as a political movement.
 
+![](./assets/honest-mess.png)
+
 take the word back. it doesn't belong to them.
 
 all that's left is conservatism.
 
 slow the fuck down.
+
+[more photos →](https://photos.app.goo.gl/jBDsiqef2dWNDchu7)
